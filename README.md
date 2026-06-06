@@ -1,3 +1,13 @@
+## Claude Quick Load
+
+Paste any URL below directly into Claude chat to load project context:
+
+| File | Raw URL |
+|---|---|
+| `CLAUDE.md` | https://raw.githubusercontent.com/begb0037admin/hr-fa-knowledge-base/main/CLAUDE.md |
+
+---
+
 # HR Functional Analysis – Knowledge Base Dashboard
 
 A searchable, filterable index of the HR Systems team's knowledge articles and how-to guides, hosted on GitHub Pages as a single self-contained HTML file.
