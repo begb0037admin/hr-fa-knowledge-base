@@ -35,15 +35,15 @@ jobs:
       - name: Rebuild knowledge-base index
         run: python scrapers/build_index.py
 
-      - name: Commit refreshed data
+      - name: Commit refreshed data and document library
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data
+          git add data library
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Add SharePoint full-text to the knowledge index [skip ci]"
+            git commit -m "Mirror SharePoint library on Pages and refresh the index [skip ci]"
             git pull --rebase origin main
             git push origin main
           fi
