@@ -37,13 +37,16 @@ assistant ("Ask the Knowledge Base"):
 
 - [x] Scraper + pipeline working (runs #1–#2 green; 95/95 PDFs).
 - [x] Redesigned site deployed to main.
-- [ ] Pipeline run #3 (first run with index build + auto-commit) — verify
-      it commits `data/kb.json` with ~355 docs and that Pages serves it.
+- [x] Pipeline verified end-to-end (run #4): 355 docs, 542 chunks, all 95
+      help-centre PDFs full-text extracted (label/slug bug fixed in
+      `build_index.py`).
 - [ ] Kevin deploys the Cloudflare Worker (see `worker/README.md`), then
       paste its URL into `DEFAULT_WORKER_URL` in `index.html` so every
       machine works with zero per-browser setup.
-- Ideas parked: deeper crawl of help-centre category trees if 95 articles
-  proves shallow; periodic scheduled refresh (`on: schedule`).
+- Ideas parked: the 95 scraped pages are collection/category pages (each
+  lists up to ~130 sub-articles); a deeper crawl following collection links
+  would capture full step-by-step articles. Also: scheduled refresh
+  (`on: schedule`).
 
 ## Conventions
 
