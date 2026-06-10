@@ -24,16 +24,10 @@ CHUNK_CHARS = 1400
 CHUNK_OVERLAP = 150
 MAX_CHUNKS_PER_DOC = 40
 
-MODULE_LABELS = {
-    "payroll": "Payroll",
-    "people-management": "People Management",
-    "workforce-management": "Workforce Management",
-    "talent": "Talent",
-    "recruitment": "Recruitment",
-    "expense": "Expense",
-    "pension": "Pension",
-    "cross-module": "Cross-module",
-}
+def module_slug(label):
+    """Manifest stores the display label ('People Management'); the folder
+    on disk uses the slug ('people-management')."""
+    return label.lower().replace(" ", "-")
 
 
 def clean_text(text):
@@ -81,7 +75,8 @@ def load_scraped_docs():
             if row.get("downloaded") != "yes":
                 continue
             module = row["module"]
-            pdf_path = os.path.join(DOWNLOADS, module, row["filename"])
+            slug = module_slug(module)
+            pdf_path = os.path.join(DOWNLOADS, slug, row["filename"])
             text = ""
             pages = 0
             if os.path.exists(pdf_path):
@@ -97,10 +92,10 @@ def load_scraped_docs():
                 "t": row["title"],
                 "f": row["filename"],
                 "p": row["source_url"],
-                "pdf": f"downloads/{module}/{row['filename']}",
+                "pdf": f"downloads/{slug}/{row['filename']}",
                 "s": (text[:300] + "...") if len(text) > 300 else text,
                 "src": "Access Group Help Centre",
-                "tp": MODULE_LABELS.get(module, module),
+                "tp": module,
                 "sy": "PeopleXD",
                 "e": "pdf",
                 "m": row.get("scraped", ""),
