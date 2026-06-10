@@ -186,6 +186,7 @@ mark{background:#ffedad;color:inherit;padding:0 1px;border-radius:2px}
     <div class="askrow">
       <input id="ask-q" type="text" placeholder='e.g. "How do I maintain pay codes for WFM?" — press / to focus' autocomplete="off">
       <button class="btn btn-navy" id="ask-btn">Ask</button>
+      <button class="btn btn-ghost" id="ask-clear" title="Clear the conversation and start again">Clear</button>
       <button class="btn btn-ghost gear" id="ai-setup-btn" title="AI connection settings">&#9881;</button>
     </div>
     <div class="chips" id="chips">
@@ -513,6 +514,7 @@ async function ask(question){
     return;
   }
   const thread=Q("#thread");
+  thread.innerHTML="";  // each question replaces the previous answer on screen
   thread.insertAdjacentHTML("beforeend",'<div class="qline">'+esc(question)+"</div>");
   const tid="think"+Date.now();
   thread.insertAdjacentHTML("beforeend",'<div class="thinking" id="'+tid+'"><span class="spinner"></span> Searching '+ (CHUNKS?CHUNKS.length:"the") +' knowledge chunks and thinking&hellip;</div>');
@@ -552,6 +554,10 @@ async function ask(question){
   }
 }
 Q("#ask-btn").addEventListener("click",()=>ask(Q("#ask-q").value));
+Q("#ask-clear").addEventListener("click",()=>{
+  HISTORY=[]; Q("#thread").innerHTML=""; Q("#ask-q").value="";
+  Q("#ask-note").classList.add("hidden"); Q("#ask-q").focus();
+});
 Q("#ask-q").addEventListener("keydown",e=>{if(e.key==="Enter")ask(e.target.value)});
 Q("#chips").addEventListener("click",e=>{if(e.target.classList.contains("chip")){Q("#ask-q").value=e.target.textContent;ask(e.target.textContent)}});
 document.addEventListener("keydown",e=>{
