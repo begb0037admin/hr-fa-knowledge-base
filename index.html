@@ -718,10 +718,10 @@ function convoStatus(msg){
   if(!msg){el.classList.add("hidden");el.textContent="";return;}
   el.classList.remove("hidden");el.textContent=msg;
 }
-function convoCleanup(){
+function convoCleanup(keepMsg){
   CONVO=null;CONVO_CONNECTING=false;
   Q("#convo-btn").innerHTML="&#127911; Talk";
-  convoStatus("");
+  if(!keepMsg)convoStatus("");
 }
 async function convoToggle(){
   const btn=Q("#convo-btn");
@@ -758,8 +758,16 @@ async function convoToggle(){
         btn.innerHTML="&#9632; End";
         convoStatus("Connected — just talk. Click End when you're done.");
       },
-      onDisconnect:()=>convoCleanup(),
-      onError:(msg)=>{convoStatus("Voice error: "+msg);convoCleanup();},
+      onDisconnect:(details)=>{
+        const was=CONVO||CONVO_CONNECTING;
+        convoCleanup(true);
+        let why="";try{why=details&&(details.reason||(details.context&&details.context.reason)||JSON.stringify(details))||""}catch{}
+        if(was)convoStatus("Conversation ended"+(why?" — "+why:"")+". Click Talk to start again.");
+      },
+      onError:(msg,ctx)=>{
+        convoCleanup(true);
+        convoStatus("Voice error: "+msg+(ctx?" — "+JSON.stringify(ctx).slice(0,200):""));
+      },
       onModeChange:({mode})=>{
         if(CONVO)convoStatus(mode==="speaking"?"🔊 Speaking…":"🎤 Listening…");
       }
