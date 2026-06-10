@@ -566,54 +566,115 @@ Q("#ask-clear").addEventListener("click",()=>{
   if(window.speechSynthesis)speechSynthesis.cancel();
 });
 
-/* ── Voice input (Web Speech API) ── */
-let RECOG=null, RECORDING=false;
+/* ── Voice input: ElevenLabs Scribe via the worker, Web Speech fallback ── */
+let RECORDING=false, MEDIA_REC=null, MEDIA_CHUNKS=[], WS_RECOG=null, USE_WS=false;
 const SR = window.SpeechRecognition||window.webkitSpeechRecognition;
-Q("#ask-mic").addEventListener("click",()=>{
-  if(!SR){
-    Q("#ask-note").classList.remove("hidden");
-    Q("#ask-note").textContent="Voice input needs Chrome or Edge (the Web Speech API isn't available in this browser).";
-    return;
-  }
-  if(RECORDING){RECOG.stop();return;}
-  RECOG=new SR();
-  RECOG.lang="en-GB"; RECOG.interimResults=true; RECOG.continuous=false;
-  const input=Q("#ask-q");
-  RECOG.onresult=e=>{
-    let t="";for(const r of e.results)t+=r[0].transcript;
-    input.value=t;
+const ASK_PLACEHOLDER=Q("#ask-q").placeholder;
+function micNote(msg){const n=Q("#ask-note");n.classList.remove("hidden");n.textContent=msg;}
+
+async function micStartScribe(){
+  const stream=await navigator.mediaDevices.getUserMedia({audio:true});
+  MEDIA_CHUNKS=[];
+  MEDIA_REC=new MediaRecorder(stream);
+  MEDIA_REC.ondataavailable=e=>{if(e.data.size)MEDIA_CHUNKS.push(e.data);};
+  MEDIA_REC.onstop=async()=>{
+    stream.getTracks().forEach(t=>t.stop());
+    RECORDING=false; Q("#ask-mic").classList.remove("rec");
+    const blob=new Blob(MEDIA_CHUNKS,{type:MEDIA_REC.mimeType||"audio/webm"});
+    if(blob.size<1000)return;
+    const cfg=aiCfg();
+    const headers={"Content-Type":blob.type};
+    if(cfg.token)headers["X-KB-Token"]=cfg.token;
+    Q("#ask-q").placeholder="Transcribing…";
+    try{
+      const res=await fetch(cfg.url+"/stt",{method:"POST",headers,body:blob});
+      const data=await res.json();
+      if(!res.ok)throw new Error(data.error||("HTTP "+res.status));
+      Q("#ask-q").value=(data.text||"").trim();
+      if(Q("#ask-q").value)ask(Q("#ask-q").value);
+    }catch(err){
+      USE_WS=true;
+      micNote("ElevenLabs transcription unavailable ("+err.message+") — falling back to the browser's voice input. Tap the mic again.");
+    }finally{Q("#ask-q").placeholder=ASK_PLACEHOLDER;}
   };
-  RECOG.onend=()=>{
+  MEDIA_REC.start();
+  RECORDING=true; Q("#ask-mic").classList.add("rec");
+}
+
+function micStartWebSpeech(){
+  if(!SR){micNote("Voice input needs Chrome or Edge (no speech APIs available in this browser).");return;}
+  WS_RECOG=new SR();
+  WS_RECOG.lang="en-GB"; WS_RECOG.interimResults=true; WS_RECOG.continuous=false;
+  const input=Q("#ask-q");
+  WS_RECOG.onresult=e=>{let t="";for(const r of e.results)t+=r[0].transcript;input.value=t;};
+  WS_RECOG.onend=()=>{
     RECORDING=false; Q("#ask-mic").classList.remove("rec");
     input.focus();
-    if(input.value.trim()) ask(input.value);   // speak, release, it asks
+    if(input.value.trim())ask(input.value);
   };
-  RECOG.onerror=ev=>{
+  WS_RECOG.onerror=ev=>{
     RECORDING=false; Q("#ask-mic").classList.remove("rec");
-    if(ev.error!=="aborted"&&ev.error!=="no-speech"){
-      Q("#ask-note").classList.remove("hidden");
-      Q("#ask-note").textContent="Microphone error: "+ev.error+(ev.error==="not-allowed"?" — allow microphone access for this site in the browser.":"");
-    }
+    if(ev.error!=="aborted"&&ev.error!=="no-speech")
+      micNote("Microphone error: "+ev.error+(ev.error==="not-allowed"?" — allow microphone access for this site.":""));
   };
   RECORDING=true; Q("#ask-mic").classList.add("rec");
+  WS_RECOG.start();
+}
+
+Q("#ask-mic").addEventListener("click",async()=>{
   Q("#ask-note").classList.add("hidden");
-  RECOG.start();
+  if(RECORDING){  // tap again to stop
+    if(MEDIA_REC&&MEDIA_REC.state==="recording")MEDIA_REC.stop();
+    else if(WS_RECOG)WS_RECOG.stop();
+    return;
+  }
+  const cfg=aiCfg();
+  if(!USE_WS&&cfg.url&&navigator.mediaDevices&&window.MediaRecorder){
+    try{await micStartScribe();return;}
+    catch(err){USE_WS=true;}  // mic refused or recorder failed; fall through
+  }
+  micStartWebSpeech();
 });
 
-/* ── Read the answer aloud ── */
-let LAST_ANSWER_SPOKEN="";
-Q("#thread").addEventListener("click",e=>{
-  if(e.target.id!=="speak-btn")return;
+/* ── Read the answer aloud: ElevenLabs via the worker, browser fallback ── */
+let LAST_ANSWER_SPOKEN="", TTS_AUDIO=null, TTS_BROWSER=false;
+function speakStop(){
+  if(TTS_AUDIO){TTS_AUDIO.pause();TTS_AUDIO=null;}
+  if(window.speechSynthesis)speechSynthesis.cancel();
+  const b=Q("#speak-btn");if(b)b.innerHTML="&#128266; Listen";
+}
+function speakBrowser(text,btn){
   const synth=window.speechSynthesis;
-  if(!synth){e.target.textContent="Not supported";return;}
-  if(synth.speaking){synth.cancel();e.target.innerHTML="&#128266; Listen";return;}
-  const u=new SpeechSynthesisUtterance(LAST_ANSWER_SPOKEN);
+  if(!synth){btn.textContent="Not supported";return;}
+  const u=new SpeechSynthesisUtterance(text);
   u.lang="en-GB";
   const v=synth.getVoices().find(v=>v.lang==="en-GB")||synth.getVoices().find(v=>v.lang.startsWith("en"));
   if(v)u.voice=v;
-  u.onend=()=>{const b=Q("#speak-btn");if(b)b.innerHTML="&#128266; Listen";};
-  e.target.innerHTML="&#9632; Stop";
+  u.onend=speakStop;
+  btn.innerHTML="&#9632; Stop";
   synth.speak(u);
+}
+Q("#thread").addEventListener("click",async e=>{
+  if(e.target.id!=="speak-btn")return;
+  const btn=e.target;
+  if((TTS_AUDIO&&!TTS_AUDIO.paused)||(window.speechSynthesis&&speechSynthesis.speaking)){speakStop();return;}
+  const cfg=aiCfg();
+  if(TTS_BROWSER||!cfg.url){speakBrowser(LAST_ANSWER_SPOKEN,btn);return;}
+  btn.innerHTML="&#8987;";
+  try{
+    const headers={"Content-Type":"application/json"};
+    if(cfg.token)headers["X-KB-Token"]=cfg.token;
+    const res=await fetch(cfg.url+"/tts",{method:"POST",headers,body:JSON.stringify({text:LAST_ANSWER_SPOKEN})});
+    if(!res.ok)throw new Error("HTTP "+res.status);
+    const blob=await res.blob();
+    TTS_AUDIO=new Audio(URL.createObjectURL(blob));
+    TTS_AUDIO.onended=speakStop;
+    btn.innerHTML="&#9632; Stop";
+    TTS_AUDIO.play();
+  }catch(err){
+    TTS_BROWSER=true;  // worker has no ElevenLabs key (or errored) — use browser voice
+    speakBrowser(LAST_ANSWER_SPOKEN,btn);
+  }
 });
 Q("#ask-q").addEventListener("keydown",e=>{if(e.key==="Enter")ask(e.target.value)});
 Q("#chips").addEventListener("click",e=>{if(e.target.classList.contains("chip")){Q("#ask-q").value=e.target.textContent;ask(e.target.textContent)}});
