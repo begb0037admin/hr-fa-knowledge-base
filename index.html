@@ -85,6 +85,9 @@ a.mini{font-size:12px;padding:3px 10px;border:1px solid var(--border);background
 .spinner{width:14px;height:14px;border:2px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin .7s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .ask-note{background:var(--blue-soft);color:var(--blue-text);font-size:13px;border-radius:8px;padding:10px 13px;margin-top:10px}
+#ask-mic.rec{background:#fdebea;border-color:#d6453d;color:#d6453d;animation:pulse 1.1s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(214,69,61,.35)}50%{box-shadow:0 0 0 6px rgba(214,69,61,0)}}
+.answer-tools{margin-top:7px}
 .ask-err{background:#fdebea;color:#8c2722;font-size:13px;border-radius:8px;padding:10px 13px;margin-top:10px}
 
 /* ── Library ─────────────────────────────────────────── */
@@ -185,6 +188,7 @@ mark{background:#ffedad;color:inherit;padding:0 1px;border-radius:2px}
     <div class="hint">Ask in plain English — answers come from the How-To Guides, Change Management library and the PeopleXD Help Centres, with sources cited.</div>
     <div class="askrow">
       <input id="ask-q" type="text" placeholder='e.g. "How do I maintain pay codes for WFM?" — press / to focus' autocomplete="off">
+      <button class="btn btn-ghost gear" id="ask-mic" title="Speak your question">&#127908;</button>
       <button class="btn btn-navy" id="ask-btn">Ask</button>
       <button class="btn btn-ghost" id="ask-clear" title="Clear the conversation and start again">Clear</button>
       <button class="btn btn-ghost gear" id="ai-setup-btn" title="AI connection settings">&#9881;</button>
@@ -548,7 +552,9 @@ async function ask(question){
         return '<a target="_blank" rel="noopener" href="'+esc(href)+'"><span class="no">['+(i+1)+"]</span> "+esc(doc.t||"Untitled")+'<span class="where">'+esc(doc.tp||doc.src||"")+"</span></a>";
       }).join("")+"</div>";
     }
-    Q("#"+tid).outerHTML='<div class="answer">'+html+"</div>"+srcs;
+    LAST_ANSWER_SPOKEN = text.replace(/\[\d+\]/g,"").replace(/[#*`_]/g,"").replace(/\s+/g," ").trim();
+    Q("#"+tid).outerHTML='<div class="answer">'+html+"</div>"
+      +'<div class="answer-tools"><button class="mini" id="speak-btn">&#128266; Listen</button></div>'+srcs;
   }catch(err){
     Q("#"+tid).outerHTML='<div class="ask-err">Could not get an answer: '+esc(err.message)+". Check the &#9881; AI connection settings.</div>";
   }
@@ -557,6 +563,57 @@ Q("#ask-btn").addEventListener("click",()=>ask(Q("#ask-q").value));
 Q("#ask-clear").addEventListener("click",()=>{
   HISTORY=[]; Q("#thread").innerHTML=""; Q("#ask-q").value="";
   Q("#ask-note").classList.add("hidden"); Q("#ask-q").focus();
+  if(window.speechSynthesis)speechSynthesis.cancel();
+});
+
+/* ── Voice input (Web Speech API) ── */
+let RECOG=null, RECORDING=false;
+const SR = window.SpeechRecognition||window.webkitSpeechRecognition;
+Q("#ask-mic").addEventListener("click",()=>{
+  if(!SR){
+    Q("#ask-note").classList.remove("hidden");
+    Q("#ask-note").textContent="Voice input needs Chrome or Edge (the Web Speech API isn't available in this browser).";
+    return;
+  }
+  if(RECORDING){RECOG.stop();return;}
+  RECOG=new SR();
+  RECOG.lang="en-GB"; RECOG.interimResults=true; RECOG.continuous=false;
+  const input=Q("#ask-q");
+  RECOG.onresult=e=>{
+    let t="";for(const r of e.results)t+=r[0].transcript;
+    input.value=t;
+  };
+  RECOG.onend=()=>{
+    RECORDING=false; Q("#ask-mic").classList.remove("rec");
+    input.focus();
+    if(input.value.trim()) ask(input.value);   // speak, release, it asks
+  };
+  RECOG.onerror=ev=>{
+    RECORDING=false; Q("#ask-mic").classList.remove("rec");
+    if(ev.error!=="aborted"&&ev.error!=="no-speech"){
+      Q("#ask-note").classList.remove("hidden");
+      Q("#ask-note").textContent="Microphone error: "+ev.error+(ev.error==="not-allowed"?" — allow microphone access for this site in the browser.":"");
+    }
+  };
+  RECORDING=true; Q("#ask-mic").classList.add("rec");
+  Q("#ask-note").classList.add("hidden");
+  RECOG.start();
+});
+
+/* ── Read the answer aloud ── */
+let LAST_ANSWER_SPOKEN="";
+Q("#thread").addEventListener("click",e=>{
+  if(e.target.id!=="speak-btn")return;
+  const synth=window.speechSynthesis;
+  if(!synth){e.target.textContent="Not supported";return;}
+  if(synth.speaking){synth.cancel();e.target.innerHTML="&#128266; Listen";return;}
+  const u=new SpeechSynthesisUtterance(LAST_ANSWER_SPOKEN);
+  u.lang="en-GB";
+  const v=synth.getVoices().find(v=>v.lang==="en-GB")||synth.getVoices().find(v=>v.lang.startsWith("en"));
+  if(v)u.voice=v;
+  u.onend=()=>{const b=Q("#speak-btn");if(b)b.innerHTML="&#128266; Listen";};
+  e.target.innerHTML="&#9632; Stop";
+  synth.speak(u);
 });
 Q("#ask-q").addEventListener("keydown",e=>{if(e.key==="Enter")ask(e.target.value)});
 Q("#chips").addEventListener("click",e=>{if(e.target.classList.contains("chip")){Q("#ask-q").value=e.target.textContent;ask(e.target.textContent)}});
