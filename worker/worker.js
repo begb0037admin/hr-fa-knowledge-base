@@ -11,7 +11,8 @@
  *   ELEVENLABS_API_KEY   (secret, required for /tts and /stt; without it
  *                         those routes return 501 and the site falls back
  *                         to the browser's built-in voice)
- *   ELEVENLABS_VOICE_ID  (var, optional — defaults to "Rachel")
+ *   ELEVENLABS_VOICE_ID  (var, optional — defaults to Kevin's chosen
+ *                         voice-library voice, NTqGiNK8P02i66yY2GOH)
  *   KB_ACCESS_TOKEN      (secret, optional — requests must send it in the
  *                         X-KB-Token header if set)
  *   ALLOWED_ORIGIN       (var, optional — defaults to the GitHub Pages site)
@@ -88,7 +89,9 @@ async function tts(request, env, cors) {
   const text = String(body.text || "").slice(0, 5000);
   if (!text) return json({ error: "text required" }, 400, cors);
 
-  const voice = env.ELEVENLABS_VOICE_ID || "21m00Tcm4TlvDq8ikWAM"; // Rachel
+  // Kevin's chosen voice from the ElevenLabs voice library; it must be
+  // added to "My voices" on the account for the API to accept it.
+  const voice = env.ELEVENLABS_VOICE_ID || "NTqGiNK8P02i66yY2GOH";
   const upstream = await fetch(
     `https://api.elevenlabs.io/v1/text-to-speech/${voice}?output_format=mp3_44100_128`,
     {
