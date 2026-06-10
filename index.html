@@ -556,8 +556,9 @@ async function ask(question){
       }).join("")+"</div>";
     }
     LAST_ANSWER_SPOKEN = text.replace(/\[\d+\]/g,"").replace(/[#*`_]/g,"").replace(/\s+/g," ").trim();
+    LAST_ANSWER_COPY = text.replace(/\[\d+\]/g,"").replace(/[ \t]+\n/g,"\n").trim();
     Q("#"+tid).outerHTML='<div class="answer">'+html+"</div>"
-      +'<div class="answer-tools"><button class="mini" id="speak-btn">&#128266; Listen</button></div>'+srcs;
+      +'<div class="answer-tools"><button class="mini" id="speak-btn">&#128266; Listen</button> <button class="mini" id="copy-btn">&#128203; Copy</button></div>'+srcs;
   }catch(err){
     Q("#"+tid).outerHTML='<div class="ask-err">Could not get an answer: '+esc(err.message)+". Check the &#9881; AI connection settings.</div>";
   }
@@ -640,7 +641,7 @@ Q("#ask-mic").addEventListener("click",async()=>{
 });
 
 /* ── Read the answer aloud: ElevenLabs via the worker, browser fallback ── */
-let LAST_ANSWER_SPOKEN="", TTS_AUDIO=null, TTS_BROWSER=false;
+let LAST_ANSWER_SPOKEN="", LAST_ANSWER_COPY="", TTS_AUDIO=null, TTS_BROWSER=false;
 function speakStop(){
   if(TTS_AUDIO){TTS_AUDIO.pause();TTS_AUDIO=null;}
   if(window.speechSynthesis)speechSynthesis.cancel();
@@ -658,6 +659,21 @@ function speakBrowser(text,btn){
   synth.speak(u);
 }
 Q("#thread").addEventListener("click",async e=>{
+  if(e.target.id==="copy-btn"){
+    const btn=e.target;
+    try{
+      if(navigator.clipboard&&window.isSecureContext){
+        await navigator.clipboard.writeText(LAST_ANSWER_COPY);
+      }else{
+        const ta=document.createElement("textarea");
+        ta.value=LAST_ANSWER_COPY;ta.style.position="fixed";ta.style.opacity="0";
+        document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();
+      }
+      btn.innerHTML="&#10003; Copied";
+    }catch(err){btn.textContent="Copy failed";}
+    setTimeout(()=>{btn.innerHTML="&#128203; Copy";},1600);
+    return;
+  }
   if(e.target.id!=="speak-btn")return;
   const btn=e.target;
   if((TTS_AUDIO&&!TTS_AUDIO.paused)||(window.speechSynthesis&&speechSynthesis.speaking)){speakStop();return;}
