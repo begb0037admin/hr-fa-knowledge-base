@@ -33,6 +33,7 @@ from __future__ import annotations
 import argparse
 import csv
 import getpass
+import json
 import os
 import re
 import sys
@@ -93,6 +94,7 @@ class RunStats:
     downloaded: int = 0
     skipped: int = 0
     failed: int = 0
+    harvested: int = 0
     rows: list = field(default_factory=list)
 
 
@@ -228,6 +230,55 @@ def collect_article_links(page, homepage: str, errors_path: Path) -> list[tuple[
     return results
 
 
+def harvest_article_texts(page, links: list[tuple[str, str]],
+                          errors_path: Path, limit: int = 0) -> list[dict]:
+    """Deep crawl: follow collection pages to every individual article and
+    extract its title, URL and full body text (no PDF rendering)."""
+    article_urls: dict[str, str] = {}
+    collection_urls: list[str] = []
+    for title, url in links:
+        path = urlparse(url).path
+        if "/articles/" in path:
+            article_urls.setdefault(url.split("?")[0], title)
+        elif "/collections/" in path:
+            collection_urls.append(url)
+
+    for curl in collection_urls:
+        try:
+            page.goto(curl, timeout=NAV_TIMEOUT_MS, wait_until="domcontentloaded")
+            page.wait_for_timeout(1200)
+            for a in page.query_selector_all('a[href*="/articles/"]'):
+                href = a.get_attribute("href") or ""
+                url = urljoin(curl, href).split("#")[0].split("?")[0]
+                title = (a.inner_text() or "").strip().split("\n")[0].strip()
+                if title and url not in article_urls:
+                    article_urls[url] = title
+        except Exception as exc:  # noqa: BLE001 - log and continue
+            log_error(errors_path, f"Collection crawl failed {curl}: {exc}")
+
+    items = list(article_urls.items())
+    if limit:
+        items = items[:limit]
+
+    harvested: list[dict] = []
+    for url, title in items:
+        try:
+            page.goto(url, timeout=NAV_TIMEOUT_MS, wait_until="domcontentloaded")
+            page.wait_for_timeout(900)
+            h1 = page.query_selector("h1")
+            if h1:
+                h1_text = (h1.inner_text() or "").strip()
+                if h1_text:
+                    title = h1_text
+            text = page.evaluate(
+                "() => (document.querySelector('article') || document.body).innerText")
+            harvested.append({"title": title, "url": url,
+                              "text": (text or "").strip()})
+        except Exception as exc:  # noqa: BLE001 - log and continue
+            log_error(errors_path, f"Article harvest failed {url}: {exc}")
+    return harvested
+
+
 def find_pdf_url(page, article_url: str, errors_path: Path) -> str | None:
     """Open an article and return the best PDF download URL, or None."""
     try:
@@ -306,6 +357,9 @@ def parse_args() -> argparse.Namespace:
                    help="Skip portal login (use if help centres are public).")
     p.add_argument("--print-fallback", action="store_true",
                    help="Render a PDF from the page when no PDF link is found.")
+    p.add_argument("--deep", action="store_true",
+                   help="Follow collection pages and harvest the full text of "
+                        "every individual article into articles.json.")
     p.add_argument("--limit", type=int, default=0,
                    help="Process at most N articles per centre (0 = no limit).")
     return p.parse_args()
@@ -331,6 +385,7 @@ def main() -> int:
     errors_path.write_text("", encoding="utf-8")
 
     stats = RunStats()
+    all_articles: list[dict] = []
 
     with sync_playwright() as pw:
         browser = pw.chromium.launch(headless=not args.headed)
@@ -356,6 +411,14 @@ def main() -> int:
                 links = links[: args.limit]
             print(f"  {len(links)} candidate article link(s) found.")
             stats.found += len(links)
+
+            if args.deep:
+                arts = harvest_article_texts(page, links, errors_path, args.limit)
+                for art in arts:
+                    art["module"] = module
+                all_articles.extend(arts)
+                stats.harvested += len(arts)
+                print(f"  {len(arts)} individual article(s) harvested.")
 
             for title, url in links:
                 base = sanitise_filename(title)
@@ -402,9 +465,13 @@ def main() -> int:
         browser.close()
 
     write_manifest(manifest_path, stats.rows)
+    if args.deep:
+        (out_root / "articles.json").write_text(
+            json.dumps(all_articles, ensure_ascii=False), encoding="utf-8")
 
     print("\n================ SUMMARY ================")
     print(f"Articles found:      {stats.found}")
+    print(f"Deep articles:       {stats.harvested}")
     print(f"PDFs downloaded:     {stats.downloaded}")
     print(f"Skipped (no PDF):    {stats.skipped}")
     print(f"Failed:              {stats.failed}")

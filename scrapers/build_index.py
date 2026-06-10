@@ -105,9 +105,37 @@ def load_scraped_docs():
     return docs
 
 
+def load_deep_articles():
+    """Read downloads/articles.json (full text of individual help-centre
+    articles harvested by the scraper's --deep mode)."""
+    path = os.path.join(DOWNLOADS, "articles.json")
+    if not os.path.exists(path):
+        print("No downloads/articles.json - skipping deep articles.")
+        return []
+    import time
+    today = time.strftime("%Y-%m-%d")
+    with open(path, encoding="utf-8") as fh:
+        arts = json.load(fh)
+    docs = []
+    for a in arts:
+        text = clean_text(a.get("text", ""))
+        docs.append({
+            "t": a["title"],
+            "p": a["url"],
+            "s": (text[:300] + "...") if len(text) > 300 else text,
+            "src": "Access Group Help Centre",
+            "tp": a.get("module", ""),
+            "sy": "PeopleXD",
+            "e": "web",
+            "m": today,
+            "_text": text,
+        })
+    return docs
+
+
 def main():
     sp_docs = load_sharepoint_docs()
-    ag_docs = load_scraped_docs()
+    ag_docs = load_scraped_docs() + load_deep_articles()
 
     kb, index = [], []
     for doc in sp_docs:

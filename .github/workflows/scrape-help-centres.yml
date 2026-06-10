@@ -11,6 +11,10 @@ on:
         description: "Render page to PDF when an article has no PDF download link"
         type: boolean
         default: true
+      deep:
+        description: "Deep crawl: harvest full text of every individual article"
+        type: boolean
+        default: true
       limit:
         description: "Max articles per help centre (0 = all)"
         type: string
@@ -48,6 +52,9 @@ jobs:
           fi
           if [ "${{ inputs.print_fallback }}" = "true" ]; then
             ARGS="$ARGS --print-fallback"
+          fi
+          if [ "${{ inputs.deep }}" = "true" ]; then
+            ARGS="$ARGS --deep"
           fi
           python scrapers/access_group_scraper.py $ARGS
 

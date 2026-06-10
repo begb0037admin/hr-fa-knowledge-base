@@ -375,9 +375,12 @@ function render(){
     const m=SRC_META[x.src]||{cls:"s-htg",badge:"b-tp"};
     const arc=/\(Archive\)$/i.test(x.tp);
     const isAg=x.src==="Access Group Help Centre";
-    let open = x.p?'<a class="mini" target="_blank" rel="noopener" href="'+esc(x.p)+'">'+(isAg?"Open help centre":"Open in SharePoint")+"</a>":"";
-    let pdf = x.pdf?' <a class="mini" target="_blank" rel="noopener" href="'+esc(x.pdf)+'">PDF</a>':"";
-    let copy = x.p?'<button class="mini" data-copy="'+esc(x.p)+'">Copy link</button>':"";
+    let openHref = x.p||"";
+    if(/sharepoint\.com/i.test(openHref) && !openHref.includes("?")) openHref += "?web=1";
+    const openLabel = isAg ? (x.pdf?"Open help centre":"Open article") : "Open in SharePoint";
+    let open = openHref?'<a class="mini" target="_blank" rel="noopener" href="'+esc(openHref)+'">'+openLabel+"</a>":"";
+    let pdf = x.pdf?' <a class="mini" target="_blank" rel="noopener" href="'+esc(encodeURI(x.pdf))+'">PDF</a>':"";
+    let copy = openHref?'<button class="mini" data-copy="'+esc(openHref)+'">Copy link</button>':"";
     let del = x._local?'<button class="mini" data-del="'+esc(x.f)+'">Remove</button>':"";
     const bits=[];
     if(x.m)bits.push("Modified "+esc(x.m));
@@ -527,7 +530,8 @@ async function ask(question){
       srcs='<div class="srcs">'+hits.map((c,i)=>{
         const doc=BASE[c.d]||{};const key=c.d;
         if(seen.has(key))return"";seen.add(key);
-        const href=doc.p||doc.pdf||"#";
+        let href=doc.p||(doc.pdf?encodeURI(doc.pdf):"#");
+        if(/sharepoint\.com/i.test(href)&&!href.includes("?"))href+="?web=1";
         return '<a target="_blank" rel="noopener" href="'+esc(href)+'"><span class="no">['+(i+1)+"]</span> "+esc(doc.t||"Untitled")+'<span class="where">'+esc(doc.tp||doc.src||"")+"</span></a>";
       }).join("")+"</div>";
     }
