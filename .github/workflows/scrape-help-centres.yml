@@ -1,0 +1,58 @@
+name: Scrape PeopleXD Help Centres
+
+on:
+  workflow_dispatch:
+    inputs:
+      login:
+        description: "Log in to the Access Group portal first (requires ACCESS_PASSWORD secret)"
+        type: boolean
+        default: false
+      print_fallback:
+        description: "Render page to PDF when an article has no PDF download link"
+        type: boolean
+        default: true
+      limit:
+        description: "Max articles per help centre (0 = all)"
+        type: string
+        default: "0"
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install playwright requests
+          playwright install --with-deps chromium
+
+      - name: Run scraper
+        env:
+          ACCESS_PASSWORD: ${{ secrets.ACCESS_PASSWORD }}
+          ACCESS_USERNAME: ${{ secrets.ACCESS_USERNAME }}
+        run: |
+          ARGS="--output downloads --limit ${{ inputs.limit }}"
+          if [ "${{ inputs.login }}" != "true" ]; then
+            ARGS="$ARGS --no-login"
+          fi
+          if [ "${{ inputs.print_fallback }}" = "true" ]; then
+            ARGS="$ARGS --print-fallback"
+          fi
+          python scrapers/access_group_scraper.py $ARGS
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: peoplexd-help-centre-pdfs
+          path: downloads/
+          retention-days: 90
+          if-no-files-found: warn
