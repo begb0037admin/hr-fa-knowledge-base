@@ -289,17 +289,28 @@ function loadLocal(){try{return JSON.parse(localStorage.getItem(LOCAL_KEY)||"[]"
 function saveLocal(a){localStorage.setItem(LOCAL_KEY,JSON.stringify(a))}
 
 async function boot(){
-  try{
-    const r = await fetch("data/kb.json",{cache:"no-cache"});
-    if(!r.ok) throw new Error("HTTP "+r.status);
-    BASE = await r.json();
-  }catch(e){
-    Q("#out").innerHTML = '<div class="loaderr">Could not load data/kb.json ('+esc(e.message)+'). If you are viewing this file directly from disk, serve it over HTTP or visit the GitHub Pages site.</div>';
-    return;
+  let lastErr = null;
+  for(let attempt=1; attempt<=4; attempt++){
+    try{
+      const r = await fetch("data/kb.json",{cache:"no-cache"});
+      if(!r.ok) throw new Error("HTTP "+r.status);
+      BASE = await r.json();
+      lastErr = null;
+      break;
+    }catch(e){
+      lastErr = e;
+      if(attempt<4){
+        Q("#out").innerHTML = '<div class="empty">Loading the library&hellip; (attempt '+attempt+')</div>';
+        await new Promise(res=>setTimeout(res,1800*attempt));
+      }
+    }
   }
   LOCAL = loadLocal();
   D = BASE.concat(LOCAL.map(x=>Object.assign({},x,{_local:true})));
   buildNav(); buildFilters(); render();
+  if(lastErr){
+    Q("#out").innerHTML = '<div class="loaderr">Could not load data/kb.json ('+esc(lastErr.message)+'). The site may be mid-deployment &mdash; <a href="javascript:location.reload()">reload the page</a> in a few seconds.</div>';
+  }
 }
 
 /* ════════ Sidebar ════════ */
