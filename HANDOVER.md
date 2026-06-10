@@ -29,7 +29,7 @@ whole point.
 | Worker | `worker/worker.js` | Routes: `/` Claude chat, `/tts` ElevenLabs Flash v2.5, `/stt` Scribe v2. Secrets live in Cloudflare, never in repo. `worker/README.md` has setup steps. |
 | Scraper | `scrapers/access_group_scraper.py` | Playwright. `--no-login` (help centres are public; portal login never worked and is unnecessary). `--deep` follows collections → harvests every individual article's text+URL to `downloads/articles.json`. Full deep run ≈ 2 hours. |
 | Index builder | `scrapers/build_index.py` | Merges: SharePoint metadata (`data/sharepoint-docs.json`), SharePoint full text (`data/sharepoint-fulltext.json`, optional), collection PDFs (manifest + pypdf), deep articles. Writes `data/kb.json` + `data/kb-index.json`. |
-| SharePoint extractor | `scrapers/extract_sharepoint.py` | Reads zips under `sp_docs/`, extracts docx/pdf text → `data/sharepoint-fulltext.json`. |
+| SharePoint extractor | `scrapers/extract_sharepoint.py` | Reads zips under `sp_docs/`, unpacks them into `library/` (committed, served by Pages — SharePoint is no longer needed to open a document), extracts docx/pdf text → `data/sharepoint-fulltext.json`, file map → `data/sharepoint-files.json`. Skips `.lnk`/junk and files >95 MB. `build_index.py` rewrites each SharePoint card's link to the Pages copy. |
 | Workflow: crawl | `.github/workflows/scrape-help-centres.yml` | workflow_dispatch on main. Inputs: login / print_fallback / deep / limit. Scrapes → builds index → commits `downloads/` + `data/` to main → Pages redeploys. |
 | Workflow: SharePoint | `.github/workflows/index-sharepoint-docs.yml` | Downloads the `sharepoint-docs` release assets, extracts text, rebuilds index, commits only `data/`. ~2 min. |
 
@@ -44,15 +44,15 @@ whole point.
 
 ## Immediate next steps (in order)
 
-1. **SharePoint full text.** Kevin is uploading the 501 MB library zip to
-   a release tagged `sharepoint-docs`
-   (https://github.com/begb0037admin/hr-fa-knowledge-base/releases/new).
-   When he confirms it's published: trigger workflow
-   `index-sharepoint-docs.yml` on main, then VERIFY:
-   `git show origin/main:data/kb-index.json` — chunk count should jump by
-   roughly 1,500–3,000, and build log should say "260 SharePoint of which
-   ~260 full-text". If some docx fail, the log lists them; don't panic
-   over a handful.
+1. ~~SharePoint full text~~ **DONE 10 June 2026.** The 437 MB
+   `HR.Knowledge.Base.zip` is on the `sharepoint-docs` release; the
+   workflow extracted 249 docs (0 failures) and the index went from
+   3,406 to 7,230 chunks. The 10 docs without full text are shortcuts,
+   templates and spreadsheets — nothing of substance. The library is
+   now also mirrored under `library/` and every card links to the
+   Pages copy instead of SharePoint. To refresh after SharePoint
+   changes: re-export the library zip, replace the asset on the
+   release, re-run `index-sharepoint-docs.yml`.
 2. **ElevenLabs voice.** Kevin must paste the current `worker/worker.js`
    over his Cloudflare worker code (Edit code → Deploy) and add secret
    `ELEVENLABS_API_KEY` (same key as his AIMM project) and optionally var

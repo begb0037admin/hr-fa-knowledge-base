@@ -15,10 +15,15 @@ import json
 import os
 import re
 import sys
+from urllib.parse import quote
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
 DOWNLOADS = os.path.join(ROOT, "downloads")
+
+# Documents mirrored under library/ are served from GitHub Pages, so
+# cards and citations never have to send Kevin through SharePoint SSO.
+SITE_BASE = "https://begb0037admin.github.io/hr-fa-knowledge-base/"
 
 CHUNK_CHARS = 1400
 CHUNK_OVERLAP = 150
@@ -142,14 +147,28 @@ def load_sharepoint_fulltext():
         return json.load(fh)
 
 
+def load_sharepoint_files():
+    """Filename -> library/ path map written by extract_sharepoint.py."""
+    path = os.path.join(DATA, "sharepoint-files.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as fh:
+        return json.load(fh)
+
+
 def main():
     sp_docs = load_sharepoint_docs()
     sp_fulltext = load_sharepoint_fulltext()
+    sp_files = load_sharepoint_files()
     ag_docs = load_scraped_docs() + load_deep_articles()
 
     kb, index = [], []
-    sp_full = 0
+    sp_full = sp_local = 0
     for doc in sp_docs:
+        local = sp_files.get(doc.get("f", ""))
+        if local:
+            doc["p"] = SITE_BASE + quote(local)
+            sp_local += 1
         doc_id = len(kb)
         kb.append(doc)
         text = sp_fulltext.get(doc.get("f", ""))
@@ -180,6 +199,7 @@ def main():
 
     print(f"kb.json:       {len(kb)} documents "
           f"({len(sp_docs)} SharePoint of which {sp_full} full-text, "
+          f"{sp_local} linked to the local library, "
           f"{len(ag_docs)} help centre)")
     print(f"kb-index.json: {len(index)} searchable chunks")
 
