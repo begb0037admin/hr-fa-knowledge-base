@@ -1,0 +1,49 @@
+name: Index SharePoint documents
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Download SharePoint library from the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p sp_docs
+          gh release download sharepoint-docs --dir sp_docs --repo "$GITHUB_REPOSITORY"
+          ls -la sp_docs
+
+      - name: Extract full text
+        run: |
+          pip install pypdf
+          python scrapers/extract_sharepoint.py
+
+      - name: Rebuild knowledge-base index
+        run: python scrapers/build_index.py
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Add SharePoint full-text to the knowledge index [skip ci]"
+            git pull --rebase origin main
+            git push origin main
+          fi

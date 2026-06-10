@@ -133,14 +133,31 @@ def load_deep_articles():
     return docs
 
 
+def load_sharepoint_fulltext():
+    """Full document text extracted by extract_sharepoint.py, if present."""
+    path = os.path.join(DATA, "sharepoint-fulltext.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as fh:
+        return json.load(fh)
+
+
 def main():
     sp_docs = load_sharepoint_docs()
+    sp_fulltext = load_sharepoint_fulltext()
     ag_docs = load_scraped_docs() + load_deep_articles()
 
     kb, index = [], []
+    sp_full = 0
     for doc in sp_docs:
         doc_id = len(kb)
         kb.append(doc)
+        text = sp_fulltext.get(doc.get("f", ""))
+        if text:
+            sp_full += 1
+            for ch in chunk_text(clean_text(text)):
+                index.append({"d": doc_id, "x": ch})
+            continue
         body = " ".join(filter(None, [doc.get("t"), doc.get("s"), doc.get("sy")]))
         if body.strip():
             index.append({"d": doc_id, "x": body.strip()})
@@ -162,7 +179,8 @@ def main():
         json.dump(index, fh, ensure_ascii=False)
 
     print(f"kb.json:       {len(kb)} documents "
-          f"({len(sp_docs)} SharePoint, {len(ag_docs)} help centre)")
+          f"({len(sp_docs)} SharePoint of which {sp_full} full-text, "
+          f"{len(ag_docs)} help centre)")
     print(f"kb-index.json: {len(index)} searchable chunks")
 
 
