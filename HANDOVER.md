@@ -38,9 +38,13 @@ whole point.
 - 2,226 documents: 209 How To Guides + 51 Change Management (SharePoint)
   + 1,966 Access Group Help Centre (1,939 individual full-text articles
   across 8 PeopleXD modules + collection PDFs).
-- 3,406 index chunks. kb.json ≈ 294 KB gzipped, kb-index ≈ 790 KB gzipped.
-- SharePoint docs are currently **summary-only** in the index (full text
-  pending — see next steps).
+- 7,230 index chunks; SharePoint full text included (249 docs extracted,
+  0 failures).
+- The SharePoint library itself is mirrored under `library/` (257 files)
+  and served by Pages; 256 of 260 cards link to the local copy — the
+  other 4 are Windows shortcuts with no real file. Kevin explicitly
+  approved hosting the documents on the public site. SharePoint is no
+  longer needed for anything except re-exporting a fresh zip.
 
 ## Immediate next steps (in order)
 
@@ -53,16 +57,16 @@ whole point.
    Pages copy instead of SharePoint. To refresh after SharePoint
    changes: re-export the library zip, replace the asset on the
    release, re-run `index-sharepoint-docs.yml`.
-2. **ElevenLabs voice.** Kevin must paste the current `worker/worker.js`
-   over his Cloudflare worker code (Edit code → Deploy) and add secret
-   `ELEVENLABS_API_KEY` (same key as his AIMM project) and optionally var
-   `ELEVENLABS_VOICE_ID` (the "Hope" voice ID from his ElevenLabs
-   account). Until then the site silently falls back to browser voices —
-   nothing is broken.
-3. **Rotate the Anthropic key.** Kevin's API key appeared in a screenshot
-   in the chat on 10 June. He should create a new key at
-   console.anthropic.com, update the worker secret `ANTHROPIC_API_KEY`,
-   and delete the old one. Remind him gently.
+2. ~~ElevenLabs voice~~ **DONE 10 June 2026.** Worker deployed with
+   `/tts` (Flash v2.5) and `/stt` (Scribe v2); `ELEVENLABS_API_KEY`
+   secret added. Default voice is Kevin's chosen voice-library voice
+   `NTqGiNK8P02i66yY2GOH` (baked into `worker/worker.js`; it must stay
+   in "My voices" on his ElevenLabs account). The site also gained a
+   Copy button next to Listen on AI answers.
+3. ~~Rotate keys~~ **Kevin reports done 10 June 2026** (Anthropic key
+   from the screenshot, and the ElevenLabs key that passed through
+   chat). If anything voice- or chat-related 401s, stale worker
+   secrets are the first thing to check.
 4. **Parked / future:** Tier 2 = full conversational agent (ElevenLabs
    Conversational AI with KB search as a client tool — AIMM proves the
    pattern; see `reference/aimm.html`). Scheduled refresh via
