@@ -67,11 +67,17 @@ whole point.
    from the screenshot, and the ElevenLabs key that passed through
    chat). If anything voice- or chat-related 401s, stale worker
    secrets are the first thing to check.
-4. **Parked / future:** Tier 2 = full conversational agent (ElevenLabs
-   Conversational AI with KB search as a client tool — AIMM proves the
-   pattern; see `reference/aimm.html`). Scheduled refresh via
-   `on: schedule`. The repo Actions secret `ACCESS_PASSWORD` is unused
-   and can be deleted.
+4. **Tier 2 voice agent — LIVE, two tools.** The Talk button runs
+   ElevenLabs Conversational AI (SDK pinned 0.1.7, the AIMM pattern;
+   see `reference/aimm.html`). The page registers two client tools:
+   `search_knowledge_base(query)` and `show_document(number)`. Both
+   must also be declared as Client tools on the agent at elevenlabs.io
+   → Agents, or she won't call them. Searches now render the top match
+   full-text into the on-screen document panel (`#convo-docs`) and the
+   live transcript of both sides goes to `#convo-transcript`, so Kevin
+   can read along and ask "tell me more about step 6".
+5. **Parked / future:** Scheduled refresh via `on: schedule`. The repo
+   Actions secret `ACCESS_PASSWORD` is unused and can be deleted.
 
 ## How to operate
 
