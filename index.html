@@ -24,7 +24,7 @@ a{color:var(--blue)}
 /* ── Sidebar ─────────────────────────────────────────── */
 .side{width:262px;flex-shrink:0;background:var(--side);color:var(--side-text);display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto}
 .brand{display:flex;gap:12px;align-items:center;padding:22px 20px 16px}
-.crest{width:46px;height:46px;border-radius:50%;border:1.5px solid #3c4f7d;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:17px;color:#dce6f7;background:radial-gradient(circle at 35% 30%,#1d2f5e,#0c1733)}
+.crest{width:46px;height:46px;border-radius:50%;border:1.5px solid #3c4f7d;display:flex;align-items:center;justify-content:center;font-family:inherit;font-weight:600;font-size:17px;color:#dce6f7;background:radial-gradient(circle at 35% 30%,#1d2f5e,#0c1733)}
 .brand .t1{font-size:14px;font-weight:700;letter-spacing:.08em;color:#fff}
 .brand .t2{font-size:10.5px;letter-spacing:.14em;color:var(--side-muted);margin-top:2px}
 .side .email{padding:12px 20px;border-top:1px solid var(--side-2);border-bottom:1px solid var(--side-2);font-size:12.5px;color:#9fc1f0}
@@ -42,7 +42,7 @@ a{color:var(--blue)}
 /* ── Main ────────────────────────────────────────────── */
 .main{flex:1;min-width:0;padding:26px 34px 60px;max-width:1060px}
 .tophead{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:18px}
-.greet h1{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:27px;font-weight:700;color:var(--navy-text)}
+.greet h1{margin:0;font-family:inherit;font-size:21px;font-weight:600;color:var(--navy-text)}
 .greet .date{color:var(--muted);font-size:13.5px;margin-top:3px}
 .actions{display:flex;gap:9px;flex-shrink:0;padding-top:4px}
 .btn{height:35px;padding:0 15px;border-radius:8px;font:600 13px/1 inherit;font-family:inherit;cursor:pointer;border:1px solid var(--border);display:inline-flex;align-items:center;gap:6px;text-decoration:none;white-space:nowrap}
@@ -56,7 +56,7 @@ a.mini{font-size:12px;padding:3px 10px;border:1px solid var(--border);background
 
 /* ── Ask panel ───────────────────────────────────────── */
 .ask{background:var(--surface);border:1px solid var(--border-soft);border-left:4px solid var(--gold);border-radius:var(--radius-lg);padding:18px 20px;margin-bottom:24px;box-shadow:0 1px 3px rgba(13,42,82,.05)}
-.ask h2{margin:0 0 3px;font-family:Georgia,serif;font-size:17.5px;color:var(--navy-text)}
+.ask h2{margin:0 0 3px;font-family:inherit;font-size:16px;font-weight:600;color:var(--navy-text)}
 .ask .hint{font-size:12.5px;color:var(--muted);margin-bottom:12px}
 .askrow{display:flex;gap:9px}
 .askrow input{flex:1;height:40px;padding:0 13px;border:1px solid var(--border);border-radius:8px;font:14.5px inherit;font-family:inherit;color:var(--text)}
@@ -107,7 +107,7 @@ a.mini{font-size:12px;padding:3px 10px;border:1px solid var(--border);background
 
 /* ── Library ─────────────────────────────────────────── */
 .libhead{display:flex;align-items:baseline;gap:10px;margin:4px 0 12px}
-.libhead h2{margin:0;font-family:Georgia,serif;font-size:18px;color:var(--navy-text)}
+.libhead h2{margin:0;font-family:inherit;font-size:16px;font-weight:600;color:var(--navy-text)}
 .libhead .meta{font-size:12.5px;color:var(--hint);margin-left:auto}
 .controls{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:10px;margin-bottom:9px}
 .field{display:flex;flex-direction:column;gap:3px}
@@ -140,7 +140,7 @@ mark{background:#ffedad;color:inherit;padding:0 1px;border-radius:2px}
 /* ── Modal ───────────────────────────────────────────── */
 .modal-backdrop{position:fixed;inset:0;background:rgba(4,12,30,.5);z-index:200;display:flex;align-items:center;justify-content:center}
 .modal{background:#fff;border-radius:var(--radius-lg);width:620px;max-width:96vw;max-height:92vh;overflow-y:auto;padding:24px 26px;box-shadow:0 12px 50px rgba(0,0,0,.3)}
-.modal h2{margin:0 0 16px;font-family:Georgia,serif;font-size:18px;color:var(--navy-text)}
+.modal h2{margin:0 0 16px;font-family:inherit;font-size:16px;font-weight:600;color:var(--navy-text)}
 .mrow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
 .mfull{margin-bottom:10px}
 .mfull>label,.mrow>div>label{font-size:11.5px;color:var(--muted);display:block;margin-bottom:3px}
