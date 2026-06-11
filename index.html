@@ -89,6 +89,20 @@ a.mini{font-size:12px;padding:3px 10px;border:1px solid var(--border);background
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(214,69,61,.35)}50%{box-shadow:0 0 0 6px rgba(214,69,61,0)}}
 .answer-tools{margin-top:7px}
 .convo-status{margin-top:8px;font-size:13px;color:var(--blue-text);background:#eef4ff;border:1px solid #c9d9f5;border-radius:8px;padding:7px 11px}
+.convo-transcript{margin-top:10px;max-height:260px;overflow-y:auto;border:1px solid var(--border-soft);border-radius:var(--radius);padding:10px 13px;background:#fff}
+.convo-transcript .qline{margin:9px 0 5px;font-size:13.5px}
+.convo-transcript .answer{font-size:13.5px;padding:9px 13px;margin-bottom:6px}
+.convo-docs{margin-top:10px}
+.docview{background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius);overflow:hidden}
+.docview-head{display:flex;gap:8px;align-items:baseline;background:var(--side);color:#fff;font-size:13.5px;font-weight:600;padding:9px 14px}
+.docview-head .no{color:var(--gold);flex-shrink:0}
+.docview-head a{margin-left:auto;flex-shrink:0;color:#cfe0f7;font-size:12px;font-weight:400;text-decoration:none}
+.docview-head a:hover{text-decoration:underline}
+.docview-body{padding:12px 16px;font-size:13.5px;color:var(--text);max-height:440px;overflow-y:auto}
+.docview-body p{margin:0 0 8px}
+.docview-body ul,.docview-body ol{margin:4px 0 10px;padding-left:22px}
+.docview-body li{margin:3px 0}
+.docview-body h4{margin:10px 0 5px;font-size:13px;color:var(--navy-text)}
 .ask-err{background:#fdebea;color:#8c2722;font-size:13px;border-radius:8px;padding:10px 13px;margin-top:10px}
 
 /* ── Library ─────────────────────────────────────────── */
@@ -196,6 +210,8 @@ mark{background:#ffedad;color:inherit;padding:0 1px;border-radius:2px}
       <button class="btn btn-ghost gear" id="ai-setup-btn" title="AI connection settings">&#9881;</button>
     </div>
     <div id="convo-status" class="convo-status hidden"></div>
+    <div id="convo-transcript" class="convo-transcript hidden"></div>
+    <div id="convo-docs" class="convo-docs hidden"></div>
     <div class="chips" id="chips">
       <button class="chip">How do I maintain pay codes for WFM?</button>
       <button class="chip">How does the GDPR request centre work?</button>
@@ -577,6 +593,7 @@ Q("#ask-btn").addEventListener("click",()=>ask(Q("#ask-q").value));
 Q("#ask-clear").addEventListener("click",()=>{
   HISTORY=[]; Q("#thread").innerHTML=""; Q("#ask-q").value="";
   Q("#ask-note").classList.add("hidden"); Q("#ask-q").focus();
+  ["convo-transcript","convo-docs"].forEach(id=>{const el=Q("#"+id);el.innerHTML="";el.classList.add("hidden");});
   if(window.speechSynthesis)speechSynthesis.cancel();
 });
 
@@ -709,15 +726,77 @@ Q("#thread").addEventListener("click",async e=>{
    One click on Talk opens a continuous voice session: Kevin speaks, the
    agent searches the knowledge base via the search_knowledge_base client
    tool below, and answers aloud in his chosen voice. Click again to end.
+   Both sides of the conversation are transcribed live into
+   #convo-transcript, and whatever the agent finds is rendered into
+   #convo-docs so Kevin can read along and ask about what he sees
+   ("tell me more about step 6"). show_document must be registered as a
+   client tool on the ElevenLabs agent alongside search_knowledge_base.
    SDK pinned to 0.1.7 — versions 0.2.0+ need LiveKit endpoints ElevenLabs'
    servers don't serve yet (see reference/aimm.html for the full story). */
 const EL_SDK_URL="https://esm.sh/@elevenlabs/client@0.1.7";
-let CONVO=null, CONVO_CONNECTING=false;
+let CONVO=null, CONVO_CONNECTING=false, CONVO_DOCS=[];
 function convoStatus(msg){
   const el=Q("#convo-status");
   if(!msg){el.classList.add("hidden");el.textContent="";return;}
   el.classList.remove("hidden");el.textContent=msg;
 }
+/* Live transcript: every final transcript (both sides) lands here so the
+   whole conversation is readable on screen, not just audible. Consecutive
+   agent messages merge into one cream bubble. */
+function convoTurn(source,message){
+  const box=Q("#convo-transcript");
+  box.classList.remove("hidden");
+  const role=source==="ai"?"ai":"user";
+  const last=box.lastElementChild;
+  if(role==="ai"&&last&&last.dataset.role==="ai"){
+    last.insertAdjacentHTML("beforeend","<p>"+esc(message)+"</p>");
+  }else if(role==="ai"){
+    box.insertAdjacentHTML("beforeend",'<div class="answer" data-role="ai"><p>'+esc(message)+"</p></div>");
+  }else{
+    box.insertAdjacentHTML("beforeend",'<div class="qline" data-role="user">'+esc(message)+"</div>");
+  }
+  box.scrollTop=box.scrollHeight;
+}
+/* Documents on screen: the agent's searches render here so she can say
+   "I'm showing you that now" and the user can ask about what they see. */
+function docHref(doc){
+  let href=doc.p||(doc.pdf?encodeURI(doc.pdf):"#");
+  if(/sharepoint\.com/i.test(href)&&!href.includes("?"))href+="?web=1";
+  return href;
+}
+function docFullText(docIdx,hitChunks){
+  const all=CHUNKS?CHUNKS.filter(c=>c.d===docIdx):[];
+  const text=(all.length?all:hitChunks||[]).map(c=>c.x).join("\n");
+  return text.slice(0,9000);
+}
+function convoShowDoc(entry,n,others){
+  const doc=entry.doc;
+  const text=docFullText(entry.d,entry.chunks);
+  let html='<div class="docview"><div class="docview-head"><span class="no">['+n+"]</span> "+esc(doc.t||"Untitled")
+    +' <a target="_blank" rel="noopener" href="'+esc(docHref(doc))+'">Open the full document &rarr;</a></div>'
+    +'<div class="docview-body">'+mdLite(text)+"</div></div>";
+  if(others&&others.length){
+    html+='<div class="srcs">'+others.map(o=>
+      '<a target="_blank" rel="noopener" href="'+esc(docHref(o.doc))+'"><span class="no">['+o.n+"]</span> "
+      +esc(o.doc.t||"Untitled")+'<span class="where">'+esc(o.doc.tp||o.doc.src||"")+"</span></a>").join("")+"</div>";
+  }
+  const box=Q("#convo-docs");
+  box.classList.remove("hidden");
+  box.innerHTML=html;
+  return text;
+}
+/* Group ranked chunks into unique documents, preserving rank order, so the
+   numbering the agent speaks matches the numbering on screen. */
+function convoSearch(q){
+  const hits=q?retrieve(q,8):[];
+  const order=[],byDoc={};
+  for(const c of hits){
+    if(!(c.d in byDoc)){byDoc[c.d]=[];order.push(c.d);}
+    byDoc[c.d].push(c);
+  }
+  return order.map(d=>({d:d,doc:BASE[d]||{},chunks:byDoc[d]}));
+}
+function docLabel(doc){return '"'+(doc.t||"Untitled")+'" ('+(doc.src||"")+" — "+(doc.tp||"")+")";}
 function convoCleanup(keepMsg){
   CONVO=null;CONVO_CONNECTING=false;
   Q("#convo-btn").innerHTML="&#127911; Talk";
@@ -735,6 +814,8 @@ async function convoToggle(){
   }
   CONVO_CONNECTING=true;btn.innerHTML="&#8987; Connecting&hellip;";
   convoStatus("Connecting to the voice agent…");
+  CONVO_DOCS=[];
+  ["convo-transcript","convo-docs"].forEach(id=>{const el=Q("#"+id);el.innerHTML="";el.classList.add("hidden");});
   try{
     speakStop();
     await loadChunks();
@@ -745,14 +826,33 @@ async function convoToggle(){
       clientTools:{
         search_knowledge_base: async (args)=>{
           const q=String((args&&(args.query||args.question))||"");
-          const hits=q?retrieve(q,6):[];
-          if(!hits.length)return "No matching documents found in the knowledge base for: "+q;
-          return hits.map((c,i)=>{
-            const doc=BASE[c.d]||{};
-            return "["+(i+1)+"] \""+(doc.t||"Untitled")+"\" ("+(doc.src||"")+" — "+(doc.tp||"")+")\n"+c.x.slice(0,1200);
-          }).join("\n\n");
+          const entries=convoSearch(q);
+          CONVO_DOCS=entries;
+          if(!entries.length)return "No matching documents found in the knowledge base for: "+q;
+          const others=entries.map((e,i)=>({doc:e.doc,n:i+1})).slice(1);
+          const shown=convoShowDoc(entries[0],1,others);
+          let out="Document [1] "+docLabel(entries[0].doc)+" is NOW DISPLAYED on the user's screen"
+            +(others.length?", with matches [2]-["+entries.length+"] listed below it as links":"")+". "
+            +"Tell the user you are showing it on screen, keep your spoken answer brief, and refer to the "
+            +"numbered steps they can see. They may ask about any step — the on-screen text is:\n\n"
+            +"[1] "+docLabel(entries[0].doc)+"\n"+shown.slice(0,5000);
+          if(others.length){
+            out+="\n\nOther matches (call show_document with the number to put one on screen):\n"
+              +others.map(o=>"["+o.n+"] "+docLabel(o.doc)).join("\n");
+          }
+          return out;
+        },
+        show_document: async (args)=>{
+          const n=Math.max(1,parseInt(args&&(args.number||args.doc_number||args.index||args.n))||1);
+          if(!CONVO_DOCS.length)return "Nothing has been searched yet this conversation — call search_knowledge_base first.";
+          const entry=CONVO_DOCS[n-1];
+          if(!entry)return "There is no document ["+n+"] in the current results — there are only "+CONVO_DOCS.length+".";
+          const others=CONVO_DOCS.map((e,i)=>({doc:e.doc,n:i+1})).filter(o=>o.n!==n);
+          const shown=convoShowDoc(entry,n,others);
+          return "Document ["+n+"] "+docLabel(entry.doc)+" is now displayed on the user's screen. Its text:\n\n"+shown.slice(0,5000);
         }
       },
+      onMessage:({message,source})=>{if(message)convoTurn(source,String(message));},
       onConnect:()=>{
         CONVO_CONNECTING=false;
         btn.innerHTML="&#9632; End";
