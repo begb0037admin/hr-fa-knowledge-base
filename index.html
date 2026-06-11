@@ -294,9 +294,10 @@ mark{background:#ffedad;color:inherit;padding:0 1px;border-radius:2px}
 // every browser works with zero setup. The gear panel overrides per-browser.
 const DEFAULT_WORKER_URL = "https://hr-kb-ai.kevinlelitte.workers.dev";
 // ElevenLabs Conversational AI agent for live voice conversations (the
-// AIMM pattern). Once Kevin creates the agent, bake its ID here; the
-// gear panel overrides per-browser.
-const DEFAULT_AGENT_ID = "";
+// AIMM pattern). Baked in so Talk works on any browser with zero setup;
+// the gear panel overrides per-browser. Public by design — Kevin accepted
+// the trade-off (same as the worker URL above) while he's the only user.
+const DEFAULT_AGENT_ID = "agent_4101ktsqhtyve2atyssqh1fek5wh";
 const LOCAL_KEY = "hrKbAdditions_v1";
 const AI_CFG_KEY = "hrKbAiCfg_v1";
 
