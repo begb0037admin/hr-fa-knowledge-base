@@ -734,7 +734,7 @@ Q("#thread").addEventListener("click",async e=>{
    client tool on the ElevenLabs agent alongside search_knowledge_base.
    SDK pinned to 0.1.7 — versions 0.2.0+ need LiveKit endpoints ElevenLabs'
    servers don't serve yet (see reference/aimm.html for the full story). */
-const EL_SDK_URL="https://esm.sh/@elevenlabs/client@0.1.7";
+const EL_SDK_URL="https://esm.sh/@elevenlabs/client@1.11.1";
 let CONVO=null, CONVO_CONNECTING=false, CONVO_DOCS=[];
 function convoStatus(msg){
   const el=Q("#convo-status");
@@ -862,7 +862,7 @@ async function convoToggle(){
       onDisconnect:(details)=>{
         const was=CONVO||CONVO_CONNECTING;
         convoCleanup(true);
-        let why="";try{why=details&&(details.reason||(details.context&&details.context.reason)||JSON.stringify(details))||""}catch{}
+        let why="";try{const r=details&&(details.reason||"");const m=details&&(details.message||"");const cc=details&&details.closeCode?", code "+details.closeCode:"";why=(r==="error"&&m)?m+cc:r+(cc||"")}catch{}
         if(was)convoStatus("Conversation ended"+(why?" — "+why:"")+". Click Talk to start again.");
       },
       onError:(msg,ctx)=>{
