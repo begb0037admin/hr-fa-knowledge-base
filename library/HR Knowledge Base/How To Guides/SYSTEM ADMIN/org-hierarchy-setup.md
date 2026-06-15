@@ -1,18 +1,18 @@
 # HOW TO: Create a Non-Payroll Company & Link the Hierarchy
-## Colleges & Halls — Avanti UOXU (Company 90)
+## Colleges & Halls — PeopleXD UOXU (Company 90)
 
-**System:** Avanti PeopleXD (UOXU)
+**System:** PeopleXD (UOXU)
 **Topic:** System Admin
 **Status:** DRAFT — screenshots pending live UOXU configuration
 **Version:** 1.0 — 15 June 2026
-**Source:** Avanti configuration session, 12 June 2026 (Conor, Access Group)
+**Source:** PeopleXD configuration session, 12 June 2026 (Conor, The Access Group)
 **Business Owner:** Marie Cooksey, Head of HR Systems
 
 ---
 
 ## Purpose
 
-This guide explains how to set up a new non-payroll organisation structure in Avanti for a population that needs HR management (posts, appointments, hierarchy) but is **not** processed through payroll. Written for Colleges & Halls (Company 90), but the steps apply to any non-payroll company.
+This guide explains how to set up a new non-payroll organisation structure in PeopleXD for a population that needs HR management (posts, appointments, hierarchy) but is **not** processed through payroll. Written for Colleges & Halls (Company 90), but the steps apply to any non-payroll company.
 
 ---
 
@@ -20,8 +20,8 @@ This guide explains how to set up a new non-payroll organisation structure in Av
 
 Before starting, confirm you have:
 
-- Payroll Administration access in Avanti
-- HR Administration access in Avanti
+- Payroll Administration access in PeopleXD
+- HR Administration access in PeopleXD
 - The agreed company code, hierarchy codes and naming conventions
 - Department records already exist in the system
 
@@ -130,7 +130,7 @@ Before starting, confirm you have:
 
 Save.
 
-> **Screenshot Pending (5.1):** Division 901 in Avanti reference data — to be captured during live configuration.
+> **Screenshot Pending (5.1):** Division 901 in PeopleXD reference data — to be captured during live configuration.
 
 **Validate:** Division 901 appears against Company 90.
 
@@ -146,7 +146,7 @@ Save.
 
 Save.
 
-> **Screenshot Pending (5.2):** Subdivision ZSD901 in Avanti — to be captured during live configuration.
+> **Screenshot Pending (5.2):** Subdivision ZSD901 in PeopleXD — to be captured during live configuration.
 
 ---
 
@@ -160,7 +160,7 @@ Save.
 
 Save.
 
-> **Screenshot Pending (5.3):** Level 4 Z90101 in Avanti — to be captured during live configuration.
+> **Screenshot Pending (5.3):** Level 4 Z90101 in PeopleXD — to be captured during live configuration.
 
 ---
 
@@ -175,7 +175,7 @@ Create **two** entries:
 
 Save each.
 
-> **Screenshot Pending (5.4):** Management Units Z901 and Z902 in Avanti — to be captured during live configuration.
+> **Screenshot Pending (5.4):** Management Units Z901 and Z902 in PeopleXD — to be captured during live configuration.
 
 ---
 
@@ -311,7 +311,7 @@ Rather than entering values one by one, use the **Data Migration** tool.
 | Need | Contact |
 |---|---|
 | System issues, bugs, configuration problems | **Access Group support via PXD Portal** |
-| Raising a formal change request | **Avanti** (change request process only) |
+| Raising a formal change request | **PeopleXD** (change request process only) |
 
 ---
 
@@ -324,8 +324,8 @@ Capture during the actual live configuration in UOXU. Save to `images/org-hierar
 | Step 1b | Copy Organisation dialog with Colleges and Halls as source |
 | Step 2b | Duplicate pay group form — Code 90, ZZ Do Not Use Non-Pay, Company 90 linked |
 | Step 4 | Data Centre Company search + Company Settings list showing Company 90 |
-| Step 5.1 | Division 901 in Avanti reference data |
-| Step 5.2 | Subdivision ZSD901 in Avanti |
-| Step 5.3 | Level 4 Z90101 in Avanti |
-| Step 5.4 | Management Units Z901 and Z902 in Avanti |
+| Step 5.1 | Division 901 in PeopleXD reference data |
+| Step 5.2 | Subdivision ZSD901 in PeopleXD |
+| Step 5.3 | Level 4 Z90101 in PeopleXD |
+| Step 5.4 | Management Units Z901 and Z902 in PeopleXD |
 | Step 7b | Completed hierarchy with Company 90 added |
