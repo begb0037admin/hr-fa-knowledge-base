@@ -3,6 +3,7 @@
 
 Inputs:
   data/sharepoint-docs.json   260 SharePoint documents (title/summary/link metadata)
+  data/kevin-guides.json      Internally authored guides (Kevin's Guides)
   downloads/manifest.csv      output of access_group_scraper.py (optional)
   downloads/<module>/*.pdf    scraped help-centre PDFs (optional)
 
@@ -138,6 +139,21 @@ def load_deep_articles():
     return docs
 
 
+def load_kevin_guides():
+    """Read data/kevin-guides.json — internally authored guides."""
+    path = os.path.join(DATA, "kevin-guides.json")
+    if not os.path.exists(path):
+        print("No data/kevin-guides.json - skipping Kevin's Guides.")
+        return []
+    with open(path, encoding="utf-8") as fh:
+        guides = json.load(fh)
+    docs = []
+    for g in guides:
+        text = clean_text(g.pop("_text", ""))
+        docs.append({**g, "_text": text})
+    return docs
+
+
 def load_sharepoint_fulltext():
     """Full document text extracted by extract_sharepoint.py, if present."""
     path = os.path.join(DATA, "sharepoint-fulltext.json")
@@ -160,7 +176,7 @@ def main():
     sp_docs = load_sharepoint_docs()
     sp_fulltext = load_sharepoint_fulltext()
     sp_files = load_sharepoint_files()
-    ag_docs = load_scraped_docs() + load_deep_articles()
+    ag_docs = load_scraped_docs() + load_deep_articles() + load_kevin_guides()
 
     kb, index = [], []
     sp_full = sp_local = 0
@@ -200,7 +216,7 @@ def main():
     print(f"kb.json:       {len(kb)} documents "
           f"({len(sp_docs)} SharePoint of which {sp_full} full-text, "
           f"{sp_local} linked to the local library, "
-          f"{len(ag_docs)} help centre)")
+          f"{len(ag_docs)} help centre + Kevin's Guides)")
     print(f"kb-index.json: {len(index)} searchable chunks")
 
 
