@@ -4,9 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>HR FA Knowledge Base</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --oxford:#002147;--side:#0c1733;--side-2:#16244a;--side-text:#c9d4ea;--side-muted:#7d8db0;
+  --oxford:#002147;--side:#002147;--side-2:#0d3263;--side-text:#c9d4ea;--side-muted:#7d8db0;
   --bg:#f5f7fb;--surface:#fff;--text:#1d2433;--navy-text:#0d2a52;
   --muted:#5d6678;--hint:#8b93a5;--border:#dde2ec;--border-soft:#e8ecf4;
   --blue:#2f6fb8;--blue-soft:#e7f0fa;--blue-text:#1d4e85;
@@ -17,12 +20,12 @@
   --radius:9px;--radius-lg:13px;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 'Inter',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
 a{color:var(--blue)}
 .layout{display:flex;min-height:100vh}
 
-/* ── Sidebar ─────────────────────────────────────────── */
-.side{width:262px;flex-shrink:0;background:var(--side);color:var(--side-text);display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto}
+/* ── Sidebar ──────────────────────────────────────────────── */
+.side{width:340px;flex-shrink:0;background:var(--side);color:var(--side-text);display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto}
 .brand{display:flex;gap:12px;align-items:center;padding:22px 20px 16px}
 .crest{width:46px;height:46px;border-radius:50%;border:1.5px solid #3c4f7d;display:flex;align-items:center;justify-content:center;font-family:inherit;font-weight:600;font-size:17px;color:#dce6f7;background:radial-gradient(circle at 35% 30%,#1d2f5e,#0c1733)}
 .brand .t1{font-size:14px;font-weight:700;letter-spacing:.08em;color:#fff}
@@ -39,8 +42,8 @@ a{color:var(--blue)}
 .side .foot a{color:#9fc1f0;text-decoration:none}
 .side .foot a:hover{text-decoration:underline}
 
-/* ── Main ────────────────────────────────────────────── */
-.main{flex:1;min-width:0;padding:26px 34px 60px;max-width:1060px}
+/* ── Main ──────────────────────────────────────────────────── */
+.main{flex:1;min-width:0;padding:26px 34px 60px}
 .tophead{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:18px}
 .greet h1{margin:0;font-family:inherit;font-size:21px;font-weight:600;color:var(--navy-text)}
 .greet .date{color:var(--muted);font-size:13.5px;margin-top:3px}
@@ -54,7 +57,7 @@ button.mini{font-size:12px;padding:3px 10px;border:1px solid var(--border);backg
 button.mini:hover,a.mini:hover{background:var(--border-soft)}
 a.mini{font-size:12px;padding:3px 10px;border:1px solid var(--border);background:#fff;border-radius:999px;cursor:pointer;color:var(--navy-text);font-family:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:4px}
 
-/* ── Ask panel ───────────────────────────────────────── */
+/* ── Ask panel ──────────────────────────────────────────────── */
 .ask{background:var(--surface);border:1px solid var(--border-soft);border-left:4px solid var(--gold);border-radius:var(--radius-lg);padding:18px 20px;margin-bottom:24px;box-shadow:0 1px 3px rgba(13,42,82,.05)}
 .ask h2{margin:0 0 3px;font-family:inherit;font-size:16px;font-weight:600;color:var(--navy-text)}
 .ask .hint{font-size:12.5px;color:var(--muted);margin-bottom:12px}
@@ -105,7 +108,7 @@ a.mini{font-size:12px;padding:3px 10px;border:1px solid var(--border);background
 .docview-body h4{margin:10px 0 5px;font-size:13px;color:var(--navy-text)}
 .ask-err{background:#fdebea;color:#8c2722;font-size:13px;border-radius:8px;padding:10px 13px;margin-top:10px}
 
-/* ── Library ─────────────────────────────────────────── */
+/* ── Library ──────────────────────────────────────────────────── */
 .libhead{display:flex;align-items:baseline;gap:10px;margin:4px 0 12px}
 .libhead h2{margin:0;font-family:inherit;font-size:16px;font-weight:600;color:var(--navy-text)}
 .libhead .meta{font-size:12.5px;color:var(--hint);margin-left:auto}
@@ -137,7 +140,7 @@ input[type=text]:focus,select:focus{outline:none;border-color:var(--blue);box-sh
 mark{background:#ffedad;color:inherit;padding:0 1px;border-radius:2px}
 .loaderr{background:#fdebea;color:#8c2722;border-radius:var(--radius);padding:14px}
 
-/* ── Modal ───────────────────────────────────────────── */
+/* ── Modal ────────────────────────────────────────────────────── */
 .modal-backdrop{position:fixed;inset:0;background:rgba(4,12,30,.5);z-index:200;display:flex;align-items:center;justify-content:center}
 .modal{background:#fff;border-radius:var(--radius-lg);width:620px;max-width:96vw;max-height:92vh;overflow-y:auto;padding:24px 26px;box-shadow:0 12px 50px rgba(0,0,0,.3)}
 .modal h2{margin:0 0 16px;font-family:inherit;font-size:16px;font-weight:600;color:var(--navy-text)}
@@ -162,6 +165,22 @@ mark{background:#ffedad;color:inherit;padding:0 1px;border-radius:2px}
   .main{padding:20px 16px 50px}
   .controls{grid-template-columns:1fr 1fr}
 }
+
+/* ── Article pane ──────────────────────────────────────────────── */
+.art-pane{width:0;overflow:hidden;flex-shrink:0;transition:width .25s ease;background:var(--surface);border-left:1px solid var(--border);display:flex;flex-direction:column;height:100vh;position:sticky;top:0}
+.art-pane.open{width:440px}
+.art-head{background:var(--oxford);color:#fff;padding:13px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0}
+.art-head .art-title{flex:1;font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.art-head .art-close{background:none;border:none;color:#fff;font-size:18px;cursor:pointer;padding:0 2px;line-height:1;opacity:.8}
+.art-head .art-close:hover{opacity:1}
+.art-head .art-ext{color:#cfe0f7;font-size:12px;font-weight:400;text-decoration:none;flex-shrink:0}
+.art-head .art-ext:hover{text-decoration:underline}
+.art-body{flex:1;overflow-y:auto;padding:16px 18px;font-size:13.5px;color:var(--text)}
+.art-body p{margin:0 0 9px}
+.art-body ul,.art-body ol{margin:4px 0 10px;padding-left:22px}
+.art-body li{margin:3px 0}
+.art-body h4{margin:10px 0 5px;font-size:13px;color:var(--navy-text)}
+.art-tags{padding:12px 18px;border-top:1px solid var(--border-soft);font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:5px;flex-shrink:0}
 </style>
 </head>
 <body>
@@ -238,6 +257,16 @@ mark{background:#ffedad;color:inherit;padding:0 1px;border-radius:2px}
   <div class="toggles"><label><input type="checkbox" id="arc"> Show archived</label></div>
   <div id="out"></div>
 </main>
+
+<div class="art-pane" id="art-pane">
+  <div class="art-head">
+    <span class="art-title" id="art-title"></span>
+    <a class="art-ext" id="art-ext" target="_blank" rel="noopener">Open &rarr;</a>
+    <button class="art-close" id="art-close" title="Close">&times;</button>
+  </div>
+  <div class="art-body" id="art-body"></div>
+  <div class="art-tags" id="art-tags"></div>
+</div>
 </div>
 
 <!-- Add Document modal -->
@@ -426,6 +455,8 @@ function render(){
     let pdf = x.pdf?' <a class="mini" target="_blank" rel="noopener" href="'+esc(encodeURI(x.pdf))+'">PDF</a>':"";
     let copy = openHref?'<button class="mini" data-copy="'+esc(openHref)+'">Copy link</button>':"";
     let del = x._local?'<button class="mini" data-del="'+esc(x.f)+'">Remove</button>':"";
+    const baseIdx=BASE.indexOf(x);
+    let view=baseIdx>=0?'<button class="mini" data-art-idx="'+baseIdx+'">View</button>':"";
     const bits=[];
     if(x.m)bits.push("Modified "+esc(x.m));
     if(x.kb)bits.push(Math.round(x.kb)+" KB");
@@ -440,7 +471,7 @@ function render(){
       +"</div>"
       +"<h3>"+hl(x.t,q)+"</h3>"
       +(x.s?'<div class="summary">'+hl(x.s,q)+"</div>":"")
-      +'<div class="path-row">'+open+pdf+copy+del+"</div>"
+      +'<div class="path-row">'+view+open+pdf+copy+del+"</div>"
       +(bits.length?'<div class="meta-sm">'+bits.join(" · ")+"</div>":"")
       +"</div>";
   }).join("")+capNote;
@@ -451,6 +482,8 @@ Q("#tp").addEventListener("change",e=>{state.tp=e.target.value;render()});
 Q("#sort").addEventListener("change",e=>{state.sort=e.target.value;render()});
 Q("#arc").addEventListener("change",e=>{state.arc=e.target.checked;render()});
 Q("#out").addEventListener("click",e=>{
+  const ai=e.target.getAttribute("data-art-idx");
+  if(ai!=null){openArticlePane(parseInt(ai,10));return;}
   const cp=e.target.getAttribute("data-copy");
   if(cp){navigator.clipboard.writeText(cp).then(()=>{e.target.textContent="Copied ✓";setTimeout(()=>e.target.textContent="Copy link",1200)});return;}
   const dl=e.target.getAttribute("data-del");
@@ -571,6 +604,7 @@ async function ask(question){
     const text=(data.content&&data.content[0]&&data.content[0].text)||"(no answer returned)";
     HISTORY=HISTORY.concat([{role:"user",content:userMsg},{role:"assistant",content:text}]).slice(-8);
     let html=mdLite(text).replace(/\[(\d+)\]/g,'<a class="cite" href="#" data-cite="$1">[$1]</a>');
+    LAST_HITS=hits;
     let srcs="";
     if(hits.length){
       const seen=new Set();
@@ -579,7 +613,7 @@ async function ask(question){
         if(seen.has(key))return"";seen.add(key);
         let href=doc.p||(doc.pdf?encodeURI(doc.pdf):"#");
         if(/sharepoint\.com/i.test(href)&&!href.includes("?"))href+="?web=1";
-        return '<a target="_blank" rel="noopener" href="'+esc(href)+'"><span class="no">['+(i+1)+"]</span> "+esc(doc.t||"Untitled")+'<span class="where">'+esc(doc.tp||doc.src||"")+"</span></a>";
+        return '<a href="#" data-doc-idx="'+c.d+'"><span class="no">['+(i+1)+"]</span> "+esc(doc.t||"Untitled")+'<span class="where">'+esc(doc.tp||doc.src||"")+"</span><span style=\"margin-left:auto;font-size:11px;color:var(--hint)\">View</span></a>";
       }).join("")+"</div>";
     }
     LAST_ANSWER_SPOKEN = text.replace(/\[\d+\]/g,"").replace(/[#*`_]/g,"").replace(/\s+/g," ").trim();
@@ -597,6 +631,40 @@ Q("#ask-clear").addEventListener("click",()=>{
   ["convo-transcript","convo-docs"].forEach(id=>{const el=Q("#"+id);el.innerHTML="";el.classList.add("hidden");});
   if(window.speechSynthesis)speechSynthesis.cancel();
 });
+
+/* ── Article pane ───────────────────────────────────────────────────────── */
+let LAST_HITS=[];
+function openArticlePane(docIdx){
+  const doc=BASE[docIdx];
+  if(!doc)return;
+  const chunks=(LAST_HITS||[]).filter(c=>c.d===docIdx);
+  const text=(chunks.length?chunks.map(c=>c.x).join("\n\n"):(doc.s||"")).slice(0,8000);
+  const href=docHref(doc);
+  Q("#art-title").textContent=doc.t||"Untitled";
+  Q("#art-ext").href=href;
+  Q("#art-body").innerHTML=mdLite(text||(doc.s||"No content available."));
+  const tags=[doc.src,doc.tp,...(doc.sy||[])].filter(Boolean);
+  Q("#art-tags").innerHTML=tags.map(t=>'<span class="badge b-tp">'+esc(t)+'</span>').join(" ");
+  Q("#art-pane").classList.add("open");
+}
+function closeArticlePane(){Q("#art-pane").classList.remove("open");}
+Q("#art-close").addEventListener("click",closeArticlePane);
+
+/* Wire citation clicks ([1],[2]…) to article pane */
+Q("#thread").addEventListener("click",e=>{
+  const citeEl=e.target.closest("[data-cite]");
+  if(citeEl){
+    e.preventDefault();
+    const n=parseInt(citeEl.getAttribute("data-cite"),10)-1;
+    if(LAST_HITS[n]!=null)openArticlePane(LAST_HITS[n].d);
+    return;
+  }
+  const srcEl=e.target.closest(".srcs a[data-doc-idx]");
+  if(srcEl){
+    e.preventDefault();
+    openArticlePane(parseInt(srcEl.getAttribute("data-doc-idx"),10));
+  }
+},true);
 
 /* ── Voice input: ElevenLabs Scribe via the worker, Web Speech fallback ── */
 let RECORDING=false, MEDIA_REC=null, MEDIA_CHUNKS=[], WS_RECOG=null, USE_WS=false;
