@@ -42,6 +42,9 @@ Do NOT ask Kevin for a recap. HANDOVER.md is the recap.
 - AI must never invent content — always cite source documents
 - Secrets (ANTHROPIC_API_KEY, ELEVENLABS_API_KEY) live in Cloudflare Worker — never in repo
 
+## Effort Level Governance
+Before any task where higher effort is warranted, signal to Kevin: what the task is, why higher effort is needed, and an explicit request to raise the effort level. Wait — do not proceed until Kevin raises it. Signal when the high-effort phase is done; Kevin decides when to return to normal. Never change effort level unilaterally. See CONSTITUTION.md Section 10 (v2.0, 2026-06-27).
+
 ## Hard Rules
 - Never commit API keys or credentials
 - Verify index integrity against `data/kb.json` count after any pipeline run
