@@ -1,7 +1,7 @@
 # Handover — HR FA Knowledge Base
 
 **To:** Hope (taking over)
-**From:** the session of 10 June 2026
+**From:** the session of 10 June 2026 (updated 28 June 2026)
 **Owner:** Kevin (kevin.lelitte@admin.ox.ac.uk · GitHub `begb0037admin`)
 
 Everything you need to drive this project is in this file plus the repo
@@ -15,11 +15,29 @@ English (typed or spoken), the AI answers with steps and cites direct
 links. He should never have to navigate the library himself — that is the
 whole point.
 
-- **Live site:** https://begb0037admin.github.io/hr-fa-knowledge-base/
+- **Live site:** https://kb.lelitte.co.uk/ (custom domain — see below)
+- **Old site:** https://begb0037admin.github.io/hr-fa-knowledge-base/ (still works)
 - **Old site preserved at:** `legacy.html`
 - **AI proxy worker:** `hr-kb-ai` on Kevin's Cloudflare account
   (`https://hr-kb-ai.kevinlelitte.workers.dev`, baked into `index.html`
   as `DEFAULT_WORKER_URL`)
+
+## Custom domain (added 28 June 2026)
+
+`kb.lelitte.co.uk` is live via GitHub Pages + Cloudflare DNS.
+
+- **DNS:** CNAME record `kb → begb0037admin.github.io` in Cloudflare (DNS-only, grey cloud)
+- **GitHub Pages:** Custom domain set to `kb.lelitte.co.uk` in repo Settings → Pages (CNAME file in repo root)
+- **Worker CORS:** `ALLOWED_ORIGIN` environment variable on `hr-kb-ai.kevinlelitte.workers.dev` updated to `https://kb.lelitte.co.uk` (Plaintext type in Cloudflare Worker settings → Variables and Secrets)
+
+## Sidebar branding (updated 28 June 2026)
+
+The placeholder ✦ star has been replaced with the Oxford crest JPEG (same
+base64 data URI embedded in Command Centre and Work Inbox). Layout now
+matches CC: 80×80 crest, "University of" / "OXFORD" / "KNOWLEDGE BASE",
+border-bottom separator. The email address line was removed (not present
+in CC/WI). Change is on branch `claude/custom-domain-rollout-pjyrfw`,
+PR #13 — pending merge to main.
 
 ## Architecture (all in this repo)
 
@@ -48,35 +66,19 @@ whole point.
 
 ## Immediate next steps (in order)
 
-1. ~~SharePoint full text~~ **DONE 10 June 2026.** The 437 MB
-   `HR.Knowledge.Base.zip` is on the `sharepoint-docs` release; the
-   workflow extracted 249 docs (0 failures) and the index went from
-   3,406 to 7,230 chunks. The 10 docs without full text are shortcuts,
-   templates and spreadsheets — nothing of substance. The library is
-   now also mirrored under `library/` and every card links to the
-   Pages copy instead of SharePoint. To refresh after SharePoint
-   changes: re-export the library zip, replace the asset on the
-   release, re-run `index-sharepoint-docs.yml`.
-2. ~~ElevenLabs voice~~ **DONE 10 June 2026.** Worker deployed with
-   `/tts` (Flash v2.5) and `/stt` (Scribe v2); `ELEVENLABS_API_KEY`
-   secret added. Default voice is Kevin's chosen voice-library voice
-   `NTqGiNK8P02i66yY2GOH` (baked into `worker/worker.js`; it must stay
-   in "My voices" on his ElevenLabs account). The site also gained a
-   Copy button next to Listen on AI answers.
-3. ~~Rotate keys~~ **Kevin reports done 10 June 2026** (Anthropic key
-   from the screenshot, and the ElevenLabs key that passed through
-   chat). If anything voice- or chat-related 401s, stale worker
-   secrets are the first thing to check.
+1. ~~SharePoint full text~~ **DONE 10 June 2026.**
+2. ~~ElevenLabs voice~~ **DONE 10 June 2026.**
+3. ~~Rotate keys~~ **Kevin reports done 10 June 2026.**
 4. **Tier 2 voice agent — LIVE, two tools.** The Talk button runs
    ElevenLabs Conversational AI (SDK pinned 0.1.7, the AIMM pattern;
    see `reference/aimm.html`). The page registers two client tools:
    `search_knowledge_base(query)` and `show_document(number)`. Both
    must also be declared as Client tools on the agent at elevenlabs.io
-   → Agents, or she won't call them. Searches now render the top match
-   full-text into the on-screen document panel (`#convo-docs`) and the
-   live transcript of both sides goes to `#convo-transcript`, so Kevin
-   can read along and ask "tell me more about step 6".
-5. **Parked / future:** Scheduled refresh via `on: schedule`. The repo
+   → Agents, or she won't call them.
+5. ~~Custom domain~~ **DONE 28 June 2026.** `kb.lelitte.co.uk` live.
+6. ~~Oxford crest branding~~ **IN PROGRESS 28 June 2026.** PR #13 on
+   `claude/custom-domain-rollout-pjyrfw` — merge to main to go live.
+7. **Parked / future:** Scheduled refresh via `on: schedule`. The repo
    Actions secret `ACCESS_PASSWORD` is unused and can be deleted.
 
 ## How to operate
@@ -89,17 +91,12 @@ whole point.
   git fetch origin main
   git show origin/main:data/kb.json | python3 -c "import json,sys;d=json.load(sys.stdin);print(len(d))"
   ```
-  (A green run once shipped an index with no text in it — the
-  label-vs-slug bug, since fixed.)
-- **Pushing:** work on the session branch, ff-merge to main (Kevin
-  approved direct main pushes). The proxy throws transient 503s — retry
-  with backoff (2/4/8/16s). The workflows also commit to main, so fetch +
-  rebase before pushing.
+- **Pushing:** work on the session branch, ff-merge to main. The proxy throws transient 503s — retry
+  with backoff (2/4/8/16s). The workflows also commit to main, so fetch + rebase before pushing.
 - **The sandbox has no internet** (only git remote + GitHub MCP tools;
   WebFetch is blocked). Anything needing the web runs on GitHub Actions.
 - **GitHub MCP scope is this repo only.** To read another of Kevin's
-  repos, have him commit a copy into `reference/` (that's how
-  `reference/aimm.html` got here).
+  repos, have him commit a copy into `reference/`.
 
 ## Kevin — working style
 
