@@ -19,6 +19,10 @@ on:
         description: "Download individual PDF guides from the guide index articles"
         type: boolean
         default: true
+      guides_only:
+        description: "Skip help-centre loop, only run guide PDF harvest (~15 min instead of ~1 hr)"
+        type: boolean
+        default: false
       limit:
         description: "Max articles per help centre (0 = all)"
         type: string
@@ -60,7 +64,9 @@ jobs:
           if [ "${{ inputs.deep }}" = "true" ]; then
             ARGS="$ARGS --deep"
           fi
-          if [ "${{ inputs.guides }}" = "true" ]; then
+          if [ "${{ inputs.guides_only }}" = "true" ]; then
+            ARGS="$ARGS --guides-only"
+          elif [ "${{ inputs.guides }}" = "true" ]; then
             ARGS="$ARGS --guides"
           fi
           python scrapers/access_group_scraper.py $ARGS

@@ -355,8 +355,13 @@ def render_pdf(page, article_url: str, dest: Path, errors_path: Path) -> bool:
 
 
 def harvest_guide_pdfs(page, context, guide_index_articles, out_root, errors_path, limit=0):
-    """Visit each guide index article, extract guide links from the table's
-    first column, follow each to its article page, and download the PDF."""
+    """Visit each guide index article, extract guide links from the article body,
+    follow each to its article page, and download the PDF.
+
+    Finds any link within the <article> element that points to a
+    theaccessgroup.com /articles/ page, regardless of surrounding HTML
+    structure (list, table, paragraph, etc.).
+    """
     rows = []
     for module, index_url in guide_index_articles:
         print(f"\n=== Guide PDFs: {module} ===")
@@ -368,21 +373,34 @@ def harvest_guide_pdfs(page, context, guide_index_articles, out_root, errors_pat
         except PWTimeoutError:
             log_error(errors_path, f"Guide index timed out: {index_url}")
             continue
+
+        # Diagnostic: log total links found in article body before filtering.
+        all_article_links = page.query_selector_all("article a[href]")
+        print(f"  {len(all_article_links)} total link(s) in article body")
+
         guide_links: list[tuple[str, str]] = []
         seen: set[str] = set()
-        for a in page.query_selector_all("article table td:first-child a[href]"):
+        for a in all_article_links:
             href = a.get_attribute("href") or ""
             if not href or href.startswith(("#", "mailto:", "javascript:")):
                 continue
             url = urljoin(index_url, href).split("?")[0].split("#")[0]
+            parsed = urlparse(url)
+            # Only follow links to help centre article pages on any Access Group subdomain.
+            if "theaccessgroup.com" not in parsed.netloc:
+                continue
+            if "/articles/" not in parsed.path:
+                continue
             title = (a.inner_text() or "").strip()
             if not title or len(title) < 2 or url in seen:
                 continue
             seen.add(url)
             guide_links.append((title, url))
-        print(f"  {len(guide_links)} guide(s) found")
+
+        print(f"  {len(guide_links)} guide article link(s) after filtering")
         if limit:
             guide_links = guide_links[:limit]
+
         for guide_title, guide_url in guide_links:
             base = "GUIDE_" + sanitise_filename(guide_title)
             pdf_url = find_pdf_url(page, guide_url, errors_path)
@@ -431,6 +449,9 @@ def parse_args() -> argparse.Namespace:
                         "every individual article into articles.json.")
     p.add_argument("--guides", action="store_true",
                    help="Download individual PDF guides from the guide index articles.")
+    p.add_argument("--guides-only", action="store_true",
+                   help="Skip the help-centre loop; only run the guide PDF harvest. "
+                        "Implies --guides.")
     p.add_argument("--limit", type=int, default=0,
                    help="Process at most N articles per centre (0 = no limit).")
     return p.parse_args()
@@ -438,6 +459,8 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
+    if args.guides_only:
+        args.guides = True
 
     password = os.environ.get("ACCESS_PASSWORD")
     if not password and not args.no_login:
@@ -472,65 +495,66 @@ def main() -> int:
                           "Login failed. Continuing unauthenticated; gated content "
                           "may be unavailable. Re-run with --no-login to silence this.")
 
-        for module, homepage, subfolder in HELP_CENTRES:
-            print(f"\n=== {module} ===")
-            folder = out_root / subfolder
-            folder.mkdir(parents=True, exist_ok=True)
+        if not args.guides_only:
+            for module, homepage, subfolder in HELP_CENTRES:
+                print(f"\n=== {module} ===")
+                folder = out_root / subfolder
+                folder.mkdir(parents=True, exist_ok=True)
 
-            links = collect_article_links(page, homepage, errors_path)
-            if args.limit:
-                links = links[: args.limit]
-            print(f"  {len(links)} candidate article link(s) found.")
-            stats.found += len(links)
+                links = collect_article_links(page, homepage, errors_path)
+                if args.limit:
+                    links = links[: args.limit]
+                print(f"  {len(links)} candidate article link(s) found.")
+                stats.found += len(links)
 
-            if args.deep:
-                arts = harvest_article_texts(page, links, errors_path, args.limit)
-                for art in arts:
-                    art["module"] = module
-                all_articles.extend(arts)
-                stats.harvested += len(arts)
-                print(f"  {len(arts)} individual article(s) harvested.")
+                if args.deep:
+                    arts = harvest_article_texts(page, links, errors_path, args.limit)
+                    for art in arts:
+                        art["module"] = module
+                    all_articles.extend(arts)
+                    stats.harvested += len(arts)
+                    print(f"  {len(arts)} individual article(s) harvested.")
 
-            for title, url in links:
-                base = sanitise_filename(title)
-                pdf_url = find_pdf_url(page, url, errors_path)
+                for title, url in links:
+                    base = sanitise_filename(title)
+                    pdf_url = find_pdf_url(page, url, errors_path)
 
-                if not pdf_url:
-                    if args.print_fallback:
-                        dest = unique_path(folder, base, ".pdf")
-                        ok = render_pdf(page, url, dest, errors_path)
-                        if ok:
-                            stats.downloaded += 1
-                            stats.rows.append(ManifestRow(
-                                title, module, dest.name, url, "yes",
-                                "rendered from page (no PDF link)"))
+                    if not pdf_url:
+                        if args.print_fallback:
+                            dest = unique_path(folder, base, ".pdf")
+                            ok = render_pdf(page, url, dest, errors_path)
+                            if ok:
+                                stats.downloaded += 1
+                                stats.rows.append(ManifestRow(
+                                    title, module, dest.name, url, "yes",
+                                    "rendered from page (no PDF link)"))
+                            else:
+                                stats.failed += 1
+                                stats.rows.append(ManifestRow(
+                                    title, module, "", url, "no", "print-fallback failed"))
                         else:
-                            stats.failed += 1
+                            stats.skipped += 1
                             stats.rows.append(ManifestRow(
-                                title, module, "", url, "no", "print-fallback failed"))
-                    else:
-                        stats.skipped += 1
-                        stats.rows.append(ManifestRow(
-                            title, module, "", url, "no", "no PDF link found"))
-                        print(f"  - skip (no PDF): {title}")
-                    continue
+                                title, module, "", url, "no", "no PDF link found"))
+                            print(f"  - skip (no PDF): {title}")
+                        continue
 
-                dest = unique_path(folder, base, ".pdf")
-                ok = download_via_session(context, pdf_url, dest, errors_path)
-                if not ok:
-                    time.sleep(2)  # retry once after a short pause
+                    dest = unique_path(folder, base, ".pdf")
                     ok = download_via_session(context, pdf_url, dest, errors_path)
+                    if not ok:
+                        time.sleep(2)  # retry once after a short pause
+                        ok = download_via_session(context, pdf_url, dest, errors_path)
 
-                if ok:
-                    stats.downloaded += 1
-                    stats.rows.append(ManifestRow(
-                        title, module, dest.name, url, "yes", ""))
-                    print(f"  + {dest.name}")
-                else:
-                    stats.failed += 1
-                    stats.rows.append(ManifestRow(
-                        title, module, "", url, "no",
-                        f"download failed after retry ({pdf_url})"))
+                    if ok:
+                        stats.downloaded += 1
+                        stats.rows.append(ManifestRow(
+                            title, module, dest.name, url, "yes", ""))
+                        print(f"  + {dest.name}")
+                    else:
+                        stats.failed += 1
+                        stats.rows.append(ManifestRow(
+                            title, module, "", url, "no",
+                            f"download failed after retry ({pdf_url})"))
 
         if args.guides:
             guide_rows = harvest_guide_pdfs(
@@ -544,7 +568,7 @@ def main() -> int:
         browser.close()
 
     write_manifest(manifest_path, stats.rows)
-    if args.deep:
+    if args.deep and all_articles:
         (out_root / "articles.json").write_text(
             json.dumps(all_articles, ensure_ascii=False), encoding="utf-8")
 
