@@ -72,6 +72,21 @@ HELP_CENTRES = [
     ("Cross-module",         "https://help-peoplexd.theaccessgroup.com/en",                    "cross-module"),
 ]
 
+# Guide index articles: one per module, each listing downloadable PDF guides.
+GUIDE_INDEX_ARTICLES = [
+    ("People Management",    "https://help-peoplexd.theaccessgroup.com/en/articles/12857001-peoplexd-people-management-user-guides"),
+    ("Payroll",              "https://help-peoplexd.theaccessgroup.com/en/articles/12843859-peoplexd-payroll-user-guides"),
+    ("Cross-module",         "https://help-peoplexd.theaccessgroup.com/en/articles/12856528-peoplexd-cross-product-user-guides"),
+    ("Cross-module",         "https://help-peoplexd.theaccessgroup.com/en/articles/12856633-peoplexd-insight-user-guides"),
+    ("Cross-module",         "https://help-peoplexd.theaccessgroup.com/en/articles/12856679-peoplexd-pay-planner-user-guides"),
+    ("Cross-module",         "https://help-peoplexd.theaccessgroup.com/en/articles/12856949-peoplexd-people-analytics-and-evo-user-guides"),
+    ("Recruitment",          "https://help-peoplexd.theaccessgroup.com/en/articles/12859644-peoplexd-recruitment-user-guides"),
+    ("Talent",               "https://help-peoplexd.theaccessgroup.com/en/articles/12859690-peoplexd-talent-user-guides"),
+    ("Workforce Management", "https://help-peoplexd.theaccessgroup.com/en/articles/12867325-peoplexd-workforce-management-user-guides"),
+    ("Expense",              "https://help-peoplexd.theaccessgroup.com/en/articles/12953371-peoplexd-expense-user-guides"),
+    ("Pension",              "https://help-peoplexd.theaccessgroup.com/en/articles/12953173-peoplexd-pension-user-guides"),
+]
+
 DEFAULT_OUTPUT = r"C:\Users\admin\Documents\Claude\Projects\hr-knowledge-base\downloads"
 
 NAV_TIMEOUT_MS = 45_000
@@ -118,6 +133,11 @@ def sanitise_filename(title: str, max_len: int = 150) -> str:
     if len(name) > max_len:
         name = name[:max_len].rstrip(". ")
     return name
+
+
+def module_slug(label: str) -> str:
+    """Convert a module label to a download subfolder name."""
+    return label.lower().replace(" ", "-")
 
 
 def unique_path(folder: Path, base: str, ext: str) -> Path:
@@ -334,6 +354,55 @@ def render_pdf(page, article_url: str, dest: Path, errors_path: Path) -> bool:
         return False
 
 
+def harvest_guide_pdfs(page, context, guide_index_articles, out_root, errors_path, limit=0):
+    """Visit each guide index article, extract guide links from the table's
+    first column, follow each to its article page, and download the PDF."""
+    rows = []
+    for module, index_url in guide_index_articles:
+        print(f"\n=== Guide PDFs: {module} ===")
+        folder = out_root / module_slug(module)
+        folder.mkdir(parents=True, exist_ok=True)
+        try:
+            page.goto(index_url, timeout=NAV_TIMEOUT_MS, wait_until="domcontentloaded")
+            page.wait_for_timeout(RENDER_SETTLE_MS)
+        except PWTimeoutError:
+            log_error(errors_path, f"Guide index timed out: {index_url}")
+            continue
+        guide_links: list[tuple[str, str]] = []
+        seen: set[str] = set()
+        for a in page.query_selector_all("article table td:first-child a[href]"):
+            href = a.get_attribute("href") or ""
+            if not href or href.startswith(("#", "mailto:", "javascript:")):
+                continue
+            url = urljoin(index_url, href).split("?")[0].split("#")[0]
+            title = (a.inner_text() or "").strip()
+            if not title or len(title) < 2 or url in seen:
+                continue
+            seen.add(url)
+            guide_links.append((title, url))
+        print(f"  {len(guide_links)} guide(s) found")
+        if limit:
+            guide_links = guide_links[:limit]
+        for guide_title, guide_url in guide_links:
+            base = "GUIDE_" + sanitise_filename(guide_title)
+            pdf_url = find_pdf_url(page, guide_url, errors_path)
+            if not pdf_url:
+                log_error(errors_path, f"No PDF for guide: {guide_title} ({guide_url})")
+                rows.append(ManifestRow(guide_title, module, "", guide_url, "no", "guide: no PDF link"))
+                continue
+            dest = unique_path(folder, base, ".pdf")
+            ok = download_via_session(context, pdf_url, dest, errors_path)
+            if not ok:
+                time.sleep(2)
+                ok = download_via_session(context, pdf_url, dest, errors_path)
+            if ok:
+                rows.append(ManifestRow(guide_title, module, dest.name, guide_url, "yes", "guide PDF"))
+                print(f"  + {dest.name}")
+            else:
+                rows.append(ManifestRow(guide_title, module, "", guide_url, "no", "guide: download failed"))
+    return rows
+
+
 def write_manifest(manifest_path: Path, rows: list[ManifestRow]) -> None:
     with manifest_path.open("w", encoding="utf-8", newline="") as fh:
         writer = csv.writer(fh)
@@ -360,6 +429,8 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--deep", action="store_true",
                    help="Follow collection pages and harvest the full text of "
                         "every individual article into articles.json.")
+    p.add_argument("--guides", action="store_true",
+                   help="Download individual PDF guides from the guide index articles.")
     p.add_argument("--limit", type=int, default=0,
                    help="Process at most N articles per centre (0 = no limit).")
     return p.parse_args()
@@ -460,6 +531,14 @@ def main() -> int:
                     stats.rows.append(ManifestRow(
                         title, module, "", url, "no",
                         f"download failed after retry ({pdf_url})"))
+
+        if args.guides:
+            guide_rows = harvest_guide_pdfs(
+                page, context, GUIDE_INDEX_ARTICLES,
+                out_root, errors_path, args.limit)
+            stats.rows.extend(guide_rows)
+            stats.downloaded += sum(1 for r in guide_rows if r.downloaded == "yes")
+            stats.failed += sum(1 for r in guide_rows if r.downloaded == "no")
 
         context.close()
         browser.close()
