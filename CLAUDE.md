@@ -50,6 +50,7 @@ Before any task where higher effort is warranted, signal to Kevin: what the task
 - Verify index integrity against `data/kb.json` count after any pipeline run
 - Always update HANDOVER.md at end of session
 - GitHub is the only working surface
+- All mockups and visual designs are produced as Claude Artifacts — never committed to the repository (see CONSTITUTION.md Section 11)
 
 ## Branch and Merge Protocol
 Always push directly to main. If a branch must be used, merge it to main immediately upon completion — never leave files on a branch.
