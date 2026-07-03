@@ -15,12 +15,16 @@
  *                         voice-library voice, NTqGiNK8P02i66yY2GOH)
  *   KB_ACCESS_TOKEN      (secret, optional — requests must send it in the
  *                         X-KB-Token header if set)
- *   ALLOWED_ORIGIN       (var, optional — defaults to the GitHub Pages site)
+ *   ALLOWED_ORIGIN       (var, optional — comma-separated list of allowed
+ *                         origins; defaults to the GitHub Pages site)
  *   MODEL                (var, optional — defaults to claude-sonnet-4-6)
  */
 export default {
   async fetch(request, env) {
-    const origin = env.ALLOWED_ORIGIN || "https://begb0037admin.github.io";
+    const allowed = (env.ALLOWED_ORIGIN || "https://begb0037admin.github.io")
+      .split(",").map(s => s.trim());
+    const reqOrigin = request.headers.get("Origin") || "";
+    const origin = allowed.includes(reqOrigin) ? reqOrigin : allowed[0];
     const cors = {
       "Access-Control-Allow-Origin": origin,
       "Access-Control-Allow-Methods": "POST, OPTIONS",
