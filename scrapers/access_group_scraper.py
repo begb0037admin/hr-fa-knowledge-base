@@ -355,13 +355,16 @@ def render_pdf(page, article_url: str, dest: Path, errors_path: Path) -> bool:
 
 
 def harvest_guide_pdfs(page, context, guide_index_articles, out_root, errors_path, limit=0):
-    """Visit each guide index article, extract guide links from the article body,
-    follow each to its article page, and download the PDF.
+    """Visit each guide index article, extract guide links, and download the PDF.
 
-    Finds any link within the <article> element that points to a
-    theaccessgroup.com /articles/ page, regardless of surrounding HTML
-    structure (list, table, paragraph, etc.).
+    Accepts Salesforce-hosted PDFs (direct download) and theaccessgroup.com
+    article pages (follow page → find PDF anchor). Salesforce signed URLs are
+    preserved in full so their query strings are not stripped before download.
     """
+    guide_index_url_set = {
+        url.split("?")[0].split("#")[0].rstrip("/") for _, url in guide_index_articles
+    }
+
     rows = []
     for module, index_url in guide_index_articles:
         print(f"\n=== Guide PDFs: {module} ===")
@@ -374,9 +377,15 @@ def harvest_guide_pdfs(page, context, guide_index_articles, out_root, errors_pat
             log_error(errors_path, f"Guide index timed out: {index_url}")
             continue
 
-        # Diagnostic: log total links found in article body before filtering.
         all_article_links = page.query_selector_all("article a[href]")
         print(f"  {len(all_article_links)} total link(s) in article body")
+
+        for a in all_article_links:
+            href = a.get_attribute("href") or ""
+            if href and not href.startswith(("#", "mailto:", "javascript:")):
+                full = urljoin(index_url, href)
+                parsed_d = urlparse(full)
+                print(f"  DIAG: {parsed_d.netloc} | pdf={'.pdf' in href.lower()} | {(a.inner_text() or '').strip()[:50]!r}")
 
         guide_links: list[tuple[str, str]] = []
         seen: set[str] = set()
@@ -384,40 +393,75 @@ def harvest_guide_pdfs(page, context, guide_index_articles, out_root, errors_pat
             href = a.get_attribute("href") or ""
             if not href or href.startswith(("#", "mailto:", "javascript:")):
                 continue
-            url = urljoin(index_url, href).split("?")[0].split("#")[0]
-            parsed = urlparse(url)
-            # Only follow links to help centre article pages on any Access Group subdomain.
-            if "theaccessgroup.com" not in parsed.netloc:
-                continue
-            if "/articles/" not in parsed.path:
-                continue
-            title = (a.inner_text() or "").strip()
-            if not title or len(title) < 2 or url in seen:
-                continue
-            seen.add(url)
-            guide_links.append((title, url))
 
-        print(f"  {len(guide_links)} guide article link(s) after filtering")
+            full_url = urljoin(index_url, href)                            # preserve query string
+            normalized = full_url.split("?")[0].split("#")[0].rstrip("/")  # dedup/exclusion only
+
+            if normalized in guide_index_url_set:                          # block cross-ref index pages
+                continue
+
+            parsed = urlparse(full_url)                                    # re-parse full_url (not normalized)
+            host = parsed.netloc.lower()
+
+            is_pdf_link = ".pdf" in href.lower()
+            is_guide_domain = (
+                host == "accessgroup.my.salesforce.com"
+                or host == "theaccessgroup.com"
+                or host.endswith(".theaccessgroup.com")
+            )
+            if not (is_pdf_link or is_guide_domain):
+                continue
+
+            title = (a.inner_text() or "").strip()
+            if not title or len(title) < 2:
+                continue
+            if normalized in seen:
+                continue
+            seen.add(normalized)
+            guide_links.append((title, full_url))                          # full_url preserves query string
+
+        print(f"  {len(guide_links)} guide link(s) after filtering")
         if limit:
             guide_links = guide_links[:limit]
 
         for guide_title, guide_url in guide_links:
             base = "GUIDE_" + sanitise_filename(guide_title)
-            pdf_url = find_pdf_url(page, guide_url, errors_path)
-            if not pdf_url:
-                log_error(errors_path, f"No PDF for guide: {guide_title} ({guide_url})")
-                rows.append(ManifestRow(guide_title, module, "", guide_url, "no", "guide: no PDF link"))
-                continue
-            dest = unique_path(folder, base, ".pdf")
-            ok = download_via_session(context, pdf_url, dest, errors_path)
-            if not ok:
-                time.sleep(2)
-                ok = download_via_session(context, pdf_url, dest, errors_path)
-            if ok:
-                rows.append(ManifestRow(guide_title, module, dest.name, guide_url, "yes", "guide PDF"))
-                print(f"  + {dest.name}")
+            parsed_guide = urlparse(guide_url)
+            host_guide = parsed_guide.netloc.lower()
+
+            is_direct = (
+                ".pdf" in guide_url.lower()
+                or host_guide == "accessgroup.my.salesforce.com"
+            )
+
+            if is_direct:
+                dest = unique_path(folder, base, ".pdf")
+                ok = download_via_session(context, guide_url, dest, errors_path)
+                if ok and dest.read_bytes()[:4] != b"%PDF":
+                    dest.unlink()
+                    log_error(errors_path, f"Response is not a PDF: {guide_url}")
+                    ok = False
+                if ok:
+                    rows.append(ManifestRow(guide_title, module, dest.name, guide_url, "yes", "guide PDF (direct)"))
+                    print(f"  + {dest.name}")
+                else:
+                    rows.append(ManifestRow(guide_title, module, "", guide_url, "no", "guide: direct download failed"))
             else:
-                rows.append(ManifestRow(guide_title, module, "", guide_url, "no", "guide: download failed"))
+                pdf_url = find_pdf_url(page, guide_url, errors_path)
+                if not pdf_url:
+                    log_error(errors_path, f"No PDF for guide: {guide_title} ({guide_url})")
+                    rows.append(ManifestRow(guide_title, module, "", guide_url, "no", "guide: no PDF link"))
+                    continue
+                dest = unique_path(folder, base, ".pdf")
+                ok = download_via_session(context, pdf_url, dest, errors_path)
+                if not ok:
+                    time.sleep(2)
+                    ok = download_via_session(context, pdf_url, dest, errors_path)
+                if ok:
+                    rows.append(ManifestRow(guide_title, module, dest.name, guide_url, "yes", "guide PDF (via page)"))
+                    print(f"  + {dest.name}")
+                else:
+                    rows.append(ManifestRow(guide_title, module, "", guide_url, "no", "guide: download failed"))
     return rows
 
 
