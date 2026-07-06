@@ -27,6 +27,10 @@ on:
         description: "Max articles per help centre (0 = all)"
         type: string
         default: "0"
+      diagnostic:
+        description: "Diagnostic run: guides-only, limit=1, output to downloads_diag — skips index build and commit, safe to run any time"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -54,30 +58,36 @@ jobs:
           ACCESS_PASSWORD: ${{ secrets.ACCESS_PASSWORD }}
           ACCESS_USERNAME: ${{ secrets.ACCESS_USERNAME }}
         run: |
-          ARGS="--output downloads --limit ${{ inputs.limit }}"
-          if [ "${{ inputs.login }}" != "true" ]; then
-            ARGS="$ARGS --no-login"
+          if [ "${{ inputs.diagnostic }}" = "true" ]; then
+            python scrapers/access_group_scraper.py \
+              --no-login --guides-only --limit 1 --output downloads_diag
+          else
+            ARGS="--output downloads --limit ${{ inputs.limit }}"
+            if [ "${{ inputs.login }}" != "true" ]; then
+              ARGS="$ARGS --no-login"
+            fi
+            if [ "${{ inputs.print_fallback }}" = "true" ]; then
+              ARGS="$ARGS --print-fallback"
+            fi
+            if [ "${{ inputs.deep }}" = "true" ]; then
+              ARGS="$ARGS --deep"
+            fi
+            if [ "${{ inputs.guides_only }}" = "true" ]; then
+              ARGS="$ARGS --guides-only"
+            elif [ "${{ inputs.guides }}" = "true" ]; then
+              ARGS="$ARGS --guides"
+            fi
+            python scrapers/access_group_scraper.py $ARGS
           fi
-          if [ "${{ inputs.print_fallback }}" = "true" ]; then
-            ARGS="$ARGS --print-fallback"
-          fi
-          if [ "${{ inputs.deep }}" = "true" ]; then
-            ARGS="$ARGS --deep"
-          fi
-          if [ "${{ inputs.guides_only }}" = "true" ]; then
-            ARGS="$ARGS --guides-only"
-          elif [ "${{ inputs.guides }}" = "true" ]; then
-            ARGS="$ARGS --guides"
-          fi
-          python scrapers/access_group_scraper.py $ARGS
 
       - name: Build knowledge-base index
+        if: ${{ !inputs.diagnostic }}
         run: |
           pip install pypdf
           python scrapers/build_index.py
 
       - name: Commit refreshed data to the repository
-        if: github.ref == 'refs/heads/main'
+        if: ${{ github.ref == 'refs/heads/main' && !inputs.diagnostic }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -95,6 +105,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: peoplexd-help-centre-pdfs
-          path: downloads/
+          path: ${{ inputs.diagnostic && 'downloads_diag/' || 'downloads/' }}
           retention-days: 90
           if-no-files-found: warn
