@@ -341,6 +341,59 @@ def download_via_session(context, url: str, dest: Path, errors_path: Path) -> bo
         return False
 
 
+def download_salesforce_via_page(page, context, url: str, dest: Path, errors_path: Path) -> bool:
+    """Navigate the browser to a Salesforce file viewer and capture the PDF download.
+
+    Unlike download_via_session(), this drives the full browser so JavaScript
+    renders, session cookies are sent natively, and the viewer UI is available.
+    Dumps interactive elements to stdout for diagnostic visibility.
+    """
+    try:
+        page.goto(url, timeout=NAV_TIMEOUT_MS, wait_until="domcontentloaded")
+        page.wait_for_timeout(RENDER_SETTLE_MS)
+    except PWTimeoutError:
+        log_error(errors_path, f"Salesforce page timed out: {url}")
+        return False
+
+    print(f"  SF landed: {page.url}")
+    for el in page.query_selector_all("button, a[href]")[:30]:
+        text  = (el.inner_text() or "").strip()[:60]
+        title = el.get_attribute("title") or ""
+        aria  = el.get_attribute("aria-label") or ""
+        href  = (el.get_attribute("href") or "")[:80]
+        if text or title or aria:
+            print(f"    EL: {text!r} | title={title!r} | aria={aria!r} | href={href!r}")
+
+    for sel in [
+        "button[title='Download']",
+        "button[aria-label='Download']",
+        "a[title='Download']",
+        "button:has-text('Download')",
+        "a:has-text('Download')",
+        "a[download]",
+    ]:
+        btn = page.query_selector(sel)
+        if btn:
+            try:
+                with page.expect_download(timeout=30_000) as dl_info:
+                    btn.click()
+                dl_info.value.save_as(str(dest))
+                print(f"  Download captured via: {sel!r}")
+                return True
+            except Exception as exc:
+                log_error(errors_path, f"Download click failed ({sel}): {exc}")
+
+    for a in page.query_selector_all("a[href]"):
+        href = a.get_attribute("href") or ""
+        if ".pdf" in href.lower():
+            pdf_url = urljoin(url, href)
+            print(f"  Fallback PDF link: {pdf_url[:120]}")
+            return download_via_session(context, pdf_url, dest, errors_path)
+
+    log_error(errors_path, f"No download mechanism found on Salesforce page: {url}")
+    return False
+
+
 def render_pdf(page, article_url: str, dest: Path, errors_path: Path) -> bool:
     """Fallback: render the current article page to a PDF (headless only)."""
     try:
@@ -436,8 +489,8 @@ def harvest_guide_pdfs(page, context, guide_index_articles, out_root, errors_pat
 
             if is_direct:
                 dest = unique_path(folder, base, ".pdf")
-                ok = download_via_session(context, guide_url, dest, errors_path)
-                if ok and dest.read_bytes()[:4] != b"%PDF":
+                ok = download_salesforce_via_page(page, context, guide_url, dest, errors_path)
+                if ok and dest.exists() and dest.read_bytes()[:4] != b"%PDF":
                     dest.unlink()
                     log_error(errors_path, f"Response is not a PDF: {guide_url}")
                     ok = False
