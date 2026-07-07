@@ -198,6 +198,8 @@ mark{background:#ffedad;color:inherit;padding:0 1px;border-radius:2px}
   </div>
   <div class="sec">LIBRARY</div>
   <ul class="snav" id="nav-src"></ul>
+  <div class="sec">STEP-BY-STEP GUIDES</div>
+  <ul class="snav" id="nav-guides"></ul>
   <div class="sec">PEOPLEXD HELP CENTRES</div>
   <ul class="snav" id="nav-mod"></ul>
   <div class="foot">
@@ -343,7 +345,7 @@ const esc = s => String(s||"").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",
 
 /* ════════ Data loading ════════ */
 let BASE=[], LOCAL=[], D=[];
-const state={q:"",src:"all",tp:"all",sort:"m-desc",arc:false,mod:"all"};
+const state={q:"",src:"all",tp:"all",sort:"m-desc",arc:false,mod:"all",pdfOnly:false};
 
 function loadLocal(){try{return JSON.parse(localStorage.getItem(LOCAL_KEY)||"[]")}catch{return[]}}
 function saveLocal(a){localStorage.setItem(LOCAL_KEY,JSON.stringify(a))}
@@ -389,9 +391,16 @@ function buildNav(){
   });
   Q("#nav-src").innerHTML=h;
 
+  const guideMods={};
+  D.filter(x=>x.e==="pdf").forEach(x=>guideMods[x.tp]=(guideMods[x.tp]||0)+1);
+  const totalGuides=D.filter(x=>x.e==="pdf").length;
+  let gh='<li data-guide-mod="all" class="'+(state.pdfOnly&&state.mod==="all"?"on":"")+'"><span class="dot" style="background:var(--blue)"></span>All step-by-step guides<span class="n">'+totalGuides+'</span></li>';
+  gh+=Object.keys(guideMods).sort().map(m=>'<li data-guide-mod="'+esc(m)+'" class="'+(state.pdfOnly&&state.mod===m?"on":"")+'"><span class="dot" style="background:var(--blue)"></span>'+esc(m)+'<span class="n">'+guideMods[m]+'</span></li>').join("");
+  Q("#nav-guides").innerHTML=gh;
+
   const mods={};
   D.filter(x=>x.src==="Access Group Help Centre").forEach(x=>mods[x.tp]=(mods[x.tp]||0)+1);
-  const mh=Object.keys(mods).sort().map(m=>'<li data-mod="'+esc(m)+'" class="'+(state.mod===m?"on":"")+'"><span class="dot" style="background:var(--gold)"></span>'+esc(m)+'<span class="n">'+mods[m]+'</span></li>').join("");
+  const mh=Object.keys(mods).sort().map(m=>'<li data-mod="'+esc(m)+'" class="'+(state.mod===m&&!state.pdfOnly?"on":"")+'"><span class="dot" style="background:var(--gold)"></span>'+esc(m)+'<span class="n">'+mods[m]+'</span></li>').join("");
   Q("#nav-mod").innerHTML = mh || '<li style="color:var(--side-muted);cursor:default">Run the refresh to import articles</li>';
 
   const last = D.map(x=>x.m||"").sort().pop()||"—";
@@ -399,12 +408,17 @@ function buildNav(){
 }
 Q("#nav-src").addEventListener("click",e=>{
   const li=e.target.closest("li[data-src]"); if(!li)return;
-  state.src=li.getAttribute("data-src"); state.mod="all";
+  state.src=li.getAttribute("data-src"); state.mod="all"; state.pdfOnly=false;
   Q("#src").value=state.src; buildNav(); render();
+});
+Q("#nav-guides").addEventListener("click",e=>{
+  const li=e.target.closest("li[data-guide-mod]"); if(!li)return;
+  state.pdfOnly=true; state.mod=li.getAttribute("data-guide-mod"); state.src="Access Group Help Centre"; state.tp="all";
+  Q("#src").value=state.src; Q("#tp").value="all"; buildNav(); render();
 });
 Q("#nav-mod").addEventListener("click",e=>{
   const li=e.target.closest("li[data-mod]"); if(!li)return;
-  state.mod=li.getAttribute("data-mod"); state.src="Access Group Help Centre"; state.tp="all";
+  state.pdfOnly=false; state.mod=li.getAttribute("data-mod"); state.src="Access Group Help Centre"; state.tp="all";
   Q("#src").value=state.src; Q("#tp").value="all"; buildNav(); render();
 });
 
@@ -426,6 +440,7 @@ function filt(){
   const q=state.q.trim().toLowerCase(), tk=q?q.split(/\s+/).filter(Boolean):[];
   let r=D.filter(x=>{
     if(state.src!=="all"&&x.src!==state.src)return false;
+    if(state.pdfOnly&&x.e!=="pdf")return false;
     if(state.mod!=="all"&&x.tp!==state.mod)return false;
     if(state.tp!=="all"&&x.tp!==state.tp)return false;
     if(!state.arc&&/\(Archive\)$/i.test(x.tp))return false;
