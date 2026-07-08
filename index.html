@@ -176,14 +176,6 @@ mark{background:#ffedad;color:inherit;padding:0 1px;border-radius:2px}
 .art-head .art-close:hover{opacity:1}
 .art-head .art-ext{color:#cfe0f7;font-size:12px;font-weight:400;text-decoration:none;flex-shrink:0}
 .art-head .art-ext:hover{text-decoration:underline}
-.art-viewer{flex:1;min-height:0;position:relative;overflow:hidden;display:none}
-.art-viewer.vis{display:block}
-.art-iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
-.art-iframe-blocked{flex:1;display:none;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;gap:12px;color:var(--muted);font-size:13px}
-.art-iframe-blocked.vis{display:flex}
-.art-open-fallback{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;flex:1;padding:24px;text-align:center}
-.art-open-fallback .btn-open-pdf{display:inline-flex;align-items:center;gap:8px;background:var(--oxford);color:#fff;padding:12px 22px;border-radius:var(--radius);font-size:14px;font-weight:600;text-decoration:none}
-.art-open-fallback .hint{font-size:12px;color:var(--muted)}
 .art-body{flex:1;overflow-y:auto;padding:16px 18px;font-size:13.5px;color:var(--text)}
 .art-body p{margin:0 0 9px}
 .art-body ul,.art-body ol{margin:4px 0 10px;padding-left:22px}
@@ -275,18 +267,6 @@ mark{background:#ffedad;color:inherit;padding:0 1px;border-radius:2px}
     <span class="art-title" id="art-title"></span>
     <a class="art-ext" id="art-ext" target="_blank" rel="noopener">Open in browser &#8599;</a>
     <button class="art-close" id="art-close" title="Close">&times;</button>
-  </div>
-  <div class="art-viewer" id="art-viewer">
-    <iframe class="art-iframe" id="art-iframe" title="Document viewer"></iframe>
-  </div>
-  <div class="art-open-fallback" id="art-open-fallback" style="display:none">
-    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--oxford)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-    <a class="btn-open-pdf" id="art-open-btn" href="#" target="_blank" rel="noopener">Open PDF ↗</a>
-    <span class="hint">PDF viewing in-panel isn't supported on this device.<br>Opens in your browser's PDF viewer.</span>
-  </div>
-  <div class="art-iframe-blocked" id="art-iframe-blocked">
-    <span style="font-size:28px">🔒</span>
-    <span>This site blocks embedding.<br>Use <a id="art-blocked-link" href="#" target="_blank" rel="noopener">Open in browser ↗</a> to view it.</span>
   </div>
   <div class="art-body" id="art-body"></div>
   <div class="art-tags" id="art-tags"></div>
@@ -434,8 +414,8 @@ Q("#nav-src").addEventListener("click",e=>{
 });
 Q("#nav-guides").addEventListener("click",e=>{
   const li=e.target.closest("li[data-guide-mod]"); if(!li)return;
-  state.pdfOnly=true; state.mod=li.getAttribute("data-guide-mod"); state.src="Access Group Help Centre"; state.tp="all";
-  Q("#src").value=state.src; Q("#tp").value="all"; buildNav(); render();
+  state.pdfOnly=true; state.mod=li.getAttribute("data-guide-mod"); state.src="all"; state.tp="all";
+  Q("#src").value="all"; Q("#tp").value="all"; buildNav(); render();
 });
 Q("#nav-mod").addEventListener("click",e=>{
   const li=e.target.closest("li[data-mod]"); if(!li)return;
@@ -487,15 +467,9 @@ function render(){
     const isAg=x.src==="Access Group Help Centre";
     let openHref = (/salesforce/i.test(x.p||"") && x.pdf) ? encodeURI(x.pdf) : (x.p||"");
     if(/sharepoint\.com/i.test(openHref) && !openHref.includes("?")) openHref += "?web=1";
-    const isSP = /sharepoint\.com/i.test(x.p||"");
     const openLabel = isAg ? (x.pdf ? "Open PDF" : "Open article") : "Open in SharePoint";
     const baseIdx=BASE.indexOf(x);
-    // Cards that can be viewed inline: guide PDFs (x.pdf) and web articles (x.e==="web")
-    const canInline = baseIdx>=0 && (!!x.pdf || x.e==="web");
-    let open = canInline
-      ? '<button class="mini" data-view-idx="'+baseIdx+'">'+openLabel+'</button>'
-      : (openHref?'<a class="mini" target="_blank" rel="noopener" href="'+esc(openHref)+'">'+openLabel+"</a>":"");
-    let browser = (canInline && openHref)?'<a class="mini" target="_blank" rel="noopener" href="'+esc(openHref)+'">Open in browser &#8599;</a>':"";
+    let open = openHref?'<a class="mini" target="_blank" rel="noopener" href="'+esc(openHref)+'">'+openLabel+"</a>":"";
     let copy = openHref?'<button class="mini" data-copy="'+esc(openHref)+'">Copy link</button>':"";
     let del = x._local?'<button class="mini" data-del="'+esc(x.f)+'">Remove</button>':"";
     const bits=[];
@@ -523,8 +497,6 @@ Q("#tp").addEventListener("change",e=>{state.tp=e.target.value;render()});
 Q("#sort").addEventListener("change",e=>{state.sort=e.target.value;render()});
 Q("#arc").addEventListener("change",e=>{state.arc=e.target.checked;render()});
 Q("#out").addEventListener("click",e=>{
-  const vi=e.target.getAttribute("data-view-idx");
-  if(vi!=null){openViewerPane(parseInt(vi,10));return;}
   const cp=e.target.getAttribute("data-copy");
   if(cp){navigator.clipboard.writeText(cp).then(()=>{e.target.textContent="Copied ✓";setTimeout(()=>e.target.textContent="Copy link",1200)});return;}
   const dl=e.target.getAttribute("data-del");
@@ -676,52 +648,7 @@ Q("#ask-clear").addEventListener("click",()=>{
 /* ── Article / document pane ────────────────────────────────────────────── */
 let LAST_HITS=[];
 
-const IS_IOS = /iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
-
-function setPaneMode(mode){
-  // mode: "iframe" | "ios-pdf" | "blocked" | "text"
-  Q("#art-viewer").classList.toggle("vis", mode==="iframe");
-  Q("#art-open-fallback").style.display = mode==="ios-pdf" ? "flex" : "none";
-  Q("#art-iframe-blocked").classList.toggle("vis", mode==="blocked");
-  Q("#art-body").classList.toggle("hidden", mode!=="text");
-  Q("#art-tags").classList.toggle("hidden", mode!=="text");
-  if(mode!=="iframe") Q("#art-iframe").src="";
-}
-
-/* Inline viewer — called from card "Open PDF" / "Open article" buttons */
-function openViewerPane(docIdx){
-  const doc=BASE[docIdx];
-  if(!doc)return;
-  const href=docHref(doc);
-  Q("#art-title").textContent=doc.t||"Untitled";
-  Q("#art-ext").href=href;
-  Q("#art-blocked-link").href=href;
-  Q("#art-open-btn").href=href;
-  if(doc.pdf){
-    if(IS_IOS){
-      // iOS Safari can't scroll PDFs in iframes — show open-in-browser instead
-      setPaneMode("ios-pdf");
-    } else {
-      setPaneMode("iframe");
-      Q("#art-iframe").src=href;
-    }
-  } else if(doc.e==="web"){
-    // Help centre article — try iframe; X-Frame-Options blocks can't be detected reliably
-    setPaneMode("iframe");
-    Q("#art-iframe").src=href;
-  } else {
-    // SharePoint / other: show text content
-    setPaneMode("text");
-    const chunks=(LAST_HITS||[]).filter(c=>c.d===docIdx);
-    const text=(chunks.length?chunks.map(c=>c.x).join("\n\n"):(doc.s||"")).slice(0,8000);
-    Q("#art-body").innerHTML=mdLite(text||(doc.s||"No content available."));
-    const tags=[doc.src,doc.tp,...(doc.sy||[])].filter(Boolean);
-    Q("#art-tags").innerHTML=tags.map(t=>'<span class="badge b-tp">'+esc(t)+'</span>').join(" ");
-  }
-  Q("#art-pane").classList.add("open");
-}
-
-/* Text view — called from AI citation clicks */
+/* Text panel — opened by AI citation clicks */
 function openArticlePane(docIdx){
   const doc=BASE[docIdx];
   if(!doc)return;
@@ -730,18 +657,13 @@ function openArticlePane(docIdx){
   const href=docHref(doc);
   Q("#art-title").textContent=doc.t||"Untitled";
   Q("#art-ext").href=href;
-  Q("#art-blocked-link").href=href;
-  setPaneMode("text");
   Q("#art-body").innerHTML=mdLite(text||(doc.s||"No content available."));
   const tags=[doc.src,doc.tp,...(doc.sy||[])].filter(Boolean);
   Q("#art-tags").innerHTML=tags.map(t=>'<span class="badge b-tp">'+esc(t)+'</span>').join(" ");
   Q("#art-pane").classList.add("open");
 }
 
-function closeArticlePane(){
-  Q("#art-pane").classList.remove("open");
-  setPaneMode("text");
-}
+function closeArticlePane(){Q("#art-pane").classList.remove("open");}
 Q("#art-close").addEventListener("click",closeArticlePane);
 
 /* Wire citation clicks ([1],[2]…) to article pane */
