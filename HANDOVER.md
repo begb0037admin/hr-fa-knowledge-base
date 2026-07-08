@@ -28,8 +28,8 @@ The following work is agreed and queued. Work in this order.
 | 3 | Split panel plumbing | ✅ Complete | commit `99c803f` — 3-zone layout live on main (8 Jul). PeopleXD dot now purple. |
 | 4 | Card TTS read-aloud button | 🔲 Pending | Speaker icon (grey circle, 30px) in top-right of expanded card only. Calls existing `/tts` route. |
 | 5 | Verbatim PDF text extraction | 🔲 Pending | Replace AI summaries with pdfplumber word-for-word extraction for How To Guide PDFs. Prerequisite for Linda giving accurate step answers. |
-| 6 | Document viewer in right pane | 🔲 Pending | Resurrect viewer — now lives in right pane. Clicking a card loads the document there. |
-| 7 | Linda (AI chat) in right pane | 🔲 Pending | Move AI chat into right pane. Document above, Linda below. |
+| 6 | Document viewer in right pane | ❌ Dropped | Right panel is AI-focused only — no document viewer. Decision: Kevin, 8 Jul 2026. |
+| 7 | Linda (AI chat) in right pane | ✅ Complete | Linda already occupies the right pane from Step 3. No further move needed. |
 | 8 | Card design polish | 🔲 Pending | Typography, spacing, summary display. Match `begb0037admin/command-centre` branding. |
 | 9 | Final branding pass | 🔲 Pending | Check all elements against `BRANDING.md`. Consistent with work-inbox, command-centre, hris-dashboard. |
 
@@ -42,6 +42,7 @@ These are final — do not re-litigate without Kevin's explicit instruction.
 **Layout**
 - Three zones: sidebar 268px locked | document library flex:1 | Linda AI panel 560px permanent
 - Cards expand inline — no slide-out pane
+- Right panel is AI-focused only — no document viewer will be added (decision: Kevin, 8 Jul 2026)
 
 **Cards**
 - Hover: shadow only, no colour border change
