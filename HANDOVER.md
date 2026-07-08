@@ -13,7 +13,7 @@ itself. Trust the repo over memory; verify data, not just green ticks.
 
 **KB document count: 2,515** ✅
 
-Sidebar restructure complete (8 Jul). AI summaries generated for all 307 PDF step-by-step guides (8 Jul). Wider redesign roadmap agreed — see below.
+Sidebar restructure complete (8 Jul). AI summaries generated for all 307 PDF step-by-step guides (8 Jul). Dashboard redesign in progress — Steps 1 & 2 complete, Step 3 (split panel plumbing) next.
 
 ---
 
@@ -23,19 +23,50 @@ The following work is agreed and queued. Work in this order.
 
 | # | Item | Status | Notes |
 |---|---|---|---|
-| 1 | Research phase | 🔲 Pending | Read `finance.lily.co.uk` dashboard (AI advisor + analyst) and `hris-dashboard` (Linda) before designing anything |
-| 2 | Layout mockup — split panel | 🔲 Pending | Produce Artifact showing proposed layout: left = cards/search, right = AI pane + document viewer. Show → approve → build. |
-| 3 | Split panel plumbing | 🔲 Pending | Implement HTML structure change in `index.html`. Biggest structural edit — do after mockup approved. |
-| 4 | Card TTS read-aloud button | 🔲 Pending | Red play button (▶) on each card. Calls existing ElevenLabs `/tts` route on Cloudflare Worker. Self-contained. |
-| 5 | Document viewer in right pane | 🔲 Pending | Resurrect the viewer (removed earlier). Now lives in right pane — clicking a card loads the document there. |
-| 6 | Linda (AI chat) in right pane | 🔲 Pending | Move/mirror AI chat into right pane alongside the viewer. Clear zones: document above, Linda below. |
-| 7 | Card design polish | 🔲 Pending | Refine card typography, spacing, summary display once structure is stable. Match branding from `begb0037admin/command-centre`. |
-| 8 | Final branding pass | 🔲 Pending | Check all elements against `BRANDING.md` from command-centre repo. Consistent with work-inbox, command-centre, hris-dashboard. |
+| 1 | Research phase | ✅ Complete | Read `finance.lily.co.uk` dashboard and `hris-dashboard` (Linda) |
+| 2 | Layout mockup — split panel | ✅ Complete | Approved 8 Jul. Artifact: https://claude.ai/code/artifact/d2a7d157-468d-461e-9ec0-1efabdbfc384 |
+| 3 | Split panel plumbing | 🔄 In Progress | Implement HTML structure in `index.html`. Also: change sidebar PeopleXD dot gold → purple. |
+| 4 | Card TTS read-aloud button | 🔲 Pending | Speaker icon (grey circle, 30px) in top-right of expanded card only. Calls existing `/tts` route. |
+| 5 | Verbatim PDF text extraction | 🔲 Pending | Replace AI summaries with pdfplumber word-for-word extraction for How To Guide PDFs. Prerequisite for Linda giving accurate step answers. |
+| 6 | Document viewer in right pane | 🔲 Pending | Resurrect viewer — now lives in right pane. Clicking a card loads the document there. |
+| 7 | Linda (AI chat) in right pane | 🔲 Pending | Move AI chat into right pane. Document above, Linda below. |
+| 8 | Card design polish | 🔲 Pending | Typography, spacing, summary display. Match `begb0037admin/command-centre` branding. |
+| 9 | Final branding pass | 🔲 Pending | Check all elements against `BRANDING.md`. Consistent with work-inbox, command-centre, hris-dashboard. |
 
-**Reference dashboards to read before step 2:**
-- `finance.lily.co.uk` — AI advisor + AI analyst patterns
-- `begb0037admin/hris-dashboard` — Linda AI integration
-- Design references discussed: Attmosfire, Wix, MindMerge screenshots
+---
+
+## Locked Design Decisions (approved 8 July 2026)
+
+These are final — do not re-litigate without Kevin's explicit instruction.
+
+**Layout**
+- Three zones: sidebar 268px locked | document library flex:1 | Linda AI panel 560px permanent
+- Cards expand inline — no slide-out pane
+
+**Cards**
+- Hover: shadow only, no colour border change
+- No left accent stripe
+- Speaker icon (grey circle, 30px) in top-right corner of expanded card only for TTS
+
+**Badge pill colours**
+| Class | Label | Background | Text |
+|---|---|---|---|
+| `.b-htg` | How To Guide | `#d9ecff` | `#1d4ed8` |
+| `.b-ag` | Access Group Help Centre | `#d5f8e2` | `#15803d` |
+| `.b-cm` | Change Management | `#fed7aa` | `#c2410c` |
+| `.b-tp` | Topic/module (grey) | `#e5e7eb` | `#374151` |
+| `.b-sy` | PeopleXD system tag | `#e0d5ff` | `#3b0764` |
+
+**Icon blocks** — match source badge colour (blue for HTG, green for AG, orange for CM)
+
+**Sidebar dot colours (current `index.html`):** grey, blue, orange, green — PeopleXD dot changing from gold → purple (Step 3)
+
+**Linda AI panel**
+- Header: Oxford navy background, gold 3-star sparkle SVG + "Linda AI" 17px bold + animated green LIVE chip (turns red on error)
+- Single dual-state action button: waveform icon when empty → send arrow when typing
+- No emojis — SVG icons throughout
+
+**Scrollbars:** 4px hairline, no arrows, `#d1d9e6` thumb — matches work-inbox pattern
 
 ---
 
@@ -49,6 +80,7 @@ The following work is agreed and queued. Work in this order.
 - Added `scrapers/summarise_docs.py` — batch AI summarisation for 307 PDF guides
 - Added `.github/workflows/summarise-pdf-guides.yml` — manual-dispatch workflow
 - Ran summarisation with `force=true` — all 307 PDF cards now have AI-generated plain-English summaries
+- Dashboard redesign Steps 1 & 2 complete — mockup approved, design locked
 
 ---
 
