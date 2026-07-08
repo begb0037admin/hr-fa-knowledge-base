@@ -24,7 +24,7 @@ body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 'Inter',syst
 a{color:var(--blue)}
 .layout{display:flex;min-height:100vh}
 
-/* ── Sidebar ──────────────────────────────────────────────── */
+/* ── Sidebar ────────────────────────────────────────────── */
 .side{width:340px;flex-shrink:0;background:var(--side);color:var(--side-text);display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto}
 .sidebar-logo{display:flex;gap:16px;align-items:center;padding:20px 20px 18px;border-bottom:1px solid rgba(255,255,255,.1)}
 .sidebar-crest{width:80px;height:80px;flex-shrink:0;object-fit:contain}
@@ -50,12 +50,18 @@ a{color:var(--blue)}
 .side .foot a{color:#9fc1f0;text-decoration:none}
 .side .foot a:hover{text-decoration:underline}
 
-/* ── Main ──────────────────────────────────────────────────── */
-.main{flex:1;min-width:0;padding:26px 34px 60px}
-.tophead{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:18px}
-.greet h1{margin:0;font-family:inherit;font-size:21px;font-weight:600;color:var(--navy-text)}
-.greet .date{color:var(--muted);font-size:13.5px;margin-top:3px}
-.actions{display:flex;gap:9px;flex-shrink:0;padding-top:4px}
+/* ── Centre (document library) ────────────────────── */
+.centre{flex:1;min-width:0;display:flex;flex-direction:column;height:100vh;position:sticky;top:0;overflow:hidden;background:var(--bg)}
+.centre-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 28px 12px;flex-shrink:0;border-bottom:1px solid var(--border-soft)}
+.centre-head h2{margin:0;font-size:16px;font-weight:600;color:var(--navy-text)}
+.centre-head .meta{font-size:12.5px;color:var(--hint)}
+.centre-filters{padding:12px 28px 0;flex-shrink:0}
+.centre-scroll{flex:1;overflow-y:auto;padding:12px 28px 40px}
+.centre-scroll::-webkit-scrollbar{width:4px}
+.centre-scroll::-webkit-scrollbar-track{background:transparent}
+.centre-scroll::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+
+/* ── Shared controls ──────────────────────────────────── */
 .btn{height:35px;padding:0 15px;border-radius:8px;font:600 13px/1 inherit;font-family:inherit;cursor:pointer;border:1px solid var(--border);display:inline-flex;align-items:center;gap:6px;text-decoration:none;white-space:nowrap}
 .btn-navy{background:var(--oxford);color:#fff;border-color:var(--oxford)}
 .btn-navy:hover{background:#0d3263}
@@ -64,20 +70,67 @@ a{color:var(--blue)}
 button.mini{font-size:12px;padding:3px 10px;border:1px solid var(--border);background:#fff;border-radius:999px;cursor:pointer;color:var(--navy-text);font-family:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:4px}
 button.mini:hover,a.mini:hover{background:var(--border-soft)}
 a.mini{font-size:12px;padding:3px 10px;border:1px solid var(--border);background:#fff;border-radius:999px;cursor:pointer;color:var(--navy-text);font-family:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:4px}
+.gear{width:35px;justify-content:center;padding:0;font-size:16px}
+input[type=text],select{height:35px;padding:0 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--text);font-family:inherit;font-size:13.5px}
+input[type=text]:focus,select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft)}
 
-/* ── Ask panel ──────────────────────────────────────────────── */
-.ask{background:var(--surface);border:1px solid var(--border-soft);border-left:4px solid var(--gold);border-radius:var(--radius-lg);padding:18px 20px;margin-bottom:24px;box-shadow:0 1px 3px rgba(13,42,82,.05)}
-.ask h2{margin:0 0 3px;font-family:inherit;font-size:16px;font-weight:600;color:var(--navy-text)}
-.ask .hint{font-size:12.5px;color:var(--muted);margin-bottom:12px}
-.askrow{display:flex;gap:9px}
-.askrow input{flex:1;height:40px;padding:0 13px;border:1px solid var(--border);border-radius:8px;font:14.5px inherit;font-family:inherit;color:var(--text)}
-.askrow input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft)}
-.askrow .btn{height:40px}
-.gear{width:40px;justify-content:center;padding:0;font-size:16px}
-.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
-.chip{font-size:12px;padding:4px 11px;border-radius:999px;background:var(--blue-soft);color:var(--blue-text);border:none;cursor:pointer;font-family:inherit}
+/* ── Filters ─────────────────────────────────────────────────── */
+.controls{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:10px;margin-bottom:9px}
+.field{display:flex;flex-direction:column;gap:3px}
+.field label{font-size:11.5px;color:var(--muted);letter-spacing:.02em}
+.toggles{display:flex;gap:14px;align-items:center;margin-bottom:13px;font-size:13px;color:var(--muted)}
+.toggles label{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+
+/* ── Cards ─────────────────────────────────────────────────── */
+.card{background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius);padding:12px 15px;margin-bottom:9px;box-shadow:0 1px 2px rgba(13,42,82,.04);transition:box-shadow .15s}
+.card:hover{box-shadow:0 3px 8px rgba(13,42,82,.10)}
+.card h3{margin:0 0 5px;font-size:14.8px;font-weight:600;color:var(--navy-text)}
+.badges{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:6px}
+.badge{font-size:11px;padding:1.5px 9px;border-radius:999px;line-height:1.5;font-weight:600}
+.b-htg{background:#d9ecff;color:#1d4ed8}
+.b-cm{background:#fed7aa;color:#c2410c}
+.b-ag{background:#d5f8e2;color:#15803d}
+.b-tp{background:#e5e7eb;color:#374151}
+.b-sy{background:#e0d5ff;color:#3b0764}
+.b-arc{background:#fbeaf0;color:#72243e}
+.b-local{background:#fdf0dc;color:#7a4a08}
+.summary{margin:4px 0;font-size:13.8px;color:#3c4456}
+.path-row{display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--muted);margin-top:7px;flex-wrap:wrap}
+.meta-sm{font-size:11px;color:var(--hint);margin-top:6px}
+.empty{text-align:center;padding:44px 16px;color:var(--muted);background:#fff;border-radius:var(--radius-lg);border:1px dashed var(--border)}
+mark{background:#ffedad;color:inherit;padding:0 1px;border-radius:2px}
+.loaderr{background:#fdebea;color:#8c2722;border-radius:var(--radius);padding:14px}
+
+/* ── AI resizer handle ──────────────────────────────────────────── */
+.ai-resizer{width:8px;flex:0 0 8px;height:100vh;position:sticky;top:0;cursor:col-resize;background:linear-gradient(to right,transparent 0,transparent 3px,var(--border) 3px,var(--border) 4px,transparent 4px);z-index:3}
+.ai-resizer:hover,.ai-resizer:focus{background:linear-gradient(to right,transparent 0,transparent 2px,var(--blue) 2px,var(--blue) 5px,transparent 5px);outline:none}
+body.resizing-ai{cursor:col-resize;user-select:none}
+
+/* ── AI Panel (permanent right pane) ─────────────────────────── */
+.ai-panel{width:var(--ai-panel-width,560px);min-width:320px;max-width:560px;flex-shrink:0;display:flex;flex-direction:column;background:var(--surface);border-left:1px solid var(--border);height:100vh;position:sticky;top:0}
+.ai-header{background:var(--oxford);color:#fff;padding:14px 18px;display:flex;align-items:center;gap:11px;flex-shrink:0}
+.ai-star{font-size:16px;color:var(--gold);flex-shrink:0;letter-spacing:.05em}
+.ai-title{font-size:17px;font-weight:700;flex:1;letter-spacing:.01em}
+.live-chip{font-size:10px;font-weight:700;letter-spacing:.07em;background:#16a34a;color:#fff;padding:3px 9px;border-radius:999px;animation:live-pulse 2.4s ease-in-out infinite;white-space:nowrap}
+@keyframes live-pulse{0%,100%{opacity:1}50%{opacity:.6}}
+.ai-header .gear{color:rgba(255,255,255,.75);border-color:rgba(255,255,255,.22);background:transparent;height:32px}
+.ai-header .gear:hover{background:rgba(255,255,255,.12);color:#fff}
+
+.ai-msgs{flex:1;overflow-y:auto;padding:14px 16px;display:flex;flex-direction:column}
+.ai-msgs::-webkit-scrollbar{width:4px}
+.ai-msgs::-webkit-scrollbar-track{background:transparent}
+.ai-msgs::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+
+.ai-empty{display:flex;flex-direction:column;align-items:center;text-align:center;padding:40px 24px 24px;gap:14px;margin:auto}
+.ai-empty-star{font-size:26px;color:var(--gold);opacity:.75}
+.ai-empty-text{font-size:13.5px;color:var(--muted);line-height:1.55;max-width:270px}
+
+/* Chips live inside ai-empty */
+.chips{display:flex;flex-wrap:wrap;gap:7px;justify-content:center}
+.chip{font-size:12px;padding:5px 12px;border-radius:999px;background:var(--blue-soft);color:var(--blue-text);border:1px solid #c9d9f5;cursor:pointer;font-family:inherit;line-height:1.4}
 .chip:hover{background:#d8e7f7}
-.thread{margin-top:6px}
+
+/* Thread content inside .ai-msgs */
 .qline{margin:16px 0 8px;font-weight:600;color:var(--navy-text);font-size:14.5px}
 .qline::before{content:"You — ";color:var(--hint);font-weight:600;font-size:12px;letter-spacing:.04em}
 .answer{background:var(--cream);border:1px solid var(--cream-border);border-radius:var(--radius);padding:13px 16px;color:var(--cream-text);font-size:14.2px}
@@ -95,60 +148,44 @@ a.mini{font-size:12px;padding:3px 10px;border:1px solid var(--border);background
 .thinking{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:13px;margin:10px 0}
 .spinner{width:14px;height:14px;border:2px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin .7s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-.ask-note{background:var(--blue-soft);color:var(--blue-text);font-size:13px;border-radius:8px;padding:10px 13px;margin-top:10px}
-#ask-mic.rec{background:#fdebea;border-color:#d6453d;color:#d6453d;animation:pulse 1.1s ease-in-out infinite}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(214,69,61,.35)}50%{box-shadow:0 0 0 6px rgba(214,69,61,0)}}
 .answer-tools{margin-top:7px}
-.convo-status{margin-top:8px;font-size:13px;color:var(--blue-text);background:#eef4ff;border:1px solid #c9d9f5;border-radius:8px;padding:7px 11px}
-.convo-transcript{margin-top:10px;max-height:260px;overflow-y:auto;border:1px solid var(--border-soft);border-radius:var(--radius);padding:10px 13px;background:#fff}
+.ask-err{background:#fdebea;color:#8c2722;font-size:13px;border-radius:8px;padding:10px 13px;margin:8px 0}
+
+/* Status / transcript / docs strips inside panel */
+.ask-note{background:var(--blue-soft);color:var(--blue-text);font-size:13px;border-radius:8px;padding:10px 13px;margin:0 16px 8px}
+.convo-status{font-size:13px;color:var(--blue-text);background:#eef4ff;border:1px solid #c9d9f5;border-radius:8px;padding:7px 11px;margin:0 16px 8px}
+.convo-transcript{max-height:200px;overflow-y:auto;border:1px solid var(--border-soft);border-radius:var(--radius);padding:10px 13px;background:#fff;margin:0 16px 8px}
 .convo-transcript .qline{margin:9px 0 5px;font-size:13.5px}
 .convo-transcript .answer{font-size:13.5px;padding:9px 13px;margin-bottom:6px}
-.convo-docs{margin-top:10px}
+.convo-docs{margin:0 16px 8px}
 .docview{background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius);overflow:hidden}
 .docview-head{display:flex;gap:8px;align-items:baseline;background:var(--side);color:#fff;font-size:13.5px;font-weight:600;padding:9px 14px}
 .docview-head .no{color:var(--gold);flex-shrink:0}
 .docview-head a{margin-left:auto;flex-shrink:0;color:#cfe0f7;font-size:12px;font-weight:400;text-decoration:none}
 .docview-head a:hover{text-decoration:underline}
-.docview-body{padding:12px 16px;font-size:13.5px;color:var(--text);max-height:440px;overflow-y:auto}
+.docview-body{padding:12px 16px;font-size:13.5px;color:var(--text);max-height:300px;overflow-y:auto}
 .docview-body p{margin:0 0 8px}
 .docview-body ul,.docview-body ol{margin:4px 0 10px;padding-left:22px}
 .docview-body li{margin:3px 0}
 .docview-body h4{margin:10px 0 5px;font-size:13px;color:var(--navy-text)}
-.ask-err{background:#fdebea;color:#8c2722;font-size:13px;border-radius:8px;padding:10px 13px;margin-top:10px}
 
-/* ── Library ──────────────────────────────────────────────────── */
-.libhead{display:flex;align-items:baseline;gap:10px;margin:4px 0 12px}
-.libhead h2{margin:0;font-family:inherit;font-size:16px;font-weight:600;color:var(--navy-text)}
-.libhead .meta{font-size:12.5px;color:var(--hint);margin-left:auto}
-.controls{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:10px;margin-bottom:9px}
-.field{display:flex;flex-direction:column;gap:3px}
-.field label{font-size:11.5px;color:var(--muted);letter-spacing:.02em}
-input[type=text],select{height:35px;padding:0 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--text);font-family:inherit;font-size:13.5px}
-input[type=text]:focus,select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft)}
-.toggles{display:flex;gap:14px;align-items:center;margin-bottom:13px;font-size:13px;color:var(--muted)}
-.toggles label{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
-.card{background:#fff;border:1px solid var(--border-soft);border-left-width:4px;border-radius:var(--radius);padding:12px 15px;margin-bottom:9px;box-shadow:0 1px 2px rgba(13,42,82,.04)}
-.card.s-htg{border-left-color:var(--blue)}
-.card.s-cm{border-left-color:var(--purple)}
-.card.s-ag{border-left-color:var(--gold)}
-.card h3{margin:0 0 5px;font-size:14.8px;font-weight:600;color:var(--navy-text)}
-.badges{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:6px}
-.badge{font-size:11px;padding:1.5px 9px;border-radius:999px;line-height:1.5;font-weight:600}
-.b-htg{background:var(--blue-soft);color:var(--blue-text)}
-.b-cm{background:var(--purple-soft);color:var(--purple-text)}
-.b-ag{background:var(--gold-soft);color:var(--gold-text)}
-.b-tp{background:var(--border-soft);color:var(--muted)}
-.b-sy{background:var(--teal-soft);color:var(--teal-text)}
-.b-arc{background:#fbeaf0;color:#72243e}
-.b-local{background:#fdf0dc;color:#7a4a08}
-.summary{margin:4px 0;font-size:13.8px;color:#3c4456}
-.path-row{display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--muted);margin-top:7px;flex-wrap:wrap}
-.meta-sm{font-size:11px;color:var(--hint);margin-top:6px}
-.empty{text-align:center;padding:44px 16px;color:var(--muted);background:#fff;border-radius:var(--radius-lg);border:1px dashed var(--border)}
-mark{background:#ffedad;color:inherit;padding:0 1px;border-radius:2px}
-.loaderr{background:#fdebea;color:#8c2722;border-radius:var(--radius);padding:14px}
+/* ── AI ask box (bottom of panel) ────────────────────────────── */
+.ai-ask{border-top:1px solid var(--border-soft);padding:12px 14px;flex-shrink:0;background:var(--surface)}
+.ai-ask-row{display:flex;gap:8px;margin-bottom:9px}
+.ai-ask-row input{flex:1;height:38px;padding:0 13px;border:1px solid var(--border);border-radius:8px;font:14px inherit;color:var(--text);font-family:inherit}
+.ai-ask-row input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft)}
+.action-btn{width:38px;height:38px;flex-shrink:0;border:none;border-radius:8px;background:var(--oxford);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s}
+.action-btn:hover{background:#0d3263}
 
-/* ── Modal ────────────────────────────────────────────────────── */
+.voice-bar{display:flex;gap:6px;align-items:center}
+.vbtn{height:28px;padding:0 11px;border:1px solid var(--border);background:#fff;border-radius:999px;cursor:pointer;font-family:inherit;font-size:12.5px;color:var(--navy-text);display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
+.vbtn:hover{background:var(--border-soft)}
+#ask-mic.rec{background:#fdebea;border-color:#d6453d;color:#d6453d;animation:pulse 1.1s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(214,69,61,.35)}50%{box-shadow:0 0 0 5px rgba(214,69,61,0)}}
+#convo-btn.connecting{background:#fef9c3;border-color:#ca8a04;color:#92400e}
+#convo-btn.active{background:#dcfce7;border-color:#16a34a;color:#15803d}
+
+/* ── Modal ─────────────────────────────────────────────────────── */
 .modal-backdrop{position:fixed;inset:0;background:rgba(4,12,30,.5);z-index:200;display:flex;align-items:center;justify-content:center}
 .modal{background:#fff;border-radius:var(--radius-lg);width:620px;max-width:96vw;max-height:92vh;overflow-y:auto;padding:24px 26px;box-shadow:0 12px 50px rgba(0,0,0,.3)}
 .modal h2{margin:0 0 16px;font-family:inherit;font-size:16px;font-weight:600;color:var(--navy-text)}
@@ -166,17 +203,8 @@ mark{background:#ffedad;color:inherit;padding:0 1px;border-radius:2px}
 .ai-status.err{color:#8c2722}
 .hidden{display:none!important}
 
-@media (max-width:860px){
-  .layout{flex-direction:column}
-  .side{width:100%;height:auto;position:static}
-  .side .foot{margin-top:0}
-  .main{padding:20px 16px 50px}
-  .controls{grid-template-columns:1fr 1fr}
-}
-
-/* ── Article pane ──────────────────────────────────────────────── */
-.art-pane{width:0;overflow:hidden;flex-shrink:0;transition:width .25s ease;background:var(--surface);border-left:1px solid var(--border);display:flex;flex-direction:column;height:100vh;position:sticky;top:0}
-.art-pane.open{width:520px}
+/* ── Article pane (hidden; Step 6 moves it into ai-panel) ── */
+.art-pane{overflow:hidden;flex-shrink:0;background:var(--surface);border-left:1px solid var(--border);display:flex;flex-direction:column;height:100vh;position:sticky;top:0}
 .art-head{background:var(--oxford);color:#fff;padding:13px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0}
 .art-head .art-title{flex:1;font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .art-head .art-close{background:none;border:none;color:#fff;font-size:18px;cursor:pointer;padding:0 2px;line-height:1;opacity:.8}
@@ -190,6 +218,19 @@ mark{background:#ffedad;color:inherit;padding:0 1px;border-radius:2px}
 .art-body h4{margin:10px 0 5px;font-size:13px;color:var(--navy-text)}
 .art-body.hidden,.art-tags.hidden{display:none}
 .art-tags{padding:12px 18px;border-top:1px solid var(--border-soft);font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:5px;flex-shrink:0}
+
+/* ── Responsive ───────────────────────────────────────────────────── */
+@media (max-width:1100px){
+  .layout{flex-direction:column}
+  .side{width:100%;height:auto;position:static}
+  .side .foot{margin-top:0}
+  .centre{height:auto;min-height:60vh;position:static}
+  .ai-resizer{display:none}
+  .ai-panel{width:100%;min-width:0;max-width:none;height:auto;min-height:420px;position:static;border-left:none;border-top:1px solid var(--border)}
+}
+@media (max-width:860px){
+  .controls{grid-template-columns:1fr 1fr}
+}
 </style>
 </head>
 <body>
@@ -216,59 +257,80 @@ mark{background:#ffedad;color:inherit;padding:0 1px;border-radius:2px}
   </div>
 </aside>
 
-<main class="main">
-  <div class="tophead">
-    <div class="greet">
-      <h1 id="greet">Good afternoon, Kevin</h1>
-      <div class="date" id="today"></div>
+<main class="centre">
+  <div class="centre-head">
+    <div style="display:flex;align-items:baseline;gap:10px">
+      <h2>Document library</h2>
+      <span class="meta" id="meta"></span>
     </div>
-    <div class="actions">
-      <button class="btn btn-ghost" id="add-btn">+ Add Document</button>
-    </div>
+    <button class="btn btn-ghost" id="add-btn">+ Add Document</button>
   </div>
-
-  <section class="ask">
-    <h2>Ask the Knowledge Base</h2>
-    <div class="hint">Ask in plain English — answers come from the How-To Guides, Change Management library and the PeopleXD Help Centres, with sources cited.</div>
-    <div class="askrow">
-      <input id="ask-q" type="text" placeholder='e.g. "How do I maintain pay codes for WFM?" — press / to focus' autocomplete="off">
-      <button class="btn btn-ghost gear" id="ask-mic" title="Speak your question">&#127908;</button>
-      <button class="btn btn-navy" id="ask-btn">Ask</button>
-      <button class="btn btn-navy" id="convo-btn" title="Live voice conversation — talk and she talks back">&#127911; Talk</button>
-      <button class="btn btn-ghost" id="ask-clear" title="Clear the conversation and start again">Clear</button>
-      <button class="btn btn-ghost gear" id="ai-setup-btn" title="AI connection settings">&#9881;</button>
+  <div class="centre-filters">
+    <div class="controls">
+      <div class="field"><label for="q">Search</label><input id="q" type="text" placeholder="Filter by title, summary, system, filename..."></div>
+      <div class="field"><label for="src">Source</label><select id="src"><option value="all">All sources</option></select></div>
+      <div class="field"><label for="tp">Topic</label><select id="tp"><option value="all">All topics</option></select></div>
+      <div class="field"><label for="sort">Sort</label><select id="sort">
+        <option value="m-desc">Newest first</option><option value="m-asc">Oldest first</option>
+        <option value="t-asc">Title A&ndash;Z</option><option value="st">Source / topic</option>
+      </select></div>
     </div>
-    <div id="convo-status" class="convo-status hidden"></div>
-    <div id="convo-transcript" class="convo-transcript hidden"></div>
-    <div id="convo-docs" class="convo-docs hidden"></div>
-    <div class="chips" id="chips">
-      <button class="chip">How do I maintain pay codes for WFM?</button>
-      <button class="chip">How does the GDPR request centre work?</button>
-      <button class="chip">Steps to set up a new appointment</button>
-      <button class="chip">How do I configure absence types?</button>
-    </div>
-    <div id="ask-note" class="ask-note hidden"></div>
-    <div class="thread" id="thread"></div>
-  </section>
-
-  <div class="libhead">
-    <h2>Document library</h2>
-    <span class="meta" id="meta"></span>
+    <div class="toggles"><label><input type="checkbox" id="arc"> Show archived</label></div>
   </div>
-  <div class="controls">
-    <div class="field"><label for="q">Search</label><input id="q" type="text" placeholder="Filter by title, summary, system, filename..."></div>
-    <div class="field"><label for="src">Source</label><select id="src"><option value="all">All sources</option></select></div>
-    <div class="field"><label for="tp">Topic</label><select id="tp"><option value="all">All topics</option></select></div>
-    <div class="field"><label for="sort">Sort</label><select id="sort">
-      <option value="m-desc">Newest first</option><option value="m-asc">Oldest first</option>
-      <option value="t-asc">Title A&ndash;Z</option><option value="st">Source / topic</option>
-    </select></div>
-  </div>
-  <div class="toggles"><label><input type="checkbox" id="arc"> Show archived</label></div>
-  <div id="out"></div>
+  <div class="centre-scroll" id="out"></div>
 </main>
 
-<div class="art-pane" id="art-pane">
+<div class="ai-resizer" id="ai-resizer" role="separator" aria-orientation="vertical" aria-label="Resize Linda AI panel" tabindex="0"></div>
+
+<div class="ai-panel" id="ai-panel">
+  <div class="ai-header">
+    <span class="ai-star" aria-hidden="true">✦✦✦</span>
+    <span class="ai-title">Linda AI</span>
+    <span class="live-chip">● LIVE</span>
+    <button class="btn btn-ghost gear" id="ai-setup-btn" title="AI connection settings" aria-label="AI connection settings">&#9881;</button>
+  </div>
+
+  <div class="ai-msgs">
+    <div class="ai-empty" id="ai-empty">
+      <div class="ai-empty-star" aria-hidden="true">✦</div>
+      <div class="ai-empty-text">Ask Linda anything about PeopleXD, HR processes, or your step-by-step guides. Answers cited from the knowledge base.</div>
+      <div class="chips" id="chips">
+        <button class="chip">How do I maintain pay codes for WFM?</button>
+        <button class="chip">How does the GDPR request centre work?</button>
+        <button class="chip">Steps to set up a new appointment</button>
+        <button class="chip">How do I configure absence types?</button>
+      </div>
+    </div>
+    <div class="thread" id="thread"></div>
+  </div>
+
+  <div id="ask-note" class="ask-note hidden"></div>
+  <div id="convo-status" class="convo-status hidden"></div>
+  <div id="convo-transcript" class="convo-transcript hidden"></div>
+  <div id="convo-docs" class="convo-docs hidden"></div>
+
+  <div class="ai-ask">
+    <div class="ai-ask-row">
+      <input id="ask-q" type="text" placeholder="Ask Linda — type or use the mic…" autocomplete="off">
+      <button class="action-btn" id="action-btn" title="Ask Linda" aria-label="Ask Linda">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="voice-bar">
+      <button class="vbtn" id="ask-mic" title="Speak your question">&#127908; Speak</button>
+      <button class="vbtn" id="convo-btn" title="Live voice conversation — talk and she talks back">&#127911; <span id="convo-lbl">Talk</span></button>
+      <span style="flex:1"></span>
+      <button class="vbtn" id="ask-clear" title="Clear the conversation and start again">Clear</button>
+    </div>
+  </div>
+</div>
+
+<!-- Hidden: keeps existing JS listener alive. Step 6 resurrects art-pane in right panel. -->
+<button id="ask-btn" style="display:none" aria-hidden="true" tabindex="-1"></button>
+
+<div class="art-pane" id="art-pane" style="display:none">
   <div class="art-head">
     <span class="art-title" id="art-title"></span>
     <a class="art-ext" id="art-ext" target="_blank" rel="noopener">Open in browser &#8599;</a>
@@ -277,6 +339,7 @@ mark{background:#ffedad;color:inherit;padding:0 1px;border-radius:2px}
   <div class="art-body" id="art-body"></div>
   <div class="art-tags" id="art-tags"></div>
 </div>
+
 </div>
 
 <!-- Add Document modal -->
@@ -329,26 +392,13 @@ mark{background:#ffedad;color:inherit;padding:0 1px;border-radius:2px}
 
 <script>
 /* ════════ Configuration ════════ */
-// Once the Cloudflare Worker is deployed, its URL can be baked in here so
-// every browser works with zero setup. The gear panel overrides per-browser.
 const DEFAULT_WORKER_URL = "https://hr-kb-ai.kevinlelitte.workers.dev";
-// ElevenLabs Conversational AI agent for live voice conversations (the
-// AIMM pattern). Baked in so Talk works on any browser with zero setup;
-// the gear panel overrides per-browser. Public by design — Kevin accepted
-// the trade-off (same as the worker URL above) while he's the only user.
 const DEFAULT_AGENT_ID = "agent_4101ktsqhtyve2atyssqh1fek5wh";
 const LOCAL_KEY = "hrKbAdditions_v1";
 const AI_CFG_KEY = "hrKbAiCfg_v1";
 
 const Q = s => document.querySelector(s);
 const esc = s => String(s||"").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-
-/* ════════ Greeting ════════ */
-(function(){
-  const h = new Date().getHours();
-  Q("#greet").textContent = (h<12?"Good morning":h<18?"Good afternoon":"Good evening")+", Kevin";
-  Q("#today").textContent = new Date().toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
-})();
 
 /* ════════ Data loading ════════ */
 let BASE=[], LOCAL=[], D=[];
@@ -421,7 +471,6 @@ function buildNav(){
   const htgDocs=D.filter(x=>x.src==="How To Guides");
   const cmDocs =D.filter(x=>x.src==="Change Management");
 
-  // HR System SharePoint Guides
   const htgMods={};
   htgDocs.forEach(x=>{if(state.arc||!/\(Archive\)$/i.test(x.tp))htgMods[x.tp]=(htgMods[x.tp]||0)+1;});
   let htg=parentLi("data-htg-src","How To Guides","#2f6fb8","HR System SharePoint Guides",htgDocs.length,state.src==="How To Guides","htg",navOpen.htg);
@@ -429,7 +478,6 @@ function buildNav(){
     htg+=Object.keys(htgMods).sort().map(m=>navLi("data-htg-mod",m,"#2f6fb8",tpLabel(m),htgMods[m],(state.src==="How To Guides"&&state.mod===m?"on sub":"sub"))).join("");
   }
 
-  // Change Management
   const cmMods={};
   cmDocs.forEach(x=>cmMods[x.tp]=(cmMods[x.tp]||0)+1);
   htg+=parentLi("data-htg-src","Change Management","#d4742a","Change Management",cmDocs.length,state.src==="Change Management","cm",navOpen.cm);
@@ -439,7 +487,6 @@ function buildNav(){
   Q("#nav-htg").innerHTML=htg;
 
   /* ACCESS GROUP HELP CENTRE */
-  // Step-by-step guides (AG PDFs)
   const agPdfs=D.filter(x=>x.src==="Access Group Help Centre"&&x.e==="pdf");
   const agPdfMods={};
   agPdfs.forEach(x=>agPdfMods[x.tp]=(agPdfMods[x.tp]||0)+1);
@@ -448,13 +495,13 @@ function buildNav(){
     ag+=Object.keys(agPdfMods).sort().map(m=>navLi("data-ag-pdf-mod",m,"#1d9e6a",tpLabel(m),agPdfMods[m],(state.pdfOnly&&state.mod===m?"on sub":"sub"))).join("");
   }
 
-  // PeopleXD online guides (web articles)
   const agWeb=D.filter(x=>x.src==="Access Group Help Centre"&&x.e==="web");
   const agWebMods={};
   agWeb.forEach(x=>agWebMods[x.tp]=(agWebMods[x.tp]||0)+1);
-  ag+=parentLi("data-ag-view","web","#c79b3b","PeopleXD online guides",agWeb.length,state.webOnly,"agWeb",navOpen.agWeb);
+  /* PeopleXD online guides — purple dot (approved design) */
+  ag+=parentLi("data-ag-view","web","#6d5bd0","PeopleXD online guides",agWeb.length,state.webOnly,"agWeb",navOpen.agWeb);
   if(navOpen.agWeb){
-    ag+=Object.keys(agWebMods).sort().map(m=>navLi("data-ag-web-mod",m,"#c79b3b",tpLabel(m),agWebMods[m],(state.webOnly&&state.mod===m?"on sub":"sub"))).join("");
+    ag+=Object.keys(agWebMods).sort().map(m=>navLi("data-ag-web-mod",m,"#6d5bd0",tpLabel(m),agWebMods[m],(state.webOnly&&state.mod===m?"on sub":"sub"))).join("");
   }
   Q("#nav-ag").innerHTML=ag;
 
@@ -467,10 +514,8 @@ Q("#nav-all").addEventListener("click",e=>{
   Q("#src").value="all";buildNav();render();
 });
 Q("#nav-htg").addEventListener("click",e=>{
-  // Chevron toggle — collapse/expand only
   const chev=e.target.closest(".chev[data-toggle]");
   if(chev){const k=chev.getAttribute("data-toggle");navOpen[k]=!navOpen[k];buildNav();return;}
-  // HR System SharePoint Guides parent or module
   const htgSrc=e.target.closest("li[data-htg-src]");
   if(htgSrc){
     state.src=htgSrc.getAttribute("data-htg-src");state.mod="all";state.pdfOnly=false;state.webOnly=false;
@@ -488,10 +533,8 @@ Q("#nav-htg").addEventListener("click",e=>{
   }
 });
 Q("#nav-ag").addEventListener("click",e=>{
-  // Chevron toggle
   const chev=e.target.closest(".chev[data-toggle]");
   if(chev){const k=chev.getAttribute("data-toggle");navOpen[k]=!navOpen[k];buildNav();return;}
-  // Parent views
   const agView=e.target.closest("li[data-ag-view]");
   if(agView){
     const v=agView.getAttribute("data-ag-view");
@@ -499,14 +542,12 @@ Q("#nav-ag").addEventListener("click",e=>{
     state.pdfOnly=v==="pdf";state.webOnly=v==="web";
     Q("#src").value=state.src;Q("#tp").value="all";buildNav();render();return;
   }
-  // PDF module
   const agPdfMod=e.target.closest("li[data-ag-pdf-mod]");
   if(agPdfMod){
     state.src="Access Group Help Centre";state.mod=agPdfMod.getAttribute("data-ag-pdf-mod");
     state.pdfOnly=true;state.webOnly=false;
     Q("#src").value=state.src;Q("#tp").value="all";buildNav();render();return;
   }
-  // Web module
   const agWebMod=e.target.closest("li[data-ag-web-mod]");
   if(agWebMod){
     state.src="Access Group Help Centre";state.mod=agWebMod.getAttribute("data-ag-web-mod");
@@ -553,7 +594,7 @@ function render(){
   Q("#meta").textContent=all.length+" of "+D.length+" documents"+(LOCAL.length?" (+"+LOCAL.length+" local)":"");
   if(!all.length){Q("#out").innerHTML='<div class="empty">No documents match. Try clearing filters.</div>';return;}
   const q=state.q;
-  const capNote=all.length>RENDER_CAP?'<div class="empty">Showing the first '+RENDER_CAP+' of '+all.length+' documents &mdash; use search or the filters to narrow down, or just ask the AI above.</div>':"";
+  const capNote=all.length>RENDER_CAP?'<div class="empty">Showing the first '+RENDER_CAP+' of '+all.length+' documents &mdash; use search or the filters to narrow down, or just ask Linda above.</div>':"";
   Q("#out").innerHTML=r.map(x=>{
     const m=SRC_META[x.src]||{cls:"s-htg",badge:"b-tp"};
     const arc=/\(Archive\)$/i.test(x.tp);
@@ -561,7 +602,6 @@ function render(){
     let openHref = (/salesforce/i.test(x.p||"") && x.pdf) ? encodeURI(x.pdf) : (x.p||"");
     if(/sharepoint\.com/i.test(openHref) && !openHref.includes("?")) openHref += "?web=1";
     const openLabel = isAg ? (x.pdf ? "Open PDF" : "Open article") : "Open in SharePoint";
-    const baseIdx=BASE.indexOf(x);
     let open = openHref?'<a class="mini" target="_blank" rel="noopener" href="'+esc(openHref)+'">'+openLabel+"</a>":"";
     let copy = openHref?'<button class="mini" data-copy="'+esc(openHref)+'">Copy link</button>':"";
     let del = x._local?'<button class="mini" data-del="'+esc(x.f)+'">Remove</button>':"";
@@ -570,7 +610,7 @@ function render(){
     if(x.kb)bits.push(Math.round(x.kb)+" KB");
     if(x.pg)bits.push(x.pg+" pages");
     if(x.f)bits.push(esc(x.f));
-    return '<div class="card '+m.cls+'">'
+    return '<div class="card">'
       +'<div class="badges"><span class="badge '+m.badge+'">'+esc(x.src)+'</span>'
       +'<span class="badge b-tp">'+esc(x.tp)+'</span>'
       +(x.sy?'<span class="badge b-sy">'+esc(x.sy)+"</span>":"")
@@ -679,19 +719,26 @@ function mdLite(s){
   return out;
 }
 
+function showAiEmpty(show){
+  const el=Q("#ai-empty");
+  if(el) el.style.display=show?"":"none";
+}
+
 async function ask(question){
   question=question.trim(); if(!question)return;
+  showAiEmpty(false);
   if(!aiReady()){
     Q("#ask-note").classList.remove("hidden");
     Q("#ask-note").innerHTML="The AI connection isn't configured yet. Deploy the Cloudflare Worker (5-minute job — see <b>worker/README.md</b> in the repo), then click the &#9881; gear and paste its URL.";
     return;
   }
   const thread=Q("#thread");
-  thread.innerHTML="";  // each question replaces the previous answer on screen
+  thread.innerHTML="";
   thread.insertAdjacentHTML("beforeend",'<div class="qline">'+esc(question)+"</div>");
   const tid="think"+Date.now();
-  thread.insertAdjacentHTML("beforeend",'<div class="thinking" id="'+tid+'"><span class="spinner"></span> Searching '+ (CHUNKS?CHUNKS.length:"the") +' knowledge chunks and thinking&hellip;</div>');
+  thread.insertAdjacentHTML("beforeend",'<div class="thinking" id="'+tid+'"><span class="spinner"></span> Searching '+(CHUNKS?CHUNKS.length:"the")+' knowledge chunks and thinking&hellip;</div>');
   Q("#ask-q").value="";
+  const msgs=Q(".ai-msgs"); if(msgs) msgs.scrollTop=msgs.scrollHeight;
   try{
     await loadChunks();
     const hits=retrieve(question,8);
@@ -703,8 +750,8 @@ async function ask(question){
     const cfg=aiCfg();
     const headers={"Content-Type":"application/json"};
     if(cfg.token)headers["X-KB-Token"]=cfg.token;
-    const msgs=HISTORY.concat([{role:"user",content:userMsg}]);
-    const res=await fetch(cfg.url,{method:"POST",headers,body:JSON.stringify({system:SYSTEM_PROMPT,messages:msgs})});
+    const ms=HISTORY.concat([{role:"user",content:userMsg}]);
+    const res=await fetch(cfg.url,{method:"POST",headers,body:JSON.stringify({system:SYSTEM_PROMPT,messages:ms})});
     const data=await res.json();
     if(!res.ok)throw new Error((data&&data.error&&(data.error.message||data.error))||("HTTP "+res.status));
     const text=(data.content&&data.content[0]&&data.content[0].text)||"(no answer returned)";
@@ -726,22 +773,30 @@ async function ask(question){
     LAST_ANSWER_COPY = text.replace(/\[\d+\]/g,"").replace(/[ \t]+\n/g,"\n").trim();
     Q("#"+tid).outerHTML='<div class="answer">'+html+"</div>"
       +'<div class="answer-tools"><button class="mini" id="speak-btn">&#128266; Listen</button> <button class="mini" id="copy-btn">&#128203; Copy</button></div>'+srcs;
+    if(msgs) msgs.scrollTop=msgs.scrollHeight;
   }catch(err){
     Q("#"+tid).outerHTML='<div class="ask-err">Could not get an answer: '+esc(err.message)+". Check the &#9881; AI connection settings.</div>";
+    if(msgs) msgs.scrollTop=msgs.scrollHeight;
   }
 }
+
+/* Existing #ask-btn listener — preserved as-is */
 Q("#ask-btn").addEventListener("click",()=>ask(Q("#ask-q").value));
+/* Visual send button delegates to #ask-btn */
+Q("#action-btn").addEventListener("click",()=>Q("#ask-btn").click());
+
 Q("#ask-clear").addEventListener("click",()=>{
   HISTORY=[]; Q("#thread").innerHTML=""; Q("#ask-q").value="";
-  Q("#ask-note").classList.add("hidden"); Q("#ask-q").focus();
+  Q("#ask-note").classList.add("hidden");
+  showAiEmpty(true);
+  Q("#ask-q").focus();
   ["convo-transcript","convo-docs"].forEach(id=>{const el=Q("#"+id);el.innerHTML="";el.classList.add("hidden");});
   if(window.speechSynthesis)speechSynthesis.cancel();
 });
 
-/* ── Article / document pane ────────────────────────────────────────────── */
+/* ── Article / document pane ─────────────────────────────────────────── */
 let LAST_HITS=[];
 
-/* Text panel — opened by AI citation clicks */
 function openArticlePane(docIdx){
   const doc=BASE[docIdx];
   if(!doc)return;
@@ -759,7 +814,6 @@ function openArticlePane(docIdx){
 function closeArticlePane(){Q("#art-pane").classList.remove("open");}
 Q("#art-close").addEventListener("click",closeArticlePane);
 
-/* Wire citation clicks ([1],[2]…) to article pane */
 Q("#thread").addEventListener("click",e=>{
   const citeEl=e.target.closest("[data-cite]");
   if(citeEl){
@@ -775,7 +829,7 @@ Q("#thread").addEventListener("click",e=>{
   }
 },true);
 
-/* ── Voice input: ElevenLabs Scribe via the worker, Web Speech fallback ── */
+/* ── Voice input ──────────────────────────────────────────── */
 let RECORDING=false, MEDIA_REC=null, MEDIA_CHUNKS=[], WS_RECOG=null, USE_WS=false;
 const SR = window.SpeechRecognition||window.webkitSpeechRecognition;
 const ASK_PLACEHOLDER=Q("#ask-q").placeholder;
@@ -832,7 +886,7 @@ function micStartWebSpeech(){
 
 Q("#ask-mic").addEventListener("click",async()=>{
   Q("#ask-note").classList.add("hidden");
-  if(RECORDING){  // tap again to stop
+  if(RECORDING){
     if(MEDIA_REC&&MEDIA_REC.state==="recording")MEDIA_REC.stop();
     else if(WS_RECOG)WS_RECOG.stop();
     return;
@@ -840,12 +894,12 @@ Q("#ask-mic").addEventListener("click",async()=>{
   const cfg=aiCfg();
   if(!USE_WS&&cfg.url&&navigator.mediaDevices&&window.MediaRecorder){
     try{await micStartScribe();return;}
-    catch(err){USE_WS=true;}  // mic refused or recorder failed; fall through
+    catch(err){USE_WS=true;}
   }
   micStartWebSpeech();
 });
 
-/* ── Read the answer aloud: ElevenLabs via the worker, browser fallback ── */
+/* ── TTS / Listen ────────────────────────────────────────────────── */
 let LAST_ANSWER_SPOKEN="", LAST_ANSWER_COPY="", TTS_AUDIO=null, TTS_BROWSER=false;
 function speakStop(){
   if(TTS_AUDIO){TTS_AUDIO.pause();TTS_AUDIO=null;}
@@ -896,21 +950,12 @@ Q("#thread").addEventListener("click",async e=>{
     btn.innerHTML="&#9632; Stop";
     TTS_AUDIO.play();
   }catch(err){
-    TTS_BROWSER=true;  // worker has no ElevenLabs key (or errored) — use browser voice
+    TTS_BROWSER=true;
     speakBrowser(LAST_ANSWER_SPOKEN,btn);
   }
 });
-/* ── Live conversation: ElevenLabs Conversational AI (the AIMM pattern) ──
-   One click on Talk opens a continuous voice session: Kevin speaks, the
-   agent searches the knowledge base via the search_knowledge_base client
-   tool below, and answers aloud in his chosen voice. Click again to end.
-   Both sides of the conversation are transcribed live into
-   #convo-transcript, and whatever the agent finds is rendered into
-   #convo-docs so Kevin can read along and ask about what he sees
-   ("tell me more about step 6"). show_document must be registered as a
-   client tool on the ElevenLabs agent alongside search_knowledge_base.
-   SDK pinned to 0.1.7 — versions 0.2.0+ need LiveKit endpoints ElevenLabs'
-   servers don't serve yet (see reference/aimm.html for the full story). */
+
+/* ── Live conversation (ElevenLabs Conversational AI) ────── */
 const EL_SDK_URL="https://esm.sh/@elevenlabs/client@1.11.1";
 let CONVO=null, CONVO_CONNECTING=false, CONVO_DOCS=[];
 function convoStatus(msg){
@@ -918,9 +963,6 @@ function convoStatus(msg){
   if(!msg){el.classList.add("hidden");el.textContent="";return;}
   el.classList.remove("hidden");el.textContent=msg;
 }
-/* Live transcript: every final transcript (both sides) lands here so the
-   whole conversation is readable on screen, not just audible. Consecutive
-   agent messages merge into one cream bubble. */
 function convoTurn(source,message){
   const box=Q("#convo-transcript");
   box.classList.remove("hidden");
@@ -935,8 +977,6 @@ function convoTurn(source,message){
   }
   box.scrollTop=box.scrollHeight;
 }
-/* Documents on screen: the agent's searches render here so she can say
-   "I'm showing you that now" and the user can ask about what they see. */
 function docHref(doc){
   let href=(doc.pdf?encodeURI(doc.pdf):doc.p)||"#";
   if(/sharepoint\.com/i.test(href)&&!href.includes("?"))href+="?web=1";
@@ -963,8 +1003,6 @@ function convoShowDoc(entry,n,others){
   box.innerHTML=html;
   return text;
 }
-/* Group ranked chunks into unique documents, preserving rank order, so the
-   numbering the agent speaks matches the numbering on screen. */
 function convoSearch(q){
   const hits=q?retrieve(q,8):[];
   const order=[],byDoc={};
@@ -977,7 +1015,8 @@ function convoSearch(q){
 function docLabel(doc){return '"'+(doc.t||"Untitled")+'" ('+(doc.src||"")+" — "+(doc.tp||"")+")";}
 function convoCleanup(keepMsg){
   CONVO=null;CONVO_CONNECTING=false;
-  Q("#convo-btn").innerHTML="&#127911; Talk";
+  Q("#convo-lbl").textContent="Talk";
+  Q("#convo-btn").classList.remove("active","connecting");
   if(!keepMsg)convoStatus("");
 }
 async function convoToggle(){
@@ -990,7 +1029,9 @@ async function convoToggle(){
     Q("#ai-modal-status").textContent="Paste your ElevenLabs Agent ID to enable Talk.";
     return;
   }
-  CONVO_CONNECTING=true;btn.innerHTML="&#8987; Connecting&hellip;";
+  CONVO_CONNECTING=true;
+  Q("#convo-lbl").textContent="Connecting…";
+  btn.classList.add("connecting");
   convoStatus("Connecting to the voice agent…");
   CONVO_DOCS=[];
   ["convo-transcript","convo-docs"].forEach(id=>{const el=Q("#"+id);el.innerHTML="";el.classList.add("hidden");});
@@ -1033,7 +1074,9 @@ async function convoToggle(){
       onMessage:({message,source})=>{if(message)convoTurn(source,String(message));},
       onConnect:()=>{
         CONVO_CONNECTING=false;
-        btn.innerHTML="&#9632; End";
+        Q("#convo-lbl").textContent="End";
+        btn.classList.add("active");
+        btn.classList.remove("connecting");
         convoStatus("Connected — just talk. Click End when you're done.");
       },
       onDisconnect:(details)=>{
@@ -1115,6 +1158,69 @@ Q("#up-ai-btn").addEventListener("click",async ()=>{
   }finally{Q("#up-ai-btn").disabled=false;}
 });
 
+/* ════════ Resizable AI panel ════════ */
+function setupAiPanelResize(){
+  const panel=Q("#ai-panel");
+  const handle=Q("#ai-resizer");
+  if(!panel||!handle)return;
+
+  const MIN=320, MAX=560;
+  const STORAGE_KEY="linda_ai_panel_width";
+
+  function clamp(v){return Math.max(MIN,Math.min(MAX,v));}
+  function applyWidth(v){
+    const w=clamp(v);
+    document.documentElement.style.setProperty("--ai-panel-width",w+"px");
+    try{localStorage.setItem(STORAGE_KEY,String(w));}catch(e){}
+  }
+
+  try{
+    const saved=parseInt(localStorage.getItem(STORAGE_KEY),10);
+    if(Number.isFinite(saved))applyWidth(saved);
+  }catch(e){}
+
+  let startX=0, startWidth=0, dragging=false;
+
+  function onMove(ev){
+    if(!dragging)return;
+    const clientX=ev.touches?ev.touches[0].clientX:ev.clientX;
+    applyWidth(startWidth+(startX-clientX));
+  }
+  function onEnd(){
+    dragging=false;
+    document.body.classList.remove("resizing-ai");
+    window.removeEventListener("mousemove",onMove);
+    window.removeEventListener("mouseup",onEnd);
+    window.removeEventListener("touchmove",onMove);
+    window.removeEventListener("touchend",onEnd);
+  }
+  function onStart(ev){
+    if(window.matchMedia("(max-width:1100px)").matches)return;
+    dragging=true;
+    startX=ev.touches?ev.touches[0].clientX:ev.clientX;
+    startWidth=panel.getBoundingClientRect().width;
+    document.body.classList.add("resizing-ai");
+    window.addEventListener("mousemove",onMove);
+    window.addEventListener("mouseup",onEnd);
+    window.addEventListener("touchmove",onMove,{passive:false});
+    window.addEventListener("touchend",onEnd);
+    ev.preventDefault();
+  }
+
+  handle.addEventListener("mousedown",onStart);
+  handle.addEventListener("touchstart",onStart,{passive:false});
+
+  handle.addEventListener("keydown",ev=>{
+    if(window.matchMedia("(max-width:1100px)").matches)return;
+    const current=panel.getBoundingClientRect().width;
+    if(ev.key==="ArrowLeft"){applyWidth(current+20);ev.preventDefault();}
+    if(ev.key==="ArrowRight"){applyWidth(current-20);ev.preventDefault();}
+    if(ev.key==="Home"){applyWidth(MAX);ev.preventDefault();}
+    if(ev.key==="End"){applyWidth(MIN);ev.preventDefault();}
+  });
+}
+
+setupAiPanelResize();
 boot();
 </script>
 </body>
