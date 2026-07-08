@@ -41,6 +41,11 @@ a{color:var(--blue)}
 .snav .n{margin-left:auto;font-size:12px;color:var(--side-muted);font-weight:600}
 .snav .nav-sub-head{font-size:10px;letter-spacing:.12em;color:var(--side-muted);padding:10px 10px 3px;cursor:default;font-weight:600;text-transform:uppercase}
 .snav .nav-sub-head:hover{background:none}
+.snav li.parent{font-weight:600}
+.snav li.sub{padding-left:24px;font-size:13px}
+.chev{font-size:10px;color:var(--side-muted);flex-shrink:0;transition:transform .15s;display:inline-block}
+.chev::before{content:"▾"}
+.chev.closed{transform:rotate(-90deg)}
 .side .foot{margin-top:auto;padding:16px 20px 20px;border-top:1px solid var(--side-2);font-size:11.5px;color:var(--side-muted)}
 .side .foot a{color:#9fc1f0;text-decoration:none}
 .side .foot a:hover{text-decoration:underline}
@@ -199,12 +204,11 @@ mark{background:#ffedad;color:inherit;padding:0 1px;border-radius:2px}
       <span class="sb-app-name">Knowledge Base</span>
     </div>
   </div>
-  <div class="sec">LIBRARY</div>
-  <ul class="snav" id="nav-src"></ul>
-  <div class="sec">STEP-BY-STEP GUIDES</div>
-  <ul class="snav" id="nav-guides"></ul>
-  <div class="sec">PEOPLEXD HELP CENTRES</div>
-  <ul class="snav" id="nav-mod"></ul>
+  <ul class="snav" id="nav-all"></ul>
+  <div class="sec">HOW TO GUIDES</div>
+  <ul class="snav" id="nav-htg"></ul>
+  <div class="sec">ACCESS GROUP HELP CENTRE</div>
+  <ul class="snav" id="nav-ag"></ul>
   <div class="foot">
     <div id="foot-counts"></div>
     <div style="margin-top:6px"><a href="https://github.com/begb0037admin/hr-fa-knowledge-base/actions/workflows/scrape-help-centres.yml" target="_blank" rel="noopener">&#8635; Run help-centre refresh</a></div>
@@ -349,6 +353,7 @@ const esc = s => String(s||"").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",
 /* ════════ Data loading ════════ */
 let BASE=[], LOCAL=[], D=[];
 const state={q:"",src:"all",tp:"all",sort:"m-desc",arc:false,mod:"all",pdfOnly:false,webOnly:false};
+const navOpen={htg:true,cm:true,agPdf:true,agWeb:true};
 
 function loadLocal(){try{return JSON.parse(localStorage.getItem(LOCAL_KEY)||"[]")}catch{return[]}}
 function saveLocal(a){localStorage.setItem(LOCAL_KEY,JSON.stringify(a))}
@@ -384,64 +389,130 @@ const SRC_META = {
   "Change Management":  {cls:"s-cm", badge:"b-cm", dot:"var(--purple)"},
   "Access Group Help Centre":{cls:"s-ag",badge:"b-ag",dot:"var(--gold)"}
 };
-/* Friendly display labels for tp values sourced from Access Group / SharePoint taxonomy */
 const TP_LABEL={
-  "Cross-module":                          "General / All modules",
-  "Core PeopleXD / CoreHR Guides":         "PeopleXD Core",
-  "Core PeopleXD / CoreHR Guides (Archive)":"Archive",
-  "Recruitment & Applicant":               "Recruitment",
-  "General / Root-level":                  "General"
+  "Cross-module":                             "General / All modules",
+  "Core PeopleXD / CoreHR Guides":            "PeopleXD Core",
+  "Core PeopleXD / CoreHR Guides (Archive)":  "PeopleXD Core (Archive)",
+  "Workforce Management (WFM)":               "Workforce Management",
+  "Workforce Management (WFM) (Archive)":     "Workforce Management (Archive)",
+  "Recruitment & Applicant":                  "Recruitment",
+  "General / Root-level":                     "General",
+  "Payroll & Pension (Archive)":              "Payroll & Pension (Archive)",
+  "Reporting (Archive)":                      "Reporting (Archive)"
 };
 const tpLabel=m=>TP_LABEL[m]||m;
 
-function buildNav(){
-  const counts={};
-  D.forEach(x=>counts[x.src]=(counts[x.src]||0)+1);
-  let h='<li data-src="all" class="'+(state.src==="all"?"on":"")+'"><span class="dot" style="background:#5d6e96"></span>All documents<span class="n">'+D.length+'</span></li>';
-  Object.keys(SRC_META).forEach(s=>{
-    if(!counts[s])return;
-    h+='<li data-src="'+esc(s)+'" class="'+(state.src===s?"on":"")+'"><span class="dot" style="background:'+SRC_META[s].dot+'"></span>'+esc(s.replace("Access Group ",""))+'<span class="n">'+counts[s]+'</span></li>';
-  });
-  Q("#nav-src").innerHTML=h;
-
-  /* Step-by-step guides — split by source so Access Group PDFs and SharePoint guides are distinct */
-  const agMods={}, spMods={};
-  D.filter(x=>x.e==="pdf").forEach(x=>{
-    if(x.src==="How To Guides") spMods[x.tp]=(spMods[x.tp]||0)+1;
-    else agMods[x.tp]=(agMods[x.tp]||0)+1;
-  });
-  const totalGuides=D.filter(x=>x.e==="pdf").length;
-  let gh='<li data-guide-mod="all" class="'+(state.pdfOnly&&state.mod==="all"?"on":"")+'"><span class="dot" style="background:var(--blue)"></span>All step-by-step guides<span class="n">'+totalGuides+'</span></li>';
-  gh+=Object.keys(agMods).sort().map(m=>'<li data-guide-mod="'+esc(m)+'" class="'+(state.pdfOnly&&state.mod===m?"on":"")+'"><span class="dot" style="background:var(--blue)"></span>'+esc(tpLabel(m))+'<span class="n">'+agMods[m]+'</span></li>').join("");
-  if(Object.keys(spMods).length){
-    gh+='<li class="nav-sub-head">HR System Guides (SharePoint)</li>';
-    gh+=Object.keys(spMods).sort().map(m=>'<li data-guide-mod="'+esc(m)+'" class="'+(state.pdfOnly&&state.mod===m?"on":"")+'"><span class="dot" style="background:var(--blue)"></span>'+esc(tpLabel(m))+'<span class="n">'+spMods[m]+'</span></li>').join("");
-  }
-  Q("#nav-guides").innerHTML=gh;
-
-  /* PXD Help Centre — web articles only (e==="web"), not PDFs */
-  const mods={};
-  D.filter(x=>x.src==="Access Group Help Centre"&&x.e==="web").forEach(x=>mods[x.tp]=(mods[x.tp]||0)+1);
-  const mh=Object.keys(mods).sort().map(m=>'<li data-mod="'+esc(m)+'" class="'+(state.mod===m&&state.webOnly?"on":"")+'"><span class="dot" style="background:var(--gold)"></span>'+esc(tpLabel(m))+'<span class="n">'+mods[m]+'</span></li>').join("");
-  Q("#nav-mod").innerHTML = mh || '<li style="color:var(--side-muted);cursor:default">Run the refresh to import articles</li>';
-
-  const last = D.map(x=>x.m||"").sort().pop()||"—";
-  Q("#foot-counts").textContent = D.length+" documents · latest "+last;
+function navLi(attr,val,dotColor,label,count,extraClass){
+  const cls=[extraClass||""].filter(Boolean).join(" ");
+  return '<li '+attr+'="'+esc(val)+'" class="'+cls+'"><span class="dot" style="background:'+dotColor+'"></span>'+esc(label)+'<span class="n">'+count+'</span></li>';
 }
-Q("#nav-src").addEventListener("click",e=>{
-  const li=e.target.closest("li[data-src]"); if(!li)return;
-  state.src=li.getAttribute("data-src"); state.mod="all"; state.pdfOnly=false; state.webOnly=false;
-  Q("#src").value=state.src; buildNav(); render();
+function parentLi(attr,val,dotColor,label,count,isOn,toggleKey,isOpen){
+  const on=isOn?"on":"";
+  const chevCls="chev"+(isOpen?"":" closed");
+  return '<li '+attr+'="'+esc(val)+'" class="parent '+on+'"><span class="dot" style="background:'+dotColor+'"></span>'+esc(label)+'<span class="n">'+count+'</span><span class="'+chevCls+'" data-toggle="'+toggleKey+'"></span></li>';
+}
+
+function buildNav(){
+  /* All documents */
+  const allOn=(state.src==="all"&&!state.pdfOnly&&!state.webOnly&&state.mod==="all")?"on":"";
+  Q("#nav-all").innerHTML='<li data-all class="'+allOn+'"><span class="dot" style="background:#5d6e96"></span>All documents<span class="n">'+D.length+'</span></li>';
+
+  /* HOW TO GUIDES */
+  const htgDocs=D.filter(x=>x.src==="How To Guides");
+  const cmDocs =D.filter(x=>x.src==="Change Management");
+
+  // HR System SharePoint Guides
+  const htgMods={};
+  htgDocs.forEach(x=>{if(state.arc||!/\(Archive\)$/i.test(x.tp))htgMods[x.tp]=(htgMods[x.tp]||0)+1;});
+  let htg=parentLi("data-htg-src","How To Guides","var(--blue)","HR System SharePoint Guides",htgDocs.length,state.src==="How To Guides","htg",navOpen.htg);
+  if(navOpen.htg){
+    htg+=Object.keys(htgMods).sort().map(m=>navLi("data-htg-mod",m,"var(--blue)",tpLabel(m),htgMods[m],(state.src==="How To Guides"&&state.mod===m?"on sub":"sub"))).join("");
+  }
+
+  // Change Management
+  const cmMods={};
+  cmDocs.forEach(x=>cmMods[x.tp]=(cmMods[x.tp]||0)+1);
+  htg+=parentLi("data-htg-src","Change Management","var(--purple)","Change Management",cmDocs.length,state.src==="Change Management","cm",navOpen.cm);
+  if(navOpen.cm){
+    htg+=Object.keys(cmMods).sort().map(m=>navLi("data-cm-mod",m,"var(--purple)",tpLabel(m),cmMods[m],(state.src==="Change Management"&&state.mod===m?"on sub":"sub"))).join("");
+  }
+  Q("#nav-htg").innerHTML=htg;
+
+  /* ACCESS GROUP HELP CENTRE */
+  // Step-by-step guides (AG PDFs)
+  const agPdfs=D.filter(x=>x.src==="Access Group Help Centre"&&x.e==="pdf");
+  const agPdfMods={};
+  agPdfs.forEach(x=>agPdfMods[x.tp]=(agPdfMods[x.tp]||0)+1);
+  let ag=parentLi("data-ag-view","pdf","var(--blue)","Step-by-step guides",agPdfs.length,state.pdfOnly,"agPdf",navOpen.agPdf);
+  if(navOpen.agPdf){
+    ag+=Object.keys(agPdfMods).sort().map(m=>navLi("data-ag-pdf-mod",m,"var(--blue)",tpLabel(m),agPdfMods[m],(state.pdfOnly&&state.mod===m?"on sub":"sub"))).join("");
+  }
+
+  // PeopleXD online guides (web articles)
+  const agWeb=D.filter(x=>x.src==="Access Group Help Centre"&&x.e==="web");
+  const agWebMods={};
+  agWeb.forEach(x=>agWebMods[x.tp]=(agWebMods[x.tp]||0)+1);
+  ag+=parentLi("data-ag-view","web","var(--gold)","PeopleXD online guides",agWeb.length,state.webOnly,"agWeb",navOpen.agWeb);
+  if(navOpen.agWeb){
+    ag+=Object.keys(agWebMods).sort().map(m=>navLi("data-ag-web-mod",m,"var(--gold)",tpLabel(m),agWebMods[m],(state.webOnly&&state.mod===m?"on sub":"sub"))).join("");
+  }
+  Q("#nav-ag").innerHTML=ag;
+
+  const last=D.map(x=>x.m||"").sort().pop()||"—";
+  Q("#foot-counts").textContent=D.length+" documents · latest "+last;
+}
+Q("#nav-all").addEventListener("click",e=>{
+  if(!e.target.closest("li[data-all]"))return;
+  state.src="all";state.mod="all";state.pdfOnly=false;state.webOnly=false;
+  Q("#src").value="all";buildNav();render();
 });
-Q("#nav-guides").addEventListener("click",e=>{
-  const li=e.target.closest("li[data-guide-mod]"); if(!li)return;
-  state.pdfOnly=true; state.webOnly=false; state.mod=li.getAttribute("data-guide-mod"); state.src="all"; state.tp="all";
-  Q("#src").value="all"; Q("#tp").value="all"; buildNav(); render();
+Q("#nav-htg").addEventListener("click",e=>{
+  // Chevron toggle — collapse/expand only
+  const chev=e.target.closest(".chev[data-toggle]");
+  if(chev){const k=chev.getAttribute("data-toggle");navOpen[k]=!navOpen[k];buildNav();return;}
+  // HR System SharePoint Guides parent or module
+  const htgSrc=e.target.closest("li[data-htg-src]");
+  if(htgSrc){
+    state.src=htgSrc.getAttribute("data-htg-src");state.mod="all";state.pdfOnly=false;state.webOnly=false;
+    Q("#src").value=state.src;Q("#tp").value="all";buildNav();render();return;
+  }
+  const htgMod=e.target.closest("li[data-htg-mod]");
+  if(htgMod){
+    state.src="How To Guides";state.mod=htgMod.getAttribute("data-htg-mod");state.pdfOnly=false;state.webOnly=false;
+    Q("#src").value=state.src;Q("#tp").value="all";buildNav();render();return;
+  }
+  const cmMod=e.target.closest("li[data-cm-mod]");
+  if(cmMod){
+    state.src="Change Management";state.mod=cmMod.getAttribute("data-cm-mod");state.pdfOnly=false;state.webOnly=false;
+    Q("#src").value=state.src;Q("#tp").value="all";buildNav();render();
+  }
 });
-Q("#nav-mod").addEventListener("click",e=>{
-  const li=e.target.closest("li[data-mod]"); if(!li)return;
-  state.pdfOnly=false; state.webOnly=true; state.mod=li.getAttribute("data-mod"); state.src="all"; state.tp="all";
-  Q("#src").value="all"; Q("#tp").value="all"; buildNav(); render();
+Q("#nav-ag").addEventListener("click",e=>{
+  // Chevron toggle
+  const chev=e.target.closest(".chev[data-toggle]");
+  if(chev){const k=chev.getAttribute("data-toggle");navOpen[k]=!navOpen[k];buildNav();return;}
+  // Parent views
+  const agView=e.target.closest("li[data-ag-view]");
+  if(agView){
+    const v=agView.getAttribute("data-ag-view");
+    state.src="Access Group Help Centre";state.mod="all";
+    state.pdfOnly=v==="pdf";state.webOnly=v==="web";
+    Q("#src").value=state.src;Q("#tp").value="all";buildNav();render();return;
+  }
+  // PDF module
+  const agPdfMod=e.target.closest("li[data-ag-pdf-mod]");
+  if(agPdfMod){
+    state.src="Access Group Help Centre";state.mod=agPdfMod.getAttribute("data-ag-pdf-mod");
+    state.pdfOnly=true;state.webOnly=false;
+    Q("#src").value=state.src;Q("#tp").value="all";buildNav();render();return;
+  }
+  // Web module
+  const agWebMod=e.target.closest("li[data-ag-web-mod]");
+  if(agWebMod){
+    state.src="Access Group Help Centre";state.mod=agWebMod.getAttribute("data-ag-web-mod");
+    state.webOnly=true;state.pdfOnly=false;
+    Q("#src").value=state.src;Q("#tp").value="all";buildNav();render();
+  }
 });
 
 /* ════════ Filters & cards ════════ */
@@ -514,7 +585,7 @@ function render(){
   }).join("")+capNote;
 }
 Q("#q").addEventListener("input",e=>{state.q=e.target.value;render()});
-Q("#src").addEventListener("change",e=>{state.src=e.target.value;state.mod="all";buildNav();render()});
+Q("#src").addEventListener("change",e=>{state.src=e.target.value;state.mod="all";state.pdfOnly=false;state.webOnly=false;buildNav();render()});
 Q("#tp").addEventListener("change",e=>{state.tp=e.target.value;render()});
 Q("#sort").addEventListener("change",e=>{state.sort=e.target.value;render()});
 Q("#arc").addEventListener("change",e=>{state.arc=e.target.checked;render()});
