@@ -72,6 +72,15 @@ Reference mockup: https://claude.ai/code/artifact/d2a7d157-468d-461e-9ec0-1efabd
 
 Panel structure top-to-bottom:
 1. **Header** — Oxford navy background | single gold 4-pointed SVG sparkle star | "Linda AI" 17px bold | animated green LIVE chip (turns red on error) | NO gear button
+
+   **Canonical sparkle star SVG — copy verbatim, never guess or regenerate:**
+   ```html
+   <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+     <path d="M7,0 C7,5 5,7 0,7 C5,7 7,9 7,14 C7,9 9,7 14,7 C9,7 7,5 7,0Z" fill="#c79b3b"/>
+   </svg>
+   ```
+   Shape: 4-pointed sparkle (✦), deeply concave sides. Colour: gold `#c79b3b`. Do NOT use a polygon, an 8-pointed star, or any other generated path.
+
 2. **Input row** — directly below header | text input + circular dark navy action button (dual-state: waveform SVG when empty → send arrow SVG when text entered)
 3. **Chips** — directly below input row | suggestion chips (New starter record · Sickness absence · Salary change · Process a leaver)
 4. **Content area** — flex:1 scrollable | empty state text: "Ask Linda anything about the knowledge base in plain English. Try a suggestion above or speak using the microphone below." | thread renders here when active
