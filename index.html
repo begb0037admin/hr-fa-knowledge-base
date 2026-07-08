@@ -82,7 +82,7 @@ input[type=text]:focus,select:focus{outline:none;border-color:var(--blue);box-sh
 .toggles label{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
 
 /* ── Cards ─────────────────────────────────────────────────── */
-.card{background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius);padding:12px 15px;margin-bottom:9px;box-shadow:0 1px 2px rgba(13,42,82,.04);transition:box-shadow .15s}
+.card{background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius);padding:12px 15px;margin-bottom:9px;box-shadow:0 1px 2px rgba(13,42,82,.04);transition:box-shadow .15s;cursor:pointer}
 .card:hover{box-shadow:0 3px 8px rgba(13,42,82,.10)}
 .card h3{margin:0 0 5px;font-size:14.8px;font-weight:600;color:var(--navy-text)}
 .badges{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:6px}
@@ -97,6 +97,16 @@ input[type=text]:focus,select:focus{outline:none;border-color:var(--blue);box-sh
 .summary{margin:4px 0;font-size:13.8px;color:#3c4456}
 .path-row{display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--muted);margin-top:7px;flex-wrap:wrap}
 .meta-sm{font-size:11px;color:var(--hint);margin-top:6px}
+.card-expand{display:none;margin-top:10px;border-top:1px solid var(--border-soft);padding-top:10px}
+.card.expanded .card-expand{display:block}
+.card-expand .card-md p{margin:0 0 7px;font-size:13.5px;color:#3c4456}
+.card-expand .card-md p:last-child{margin-bottom:0}
+.card-expand .card-md strong{color:var(--navy-text)}
+.card-expand .card-md ul{margin:4px 0 8px;padding-left:20px}
+.card-expand .card-md li{margin:3px 0;font-size:13.5px;color:#3c4456}
+.card-expand .card-md ol{margin:4px 0 8px;padding-left:20px}
+.card-expand .path-row{margin-top:12px}
+.card-expand .card-actions{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
 .empty{text-align:center;padding:44px 16px;color:var(--muted);background:#fff;border-radius:var(--radius-lg);border:1px dashed var(--border)}
 mark{background:#ffedad;color:inherit;padding:0 1px;border-radius:2px}
 .loaderr{background:#fdebea;color:#8c2722;border-radius:var(--radius);padding:14px}
@@ -400,6 +410,37 @@ const AI_CFG_KEY = "hrKbAiCfg_v1";
 const Q = s => document.querySelector(s);
 const esc = s => String(s||"").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
+function mdToHtml(txt){
+  if(!txt)return"";
+  txt=txt.replace(/^#[^\n]*\n?/,"").trim();
+  const inl=s=>esc(s).replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>");
+  const lines=txt.split("\n");
+  let out="",inUl=false;
+  for(const raw of lines){
+    const l=raw.trim();
+    if(!l){if(inUl){out+="</ul>";inUl=false;}continue;}
+    if(/^#{1,3}\s/.test(l)){
+      if(inUl){out+="</ul>";inUl=false;}
+      out+="<p><strong>"+inl(l.replace(/^#{1,3}\s+/,""))+"</strong></p>";
+    }else if(l.startsWith("- ")){
+      if(!inUl){out+="<ul>";inUl=true;}
+      out+="<li>"+inl(l.slice(2))+"</li>";
+    }else{
+      if(inUl){out+="</ul>";inUl=false;}
+      out+="<p>"+inl(l)+"</p>";
+    }
+  }
+  if(inUl)out+="</ul>";
+  return out;
+}
+
+function cardPreview(s){
+  if(!s)return"";
+  const clean=s.replace(/^#[^\n]*\n+/,"").replace(/\*\*/g,"").trim();
+  const dot=clean.search(/[.!?](\s|$)/);
+  return dot>0&&dot<220?clean.slice(0,dot+1):clean.slice(0,200).replace(/\s\S*$/,"…");
+}
+
 /* ════════ Data loading ════════ */
 let BASE=[], LOCAL=[], D=[];
 const state={q:"",src:"all",tp:"all",sort:"m-desc",arc:false,mod:"all",pdfOnly:false,webOnly:false};
@@ -599,9 +640,9 @@ function render(){
     const m=SRC_META[x.src]||{cls:"s-htg",badge:"b-tp"};
     const arc=/\(Archive\)$/i.test(x.tp);
     const isAg=x.src==="Access Group Help Centre";
-    let openHref = (/salesforce/i.test(x.p||"") && x.pdf) ? encodeURI(x.pdf) : (x.p||"");
+    let openHref = x.p || "";
     if(/sharepoint\.com/i.test(openHref) && !openHref.includes("?")) openHref += "?web=1";
-    const openLabel = isAg ? (x.pdf ? "Open PDF" : "Open article") : "Open in SharePoint";
+    const openLabel = isAg ? (x.e === "pdf" ? "Open PDF" : "Open article") : "Open in SharePoint";
     let open = openHref?'<a class="mini" target="_blank" rel="noopener" href="'+esc(openHref)+'">'+openLabel+"</a>":"";
     let copy = openHref?'<button class="mini" data-copy="'+esc(openHref)+'">Copy link</button>':"";
     let del = x._local?'<button class="mini" data-del="'+esc(x.f)+'">Remove</button>':"";
@@ -610,6 +651,8 @@ function render(){
     if(x.kb)bits.push(Math.round(x.kb)+" KB");
     if(x.pg)bits.push(x.pg+" pages");
     if(x.f)bits.push(esc(x.f));
+    const preview=cardPreview(x.s);
+    const fullHtml=mdToHtml(x.s);
     return '<div class="card">'
       +'<div class="badges"><span class="badge '+m.badge+'">'+esc(x.src)+'</span>'
       +'<span class="badge b-tp">'+esc(x.tp)+'</span>'
@@ -618,9 +661,12 @@ function render(){
       +(x._local?'<span class="badge b-local">Local addition</span>':"")
       +"</div>"
       +"<h3>"+hl(x.t,q)+"</h3>"
-      +(x.s?'<div class="summary">'+hl(x.s,q)+"</div>":"")
-      +'<div class="path-row">'+open+copy+del+"</div>"
+      +(preview?'<div class="summary">'+hl(preview,q)+"</div>":"")
       +(bits.length?'<div class="meta-sm">'+bits.join(" · ")+"</div>":"")
+      +'<div class="card-expand">'
+      +(fullHtml?'<div class="card-md">'+fullHtml+"</div>":"")
+      +'<div class="path-row">'+open+copy+del+"</div>"
+      +"</div>"
       +"</div>";
   }).join("")+capNote;
 }
@@ -636,8 +682,11 @@ Q("#out").addEventListener("click",e=>{
   if(dl&&confirm('Remove "'+dl+'" from local additions?')){
     LOCAL=LOCAL.filter(x=>x.f!==dl); saveLocal(LOCAL);
     D=BASE.concat(LOCAL.map(x=>Object.assign({},x,{_local:true})));
-    buildNav();buildFilters();render();
+    buildNav();buildFilters();render();return;
   }
+  if(e.target.closest("a")||e.target.closest("button"))return;
+  const card=e.target.closest(".card");
+  if(card)card.classList.toggle("expanded");
 });
 
 /* ════════ AI config ════════ */
