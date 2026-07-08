@@ -13,7 +13,7 @@ itself. Trust the repo over memory; verify data, not just green ticks.
 
 **KB document count: 2,515** ✅
 
-Sidebar restructure complete (8 Jul). AI summaries generated for all 307 PDF step-by-step guides (8 Jul). Dashboard redesign in progress — Steps 1 & 2 complete, Step 3 (split panel plumbing) next.
+Sidebar restructure complete (8 Jul). AI summaries generated for all 307 PDF step-by-step guides (8 Jul). Dashboard redesign in progress — Steps 1, 2 & 3 complete. Next: Step 4 (card TTS read-aloud button).
 
 ---
 
@@ -25,7 +25,7 @@ The following work is agreed and queued. Work in this order.
 |---|---|---|---|
 | 1 | Research phase | ✅ Complete | Read `finance.lily.co.uk` dashboard and `hris-dashboard` (Linda) |
 | 2 | Layout mockup — split panel | ✅ Complete | Approved 8 Jul. Artifact: https://claude.ai/code/artifact/d2a7d157-468d-461e-9ec0-1efabdbfc384 |
-| 3 | Split panel plumbing | 🔄 In Progress | Implement HTML structure in `index.html`. Also: change sidebar PeopleXD dot gold → purple. |
+| 3 | Split panel plumbing | ✅ Complete | commit `99c803f` — 3-zone layout live on main (8 Jul). PeopleXD dot now purple. |
 | 4 | Card TTS read-aloud button | 🔲 Pending | Speaker icon (grey circle, 30px) in top-right of expanded card only. Calls existing `/tts` route. |
 | 5 | Verbatim PDF text extraction | 🔲 Pending | Replace AI summaries with pdfplumber word-for-word extraction for How To Guide PDFs. Prerequisite for Linda giving accurate step answers. |
 | 6 | Document viewer in right pane | 🔲 Pending | Resurrect viewer — now lives in right pane. Clicking a card loads the document there. |
@@ -59,7 +59,7 @@ These are final — do not re-litigate without Kevin's explicit instruction.
 
 **Icon blocks** — match source badge colour (blue for HTG, green for AG, orange for CM)
 
-**Sidebar dot colours (current `index.html`):** grey, blue, orange, green — PeopleXD dot changing from gold → purple (Step 3)
+**Sidebar dot colours (current `index.html`):** grey, blue, orange, green — PeopleXD dot purple (done, Step 3)
 
 **Linda AI panel**
 - Header: Oxford navy background, gold 3-star sparkle SVG + "Linda AI" 17px bold + animated green LIVE chip (turns red on error)
@@ -81,6 +81,7 @@ These are final — do not re-litigate without Kevin's explicit instruction.
 - Added `.github/workflows/summarise-pdf-guides.yml` — manual-dispatch workflow
 - Ran summarisation with `force=true` — all 307 PDF cards now have AI-generated plain-English summaries
 - Dashboard redesign Steps 1 & 2 complete — mockup approved, design locked
+- **Step 3 deployed to main** — 3-zone layout (sidebar | doc library | Linda AI panel) cherry-picked to main, commit `99c803f` (8 Jul). Smoke-check 6/6 passed. PR #17 closed as superseded.
 
 ---
 
@@ -160,6 +161,7 @@ For any future harvest:
 | `473ab97` | Restructure sidebar: collapsible sections |
 | `4549077` | Make sidebar dots distinct |
 | `ff68412` | Add AI summarisation workflow + script |
+| `99c803f` | Step 3: 3-zone split-panel layout with resizable Linda AI panel |
 
 ---
 
