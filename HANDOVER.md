@@ -1,1 +1,163 @@
-IyBIYW5kb3ZlciDigJQgSFIgRkEgS25vd2xlZGdlIEJhc2UKCioqVG86KiogTmV3IHNlc3Npb24KKipGcm9tOioqIFNlc3Npb24gb2YgNyBKdWx5IDIwMjYKKipPd25lcjoqKiBLZXZpbiAoa2V2aW4ubGVsaXR0ZUBhZG1pbi5veC5hYy51ayDCtyBHaXRIdWIgYGJlZ2IwMDM3YWRtaW5gKQoKRXZlcnl0aGluZyB5b3UgbmVlZCB0byBkcml2ZSB0aGlzIHByb2plY3QgaXMgaW4gdGhpcyBmaWxlIHBsdXMgdGhlIHJlcG8KaXRzZWxmLiBUcnVzdCB0aGUgcmVwbyBvdmVyIG1lbW9yeTsgdmVyaWZ5IGRhdGEsIG5vdCBqdXN0IGdyZWVuIHRpY2tzLgoKLS0tCgojIyBDdXJyZW50IFN0YXRlIOKAlCA3IEp1bHkgMjAyNgoKKipLQiBkb2N1bWVudCBjb3VudDogMiw1MTUqKiDinIUg4oCUIGd1aWRlIFBERiBoYXJ2ZXN0IGNvbXBsZXRlLgoKMzA3IG5ldyBQZW9wbGVYRCBzdGVwLWJ5LXN0ZXAgZ3VpZGUgUERGcyBpbmRleGVkIGFjcm9zcyAxMSBtb2R1bGVzIChQZW9wbGUgTWFuYWdlbWVudCwgUGF5cm9sbCwgQ3Jvc3MtbW9kdWxlIMOXNCwgUmVjcnVpdG1lbnQsIFRhbGVudCwgV29ya2ZvcmNlIE1hbmFnZW1lbnQsIEV4cGVuc2UsIFBlbnNpb24pLiBDb21taXR0ZWQgdG8gbWFpbiBhdCBgMjYzZTMzY2AuCgoqKk5vIGltbWVkaWF0ZSBuZXh0IHN0ZXBzKiog4oCUIHByaW1hcnkgb2JqZWN0aXZlIGFjaGlldmVkLgoKT3B0aW9uYWwgKGxvd2VyIHByaW9yaXR5LCBLZXZpbidzIGNhbGwpOgotIFJlc3RvcmUgbWFuaWZlc3QgcmVncmVzc2lvbjogS0Igd2FzIGF0IDIsMjA4IGJlZm9yZSB0aGlzIHJ1bjsgMiwzMDMgd2FzIHRoZSBwcmV2aW91cyBjb3JyZWN0IHN0YXRlIGJlZm9yZSBhIGAtLWd1aWRlcy1vbmx5YCBydW4gb24gMjkgSnVuZSB3aXBlZCB0aGUgbWFuaWZlc3QuIFRoZSAzMDcgZ3VpZGVzIGJyaW5nIHRoZSBjb3VudCB0byAyLDUxNSwgd2hpY2ggaXMgd2VsbCBhYm92ZSB0aGUgb2xkIHRhcmdldC4gVGhlIHJlZ3Jlc3Npb24gaXMgZWZmZWN0aXZlbHkgc3VwZXJzZWRlZC4KLSBSdW4gYSBmdWxsIGRlZXAgY3Jhd2wgKGBkZWVwPXRydWVgLCBgZ3VpZGVzPXRydWVgLCBgbGltaXQ9MGApIHRvIHJlZnJlc2ggYWxsIGhlbHAtY2VudHJlIGFydGljbGVzIGF0IHRoZSBzYW1lIHRpbWUgYXMgZ3VpZGVzIOKAlCBjdXJyZW50bHkgZ3VpZGUgUERGcyBhcmUgaW5kZXhlZCBidXQgdGhlIGhlbHAtY2VudHJlIGFydGljbGVzIGhhdmUgbm90IGJlZW4gcmUtY3Jhd2xlZCBzaW5jZSBKdW5lLgoKLS0tCgojIyBXaGF0IFRoaXMgSXMKCkFuIEFJLWFzc2lzdGVkIGtub3dsZWRnZSBiYXNlIGZvciBLZXZpbidzIEhSIEZ1bmN0aW9uYWwgQW5hbHlzaXMgd29yayBhdAp0aGUgVW5pdmVyc2l0eSBvZiBPeGZvcmQuIE9uZSBwYWdlLCBvbmUgcXVlc3Rpb24gYm94OiBLZXZpbiBhc2tzIGluIHBsYWluCkVuZ2xpc2ggKHR5cGVkIG9yIHNwb2tlbiksIHRoZSBBSSBhbnN3ZXJzIHdpdGggc3RlcHMgYW5kIGNpdGVzIGRpcmVjdCBsaW5rcy4KCi0gKipMaXZlIHNpdGU6KiogaHR0cHM6Ly9rYi5sZWxpdHRlLmNvLnVrLwotICoqQUkgcHJveHkgd29ya2VyOioqIGBoci1rYi1haWAgb24gS2V2aW4ncyBDbG91ZGZsYXJlIGFjY291bnQKCi0tLQoKIyMgR3VpZGUgUERGIEhhcnZlc3Qg4oCUIENvbXBsZXRlZCA3IEp1bHkgMjAyNgoKIyMjIFByb2JsZW0gaGlzdG9yeQotICoqQXR0ZW1wdCAxICgyOSBKdW4pOioqIGBhcnRpY2xlIHRhYmxlIHRkOmZpcnN0LWNoaWxkIGFbaHJlZl1gIOKAlCBJbnRlcmNvbSBkb2Vzbid0IHVzZSBgPHRhYmxlPmAuIDAgbGlua3MuCi0gKipBdHRlbXB0IDIgKDI5IEp1bik6KiogYGFydGljbGUgYVtocmVmXWAgZmlsdGVyZWQgdG8gYC9hcnRpY2xlcy9gIOKAlCBmb3VuZCBvbmx5IGNyb3NzLXJlZmVyZW5jZSBsaW5rcyAoNSBwZXIgbW9kdWxlKS4gUmVhbCBndWlkZSBsaW5rcyBwb2ludCB0byBgYWNjZXNzZ3JvdXAubXkuc2FsZXNmb3JjZS5jb21gLCB3aGljaCB0aGUgZmlsdGVyIHJlamVjdGVkLgotICoqUm9vdCBjYXVzZToqKiBTYWxlc2ZvcmNlIHZpZXdlciBVUkxzIChgL3NmYy9wLy4uLmApIGFyZSBub3QgZGlyZWN0IGZpbGUgZG93bmxvYWRzIOKAlCBgcmVxdWVzdHMuZ2V0KClgIHJldHVybnMgYW4gSFRNTCB2aWV3ZXIgc2hlbGwsIG5vdCBhIFBERi4KCiMjIyBGaXggKFBSICMxNiDigJQgbWVyZ2VkIDcgSnVseSAyMDI2KQoxLiBGaWx0ZXIgdXBkYXRlZCB0byBhY2NlcHQgYGFjY2Vzc2dyb3VwLm15LnNhbGVzZm9yY2UuY29tYCBleGFjdGx5CjIuIE5ldyBgZG93bmxvYWRfc2FsZXNmb3JjZV92aWFfcGFnZSgpYDogbmF2aWdhdGVzIGJyb3dzZXIgdG8gU2FsZXNmb3JjZSB2aWV3ZXIsIGNsaWNrcyBgYnV0dG9uW3RpdGxlPSdEb3dubG9hZCddYCwgY2FwdHVyZXMgZG93bmxvYWQgdmlhIGBwYWdlLmV4cGVjdF9kb3dubG9hZCgpYAozLiBgJVBERmAgbWFnaWMtYnl0ZSB2YWxpZGF0aW9uIGd1YXJkcyBgZGVzdC5leGlzdHMoKWAgYmVmb3JlIHJlYWRpbmcKCiMjIyBDb25maXJtZWQgcmVzdWx0cwotIERpYWdub3N0aWMgcnVuIChydW4gSUQgMjg4MzY4NTA5OTUsIGBkaWFnbm9zdGljPXRydWUsIGxvZ2luPXRydWUsIGxpbWl0PTFgKTogMTEvMTEgbW9kdWxlcywgMTEgUERGcyBkb3dubG9hZGVkLCAwIGVycm9ycy4gU2VsZWN0b3IgYGJ1dHRvblt0aXRsZT0nRG93bmxvYWQnXWAgY29uZmlybWVkIHdvcmtpbmcgb24gZXZlcnkgU2FsZXNmb3JjZSB2aWV3ZXIgcGFnZS4KLSBGdWxsIGhhcnZlc3QgKHJ1biBJRCAyODgzNzM4OTAzOSwgYGxvZ2luPXRydWUsIGd1aWRlc19vbmx5PXRydWUsIGxpbWl0PTBgKTogNzE3IGZpbGVzIGluIGFydGlmYWN0IChpbmNsdWRlcyBtYW5pZmVzdCArIGV4aXN0aW5nIGNvbGxlY3Rpb24gUERGcykuIGtiLmpzb24gd2VudCBmcm9tIDIsMjA4IOKGkiAqKjIsNTE1IGRvY3VtZW50cyoqLgoKLS0tCgojIyBXb3JrZmxvdyDigJQgRGlhZ25vc3RpYyBNb2RlCgpUaGUgd29ya2Zsb3cgaGFzIGEgYGRpYWdub3N0aWNgIGJvb2xlYW4gaW5wdXQgKGRlZmF1bHQ6IGBmYWxzZWApLgoKV2hlbiBgZGlhZ25vc3RpYz10cnVlYDoKLSBSdW5zIGAtLW5vLWxvZ2luIC0tZ3VpZGVzLW9ubHkgLS1saW1pdCAxIC0tb3V0cHV0IGRvd25sb2Fkc19kaWFnYAotIFNraXBzIEJ1aWxkIGluZGV4IHN0ZXAKLSBTa2lwcyBDb21taXQgc3RlcAotIFVwbG9hZHMgZnJvbSBgZG93bmxvYWRzX2RpYWcvYCDigJQgbmV2ZXIgdG91Y2hlcyByZWFsIGRhdGEKLSBTYWZlIHRvIHJ1biBhbnkgdGltZQoKVXNlIHRoaXMgZm9yIGZ1dHVyZSBkZWJ1Z2dpbmcgYmVmb3JlIGNvbW1pdHRpbmcgdG8gYSBmdWxsIGhhcnZlc3QuCgotLS0KCiMjIEd1aWRlIFBERiBEb3dubG9hZCDigJQgQXV0aGVudGljYXRpb24KClRoZSBTYWxlc2ZvcmNlLWhvc3RlZCBndWlkZSBQREZzIChgYWNjZXNzZ3JvdXAubXkuc2FsZXNmb3JjZS5jb20vc2ZjL3AvLi4uYCkgcmVxdWlyZSBhbiBhdXRoZW50aWNhdGVkIFNhbGVzZm9yY2UgQ29tbXVuaXR5IHNlc3Npb24uIFdpdGhvdXQgbG9naW4sIFNhbGVzZm9yY2UgcmV0dXJucyAyMDAgT0sgd2l0aCBhbiBIVE1MIHJlZGlyZWN0IOKAlCBub3QgYSBQREYuCgpGb3IgYW55IGZ1dHVyZSBoYXJ2ZXN0OgotIGBsb2dpbj10cnVlYCBpbiB0aGUgd29ya2Zsb3cKLSBBQ0NFU1NfUEFTU1dPUkQgYW5kIEFDQ0VTU19VU0VSTkFNRSBzZWNyZXRzIG11c3QgYmUgc2V0IGluIHRoZSByZXBvCgotLS0KCiMjIENvbnN0aXR1dGlvbiDigJQgTm9uLU5lZ290aWFibGUKCjEuICoqTmV2ZXIgcHVzaCBjb2RlIHdpdGhvdXQgS2V2aW4ncyBleHBsaWNpdCBhcHByb3ZhbC4qKiBTaG93IOKGkiBhcHByb3ZlIOKGkiBwdXNoLiBObyBleGNlcHRpb25zLgoyLiAqKk5ldmVyIHRyaWdnZXIgYSB3b3JrZmxvdyBydW4gd2l0aG91dCBLZXZpbidzIGV4cGxpY2l0IGFwcHJvdmFsLioqCjMuICoqTmV2ZXIgb3ZlcndyaXRlIGEgZGF0YSBmaWxlKiogKG1hbmlmZXN0LmNzdiwga2IuanNvbiwgdGFza3MuanNvbikgd2l0aG91dCB2ZXJpZnlpbmcgZG93bnN0cmVhbSBpbXBhY3QuCjQuICoqU2lnbmFsIHdoZW4gaGlnaCBlZmZvcnQgaXMgbmVlZGVkLCB3YWl0IGZvciBLZXZpbiB0byByYWlzZSBpdC4qKgo1LiAqKlNob3cg4oaSIEFwcHJvdmUg4oaSIFB1c2guIEV2ZXJ5IHRpbWUuKioKCi0tLQoKIyMgR2l0IFJlZmVyZW5jZQoKfCBDb21taXQgfCBXaGF0IGl0IHJlcHJlc2VudHMgfAp8LS0tfC0tLXwKfCBgMmE1NzRkOGAgfCBMYXN0IGtub3duIGdvb2Qgc3RhdGUg4oCUIG1hbmlmZXN0IGhhcyA5NDQgcm93cywga2IuanNvbiBoYXMgMiwzMDMgZG9jcyB8CnwgYGI1NWViMjVgIHwgU2VsZWN0b3IgZml4IGF0dGVtcHQgKyBgLS1ndWlkZXMtb25seWAgZmxhZyBhZGRlZCB8CnwgYGIzZGVjNmRgIHwgR3VpZGVzLW9ubHkgcnVuIHJlc3VsdCDigJQgbWFuaWZlc3Qgb3ZlcndyaXR0ZW4sIEtCIHJlZ3Jlc3NlZCB0byAyLDIwOCB8CnwgYGQwZWI3OTBgIHwgUFIgIzE1IOKAlCBndWlkZSBQREYgZmlsdGVyIGZpeCAoU2FsZXNmb3JjZSBkb21haW4sIGRpYWdub3N0aWMgbW9kZSkgfAp8IGA1NTUyYTRhYCB8IFBSICMxNiDigJQgU2FsZXNmb3JjZSBwYWdlLW5hdiBkb3dubG9hZCAoYGRvd25sb2FkX3NhbGVzZm9yY2VfdmlhX3BhZ2VgKSB8CnwgYDI2M2UzM2NgIHwgRnVsbCBndWlkZSBoYXJ2ZXN0IGNvbW1pdHRlZCDigJQga2IuanNvbiBhdCAyLDUxNSBkb2NzIHwKCi0tLQoKIyMgQXJjaGl0ZWN0dXJlCgp8IFBpZWNlIHwgRmlsZSB8IE5vdGVzIHwKfC0tLXwtLS18LS0tfAp8IFNpdGUgfCBgaW5kZXguaHRtbGAgfCBTdGF0aWMgU1BBLCBPeGZvcmQtbmF2eSB0aGVtZS4gQk0yNSByZXRyaWV2YWwg4oaSIENsb3VkZmxhcmUgd29ya2VyIOKGkiBDbGF1ZGUuIFZvaWNlIGlucHV0ICsgTGlzdGVuLiB8CnwgV29ya2VyIHwgYHdvcmtlci93b3JrZXIuanNgIHwgUm91dGVzOiBgL2AgQ2xhdWRlIGNoYXQsIGAvdHRzYCBFbGV2ZW5MYWJzLCBgL3N0dGAgU2NyaWJlIHYyLiBTZWNyZXRzIGluIENsb3VkZmxhcmUuIHwKfCBTY3JhcGVyIHwgYHNjcmFwZXJzL2FjY2Vzc19ncm91cF9zY3JhcGVyLnB5YCB8IFBsYXl3cmlnaHQuIGAtLW5vLWxvZ2luYCBmb3IgcHVibGljIGhlbHAgY2VudHJlcy4gYC0tZGVlcGAgaGFydmVzdHMgZnVsbCBhcnRpY2xlIHRleHQuIGAtLWd1aWRlc2AgLyBgLS1ndWlkZXMtb25seWAgZm9yIFBERiBndWlkZSBoYXJ2ZXN0LiBTYWxlc2ZvcmNlIHZpZXdlciBkb3dubG9hZHMgdmlhIGBkb3dubG9hZF9zYWxlc2ZvcmNlX3ZpYV9wYWdlKClgLiB8CnwgSW5kZXggYnVpbGRlciB8IGBzY3JhcGVycy9idWlsZF9pbmRleC5weWAgfCBNZXJnZXMgU2hhcmVQb2ludCArIGNvbGxlY3Rpb24gUERGcyAodmlhIG1hbmlmZXN0KSArIGRlZXAgYXJ0aWNsZXMgKyBndWlkZSBQREZzIOKGkiBgZGF0YS9rYi5qc29uYCArIGBkYXRhL2tiLWluZGV4Lmpzb25gLiB8CnwgV29ya2Zsb3c6IGNyYXdsIHwgYC5naXRodWIvd29ya2Zsb3dzL3NjcmFwZS1oZWxwLWNlbnRyZXMueW1sYCB8IHdvcmtmbG93X2Rpc3BhdGNoLiBTY3JhcGVzIOKGkiBidWlsZHMg4oaSIGNvbW1pdHMg4oaSIFBhZ2VzIHJlZGVwbG95cy4gYGRpYWdub3N0aWNgIG1vZGUgc2FmZSB0byBydW4gYW55IHRpbWUuIHwKCiMjIERhdGEgU3RhdGUKCi0gKipDdXJyZW50OioqIDIsNTE1IGRvY3VtZW50cyDinIUKLSAqKkJyZWFrZG93bjoqKiAyLDIwOCBwcmUtZXhpc3RpbmcgKyAzMDcgbmV3IGd1aWRlIFBERnMgYWNyb3NzIDExIFBlb3BsZVhEIG1vZHVsZXMKCiMjIExpdmUgU2l0ZQoKLSAqKlVSTDoqKiBodHRwczovL2tiLmxlbGl0dGUuY28udWsvCi0gKipDdXN0b20gZG9tYWluOioqIENOQU1FIGBrYiDihpIgYmVnYjAwMzdhZG1pbi5naXRodWIuaW9gIGluIENsb3VkZmxhcmUgKEROUy1vbmx5KQotICoqV29ya2VyOioqIGBoci1rYi1haS5rZXZpbmxlbGl0dGUud29ya2Vycy5kZXZgIOKAlCBDT1JTIGxvY2tlZCB0byBgaHR0cHM6Ly9rYi5sZWxpdHRlLmNvLnVrYAoKIyMgS2V2aW4g4oCUIFdvcmtpbmcgU3R5bGUKCi0gQ2xvdWQtZXZlcnl0aGluZzsgaGF0ZXMgbG9jYWwtbWFjaGluZSBkZXBlbmRlbmNpZXMuCi0gVUsgRW5nbGlzaC4gT3hmb3JkIG5hdnkgYCMwYzE3MzNgIHNpZGViYXIuCi0gQ29uc3RpdHV0aW9uIG11c3QgYmUgZm9sbG93ZWQgYXQgYWxsIHRpbWVzIOKAlCBub24tbmVnb3RpYWJsZS4KLSBTaG93IOKGkiBBcHByb3ZlIOKGkiBQdXNoLiBFdmVyeSB0aW1lLgo=
+# Handover — HR FA Knowledge Base
+
+**To:** New session
+**From:** Session of 8 July 2026
+**Owner:** Kevin (kevin.lelitte@admin.ox.ac.uk · GitHub `begb0037admin`)
+
+Everything you need to drive this project is in this file plus the repo
+itself. Trust the repo over memory; verify data, not just green ticks.
+
+---
+
+## Current State — 8 July 2026
+
+**KB document count: 2,515** ✅
+
+Sidebar restructure complete (8 Jul). AI summaries generated for all 307 PDF step-by-step guides (8 Jul). Wider redesign roadmap agreed — see below.
+
+---
+
+## Dashboard Redesign Roadmap — 8 July 2026
+
+The following work is agreed and queued. Work in this order.
+
+| # | Item | Status | Notes |
+|---|---|---|---|
+| 1 | Research phase | 🔲 Pending | Read `finance.lily.co.uk` dashboard (AI advisor + analyst) and `hris-dashboard` (Linda) before designing anything |
+| 2 | Layout mockup — split panel | 🔲 Pending | Produce Artifact showing proposed layout: left = cards/search, right = AI pane + document viewer. Show → approve → build. |
+| 3 | Split panel plumbing | 🔲 Pending | Implement HTML structure change in `index.html`. Biggest structural edit — do after mockup approved. |
+| 4 | Card TTS read-aloud button | 🔲 Pending | Red play button (▶) on each card. Calls existing ElevenLabs `/tts` route on Cloudflare Worker. Self-contained. |
+| 5 | Document viewer in right pane | 🔲 Pending | Resurrect the viewer (removed earlier). Now lives in right pane — clicking a card loads the document there. |
+| 6 | Linda (AI chat) in right pane | 🔲 Pending | Move/mirror AI chat into right pane alongside the viewer. Clear zones: document above, Linda below. |
+| 7 | Card design polish | 🔲 Pending | Refine card typography, spacing, summary display once structure is stable. Match branding from `begb0037admin/command-centre`. |
+| 8 | Final branding pass | 🔲 Pending | Check all elements against `BRANDING.md` from command-centre repo. Consistent with work-inbox, command-centre, hris-dashboard. |
+
+**Reference dashboards to read before step 2:**
+- `finance.lily.co.uk` — AI advisor + AI analyst patterns
+- `begb0037admin/hris-dashboard` — Linda AI integration
+- Design references discussed: Attmosfire, Wix, MindMerge screenshots
+
+---
+
+## Completed This Session (8 July 2026)
+
+- Sidebar restructured: two sections (HOW TO GUIDES, ACCESS GROUP HELP CENTRE), collapsible sub-menus, 5 distinct dot colours
+- Sidebar labels clarified (plain English, no Access Group taxonomy jargon)
+- Fixed empty guide categories, removed PDF iframe viewer (will be reinstated in right pane per roadmap)
+- Fixed inflated PXD Help Centre counts
+- Made sidebar dots visually distinct (grey/blue/orange/teal/gold, 10px)
+- Added `scrapers/summarise_docs.py` — batch AI summarisation for 307 PDF guides
+- Added `.github/workflows/summarise-pdf-guides.yml` — manual-dispatch workflow
+- Ran summarisation with `force=true` — all 307 PDF cards now have AI-generated plain-English summaries
+
+---
+
+## What This Is
+
+An AI-assisted knowledge base for Kevin's HR Functional Analysis work at
+the University of Oxford. One page, one question box: Kevin asks in plain
+English (typed or spoken), the AI answers with steps and cites direct links.
+
+- **Live site:** https://kb.lelitte.co.uk/
+- **AI proxy worker:** `hr-kb-ai` on Kevin's Cloudflare account
+
+---
+
+## Guide PDF Harvest — Completed 7 July 2026
+
+### Problem history
+- **Attempt 1 (29 Jun):** `article table td:first-child a[href]` — Intercom doesn't use `<table>`. 0 links.
+- **Attempt 2 (29 Jun):** `article a[href]` filtered to `/articles/` — found only cross-reference links (5 per module). Real guide links point to `accessgroup.my.salesforce.com`, which the filter rejected.
+- **Root cause:** Salesforce viewer URLs (`/sfc/p/...`) are not direct file downloads — `requests.get()` returns an HTML viewer shell, not a PDF.
+
+### Fix (PR #16 — merged 7 July 2026)
+1. Filter updated to accept `accessgroup.my.salesforce.com` exactly
+2. New `download_salesforce_via_page()`: navigates browser to Salesforce viewer, clicks `button[title='Download']`, captures download via `page.expect_download()`
+3. `%PDF` magic-byte validation guards `dest.exists()` before reading
+
+### Confirmed results
+- Diagnostic run (run ID 28836850995, `diagnostic=true, login=true, limit=1`): 11/11 modules, 11 PDFs downloaded, 0 errors.
+- Full harvest (run ID 28837389039, `login=true, guides_only=true, limit=0`): 717 files in artifact. kb.json went from 2,208 → **2,515 documents**.
+
+---
+
+## Workflow — Diagnostic Mode
+
+The workflow has a `diagnostic` boolean input (default: `false`).
+
+When `diagnostic=true`:
+- Runs `--no-login --guides-only --limit 1 --output downloads_diag`
+- Skips Build index step
+- Skips Commit step
+- Uploads from `downloads_diag/` — never touches real data
+- Safe to run any time
+
+Use this for future debugging before committing to a full harvest.
+
+---
+
+## Guide PDF Download — Authentication
+
+The Salesforce-hosted guide PDFs (`accessgroup.my.salesforce.com/sfc/p/...`) require an authenticated Salesforce Community session. Without login, Salesforce returns 200 OK with an HTML redirect — not a PDF.
+
+For any future harvest:
+- `login=true` in the workflow
+- ACCESS_PASSWORD and ACCESS_USERNAME secrets must be set in the repo
+
+---
+
+## Constitution — Non-Negotiable
+
+1. **Never push code without Kevin's explicit approval.** Show → approve → push. No exceptions.
+2. **Never trigger a workflow run without Kevin's explicit approval.**
+3. **Never overwrite a data file** (manifest.csv, kb.json, tasks.json) without verifying downstream impact.
+4. **Signal when high effort is needed, wait for Kevin to raise it.**
+5. **Show → Approve → Push. Every time.**
+
+---
+
+## Git Reference
+
+| Commit | What it represents |
+|---|---|
+| `2a574d8` | Last known good state — manifest has 944 rows, kb.json has 2,303 docs |
+| `263e33c` | Full guide harvest committed — kb.json at 2,515 docs |
+| `da79e34` | Fix empty guide categories, remove PDF iframe viewer |
+| `8debc24` | Clarify sidebar labels, fix PXD Help Centre counts |
+| `d87b11e` | Fix broken card rendering (leftover browser variable) |
+| `473ab97` | Restructure sidebar: collapsible sections |
+| `4549077` | Make sidebar dots distinct |
+| `ff68412` | Add AI summarisation workflow + script |
+
+---
+
+## Architecture
+
+| Piece | File | Notes |
+|---|---|---|
+| Site | `index.html` | Static SPA, Oxford-navy theme. BM25 retrieval → Cloudflare worker → Claude. Voice input + Listen. |
+| Worker | `worker/worker.js` | Routes: `/` Claude chat, `/tts` ElevenLabs, `/stt` Scribe v2. Secrets in Cloudflare. |
+| Scraper | `scrapers/access_group_scraper.py` | Playwright. `--no-login` for public help centres. `--deep` harvests full article text. `--guides` / `--guides-only` for PDF guide harvest. Salesforce viewer downloads via `download_salesforce_via_page()`. |
+| Summariser | `scrapers/summarise_docs.py` | Calls claude-haiku-4-5 to generate plain-English summaries for Access Group PDF guides. Run via `summarise-pdf-guides.yml` workflow. |
+| Index builder | `scrapers/build_index.py` | Merges SharePoint + collection PDFs (via manifest) + deep articles + guide PDFs → `data/kb.json` + `data/kb-index.json`. |
+| Workflow: crawl | `.github/workflows/scrape-help-centres.yml` | workflow_dispatch. Scrapes → builds → commits → Pages redeploys. `diagnostic` mode safe to run any time. |
+| Workflow: summarise | `.github/workflows/summarise-pdf-guides.yml` | workflow_dispatch. Runs summarise_docs.py with ANTHROPIC_API_KEY secret. Use `force=true` to re-summarise all. |
+
+## Data State
+
+- **Current:** 2,515 documents ✅
+- **Breakdown:** 2,208 pre-existing + 307 new guide PDFs across 11 PeopleXD modules
+- **Summaries:** All 307 PDF guides have AI-generated summaries (8 Jul 2026)
+
+## Live Site
+
+- **URL:** https://kb.lelitte.co.uk/
+- **Custom domain:** CNAME `kb → begb0037admin.github.io` in Cloudflare (DNS-only)
+- **Worker:** `hr-kb-ai.kevinlelitte.workers.dev` — CORS locked to `https://kb.lelitte.co.uk`
+
+## Kevin — Working Style
+
+- Cloud-everything; hates local-machine dependencies.
+- UK English. Oxford navy `#0c1733` sidebar.
+- Constitution must be followed at all times — non-negotiable.
+- Show → Approve → Push. Every time.
