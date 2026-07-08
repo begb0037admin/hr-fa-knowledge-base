@@ -37,7 +37,7 @@ a{color:var(--blue)}
 .snav li{display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:7px;font-size:13.5px;cursor:pointer;color:var(--side-text)}
 .snav li:hover{background:var(--side-2)}
 .snav li.on{background:var(--side-2);color:#fff}
-.snav .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.snav .dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
 .snav .n{margin-left:auto;font-size:12px;color:var(--side-muted);font-weight:600}
 .snav .nav-sub-head{font-size:10px;letter-spacing:.12em;color:var(--side-muted);padding:10px 10px 3px;cursor:default;font-weight:600;text-transform:uppercase}
 .snav .nav-sub-head:hover{background:none}
@@ -415,7 +415,7 @@ function parentLi(attr,val,dotColor,label,count,isOn,toggleKey,isOpen){
 function buildNav(){
   /* All documents */
   const allOn=(state.src==="all"&&!state.pdfOnly&&!state.webOnly&&state.mod==="all")?"on":"";
-  Q("#nav-all").innerHTML='<li data-all class="'+allOn+'"><span class="dot" style="background:#5d6e96"></span>All documents<span class="n">'+D.length+'</span></li>';
+  Q("#nav-all").innerHTML='<li data-all class="'+allOn+'"><span class="dot" style="background:#8899b4"></span>All documents<span class="n">'+D.length+'</span></li>';
 
   /* HOW TO GUIDES */
   const htgDocs=D.filter(x=>x.src==="How To Guides");
@@ -424,17 +424,17 @@ function buildNav(){
   // HR System SharePoint Guides
   const htgMods={};
   htgDocs.forEach(x=>{if(state.arc||!/\(Archive\)$/i.test(x.tp))htgMods[x.tp]=(htgMods[x.tp]||0)+1;});
-  let htg=parentLi("data-htg-src","How To Guides","var(--blue)","HR System SharePoint Guides",htgDocs.length,state.src==="How To Guides","htg",navOpen.htg);
+  let htg=parentLi("data-htg-src","How To Guides","#2f6fb8","HR System SharePoint Guides",htgDocs.length,state.src==="How To Guides","htg",navOpen.htg);
   if(navOpen.htg){
-    htg+=Object.keys(htgMods).sort().map(m=>navLi("data-htg-mod",m,"var(--blue)",tpLabel(m),htgMods[m],(state.src==="How To Guides"&&state.mod===m?"on sub":"sub"))).join("");
+    htg+=Object.keys(htgMods).sort().map(m=>navLi("data-htg-mod",m,"#2f6fb8",tpLabel(m),htgMods[m],(state.src==="How To Guides"&&state.mod===m?"on sub":"sub"))).join("");
   }
 
   // Change Management
   const cmMods={};
   cmDocs.forEach(x=>cmMods[x.tp]=(cmMods[x.tp]||0)+1);
-  htg+=parentLi("data-htg-src","Change Management","var(--purple)","Change Management",cmDocs.length,state.src==="Change Management","cm",navOpen.cm);
+  htg+=parentLi("data-htg-src","Change Management","#d4742a","Change Management",cmDocs.length,state.src==="Change Management","cm",navOpen.cm);
   if(navOpen.cm){
-    htg+=Object.keys(cmMods).sort().map(m=>navLi("data-cm-mod",m,"var(--purple)",tpLabel(m),cmMods[m],(state.src==="Change Management"&&state.mod===m?"on sub":"sub"))).join("");
+    htg+=Object.keys(cmMods).sort().map(m=>navLi("data-cm-mod",m,"#d4742a",tpLabel(m),cmMods[m],(state.src==="Change Management"&&state.mod===m?"on sub":"sub"))).join("");
   }
   Q("#nav-htg").innerHTML=htg;
 
@@ -443,18 +443,18 @@ function buildNav(){
   const agPdfs=D.filter(x=>x.src==="Access Group Help Centre"&&x.e==="pdf");
   const agPdfMods={};
   agPdfs.forEach(x=>agPdfMods[x.tp]=(agPdfMods[x.tp]||0)+1);
-  let ag=parentLi("data-ag-view","pdf","var(--blue)","Step-by-step guides",agPdfs.length,state.pdfOnly,"agPdf",navOpen.agPdf);
+  let ag=parentLi("data-ag-view","pdf","#1d9e6a","Step-by-step guides",agPdfs.length,state.pdfOnly,"agPdf",navOpen.agPdf);
   if(navOpen.agPdf){
-    ag+=Object.keys(agPdfMods).sort().map(m=>navLi("data-ag-pdf-mod",m,"var(--blue)",tpLabel(m),agPdfMods[m],(state.pdfOnly&&state.mod===m?"on sub":"sub"))).join("");
+    ag+=Object.keys(agPdfMods).sort().map(m=>navLi("data-ag-pdf-mod",m,"#1d9e6a",tpLabel(m),agPdfMods[m],(state.pdfOnly&&state.mod===m?"on sub":"sub"))).join("");
   }
 
   // PeopleXD online guides (web articles)
   const agWeb=D.filter(x=>x.src==="Access Group Help Centre"&&x.e==="web");
   const agWebMods={};
   agWeb.forEach(x=>agWebMods[x.tp]=(agWebMods[x.tp]||0)+1);
-  ag+=parentLi("data-ag-view","web","var(--gold)","PeopleXD online guides",agWeb.length,state.webOnly,"agWeb",navOpen.agWeb);
+  ag+=parentLi("data-ag-view","web","#c79b3b","PeopleXD online guides",agWeb.length,state.webOnly,"agWeb",navOpen.agWeb);
   if(navOpen.agWeb){
-    ag+=Object.keys(agWebMods).sort().map(m=>navLi("data-ag-web-mod",m,"var(--gold)",tpLabel(m),agWebMods[m],(state.webOnly&&state.mod===m?"on sub":"sub"))).join("");
+    ag+=Object.keys(agWebMods).sort().map(m=>navLi("data-ag-web-mod",m,"#c79b3b",tpLabel(m),agWebMods[m],(state.webOnly&&state.mod===m?"on sub":"sub"))).join("");
   }
   Q("#nav-ag").innerHTML=ag;
 
