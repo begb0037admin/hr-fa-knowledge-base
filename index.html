@@ -39,6 +39,8 @@ a{color:var(--blue)}
 .snav li.on{background:var(--side-2);color:#fff}
 .snav .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 .snav .n{margin-left:auto;font-size:12px;color:var(--side-muted);font-weight:600}
+.snav .nav-sub-head{font-size:10px;letter-spacing:.12em;color:var(--side-muted);padding:10px 10px 3px;cursor:default;font-weight:600;text-transform:uppercase}
+.snav .nav-sub-head:hover{background:none}
 .side .foot{margin-top:auto;padding:16px 20px 20px;border-top:1px solid var(--side-2);font-size:11.5px;color:var(--side-muted)}
 .side .foot a{color:#9fc1f0;text-decoration:none}
 .side .foot a:hover{text-decoration:underline}
@@ -346,7 +348,7 @@ const esc = s => String(s||"").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",
 
 /* ════════ Data loading ════════ */
 let BASE=[], LOCAL=[], D=[];
-const state={q:"",src:"all",tp:"all",sort:"m-desc",arc:false,mod:"all",pdfOnly:false};
+const state={q:"",src:"all",tp:"all",sort:"m-desc",arc:false,mod:"all",pdfOnly:false,webOnly:false};
 
 function loadLocal(){try{return JSON.parse(localStorage.getItem(LOCAL_KEY)||"[]")}catch{return[]}}
 function saveLocal(a){localStorage.setItem(LOCAL_KEY,JSON.stringify(a))}
@@ -382,6 +384,16 @@ const SRC_META = {
   "Change Management":  {cls:"s-cm", badge:"b-cm", dot:"var(--purple)"},
   "Access Group Help Centre":{cls:"s-ag",badge:"b-ag",dot:"var(--gold)"}
 };
+/* Friendly display labels for tp values sourced from Access Group / SharePoint taxonomy */
+const TP_LABEL={
+  "Cross-module":                          "General / All modules",
+  "Core PeopleXD / CoreHR Guides":         "PeopleXD Core",
+  "Core PeopleXD / CoreHR Guides (Archive)":"Archive",
+  "Recruitment & Applicant":               "Recruitment",
+  "General / Root-level":                  "General"
+};
+const tpLabel=m=>TP_LABEL[m]||m;
+
 function buildNav(){
   const counts={};
   D.forEach(x=>counts[x.src]=(counts[x.src]||0)+1);
@@ -392,16 +404,25 @@ function buildNav(){
   });
   Q("#nav-src").innerHTML=h;
 
-  const guideMods={};
-  D.filter(x=>x.e==="pdf").forEach(x=>guideMods[x.tp]=(guideMods[x.tp]||0)+1);
+  /* Step-by-step guides — split by source so Access Group PDFs and SharePoint guides are distinct */
+  const agMods={}, spMods={};
+  D.filter(x=>x.e==="pdf").forEach(x=>{
+    if(x.src==="How To Guides") spMods[x.tp]=(spMods[x.tp]||0)+1;
+    else agMods[x.tp]=(agMods[x.tp]||0)+1;
+  });
   const totalGuides=D.filter(x=>x.e==="pdf").length;
   let gh='<li data-guide-mod="all" class="'+(state.pdfOnly&&state.mod==="all"?"on":"")+'"><span class="dot" style="background:var(--blue)"></span>All step-by-step guides<span class="n">'+totalGuides+'</span></li>';
-  gh+=Object.keys(guideMods).sort().map(m=>'<li data-guide-mod="'+esc(m)+'" class="'+(state.pdfOnly&&state.mod===m?"on":"")+'"><span class="dot" style="background:var(--blue)"></span>'+esc(m)+'<span class="n">'+guideMods[m]+'</span></li>').join("");
+  gh+=Object.keys(agMods).sort().map(m=>'<li data-guide-mod="'+esc(m)+'" class="'+(state.pdfOnly&&state.mod===m?"on":"")+'"><span class="dot" style="background:var(--blue)"></span>'+esc(tpLabel(m))+'<span class="n">'+agMods[m]+'</span></li>').join("");
+  if(Object.keys(spMods).length){
+    gh+='<li class="nav-sub-head">HR System Guides (SharePoint)</li>';
+    gh+=Object.keys(spMods).sort().map(m=>'<li data-guide-mod="'+esc(m)+'" class="'+(state.pdfOnly&&state.mod===m?"on":"")+'"><span class="dot" style="background:var(--blue)"></span>'+esc(tpLabel(m))+'<span class="n">'+spMods[m]+'</span></li>').join("");
+  }
   Q("#nav-guides").innerHTML=gh;
 
+  /* PXD Help Centre — web articles only (e==="web"), not PDFs */
   const mods={};
-  D.filter(x=>x.src==="Access Group Help Centre").forEach(x=>mods[x.tp]=(mods[x.tp]||0)+1);
-  const mh=Object.keys(mods).sort().map(m=>'<li data-mod="'+esc(m)+'" class="'+(state.mod===m&&!state.pdfOnly?"on":"")+'"><span class="dot" style="background:var(--gold)"></span>'+esc(m)+'<span class="n">'+mods[m]+'</span></li>').join("");
+  D.filter(x=>x.src==="Access Group Help Centre"&&x.e==="web").forEach(x=>mods[x.tp]=(mods[x.tp]||0)+1);
+  const mh=Object.keys(mods).sort().map(m=>'<li data-mod="'+esc(m)+'" class="'+(state.mod===m&&state.webOnly?"on":"")+'"><span class="dot" style="background:var(--gold)"></span>'+esc(tpLabel(m))+'<span class="n">'+mods[m]+'</span></li>').join("");
   Q("#nav-mod").innerHTML = mh || '<li style="color:var(--side-muted);cursor:default">Run the refresh to import articles</li>';
 
   const last = D.map(x=>x.m||"").sort().pop()||"—";
@@ -409,18 +430,18 @@ function buildNav(){
 }
 Q("#nav-src").addEventListener("click",e=>{
   const li=e.target.closest("li[data-src]"); if(!li)return;
-  state.src=li.getAttribute("data-src"); state.mod="all"; state.pdfOnly=false;
+  state.src=li.getAttribute("data-src"); state.mod="all"; state.pdfOnly=false; state.webOnly=false;
   Q("#src").value=state.src; buildNav(); render();
 });
 Q("#nav-guides").addEventListener("click",e=>{
   const li=e.target.closest("li[data-guide-mod]"); if(!li)return;
-  state.pdfOnly=true; state.mod=li.getAttribute("data-guide-mod"); state.src="all"; state.tp="all";
+  state.pdfOnly=true; state.webOnly=false; state.mod=li.getAttribute("data-guide-mod"); state.src="all"; state.tp="all";
   Q("#src").value="all"; Q("#tp").value="all"; buildNav(); render();
 });
 Q("#nav-mod").addEventListener("click",e=>{
   const li=e.target.closest("li[data-mod]"); if(!li)return;
-  state.pdfOnly=false; state.mod=li.getAttribute("data-mod"); state.src="Access Group Help Centre"; state.tp="all";
-  Q("#src").value=state.src; Q("#tp").value="all"; buildNav(); render();
+  state.pdfOnly=false; state.webOnly=true; state.mod=li.getAttribute("data-mod"); state.src="all"; state.tp="all";
+  Q("#src").value="all"; Q("#tp").value="all"; buildNav(); render();
 });
 
 /* ════════ Filters & cards ════════ */
@@ -442,6 +463,7 @@ function filt(){
   let r=D.filter(x=>{
     if(state.src!=="all"&&x.src!==state.src)return false;
     if(state.pdfOnly&&x.e!=="pdf")return false;
+    if(state.webOnly&&x.e!=="web")return false;
     if(state.mod!=="all"&&x.tp!==state.mod)return false;
     if(state.tp!=="all"&&x.tp!==state.tp)return false;
     if(!state.arc&&/\(Archive\)$/i.test(x.tp))return false;
