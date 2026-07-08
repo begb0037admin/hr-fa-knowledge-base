@@ -30,7 +30,7 @@ The following work is agreed and queued. Work in this order.
 | 5 | Verbatim PDF text extraction | 🔲 Pending | Replace AI summaries with pdfplumber word-for-word extraction for How To Guide PDFs. Prerequisite for Linda giving accurate step answers. |
 | 6 | Document viewer in right pane | ❌ Dropped | Right panel is AI-focused only — no document viewer. Decision: Kevin, 8 Jul 2026. |
 | 7 | Linda (AI chat) in right pane | ✅ Complete | Linda already occupies the right pane from Step 3. No further move needed. |
-| 8 | Card design polish | 🔲 Pending | Typography, spacing, summary display. Match `begb0037admin/command-centre` branding. |
+| 8 | Card design polish | ✅ Complete | Covered in Step 2 mockup/artifact session — design locked 8 Jul 2026. |
 | 9 | Final branding pass | 🔲 Pending | Check all elements against `BRANDING.md`. Consistent with work-inbox, command-centre, hris-dashboard. |
 
 ---
