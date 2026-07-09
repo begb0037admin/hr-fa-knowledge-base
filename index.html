@@ -25,7 +25,12 @@ a{color:var(--blue)}
 .layout{display:flex;min-height:100vh}
 
 /* ── Sidebar ────────────────────────────────────────────── */
-.side{width:340px;flex-shrink:0;background:var(--side);color:var(--side-text);display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto}
+.side{width:340px;flex-shrink:0;background:var(--side);color:var(--side-text);display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(209,217,230,.35) transparent}
+.side::-webkit-scrollbar{width:4px}
+.side::-webkit-scrollbar-track{background:transparent}
+.side::-webkit-scrollbar-button{display:none;height:0}
+.side::-webkit-scrollbar-thumb{background:rgba(209,217,230,.35);border-radius:2px}
+.side::-webkit-scrollbar-thumb:hover{background:rgba(209,217,230,.6)}
 .sidebar-logo{display:flex;gap:16px;align-items:center;padding:20px 20px 18px;border-bottom:1px solid rgba(255,255,255,.1)}
 .sidebar-crest{width:80px;height:80px;flex-shrink:0;object-fit:contain}
 .sidebar-brand-text{display:inline-flex;flex-direction:column}
@@ -101,6 +106,7 @@ input[type=text]:focus,select:focus{outline:none;border-color:var(--blue);box-sh
 .meta-sm{font-size:11px;color:var(--hint);margin-top:6px}
 .card-expand{display:none;margin-top:10px;border-top:1px solid var(--border-soft);padding-top:10px}
 .card.expanded .card-expand{display:block}
+.card.expanded .summary{display:none}
 .card-expand .card-md p{margin:0 0 7px;font-size:13.5px;color:#3c4456}
 .card-expand .card-md p:last-child{margin-bottom:0}
 .card-expand .card-md strong{color:var(--navy-text)}
@@ -482,7 +488,10 @@ function mdToHtml(txt){
 
 function cardPreview(s){
   if(!s)return"";
-  return s.replace(/^#[^\n]*\n+/,"").replace(/\*\*/g,"").replace(/[_`#]/g,"").trim();
+  const clean=s.replace(/^#[^\n]*\n+/,"").replace(/\*\*/g,"").replace(/[_`#]/g,"").trim();
+  // Return up to the first complete sentence — never cut mid-word
+  const dot=clean.search(/[.!?](\s|$)/);
+  return dot>0?clean.slice(0,dot+1):clean;
 }
 
 /* ════════ Data loading ════════ */
