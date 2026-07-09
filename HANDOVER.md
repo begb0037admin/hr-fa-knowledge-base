@@ -26,12 +26,15 @@ The following work is agreed and queued. Work in this order.
 | 1 | Research phase | ✅ Complete | Read `finance.lily.co.uk` dashboard and `hris-dashboard` (Linda) |
 | 2 | Layout mockup — split panel | ✅ Complete | Approved 8 Jul. Artifact: https://claude.ai/code/artifact/d2a7d157-468d-461e-9ec0-1efabdbfc384 |
 | 3 | Split panel plumbing | ✅ Complete | commit `99c803f` — 3-zone layout live on main (8 Jul). PeopleXD dot now purple. |
-| 4 | Card TTS read-aloud button | 🔲 Pending | Speaker icon (grey circle, 30px) in top-right of expanded card only. Calls existing `/tts` route. |
+| 4 | Card TTS read-aloud button | 🔲 Pending | Speaker icon (grey circle, 30px) bottom-right of expanded card only. Calls existing `/tts` route. |
 | 5 | Verbatim PDF text extraction | 🔲 Pending | Replace AI summaries with pdfplumber word-for-word extraction for How To Guide PDFs. Prerequisite for Linda giving accurate step answers. |
 | 6 | Document viewer in right pane | ❌ Dropped | Right panel is AI-focused only — no document viewer. Decision: Kevin, 8 Jul 2026. |
 | 7 | Linda (AI chat) in right pane | ✅ Complete | Linda already occupies the right pane from Step 3. No further move needed. |
 | 8 | Card design polish | ✅ Complete | Covered in Step 2 mockup/artifact session — design locked 8 Jul 2026. |
-| 9 | Final branding pass | 🔲 Pending | Check all elements against `BRANDING.md`. Consistent with work-inbox, command-centre, hris-dashboard. |
+| 9 | Document library tweaks | 🔲 Pending | Collapsible summaries + markdown rendering — consistent across all card types. See spec below. |
+| 10 | Linda AI panel visual rebuild | 🔲 Pending | Full structural rebuild to match approved mockup. See spec below. |
+| 11 | Copy link / Open button fix | 🔲 Pending | Salesforce PDF links require auth — broken. Use article URL (x.p) instead. See spec below. |
+| 12 | Final branding pass | 🔲 Pending | Check all elements against `BRANDING.md`. Consistent with work-inbox, command-centre, hris-dashboard. |
 
 ---
 
@@ -47,7 +50,9 @@ These are final — do not re-litigate without Kevin's explicit instruction.
 **Cards**
 - Hover: shadow only, no colour border change
 - No left accent stripe
-- Speaker icon (grey circle, 30px) in top-right corner of expanded card only for TTS
+- Collapsed: one-liner summary — clean, meaningful, no markdown characters
+- Expanded: full AI summary rendered as formatted HTML (bold, bullets, numbered steps) — consistent across ALL card types (HTG, AG, CM)
+- Speaker icon (grey circle, 30px) **bottom-right** of expanded card only for TTS — calls `/tts` route (corrected from top-right, 8 Jul session 2)
 
 **Badge pill colours**
 | Class | Label | Background | Text |
@@ -62,10 +67,43 @@ These are final — do not re-litigate without Kevin's explicit instruction.
 
 **Sidebar dot colours (current `index.html`):** grey, blue, orange, green — PeopleXD dot purple (done, Step 3)
 
-**Linda AI panel**
-- Header: Oxford navy background, gold 3-star sparkle SVG + "Linda AI" 17px bold + animated green LIVE chip (turns red on error)
-- Single dual-state action button: waveform icon when empty → send arrow when typing
-- No emojis — SVG icons throughout
+**Linda AI panel — full approved spec (8 Jul session 2)**
+Reference mockup: https://claude.ai/code/artifact/d2a7d157-468d-461e-9ec0-1efabdbfc384
+
+Panel structure top-to-bottom:
+1. **Header** — Oxford navy background | single gold 4-pointed SVG sparkle star | "Linda AI" 17px bold | animated green LIVE chip (turns red on error) | NO gear button
+
+   **Canonical sparkle star SVG — copy verbatim, never guess or regenerate:**
+   ```html
+   <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+     <path d="M7,0 C7,5 5,7 0,7 C5,7 7,9 7,14 C7,9 9,7 14,7 C9,7 7,5 7,0Z" fill="#c79b3b"/>
+   </svg>
+   ```
+   Shape: 4-pointed sparkle (✦), deeply concave sides. Colour: gold `#c79b3b`. Do NOT use a polygon, an 8-pointed star, or any other generated path.
+
+2. **Input row** — directly below header | text input + circular dark navy action button (dual-state: waveform SVG when empty → send arrow SVG when text entered)
+3. **Chips** — directly below input row | suggestion chips (New starter record · Sickness absence · Salary change · Process a leaver)
+4. **Content area** — flex:1 scrollable | empty state text: "Ask Linda anything about the knowledge base in plain English. Try a suggestion above or speak using the microphone below." | thread renders here when active
+5. **Bottom buttons** — two large circular buttons: SPEAK (dark navy fill, mic SVG) + READ BACK (outline, speaker SVG)
+6. **Footer hint** — "Press SPACE to speak · Read back reads AI replies aloud"
+
+What changes from current `index.html`:
+- Remove gear button from header
+- Replace `✦✦✦` Unicode with single gold SVG sparkle star
+- Move input box from bottom to top (below header)
+- Dual-state action button (waveform when empty → arrow when typing)
+- Move chips from inside `.ai-empty` to below input row
+- Replace emoji pill buttons (Speak · Talk · Clear) with two large circular SVG buttons at bottom
+- Remove Talk (ElevenLabs convo) button
+- Remove Clear button
+- Add footer hint text
+- Update empty state text
+
+**Copy link / Open button — known bug (8 Jul session 2)**
+- Salesforce-hosted PDFs (`accessgroup.my.salesforce.com/sfc/p/...`) require an authenticated session
+- Current code uses `x.pdf` (Salesforce viewer URL) for Open PDF and Copy link — these break without auth
+- Fix: use `x.p` (article URL) instead for open/copy actions on these cards
+- Label should read "Open article" not "Open PDF" for auth-gated documents
 
 **Scrollbars:** 4px hairline, no arrows, `#d1d9e6` thumb — matches work-inbox pattern
 
