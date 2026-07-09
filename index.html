@@ -654,9 +654,12 @@ Q("#nav-ag").addEventListener("click",e=>{
 function buildFilters(){
   const srcs=[...new Set(D.map(x=>x.src))].sort();
   Q("#src").innerHTML='<option value="all">All sources</option>'+srcs.map(s=>'<option>'+esc(s)+'</option>').join("");
-  const tps=[...new Set(D.map(x=>x.tp))].sort();
+  const scoped=state.src==="all"?D:D.filter(x=>x.src===state.src);
+  const tps=[...new Set(scoped.map(x=>x.tp))].sort();
+  if(!tps.includes(state.tp))state.tp="all";
   Q("#tp").innerHTML='<option value="all">All topics</option>'+tps.map(t=>'<option>'+esc(t)+'</option>').join("");
-  Q("#up-tp").innerHTML=tps.filter(t=>!/\(Archive\)$/i.test(t)).map(t=>'<option>'+esc(t)+'</option>').join("");
+  const allTps=[...new Set(D.map(x=>x.tp))].sort();
+  Q("#up-tp").innerHTML=allTps.filter(t=>!/\(Archive\)$/i.test(t)).map(t=>'<option>'+esc(t)+'</option>').join("");
   Q("#src").value=state.src; Q("#tp").value=state.tp;
 }
 function hl(s,q){
@@ -706,7 +709,7 @@ function render(){
     if(x.f)bits.push(esc(x.f));
     const preview=x.ss?x.ss:cardPreview(x.s);
     const fullHtml=mdToHtml(x.sl||x.s);
-    const ttsText=esc((x.t+". "+(x.ss||x.s||"")).replace(/^#[^\n]*\n+/,"").replace(/\*\*/g,"").trim());
+    const ttsText=esc((x.t+". "+(x.sl||x.s||"")).replace(/^#[^\n]*\n+/,"").replace(/\*\*/g,"").trim());
     const ttsBtn='<button class="card-tts" data-tts="'+ttsText+'" title="Read aloud" aria-label="Read aloud"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>';
     return '<div class="card">'
       +'<div class="badges"><span class="badge '+m.badge+'">'+esc(x.src)+'</span>'
@@ -726,7 +729,7 @@ function render(){
   }).join("")+capNote;
 }
 Q("#q").addEventListener("input",e=>{state.q=e.target.value;render()});
-Q("#src").addEventListener("change",e=>{state.src=e.target.value;state.mod="all";state.pdfOnly=false;state.webOnly=false;buildNav();render()});
+Q("#src").addEventListener("change",e=>{state.src=e.target.value;state.mod="all";state.tp="all";state.pdfOnly=false;state.webOnly=false;buildNav();buildFilters();render()});
 Q("#tp").addEventListener("change",e=>{state.tp=e.target.value;render()});
 Q("#sort").addEventListener("change",e=>{state.sort=e.target.value;render()});
 Q("#arc").addEventListener("change",e=>{state.arc=e.target.checked;render()});
