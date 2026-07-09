@@ -497,7 +497,7 @@ function cardPreview(s){
 /* ════════ Data loading ════════ */
 let BASE=[], LOCAL=[], D=[];
 const state={q:"",src:"all",tp:"all",sort:"m-desc",arc:false,mod:"all",pdfOnly:false,webOnly:false};
-const navOpen={htg:true,cm:true,agPdf:true,agWeb:true};
+const navOpen={htg:false,cm:false,agPdf:false,agWeb:false};
 
 function loadLocal(){try{return JSON.parse(localStorage.getItem(LOCAL_KEY)||"[]")}catch{return[]}}
 function saveLocal(a){localStorage.setItem(LOCAL_KEY,JSON.stringify(a))}
