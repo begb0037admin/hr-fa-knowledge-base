@@ -47,6 +47,8 @@ Rules:
 or scenarios mentioned in the text
 - Skip table of contents lines, page references, version control tables, and distribution lists
 - Plain English only
+- Output ONLY the summary sentences — no heading, no title line, no markdown, no preamble. \
+Start directly with the first sentence.
 
 Text:
 {text}
@@ -70,6 +72,8 @@ Rules:
 - Skip table of contents lines, page references, version control tables, and distribution lists
 - Write as flowing sentences, not bullet points
 - If the source text is truncated, summarise only what is present — do not invent content
+- Output ONLY the summary sentences — no heading, no title line, no markdown, no preamble. \
+Start directly with the first sentence.
 
 Text:
 {text}
@@ -85,13 +89,29 @@ def build_chunk_map(index):
     return {k: "\n\n".join(v[:8]) for k, v in doc_chunks.items()}
 
 
+def clean_summary(text):
+    """Strip leading markdown headings/title lines the model sometimes adds
+    despite prompt instructions, so cards always show plain sentences."""
+    lines = text.strip().split("\n")
+    while lines:
+        first = lines[0].strip()
+        # Drop heading lines (# ...), bold-only title lines (**...**), and blanks
+        if not first or first.startswith("#") or (
+            first.startswith("**") and first.rstrip("—- ").endswith("**")
+        ):
+            lines.pop(0)
+        else:
+            break
+    return "\n".join(lines).strip()
+
+
 def call_claude(client, prompt, max_tokens):
     resp = client.messages.create(
         model=MODEL,
         max_tokens=max_tokens,
         messages=[{"role": "user", "content": prompt}],
     )
-    return resp.content[0].text.strip()
+    return clean_summary(resp.content[0].text)
 
 
 def main():
