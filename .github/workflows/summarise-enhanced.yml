@@ -16,6 +16,15 @@ on:
           - "How To Guides"
           - "Access Group Help Centre"
           - "Kevin's Guides"
+      type:
+        description: "Restrict to document type within source (blank = all types)"
+        required: false
+        default: ""
+        type: choice
+        options:
+          - ""
+          - "pdf"
+          - "web"
       limit:
         description: "Max documents to process (0 = all in source)"
         required: false
@@ -61,11 +70,13 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SOURCE: ${{ github.event.inputs.source }}
+          DOC_TYPE: ${{ github.event.inputs.type }}
           LIMIT: ${{ github.event.inputs.limit }}
           DRY_RUN: ${{ github.event.inputs.dry_run }}
           FORCE: ${{ github.event.inputs.force }}
         run: |
           ARGS=(--source "$SOURCE")
+          [ -n "$DOC_TYPE" ] && ARGS+=(--type "$DOC_TYPE")
           [ "$LIMIT" != "0" ] && ARGS+=(--limit "$LIMIT")
           [ "$DRY_RUN" = "true" ] && ARGS+=(--dry-run)
           [ "$FORCE" = "true" ] && ARGS+=(--force)

@@ -120,6 +120,8 @@ def main():
     )
     parser.add_argument("--source", required=True,
                         help='Document source to process, e.g. "Change Management"')
+    parser.add_argument("--type", choices=["pdf", "web"], default=None,
+                        help='Restrict to document type within the source (matches the "e" field)')
     parser.add_argument("--limit", type=int, default=0,
                         help="Cap number of documents processed (0 = no cap)")
     parser.add_argument("--dry-run", action="store_true",
@@ -152,6 +154,7 @@ def main():
     targets = [
         (doc_id, doc) for doc_id, doc in enumerate(kb)
         if doc.get("src") == args.source
+        and (args.type is None or doc.get("e") == args.type)
         and (args.force or not doc.get("ss") or not doc.get("sl"))
     ]
 
@@ -160,6 +163,7 @@ def main():
 
     total_in_source = sum(1 for d in kb if d.get("src") == args.source)
     print(f"Source       : {args.source!r}  ({total_in_source} total docs in source)")
+    print(f"Type filter  : {args.type or 'none (all types)'}")
     print(f"To process   : {len(targets)}")
     print(f"Dry run      : {args.dry_run}")
     print(f"Force        : {args.force}")
