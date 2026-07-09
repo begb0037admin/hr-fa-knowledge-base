@@ -704,9 +704,9 @@ function render(){
     if(x.kb)bits.push(Math.round(x.kb)+" KB");
     if(x.pg)bits.push(x.pg+" pages");
     if(x.f)bits.push(esc(x.f));
-    const preview=cardPreview(x.s);
-    const fullHtml=mdToHtml(x.s);
-    const ttsText=esc((x.t+". "+(x.s||"")).replace(/^#[^\n]*\n+/,"").replace(/\*\*/g,"").trim());
+    const preview=x.ss?x.ss:cardPreview(x.s);
+    const fullHtml=mdToHtml(x.sl||x.s);
+    const ttsText=esc((x.t+". "+(x.ss||x.s||"")).replace(/^#[^\n]*\n+/,"").replace(/\*\*/g,"").trim());
     const ttsBtn='<button class="card-tts" data-tts="'+ttsText+'" title="Read aloud" aria-label="Read aloud"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>';
     return '<div class="card">'
       +'<div class="badges"><span class="badge '+m.badge+'">'+esc(x.src)+'</span>'
