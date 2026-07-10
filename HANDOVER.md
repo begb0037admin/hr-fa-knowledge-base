@@ -41,6 +41,27 @@ Rolled out in 5 phases via `.github/workflows/summarise-enhanced.yml` (manual di
 
 ---
 
+## Backup & Restore — Read This Before Touching `data/kb.json`
+
+Kevin has flagged this KB as heavily used and not to be lost under any circumstance. Here is the actual protection story, plainly stated.
+
+**What already protects every document, automatically:**
+- Every commit to this repo preserves the full `data/kb.json` at that point in time, forever — git never deletes old versions of a tracked file. This was used continuously during the 10 July enhancement rollout to verify each phase (`git show <sha>:data/kb.json`).
+- **Named restore point for the fully-enhanced state (all 2,515 docs, `ss`+`sl` complete):** commit `00c0e3c` on `main` (10 July 2026). To restore `kb.json` to exactly this state from any later point:
+  ```
+  git show 00c0e3c:data/kb.json > data/kb.json
+  ```
+  Attempting to tag this commit for a friendlier name failed — this session's git proxy returned `403` on tag pushes (tags appear to be out of scope for the PAT in use). Use the commit SHA above until a tag can be pushed by a session/token with tag permissions.
+
+**Real gaps — not yet closed, need Kevin's action (outside what an AI session can do):**
+1. **No branch protection on `main`.** Nothing currently stops a force-push that rewrites history, or a branch deletion. Fix (2 minutes, GitHub web UI): repo **Settings → Branches → Add branch protection rule** for `main` → enable "Restrict deletions" and "Block force pushes." This does not require pull requests or reviews — it only blocks the two operations that could actually destroy history.
+2. **Single point of custodianship.** The repo lives under one GitHub account (`begb0037admin`). If that account were ever suspended, compromised, or deleted, git history alone doesn't help. Consider adding a second owner/admin (e.g. an Oxford IT service account) as a collaborator, purely as a break-glass measure.
+3. **No off-GitHub copy exists.** Everything currently lives only on GitHub. A periodic export (e.g. a scheduled workflow that copies `data/kb.json` + `data/kb-index.json` to a private storage location Kevin controls — OneDrive, SharePoint, or a second private repo) would protect against the (very unlikely) case of GitHub itself being unavailable or the repo being lost outright. Not yet built — flag if Kevin wants this as a follow-up task.
+
+**What does NOT need fixing:** the enhancement rollout itself was safe by construction — the summariser never writes a document that failed, and every phase was verified field-by-field before being reported complete. The risk that remains is entirely at the "someone/something destroys the git history or the repo" level, addressed above.
+
+---
+
 ## Previous State — 8 July 2026
 
 Sidebar restructure complete (8 Jul). AI summaries generated for all 307 PDF step-by-step guides (8 Jul, superseded by the two-level enhanced summaries above). Dashboard redesign roadmap fully complete as of 10 Jul 2026 — see table below. No open items remain.
