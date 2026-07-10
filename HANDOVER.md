@@ -43,7 +43,7 @@ Rolled out in 5 phases via `.github/workflows/summarise-enhanced.yml` (manual di
 
 ## Previous State — 8 July 2026
 
-Sidebar restructure complete (8 Jul). AI summaries generated for all 307 PDF step-by-step guides (8 Jul, superseded by the two-level enhanced summaries above). Dashboard redesign Steps 1–4, 9, 10, 11 complete and live on main (9 Jul). Step 5 (verbatim PDF text extraction) and Step 12 (final branding pass) remain pending — see roadmap below.
+Sidebar restructure complete (8 Jul). AI summaries generated for all 307 PDF step-by-step guides (8 Jul, superseded by the two-level enhanced summaries above). Dashboard redesign roadmap fully complete as of 10 Jul 2026 — see table below. No open items remain.
 
 ---
 
@@ -57,14 +57,14 @@ The following work is agreed and queued. Work in this order.
 | 2 | Layout mockup — split panel | ✅ Complete | Approved 8 Jul. Artifact: https://claude.ai/code/artifact/d2a7d157-468d-461e-9ec0-1efabdbfc384 |
 | 3 | Split panel plumbing | ✅ Complete | commit `99c803f` — 3-zone layout live on main (8 Jul). PeopleXD dot now purple. |
 | 4 | Card TTS read-aloud button | ✅ Complete | Speaker icon (grey circle, 30px) bottom-right of expanded card. Merged 9 Jul 2026. |
-| 5 | Verbatim PDF text extraction | 🔲 Pending | Replace AI summaries with pdfplumber word-for-word extraction for How To Guide PDFs. Prerequisite for Linda giving accurate step answers. |
+| 5 | Verbatim PDF text extraction | ✅ Complete | Superseded by the two-level `ss`/`sl` enhanced summarisation rollout (10 Jul 2026) — see Current State at top of this file. Kevin confirmed this satisfies the requirement; no separate pdfplumber extraction needed. |
 | 6 | Document viewer in right pane | ❌ Dropped | Right panel is AI-focused only — no document viewer. Decision: Kevin, 8 Jul 2026. |
 | 7 | Linda (AI chat) in right pane | ✅ Complete | Linda already occupies the right pane from Step 3. No further move needed. |
 | 8 | Card design polish | ✅ Complete | Covered in Step 2 mockup/artifact session — design locked 8 Jul 2026. |
 | 9 | Document library tweaks | ✅ Complete | Collapsible cards with markdown summaries, consistent across all card types. Merged 9 Jul 2026. |
 | 10 | Linda AI panel visual rebuild | ✅ Complete | ✨ logo, input+chips at top, Speak/Read back footer, question chips in empty state. Merged 9 Jul 2026. Mockup archived: design-archive/2026-07-08-linda-ai-panel.html |
 | 11 | Copy link / Open button fix | ✅ Complete | x.pdf → x.p (Salesforce article URL). Correct labels per card type. Merged 9 Jul 2026. |
-| 12 | Final branding pass | 🔲 Pending | Check all elements against `BRANDING.md`. Consistent with work-inbox, command-centre, hris-dashboard. |
+| 12 | Final branding pass | ✅ Complete | Kevin confirmed complete 10 Jul 2026 — no further branding action required. |
 
 ---
 
