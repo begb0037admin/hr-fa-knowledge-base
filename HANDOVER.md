@@ -1,7 +1,7 @@
 # Handover — HR FA Knowledge Base
 
 **To:** New session
-**From:** Session of 8 July 2026
+**From:** Session of 9–10 July 2026
 **Owner:** Kevin (kevin.lelitte@admin.ox.ac.uk · GitHub `begb0037admin`)
 
 Everything you need to drive this project is in this file plus the repo
@@ -9,11 +9,41 @@ itself. Trust the repo over memory; verify data, not just green ticks.
 
 ---
 
-## Current State — 8 July 2026
+## Current State — 10 July 2026
 
 **KB document count: 2,515** ✅
+**Enhanced two-level summaries: 2,515 / 2,515 — 100% complete** ✅
 
-Sidebar restructure complete (8 Jul). AI summaries generated for all 307 PDF step-by-step guides (8 Jul). Dashboard redesign Steps 1–4, 9, 10, 11 complete and live on main (9 Jul). Next: Step 5 (verbatim PDF text extraction).
+Every document in the knowledge base now has both a short AI summary (`ss`, 3–4 sentences, for the collapsed card preview) and a detailed AI summary (`sl`, 6–10 sentences, for the expanded card). `index.html` reads `ss`/`sl` where present, falling back to the legacy `s` field — no documents were left in a mixed or broken state. The dashboard is live with this at all times; no further deployment step is needed.
+
+### Enhanced-summary rollout — complete (9–10 July 2026)
+
+Rolled out in 5 phases via `.github/workflows/summarise-enhanced.yml` (manual dispatch: `source`, `type` [pdf/web, Access Group only], `limit`, `dry_run`, `force`), driven by `scrapers/summarise_enhanced.py` (model: `claude-haiku-4-5-20251001`). Every phase: dry-run 5 samples reviewed → Kevin approved → full live run → verified (doc count unchanged, only `ss`/`sl` fields touched, zero leaked markdown headings, prior phases still intact).
+
+| Phase | Source | Docs | Status |
+|---|---|---|---|
+| 1 | Change Management | 51 | ✅ |
+| 2 | How To Guides | 209 | ✅ |
+| 3 | Access Group Help Centre — PDF | 307 | ✅ |
+| 4 | Access Group Help Centre — Web | 1,944 | ✅ (ran in 6 sub-batches, see below) |
+| 5 | Kevin's Guides | 4 | ✅ |
+
+**Phase 4 ran in batches** (4a–4f effectively) because of its size and two interruptions:
+- One dispatch retry double-fired a duplicate run; the second run correctly failed on a git rebase conflict rather than corrupting data — no bad writes resulted.
+- One batch partially failed with `"Your credit balance is too low to access the Anthropic API"` — 282 of 500 docs in that batch succeeded before failing; the failed 218 were simply left pending (script never writes a doc that errored). After Kevin topped up Anthropic Console credits, a small "canary" batch (limit 250) confirmed billing was fixed before resuming full 500-doc batches.
+- **Lesson for future large batch runs:** always check for an in-flight run before dispatching another (`list_workflow_runs` with `status: in_progress`), and treat a "500 Failed to run workflow dispatch" response as ambiguous — it may have queued anyway.
+
+**Final verification (10 July 2026):** diffed `data/kb.json` at the end of the whole project against the commit immediately before Phase 1 started. The *only* fields that changed, in any document, across the entire 5-phase rollout are `ss` and `sl`. No title, URL, or original `s` summary was touched. Document count stayed at 2,515 throughout.
+
+### Also fixed this session
+- Read-aloud button was reading the short `ss` preview even when it should read the full `sl` detail — fixed to always use `sl`/`s` regardless of card collapsed/expanded state.
+- Topic filter dropdown listed topics from all sources instead of scoping to the selected source — selecting an out-of-scope topic silently returned zero results. Fixed: topic list now scopes to the selected source, and changing source resets the topic filter to "All topics".
+
+---
+
+## Previous State — 8 July 2026
+
+Sidebar restructure complete (8 Jul). AI summaries generated for all 307 PDF step-by-step guides (8 Jul, superseded by the two-level enhanced summaries above). Dashboard redesign Steps 1–4, 9, 10, 11 complete and live on main (9 Jul). Step 5 (verbatim PDF text extraction) and Step 12 (final branding pass) remain pending — see roadmap below.
 
 ---
 
@@ -211,16 +241,19 @@ For any future harvest:
 | Site | `index.html` | Static SPA, Oxford-navy theme. BM25 retrieval → Cloudflare worker → Claude. Voice input + Listen. |
 | Worker | `worker/worker.js` | Routes: `/` Claude chat, `/tts` ElevenLabs, `/stt` Scribe v2. Secrets in Cloudflare. |
 | Scraper | `scrapers/access_group_scraper.py` | Playwright. `--no-login` for public help centres. `--deep` harvests full article text. `--guides` / `--guides-only` for PDF guide harvest. Salesforce viewer downloads via `download_salesforce_via_page()`. |
-| Summariser | `scrapers/summarise_docs.py` | Calls claude-haiku-4-5 to generate plain-English summaries for Access Group PDF guides. Run via `summarise-pdf-guides.yml` workflow. |
+| Summariser (legacy) | `scrapers/summarise_docs.py` | Calls claude-haiku-4-5 to generate plain-English summaries (the `s` field) for Access Group PDF guides only. Run via `summarise-pdf-guides.yml` workflow. Superseded by the enhanced summariser below for card display, but `s` remains in the data and is never overwritten by it. |
+| Summariser (enhanced, two-level) | `scrapers/summarise_enhanced.py` | Generates `ss` (short, 3–4 sentence card preview) and `sl` (long, 6–10 sentence detailed summary) for ANY source. Never touches `s`. Args: `--source`, `--type` (pdf/web, Access Group only), `--limit`, `--dry-run`, `--force`. Run via `summarise-enhanced.yml` workflow (workflow_dispatch). All 2,515 docs enhanced as of 10 Jul 2026 — see Current State above. |
 | Index builder | `scrapers/build_index.py` | Merges SharePoint + collection PDFs (via manifest) + deep articles + guide PDFs → `data/kb.json` + `data/kb-index.json`. |
 | Workflow: crawl | `.github/workflows/scrape-help-centres.yml` | workflow_dispatch. Scrapes → builds → commits → Pages redeploys. `diagnostic` mode safe to run any time. |
-| Workflow: summarise | `.github/workflows/summarise-pdf-guides.yml` | workflow_dispatch. Runs summarise_docs.py with ANTHROPIC_API_KEY secret. Use `force=true` to re-summarise all. |
+| Workflow: summarise (legacy) | `.github/workflows/summarise-pdf-guides.yml` | workflow_dispatch. Runs summarise_docs.py with ANTHROPIC_API_KEY secret. Use `force=true` to re-summarise all. |
+| Workflow: summarise (enhanced) | `.github/workflows/summarise-enhanced.yml` | workflow_dispatch. Inputs: `source` (choice), `type` (pdf/web, optional), `limit`, `dry_run`, `force`. Always dry-run a small sample before a live run. Commits `kb.json` only when `dry_run=false`. |
 
 ## Data State
 
 - **Current:** 2,515 documents ✅
 - **Breakdown:** 2,208 pre-existing + 307 new guide PDFs across 11 PeopleXD modules
-- **Summaries:** All 307 PDF guides have AI-generated summaries (8 Jul 2026)
+- **Legacy summaries (`s` field):** All 307 PDF guides have AI-generated summaries (8 Jul 2026)
+- **Enhanced summaries (`ss` + `sl` fields):** All 2,515 documents, 100% complete (10 Jul 2026) — see Current State at top of this file
 
 ## Live Site
 
