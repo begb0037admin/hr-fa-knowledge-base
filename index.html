@@ -170,6 +170,8 @@ body.resizing-ai{cursor:col-resize;user-select:none}
 .ai-bottom-read .icon-circle{background:transparent;border:2px solid var(--border);color:var(--navy-text)}
 .ai-bottom-read:hover .icon-circle{border-color:var(--blue);color:var(--blue)}
 .ai-bottom-read.playing .icon-circle{background:var(--oxford);border-color:var(--oxford);color:#fff}
+.ai-bottom-new .icon-circle{background:transparent;border:2px solid var(--border);color:var(--navy-text)}
+.ai-bottom-new:hover .icon-circle{border-color:var(--blue);color:var(--blue)}
 .ai-footer-hint{text-align:center;font-size:11px;color:var(--hint)}
 #ask-mic.rec .icon-circle{background:var(--red)!important;animation:pulse 1.1s ease-in-out infinite}
 
@@ -342,9 +344,6 @@ body.resizing-ai{cursor:col-resize;user-select:none}
 
   <div id="ask-note" class="ask-note hidden"></div>
 
-  <!-- hidden — kept for JS compatibility -->
-  <button id="ask-clear" style="display:none" aria-hidden="true" tabindex="-1"></button>
-
   <div class="ai-footer">
     <div class="ai-footer-btns">
       <button class="ai-bottom-btn ai-bottom-speak" id="ask-mic" title="Speak" aria-label="Speak">
@@ -364,6 +363,14 @@ body.resizing-ai{cursor:col-resize;user-select:none}
           </svg>
         </div>
         <span>Read back</span>
+      </button>
+      <button class="ai-bottom-btn ai-bottom-new" id="ask-clear" title="Start a new conversation" aria-label="New conversation">
+        <div class="icon-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span>New chat</span>
       </button>
     </div>
     <div class="ai-footer-hint">Press SPACE to speak &middot; Read back reads AI replies aloud</div>
@@ -807,7 +814,68 @@ const SYSTEM_PROMPT=
 "Cite sources inline as [1], [2] etc. matching the context numbering. "+
 "If the context does not contain the answer, say so plainly and suggest which help centre or guide is the best place to look — never invent procedures. "+
 "Use British English. Format with short paragraphs and lists; no markdown headings larger than ####.";
-let HISTORY=[];
+
+/* Appended to SYSTEM_PROMPT on every generation request — keeps RAG as the
+   sole factual authority even once conversation history is in play. */
+const RETRIEVAL_GOVERNANCE=
+"\n\nConversation-memory rules for this request:\n"+
+"- The prior user/assistant pairs above are supplied only for intent and continuity, never as evidence.\n"+
+"- Previous assistant answers may be incomplete or wrong; never treat them as sources, and do not repeat an earlier claim unless this turn's context documents support it.\n"+
+"- The \"Retrieval interpretation\" line below is a search aid only, not evidence.\n"+
+"- All factual claims and citations must be grounded solely in this turn's numbered context documents.\n"+
+"- Citation numbers refer only to this turn's context documents.";
+
+/* System prompt for the query-rewrite call — output is a bare retrieval
+   string, never shown to the user and never treated as an answer. */
+const REWRITE_SYSTEM=
+"You rewrite the user's latest question into a single standalone search query for a keyword search engine, using the conversation history for context only. "+
+"If the question is already standalone, return it unchanged. "+
+"Resolve pronouns or references (e.g. \"that\", \"it\", \"the second one\") only when the referent is explicit in the conversation history — never guess or invent a subject. "+
+"Add no new facts or claims of your own, and never treat a previous assistant answer as verified evidence — use it only to identify what the user is referring to. "+
+"If a reference cannot be safely resolved from the history, preserve the ambiguity rather than guessing. "+
+"Output ONLY the rewritten query as plain text — no explanation, no markdown, no preamble, no citations. Keep it short and suited to keyword search.";
+
+const HISTORY_LIMIT=5;         // rolling window of completed user/assistant pairs
+const REWRITE_TIMEOUT_MS=8000;
+
+let CONV_TURNS=[];             // clean history: [{userQuestion, assistantAnswer}, ...]
+let REQ_GEN=0;                 // bumped on every ask() and on New Conversation — invalidates stale responses
+let ACTIVE_CTRL=null;          // AbortController covering the active turn's rewrite + generation requests
+
+function turnsToMessages(turns){
+  const out=[];
+  turns.forEach(t=>{out.push({role:"user",content:t.userQuestion});out.push({role:"assistant",content:t.assistantAnswer});});
+  return out;
+}
+
+/* One lightweight LLM call through the existing stateless Worker root
+   endpoint to resolve the current question into a standalone retrieval
+   query. Never a single point of failure: any timeout, HTTP error, empty/
+   malformed result, or abort falls back to the original question. */
+async function rewriteQuery(question,turns,cfg,headers,parentSignal){
+  if(!turns.length)return{query:question,ok:true,fellBack:false};
+  if(parentSignal.aborted)return{query:question,ok:false,fellBack:true,aborted:true};
+  const messages=turnsToMessages(turns).concat([{role:"user",content:question}]);
+  const ctrl=new AbortController();
+  const onParentAbort=()=>ctrl.abort();
+  parentSignal.addEventListener("abort",onParentAbort);
+  const timeoutId=setTimeout(()=>ctrl.abort(),REWRITE_TIMEOUT_MS);
+  try{
+    const res=await fetch(cfg.url,{method:"POST",headers,body:JSON.stringify({system:REWRITE_SYSTEM,messages}),signal:ctrl.signal});
+    if(!res.ok)throw new Error("HTTP "+res.status);
+    const data=await res.json();
+    const text=((data.content&&data.content[0]&&data.content[0].text)||"").trim();
+    if(!text)throw new Error("empty rewrite");
+    return{query:text.slice(0,300),ok:true,fellBack:false};
+  }catch(err){
+    return{query:question,ok:false,fellBack:true,aborted:parentSignal.aborted||err.name==="AbortError"};
+  }finally{
+    clearTimeout(timeoutId);
+    parentSignal.removeEventListener("abort",onParentAbort);
+  }
+}
+
+function dbg(gen,msg){console.debug("[Linda turn "+gen+"] "+msg);}
 
 function mdLite(s){
   s=esc(s);
@@ -849,6 +917,13 @@ async function ask(question){
     Q("#ask-note").innerHTML="The AI connection isn't configured yet. Deploy the Cloudflare Worker (5-minute job — see <b>worker/README.md</b> in the repo), then click the &#9881; gear and paste its URL.";
     return;
   }
+
+  if(ACTIVE_CTRL)ACTIVE_CTRL.abort();   // a prior in-flight turn, if any, is now stale
+  const ctrl=new AbortController();
+  ACTIVE_CTRL=ctrl;
+  const myGen=++REQ_GEN;
+  const stale=()=>myGen!==REQ_GEN;
+
   const thread=Q("#thread");
   thread.innerHTML="";
   thread.insertAdjacentHTML("beforeend",'<div class="qline">'+esc(question)+"</div>");
@@ -858,21 +933,33 @@ async function ask(question){
   const msgs=Q(".ai-msgs"); if(msgs) msgs.scrollTop=msgs.scrollHeight;
   try{
     await loadChunks();
-    const hits=retrieve(question,8);
+    const cfg=aiCfg();
+    const headers={"Content-Type":"application/json"};
+    if(cfg.token)headers["X-KB-Token"]=cfg.token;
+
+    const turns=CONV_TURNS.slice(-HISTORY_LIMIT);
+    dbg(myGen,"rewrite: start, historyPairs="+turns.length+", qLen="+question.length);
+    const rw=await rewriteQuery(question,turns,cfg,headers,ctrl.signal);
+    if(stale()){dbg(myGen,"invalidated after rewrite");return;}
+    dbg(myGen,rw.ok?("rewrite: ok, rewrittenLen="+rw.query.length):("rewrite: fell back ("+(rw.aborted?"aborted":"failed")+"), rewrittenLen="+rw.query.length));
+
+    const hits=retrieve(rw.query,8);
+    dbg(myGen,"retrieval: chunks="+hits.length);
     const ctx=hits.map((c,i)=>{
       const doc=BASE[c.d]||{};
       return "["+(i+1)+"] \""+(doc.t||"Untitled")+"\" ("+(doc.src||"")+" — "+(doc.tp||"")+")\n"+c.x.slice(0,1500);
     }).join("\n\n");
-    const userMsg="Context documents:\n"+(ctx||"(no matching documents found)")+"\n\nQuestion: "+question;
-    const cfg=aiCfg();
-    const headers={"Content-Type":"application/json"};
-    if(cfg.token)headers["X-KB-Token"]=cfg.token;
-    const ms=HISTORY.concat([{role:"user",content:userMsg}]);
-    const res=await fetch(cfg.url,{method:"POST",headers,body:JSON.stringify({system:SYSTEM_PROMPT,messages:ms})});
+    const userMsg="Current question: "+question+
+      "\n\nRetrieval interpretation (search aid only — not evidence): "+rw.query+
+      "\n\nContext documents for this turn (the only permitted factual evidence):\n"+(ctx||"(no matching documents found)");
+    const ms=turnsToMessages(turns).concat([{role:"user",content:userMsg}]);
+    const res=await fetch(cfg.url,{method:"POST",headers,body:JSON.stringify({system:SYSTEM_PROMPT+RETRIEVAL_GOVERNANCE,messages:ms}),signal:ctrl.signal});
+    if(stale()){dbg(myGen,"invalidated after generation fetch");return;}
     const data=await res.json();
     if(!res.ok)throw new Error((data&&data.error&&(data.error.message||data.error))||("HTTP "+res.status));
     const text=(data.content&&data.content[0]&&data.content[0].text)||"(no answer returned)";
-    HISTORY=HISTORY.concat([{role:"user",content:userMsg},{role:"assistant",content:text}]).slice(-8);
+    if(stale()){dbg(myGen,"invalidated after generation response");return;}
+
     // Build a URL lookup so citation links can open the real document
     const hrefForHit=c=>{const doc=BASE[c.d]||{};let h=(doc.p)||"";if(/sharepoint\.com/i.test(h)&&!h.includes("?"))h+="?web=1";return h||"#";};
     const hitUrls=hits.map(hrefForHit);
@@ -902,9 +989,17 @@ async function ask(question){
     Q("#"+tid).outerHTML='<div class="answer">'+html+"</div>"
       +'<div class="answer-tools"><button class="mini" id="copy-btn">'+COPY_SVG+' Copy</button></div>'+srcs;
     if(msgs) msgs.scrollTop=msgs.scrollHeight;
+
+    // Only a successful, still-current turn is recorded — never a failed or stale one.
+    CONV_TURNS=CONV_TURNS.concat([{userQuestion:question,assistantAnswer:text}]).slice(-HISTORY_LIMIT);
+    dbg(myGen,"generation: ok, historyPairsNow="+CONV_TURNS.length);
   }catch(err){
+    if(err&&err.name==="AbortError"){dbg(myGen,"aborted");return;}
+    if(stale())return;
     Q("#"+tid).outerHTML='<div class="ask-err">Could not get an answer: '+esc(err.message)+". Check the &#9881; AI connection settings.</div>";
     if(msgs) msgs.scrollTop=msgs.scrollHeight;
+  }finally{
+    if(ACTIVE_CTRL===ctrl)ACTIVE_CTRL=null;
   }
 }
 
@@ -914,11 +1009,17 @@ Q("#ask-btn").addEventListener("click",()=>ask(Q("#ask-q").value));
 Q("#action-btn").addEventListener("click",()=>Q("#ask-btn").click());
 
 Q("#ask-clear").addEventListener("click",()=>{
-  HISTORY=[]; Q("#thread").innerHTML=""; Q("#ask-q").value="";
+  REQ_GEN++;                                  // invalidate any in-flight rewrite/generation immediately
+  if(ACTIVE_CTRL){ACTIVE_CTRL.abort();ACTIVE_CTRL=null;}
+  CONV_TURNS=[];
+  LAST_HITS=[];
+  LAST_ANSWER_SPOKEN=""; LAST_ANSWER_COPY="";
+  Q("#thread").innerHTML=""; Q("#ask-q").value="";
   Q("#ask-note").classList.add("hidden");
   showAiEmpty(true);
+  speakStop();                                // existing stop abstraction — halts streamed/browser TTS alike
   Q("#ask-q").focus();
-  if(window.speechSynthesis)speechSynthesis.cancel();
+  dbg(REQ_GEN,"new conversation: reset");
 });
 
 /* ── Article / document pane ─────────────────────────────────────────── */
