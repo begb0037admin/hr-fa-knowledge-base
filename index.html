@@ -732,18 +732,15 @@ Q("#out").addEventListener("click",e=>{
     const onDone=()=>{ttsEl.classList.remove("playing");ttsEl.innerHTML=SVG;};
     const cfg=aiCfg();
     if(!TTS_BROWSER&&cfg.url){
-      (async()=>{
-        try{
-          const headers={"Content-Type":"application/json"};
-          if(cfg.token)headers["X-KB-Token"]=cfg.token;
-          const res=await fetch(cfg.url+"/tts",{method:"POST",headers,body:JSON.stringify({text})});
-          if(!res.ok)throw new Error("HTTP "+res.status);
-          const blob=await res.blob();
-          TTS_AUDIO=new Audio(URL.createObjectURL(blob));
-          TTS_AUDIO.onended=onDone;
-          TTS_AUDIO.play();
-        }catch(err){TTS_BROWSER=true;cardSpeakBrowser(text,onDone);}
-      })();
+      const audio=new Audio();
+      TTS_AUDIO=audio;
+      audio.onended=onDone;
+      const headers={"Content-Type":"application/json"};
+      if(cfg.token)headers["X-KB-Token"]=cfg.token;
+      playStreamedTTS(cfg.url,headers,text,audio,onDone).catch(err=>{
+        if(err&&err.name==="AbortError")return;
+        TTS_BROWSER=true;cardSpeakBrowser(text,onDone);
+      });
     }else{cardSpeakBrowser(text,onDone);}
     return;
   }
