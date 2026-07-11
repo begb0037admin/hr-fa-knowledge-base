@@ -13,6 +13,8 @@
  *   ALLOWED_ORIGIN     (var, optional — comma-separated list of allowed
  *                       origins; defaults to the GitHub Pages site)
  *   MODEL              (var, optional — defaults to claude-sonnet-4-6)
+ *   AURA_SPEAKER       (var, optional — defaults to "angus"; Aura-2 voice
+ *                       name, e.g. luna/athena/apollo/angus)
  *
  * Requires the Workers AI binding named `AI` on this Worker (wrangler.toml
  * `[ai] binding = "AI"`, or the equivalent dashboard setting) — no separate
@@ -99,15 +101,18 @@ async function tts(request, env, cors) {
 
   let result;
   try {
-    result = await env.AI.run("@cf/deepgram/aura-2-en", { text });
+    result = await env.AI.run("@cf/deepgram/aura-2-en", {
+      text,
+      speaker: env.AURA_SPEAKER || "angus",
+    });
   } catch (err) {
     return json({ error: "TTS failed: " + String(err && err.message || err).slice(0, 200) }, 502, cors);
   }
 
-  // Response shape not fully confirmed against live Aura-2 docs as of writing
-  // (see worker/README.md) — handle the plausible shapes rather than assume
-  // one. A raw binary/stream result is returned as-is; a JSON object with a
-  // base64 audio field is decoded.
+  // Confirmed against Cloudflare's own docs: Aura-1/Aura-2 return the audio
+  // as a direct ReadableStream (MPEG), unlike MeloTTS which returns JSON
+  // with a base64 `audio` field — that JSON path is kept as a fallback only
+  // in case Cloudflare changes this, not because it's the documented shape.
   if (result instanceof ReadableStream || result instanceof ArrayBuffer) {
     return new Response(result, { status: 200, headers: { ...cors, "content-type": "audio/mpeg" } });
   }

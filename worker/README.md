@@ -28,10 +28,11 @@ this repository or in the browser. It works from any machine.
 
 ## Optional variables
 
-| Name             | Type   | Purpose                                              |
-|------------------|--------|-------------------------------------------------------|
-| `ALLOWED_ORIGIN` | Var    | CORS origin; defaults to the GitHub Pages site        |
-| `MODEL`          | Var    | Claude model id; defaults to `claude-sonnet-4-6`      |
+| Name             | Type   | Purpose                                                    |
+|------------------|--------|-------------------------------------------------------------|
+| `ALLOWED_ORIGIN` | Var    | CORS origin; defaults to the GitHub Pages site              |
+| `MODEL`          | Var    | Claude model id; defaults to `claude-sonnet-4-6`            |
+| `AURA_SPEAKER`   | Var    | Aura-2 voice name (`luna`/`athena`/`apollo`/`angus`/etc.); defaults to `angus` |
 
 ## Costs
 
