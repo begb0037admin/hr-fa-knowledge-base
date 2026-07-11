@@ -205,21 +205,6 @@ body.resizing-ai{cursor:col-resize;user-select:none}
 
 /* Status / transcript / docs strips inside panel */
 .ask-note{background:var(--blue-soft);color:var(--blue-text);font-size:13px;border-radius:8px;padding:10px 13px;margin:0 16px 8px}
-.convo-status{font-size:13px;color:var(--blue-text);background:#eef4ff;border:1px solid #c9d9f5;border-radius:8px;padding:7px 11px;margin:0 16px 8px}
-.convo-transcript{max-height:200px;overflow-y:auto;border:1px solid var(--border-soft);border-radius:var(--radius);padding:10px 13px;background:#fff;margin:0 16px 8px}
-.convo-transcript .qline{margin:9px 0 5px;font-size:13.5px}
-.convo-transcript .answer{font-size:13.5px;padding:9px 13px;margin-bottom:6px}
-.convo-docs{margin:0 16px 8px}
-.docview{background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius);overflow:hidden}
-.docview-head{display:flex;gap:8px;align-items:baseline;background:var(--side);color:#fff;font-size:13.5px;font-weight:600;padding:9px 14px}
-.docview-head .no{color:var(--gold);flex-shrink:0}
-.docview-head a{margin-left:auto;flex-shrink:0;color:#cfe0f7;font-size:12px;font-weight:400;text-decoration:none}
-.docview-head a:hover{text-decoration:underline}
-.docview-body{padding:12px 16px;font-size:13.5px;color:var(--text);max-height:300px;overflow-y:auto}
-.docview-body p{margin:0 0 8px}
-.docview-body ul,.docview-body ol{margin:4px 0 10px;padding-left:22px}
-.docview-body li{margin:3px 0}
-.docview-body h4{margin:10px 0 5px;font-size:13px;color:var(--navy-text)}
 
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(214,69,61,.35)}50%{box-shadow:0 0 0 5px rgba(214,69,61,0)}}
 
@@ -356,12 +341,8 @@ body.resizing-ai{cursor:col-resize;user-select:none}
   </div>
 
   <div id="ask-note" class="ask-note hidden"></div>
-  <div id="convo-status" class="convo-status hidden"></div>
-  <div id="convo-transcript" class="convo-transcript hidden"></div>
-  <div id="convo-docs" class="convo-docs hidden"></div>
 
   <!-- hidden — kept for JS compatibility -->
-  <button id="convo-btn" style="display:none" aria-hidden="true" tabindex="-1"><span id="convo-lbl"></span></button>
   <button id="ask-clear" style="display:none" aria-hidden="true" tabindex="-1"></button>
 
   <div class="ai-footer">
@@ -441,7 +422,6 @@ body.resizing-ai{cursor:col-resize;user-select:none}
     <p style="font-size:13.5px;color:var(--muted);margin:0 0 14px">Questions are answered through your Cloudflare Worker, which holds the API key. Deploy it once (see <code>worker/README.md</code> in the repo), then paste its URL here.</p>
     <div class="mfull"><label>Worker URL</label><input id="ai-url" type="text" placeholder="https://hr-kb-ai.youraccount.workers.dev"></div>
     <div class="mfull"><label>Access token (only if you set KB_ACCESS_TOKEN on the worker)</label><input id="ai-token" type="text" placeholder="optional"></div>
-    <div class="mfull"><label>ElevenLabs Agent ID (for the &#127911; Talk button &mdash; from elevenlabs.io &rarr; Agents)</label><input id="ai-agent" type="text" placeholder="agent_..."></div>
     <div class="modal-footer">
       <span class="ai-status" id="ai-modal-status"></span>
       <div class="modal-footer-right">
@@ -455,7 +435,6 @@ body.resizing-ai{cursor:col-resize;user-select:none}
 <script>
 /* ════════ Configuration ════════ */
 const DEFAULT_WORKER_URL = "https://hr-kb-ai.kevinlelitte.workers.dev";
-const DEFAULT_AGENT_ID = "agent_4101ktsqhtyve2atyssqh1fek5wh";
 const LOCAL_KEY = "hrKbAdditions_v1";
 const AI_CFG_KEY = "hrKbAiCfg_v1";
 
@@ -777,19 +756,17 @@ Q("#out").addEventListener("click",e=>{
 function aiCfg(){
   let c={};try{c=JSON.parse(localStorage.getItem(AI_CFG_KEY)||"{}")}catch{}
   if(!c.url&&DEFAULT_WORKER_URL)c.url=DEFAULT_WORKER_URL;
-  if(!c.agent&&DEFAULT_AGENT_ID)c.agent=DEFAULT_AGENT_ID;
   return c;
 }
 function aiReady(){return !!aiCfg().url}
 Q("#ai-setup-btn").addEventListener("click",()=>{
   const c=aiCfg(); Q("#ai-url").value=c.url||""; Q("#ai-token").value=c.token||"";
-  Q("#ai-agent").value=c.agent||"";
   Q("#ai-modal").classList.remove("hidden");
 });
 Q("#ai-cancel").addEventListener("click",()=>Q("#ai-modal").classList.add("hidden"));
 Q("#ai-save").addEventListener("click",()=>{
   const url=Q("#ai-url").value.trim().replace(/\/$/,"");
-  localStorage.setItem(AI_CFG_KEY,JSON.stringify({url:url,token:Q("#ai-token").value.trim(),agent:Q("#ai-agent").value.trim()}));
+  localStorage.setItem(AI_CFG_KEY,JSON.stringify({url:url,token:Q("#ai-token").value.trim()}));
   Q("#ai-modal").classList.add("hidden"); Q("#ask-note").classList.add("hidden");
 });
 
@@ -945,7 +922,6 @@ Q("#ask-clear").addEventListener("click",()=>{
   Q("#ask-note").classList.add("hidden");
   showAiEmpty(true);
   Q("#ask-q").focus();
-  ["convo-transcript","convo-docs"].forEach(id=>{const el=Q("#"+id);el.innerHTML="";el.classList.add("hidden");});
   if(window.speechSynthesis)speechSynthesis.cancel();
 });
 
@@ -1108,150 +1084,11 @@ Q("#thread").addEventListener("click",async e=>{
   }
 });
 
-/* ── Live conversation (ElevenLabs Conversational AI) ────── */
-const EL_SDK_URL="https://esm.sh/@elevenlabs/client@1.11.1";
-let CONVO=null, CONVO_CONNECTING=false, CONVO_DOCS=[];
-function convoStatus(msg){
-  const el=Q("#convo-status");
-  if(!msg){el.classList.add("hidden");el.textContent="";return;}
-  el.classList.remove("hidden");el.textContent=msg;
-}
-function convoTurn(source,message){
-  const box=Q("#convo-transcript");
-  box.classList.remove("hidden");
-  const role=source==="ai"?"ai":"user";
-  const last=box.lastElementChild;
-  if(role==="ai"&&last&&last.dataset.role==="ai"){
-    last.insertAdjacentHTML("beforeend","<p>"+esc(message)+"</p>");
-  }else if(role==="ai"){
-    box.insertAdjacentHTML("beforeend",'<div class="answer" data-role="ai"><p>'+esc(message)+"</p></div>");
-  }else{
-    box.insertAdjacentHTML("beforeend",'<div class="qline" data-role="user">'+esc(message)+"</div>");
-  }
-  box.scrollTop=box.scrollHeight;
-}
 function docHref(doc){
   let href=(doc.pdf?encodeURI(doc.pdf):doc.p)||"#";
   if(/sharepoint\.com/i.test(href)&&!href.includes("?"))href+="?web=1";
   return href;
 }
-function docFullText(docIdx,hitChunks){
-  const all=CHUNKS?CHUNKS.filter(c=>c.d===docIdx):[];
-  const text=(all.length?all:hitChunks||[]).map(c=>c.x).join("\n");
-  return text.slice(0,9000);
-}
-function convoShowDoc(entry,n,others){
-  const doc=entry.doc;
-  const text=docFullText(entry.d,entry.chunks);
-  let html='<div class="docview"><div class="docview-head"><span class="no">['+n+"]</span> "+esc(doc.t||"Untitled")
-    +' <a target="_blank" rel="noopener" href="'+esc(docHref(doc))+'">Open the full document &rarr;</a></div>'
-    +'<div class="docview-body">'+mdLite(text)+"</div></div>";
-  if(others&&others.length){
-    html+='<div class="srcs">'+others.map(o=>
-      '<a target="_blank" rel="noopener" href="'+esc(docHref(o.doc))+'"><span class="no">['+o.n+"]</span> "
-      +esc(o.doc.t||"Untitled")+'<span class="where">'+esc(o.doc.tp||o.doc.src||"")+"</span></a>").join("")+"</div>";
-  }
-  const box=Q("#convo-docs");
-  box.classList.remove("hidden");
-  box.innerHTML=html;
-  return text;
-}
-function convoSearch(q){
-  const hits=q?retrieve(q,8):[];
-  const order=[],byDoc={};
-  for(const c of hits){
-    if(!(c.d in byDoc)){byDoc[c.d]=[];order.push(c.d);}
-    byDoc[c.d].push(c);
-  }
-  return order.map(d=>({d:d,doc:BASE[d]||{},chunks:byDoc[d]}));
-}
-function docLabel(doc){return '"'+(doc.t||"Untitled")+'" ('+(doc.src||"")+" — "+(doc.tp||"")+")";}
-function convoCleanup(keepMsg){
-  CONVO=null;CONVO_CONNECTING=false;
-  Q("#convo-lbl").textContent="Talk";
-  Q("#convo-btn").classList.remove("active","connecting");
-  if(!keepMsg)convoStatus("");
-}
-async function convoToggle(){
-  const btn=Q("#convo-btn");
-  if(CONVO){const c=CONVO;CONVO=null;try{await c.endSession()}catch{}convoCleanup();return;}
-  if(CONVO_CONNECTING)return;
-  const agentId=aiCfg().agent;
-  if(!agentId){
-    Q("#ai-setup-btn").click();
-    Q("#ai-modal-status").textContent="Paste your ElevenLabs Agent ID to enable Talk.";
-    return;
-  }
-  CONVO_CONNECTING=true;
-  Q("#convo-lbl").textContent="Connecting…";
-  btn.classList.add("connecting");
-  convoStatus("Connecting to the voice agent…");
-  CONVO_DOCS=[];
-  ["convo-transcript","convo-docs"].forEach(id=>{const el=Q("#"+id);el.innerHTML="";el.classList.add("hidden");});
-  try{
-    speakStop();
-    await loadChunks();
-    if(!window.__elSDK)window.__elSDK=await import(EL_SDK_URL);
-    const sdk=window.__elSDK;
-    CONVO=await sdk.Conversation.startSession({
-      agentId,
-      clientTools:{
-        search_knowledge_base: async (args)=>{
-          const q=String((args&&(args.query||args.question))||"");
-          const entries=convoSearch(q);
-          CONVO_DOCS=entries;
-          if(!entries.length)return "No matching documents found in the knowledge base for: "+q;
-          const others=entries.map((e,i)=>({doc:e.doc,n:i+1})).slice(1);
-          const shown=convoShowDoc(entries[0],1,others);
-          let out="Document [1] "+docLabel(entries[0].doc)+" is NOW DISPLAYED on the user's screen"
-            +(others.length?", with matches [2]-["+entries.length+"] listed below it as links":"")+". "
-            +"Tell the user you are showing it on screen, keep your spoken answer brief, and refer to the "
-            +"numbered steps they can see. They may ask about any step — the on-screen text is:\n\n"
-            +"[1] "+docLabel(entries[0].doc)+"\n"+shown.slice(0,5000);
-          if(others.length){
-            out+="\n\nOther matches (call show_document with the number to put one on screen):\n"
-              +others.map(o=>"["+o.n+"] "+docLabel(o.doc)).join("\n");
-          }
-          return out;
-        },
-        show_document: async (args)=>{
-          const n=Math.max(1,parseInt(args&&(args.number||args.doc_number||args.index||args.n))||1);
-          if(!CONVO_DOCS.length)return "Nothing has been searched yet this conversation — call search_knowledge_base first.";
-          const entry=CONVO_DOCS[n-1];
-          if(!entry)return "There is no document ["+n+"] in the current results — there are only "+CONVO_DOCS.length+".";
-          const others=CONVO_DOCS.map((e,i)=>({doc:e.doc,n:i+1})).filter(o=>o.n!==n);
-          const shown=convoShowDoc(entry,n,others);
-          return "Document ["+n+"] "+docLabel(entry.doc)+" is now displayed on the user's screen. Its text:\n\n"+shown.slice(0,5000);
-        }
-      },
-      onMessage:({message,source})=>{if(message)convoTurn(source,String(message));},
-      onConnect:()=>{
-        CONVO_CONNECTING=false;
-        Q("#convo-lbl").textContent="End";
-        btn.classList.add("active");
-        btn.classList.remove("connecting");
-        convoStatus("Connected — just talk. Click End when you're done.");
-      },
-      onDisconnect:(details)=>{
-        const was=CONVO||CONVO_CONNECTING;
-        convoCleanup(true);
-        let why="";try{const r=details&&(details.reason||"");const m=details&&(details.message||"");const cc=details&&details.closeCode?", code "+details.closeCode:"";why=(r==="error"&&m)?m+cc:r+(cc||"")}catch{}
-        if(was)convoStatus("Conversation ended"+(why?" — "+why:"")+". Click Talk to start again.");
-      },
-      onError:(msg,ctx)=>{
-        convoCleanup(true);
-        convoStatus("Voice error: "+msg+(ctx?" — "+JSON.stringify(ctx).slice(0,200):""));
-      },
-      onModeChange:({mode})=>{
-        if(CONVO)convoStatus(mode==="speaking"?"🔊 Speaking…":"🎤 Listening…");
-      }
-    });
-  }catch(err){
-    convoCleanup();
-    convoStatus("Could not start the conversation: "+(err&&err.message||err)+" — check the Agent ID in ⚙ settings and that the mic is allowed.");
-  }
-}
-Q("#convo-btn").addEventListener("click",convoToggle);
 
 Q("#ask-q").addEventListener("keydown",e=>{if(e.key==="Enter")ask(e.target.value)});
 Q("#empty-chips").addEventListener("click",e=>{if(e.target.classList.contains("chip")){Q("#ask-q").value=e.target.textContent;ask(e.target.textContent)}});
