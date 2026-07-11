@@ -1017,7 +1017,7 @@ Q("#ask-mic").addEventListener("click",async()=>{
 });
 
 /* ── TTS / Listen ────────────────────────────────────────────────── */
-let LAST_ANSWER_SPOKEN="", LAST_ANSWER_COPY="", TTS_AUDIO=null, TTS_BROWSER=false;
+let LAST_ANSWER_SPOKEN="", LAST_ANSWER_COPY="", TTS_AUDIO=null, TTS_BROWSER=false, TTS_ABORT=null;
 function trimForSpeech(text,max){
   max=max||500;
   if(text.length<=max)return text;
@@ -1026,10 +1026,46 @@ function trimForSpeech(text,max){
   return (lastStop>max*0.4?cut.slice(0,lastStop+1):cut).trim()+"…";
 }
 function speakStop(){
+  if(TTS_ABORT){TTS_ABORT.abort();TTS_ABORT=null;}
   if(TTS_AUDIO){TTS_AUDIO.pause();TTS_AUDIO=null;}
   if(window.speechSynthesis)speechSynthesis.cancel();
   const rb=Q("#read-back-btn");if(rb)rb.classList.remove("playing");
   document.querySelectorAll(".card-tts.playing").forEach(b=>b.classList.remove("playing"));
+}
+/* Plays a Worker /tts response as audio arrives instead of waiting for the
+   whole clip — Aura-2 streams out at roughly real-time speed, so buffering
+   the full response before playing means the wait equals the answer's
+   spoken length. Falls back to full-buffer playback if MSE/audio-mpeg
+   isn't supported. audio.play() is called before any await so the click's
+   user-activation isn't lost by the time data starts arriving. */
+async function playStreamedTTS(url,headers,text,audio,onDone){
+  const ac=new AbortController();
+  TTS_ABORT=ac;
+  const res=await fetch(url+"/tts",{method:"POST",headers,body:JSON.stringify({text}),signal:ac.signal});
+  if(!res.ok)throw new Error("HTTP "+res.status);
+  if(!window.MediaSource||!MediaSource.isTypeSupported("audio/mpeg")||!res.body){
+    const blob=await res.blob();
+    audio.src=URL.createObjectURL(blob);
+    await audio.play();
+    return;
+  }
+  const mediaSource=new MediaSource();
+  audio.src=URL.createObjectURL(mediaSource);
+  audio.play().catch(()=>{});
+  await new Promise(resolve=>mediaSource.addEventListener("sourceopen",resolve,{once:true}));
+  const sourceBuffer=mediaSource.addSourceBuffer("audio/mpeg");
+  const appendChunk=chunk=>new Promise((resolve,reject)=>{
+    const onUpdateEnd=()=>{sourceBuffer.removeEventListener("updateend",onUpdateEnd);resolve();};
+    sourceBuffer.addEventListener("updateend",onUpdateEnd);
+    try{sourceBuffer.appendBuffer(chunk);}catch(e){reject(e);}
+  });
+  const reader=res.body.getReader();
+  while(true){
+    const {done,value}=await reader.read();
+    if(done)break;
+    await appendChunk(value);
+  }
+  if(mediaSource.readyState==="open")try{mediaSource.endOfStream();}catch(e){}
 }
 function cardSpeakBrowser(text,onDone){
   const synth=window.speechSynthesis;
@@ -1087,18 +1123,15 @@ Q("#read-back-btn").addEventListener("click",async()=>{
   const onDone=()=>btn.classList.remove("playing");
   const cfg=aiCfg();
   if(!TTS_BROWSER&&cfg.url){
-    (async()=>{
-      try{
-        const headers={"Content-Type":"application/json"};
-        if(cfg.token)headers["X-KB-Token"]=cfg.token;
-        const res=await fetch(cfg.url+"/tts",{method:"POST",headers,body:JSON.stringify({text:LAST_ANSWER_SPOKEN})});
-        if(!res.ok)throw new Error("HTTP "+res.status);
-        const blob=await res.blob();
-        TTS_AUDIO=new Audio(URL.createObjectURL(blob));
-        TTS_AUDIO.onended=onDone;
-        TTS_AUDIO.play();
-      }catch(err){TTS_BROWSER=true;cardSpeakBrowser(LAST_ANSWER_SPOKEN,onDone);}
-    })();
+    const audio=new Audio();
+    TTS_AUDIO=audio;
+    audio.onended=onDone;
+    const headers={"Content-Type":"application/json"};
+    if(cfg.token)headers["X-KB-Token"]=cfg.token;
+    playStreamedTTS(cfg.url,headers,LAST_ANSWER_SPOKEN,audio,onDone).catch(err=>{
+      if(err&&err.name==="AbortError")return;
+      TTS_BROWSER=true;cardSpeakBrowser(LAST_ANSWER_SPOKEN,onDone);
+    });
   }else{cardSpeakBrowser(LAST_ANSWER_SPOKEN,onDone);}
 });
 
