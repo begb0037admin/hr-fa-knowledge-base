@@ -899,12 +899,11 @@ async function ask(question){
       }).join("");
       srcs='<div class="srcs"><div class="srcs-label">Sources</div>'+rows+"</div>";
     }
-    LAST_ANSWER_SPOKEN = text.replace(/\[\d+\]/g,"").replace(/[#*`_]/g,"").replace(/\s+/g," ").trim();
+    LAST_ANSWER_SPOKEN = trimForSpeech(text.replace(/\[\d+\]/g,"").replace(/[#*`_]/g,"").replace(/\s+/g," ").trim());
     LAST_ANSWER_COPY = text.replace(/\[\d+\]/g,"").replace(/[ \t]+\n/g,"\n").trim();
-    const LISTEN_SVG='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>';
     const COPY_SVG='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
     Q("#"+tid).outerHTML='<div class="answer">'+html+"</div>"
-      +'<div class="answer-tools"><button class="mini" id="speak-btn">'+LISTEN_SVG+' Listen</button> <button class="mini" id="copy-btn">'+COPY_SVG+' Copy</button></div>'+srcs;
+      +'<div class="answer-tools"><button class="mini" id="copy-btn">'+COPY_SVG+' Copy</button></div>'+srcs;
     if(msgs) msgs.scrollTop=msgs.scrollHeight;
   }catch(err){
     Q("#"+tid).outerHTML='<div class="ask-err">Could not get an answer: '+esc(err.message)+". Check the &#9881; AI connection settings.</div>";
@@ -1019,11 +1018,18 @@ Q("#ask-mic").addEventListener("click",async()=>{
 
 /* ── TTS / Listen ────────────────────────────────────────────────── */
 let LAST_ANSWER_SPOKEN="", LAST_ANSWER_COPY="", TTS_AUDIO=null, TTS_BROWSER=false;
+function trimForSpeech(text,max){
+  max=max||500;
+  if(text.length<=max)return text;
+  const cut=text.slice(0,max);
+  const lastStop=Math.max(cut.lastIndexOf(". "),cut.lastIndexOf("! "),cut.lastIndexOf("? "));
+  return (lastStop>max*0.4?cut.slice(0,lastStop+1):cut).trim()+"…";
+}
 function speakStop(){
   if(TTS_AUDIO){TTS_AUDIO.pause();TTS_AUDIO=null;}
   if(window.speechSynthesis)speechSynthesis.cancel();
-  const b=Q("#speak-btn");if(b)b.innerHTML="&#128266; Listen";
   const rb=Q("#read-back-btn");if(rb)rb.classList.remove("playing");
+  document.querySelectorAll(".card-tts.playing").forEach(b=>b.classList.remove("playing"));
 }
 function cardSpeakBrowser(text,onDone){
   const synth=window.speechSynthesis;
@@ -1033,17 +1039,6 @@ function cardSpeakBrowser(text,onDone){
   const v=synth.getVoices().find(v=>v.lang==="en-GB")||synth.getVoices().find(v=>v.lang.startsWith("en"));
   if(v)u.voice=v;
   u.onend=()=>{speakStop();onDone();};
-  synth.speak(u);
-}
-function speakBrowser(text,btn){
-  const synth=window.speechSynthesis;
-  if(!synth){btn.textContent="Not supported";return;}
-  const u=new SpeechSynthesisUtterance(text);
-  u.lang="en-GB";
-  const v=synth.getVoices().find(v=>v.lang==="en-GB")||synth.getVoices().find(v=>v.lang.startsWith("en"));
-  if(v)u.voice=v;
-  u.onend=speakStop;
-  btn.innerHTML="&#9632; Stop";
   synth.speak(u);
 }
 Q("#thread").addEventListener("click",async e=>{
@@ -1060,27 +1055,6 @@ Q("#thread").addEventListener("click",async e=>{
       btn.innerHTML="&#10003; Copied";
     }catch(err){btn.textContent="Copy failed";}
     setTimeout(()=>{btn.innerHTML="&#128203; Copy";},1600);
-    return;
-  }
-  if(e.target.id!=="speak-btn")return;
-  const btn=e.target;
-  if((TTS_AUDIO&&!TTS_AUDIO.paused)||(window.speechSynthesis&&speechSynthesis.speaking)){speakStop();return;}
-  const cfg=aiCfg();
-  if(TTS_BROWSER||!cfg.url){speakBrowser(LAST_ANSWER_SPOKEN,btn);return;}
-  btn.innerHTML="&#8987;";
-  try{
-    const headers={"Content-Type":"application/json"};
-    if(cfg.token)headers["X-KB-Token"]=cfg.token;
-    const res=await fetch(cfg.url+"/tts",{method:"POST",headers,body:JSON.stringify({text:LAST_ANSWER_SPOKEN})});
-    if(!res.ok)throw new Error("HTTP "+res.status);
-    const blob=await res.blob();
-    TTS_AUDIO=new Audio(URL.createObjectURL(blob));
-    TTS_AUDIO.onended=speakStop;
-    btn.innerHTML="&#9632; Stop";
-    TTS_AUDIO.play();
-  }catch(err){
-    TTS_BROWSER=true;
-    speakBrowser(LAST_ANSWER_SPOKEN,btn);
   }
 });
 
@@ -1107,7 +1081,7 @@ Q("#ask-q").addEventListener("input",e=>{Q("#action-btn").innerHTML=e.target.val
 /* ── Read back (footer READ BACK button) ── */
 Q("#read-back-btn").addEventListener("click",async()=>{
   const btn=Q("#read-back-btn");
-  if(btn.classList.contains("playing")){speakStop();return;}
+  if(btn.classList.contains("playing")||(TTS_AUDIO&&!TTS_AUDIO.paused)||(window.speechSynthesis&&speechSynthesis.speaking)){speakStop();return;}
   if(!LAST_ANSWER_SPOKEN)return;
   btn.classList.add("playing");
   const onDone=()=>btn.classList.remove("playing");
