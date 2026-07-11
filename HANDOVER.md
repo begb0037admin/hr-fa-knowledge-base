@@ -1,7 +1,7 @@
 # Handover — HR FA Knowledge Base
 
 **To:** New session
-**From:** Session of 9–10 July 2026
+**From:** Session of 11 July 2026
 **Owner:** Kevin (kevin.lelitte@admin.ox.ac.uk · GitHub `begb0037admin`)
 
 Everything you need to drive this project is in this file plus the repo
@@ -9,7 +9,29 @@ itself. Trust the repo over memory; verify data, not just green ticks.
 
 ---
 
-## Current State — 10 July 2026
+## Current State — 11 July 2026
+
+**Voice vendor migration: ElevenLabs → Cloudflare Workers AI, done in code, not yet deployed.**
+
+This is the pilot for a wider move — Kevin is dropping ElevenLabs entirely (both this app and AIMM), consolidating voice onto Cloudflare Workers AI, and cancelling the ElevenLabs subscription outright. An earlier pass this session targeted Inworld instead; superseded before anything was committed once Kevin proposed the Cloudflare consolidation, so no wasted migration — just a target-vendor change on top of the same shape.
+
+**What changed:**
+- `worker/worker.js` — `/tts` and `/stt` now call Cloudflare's own Workers AI models via the `env.AI` binding, not an external vendor API. STT uses `@cf/openai/whisper-large-v3-turbo` in **batch mode** (not real-time/WebSocket — the mic button records a full clip then transcribes it once, which is a discrete request, and batch mode is ~18x cheaper per minute than the streaming mode for that shape of job). TTS uses `@cf/deepgram/aura-2-en`. No vendor API key needed at all — Workers AI bills to the same Cloudflare account already hosting the Worker.
+- `index.html` — same dead-code removal as before: the dormant ElevenLabs Conversational AI "Talk" agent block deleted outright (`Conversation.startSession`, `@elevenlabs/client` SDK, Agent ID settings field, ~140 lines) — it was already hidden in the UI and unused; the real voice interaction is the mic (`#ask-mic`) + Listen buttons, unchanged in shape, now pointed at Cloudflare.
+- `worker/README.md`, `CLAUDE.md` updated to match.
+
+**What Kevin needs to do before this works live:**
+1. Enable the **Workers AI binding** (named `AI`) on the `hr-kb-ai` Cloudflare Worker — Settings → Bindings on the dashboard, or `[ai] binding = "AI"` in `wrangler.toml`. No account signup or API key needed.
+2. **Confirm the exact Aura-2 request/response shape and Neuron rate** against the live model docs or dashboard before treating this as fully verified — the Worker code handles a couple of plausible response shapes defensively, but this wasn't confirmed against a real account this session.
+3. **Listen to an actual Aura-2 sample** and confirm it's an acceptable voice before calling the TTS side done — Kevin's dropped the requirement to preserve a specific cloned voice ("Linda"), just wants something natural-sounding.
+4. Test end-to-end once the binding is live: mic → speak a question → transcription appears → cited Claude answer renders (unchanged path) → Listen → Aura-2 audio plays.
+5. Check what happens to ElevenLabs account access/credits once the subscription is actually cancelled — affects how much rollback runway exists during testing.
+
+**Not done / explicitly out of scope this session:** no changes to the Anthropic/Claude chat path, retrieval, citations, or any visual/dashboard element. This work is also the reference pattern for the AIMM migration (separate repo, separate plan) and a new standalone meeting-transcription tool (separate repo, not yet created) — both reuse the same Whisper-batch-mode building block proved out here.
+
+---
+
+## Previous State — 10 July 2026
 
 **KB document count: 2,515** ✅
 **Enhanced two-level summaries: 2,515 / 2,515 — 100% complete** ✅
