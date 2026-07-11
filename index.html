@@ -1117,7 +1117,7 @@ Q("#ask-mic").addEventListener("click",async()=>{
 /* ── TTS / Listen ────────────────────────────────────────────────── */
 let LAST_ANSWER_SPOKEN="", LAST_ANSWER_COPY="", TTS_AUDIO=null, TTS_BROWSER=false, TTS_ABORT=null;
 function trimForSpeech(text,max){
-  max=max||500;
+  max=max||2000;
   if(text.length<=max)return text;
   const cut=text.slice(0,max);
   const lastStop=Math.max(cut.lastIndexOf(". "),cut.lastIndexOf("! "),cut.lastIndexOf("? "));
