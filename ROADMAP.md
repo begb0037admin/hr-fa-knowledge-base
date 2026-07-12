@@ -29,6 +29,39 @@ These guides have drafted content but need to be created as proper Word document
 
 ---
 
+## [PATTERN] Self-Improving KB Layer
+
+Tagged PATTERN because this is not a one-off feature — it's a reusable
+architecture applicable to other Claude-driven knowledge/data projects
+(e.g. `kevin-personal-finance`, evaluated the same session this was
+proposed). If a second project adopts it, it earns a standalone
+playbook doc the way `knowledge-base-playbook` did for the base KB
+build; until then this entry is the canonical description.
+
+Current state: `kb.json`/`kb-index.json` are a machine-generated
+document catalog with two-level AI summaries (`ss`/`sl`) — solid raw
+capture and citation discipline already in place. Missing: a true
+synthesized cross-document wiki, an outputs/usage log, and a
+content-quality health check (today's "verify document count" only
+checks quantity, never consistency).
+
+### Outputs log + coverage-gap detection
+- **What:** Worker appends every Q&A to `data/qa-log.json` (question, answer, cited doc IDs, top BM25 score, timestamp)
+- **Why:** Every question currently vanishes after answering. This is the input a health check needs to find real coverage gaps instead of guessing.
+- **What's needed:** `worker/worker.js` `/` route gains an append step; new `data/qa-log.json` file; no schema change to `kb.json`
+
+### Synthesized wiki layer (data/wiki.json)
+- **What:** Topic pages authored by Claude from multiple `kb.json`/`kb-index.json` sources, cross-linked, checked before falling back to live retrieval+synthesis
+- **Why:** `kb.json` is a document catalog (one card per source); common multi-source questions get re-synthesized from scratch on every query instead of answered from a maintained page
+- **What's needed:** New `scrapers/build_wiki.mjs` (or similar), dry-run reviewed rollout matching the `ss`/`sl` summary convention, `index.html` checks `wiki.json` first
+
+### Monthly content health check
+- **What:** Scheduled GitHub Actions workflow (`workflow_dispatch`, `dry_run`-capable like `summarise-enhanced.yml`) auditing: contradictions between sources, stale content, coverage gaps (from `qa-log.json`), suggested new wiki pages
+- **Why:** "Verify document count" only checks quantity, never content quality or consistency
+- **What's needed:** New workflow + script; output is a report artifact reviewed before any `kb.json`/`wiki.json` write
+
+---
+
 ## In Progress
 
 ### Colleges & Halls Guide — commit Word doc to library
