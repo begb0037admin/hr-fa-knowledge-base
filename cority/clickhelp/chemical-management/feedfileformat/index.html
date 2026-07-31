@@ -1,0 +1,269 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/chemical-management/feedfileformat"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Feed File Format</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Feed File Format';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/chemical-management/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/chemical-management/Style.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/chemical-management/Apps1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/chemical-management/jquery-1.12.41.js" type="text/javascript"></script><script src="/resources/Scripts/chemical-management/MadCapGlobal1.js" type="text/javascript"></script><script src="/resources/Scripts/chemical-management/MadCapSlideshow1.js" type="text/javascript"></script><script src="/resources/Scripts/chemical-management/MadCapMerging1.js" type="text/javascript"></script><script src="/resources/Scripts/chemical-management/MadCapAliasFile1.js" type="text/javascript"></script><script src="/resources/Scripts/chemical-management/MadCapUtilities1.js" type="text/javascript"></script><script src="/resources/Scripts/chemical-management/MadCapBody1.js" type="text/javascript"></script><script src="/resources/Scripts/chemical-management/MadCapHighlighter1.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1_1646196759" data-has-heading-anchor="true">Feed File Format<a href="/articles/chemical-management/feedfileformat/a/h1_1646196759" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!chemical-management/feedfileformat/a/h1_1646196759&#39;,this);"></a></h1>
+        <p>The information in this section will help your IT department understand the requirements for the feed file that supplies the Distribution information to the application:</p>
+        <p class="BodyIndent"><a href="/articles/chemical-management/feedfileformat/a/FormatFeedFile" onclick="return n(&#39;!chemical-management/feedfileformat/a/FormatFeedFile&#39;,this);">Formatting the Feed File</a>
+        </p>
+        <p class="BodyIndent"><a href="/articles/chemical-management/feedfileformat/a/NameFeedFile" onclick="return n(&#39;!chemical-management/feedfileformat/a/NameFeedFile&#39;,this);">Naming the Feed File</a>
+        </p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span><a name="FormatFeedFile"></a>Formatting the feed file:</p>
+        <p>The feed file you post to the FTP site must include the following header row, formatted as a single line, followed by rows of actual transaction data:</p>
+        <p class="CodeLast">CustomerNumber|CustomerName|ContactName|ContactEmail|Address1|<br/>Address2|City|State|Zip|Country|ProductName|PurchaseDate|ClientCode1|ClientCode2</p>
+        <p class="Note" madcap:autonum="Note: &nbsp;"><span class="autonumber"><span class="note_et_al">Note: &nbsp;</span></span>Not all fields are required. When omitting a field, you must still include the delimiter <br/>character (|).</p>
+        <p>The following example shows a row with only the required fields:</p>
+        <p class="CodeLast">CustomerNumber|||ContactEmail||Country||PurchaseDate|ClientCode1</p>
+        <p>The filename of the feed file must include the name of a location in your Vault, and the location name must be unique. For example, if you want to distribute SDSs in your location named Dallas warehouse, but you also have the location Dallas factory, name the feed file warehouse.</p>
+        <p>Table 1 shows the fields of a single feed line, including the field name, the type of allowed characters, the character limit, and whether the field is required in the line:</p>
+        <table style="margin-left: 0;margin-right: auto;">
+            <colgroup><col/>
+            <col/>
+            <col/>
+            <col/>
+            </colgroup><thead>
+                <tr>
+                    <td colspan="4" class="td_HeadGray"><b>Field Definitions</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_green" style="font-weight: bold;">
+                        <p>Field</p>
+                    </td>
+                    <td class="td_green" style="font-weight: bold;">
+                        <p>Allowed Characters</p>
+                    </td>
+                    <td class="td_green" style="font-weight: bold;">
+                        <p>Character Limit</p>
+                    </td>
+                    <td class="td_green" style="font-weight: bold;">
+                        <p>Required?</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border">
+                        <p>CustomerNumber </p>
+                    </td>
+                    <td class="border">
+                        <p>Integers only </p>
+                    </td>
+                    <td class="border">
+                        <p>20 </p>
+                    </td>
+                    <td class="border">
+                        <p>Yes</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border">
+                        <p>CustomerName </p>
+                    </td>
+                    <td class="border">
+                        <p>alphanumeric </p>
+                    </td>
+                    <td class="border">
+                        <p>100 </p>
+                    </td>
+                    <td class="border">
+                        <p>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border">
+                        <p>ContactName </p>
+                    </td>
+                    <td class="border">
+                        <p>alphanumeric </p>
+                    </td>
+                    <td class="border">
+                        <p>100 </p>
+                    </td>
+                    <td class="border">
+                        <p>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border">
+                        <p>ContactEmail </p>
+                    </td>
+                    <td class="border">
+                        <p>alphanumeric </p>
+                    </td>
+                    <td class="border">
+                        <p>50 </p>
+                    </td>
+                    <td class="border">
+                        <p>Yes</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border">
+                        <p>Address1 </p>
+                    </td>
+                    <td class="border">
+                        <p>alphanumeric </p>
+                    </td>
+                    <td class="border">
+                        <p>50 </p>
+                    </td>
+                    <td class="border">
+                        <p>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border">
+                        <p>Address2 </p>
+                    </td>
+                    <td class="border">
+                        <p>alphanumeric </p>
+                    </td>
+                    <td class="border">
+                        <p>50 </p>
+                    </td>
+                    <td class="border">
+                        <p>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border">
+                        <p>City </p>
+                    </td>
+                    <td class="border">
+                        <p>alphanumeric </p>
+                    </td>
+                    <td class="border">
+                        <p>50 </p>
+                    </td>
+                    <td class="border">
+                        <p>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border">
+                        <p>State </p>
+                    </td>
+                    <td class="border">
+                        <p>alphanumeric </p>
+                    </td>
+                    <td class="border">
+                        <p>50 </p>
+                    </td>
+                    <td class="border">
+                        <p>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border">
+                        <p>Zip </p>
+                    </td>
+                    <td class="border">
+                        <p>alphanumeric </p>
+                    </td>
+                    <td class="border">
+                        <p>50 </p>
+                    </td>
+                    <td class="border">
+                        <p>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border">
+                        <p>Country </p>
+                    </td>
+                    <td class="border">
+                        <p>alphanumeric </p>
+                    </td>
+                    <td class="border">
+                        <p>50 </p>
+                    </td>
+                    <td class="border">
+                        <p>Yes</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border">
+                        <p>ProductName </p>
+                    </td>
+                    <td class="border">
+                        <p>alphanumeric </p>
+                    </td>
+                    <td class="border">
+                        <p>50 </p>
+                    </td>
+                    <td class="border">
+                        <p>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border">
+                        <p>PurchaseDate </p>
+                    </td>
+                    <td class="border">
+                        <p>Any commonly-used date format </p>
+                    </td>
+                    <td class="border">
+                        <p>N/A </p>
+                    </td>
+                    <td class="border">
+                        <p>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border">
+                        <p>ClientCode1</p>
+                    </td>
+                    <td class="border">
+                        <p>alphanumeric </p>
+                    </td>
+                    <td class="border">
+                        <p>500 </p>
+                    </td>
+                    <td class="border">
+                        <p>Yes—A custom code used assigned to the product.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border">
+                        <p>ClientCode2</p>
+                    </td>
+                    <td class="border">
+                        <p>alphanumeric </p>
+                    </td>
+                    <td class="border">
+                        <p>500 </p>
+                    </td>
+                    <td class="border">
+                        <p>Optional—A second custom code assigned to the product.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span><a name="NameFeedFile"></a>Naming the Feed File</p>
+        <p>The filename of the feed file must include the name of a location in your Vault. Thehe location name must be unique. The feed file should also include the date.</p>
+        <p>For example, if you want to distribute SDSs in your location named Dallas Warehouse, name the feed file Dallas Warehouse_10042017.txt.</p>
+        <script type="text/javascript" src="/resources/Scripts/project-chemical-management/SkinSupport/MadCapBodyEnd3.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>
