@@ -19,8 +19,10 @@ rehosted. 49 initial network timeouts during a live account-switch window
 all succeeded cleanly on retry with no code changes — confirmed transient,
 not a scraper defect.
 """
+import argparse
 import json
 import re
+import sys
 import time
 import urllib.request
 import urllib.error
@@ -30,7 +32,6 @@ from urllib.parse import urljoin
 
 BASE = "https://userdocs.cority.com"
 SITEMAP_INDEX = f"{BASE}/sitemaps/sitemap.xml"
-OUT_DIR = Path("cority") / "clickhelp"
 SITEMAP_NS = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
 
 HEADERS = {
@@ -64,10 +65,13 @@ def list_publications() -> list[str]:
     """Return every publication sitemap URL from the sitemap index."""
     xml_bytes = http_get(SITEMAP_INDEX)
     root = ET.fromstring(xml_bytes)
-    return [
-        loc.text
-        for loc in root.iter(f"{SITEMAP_NS}loc")
-    ]
+    return [loc.text for loc in root.iter(f"{SITEMAP_NS}loc")]
+
+
+def publication_slug_from_sitemap_url(sitemap_url: str) -> str:
+    # e.g. https://.../sitemap_publication_cority-user-guide.xml -> cority-user-guide
+    name = Path(sitemap_url).stem
+    return name.removeprefix("sitemap_publication_")
 
 
 def list_article_slugs(publication_sitemap_url: str) -> list[tuple[str, str]]:
@@ -93,7 +97,7 @@ def fetch_article(publication_slug: str, article_slug: str) -> dict:
     return http_post_json(url, body)
 
 
-def rehost_images(html: str, publication_slug: str, article_slug: str, images_dir: Path) -> str:
+def rehost_images(html: str, images_dir: Path) -> str:
     """Download every real <img src> and rewrite the HTML to point at local copies.
 
     This is the step access_group_scraper.py's harvest_article_texts() skips today
@@ -128,11 +132,10 @@ def rehost_images(html: str, publication_slug: str, article_slug: str, images_di
 def scrape_article(publication_slug: str, article_slug: str, out_root: Path) -> dict:
     data = fetch_article(publication_slug, article_slug)
     html = data.get("viewFrameHtml", "")
-    pub_dir = out_root / publication_slug
-    images_dir = pub_dir / article_slug / "images"
-    rewritten = rehost_images(html, publication_slug, article_slug, images_dir)
+    article_dir = out_root / publication_slug / article_slug
+    images_dir = article_dir / "images"
+    rewritten = rehost_images(html, images_dir)
 
-    article_dir = pub_dir / article_slug
     article_dir.mkdir(parents=True, exist_ok=True)
     (article_dir / "index.html").write_text(rewritten, encoding="utf-8")
 
@@ -144,13 +147,19 @@ def scrape_article(publication_slug: str, article_slug: str, out_root: Path) -> 
     }
 
 
-def scrape_publication(publication_sitemap_url: str, out_root: Path) -> dict:
-    """Scrape every article in one publication. Returns summary stats."""
+def scrape_publication(publication_sitemap_url: str, out_root: Path, limit: int = 0) -> dict:
+    """Scrape every article in one publication (or up to `limit` if >0). Returns summary stats."""
     pairs = list_article_slugs(publication_sitemap_url)
-    stats = {"total": len(pairs), "succeeded": 0, "failed": 0, "failures": []}
+    if limit > 0:
+        pairs = pairs[:limit]
+    stats = {"publication": publication_slug_from_sitemap_url(publication_sitemap_url),
+             "total": len(pairs), "succeeded": 0, "failed": 0, "images": 0, "failures": []}
     for pub, slug in pairs:
         try:
+            before = set((out_root / pub / slug / "images").glob("*")) if (out_root / pub / slug / "images").exists() else set()
             scrape_article(pub, slug, out_root)
+            after = set((out_root / pub / slug / "images").glob("*")) if (out_root / pub / slug / "images").exists() else set()
+            stats["images"] += len(after - before)
             stats["succeeded"] += 1
         except Exception as e:
             stats["failed"] += 1
@@ -159,17 +168,57 @@ def scrape_publication(publication_sitemap_url: str, out_root: Path) -> dict:
     return stats
 
 
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Scrape Cority ClickHelp documentation (userdocs.cority.com)")
+    parser.add_argument("--output", default="cority/clickhelp", help="Output directory (default: cority/clickhelp)")
+    parser.add_argument("--publications", default="all",
+                         help="Comma-separated publication slugs to scrape, or 'all' (default: all)")
+    parser.add_argument("--limit-per-publication", type=int, default=0,
+                         help="Cap articles per publication, 0 = no limit (useful for a diagnostic run)")
+    parser.add_argument("--stats-out", default=None, help="Optional path to write a JSON stats summary")
+    args = parser.parse_args()
+
+    out_root = Path(args.output)
+    all_sitemaps = list_publications()
+
+    if args.publications == "all":
+        sitemaps = all_sitemaps
+    else:
+        wanted = {s.strip() for s in args.publications.split(",")}
+        sitemaps = [s for s in all_sitemaps if publication_slug_from_sitemap_url(s) in wanted]
+        missing = wanted - {publication_slug_from_sitemap_url(s) for s in sitemaps}
+        if missing:
+            print(f"WARNING: publications not found in sitemap index: {missing}", file=sys.stderr)
+
+    print(f"Scraping {len(sitemaps)} publication(s) -> {out_root}")
+
+    overall = {"publications": [], "total_articles": 0, "total_succeeded": 0,
+               "total_failed": 0, "total_images": 0, "failures": []}
+
+    for i, sitemap_url in enumerate(sitemaps, 1):
+        pub_slug = publication_slug_from_sitemap_url(sitemap_url)
+        print(f"[{i}/{len(sitemaps)}] {pub_slug} ...")
+        stats = scrape_publication(sitemap_url, out_root, limit=args.limit_per_publication)
+        overall["publications"].append(stats)
+        overall["total_articles"] += stats["total"]
+        overall["total_succeeded"] += stats["succeeded"]
+        overall["total_failed"] += stats["failed"]
+        overall["total_images"] += stats["images"]
+        overall["failures"].extend(stats["failures"])
+        print(f"    {pub_slug}: {stats['succeeded']}/{stats['total']} succeeded, "
+              f"{stats['images']} images, {stats['failed']} failed")
+
+    print("\n=== DONE ===")
+    print(f"Publications: {len(sitemaps)}")
+    print(f"Articles: {overall['total_succeeded']}/{overall['total_articles']} succeeded")
+    print(f"Images downloaded: {overall['total_images']}")
+    print(f"Failures: {overall['total_failed']}")
+
+    if args.stats_out:
+        Path(args.stats_out).write_text(json.dumps(overall, indent=2), encoding="utf-8")
+
+    return 1 if overall["total_failed"] > 0 else 0
+
+
 if __name__ == "__main__":
-    # Smoke test — one publication, a handful of articles, proving the full
-    # pipeline before it's ever pointed at all 119 publications.
-    out_root = Path("smoke_test_output")
-    pairs = list_article_slugs(f"{BASE}/sitemaps/sitemap_publication_cority-user-guide.xml")
-    sample = [p for p in pairs if p[1] in (
-        "welcome-to-cority", "creating-a-change-request", "about-the-management-of-change-module",
-    )]
-    results = []
-    for pub, slug in sample:
-        print(f"Scraping {pub}/{slug} ...")
-        results.append(scrape_article(pub, slug, out_root))
-        time.sleep(0.5)
-    print(json.dumps(results, indent=2))
+    sys.exit(main())
