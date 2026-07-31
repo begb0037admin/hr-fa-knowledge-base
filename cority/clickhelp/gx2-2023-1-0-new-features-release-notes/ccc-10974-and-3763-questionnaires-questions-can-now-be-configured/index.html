@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/gx2-2023-1-0-new-features-release-notes/ccc-10974-and-3763-questionnaires-questions-can-now-be-configured"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-10974 and 3763: Questionnaires questions can now be configured to branch if a particular value is selected</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-10974 and 3763: Questionnaires questions can now be configured to branch if a particular value is selected';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/gx2-2023-1-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2_255327827" data-has-heading-anchor="true">
+			<a id="_Toc126319861"></a><span style="color: #376092;">CCC-10974 and 3763: Questionnaires questions can now be configured to branch if a particular value is selected</span><a href="/articles/gx2-2023-1-0-new-features-release-notes/ccc-10974-and-3763-questionnaires-questions-can-now-be-configured/a/h2_255327827" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!gx2-2023-1-0-new-features-release-notes/ccc-10974-and-3763-questionnaires-questions-can-now-be-configured/a/h2_255327827&#39;,this);"></a></h2>
+		<p>Opt-In</p><ul>
+			<li>Questionnaires now support branching.</li><li>Branching will guide the employee down a particular path within the questionnaire that is dependent on the employee&rsquo;s responses. </li><li>Branching enables your organization to capture different answer-based workflows within a single questionnaire. This will eliminate the need for users to complete multiple questionnaires in order to obtain and share the same information. It will also provide a more tailored and seamless user experience, with each employee seeing only the set of questions applicable to him or her.</li><li>There are no limits as to how deep you can go with the branches. </li><li><span style="font-weight: bold; font-style: normal;">Note:</span><span style="font-weight: normal; font-style: normal;"> Clarity is now the only Cority theme supported. All others have been deprecated. Therefore, to use this new branching functionality, the &#39;Render Updated Questionnaire Response in Clarity&#39; system setting must be selected. If the system setting is not selected, questionnaires configured with the new feature will not render properly. We recommend you select the setting and mark it Global.</span></li><li><span style="font-weight: normal; font-style: normal;">The following question types support questionnaire branching:</span><ul>
+				<li>Multiple Choice</li><li>Multiple Choice Checkbox</li><li>Multi Select Checkbox</li><li>Yes or No</li><li>Normal Abnormal</li><li>Numeric </li></ul>
+			</li><li>All of these question types are supported by the &lsquo;Valid Choices&rsquo; feature in the &lsquo;Single Question&rsquo; look-up table. The new branching logic does not apply to any question type that does not have &lsquo;Valid Choices&rsquo; capability (examples: Text, Text Area, Subquery, Date, Draw)</li><li><span style="font-weight: normal; font-style: normal;">For nested questionnaires you can now branch:</span><ul>
+				<li>From additional question types, not just Yes/No </li><li>For both yes and no responses for Yes/ No questions. Previously, this had to be one selection, one response. </li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">There is now a new look-up selector field on the &lsquo;Questionnaire Question&rsquo; layout called &lsquo;Define Parent Branch Choices&rsquo;, which must be added to a custom version of the layout to use questionnaire branching.</span><ul>
+				<li>On a child question, open the &lsquo;Define Parent Branch Choices&rsquo; picklist, which will be filtered to show only the valid choices of the related parent. &nbsp;In this step you are defining the valid choice(s) of the parent question that will drive the display of that child question.</li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">To prevent potential issues that could arise from mixing the old design with the new:</span><ul>
+				<li>&lsquo;Always Present Expanded&rsquo; will be disabled when the new &lsquo;Define Parent Branch Choices&rsquo; field is used. To have a question expanded at all times is at odds with the new only when you provide a certain response should the next question appear logic.</li><li>&lsquo;Auto branch on response Yes/No/Neither&rsquo; should be set to Neither when the new field is used. Again, the idea is you can define a path for yes and another one for No. </li></ul>
+			</li><li>A corresponding &#39;Define Parent Branch Choices&rsquo; column can be added to the questions list view in the Questionnaire look-up table. &nbsp;</li><li>The &lsquo;Define Parent Branch Choices&rsquo; field has been added to the Import Utility with label QuestionValidChoice.Choice. This is for importing into that field in the &#39;Questionnaire Questions&#39; look-up table. </li><li><span style="font-weight: normal; font-style: normal;">In the Questionnaires look-up table, there is a new &#39;Enable Branching&#39; check box.</span><ul>
+				<li>By default, the new check box is not selected, therefore the new branching feature is off. Before selecting the check box for an existing questionnaire, we recommend you first review, and where applicable revise, any questions you want configured using the two new fields.</li><li>It is possible certain existing questionnaires can be tweaked slightly to use the new branching feature with no negative impact. For more complex questionnaires that include, for example, several nested questions, we recommend you instead create and configure (perhaps using cloning or the import tool) a new questionnaire to avoid any potential problems.</li><li>Once you are comfortable with the setup and have reviewed/completed the steps above, you can select the &#39;Enable Branching&#39; check box and the new features will take effect. &nbsp;</li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">The following items do not support and are not affected by this new functionality:</span><ul>
+				<li>Standalone questionnaires</li><li>Smart Notes</li><li>Flex Fields</li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">For information on creating or configuring questionnaires and their questions, see the </span><span style="font-weight: normal; font-style: italic;">GX2 User Guide</span><span style="font-weight: normal; font-style: normal;">.</span></li></ul>
+		<p><a id="_Toc126319862"></a>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>
