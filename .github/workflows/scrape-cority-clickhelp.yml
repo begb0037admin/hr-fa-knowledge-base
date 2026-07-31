@@ -100,11 +100,13 @@ jobs:
           for f in glob.glob("/tmp/pub_stats/*.json"):
               with open(f) as fh:
                   s = json.load(fh)
-              overall["publications"].append(s)
-              overall["total_articles"] += s["total"]
-              overall["total_succeeded"] += s["succeeded"]
-              overall["total_failed"] += s["failed"]
-              overall["total_images"] += s["images"]
+              # --stats-out writes the full summary wrapper (from main()), not the
+              # flat per-publication dict — even for a single-publication run.
+              overall["publications"].extend(s["publications"])
+              overall["total_articles"] += s["total_articles"]
+              overall["total_succeeded"] += s["total_succeeded"]
+              overall["total_failed"] += s["total_failed"]
+              overall["total_images"] += s["total_images"]
               overall["failures"].extend(s["failures"])
           with open("cority_scrape_stats.json", "w") as fh:
               json.dump(overall, fh, indent=2)
