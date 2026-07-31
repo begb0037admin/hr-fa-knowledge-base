@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-and-mycority-2021-2-1-release-notes-publication/a-business-rule-br-can-now-be-scheduled-to-fire"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>A business rule (BR) can now be scheduled to fire at a certain time, instead of firing on save</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='A business rule (BR) can now be scheduled to fire at a certain time, instead of firing on save';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-and-mycority-2021-2-1-release-notes-publication/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h1 id="h1_1021827970" data-has-heading-anchor="true">
+			A business rule (BR) can now be scheduled to fire at a certain time, instead of firing on save<a href="/articles/cority-and-mycority-2021-2-1-release-notes-publication/a-business-rule-br-can-now-be-scheduled-to-fire/a/h1_1021827970" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-and-mycority-2021-2-1-release-notes-publication/a-business-rule-br-can-now-be-scheduled-to-fire/a/h1_1021827970&#39;,this);"></a></h1>
+		<ul>
+			<li>A business rule can be scheduled to fire and check records from a particular module for a configured condition or set of conditions.</li><li><span style="font-weight: normal; font-style: normal;">It can be scheduled to fire:</span><ul>
+				<li>Once, at a particular time on a particular day</li><li>Every day at a certain time</li><li>Recurring, on a particular day of the week or month at a certain time</li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">Example Use Cases:</span><ul>
+				<li>You can set up a business rule to fire every day at a certain time and run a report (pre-configured in Query Builder) that will list all employees who have a birthday that day. If the report lists employees, the business rule can then send an email (potentially with a PDF, questionnaire, or letter) to each of those employees.</li><li>A business rule can be configured to check every week (at a particular day and time), for any employees who have been terminated in the last week, and for each of those employees to execute a change action that adds an end date to his or her SEG enrollment.</li></ul>
+			</li><li>The frequency/recurrence can be reconfigured over time as you need, or you can cancel the business rule manually if you no longer want or need it. </li><li><span style="font-weight: normal; font-style: normal;">To support this functionality, the business rule configuration screen has the new ‘Scheduled/Recurrent’ trigger.</span><ul>
+				<li><span style="font-weight: normal; font-style: normal;">If the new trigger is specified, the following three new fields will display:</span><ul>
+					<li>Start Date – a date field for specifying the first day the business rule will trigger (must be in the future)</li><li>Start Time – a date field for specifying the time of day the business rule will trigger (must be in the future, in combination with Start Date)</li><li>Recurrence – a field you can use to configure recurrence for the business rule</li></ul>
+				</li><li><span style="font-weight: normal; font-style: normal;">The recurrence configuration box is the same here as in all other applicable places in GX2. </span><span style="font-weight: bold; font-style: normal;">Note:</span><span style="font-weight: normal; font-style: normal;"> The smallest interval for which you can configure recurrence is daily.</span></li><li>If you do not configure recurrence, the business rule will fire only once, according to your Start Date/Start Time values.</li></ul>
+			</li><li>Once scheduled, the BR will be placed in the Business Rule Action Queue, which will also record its history of execution.</li><li>All changes made by the scheduled business rule will be logged in Record History.</li><li><span style="font-weight: bold; font-style: normal;">Note:</span><span style="font-weight: normal; font-style: normal;"> When the scheduled business rule fires, if its configured conditions match more than 10,000 records, the business rule action will not execute, an error will be logged, and the following message will display: Your scheduled business rule cannot execute its action on that many records. Please modify its configuration so it filters to fewer records.</span></li><li><span style="font-weight: normal; font-style: normal;">Under </span><span style="font-weight: bold; font-style: normal;">Administrator</span><span style="font-weight: normal; font-style: normal;"> &gt; </span><span style="font-weight: bold; font-style: normal;">Business Rule Action Queue</span><span style="font-weight: normal; font-style: normal;">, there are two new ‘Scheduled Business Rules’ (SBRs) views. </span><ul>
+				<li>Upcoming (SBRs) - This shows the SBRs that are currently scheduled.</li><li><span style="font-weight: normal; font-style: normal;">Recently Processed (SBRs) - This shows the SBRs that have recently been processed. </span><ul>
+					<li>When an SBR succeeds in adding scheduled business rule actions (SBRAs) to the worker queue, the SBR displays 'Added To SBRA Queue'. Status review of the SBRAs is completed in the new SBRA Queue module described below.</li></ul>
+				</li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">The new SBRA Queue module maintains and triggers all SBRAs. The SBRAs are the result of SBRs. </span><ul>
+				<li><span style="font-weight: normal; font-style: normal;">The new module is accessible using either of the following two new actions in </span><span style="font-weight: bold; font-style: normal;">Administrator</span><span style="font-weight: normal; font-style: normal;"> &gt; </span><span style="font-weight: bold; font-style: normal;">Business Rule Action Queue</span><span style="font-weight: normal; font-style: normal;"> &gt; </span><span style="font-weight: bold; font-style: normal;">Actions</span><span style="font-weight: normal; font-style: normal;">:</span><ul>
+					<li>Upcoming (SBRAs) - This lists the SBRAs that are scheduled.</li><li>Recently Processed (SBRAs) - This lists the SBRAs that have recently been processed.</li></ul>
+				</li><li><span style="font-weight: normal; font-style: normal;">The new module also has two actions: </span><ul>
+					<li>Upcoming (SBRs) - This opens the Upcoming SBRs view in the Business Rule Action Queue module.</li><li>Recently Processed (SBRs) - This opens the Recently Processed SBRs view in the Business Rule Action Queue module.</li></ul>
+				</li></ul>
+			</li><li>Also, the system now runs TDBR processes on multiple sites (a separate thread for each) simultaneously, which improves performance.</li><li>And, when the user clones a BR that has scheduled/recurring fields, the clone of the BR will have the same scheduled/recurring fields.</li></ul>
+		<h4 id="h4_1066401480" data-has-heading-anchor="true">
+			Impact to Existing Users:<a href="/articles/cority-and-mycority-2021-2-1-release-notes-publication/a-business-rule-br-can-now-be-scheduled-to-fire/a/h4_1066401480" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-and-mycority-2021-2-1-release-notes-publication/a-business-rule-br-can-now-be-scheduled-to-fire/a/h4_1066401480&#39;,this);"></a></h4>
+		<ul>
+			<li>The ability to schedule business rules to fire according to a schedule instead of on save only, makes the business rules functionality far more powerful and robust.</li></ul>
+		<h4 id="h4__1658765620" data-has-heading-anchor="true">
+			Additional Configuration Considerations:<a href="/articles/cority-and-mycority-2021-2-1-release-notes-publication/a-business-rule-br-can-now-be-scheduled-to-fire/a/h4__1658765620" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-and-mycority-2021-2-1-release-notes-publication/a-business-rule-br-can-now-be-scheduled-to-fire/a/h4__1658765620&#39;,this);"></a></h4>
+		<ul>
+			<li>Beyond what is described above, no additional configuration is required.</li><li><span style="font-weight: normal; font-style: normal;">For information on working with business rules, business rule actions, or role security, see the </span><span style="font-weight: normal; font-style: italic;">Cority User Guide</span><span style="font-weight: normal; font-style: normal;">.</span></li></ul>
+		<p>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>
