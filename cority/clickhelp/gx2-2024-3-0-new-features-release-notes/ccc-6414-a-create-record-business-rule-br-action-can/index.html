@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/gx2-2024-3-0-new-features-release-notes/ccc-6414-a-create-record-business-rule-br-action-can"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-6414: A ‘Create Record’ business rule (BR) action can now add multiple new records to a sublist based on the results of a subquery</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-6414: A ‘Create Record’ business rule (BR) action can now add multiple new records to a sublist based on the results of a subquery';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/gx2-2024-3-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2__1832547071" data-has-heading-anchor="true">
+			<a id="_Toc177126719"></a><a id="_Toc178312651"></a><span style="color: #2E75B5; background-color: #FFFFFF;">CCC-6414: A ‘Create Record’ business rule (BR) action can now add multiple new records to a sublist based on the results of a subquery</span><a href="/articles/gx2-2024-3-0-new-features-release-notes/ccc-6414-a-create-record-business-rule-br-action-can/a/h2__1832547071" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!gx2-2024-3-0-new-features-release-notes/ccc-6414-a-create-record-business-rule-br-action-can/a/h2__1832547071&#39;,this);"></a></h2>
+		<p style="background-color: #FFFFFF;">The following is an example workflow:</p><p style="background-color: #FFFFFF;">1. The saving of an OH ‘Risk Assessment’ record with a specific location triggers the business rule.</p><p style="background-color: #FFFFFF;">2. The business rule adds all supervisors associated with that location to the OH ‘Risk Assessment’ record’s Assessors sublist.</p><p style="background-color: #FFFFFF;">3. The ‘Create Record’ BR action uses the following subquery to populate the Assessors sublist: <br/>a Query Builder subquery for all employees who are supervisors, filtered by the location on the OH ‘Risk Assessment’ record</p><p style="background-color: #FFFFFF;">To support this, on the ‘Create Record’ BRA screen, for a right-side value a subquery column can now be used if the left-side value is an accepted object.</p><p style="background-color: #FFFFFF;">The following are accepted objects:</p><ul>
+			<li>Data Tables (for example, Employee.EmployeeNumber)</li><li>Look-up Tables (for example, ‘Clinic Visit’ Reason.Code)</li></ul>
+		<p>For the records to be created, the subquery must contain one of the following as the first column:</p><ul><li>A look-up entry value (for example, the 'Risk Definition' field) – to match by look-up entry code or ID</li><li>A tree node (for example, the 'Location' field)- to match by TreeMaster code or ID</li><li><span style="font-weight: normal; font-style: normal;">A data table picklist:</span><ul>
+				<li>An employee-type field value (for example, User.Employee) – to match by employee number or employee ID</li><li>A User field value (for example, ClinicVisit.Practitioner, Case.CaseManager) – to match by user login name or user ID</li><li>Values for other data fields (for example, Equipment) – to match by an ID in the corresponding data table</li></ul>
+			</li></ul>
+		<p>You can only save a Create Record BRA with a subquery in a right-side column when the execution type is ‘Scheduled’. If you try to save it as an ‘Immediate’ Create Record BRA, an informative error message will display.</p><p>You can only save with one subquery in any single right-side field of a Create Record BRA. If you try to save with more than one subquery, an informative error message will display.</p><p><span style="font-weight: bold;">Note:</span> To avoid a potential infinite loop, do not configure the BRA to create one or more records of an entity to which the subquery is pointing.</p><p style="background-color: #FFFFFF;">When the business rule with ‘Create Record’ BRA that has one or more subqueries runs, if the left side is an accepted look-up or data table object (for example, RAS.MedicalRiskAssessmentAssessor.Employee) and the right side is a subquery, then on execution all records found by the subquery will be added to the corresponding sublist.</p><p style="background-color: #FFFFFF;">The subquery can be filtered (for example, RiskAssessment.Location filters the subquery to employees from a certain location only).</p><p style="background-color: #FFFFFF;">The ‘Create Record’ BRA will only create the top 20 records.</p><ul>
+			<li>Duplicates records will not be created, therefore will not be counted as part of the 20. Failed creation records will be counted.</li><li>If the system has to be prevented from creating a duplicate record or fails to create a record (for example, for not having values for all required fields or if the subquery has been altered), a notification will be recorded in the Event Log.</li></ul>
+		<p><a id="_Toc177126720"></a><a id="_Toc178312652"></a>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>

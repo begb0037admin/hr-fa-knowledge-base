@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/gx2-2024-3-0-new-features-release-notes/ccc-7665-the-oel-adjustment-can-now-update-automatically"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-7665: The &#39;OEL Adjustment&#39; can now update automatically</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-7665: The \'OEL Adjustment\' can now update automatically';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/gx2-2024-3-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2_1277718318" data-has-heading-anchor="true">
+			<a id="_Toc177126725"></a><a id="_Toc178312657"></a><span style="color: #2E75B5; background-color: #FFFFFF;">CCC-7665: </span><span style="color: #2E75B5;">The &#39;OEL Adjustment&#39; can now update automatically</span><a href="/articles/gx2-2024-3-0-new-features-release-notes/ccc-7665-the-oel-adjustment-can-now-update-automatically/a/h2_1277718318" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!gx2-2024-3-0-new-features-release-notes/ccc-7665-the-oel-adjustment-can-now-update-automatically/a/h2_1277718318&#39;,this);"></a></h2>
+		<p>The &#39;OEL Adjustment&#39; (on ML-000367, or custom versions of it) will now update automatically if the &#39;Shift Code&#39; is selected from the &#39;Shift Code&#39; look-up table on the &#39;Personal Monitoring Sample&#39; layout (ML-000579, or custom versions of it). The Industrial Hygienist will no longer have to make manual OEL adjustments for extended shifts.</p><p>This can benefit organizations that have different shifts.</p><p>In the &#39;Shift Code&#39; look-up table, &#39;Shift Length&#39; and &#39;Hours per Week&#39; fields have been added.</p><p>If a &#39;Shift Code&#39; is selected on the Monitoring record from the &#39;Shift Code&#39; look-up table, the &#39;Shift Length&#39; field on the Monitoring record will now display automatically and be calculated using the information from the selected &#39;Shift Code&#39; look-up table value.</p><ul>
+			<li>&#39;Shift Length&#39; = ((Day 1 + Day 2 + Day 3, etc.) / (Total Number of days worked )) X 60 minutes, where days worked equals any day that is not null or zero.</li></ul>
+		<p>The &#39;Shift length&#39; will continue to round to nearest minute.</p><p>Also, if a &#39;Shift Code&#39; is selected on the Monitoring record from the &#39;Shift Code&#39; look-up table, the &#39;Hours per Week&#39; on the Monitoring record will now display automatically and be calculated using the information from the selected &#39;Shift Code&#39; look-up table value.</p><ul>
+			<li>&#39;Hours per Week&#39; = ((Day 1 + Day 2 + Day 3, etc.) / (Shift Duration)) X 7</li></ul>
+		<p>The &#39;Hours per Week&#39; will continue to round to the nearest hour.</p><p>&#39;Shift Length&#39; and &#39;Hours per Week&#39; remain editable, but selecting a &#39;Shift Code&#39; look-up table value on the Monitoring record will always override current &#39;Shift Length&#39; and &#39;Hours per Week&#39; values.</p><p>On the &#39;Personal Sampling&#39; layout (ML-000579), the &#39;Hours per Week&#39; defaults to 40. That will be overridden if &#39;Shift Code&#39; is populated on the Monitoring record.</p><p><a id="_Toc177126726"></a><a id="_Toc178312658"></a>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>

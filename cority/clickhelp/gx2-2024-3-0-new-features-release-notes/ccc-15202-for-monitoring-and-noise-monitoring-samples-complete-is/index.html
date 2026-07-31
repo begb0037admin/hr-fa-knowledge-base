@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/gx2-2024-3-0-new-features-release-notes/ccc-15202-for-monitoring-and-noise-monitoring-samples-complete-is"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-15202: For Monitoring and Noise Monitoring samples, % complete is now provided within a survey for both the agent and SEG under analysis</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-15202: For Monitoring and Noise Monitoring samples, % complete is now provided within a survey for both the agent and SEG under analysis';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/gx2-2024-3-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2_431309666" data-has-heading-anchor="true">
+			<a id="_Toc178312656"></a><span style="color: #2E75B5; background-color: #FFFFFF;">CCC-15202: For Monitoring and Noise Monitoring samples, % complete is now provided within a survey for both the agent and SEG under analysis</span><a href="/articles/gx2-2024-3-0-new-features-release-notes/ccc-15202-for-monitoring-and-noise-monitoring-samples-complete-is/a/h2_431309666" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!gx2-2024-3-0-new-features-release-notes/ccc-15202-for-monitoring-and-noise-monitoring-samples-complete-is/a/h2_431309666&#39;,this);"></a></h2>
+		<p style="background-color: #FFFFFF;">This enables the tracking, for compliance purposes, of surveys across multiple sites/groups. It also eliminates the need to keep an external spreadsheet with the number of samples collected for each SEG/agent. </p><p style="background-color: #FFFFFF;">Prior to this, % complete was tied to an agent and limit type only, not to any SEGs attributed to the agent. That resulted in misrepresenting % complete for SEGs because the completion calculation was looking only at agents. For instance, if there were two SEGs in a survey for the same agent, then the % complete only tracked the overall completion of the agent between the two, not the individual completion of the agent within each SEG. </p><p style="background-color: #FFFFFF;">Hygienists can now track their survey completion rates by agents and exposure groups, not just by agent.</p><p style="background-color: #FFFFFF;">For Monitoring Samples:</p><p style="background-color: #FFFFFF;">The ‘Percent Complete’ field calculation is now a 1 for 1 match to the plan. That is, only those that match in all of the following fields will count into the ‘Percent Complete’ calculation:</p><ul>
+			<li>Agent</li><li>Exposure Group</li><li>Limit Type</li><li>Sample Type&nbsp;&nbsp;</li></ul>
+		<p style="background-color: #FFFFFF;">The workflow is:</p><ul>
+			<li>A plan is entered on the Plan tab by an EHS professional or overseer. This specifies which samples and how many are needed. </li><li>The Technician then looks at the Plan tab and enters the new sample on the Sample tab.</li></ul>
+		<p style="background-color: #FFFFFF;">A Monitoring SEG can now be associated with the Agent (and the samples attributed to that Agent – both area and personal).</p><p style="background-color: #FFFFFF;">SEG + Agent + Limit Type + Sample Type (ensuring the sample is approved) = % Complete sampling of that Agent for that SEG</p><p style="background-color: #FFFFFF;">Null values can be allowed in the SEG or Limit Type.<br/><b>Note:</b> 'Sample Type' and 'Agent' are currently required fields.</p><ul>
+			<li><span style="background-color: #FFFFFF; font-weight: normal; font-style: normal;">Null values should count into the % Complete calculation if on the Plan tab the corresponding fields were left null.</span><ul>
+				<li>Example – The IH user has a plan with Phenol, TWA8, and Personal Sample, but Exposure Group is left null. All Samples that meet Phenol, TWA8, and Sample Type = Personal would count into the completion percentage (regardless of a SEG value or SEG null on the sample).</li></ul>
+			</li></ul>
+		<p style="background-color: #FFFFFF;"><b>IH</b> -&gt; <b>Sampling Plan Completion Status</b> -&gt; <b>Summary and Detail</b> <b>Report</b> will reflect the updated % Complete calculation. The Detail report will display the Exposure Group value beside the Agent value.</p><p>For Noise Monitoring Samples:</p><p style="background-color: #FFFFFF;">The ‘Percent Complete Noise’ field calculation is now a 1 for 1 match to the plan. That is, only those that match in both the following fields will count into the ‘Percent Complete Noise’ calculation:</p><ul>
+			<li>Exposure Group</li><li>Sample Type</li></ul>
+		<p style="background-color: #FFFFFF;">The workflow is:</p><ul>
+			<li>A plan is entered on the Plan tab by an EHS professional or overseer. This specifies which samples and how many are needed. </li><li>The Technician then looks at the Plan tab and enters the new sample on the Sample tab.</li></ul>
+		<p style="background-color: #FFFFFF;">A Monitoring SEG can now be associated with the Agent (and the samples attributed to that Agent – both area and personal).</p><p style="background-color: #FFFFFF;">Sample Type + Exposure Group = % Complete Noise sampling of that Agent (noise) for that SEG</p><p style="background-color: #FFFFFF;">Null values can be allowed in the SEG.</p><ul>
+			<li>Null values should count into the % Noise Complete calculation if on the Plan tab the corresponding fields were left null.</li></ul>
+		<ul style="margin-left: 40px;">
+			<li>Example – The IH user has a plan with Noise as the Agent and Personal sample, but Exposure Group is left null. All Samples that meet Noise as Agent and Sample Type = Personal would count into the completion percentage (regardless of a SEG value or SEG null on the sample).</li><li>The 'Exposure Group' field value can be null.<br/>If the 'Exposure Group' is left blank or null for the plan, for the Admin essentially the exposure group does not matter. Therefore if the Sample Type and the Agent (noise) match, the samples would count into completion percentage.</li></ul>
+		<p style="background-color: #FFFFFF;"><b>IH</b> -&gt; <b>Noise Sampling Plan Completion Status</b> -&gt; <b>Summary and Detail Report</b> will reflect the updated % Complete calculation. The Detail report will display the Exposure Group value beside the Sample Type value.</p><p><a id="_Toc177126725"></a><a id="_Toc178312657"></a>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>
