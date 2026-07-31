@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/device-import-utilities-guide/easy-one-air-easy-one-pc"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script><title>EasyOne Air / Easy on-PC</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='EasyOne Air / Easy on-PC';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/device-import-utilities-guide/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1_1547723302" data-has-heading-anchor="true">
+  <span style="color:#F78F1E"> Importing Test Results from the EasyOne Air or Easy on-PC Spirometers</span><a href="/articles/device-import-utilities-guide/easy-one-air-easy-one-pc/a/h1_1547723302" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!device-import-utilities-guide/easy-one-air-easy-one-pc/a/h1_1547723302&#39;,this);"></a></h1>
+<p>This article outlines the steps required to import test results from the EasyOne Air or Easy on-PC Spirometers into GX2.</p>
+<h2 style="" id="h2__1749274305" data-has-heading-anchor="true">Configuring the Spirometer Import Engine
+<a href="/articles/device-import-utilities-guide/easy-one-air-easy-one-pc/a/h2__1749274305" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!device-import-utilities-guide/easy-one-air-easy-one-pc/a/h2__1749274305&#39;,this);"></a></h2>
+<ol><li>Launch the <b>Cority Spirometric Import Engine</b>.</li>
+    <li><b>Device Name </b>- select the EasyOne Air or Easy on-PC device created in Cority &gt; Occ Health &gt; Equipment.</li>
+  <li>Input the appropriate paths in the Spirometer Interface Settings fields: 
+<ul><li><b>Login Name </b>- the Cority login name.</li>
+  <li><b>Spiro Interface URL </b>- the URL for the Cority application (e.g. https://&lt;your domain&gt;<yourdomain>)
+</yourdomain></li>
+  <li><b>Device Activation Key </b>- to obtain the activation key, log in to Cority and then append the Cority URL with /security/retrieveapikey.rails<br/>For example, if your Cority URL is https://&lt;your domain&gt;<your domain="">, change the URL to https://&lt;your domain&gt;<yourdomain>/security/retrieveapikey.rails</yourdomain></your></li></ul></li>
+    <li>Click <b>Save Configuration</b>.</li></ol>
+<p><img src="images/easy-one-air-easy-one-pc-2024-10-21.png" alt="" style="width: 603px; height: 481.74px;" loading="lazy"/></p><h2 id="h2__106004310" data-has-heading-anchor="true">Importing the Data<a href="/articles/device-import-utilities-guide/easy-one-air-easy-one-pc/a/h2__106004310" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!device-import-utilities-guide/easy-one-air-easy-one-pc/a/h2__106004310&#39;,this);"></a></h2>
+<ol><li><b>Open EasyOne Connect</b><ol><li>Perform your tests (Note: These must be FVC tests and not FVL tests)</li><li>Once complete, you have two options:<ol><li>Utilities &gt; Export XML (Go to Step 3)</li><li>Export a specific test (Go to Step 2)</li></ol></li></ol></li><li><b>To export a specific test</b><ol><li>Launch EasyOne Connect</li><li>On the Main Screen, click Patients<br/><img src="images/easy-one-air-easy-one-pc-2024-10-21-5.png" alt="" style="width: 151px; height: 69.363px;" loading="lazy"/><br/></li><li>Select a patient from the list by double clicking the name of the patient.<br/><img src="images/easy-one-air-easy-one-pc-2024-10-21-6.png" alt="" style="width: 513px; height: 150.882px;" loading="lazy"/><br/></li><li>Expand the menu at the bottom by clicking the right arrows, highlight the study you want to export, then click XML.<br/><img src="images/easy-one-air-easy-one-pc-2024-10-21-7.png" alt="" style="width: 515px; height: 293.777px;" loading="lazy"/><br/></li><li>Save the file to your desired location, then import it into Cority using their designated</li></ol></li><li><b>In the Spirometer Import Engine, click Select File.</b><ol><li>If you did 1.1 above, "Transfer Best Test" should be set to true before you click “Select File.”</li><li>Select the XML File that you exported from EasyOne Connect</li><li>Click Import<br/><img src="images/easy-one-air-easy-one-pc-2024-10-21-8.png" alt="" style="width: 545px; height: 433.167px;" loading="lazy"/><br/></li></ol></li><li><b>Confirm in Cority the tests were completed.</b><ul><li>Logs of the imports will be shown in the Admin &gt; Logs &gt; Process Status &amp; Log, Pulmonary Test Import View.</li><li>The imported records if successful, will be shown in Occupational Health &gt; PFT.</li></ul></li></ol><p><br/></p><hr/><p>If you face issues while setting up and testing the interface, contact Cority Customer Support.</p><p>Additional resources:</p><ul><li>For information on installing the  Import Engine, please see&nbsp;<a href="/articles/device-import-utilities-guide/installing-a-device-import-engine" onclick="return n(&#39;!device-import-utilities-guide/installing-a-device-import-engine&#39;,this);">Installing a Device Import Engine</a></li><li>Engines are available for download under the Cority FTP site (<a href="https://ftp.medgate.com/Release/" target="_top">https://ftp.medgate.com/Release/</a>) <br/>or in the Cority Integration Engines Download Guide at <a href="https://uc.cority.com/s/article/Cority-Integration-Engines-Download-Guide" target="_top">https://uc.cority.com/s/article/Cority-Integration-Engines-Download-Guide</a>​</li></ul><p><br/></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>
