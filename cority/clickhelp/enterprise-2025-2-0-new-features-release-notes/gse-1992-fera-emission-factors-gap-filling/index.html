@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/enterprise-2025-2-0-new-features-release-notes/gse-1992-fera-emission-factors-gap-filling"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>GSE-1992: For FERA, there is new emission factors gap-filling functionality.</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='GSE-1992: For FERA, there is new emission factors gap-filling functionality.';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/enterprise-2025-2-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2__890069004" data-has-heading-anchor="true">
+			<font color="#0000ff"><a id="_CCC-14194:_A_user"></a><a id="_Toc159139722"></a><span style="background-color: #ffffff;">GSE-1992: For FERA, there is new emission factors gap-filling functionality.</span></font><a href="/articles/enterprise-2025-2-0-new-features-release-notes/gse-1992-fera-emission-factors-gap-filling/a/h2__890069004" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!enterprise-2025-2-0-new-features-release-notes/gse-1992-fera-emission-factors-gap-filling/a/h2__890069004&#39;,this);"></a></h2>
+		<p>To support this, in the Environment module, there is a new FERA tab (Gap-filling for Fuel and Energy-Related Activities) in <b>Admin Settings &gt; Environment</b> &gt;&nbsp;<b>Customisation</b> &gt; <b>Emission Factors</b>. The tab can be used to set gap-fill rules for FERA emission factors. To set a rule, the user would select a data type (for example, Electricity (Grid)) from the drop-down menu at the top left, then specify that any uploads made to such data sources with emission factors of a particular methodology (for example, CGGI) and country (for example, Canada) will be gap-filled using emission factors of an alternate methodology (for example, GHG) and alternate country (for example, United States). Such rules can be set for Electricity (Grid), Fuel, Heat (Grid) and Road Transport data sources. <b>Note:</b> Rules for transport data containing fuel data are assigned independently from rules for uploads with only distance data.</p><p>There are some instances where a one-to-one mapping of one methodology and country to another methodology and country is not possible. For example, for fuel, the EPA methodology publishes emission factors for burning peat, but the Defra methodology does not, so a mapping of such would fail. To support that type of scenario, the tab provides subgrid functionality with which you can specify additional mapping for a data type. For example, you can specify that for any uploads of peat to EPA data sources where the country is United States, you want the biodiesel fuel type used instead. So with a mapping like that, if peat is uploaded to an EPA data source for country United States, the system would instead use the emission factors for biodiesel fuel from perhaps Defra for country United Kingdom.</p><p>If using the subgrid functionality, different types of data will require different parameters set. Fuel data, for example, will need mapping for fuel types. For travel data (road business data), vehicle category and sub-category would be required. The mapping you build will depend on the type of data for which you are building it.</p><p><img src="images/gse-1992-fera-emission-factors-gap-filling-2025-06-26.png" alt="" style="width: 1641px; height: 334px;" loading="lazy"/></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2025 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>
