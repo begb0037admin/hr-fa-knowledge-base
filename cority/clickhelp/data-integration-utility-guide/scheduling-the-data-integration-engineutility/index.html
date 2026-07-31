@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/data-integration-utility-guide/scheduling-the-data-integration-engineutility"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Scheduling the Data Integration Utility</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Scheduling the Data Integration Utility';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/data-integration-utility-guide/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h1 id="h1_318671445" data-has-heading-anchor="true">
+			<span style="color: #F78F1E; font-weight: bold;"> </span><a id="_Toc4590148"></a><span style="color: #F78F1E; font-weight: bold;">Scheduling the Data Integration Utility</span><a href="/articles/data-integration-utility-guide/scheduling-the-data-integration-engineutility/a/h1_318671445" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!data-integration-utility-guide/scheduling-the-data-integration-engineutility/a/h1_318671445&#39;,this);"></a></h1>
+		<p>To schedule the Data Integration&nbsp;<span style="text-align: left;">Utility</span>&nbsp;you must first run the client manually and save the required configuration. Once this has been done the Data Integration&nbsp;<span style="text-align: left;">Utility</span>&nbsp;can be scheduled to run automatically using the previously saved configuration. Note that the file that was selected when the configuration was saved will be used during any scheduled imports. This file should be updated with new data for each scheduled import.</p><p><span style="font-weight: bold;">Important:</span> If you have updated the Data Integration&nbsp;<span style="text-align: left;">Utility</span>&nbsp;web client from GX2t or earlier to GX2u or later, you must update the Program/Script field of your scheduled task to reference the new executable filename (.exe), because that filename has changed.</p><ol start="1">
+			<li><span style="font-weight: normal; font-style: normal;">Select </span><span style="font-weight: bold; font-style: normal;">Start</span><span style="font-weight: normal; font-style: normal;"> &gt; </span><span style="font-weight: bold; font-style: normal;">Programs</span><span style="font-weight: normal; font-style: normal;"> &gt; </span><span style="font-weight: bold; font-style: normal;">Accessories</span><span style="font-weight: normal; font-style: normal;"> &gt; </span><span style="font-weight: bold; font-style: normal;">System Tools</span><span style="font-weight: normal; font-style: normal;"> &gt; </span><span style="font-weight: bold; font-style: normal;">Task Scheduler</span><span style="font-weight: normal; font-style: normal;">.</span></li><li><span style="font-weight: normal; font-style: normal;">Select </span><span style="font-weight: bold; font-style: normal;">Create Basic Task</span><span style="font-weight: normal; font-style: normal;">. The Create Basic Task Wizard will open.</span></li><li>Enter a name and description (optional) for the task.</li></ol>
+		<p><img src="images/scheduling-the-data-integration-engineutility-img0001.png" width="520" height="419" alt="" style="border-width: 0px;"/></p><ol start="4">
+			<li><span style="font-weight: normal; font-style: normal;">Click </span><span style="font-weight: bold; font-style: normal;">Next</span><span style="font-weight: normal; font-style: normal;">. </span></li><li> Select when you want the task to start.</li></ol>
+		<p><img src="images/scheduling-the-data-integration-engineutility-img0002.png" width="523" height="423" alt="" style="border-width: 0px;"/></p><ol start="6">
+			<li><span style="font-weight: normal; font-style: normal;">Click </span><span style="font-weight: bold; font-style: normal;">Next</span><span style="font-weight: normal; font-style: normal;">.</span></li></ol>
+		<ol start="1">
+			<li><span style="font-weight: normal; font-style: normal;">If you selected Daily, Weekly, Monthly, or One time in the Trigger step, select a start date and time and specify when you want future tasks to run, if applicable. Click </span><span style="font-weight: bold; font-style: normal;">Next</span><span style="font-weight: normal; font-style: normal;">.</span></li><li><span style="font-weight: normal; font-style: normal;">If you selected When a specific event is logged in the Trigger step, select a Log and Source and enter an Event ID. Click </span><span style="font-weight: bold; font-style: normal;">Next</span><span style="font-weight: normal; font-style: normal;">.</span></li></ol>
+		<ol start="7">
+			<li><span style="font-weight: normal; font-style: normal;"> In the Action step, select </span><span style="font-weight: bold; font-style: normal;">Start a program</span><span style="font-weight: normal; font-style: normal;">.</span></li></ol>
+		<p><a id="_Hlk495394729"></a><img src="images/scheduling-the-data-integration-engineutility-img0003.png" width="568" height="456" alt="" style="border-width: 0px;"/></p><ol start="8">
+			<li><span style="font-weight: normal; font-style: normal;">Click </span><span style="font-weight: bold; font-style: normal;">Next</span><span style="font-weight: normal; font-style: normal;">.</span></li><li><a id="_Hlk495399188"></a><span style="font-weight: normal; font-style: normal;">In the Start a Program step, click the </span><span style="font-weight: bold; font-style: normal;">Browse…</span><span style="font-weight: normal; font-style: normal;"> button next to the </span><span style="font-weight: bold; font-style: normal;">Program/script</span><span style="font-weight: normal; font-style: normal;"> field. Locate Data Integration&nbsp;Utility</span><span style="font-weight: normal; font-style: normal;">.exe.</span></li><li> Type “/s” in the Add arguments field. This will instruct the client to automatically run in silent mode without any user interaction. </li></ol>
+		<p><img src="images/scheduling-the-data-integration-engineutility-img0004.png" width="568" height="457" alt="" style="border-width: 0px;"/></p><ol start="11">
+			<li><span style="font-weight: normal; font-style: normal;">Click </span><span style="font-weight: bold; font-style: normal;">Next</span><span style="font-weight: normal; font-style: normal;">. </span></li><li><span style="font-weight: normal; font-style: normal;">Review your settings and click </span><span style="font-weight: bold; font-style: normal;">Finish</span><span style="font-weight: normal; font-style: normal;"> to create your &nbsp;Data Integration&nbsp;Utility</span><span style="font-weight: normal; font-style: normal;">&nbsp;task. The Windows Task Scheduler will automatically start the Data Integration&nbsp;Utility</span><span style="font-weight: normal; font-style: normal;">&nbsp;per your specifications. </span></li></ol>
+	<div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>

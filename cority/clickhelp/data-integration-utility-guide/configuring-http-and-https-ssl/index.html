@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/data-integration-utility-guide/configuring-http-and-https-ssl"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Configuring http and https (SSL)</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Configuring http and https (SSL)';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/data-integration-utility-guide/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h1 id="h1_1979856394" data-has-heading-anchor="true">
+			<a id="_Toc294174321"></a><a id="_Toc4590153"></a><span style="color: #F78F1E; font-weight: bold;">Configuring http and https (SSL)</span><a href="/articles/data-integration-utility-guide/configuring-http-and-https-ssl/a/h1_1979856394" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!data-integration-utility-guide/configuring-http-and-https-ssl/a/h1_1979856394&#39;,this);"></a></h1>
+		<p>To use https with the Data Integration&nbsp;<span style="text-align: left;">Utility</span>&nbsp;web service the web.config must be configured as follows:</p><ul>
+			<li>The end point binding for the service must contain a base address starting with https.</li><li>The mex end point must use the binding “mexHttpsBinding”.</li><li>The security mode for the wsHttpBinding should also be set to “Transport”.</li></ul>
+		<p>Examples: </p><ul>
+			<li>&lt;security mode="Transport"&gt;&lt;!--change to "None" for http--&gt;</li><li><span style="font-weight: normal; font-style: normal;">&lt;endpoint address="https://myserver/gx_pr/webservice/Data Integration&nbsp;Utility</span><span style="font-weight: normal; font-style: normal;">service.svc" binding="wsHttpBinding”</span></li><li>&lt;endpoint address="mex" binding="mexHttpsBinding" contract="IMetadataExchange"/&gt;</li></ul>
+		<p>If you are not using https (SSL), the base address should start with http, the mex binding should be mexHttpBinding, and the security mode should beset to None.<a id="_Toc4590154"></a><a id="_Toc294174319"></a></p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>
