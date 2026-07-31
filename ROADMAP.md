@@ -43,6 +43,25 @@ These guides have drafted content but need to be created as proper Word document
   5. Before trusting any downloaded image, check it isn't a generic "no access" placeholder — don't rely on `HTTP 200` alone (see `CORITY-FEASIBILITY.md` §3 for exactly what that placeholder trap looks like and how it was confirmed).
 - **Status:** Not started. Explicitly kept separate from the Cority build — this is Access Group/PeopleXD scope, its own task, to be picked up later. Tracked here so it doesn't get forgotten.
 
+### Voice migration (ElevenLabs → Cloudflare Workers AI) — code is live, end-to-end use not yet confirmed
+- **Status as of 31 July 2026:** The Cloudflare Worker (`hr-kb-ai`) was checked directly against Cloudflare (not just the repo) and is running the new code — `/tts` uses Aura-2, `/stt` uses Whisper via the Workers AI `env.AI` binding, no ElevenLabs or Scribe calls remain. So the "done in code, not yet deployed" note from the 11 July handover is now out of date on the deployment question specifically — it is deployed.
+- **What's still NOT confirmed:**
+  1. Whether the Workers AI binding is actually switched on and working at runtime (the code fails gracefully with a 501 if it isn't, but that hasn't been triggered/tested either way this session)
+  2. Whether anyone has actually run the full voice loop live: mic → transcription appears → cited answer renders → Listen → Aura-2 audio plays
+  3. Whether the ElevenLabs subscription has actually been cancelled, and what that does to rollback options if the above doesn't work
+- **What's needed:** one real end-to-end test of the voice loop on the live site, then a decision on the ElevenLabs subscription. Small task, not started.
+
+---
+
+## Parked — Needs Kevin's Action (not something an AI session can do)
+
+### Data protection gaps for `data/kb.json` / `data/kb-index.json`
+First flagged in `HANDOVER.md` (10 July 2026) as explicitly outside what an AI session can action on its own. Still open as of 31 July 2026 — re-surfaced here, in the roadmap, so it isn't only findable buried in a long handover file.
+
+- **No branch protection on `main`.** Nothing currently stops a force-push that rewrites history, or a branch deletion. Fix (~2 minutes, GitHub web UI): repo **Settings → Branches → Add branch protection rule** for `main` → enable "Restrict deletions" and "Block force pushes." Does not require pull requests or reviews — only blocks the two operations that could destroy history.
+- **Single point of custodianship.** The repo lives under one GitHub account (`begb0037admin`). Consider adding a second owner/admin (e.g. an Oxford IT service account) as a collaborator, purely as a break-glass measure.
+- **No off-GitHub copy exists.** Everything currently lives only on GitHub. A periodic export of `data/kb.json` + `data/kb-index.json` to a private location Kevin controls (OneDrive, SharePoint, a second private repo) would protect against GitHub itself being unavailable or the repo being lost outright.
+
 ---
 
 ## In Progress
@@ -67,6 +86,7 @@ These guides have drafted content but need to be created as proper Word document
 - Pay code 121 CR drafted → `hris-change-requests/CRs/CR-2026-06-18-pay-code-121-hr-report-suite.md`
 - Pay code 121 handover written → `hris-change-requests/HANDOVER.md`
 - HOW TO: Create a Non-Payroll Company & Hierarchy (Colleges & Halls) — Word doc ready, pending library commit
+- `CLAUDE.md` reconciled against live data (31 July 2026) — headline document/chunk counts had drifted to an 18 June snapshot; re-counted `data/kb.json` and `data/kb-index.json` directly and corrected to the real current figures (2,515 docs, 13,472 chunks)
 
 ---
 
