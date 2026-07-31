@@ -29,6 +29,22 @@ These guides have drafted content but need to be created as proper Word document
 
 ---
 
+## Parked — Technical Debt
+
+### Access Group / PeopleXD web articles — screenshots are silently dropped
+- **What's wrong:** The ~1,948 Access Group Help Centre web articles already in the KB (harvested via `--deep` mode in `scrapers/access_group_scraper.py`) capture text only. `harvest_article_texts()` extracts `.innerText` from each article and nothing else — any `<img>` tags, including instructional screenshots, are never collected, never downloaded, and never shown in the KB.
+- **Why it matters:** Step-by-step screenshots are a genuinely useful reference for analysts following a procedure — not decoration, not something to skip. Right now every one of those ~1,948 articles is missing them.
+- **How this was found:** Surfaced 31 July 2026 while investigating Cority as a new KB source (see `CORITY-FEASIBILITY.md`) — the same class of problem exists there too, and testing it for Cority exposed a real trap worth applying back here: a Salesforce-hosted image can return `HTTP 200 OK` and still silently be a "you don't have access" placeholder rather than the real picture. Since the guide PDFs already come from the same Salesforce org, this risk applies to Access Group too, not just Cority.
+- **What doing this actually involves** (concrete, in order):
+  1. In `harvest_article_texts()`, also collect every `<img>` element in the article body — not just `innerText`.
+  2. Download each image's bytes using the same authenticated Playwright context the scraper already opens for login — never an anonymous request.
+  3. Save images into a new folder (e.g. `images/access-group/`), committed to the repo like everything else already is.
+  4. Rewrite the stored article content so image references point at the local copy, not the original Access Group URL.
+  5. Before trusting any downloaded image, check it isn't a generic "no access" placeholder — don't rely on `HTTP 200` alone (see `CORITY-FEASIBILITY.md` §3 for exactly what that placeholder trap looks like and how it was confirmed).
+- **Status:** Not started. Explicitly kept separate from the Cority build — this is Access Group/PeopleXD scope, its own task, to be picked up later. Tracked here so it doesn't get forgotten.
+
+---
+
 ## In Progress
 
 ### Colleges & Halls Guide — commit Word doc to library
@@ -62,4 +78,4 @@ These guides have drafted content but need to be created as proper Word document
 
 ---
 
-*Last updated: 18 June 2026*
+*Last updated: 31 July 2026*
