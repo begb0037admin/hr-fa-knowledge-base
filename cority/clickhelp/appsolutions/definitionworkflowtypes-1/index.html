@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/appsolutions/definitionworkflowtypes-1"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Definition Workflows</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Definition Workflows';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/appsolutions/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/appsolutions/jquery-1.12.42.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapGlobal2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapSlideshow2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapMerging2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapAliasFile2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapUtilities2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapBody2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapHighlighter2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffects2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffectsMenu2.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1__1398180763" data-has-heading-anchor="true">Definition Workflows<a href="/articles/appsolutions/definitionworkflowtypes-1/a/h1__1398180763" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/definitionworkflowtypes-1/a/h1__1398180763&#39;,this);"></a></h1>
+        <p class="BodyText">A set of definition workflows form the basis of the App functioning. Each item tracked in the App is an instance of a definition workflow.</p>
+        <p class="BodyText">The Primary workflow type represents the items that are being tracked. Secondary child workflow types represent the various processes that are initiated from the Primary workflow. One or more tertiary workflow type are also allowed, as a child of the Secondary and grandchild of the Primary workflow types. Typically this will be an action, which may be initiated from a secondary workflow.</p>
+        <p class="BodyText">For example: In the Incident App, when a user logs an incident, an instance of the Primary workflow is created. This will be shown in the list of instances in the app navigation pane. Depending on the type of incident, a series of Secondary workflows may then be initiated:&nbsp; a detailed report specific to the incident type, an investigation, a witness report, etc. A corrective action may also be initiated either as a child of the Primary workflow, or as a child of one of the Secondary workflows.</p>
+        <p class="BodyText">The following table shows sample workflow components for the App, including the steps, associated form templates, and assigned roles. The Advanced Workflows (WAB)&nbsp;prefix is used as an example. Each app should have its own prefix to identify its components (workflow types, form templates, custom fields, roles, policies, etc.) so that they will not be confused with other system components and accidentally edited or deleted.</p>
+        <table style="width: 100%; margin-left: 0px; margin-right: auto; border-width: 1px; border-color: #c0c0c0; border-collapse: collapse;" cellspacing="0" cellpadding="0">
+            <colgroup><col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            </colgroup><thead>
+                <tr>
+                    <th class="td_HeadGray" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Workflow Type</th>
+                    <th class="td_HeadGray" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Steps</th>
+                    <th class="td_HeadGray" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Form Template</th>
+                    <th class="td_HeadGray" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Assigned Role</th>
+                    <th class="td_HeadGray" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Child Workflows</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="5" class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">WAB-PrimaryWF</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Create App Item</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">WAB-PrimaryItem</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">WAB-Initiator</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Enter App Item Details</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">WAB-PrimaryItem</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">WAB-Administrator</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">WAB-Action</td>
+                </tr>
+                <tr>
+                    <td rowspan="2" class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Step (1 or more)</td>
+                    <td rowspan="2" class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">WAB-PrimaryItem</td>
+                    <td rowspan="2" class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">WAB-StepAssignee</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">WAB-ChildItem (1 or more)</td>
+                </tr>
+                <tr>
+                </tr><tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Close</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">WAB-PrimaryItem</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">WAB-FacilityManager</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">&nbsp;</td>
+                </tr>
+                <tr>
+                </tr><tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;"> WAB-SecondaryWF</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Step</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">WAB-ChildItem</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">WAB-StepAssignee</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">WAB-Action</td>
+                </tr>
+                <tr>
+                    <td rowspan="3" class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">WAB-Action</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Create Action</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">WAB-Action</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Creator</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Complete Action</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">WAB-ActionCompletion</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">WAB-ActionAssignee</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Review Action</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">WAB-ActionReview </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Creator</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&nbsp;</p>
+        <script type="text/javascript" src="/resources/Scripts/app-solutions/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

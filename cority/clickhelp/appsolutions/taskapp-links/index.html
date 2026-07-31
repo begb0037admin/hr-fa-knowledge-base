@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/appsolutions/taskapp-links"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Email Links to the Task Completion App</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Email Links to the Task Completion App';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/appsolutions/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/appsolutions/jquery-1.12.42.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapGlobal2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapSlideshow2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapMerging2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapAliasFile2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapUtilities2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapBody2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapHighlighter2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffects2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffectsMenu2.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1_1755100689" data-has-heading-anchor="true">Email Links to the Task Completion App<a href="/articles/appsolutions/taskapp-links/a/h1_1755100689" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/taskapp-links/a/h1_1755100689&#39;,this);"></a></h1>
+        <p class="Body">Links to Apps can be configured in Notification Templates, for use in email notifications so that users can easily access their work assignments.&nbsp;</p>
+        <p class="BodyText">Links to the TaskApp can be used in Task  Notification emails. The task completion link can only be used with a custom notification set up with a Task Notification Template.&nbsp;Standard task email links go to the main application.</p>
+        <p class="BodyText">The first part of the link is the {url:basepath} macro, to which the App name is appended, followed by a slash, as shown below: </p>
+        <p class="BodyIndent">{url::basePath}TaskApp/</p>
+        <p class="BodyText">Three task/email related values may be specified within the link:</p>
+        <p class="BodyIndent"> {task::id} – The Task ID (GUID)</p>
+        <p class="BodyIndent">{task::due date param} – The task due date and time (url encoded). </p>
+        <p class="BodyIndent">{recipient::email} – The email address of the recipient of the email</p>
+        <p class="Note" madcap:autonum="Note: &nbsp;"><span class="autonumber"></span>No https:// prefix is required, as the URL basepath macro link resolves to:
+ https://go.enviance.com/goto/{SystemID}/</p>
+        <p class="BodyText">Some sample links are shown below. Other combinations are available. Required syntax includes using "hash" for "#" in the search part of the string.</p>
+        <table style="border-style: solid; border-width: 1px; border-color: #c0c0c0; margin-left: 0px; margin-right: auto; border-collapse: collapse;" cellspacing="0" cellpadding="0">
+            <colgroup><col style="width: 151px;"/>
+            <col/>
+            </colgroup><tbody>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">To the Task List page</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">{url::basePath}TaskApp/?hash=tasks</td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">To Task Completion page</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">{url::basePath}TaskApp/?hash=task?{task::id}?{task::due date param}</td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">To Task Description page</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">{url::basePath}TaskApp/?hash=task?{task::id}?{task::due date param}/description</td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">To Settings page</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">{url::basePath}TaskApp/?hash=/settings</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span></p>
+        <p class="StepIntro" madcap:autonum="">To use the link in a Notification Template:</p>
+        <ul class="brackets">
+            <li value="1">
+                <p>Create the text for the notification and add the link in the format shown above.</p>
+            </li>
+        </ul>
+        <p>Use the source editor to create link text in place of the url string. In the notification editor, click the <b>Source</b> button to open the html editing window. Edit the text to add the link with the correct html syntax like this:</p>
+        <p class="BodyText" style="font-weight: bold;">Example:</p>
+        <div class="tri_example">
+            <p>&lt;p&gt;To complete this task &lt;a href="{url::basePath}TaskApp/?hash=tasks?{task::id}?{task::due date param}"&gt;YOUR&nbsp;LINK&nbsp;TEXT&lt;/a&gt;.&lt;/p&gt;</p>
+        </div>
+        <p class="BodyText">Be sure to remove any extraneous html that was added by the editor. Be careful that no html tags or extra spaces are inside the url.</p>
+        <p class="BodyText">Test the link on a test task assigned to yourself before applying the template to actual system tasks.</p>
+        <p class="Note" madcap:autonum="Note: &nbsp;"><span class="autonumber"></span>You may need to remove any extraneous html that was added by the editor. Be sure that no html tags or extra spaces are inside the url.</p>
+        <p class="F1FigAnchor">
+            <img src="images/TaskAppLinkinNotif.png" loading="lazy"/>
+        </p>
+        <p class="Tip" madcap:autonum="Tip: &nbsp;"><span class="autonumber"></span>Test the link on a test task assigned to yourself before applying the template to actual system tasks.</p>
+        <p>The url basepath macro and other macros are for use in Notification Templates only for system-generated emails. </p>
+        <script type="text/javascript" src="/resources/Scripts/app-solutions/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

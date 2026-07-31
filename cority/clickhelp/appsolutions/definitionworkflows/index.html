@@ -1,0 +1,341 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/appsolutions/definitionworkflows"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Inspection Definition Workflows</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Inspection Definition Workflows';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/appsolutions/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/appsolutions/jquery-1.12.42.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapGlobal2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapSlideshow2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapMerging2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapAliasFile2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapUtilities2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapBody2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapHighlighter2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffects2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffectsMenu2.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 class="Heading1" id="h1_1600788207" data-has-heading-anchor="true">Inspection Definition Workflows<a href="/articles/appsolutions/definitionworkflows/a/h1_1600788207" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/definitionworkflows/a/h1_1600788207&#39;,this);"></a></h1>
+        <p class="BodyText">Four definition workflow types are used for configuring Inspection Types.</p>
+        <ul class="brackets">
+            <li value="1">Each Inspection Type is represented by an instance of the EIA-InspectionTypeDefinition workflow type.   </li>
+            <li value="2">Inspection Questions are instances of the workflow type EIA-InspectionQuestionDefinition. </li>
+            <li value="3">Sub-Questions are child workflows of the Question Definition workflows, and are instances of the workflow type EIA-InspectionSubQuestionDefinition.</li>
+            <li value="4">Findings are child workflows of the Questions or Sub-Questions definition workflows, and are instances of the EIA-FindingDefinitions workflow type.</li>
+            <li value="5">Corrective Actions may be child workflows of either Findings, or of Questions/Sub-Questions, and are instances of the workflow type EIA-CorrectiveActionDefinition.</li>
+        </ul>
+        <p class="BodyText">These definition workflow types should not be edited, at risk of breaking the InspectionApp. </p>
+        <p class="BodyText">The tables below map each field in the definition workflows to the corresponding field/behavior in the InspectionApp.</p>
+        <h2 id="h2_834347055" data-has-heading-anchor="true">EIA-InspectionTypeDefinition <a href="/articles/appsolutions/definitionworkflows/a/h2_834347055" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/definitionworkflows/a/h2_834347055&#39;,this);"></a></h2><table style="margin-left: 0px; margin-right: auto; border-width: 1px; border-color: #c0c0c0; border-collapse: collapse;" cellspacing="0" cellpadding="0">
+            <colgroup><col/>
+            <col/>
+            <col/>
+            </colgroup><thead>
+                <tr>
+                    <th class="subhead" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Object/Field</th>
+                    <th class="subhead" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Data Type</th>
+                    <th class="subhead" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">App Field/Behavior</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Unique ID</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Standard Field – Unique ID</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Default ID generating scheme = EIA.InspectionType.{Numeric ID}
+</p>
+                        <p>This value is used to sort the Inspection Type in the Pre-Inspection Screen.
+</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow/Child Workflows</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflows</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Defines the inspection questions when questions are of the Legacy type. For Library questions, this association is unnecessary.</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-InspectionType	</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Standard Field – Text (50)</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Inspection Type Name</p>
+                        <p>Name must not contain special characters. </p>
+                        <p>If you will be creating a schedule for the inspection, the name cannot be more than 35 characters long. You must create a document in the EIA-Inspection App document folder using the Inspection Type Name in its syntax (name = EIA-[InspectionType].envapp.txt) to associate the inspection task to the workflow.</p>
+                        <p>Library Questions will require a Tag in the Tag Scheme EIA-InspectionType whose name matches the Inspection&nbsp;Type Name.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Workflow Step/EIA-DropdownOption[N]</p>
+                        <p>N=1-10</p>
+                    </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Custom Field – Text (50)</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>These fields are used by the app to determine possible answers for dropdown questions in the inspection form.  These default values  will be used for all questions for this inspection type unless a different set of values are set in a specific question definition.
+</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-UseLibraryQuestions</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Custom Field  – True/False</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>This field is no longer used. It is replaced by the Tag Scheme called EIA-InspectionType to identify inspection types that use Library Questions and are available to be edited in Form Builder.</p>
+                    </td>
+                </tr>
+                <tr madcap:conditions="">
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-HasFindings</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Custom Field  – True/False</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">This field is used when creating a new form (and in the form builder) to indicate the presence of findings.</td>
+                </tr>
+                <tr madcap:conditions="">
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-Scoring</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Custom Field  – True/False</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">This field is used when creating a new form (and in the form builder) to indicate the presence of scoring.</td>
+                </tr>
+                <tr madcap:conditions="">
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/DefaultInspectionPointSubset</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Custom Field  – Textbox/Large</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Contains the tags to define which inspection points a question applies to. In Form Builder, field appears in the "Inspection Points" section where tags may be edited.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 id="h2_835915333" data-has-heading-anchor="true">Questions and SubQuestions (EIA-InspectionQuestionDefinition and EIA-InspectionSubQuestionDefinition)<a href="/articles/appsolutions/definitionworkflows/a/h2_835915333" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/definitionworkflows/a/h2_835915333&#39;,this);"></a></h2><p class="Note" madcap:autonum="Note: &nbsp;"><span class="autonumber"></span>Questions and Sub-Questions workflow types are identical except for the addition of one field on the Sub-Question workflow which defines which response(s) on the parent question makes the sub-question visible. </p>
+        <table style="margin-left: 0px; margin-right: auto; border-width: 1px; border-color: #c0c0c0; border-collapse: collapse;" cellspacing="0" cellpadding="0">
+            <colgroup><col/>
+            <col/>
+            <col/>
+            </colgroup><thead>
+                <tr>
+                    <th class="subhead" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Object/ Field</th>
+                    <th class="subhead" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Data Type</th>
+                    <th class="subhead" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">App Field/Behavior</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Unique ID
+</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Standard Field – Unique Identifer (250)</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>The InspectionApp uses this field to identify the question and populate the QuestionID field on the inspection form and on related finding forms. This field is also used to identify the question for updates and to sort the questions on the inspection form if no sort order is specified.
+</p>
+                        <p>Default ID generating scheme = EIA.Q.{NumericID}
+</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Associated Objects (Unit or POI)</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Standard Field - Existing System Objects</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>For <a href="/articles/appsolutions/legacyquestions" onclick="return n(&#39;!appsolutions/legacyquestions&#39;,this);">Legacy Questions</a> only, determines the applicability of the question to a piece of equipment (Unit or POI). Where EIA-GeneralQuestion = False, the question will be associated only with the equipment to which it is applicable.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">WorkflowStep/EIA-SubQuestionRule </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Custom Field – Multi-select list box</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">For Sub-Question definition workflow only. Defines which response(s) to the parent question should make the question visible (values 1 to 10, corresponding with the dropdown question possible answers).</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>WorkflowStep/EIA-QuestionText</p>
+                    </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Custom Field – Text (7900)</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Defines the question text presented to the auditor when completing the audit form. The InspectionApp uses the  field to populate the QuestionText Field on the inspection form and on related corrective action forms.</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>WorkflowStep/EIA-QuestionType</p>
+                    </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Custom Field – Text (Valid values: Dropdown list,  Text Box – Large), Text Box  –  Label
+</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Determines if the question should be displayed as a dropdown list, text box, or label on the inspection form. </p>
+                        <p>Dropdown lets user select from dropdown options.</p>
+                        <p>Text lets user enter a free text response up to 7900 characters.</p>
+                        <p>Label is informational only  and does not allow the user to provide an answer.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-QuestionWeight </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Custom Field – Numeric </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Defines the weight value for the question. </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>WorkflowStep/EIA-DropdownOption[N]</p>
+                        <p>N=1-10</p>
+                    </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Custom Field – Text box  – medium</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>These fields are used by the app to determine possible answers for this question if it is a dropdown.  The values will default to the values specified on the parent workflow but can be modified per question.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-AnswerValue[N]
+N = 1 -10
+</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Custom Field – Numeric </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">A value from 0-3. </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-AutoCreate CorrectiveAction</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Multi-Select (1,2,3,4,5, 6,7,8,9,10)</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">One or more Corrective Action workflows will be automatically initiated and presented to the user if this option is selected for the corresponding answer.</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-GeneralQuestion</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">True/False</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Where EIA-GeneralQuestion = True, the question will be at the beginning of the inspection checklist for all inspections of this type regardless of applicability.&nbsp;When the inspection instance includes multiple inspection points, the question will appear only once in the General section at the beginning of the form.</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-SortOrder</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Numeric</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Sort order of question on form. </p>
+                        <p>Default sort order if empty is by workflow unique ID.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Workflow Step/EIA-SpecialFormatting</p>
+                    </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Custom Field – Text Dropdown (Highlight Red, Highlight Orange, Highlight Yellow, Highlight Green, Highlight Blue, Highlight Purple)</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Defines any special formatting to be applied to the question on the form. </p>
+                        <p>Default is none.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-Hyperlink1, ... EIA-Hyperlink 5</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Custom Field - Hyperlink</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Hyperlink to additional information following question. Up to 5 hyperlinks may be defined.</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-LibraryQuestion</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Custom Field – True/False</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Indicates whether the question is a library question.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 id="h2_94776878" data-has-heading-anchor="true">EIA-FindingDefinition<a href="/articles/appsolutions/definitionworkflows/a/h2_94776878" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/definitionworkflows/a/h2_94776878&#39;,this);"></a></h2><table style="margin-left: 0px; margin-right: auto; border-width: 1px; border-color: #c0c0c0; border-collapse: collapse;" cellspacing="0" cellpadding="0">
+            <colgroup><col style="width: 203px;"/>
+            <col style="width: 98px;"/>
+            <col/>
+            </colgroup><thead>
+                <tr>
+                    <th class="subhead" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Object/Field</th>
+                    <th class="subhead" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Data Type</th>
+                    <th class="subhead" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">App Field/Behavior</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Unique ID</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Standard Field – Unique ID</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Default ID generating scheme = EIA.Finding.{NumericID}
+
+</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow/EIA-FindingDefinitionName</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Custom Field  – Textbox/Large</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Finding Name</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-FindingDefinitionDescription
+
+</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Custom Field  – Textbox/Large</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Default Finding Description</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Workflow Step/EIA-FindingPriority[N]</p>
+                        <p>N = High, Medium, Low</p>
+                    </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Custom Field – Text Drop-down(50)</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Dropdown option N</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Workflow Step/EIA-FindingDefinitionAppliedAnswer
+</p>
+                        <p>Answer(s) 1-10</p>
+                    </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Custom Field  – </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Specifies which answers (1-10) will create the findings workflow.
+
+</td>
+                </tr>
+                <tr madcap:conditions="">
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-FindingDescription</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Custom Field  – Textbox/Large</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Finding description</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 id="h2_578332323" data-has-heading-anchor="true"> EIA-CorrectiveActionDefinition<a href="/articles/appsolutions/definitionworkflows/a/h2_578332323" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/definitionworkflows/a/h2_578332323&#39;,this);"></a></h2><table style="border-style: solid; border-width: 1px; border-color: #c0c0c0; margin-left: 0px; margin-right: auto; border-collapse: collapse;" cellspacing="0" cellpadding="0">
+            <colgroup><col/>
+            <col/>
+            <col/>
+            </colgroup><thead>
+                <tr>
+                    <th class="" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Object/Field</th>
+                    <th class="" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Data Type</th>
+                    <th class="" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">App Field/Behavior</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Unique ID</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Standard Field – Unique ID</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Default ID generating scheme = CA.[YYYY].[MM].[DD].{NumericID}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-CorrectiveActionDefinitionName</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Custom Field  –  Text (250)</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Possible Corrective Action Name</td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-CorrectiveActionDefinitionRecommendedAction</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Custom Field  –  Text (7900)</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Default Recommended Action.</p>
+                        <p>This is pre-populated in the recommended action field based on the corrective action name chosen.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-CorrectiveActionDefinitionDueDate</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Number</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Number of days after inspection date upon which the Corrective Action should be due.</p>
+                        <p>This is pre-populated in the due date field based on the corrective action name chosen.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-RequireActualActionTaken</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">True/False</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Indicates whether the Actual Action Taken field is required. If true, it will prevent closure of a workflow if the field is null for any child corrective actions. The field is read-only for pre-defined Corrective Actions. If Corrective Actions are not pre-defined, the value may be set on creation.</td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-AutoCreateCorrectiveAction </td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Text/Dropdown list</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Used to specify that a Corrective Action be automatically created for selected dropdown options.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="BodyText">&nbsp;</p>
+        <script type="text/javascript" src="/resources/Scripts/app-solutions/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

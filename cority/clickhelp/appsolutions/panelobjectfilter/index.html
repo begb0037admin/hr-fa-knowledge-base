@@ -1,0 +1,141 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/appsolutions/panelobjectfilter"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Set Panel Objects Filter</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Set Panel Objects Filter';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/appsolutions/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/appsolutions/jquery-1.12.42.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapGlobal2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapSlideshow2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapMerging2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapAliasFile2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapUtilities2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapBody2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapHighlighter2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffects2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffectsMenu2.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1_972847138" data-has-heading-anchor="true">
+  Set Panel Objects Filter
+<a href="/articles/appsolutions/panelobjectfilter/a/h1_972847138" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/panelobjectfilter/a/h1_972847138&#39;,this);"></a></h1>
+<p class="BodyText">
+  The Panel Objects filter sets the scope for the System Model objects used in the panel. 
+</p>
+<ul class="brackets">
+  <li value="1">
+    In a Numeric Data panel, data is filtered by the selected requirements and parent objects.  
+  </li>
+  <li value="2">
+    In a Workflow Panel, workflows are filtered by the objects with which they are associated (if any). 
+  </li>
+  <li value="3">
+    In an Event Panel, events are filtered by the associated requirements.
+  </li>
+  <li value="4">
+    In a Task Panel, tasks are filtered by the associated requirements.
+  </li>
+</ul>
+<p class="BodyText">
+  Objects available for  the panels on a page are set first by the Page Objects filter (see <a href="/articles/appsolutions/pageconfiguration" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!appsolutions/pageconfiguration&#39;,this);">Page Configuration</a>). All object selections are limited to the objects defined for the page (except when <b><a href="/articles/appsolutions/panelobjectfilter/a/IgnorePageFilters" onclick="return n(&#39;!appsolutions/panelobjectfilter/a/IgnorePageFilters&#39;,this);">Ignore Page Filters</a></b>&nbsp;is active), which may then be further filtered by the panel. 
+</p>
+<p class="BodyText">
+  The panel designer can decide whether the user has the ability to change the filter on a panel or whether the objects will be read only. 
+</p>
+<p class="StepIntro" madcap:autonum="">
+  <span class="autonumber"><span></span></span>To edit the Panel Objects filter:
+</p>
+<ol>
+  <li value="1">
+    From the page view, select <b>Settings</b>.
+  </li>
+  <li value="2">
+    <p>
+      On the panel, select the <b>Panel Objects</b> box. 
+    </p>
+  </li>
+</ol>
+<p class="BodyIndent"><img src="images/SetPanelObjects12132019.png" alt="" style="width: 650px; height: 379px;" loading="lazy"/></p>
+<p class="BodyIndent">
+  Select the pencil icon to edit the name of each object type as it will be displayed in the panel. The first object (default name Panel Objects) is the label that will appear next to the object selector on the panel, if visible.
+</p>
+<p class="BodyIndent"><img src="images/ObjectPencil.png" loading="lazy"/><img src="images/ObjectPencil2.png" loading="lazy"/></p>
+<p class="BodyIndent"><img src="images/eyeOn.png" loading="lazy"/><img src="images/eyeOff.png" loading="lazy"/>The eyeball icon indicates whether the object selector will be visible. Click to disable it if you do not want to show the object selector on the panel. If the object selector is not visible, object selection by users will effectively be disabled.
+</p>
+<p class="blueheader"><a name="GeneralSettings"></a></p>
+<h2 id="h2_1107256643" data-has-heading-anchor="true">General Settings
+<a href="/articles/appsolutions/panelobjectfilter/a/h2_1107256643" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/panelobjectfilter/a/h2_1107256643&#39;,this);"></a></h2><p>
+  Click on the carat <img src="images/GeneralSettingsCarat.png" alt="" style="border-color: #ffffff; border-style: solid;" loading="lazy"/>&nbsp;next to <b>General Settings</b>&nbsp;to adjust the following selection options for users:
+</p>
+<ul><li class="BodyIndent"><b>Read Only</b>:&nbsp;If selected, all object types will be read-only. Users will not be able to change the objects selected for the panel.
+</li>
+<li class="BodyIndent"><b>Allow Multiple Selections</b>: If  false, users will be limited to one selection per level. If true, users can select multiple objects at any level that is visible and not read only. In any case, users are limited to the object scope set for the page. 
+</li>
+<li class="BodyIndent"><b>Auto-Select One Object</b>: Requires one object to be selected for the page (forcing a filter to be invoked). By default, the first object in the list will be selected.
+</li>
+<li class="BodyIndent"><b>Allow Selection at Any Level</b>: If true, user may start object selection at any level (i.e., start searching by Facility without being required to first select a Division). Child objects will be filtered by the selected parent.&nbsp;
+</li>
+<li class="BodyIndent"><b>Ignore Page Filters</b>:<span id="IgnorePageFilters"></span> If true, the&nbsp;<b>Object Type Settings</b>&nbsp;in this panel will override the Object Type Settings for the page.&nbsp;
+</li>
+<li class="BodyIndent"><b>S<b>how User All Objects in System</b></b>:<span id="ShowAllPanelObjects"></span> If true, user may select any object in the system, regardless of their <a href="/smart/project-ms/systemmodelobjectpermission" target="_top">Management System object permissions</a>. Access to view or edit data will vary by the permission requirements of the panel's data type (<a href="/articles/appsolutions/numericdataconfig" onclick="return n(&#39;!appsolutions/numericdataconfig&#39;,this);">Numeric</a>, <a href="/articles/appsolutions/workflowpanelconfig" onclick="return n(&#39;!appsolutions/workflowpanelconfig&#39;,this);">Workflow</a>, <a href="/articles/appsolutions/eventpanelconfig" onclick="return n(&#39;!appsolutions/eventpanelconfig&#39;,this);">Event</a>, or <a href="/articles/appsolutions/taskpanelconfig" onclick="return n(&#39;!appsolutions/taskpanelconfig&#39;,this);">Task</a>).</li>
+</ul><p class="Note" madcap:autonum="Note: &nbsp;">
+  <span class="autonumber"></span>The <b>Show User All Objects in System</b>&nbsp;setting is only available to users who are in the Administrators group and&nbsp;members of the app role Portal Administrators.
+</p>
+<p class="blueheader"><a name="ObjectTypeSettings"></a></p>
+<h2 id="h2_441360652" data-has-heading-anchor="true">Object Type Settings<a href="/articles/appsolutions/panelobjectfilter/a/h2_441360652" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/panelobjectfilter/a/h2_441360652&#39;,this);"></a></h2><p class="blueheader">
+</p>
+<p>
+  For each object type (Division, Facility, Unit, Requirement) you can set the following properties:
+</p>
+<p><img src="images/ObjectTypePanelSettings.png" loading="lazy"/></p>
+<ul><li class="BodyIndent"><b>Visible</b>:&nbsp;Specifies if the object name is visible on the panel.
+</li>
+<li class="BodyIndent"><b>Read Only</b>:&nbsp;Specifies whether the objects are read only or if the user can edit the selected objects. In order to edit the objects, Read Only must be false and Visible must be True.
+</li>
+<li class="BodyIndent"><b>Name</b> Select the pencil icon to edit the object type name. For example, if Facilities in your customer system actually represent departments or locations, you can change the caption accordingly to make it more sensible for users.
+</li>
+<li class="BodyIndent"><b>Objects</b> Sets the filter (by name) for the objects that will be available to users. Select the box and enter a few characters to initiate a search, then select the matching object(s) you want. You may add multiple objects by name. User will be limited to selecting  matching object names (for which they have permission). If the object selection is blank, users will be able to select any objects at this level  within the scope of the page filter for display in the panel.</li>
+</ul><h2 id="h2_771692659" data-has-heading-anchor="true">Property Filter<a href="/articles/appsolutions/panelobjectfilter/a/h2_771692659" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/panelobjectfilter/a/h2_771692659&#39;,this);"></a></h2><p class="blueheader">
+</p>
+<p class="BodyText">
+  The property filter allows you to filter the results displayed on the panel by object properties. For example, you may filter Facilities based on the value of a Facility property called Facility Type.
+</p>
+<p class="BodyText">
+  Multiple filters may be added, using AND logic only. Filters will be applied in the order in which they are specified. In addition to custom fields, you may filter by the native fields Name, Active Date and Inactive Date.
+</p>
+<p class="StepIntro" madcap:autonum="">
+  <span class="autonumber"><span></span></span>To apply a property filter:
+</p>
+<ol>
+  <li value="1">
+    <p>
+      Select the Filter button next to the Panel Objects selection.
+    </p>
+    <p class="BodyText"><img src="images/PropertyFilter.png" alt="" style="width: 244px; height: 36.3125px;" loading="lazy"/></p>
+  </li>
+  <li value="2">
+    In the filter dialog, click <b>Add</b>.
+  </li>
+  <li value="3">
+    Select an object type whose properties you want to filter by.
+  </li>
+  <li value="4">
+    Click the  list selector in the Field Name to see available fields. <br/>Scroll to select a field, or enter a few characters to search for a field by name. Select the field you want from the list.
+  </li>
+  <li value="5">
+    <p>
+      Select a search operator, then the value to filter by (options depend on field type).
+    </p>
+    <p><img src="images/PanelPropertyFilter.png" alt="" style="width: 624px; height: 280.381px;" loading="lazy"/></p>
+  </li>
+  <li value="6">
+    Click <b>Apply</b>.
+  </li>
+</ol>
+<script type="text/javascript" src="/resources/Scripts/app-solutions/SkinSupport/MadCapBodyEnd.js"></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

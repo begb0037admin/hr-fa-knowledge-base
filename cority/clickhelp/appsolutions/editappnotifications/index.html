@@ -1,0 +1,472 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/appsolutions/editappnotifications"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>App Email Notifications</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='App Email Notifications';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/appsolutions/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/appsolutions/jquery-1.12.42.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapGlobal2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapSlideshow2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapMerging2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapAliasFile2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapUtilities2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapBody2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapHighlighter2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffects2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffectsMenu2.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1_1652647011" data-has-heading-anchor="true">
+  App Email Notifications
+<a href="/articles/appsolutions/editappnotifications/a/h1_1652647011" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/editappnotifications/a/h1_1652647011&#39;,this);"></a></h1>
+<p class="BodyText">
+  The notifications for workflow-based apps are defined through Workflow Policies that are associated with the definition workflows that underlie the app. The policy specifies the users who will receive the notification and under what conditions. The associated Workflow Notification Template defines the content of the email message that is sent.
+</p>
+<p class="BodyText">
+  To edit the content of an existing email notification, you must first determine the policy and then its associated notification template. You must have access to the Advanced Calculations (EMS)&nbsp;to view  and edit Notification Templates.
+</p>
+<p class="Note" madcap:autonum="Note: &nbsp;"><b>&nbsp;</b>Notifications that contain links to Portal task forms are Task Notification&nbsp;Templates associated with a Task Template, used for tasks without workflow associations.
+</p>
+<p class="StepIntro" madcap:autonum="">
+  To view Notification Templates: 
+</p>
+<ol>
+  <li>
+    <p>
+      From the menu, select <b>Setup</b>. </p>
+    </li>
+  
+  <li>
+    <p>Under Templates, select <b>Notification</b>.<br/>Existing Notification Templates are displayed. Use the Search pane to search for a Notification Template by name. The Notification Templates used for Apps will generally use the same 3-letter prefix as the other App components.</p>
+    </li>
+  <li>
+    To view the content of the notification template, right click a template and select <b class="bold">View</b>.
+  </li>
+</ol>
+<p class="StepIntro" madcap:autonum="">
+  To edit a Notification Template:
+</p>
+<ol>
+  <li>
+    <p>
+      In <b>Notification Templates Manager</b>, right click the template and select <b>Edit</b>.<br/>You may edit the Subject line as well as the body of the message. Macros may be used in both the subject and the body content.</p>
+    </li>
+  <li>
+    <p>
+      For the message body, you can define an alternate content for plain text email, as well as an HTML format.<br/>Click<b> Insert Macro </b>to use specific workflow data in the message. See the table below for macro definitions.</p>
+    <p class="BodyText">
+      <img src="images/InsertMacro.png" alt="" style="width: 750px; height: 431px;" loading="lazy"/>
+    </p>
+    <p class="BodyText">
+      In order to format a link with link text rather than the generated string, you will need to use the Source editor. 
+    </p>
+    <p class="BodyText">
+      For the HTML&nbsp;message body, click <b>Source</b> to format the message in a text editor using HTML code.
+    </p>
+    <p class="BodyText">
+      <img src="images/EditNotificationTemplate.png" alt="" style="width: 850px; height: 289px;" loading="lazy"/>
+    </p>
+  </li>
+  <li>
+    <p>
+      When you are done editing, click <b class="bold">Save</b> and <b class="bold">Confirm</b> to save the template.<br/>Change will apply to all notifications generated in the future where the associated policy applies.</p>
+    </li>
+</ol>
+<p class="BodyText">
+  The available macros are defined in the following table. 
+</p>
+<table style="border-style: none; margin-left: 0px; margin-right: auto; caption-side: top; width: 1179px; height: 1549px; border-width: 1px; border-color: #333333; border-collapse: collapse;" cellspacing="0" cellpadding="2">
+  <colgroup>
+    <col/>
+    <col/>
+    <col/>
+  </colgroup>
+  <thead>
+    <tr><td style="font-weight: bold; text-align: center; border-width: 1px; border-style: solid; border-color: #333333;" class="td_HeadGray ">
+        <p class="T1TableHead">
+          Macro
+        </p>
+      </td><td style="font-weight: bold; text-align: center; border-width: 1px; border-style: solid; border-color: #333333;" class="td_HeadGray ">
+        <p class="T1TableHead">
+          Syntax
+        </p>
+      </td><td style="font-weight: bold; text-align: center; border-width: 1px; border-style: solid; border-color: #333333;" class="td_HeadGray ">
+        <p class="T1TableHead">
+          Output
+        </p>
+      </td><td style="font-weight: bold; text-align: center; background-color: #c0c0c0; border-width: 1px; border-style: solid; border-color: #333333;">Comments</td></tr>
+  </thead>
+  <tbody>
+    <tr><td colspan="4" style="text-align: center; border-width: 1px; border-style: solid; border-color: #333333;" class="td_green ">
+        <b>Workflow Notification</b>
+      </td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Workflow Name
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          {flow::name}
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Inserts name of workflow instance.
+        </p>
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Workflow UniqueID
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          {flow::unique id}
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Inserts unique ID of workflow in system.
+        </p>
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Workflow Due Date
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          {flow::due date}
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Inserts due date for workflow.
+        </p>
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Workflow Role Members
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          {role::[role name]}
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Inserts names of users or groups associated with named role.
+        </p>
+        <p class="T2TableTextSmall">
+          Substitute name of role  in macro (spaces allowed). Do not include square brackets. 
+        </p>
+        <p class="T2TableTextSmall">
+          Role name must be valid for the workflow type. 
+        </p>
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Workflow Overview URL
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          {url::overview}
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Inserts link to Workflow Overview. To use link text in place of the full url, go to HTML view and insert:
+        </p>
+        <p class="T2TableTextSmall">
+          &lt;a href="{url::overview}"&gt;link text&lt;/a&gt;
+        </p>
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Workflow Complete URL
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          {url::complete}
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Inserts link to current step completion page. To use link text in place of the full url, go to HTML view and insert:
+        </p>
+        <p class="T2TableTextSmall">
+          &lt;a href="{url::complete}"&gt;link text&lt;/a&gt;
+        </p>
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><p style="text-align: left;"><span style="background-color: #ffffff;">When using this&nbsp;macro in the systems that don’t utilize SSO, you will be directed to the default login page and asked for the credentials.</span></p><p style="text-align: left;"><span style="background-color: #ffffff;">When using this&nbsp;macro&nbsp;in the systems that utilize SSO and custom login page, you will be directed to the custom login page.</span></p><span style="text-align: left; background-color: #ffffff;">Please contact your sales representative for more information on the custom login page configuration.</span><br/></td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #333333;"><span style="text-align: left; background-color: #ffffff;">Workflow Complete URL (via default Login)</span><p><br/></p></td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><span style="text-align: left; background-color: #ffffff;">{url::completeViaDefaultLogin}</span><br/></td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><p class="T2TableTextSmall" style="text-align: left;"><span style="background-color: #ffffff;">Inserts link to current step completion page. To use link text in place of the full url, go to HTML view and insert:&nbsp;</span></p><span style="text-align: left; background-color: #ffffff;">&lt;a href="{url::completeViaDefaultLogin"&gt;link text&lt;/a&gt;&nbsp;</span><br/></td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><span style="text-align: left; background-color: #ffffff;">When using&nbsp; this macro, you will be directed to the default login page.</span><br style="text-align: left;"/><br/></td></tr><tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Workflow Field Value
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          {field::[field name]}
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Inserts current value of named field (in currently active step). Field must be present in the workflow form.
+        </p>
+        <p class="T2TableTextSmall">
+          Insert name of field in macro (exactly as named, with spaces allowed). Do not include square brackets.
+        </p>
+        <p class="T2TableTextSmall">
+          Field name must be valid for the workflow type.
+        </p>
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Workflow Step Field Value
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          {field::[step name]/[field name]}
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Inserts current value of named field in latest occurrence of the specified step.
+        </p>
+        <p class="T2TableTextSmall">
+          Insert step name and field name in macro (exactly as named; spaces allowed.) Do not include square brackets.
+        </p>
+        <p class="T2TableTextSmall">
+          Step name and field name must be valid for the workflow type.
+        </p>
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Workflow Current Step Name
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          {step::name}
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Inserts name of currently active step in workflow.
+        </p>
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Workflow Previous Step Name
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          {priorstep::name}
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Inserts name of previous step in workflow.
+        </p>
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Workflow Associated Objects
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          {flow::object}
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Inserts name of parent object associated with workflow.
+        </p>
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Workflow Event Name
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          {flow::event type}
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Inserts name of the workflow event that triggered the notification (i.e., Assignment, Completion, Past Due, etc.)
+        </p>
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Workflow Event DateTime
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          {flow::event date}
+        </p>
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Inserts date of the workflow event that triggered the notification
+        </p>
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Workflow BasePath URL
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        {url::basePath}
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p>
+          Base url is used to create deep links to system components, including EMS Apps. The macro resolves to the following string:
+        </p>
+        <p>
+          https://go.enviance.com/goto/SystemID/
+        </p>
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Task Complete URL
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        {task::complete url}
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Inserts link to associated task completion page.
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td colspan="3" style="text-align: center; border-width: 1px; border-style: solid; border-color: #333333;" class="td_green ">
+        <b>Task Notification</b>
+      </td><td style="text-align: center; border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Task Name
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        {task::name}
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Inserts name of task.
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Task ID
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        {task::id}
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Inserts task unique ID.
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Task Due Date
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        {task::due date}
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Inserts task due date
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Task Due Date Param
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        {task::due date param}
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Inserts task due date, url encoded (required when building a URL). Use this version when providing a link to the Task Completion App. 
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Task Assignor
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        {task::assignor}
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Inserts name of Task Assignor.
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Task Assignees
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        {task::assignees}
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Inserts names of Task Assignees
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Task Complete URL
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        {url::complete}
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p>
+          Inserts link to task completion page. To use link text in place of the full url, go to HTML view and insert:
+        </p>
+        <p>
+          &lt;a href="{url::complete}"&gt;link text&lt;/a&gt;
+        </p>
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Task View URL
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        {url::view}
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p class="T2TableTextSmall">
+          Inserts link to Task View page. To use link text in place of the full url, go to HTML view and insert:
+        </p>
+        <p class="T2TableTextSmall">
+          &lt;a href="{url::view}"&gt;link text&lt;/a&gt;
+        </p>
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Task Overall Completion Status
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        {task::completion status}
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Inserts overall completion percentage for task.
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Task Description
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        {task::description}
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Inserts task description.
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Task Comments
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        {task::comments}
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Inserts task comments.
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Task Notification Comments
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        {task::notification comments}
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Inserts task notification comments.
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Task Total Cost to Complete
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        {task::total cost}
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Inserts value of Total Cost to Complete field for task.
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Task Total Time to Complete
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        {task::total time}
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Inserts value of Total Time to Complete field for task.
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Task Associated Objects
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        {task::objects}
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Inserts names of associated objects.
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Recipient Email
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        {recipient::email}
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Inserts email address for all recipients.
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Task BasePath URL
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        {url:basePath}
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p>
+          Base url is used to create deep links to system components, including EMS Apps. The macro resolves to the following string:
+        </p>
+        <p>
+          https://go.enviance.com/goto/SystemID/
+        </p>
+      </td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+    <tr><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        Workflow Complete URL
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        {workflow::complete url}
+      </td><td class="td_2 " style="border-width: 1px; border-style: solid; border-color: #333333;">
+        <p>
+          Inserts link to associated workflow current step completion page in the Management System. 
+        </p>
+        <p class="Note">In the forms accessed from Portal panels, the task fields and workflow fields will be displayed together in the same form for task-triggered workflows.
+        </p></td><td style="border-width: 1px; border-style: solid; border-color: #333333;"><br/></td></tr>
+  </tbody>
+</table>
+<p>
+  &nbsp;
+</p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

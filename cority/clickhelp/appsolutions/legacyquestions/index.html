@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/appsolutions/legacyquestions"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Legacy Questions</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Legacy Questions';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/appsolutions/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/appsolutions/jquery-1.12.42.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapGlobal2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapSlideshow2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapMerging2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapAliasFile2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapUtilities2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapBody2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapHighlighter2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffects2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffectsMenu2.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 class="Heading1" id="h1__1808236992" data-has-heading-anchor="true">Legacy Questions<a href="/articles/appsolutions/legacyquestions/a/h1__1808236992" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/legacyquestions/a/h1__1808236992&#39;,this);"></a></h1>
+        <p>Each inspection question is defined by an instance of the EIA-InspectionQuestionDefinition workflow type.   </p>
+        <p>Legacy questions are related to the Inspection Type to which they belong as child workflows. Applicability is determined by the association of the question workflow to the system objects representing the inspection points.</p>
+        <p class="Note" madcap:autonum="Note: &nbsp;"><span class="autonumber"></span>Library questions, used after release version 2.2, are associated with the Inspection Type through Tags in a Tag Scheme and do not need any parent-child relationship to the Inspection Type workflow. See <a href="/articles/appsolutions/libraryquestions" class="MCXref_0" xrefformat="{paratext}" onclick="return n(&#39;!appsolutions/libraryquestions&#39;,this);">Library Question Configuration</a>.</p>
+        <p class="BodyText">The two types of questions cannot be mixed. If your inspection configuration is of the Legacy type, you can add new questions to an existing inspection with the following procedure.</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To create Legacy questions for an inspection type:</p>
+        <ol>
+            <li value="1">Select Tasks and Workflows from the menu button, then select Workflows.</li>
+            <li value="2">
+                <p>In the Search pane, filter for the workflow type <b>EIA-InspectionTypeDefinition</b>.</p>
+                <p>The resulting workflows represent the inspection type definitions for your system. </p>
+                <p>If you do not see any workflow, in the Search pane, check "Workflows I can manage" and set start date to 1/1/2000. Click Search. (The search selection should now remain your default.) </p>
+            </li>
+            <li value="3">
+                <p>Select the inspection type workflow that represent the inspection type you want to edit.</p>
+                <p>In the inspection type workflow the questions defined for that inspection type will be shown as child workflows. To create a new question, you must create a new child workflow to define it.</p>
+            </li>
+            <li value="4">Select the workflow step (name <u>Inspection Type Template</u> or similar).</li>
+            <li value="5">
+                <p>Click <b>Next Steps &gt; Create Question</b>.</p>
+                <p>A new child workflow is created for defining the question.</p>
+            </li>
+            <li value="6">
+                <p>Enter a Name for the question. </p>
+                <p class="Note" madcap:autonum="Note: &nbsp;">The Question Name is displayed in the <a href="/articles/appsolutions/dashboard" onclick="return n(&#39;!appsolutions/dashboard&#39;,this);">Dashboard</a> panel "Questions most frequently requiring Corrective Action," so it is recommended that you use a name that enables you to identify the question easily.</p>
+            </li>
+            <li value="7">
+                <p>For the <b>System Model Components</b>, select all of the objects (Units/POIs) that represent the equipment/areas for which the question is applicable. </p>
+                <p>Associated components will be inherited from the parent workflow, if they were added there. You can remove any components that represent inspection points for which the question is not applicable or add others, as needed.</p>
+            </li>
+            <li value="8"> Click <b>Create</b>.</li>
+            <li value="9">
+                <p>In the step form, complete the applicable fields:</p>
+                <p><b>Question Text</b>: The question as it will appear on the inspection form. Required value.</p>
+                <p><b>Question Type</b>: Required. Type of field for the response is one of the following:&nbsp;</p>
+                <p class="BodyIndentHanging"><b>Dropdown</b>: Dropdown list with up to 10 possible options. </p>
+                <p class="BodyIndentHanging"><b>Label</b>:&nbsp;Label field. The Question Text will be displayed as view-only on the form.</p>
+                <p class="BodyIndentHanging"><b>Text</b>: Text box for user to enter free text.</p>
+                <p class="BodyIndentHanging"><b>Button</b>:&nbsp;For Yes/No or Yes/No/NA questions. Form will display buttons with labels as defined in options 1-3 (by default Yes/No or Yes/No/NA).</p>
+                <p><b>Dropdown Question Possible Answers</b> (1-10): To set the list options for the dropdown list type, enter the text option in each of the fields.&nbsp;Up to ten possible options may be set. These options will  override the default values set on the Inspection Type form.</p>
+                <p><b>Automatically Create a Corrective Action for these dropdown options</b>: If you want a corrective action to be automatically created for any of the dropdown list options (above), select the corresponding option numbers.</p>
+                <p><b>This is a general question....</b>: If this is a general question which should be present on all inspections of this type, set the value of this field to True. (The question will be shown in a general section at the beginning of the inspection form.) Otherwise, set to False.</p>
+                <p><b>Sort Order</b> specifies the display order on the inspection form. (If not specified, the Workflow Id is used to sort.)</p>
+                <p><b>Related Hyperlinks</b> (1-5): You may set up to five hyperlink fields, and define special formatting.</p>
+                <p><b>LibraryQuestion</b>&nbsp;For legacy questions, the value must be False (do not check).</p>
+                <p>For all field definitions, see <a href="/articles/appsolutions/definitionworkflows" class="MCXref_0" xrefformat="{paratext}" onclick="return n(&#39;!appsolutions/definitionworkflows&#39;,this);">Inspection Definition Workflows</a>.</p>
+            </li>
+            <li value="10">
+                <p>When you are finished, choose one of these options:</p>
+                <p><b>Save And&nbsp;Exit</b> to return to the parent workflow, where you can add additional questions if desired.</p>
+                <p><b>Save And Define Sub Question</b> to define an associated sub-question.&nbsp;When creating a sub-question, you must indicate which responses(s) to the primary question will make the sub-question visible. </p>
+                <p><b>Save and Define Corrective Action</b> to define a corrective action to be initiated for this question.</p>
+            </li>
+            <li value="11">When you are done creating questions, from the parent workflow select <b>Save And&nbsp;Exit</b> to finish.</li>
+        </ol>
+        <p class="BodyIndent">Leave all definition workflows open to make it easy to edit them. If you close the workflow instances, you will not be able to edit the definition unless you reopen it. However, the InspectionApp will still function if the definition workflows are closed.</p>
+        <script type="text/javascript" src="/resources/Scripts/app-solutions/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

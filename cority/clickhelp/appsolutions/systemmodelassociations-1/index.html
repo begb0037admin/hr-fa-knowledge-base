@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/appsolutions/systemmodelassociations-1"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>System Model Associations</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='System Model Associations';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/appsolutions/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/appsolutions/jquery-1.12.42.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapGlobal2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapSlideshow2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapMerging2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapAliasFile2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapUtilities2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapBody2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapHighlighter2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffects2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffectsMenu2.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1__1564738806" data-has-heading-anchor="true">System Model Associations<a href="/articles/appsolutions/systemmodelassociations-1/a/h1__1564738806" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/systemmodelassociations-1/a/h1__1564738806&#39;,this);"></a></h1>
+        <p class="BodyText">App Items may be associated with System Model objects. Object association is not required, but may be enabled and configured as needed.  </p>
+        <p class="BodyText">The Primary Workflows can be associated with any Division, Facility, Unit or POI with the "Include"&nbsp;field set to true.  The recommended implementation uses Facility objects to represent facilities. The "Include" field is defined in the <a href="/articles/appsolutions/wabgenericconfigfile" onclick="return n(&#39;!appsolutions/wabgenericconfigfile&#39;,this);">App Config</a> file. It is a true/false field with a typical name like "EIA-IncludeInMyApp" and a label like "Include in My App?".</p>
+        <p class="BodyText">To use system model associations, you will need to 1) add the object selector to the primary App Item form in Form Designer, and 2) in the main application enable the objects you want to use by applying the "Include"&nbsp;custom field and setting the value to true.</p>
+        <p class="Note" madcap:autonum="Note: &nbsp;"><span class="autonumber"></span>The default configuration for the App includes object association at the Facility level on creation of the workflow. You will only need to enable the system model objects with the custom field.&nbsp;</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To add the object association field to the form:</p>
+        <ol>
+            <li value="1">
+                <p>In Form Designer, select the Form Type and the Step Name. Usually this will be the first step in the workflow, when the item is created.</p>
+                <p>Adding the object selector to the initial step allows the selection to be made when a App Item is created (although it may be added at another step).</p>
+            </li>
+            <li value="2">In the left pane, among the Standard Fields, drag the Object Selector field to the  form. </li>
+            <li value="3">
+                <p>Select the field to view the options in the right pane:</p>
+                <p>Check the object type(s) the field is enabled for (Division, Facility, Unit, POI).</p>
+                <p>Check <b>Required to Save</b> if you want the App Item to always be associated with an object. If object association is  optional, uncheck the field.</p>
+                <p>To allow multiple objects to be associated with a App Item, check <b>Allow Multiple</b>.</p>
+                <p>If you want to be able to select objects based on hierarchy – for instance select a Facility and then a POI under that facility – you will need to add two object selectors to the form, one for the parent object (Facility) and one for the child object (POI). To ensure that only child objects for the selected parent are shown, check <b>Enforce </b><b>Hierarchy</b>.</p>
+            </li>
+        </ol>
+        <p class="BodyText">In order to be visible in the App, a system model object must have the "Include"&nbsp;field  set to true. The field can be added to any custom field template.</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To enable a  system model object for the App:</p>
+        <ol>
+            <li value="1">Select the object in the system model tree. Right click and choose <b>Properties &gt; Edit</b>.</li>
+            <li value="2">
+                <p>In the custom fields section, check the box for <b>Include in [name] App?</b>.</p>
+            </li>
+            <li value="3">Click <b>Save</b>, then <b>Confirm</b>.</li>
+        </ol>
+        <p class="BodyText">To remove a system model from use in the App, the "Include" field only needs to be disabled on the object properties. When the field is disabled, the object will not be visible for selection in the App. However, any records already created for the object will be preserved.</p>
+        <p class="Warning" madcap:autonum="Warning: &nbsp;"><span class="autonumber"></span>If the object is deleted from the system, all workflow records for that object will be deleted, too. If you want to preserve the workflow records, but no longer need the object for other uses, you can mark the object inactive using the Inactive Date field on the facility properties. The system model tree display will indicate it is no longer active.</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To remove a system model object from visibility in the App:</p>
+        <ol>
+            <li value="1">Select the object in the system model tree. Right click and choose <b>Properties &gt; Edit</b>.</li>
+            <li value="2">In the custom fields section, uncheck the box for <b>Include in [name] App?</b>.</li>
+            <li value="3">Click <b>Save</b>, then <b>Confirm</b>.</li>
+        </ol>
+        <script type="text/javascript" src="/resources/Scripts/app-solutions/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/appsolutions/formactions"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Defining Actions</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Defining Actions';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/appsolutions/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/appsolutions/jquery-1.12.42.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapGlobal2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapSlideshow2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapMerging2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapAliasFile2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapUtilities2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapBody2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapHighlighter2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffects2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffectsMenu2.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1__1435097943" data-has-heading-anchor="true">Defining Actions <a href="/articles/appsolutions/formactions/a/h1__1435097943" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/formactions/a/h1__1435097943&#39;,this);"></a></h1>
+        <p>The Action buttons on the form define what functions can be performed on the workflow. Default buttons include: </p>
+        <ul><li><b>Create</b>, <b>Save</b>, <b>Assign Workflow</b>, <b>Submit</b>, <b>Close</b>, <b>Reopen</b>, and buttons for possible step transitions and initiation of child workflows. The wording on the buttons (label) may be edited.</li>
+        <li class="BodyIndent"><b>Reopen Workflow</b> button will appear only if the workflow is closed, in place of all other actions. It will be displayed only if the current user has the appropriate permission (Reopen permission on the workflow type). </li>
+        <li class="BodyIndent"><b>Close Workflow</b> button has an option to close all child workflows automatically when the parent workflow is closed. If you want to allow child workflows to remain open after the parent is closed, uncheck this option.</li>
+        </ul><p class="BodyIndent"><img src="images/CloseOptions.png" alt="" style="" loading="lazy"/></p>
+        <p>There are a number of ways you can customize Actions to control the behavior in the app.</p>
+        <ul class="brackets">
+            <li value="1">Remove an action that you don't want available to any users at this step. For instance, if you do not want users to be able to reassign the step, you can simply remove the Reassign button from the form. </li>
+            <li value="2">Create a condition to control the visibility of an action button, dependent on the value of another field. </li>
+            <li value="3">Define what happens when initiating a new workflow.</li>
+        </ul>
+        <p class="BodyText">All Actions have these properties:</p>
+        <ul><li class="BodyIndent"><b>Initiator Name</b>:&nbsp;Not editable. This is defined by the workflow type.</li>
+        <li class="BodyIndent"><b>Label</b>:&nbsp;The text that appears on the button. It can be different than the name, which is the default.</li>
+        <li class="BodyText">Additional options are available on the action buttons used to initiate child workflows.</li>
+        <li style="font-weight: bold;">Options for initiating a child workflow:</li>
+        <li>Select the action button for the child workflow to see the following options :</li>
+        <li><b>Number of Children</b>:&nbsp;1 or Many. If 1 is selected, users will only be able to create one child workflow of this type.</li>
+        <li><b>Child Workflow is required</b>:&nbsp;Select this to require that a child workflow be created on this step.</li>
+        <li><b>Initiator Popup</b>: If Off, the child workflow will be created without a pop-up asking for assignee  before creating the child workflow.  The workflow will be assigned to all users in the allowed role and created with the default values for workflow name and due date.</li>
+        <li><b> Workflow Name </b>:&nbsp;Field is disabled if Initiator Popup is Off. Otherwise, the transition pop-up will allow the user to edit the default workflow name for the child workflow before it is created. You can also specify a default workflow name.</li>
+        <li class="BodyText"><b>Default Value</b>: Optionally, you can set the default Workflow Name  using  text or  macros or a combination of text and macros. Type "{" in the box to view and select a macro. You may concatenate macro values in the name.</li>
+        <li><b>Due Date</b>:   If this field is checked, the transition pop-up will allow the user to edit the default due date for the child workflow before it is created. You can also set a due date automatically with these options:</li>
+        <li class="BodyIndent"><b>Other Custom Field Value</b>:&nbsp;If you select this option, you can then select a date field on the form whose value will be used.</li>
+        <li class="BodyIndent"><b>Days after Creation</b>:&nbsp;After checking the field, enter the number of days after the date of child workflow creation that the workflow is due.</li>
+        <li><b>Assignee for Log Incident Details Step</b>: Visible on Popup is disabled if Initiator Popup is Off. If Initiator Popup is On and User Specified is selected, the transition pop-up will allow the user to select the assignee of the child workflow before it is created. The assignee field will be a multi-select box which displays the list of possible groups and assignees, where groups can be expanded so the user can select an individual member.  If the All role Members button is selected, the transition pop-up will have all role members selected by default, and the user may choose to deselect specific users or groups.  If this value is false, the assignee will be blank and users can be selected from the permitted users in the system.</li>
+        </ul><script type="text/javascript" src="/resources/Scripts/app-solutions/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

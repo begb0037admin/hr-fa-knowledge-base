@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/appsolutions/applinks-incidentapp"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Links to the Incident App</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Links to the Incident App';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/appsolutions/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/appsolutions/jquery-1.12.42.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapGlobal2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapSlideshow2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapMerging2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapAliasFile2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapUtilities2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapBody2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapHighlighter2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffects2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffectsMenu2.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1_720354044" data-has-heading-anchor="true">Links to the Incident App<a href="/articles/appsolutions/applinks-incidentapp/a/h1_720354044" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/applinks-incidentapp/a/h1_720354044&#39;,this);"></a></h1>
+        <p class="Body">Links to Apps can be configured to use in System Notifications or External Links. System Notifications are emails sent to users from the system to notify them of workflow assignments or status.&nbsp;External links are links to the app from a company web page, a browser bookmark, or from another App. </p>
+        <p>The following file (download)&nbsp;will help you construct the correct link syntax for your use:&nbsp;<b style="font-size: 11pt;"><a href="/resources/Storage/appsolutions/Common/AppLinkMaker.xlsx" target="_blank">AppLinkMaker Tool</a></b></p>
+        <h2 id="h2_1791104686" data-has-heading-anchor="true">General Info About Links<a href="/articles/appsolutions/applinks-incidentapp/a/h2_1791104686" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/applinks-incidentapp/a/h2_1791104686&#39;,this);"></a></h2><p>For external links, you will need the SystemID. You can find the SystemID in App&nbsp;Manager (<b>Setup &gt; Enviance Apps</b>). Select the app. The System ID is the last part of the "Link" value shown in the General tab. Use the Copy button to copy the link text, then select just the part after "SystemID=" to copy into the link format above, replacing [SystemID].</p>
+        <p class="Body">
+            <img src="images/AppLinkSysId.png" alt="" style="width: 1000px; height: 421px;" loading="lazy"/>
+        </p>
+        <p class="Important" madcap:autonum="Important: &nbsp;"><span class="autonumber"></span>Do not use the full "Link" given on the General tab, which will not be supported in future and may break. </p>
+        <p>Use EQL queries to obtain any other IDs (GUIDs) that you may need for your links, such as object IDs for object associations or workflow IDs.</p>
+        <p>Details of link formats and syntax are described below, for information or debugging.&nbsp;The AppLinkMaker tool will build these formats automatically for you.</p>
+        <h2 id="h2__1179304681" data-has-heading-anchor="true">Link Syntax Details<a href="/articles/appsolutions/applinks-incidentapp/a/h2__1179304681" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/applinks-incidentapp/a/h2__1179304681&#39;,this);"></a></h2><p>For  System Notifications used in email notifications, the {url::basePath} macro is used. The initial link syntax used in system emails is:</p>
+        <p class="BodyIndent">{url::basePath}AppName/</p>
+        <p>The {url::basePath} macro includes the "https:" prefix and the system id. This is the format you will use in a Notification Template.</p>
+        <p>For a link from an external page or to use for a bookmark,  the explicit link format is required, as the macros will not work. The link format includes the system id and the app name <i>ending with a slash</i>, as follows: </p>
+        <p class="BodyIndent">https://go.enviance.com/goto/[SystemId]/<i>AppName</i>/</p>
+        <p>Replace [SystemId] with  the System GUID (as shown above). </p>
+        <p>AppName is the name of the app on the General tab in App Manager. To find the App Name, select <b>Setup&nbsp;&gt;&nbsp;Enviance Apps</b> from the main menu. Do not use the name of the app as it appears on the main menu, as this may be different than the actual app name.</p>
+        <p><b>App Name restrictions:</b>&nbsp;The AppName is case-sensitive. In the case of custom Workflow App Builder solutions, the name of the app must end in "App". Spaces are not allowed (or must be url-encoded with %20).</p>
+        <p class="Body">To link to a specific page in the app, append a query and use "hash" for #, so the starting url will be:</p>
+        <p class="BodyIndent">{url::basePath}AppName/?hash=/</p>
+        <p class="BodyIndent">or:</p>
+        <p class="BodyIndent">https://go.enviance.com/goto/[SystemId]/<i>AppName</i>/?hash=/</p>
+        <p class="Body">Links for the IncidentApp are shown in the following table. The format shown is for notification templates. You can convert them to external link syntax using the guidelines above. Other macros may be replaced by object GUIDs if necessary.</p>
+        <table style="margin-left: 0;margin-right: auto;">
+            <colgroup><col/>
+            <col/>
+            </colgroup><tbody>
+                <tr>
+                    <td class="border">To workflow step</td>
+                    <td class="border">{url::basePath}IncidentApp/?hash=/search/{flow::unique id}/{step::name}</td>
+                </tr>
+                <tr>
+                    <td class="border">To Dashboards page</td>
+                    <td class="border">{url::basePath}IncidentApp/?hash=/dashboard_charts</td>
+                </tr>
+                <tr>
+                    <td class="border">To My Actions</td>
+                    <td class="border">{url::basePath}IncidentApp/?hash=/dashboard_grid/0</td>
+                </tr>
+                <tr>
+                    <td class="border">To Reports page </td>
+                    <td class="border">{url::basePath}IncidentApp/?hash=/reports</td>
+                </tr>
+                <tr>
+                    <td class="border">To Metrics page </td>
+                    <td class="border">{url::basePath}IncidentApp/?hash=/metrics</td>
+                </tr>
+                <tr>
+                    <td class="border">To Form Designer</td>
+                    <td class="border">{url::basePath}IncidentApp/?hash=/designer</td>
+                </tr>
+                <tr>
+                    <td class="border">To New Incident Form</td>
+                    <td class="border">
+                        <p>{url::basePath}IncidentApp/?hash=/new</p>
+                        <p>For optional object parameters, see <a href="/articles/appsolutions/applinks/a/NewItem" class="MCXref_Heading_0" onclick="return n(&#39;!appsolutions/applinks/a/NewItem&#39;,this);">Link to 'Add New Item' Form for Apps</a>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>To use the link in a Notification Template, create the text for the notification and add the link in the format shown above.</p><p class="Body" style="font-weight: bold;">Example 1: Go to the workflow form</p>
+        <div class="tri_example">
+            <p>To complete the Incident Report, click the link below:</p>
+            <p>{url::basePath}IncidentApp/?hash=/search/{flow::unique id}/{step::name}</p>
+        </div>
+        <p class="Body">Use the source editor to create link text in place of the URL string. In the notification editor, click the <b>Source</b> button to open the html editing window. Edit the text to add the link with the correct html syntax like this:</p>
+        <p class="Body"><b>Example 2: Link encoded for html</b>
+        </p>
+        <div class="tri_example">
+            <p>&lt;p&gt;To complete the Incident Report &lt;a href="{url::basePath}IncidentApp/?hash=/search/{flow::unique id}/{step::name}"&gt;CLICK&nbsp;HERE&lt;/a&gt;.&lt;/p&gt;</p>
+        </div>
+        <p class="N4Important">Be sure to remove any extraneous html that may have been added by the editor. Be careful that no html tags or extra spaces are inside the URL.</p>
+        <p class="Note" madcap:autonum="Note: &nbsp;"><span class="autonumber"></span>When you use the {url::basePath} macro, do not include "http://" in the link, as it is already specified in the macro. </p>
+        <p class="N4Important">All links must be URL encoded (i.e., use %20 for spaces and encode special characters). See: <a href="http://www.w3schools.com/tags/ref_urlencode.asp" target="_blank">http://www.w3schools.com/tags/ref_urlencode.asp</a></p>
+        <p class="Tip" madcap:autonum="Tip: &nbsp;"><span class="autonumber"></span>Sample email text formats with pre-configured links are also available for download. See <a href="/articles/appsolutions/sampleemail-incident" class="MCXref_Heading_0" onclick="return n(&#39;!appsolutions/sampleemail-incident&#39;,this);">Sample IncidentApp Email Notifications</a>.</p>
+        <script type="text/javascript" src="/resources/Scripts/app-solutions/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

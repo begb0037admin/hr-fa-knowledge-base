@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/appsolutions/manageappusers"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Manage App Users</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Manage App Users';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/appsolutions/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/appsolutions/jquery-1.12.42.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapGlobal2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapSlideshow2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapMerging2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapAliasFile2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapUtilities2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapBody2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapHighlighter2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffects2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffectsMenu2.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1_1456921546" data-has-heading-anchor="true">Manage App Users<a href="/articles/appsolutions/manageappusers/a/h1_1456921546" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/manageappusers/a/h1_1456921546&#39;,this);"></a></h1>
+        <p>InspectionApp users include any of the following roles:</p>
+        <ul><li class="BodyIndent">Inspector</li>
+        <li class="BodyIndent">Corrective Action Assignee</li>
+        <li class="BodyIndent">Finding Assignee</li>
+        <li class="BodyIndent">Form Designer</li>
+        </ul><p>You can edit the users associated with these roles from the Management System. Users will need a combination of user permissions and workflow role associations to work in the InspectionApp.</p>
+        <h2 id="h2__549128247" data-has-heading-anchor="true">User Permissions<a href="/articles/appsolutions/manageappusers/a/h2__549128247" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/manageappusers/a/h2__549128247&#39;,this);"></a></h2><p>All users of the InspectionApp need to have the following System Model permissions:</p>
+        <ul class="brackets">
+            <li value="1">
+                <p><b>Report </b>permission on the Facility  AND the parent Division. </p>
+                <p><img src="images/Permissions_Division.png" loading="lazy"/></p>
+            </li>
+            <li value="2">
+                <p><b>View/Edit </b>permission on a top-level Documents folder named EIA-Inspections. This is where the configuration documents are stored as well as any documents uploaded from the InspectionApp.</p>
+                <p><img src="images/Permissions_Documents.png" loading="lazy"/></p>
+            </li>
+        </ul>
+        <p class="BodyText">Inspectors also need:</p>
+        <ul class="brackets">
+            <li value="1">
+                <p><b>Create and Complete Tasks</b> permission on the <b>InspectionApp</b> Unit in order to be able to create Inspections.</p>
+                <p><img src="images/Permissions_Inspectors.png" loading="lazy"/></p>
+            </li>
+        </ul>
+        <p>Form Designers will need to be added to App Role FormBuilder in App Manager.</p>
+        <p class="BodyIndent"><img src="images/EditAppRoleMember.png" loading="lazy"/></p>
+        <h2 id="h2_802408593" data-has-heading-anchor="true">Workflow Role Associations<a href="/articles/appsolutions/manageappusers/a/h2_802408593" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/manageappusers/a/h2_802408593&#39;,this);"></a></h2><p class="BodyText">Users will need to be associated with the workflow roles that allow them to either create and complete an inspection or complete a corrective action. </p>
+        <p class="BodyText">The users associated with these roles are shown in the list of potential  Inspectors or Findings/Corrective Action assignees when an inspection is created or a finding or corrective action is assigned.</p>
+        <p>Associate users with the required roles using Workflow Overrides on the System Model. </p>
+        <p><img src="images/ChangeWFOverrides.png" loading="lazy"/></p>
+        <p>It is recommended that associations are made by Groups, rather than individual users, but you may use both. </p>
+        <p><img src="images/EditWFOverrides.png" loading="lazy"/></p>
+        <p class="BodyText">The workflow roles and the required membership are shown below. </p>
+        <table cellspacing="0" cellpadding="0" style="border-width: 1px; border-color: #c0c0c0; border-collapse: collapse;">
+            <colgroup><col/>
+            <col/>
+            </colgroup><thead>
+                <tr>
+                    <th class="td_1" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Workflow Role</th>
+                    <th class="td_1" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Members</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">EIA-Inspector</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;"> Users must be associated with this role in order to complete an inspection. They will be shown in the list of potential Inspectors when a new inspection is initiated.</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">EIA-CorrectiveActionAssignee</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;"> Users must be associated with this role in order to be assigned to and complete a corrective action. They will be shown in the list of possible corrective action assignees when a corrective action is created.</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">EIA-FindingAssignee</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Users must be associated with this role in order to be assigned to a Finding. They will be shown in the list of possible assignees when a finding is created.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Note" madcap:autonum="Note: &nbsp;"><span class="autonumber"></span>Default role members may be set up in the Workflow Types, if desired. The default role members will be used when there are no overrides configured for an object. <b>Warning</b>:&nbsp;Do not edit any information other than default role members in the Roles tab or the app may not function.</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To edit the InspectionApp Users for each Facility:</p>
+        <ol>
+            <li value="1">Select System Model from the menu button.</li>
+            <li value="2">In the System Model tree, select the Facility for which you wish to edit the assignees. If you want to use the same role associations for all facilities, you can use the Division.</li>
+            <li value="3">
+                <p>Right click the facility and choose <b>Change &gt;&nbsp;Workflow Overrides</b>.</p>
+                <p>The workflow roles and the names of the user groups and/or users associated with the workflow roles for this facility are shown. If no roles are shown, click Add, then select the role from the list and add the users or groups to associate with the role.</p>
+                <p>If the EIA-Inspectors, EIA-Corrective Action Assignees and EIA-FindingAssignees roles already have user or group associations, make note of the user group to which you need to add new users, or click Edit to add the users individually.</p>
+            </li>
+        </ol>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To add users to groups already associated with a role:</p>
+        <ol>
+            <li value="1">Select <b>Setup </b>from the menu button, then select <b>Security &gt; User Groups</b>.</li>
+            <li value="2">Find the name of the user group to edit. Right click the group and click <b>Edit</b>.</li>
+            <li value="3">Click <b>Add </b>to add a user, then find and select the user from the user list.</li>
+            <li value="4">To remove a user, check the box next to the user name and click Remove.</li>
+            <li value="5">When you are done adding or removing users, click <b>Save</b>.</li>
+        </ol>
+        <script type="text/javascript" src="/resources/Scripts/app-solutions/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

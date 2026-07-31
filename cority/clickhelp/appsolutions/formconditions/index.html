@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/appsolutions/formconditions"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Defining Conditions for Forms</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Defining Conditions for Forms';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/appsolutions/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/appsolutions/jquery-1.12.42.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapGlobal2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapSlideshow2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapMerging2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapAliasFile2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapUtilities2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapBody2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapHighlighter2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffects2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffectsMenu2.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1_24253060" data-has-heading-anchor="true">Defining Conditions for Forms <a href="/articles/appsolutions/formconditions/a/h1_24253060" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/formconditions/a/h1_24253060&#39;,this);"></a></h1>
+        <p class="BodyText">Conditions allow you to control the behavior of the form based on form field values. For instance, you can enable an action or show a tab for another form, based on what the user enters or selects in the form. </p>
+        <p class="BodyText">You can specify conditions for any field or action button on the Form. Conditions take the following form:</p>
+        <ul><li class="BodyIndent">If all/any of the following criteria are met, one or more form fields match specified criteria. Then perform the following action(s): A field or button is acted on in one of several ways, depending on the field.</li>
+        </ul><p class="BodyText">You can specify multiple criteria, choosing either ALL or ANY for a set of criteria. You may also nest conditions up to 3 levels. If the first criteria is true, then the second criteria will be evaluated; if the second set is true, the third criteria will be evaluated. At each level you may specify ALL&nbsp;or ANY for multiple criteria.</p>
+        <p class="BodyText"><b>Example Conditions</b></p>
+        <p class="BodyText">Field value makes a hidden field visible:</p>
+        <p class="BodyIndent" style="margin-left: 40px;"> IF Change Request Type Is equal to "Operational" Then {Field Name} is VISIBLE</p>
+        <p>Field value makes a form tab visible:</p>
+        <p class="BodyIndent" style="margin-left: 40px;">If IncidentType contains "Environmental" Environmental Details is VISIBLE</p>
+        <h2 id="h2__1851876300" data-has-heading-anchor="true">View and Manage Existing Conditions<a href="/articles/appsolutions/formconditions/a/h2__1851876300" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/formconditions/a/h2__1851876300&#39;,this);"></a></h2><ol>
+            <li value="1">
+                <p>In Form Designer, click the arrow to expand the Conditions section to display possible actions. <br/>You can also close the Fields and Actions Form Designer sections to more easily view the Conditions section.&nbsp;<br/><img src="images/formconditions-2024-03-20.png" alt="" loading="lazy"/><br/></p>
+                </li>
+        <li><p>To edit a condition, i<span style="font-size: 11pt;">n the Conditions list, select the edit pencil next to the condition you want to edit.&nbsp;</span></p></li><li><p>To disable a condition, i<span style="font-size: 11pt;">n the Conditions list, select the <b>Disabled </b>checkbox next to the condition you want disabled.<br/></span><span style="font-size: 11pt;">Disabling a condition is convenient when troubleshooting conditions rather than deleting conditions. This allows users to still have conditions available if needed in the future by unchecking the disabled checkbox., rather than having to rebuild conditions.&nbsp;</span></p></li><li><p>To delete a condition, i<span style="font-size: 11pt;">n the Conditions list, check the <b>Action </b>box next to the condition and click <b>Delete </b><b>Selected</b>.</span></p></li></ol>
+        <p class="Important" madcap:autonum="Important: &nbsp;"><span class="autonumber"></span>Any adds, edits or deletions of conditions will only be completed when you save the form. Click <b>Cancel </b>if you do not want to save changes.</p>
+        <h2 id="h2_2089813887" data-has-heading-anchor="true">Define a new condition for a form<a href="/articles/appsolutions/formconditions/a/h2_2089813887" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/formconditions/a/h2_2089813887&#39;,this);"></a></h2><ol>
+            <li value="1">
+                <p>In the Conditions section of Form Designer, select <b>Add Condition(s)</b>.&nbsp;<br/><span style="font-size: 11pt;">You can decide whether you want to view the Field Labels or Field Names by choosing the appropriate button top right. This can help reduce confusion when the field names do not match the labels used on the form.</span></p>
+                </li>
+            <li value="2">
+                <p>Select the criteria that will prompt some action. <br/>First, select a field from the dropdown list, then the logical operator, and the value that will trigger the action.</p>
+                <p>
+                    <img src="images/ConditionEx1.png" alt="" style="width: 800px; height: 330px;" loading="lazy"/>
+                </p>
+                <p class="BodyText">The logical operators available for a condition will depend on the type of field selected.</p>
+                <ul>
+                    <li value="1">Text:&nbsp;Is equal to, Is not equal to, Contains, Matches</li>
+                    <li value="2">Boolean:&nbsp;Is equal to, Is not equal to</li>
+                    <li value="3">Date:&nbsp;Is equal to, Is not equal to, Is greater than, Is less than. Values=Today, Absolute Date  (select from date wizard). </li>
+                    <li value="4">Time:&nbsp;Is equal to, Is not equal to, Is greater than, Is less than. Values=Now, Absolute Time  (select from time wizard)</li>
+                    <li value="5">Number: Is equal to, Is not equal to, Is greater than, Is less than, Is greater than or equal to, Is less than or equal to</li>
+                </ul>
+                <p>Values may be text, a numeric value or NULL. If the independent field is a dropdown list, list options will be shown. A modal is available to select date and time field values. When a text box is presented, you can enter a text or numeric value, with max length 100 characters. To specify wildcard values use an asterisk (*).</p>
+                <p><b>Nested Conditions</b> can be used to define a second set of criteria to be met if the primary condition is true. To add nested criteria, click the <b>Hierarchy </b>button:</p>
+                <p>
+                    <img src="images/NestConditionBtn.png" alt="" style="" loading="lazy"/>
+                </p>
+            </li>
+            <li value="3">
+                <p>Select the action(s) to be performed when the criteria are met.</p>
+                <p>Select a field to be acted on, then the state to impose.</p>
+                <p class="BodyText">States supported are:  </p>
+                <ul>
+                    <li value="1">Visible</li>
+                    <li value="2">Hidden</li>
+                    <li value="3">Enabled (for editing)</li>
+                    <li value="4">Disabled (for editing)</li>
+                    <li value="5">Required</li>
+                    <li value="6">HelpText</li>
+                    <li value="7">Value=</li>
+                </ul>
+                <p>To add a second action, click the + button and choose another action.</p>
+            </li>
+            <li value="4">
+                <p>Click <b>Apply</b>.</p>
+                <p>If there are multiple conditions acting on the same field state,&nbsp;a message will be displayed identifying the conditions in conflict. You can combine the two statements in one, using the ALL&nbsp;or ANY parameters to accomplish what you want.</p>
+                <p><b>Object fields used in Conditions are treated as text</b>. If you are using list values, you will need to type in the list values manually. Since it is possible to return multiple values because there may be more than one object, even numeric fields must be treated as text (which might, for example, return "3;3;4;5;6").</p>
+            </li>
+            <li value="5">After adding your conditions, be sure to click <b>Save</b> to save the changes to the form.</li>
+        </ol>
+        <p>You may remove any fields on the form template that you do not want to appear on the form for a particular step, essentially hiding the fields. </p>
+        <h2 id="h2_868251885" data-has-heading-anchor="true">Using Hidden Fields<span id="UsingHiddenFields"></span>&nbsp;<span id="HiddenFields"></span>&nbsp;<a href="/articles/appsolutions/formconditions/a/h2_868251885" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/formconditions/a/h2_868251885&#39;,this);"></a></h2><p>In order to be used in conditions, a field must be present on a form, but it may be hidden. If you need to use hidden fields in condition statements you will need to enable the use of the hidden field with the option "<b>Process when field is hidden</b>". For example, hidden fields may be used to trigger notifications, or you may just want to hide fields that are not necessary for users to see but still set a value on the field based on the user's actions in the form. </p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To hide a field on a form and enable a conditional action:</p>
+        <ol>
+            <li value="1">Select <b>Add Condition(s)</b>.</li>
+            <li value="2">Do not select anything in the criteria section. In the "perform the following action" section, select the field you want to hide. Set the resultant state to <b>Hidden</b>. </li>
+            <li value="3">
+                <p>Click <b>Apply</b>.</p>
+                <p>
+                    <img src="images/HideField.png" alt="" style="" loading="lazy"/>
+                </p>
+                <p>You can now create another condition that will change the value of the hidden field on specified criteria.</p>
+            </li>
+            <li value="4">Select <b>Add Condition(s)</b>.</li>
+            <li value="5">Select the field and the criteria that will cause the hidden field to change value.</li>
+            <li value="6">
+                <p>In the result section, select the field that you hid. Set the resultant state to Value= and select the value.</p>
+                <p>To allow the hidden field to be acted on, check <b>Process when field is hidden</b>.</p>
+                <p>
+                    <img src="images/ProcessHiddenField.png" alt="" style="width: 800px; height: 350px;" loading="lazy"/>
+                </p>
+            </li>
+            <li value="7">Click <b>Apply</b>.</li>
+        </ol>
+        <h3 id="h3__1010793974" data-has-heading-anchor="true">Using Value Fields that can be reprocessed when updated<a href="/articles/appsolutions/formconditions/a/h3__1010793974" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/formconditions/a/h3__1010793974&#39;,this);"></a></h3><p>To use conditions, a field must be present on a form. If you need to use Value fields that can be reprocessed when updated in condition statements, you will need to enable the use of value fields that can be reprocessed with the option "<span style="font-weight: bold;">Reprocess on Source Field Value Change</span>". For example, you may want to set a value on a field based on the user's actions in the form.</p><p style="font-weight: bold;">To apply conditions to a Value Field that can be reprocessed when updated:</p><ol><li>Click <span style="font-weight: bold;">+ Add Condition</span> to create a new condition or select an existing condition that you want to updated.<img src="images/formconditions-2023-04-03.png" alt="" loading="lazy"/><p><img src="images/formconditions-2023-04-03-1.png" alt="" style="font-size: 10pt; width: 772.016px; height: 364.459px;" loading="lazy"/></p></li><li>Fill in the if condition statement as needed.</li><li><span style="font-size: 10pt;"></span>Fill in the Then perform the following actions as needed.</li><li><span style="font-size: 10pt;"></span>Select the checkbox in front of Reprocess on Source Field Value Change, and ensure a value is inputted into the&nbsp;Value textbox.<ol></ol><p class="Note">On the Form Designer page, in the Fields section, the Field of interest should have the Default value filled out, and the <span style="font-weight: bold;">Read only</span> and <span style="font-weight: bold;">Reprocess on Source Field Value Change </span>checkboxes selected (see <a href="/articles/appsolutions/wabformsdesigner" onclick="return n(&#39;!appsolutions/wabformsdesigner&#39;,this);">Form Designer</a>).</p></li><li><span style="font-size: 10pt;"></span>Click&nbsp;<span style="font-size: 10pt; font-weight: bold;">Apply</span><span style="font-size: 10pt;">.</span></li></ol><h3 id="h3__657231864" data-has-heading-anchor="true">Using Only Process when True Condition<a href="/articles/appsolutions/formconditions/a/h3__657231864" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/formconditions/a/h3__657231864&#39;,this);"></a></h3><p>Enable “Only Process when True” for each condition in a use case where multiple conditions are created to affect the value of a single field. If “Only Process when True” is not selected and there is a list of conditions that affect the value of a single field, the last condition will process as true while all previous condition created will process as if they are false. </p><p>Below is an example of When “Only Process when True” is not enabled, and a Priority Field is created in designer mode with three conditions, the criteria being High, Medium, or Low Priority with assigned Due Date values that are expected to populate.</p><p><b>When “Only Process when True” is not enabled</b><br/></p><p><img src="images/formconditions-2024-03-20-1.png" alt="A white rectangular object with black linesDescription automatically generated" style="border-width: 0px; width: 616px; height: 79px;" loading="lazy"/></p><p><b>In Advanced Workflows (WAB):</b> </p><p>When High or Medium priority is selected, no values populate in the Due Date fields. </p><p><img src="images/formconditions-2024-03-20-2.png" alt="A screenshot of a computerDescription automatically generated" style="border-width: 1px; width: 255px; height: 88px; border-style: solid;" loading="lazy"/>&nbsp;<img src="images/formconditions-2024-03-20-3.png" alt="A screenshot of a computerDescription automatically generated" style="border-width: 1px; width: 242px; height: 87px; border-style: solid;" loading="lazy"/></p><p>However, when Low priority is selected the expected values populate in the Due Date fields. </p><img src="images/formconditions-2024-03-20-4.png" alt="A hand cursor pushing a low buttonDescription automatically generated" style="border-width: 1px; width: 282px; height: 101px; border-style: solid;" loading="lazy"/><p>Below is an example of when “Only Process when True” is enabled, and a Priority field is created in designer mode with three conditions, the criteria being High, Medium, or Low Priority with assigned Due Date Values that are expected to populate. Additionally, when a Priority level is not selected for the field, the Due Date value fields should be empty (null condition). This is done by creating an Only Process when True condition when Priority is Empty. </p><p class="Note">If a null condition is not created when a priority is not selected, then the Due Date value field will have the values remaining from the last selected Priority.</p><p>When <b>“Only Process when True” </b>is enabled<br/></p><p>&nbsp;<img src="images/formconditions-2024-03-20-5.png" alt="A screenshot of a phoneDescription automatically generated" style="border-width: 0px; width: 610px; height: 116px;" loading="lazy"/></p><p><b>In Advanced Workflows (WAB):</b></p><p>When High priority is selected, values populate in the Due Date fields.</p><img src="images/formconditions-2024-03-20-6.png" alt="A screenshot of a computerDescription automatically generated" style="border-width: 1px; width: 347px; height: 124px; border-style: solid;" loading="lazy"/><p>When Medium priority is selected, values populate in the Due Date fields.</p><img src="images/formconditions-2024-03-20-7.png" alt="A screenshot of a computerDescription automatically generated" style="border-width: 1px; width: 334px; height: 119px; border-style: solid;" loading="lazy"/><p>When Low priority is selected, values populate in the Due Date fields.</p><img src="images/formconditions-2024-03-20-8.png" alt="A hand cursor and a buttonDescription automatically generated" style="border-width: 1px; width: 336px; height: 122px; border-style: solid;" loading="lazy"/><p>When no priority is selected, no values populate in the Due Date fields.</p><img src="images/formconditions-2024-03-20-9.png" alt="A screenshot of a computerDescription automatically generated" style="border-width: 1px; width: 426px; height: 155px; border-style: solid;" loading="lazy"/><h3 id="h3__1965370588" data-has-heading-anchor="true">Enabling Only Process when True for a condition<a href="/articles/appsolutions/formconditions/a/h3__1965370588" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/formconditions/a/h3__1965370588&#39;,this);"></a></h3><p style="font-weight: bold;">To enable only Process when True for a condition:</p><ol start="1">
+			<li>Click&nbsp;<span style="font-weight: bold;">+ Add Condition</span>&nbsp;to create a new condition or select an existing condition that you want updated.</li></ol>
+		<p><img src="images/formconditions-2024-03-20-10.png" alt="A screenshot of a computerDescription automatically generated" style="border-width: 0px; width: 623px; height: 132px;" loading="lazy"/></p><p><img src="images/formconditions-2024-03-20-11.png" alt="A screenshot of a computerDescription automatically generated" style="border-width: 0px; width: 617px; height: 193px;" loading="lazy"/></p><ol>
+			<li>Fill in the<span style="font-weight: bold;">&nbsp;if condition&nbsp;</span>statement as needed.</li><li>Fill in the&nbsp;<span style="font-weight: bold;">Then perform the following actions</span>&nbsp;as needed.</li><li>Select the checkbox in front of&nbsp;<span style="font-weight: bold;">Only Process when True</span>, and ensure a value is inputted into the&nbsp;<span style="font-weight: bold;">Value</span>&nbsp;textbox.</li><li>Click&nbsp;<span style="font-weight: bold;">Apply</span>.</li></ol><p><br/></p><script type="text/javascript" src="/resources/Scripts/app-solutions/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

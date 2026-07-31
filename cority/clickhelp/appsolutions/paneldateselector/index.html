@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/appsolutions/paneldateselector"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Panel Date Selector</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Panel Date Selector';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/appsolutions/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/appsolutions/jquery-1.12.42.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapGlobal2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapSlideshow2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapMerging2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapAliasFile2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapUtilities2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapBody2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapHighlighter2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffects2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffectsMenu2.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1_744274991" data-has-heading-anchor="true">Panel Date Selector<a href="/articles/appsolutions/paneldateselector/a/h1_744274991" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/paneldateselector/a/h1_744274991&#39;,this);"></a></h1>
+        <p class="BodyText">By default a panel will use the date range selected for the page. However, a date range selector may be enabled for a panel, which it will operate independently of the page date selector. </p>
+        <p class="BodyIndent">If "Use Page Date Range"&nbsp;is enabled (default), the panel date range selector will not be shown and the panel will use the date range selected for the page.</p>
+        <p class="BodyIndent">If "Use Page Date Range"&nbsp;is disabled, the panel date range selector will be enabled so you can choose a date range to use for the panel, independent of the page dates. </p>
+        <p>The date range may be chosen in two ways:&nbsp;From a list of calendar periods, or as custom dates selected from a calendar. A newly created panel will show only the custom date range option. </p>
+        <p>
+            <img src="images/PanelDateCustomPicker.png" alt="" style="width: 446px; height: 206.188px;" loading="lazy"/>
+        </p>
+        <p>You can configure the panel to allow users to pick a date range from pre-defined periods. When configured, users may use the drop-down list option or the custom date picker.</p>
+        <p>
+            <img src="images/PanelDatePeriodPicker.png" alt="" style="width: 445.859px; height: 132.756px;" loading="lazy"/>
+        </p>
+        <p>To use the date range options list, you will need to first create the list of options you want to make available.</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To enable a date range selector for a panel:</p>
+        <ol>
+            <li value="1">From the page view, select <b>Settings</b>.</li>
+            <li value="2">Click <b>Edit Panel Content</b> on the panel.</li>
+            <li value="3">Click the red eyeball in the Date field on the panel top bar to open the Date Range configuration window.</li>
+            <li value="4">
+                <p>Uncheck "Use Page Date Range." </p>
+                <p>The initial default date period, if no periods have been configured, is the  current month. You can edit the default, or add and configure the date ranges you want to use.</p>
+                <p>
+                    <img src="images/WFPanelDateConfig.png" alt="" style="width: 965.663px; height: 232.281px;" loading="lazy"/>
+                </p>
+                <p>You must have at least two options in order to display the date period selector box on the panel. If you want the panel always to show only a pre-selected date range, you can configure the single default option as you like (for example, set the default display to&nbsp;Current Week instead of Current Month). </p>
+                <p><b>Allow User to Pick Dates</b>: Unchecking this box will disable selection of custom dates. If there are options for the date range options list, the user will be able to pick from that list only, and the dates covered by the period will be displayed as read-only. If there is only one option for the option list, the user will not see the date period selector box and will see only the pre-configured date range displayed as read-only.</p>
+            </li>
+            <li value="5">
+                <p>Enter a Label for the first option. Then choose the relative periods you want to use for the Start Date and End Date. (See options below.)</p>
+                <p>If you want to use Current Month as one option, you can just enter a label (i.e., "This Month"). You do not need a label if you want to allow only a single date period.</p>
+            </li>
+            <li value="6">
+                <p>Select <b>Add New Date Range</b> to add another option for the list.</p>
+                <p>Enter the label to display for the second option and choose the relative start and end dates. </p>
+                <p> <img src="images/PageDateRangeAddOption.png" alt="" style="width: 991.688px; height: 240.719px;" loading="lazy"/></p>
+            </li>
+            <li value="7">
+                <p>Click <b>Add New Date Range</b> again to add additional options. </p>
+                <p>To remove an option, click the <b>X</b> in the last column.</p>
+                <p>To re-order the list options, hover over the first column. Click and hold to drag and drop the item to the desired position.</p>
+                <p>The first item in the list will be the default option for users.</p>
+            </li>
+            <li value="8">When you are done adding options, click <b>Apply</b>.</li>
+            <li value="9">
+                <p>Click&nbsp;<b>Save</b> to save the page.</p>
+                <p>The date period selector box will now be displayed on the panel and your date range options show in the list.</p>
+            </li>
+        </ol>
+        <h2 id="h2_1125047185" data-has-heading-anchor="true">Period Options<a href="/articles/appsolutions/paneldateselector/a/h2_1125047185" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/paneldateselector/a/h2_1125047185&#39;,this);"></a></h2><p><b>Start Date</b> options are: </p>
+        <ul>
+            <li value="1">Absolute Date (specific date)</li>
+            <li value="2">Previous, Current or Next calendar period (Day|Week | Month|Quarter|Year)</li>
+            <li value="3">Prior to or After Current Date (x Days|Weeks|Months|Quarters|Years). </li>
+        </ul>
+        <p class="BodyIndent">The time will be always be 12:00 AM on the specified date or the first day of the period</p>
+        <p><b>End Date</b> options are: </p>
+        <ul>
+            <li value="1">Absolute Date (specific date)</li>
+            <li value="2">Previous, Current or Next calendar period (Day|Week | Month|Quarter|Year)</li>
+            <li value="3">Ending After the Start Date (x Days|Weeks|Months|Quarters|Years)</li>
+        </ul>
+        <p class="BodyIndent">End time will always be 11:59 PM on the specified date or the last day of the period.</p>
+        <script type="text/javascript" src="/resources/Scripts/app-solutions/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

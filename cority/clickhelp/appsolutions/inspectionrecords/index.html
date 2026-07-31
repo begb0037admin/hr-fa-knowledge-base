@@ -1,0 +1,352 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/appsolutions/inspectionrecords"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Inspection Records</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Inspection Records';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/appsolutions/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/appsolutions/jquery-1.12.42.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapGlobal2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapSlideshow2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapMerging2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapAliasFile2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapUtilities2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapBody2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapHighlighter2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffects2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffectsMenu2.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1__446697574" data-has-heading-anchor="true">Inspection Records <a href="/articles/appsolutions/inspectionrecords/a/h1__446697574" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/inspectionrecords/a/h1__446697574&#39;,this);"></a></h1>
+        <p class="BodyText">The completed Inspections, Forms, Equipment Inspected, and resulting Corrective Actions are represented in the Management System by task instances and related Process Workflows that the App automatically creates and associates to the appropriate objects to document the inspection and inspection results.</p>
+        <p class="BodyText">The Process Workflows are:</p>
+        <ul class="brackets">
+            <li value="1">Inspection (EIA-Inspection):&nbsp;This is the parent workflow that represents the inspection.</li>
+            <li value="2">Inspection Section (EIA-InspectionSection): Child workflows of the Inspection, one for the General section and one for each inspection point included in the inspection.</li>
+            <li value="3">Corrective Actions (EIA-CorrectiveAction):&nbsp;Child workflows of the Inspection Section for which each corrective action is created.</li>
+        </ul>
+        <p class="Warning" madcap:autonum="Warning: &nbsp;"><span class="autonumber"></span>The process workflows should not be edited.&nbsp;The InspectionApp needs these workflows in order to function.</p>
+        <h2 id="h2_410523228" data-has-heading-anchor="true"><a name="InspectionRecord"></a>Inspection<a href="/articles/appsolutions/inspectionrecords/a/h2_410523228" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/inspectionrecords/a/h2_410523228&#39;,this);"></a></h2>
+        <p class="BodyText">The Inspection itself is represented by the EIA-Inspection Workflow AND the specific task instance of the Inspection Task from which it was generated, the Source Task.  The inspection workflow captures all of the inspection points included in the inspection, the status, and the inspector.  This inspection workflow is also referenced on the Source Task, and triggers the update of its Source Task completion status.</p>
+        <p class="BodyText">The Task and the Workflow are tied together by a document associated with the task that represents the inspection type and whose name is then used to create the correct workflow according to the selected inspection type. The document has no other use in the app.</p>
+        <table cellspacing="0" cellpadding="0" style="border-width: 1px; border-color: #c0c0c0; border-collapse: collapse;">
+            <colgroup><col/>
+            <col/>
+            <col/>
+            </colgroup><thead>
+                <tr>
+                    <th class="subhead" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Object/Field</th>
+                    <th class="subhead" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Data Type</th>
+                    <th class="subhead" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">App Field/Behavior</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Task/Task Instance</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Task Record</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Source Task</p>
+                        <p>This is the individual task instance from which the app generates the necessary Inspection Workflow.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Task/Associated Document Name</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Text (50)</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">The app uses the associated document with the "EIA-" prefix to determine the Inspection Type (i.e. which Inspection Content to use) when generating the Inspection Records.</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow/Associated Object (Unit or POI)</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">System Object</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Applicable inspection point</p>
+                        <p>When the app creates the Inspection Workflow it sets the associated objects based on the user's selection of inspection point.   The list of possible options are all those Unit/POIs that have EIA-IncludeInInspectionApp = True and are applicable to at least one question of the selected inspection type.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow/Name</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Text (250)</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Inspection Name</p>
+                        <p>This is set by the app when the workflow is initiated to be equal the name of the Source Task.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow/Unique ID</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Unique ID (60)</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Populated by the App: Inspection.[YYYY].[MM].[DD].{numericID}.[FacilityName]</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow/Status</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Text (Not Started, In Progress, Complete, Closed)</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Inspection Status.</p>
+                        <p>Options:</p>
+                        <p>Not Started (if inspection workflow instance not yet created)</p>
+                        <p>In Progress (Inspection workflow instance created and != to Complete)</p>
+                        <p>Complete (Inspection workflow instance created and = to Complete. Note: Corrective Actions may still be open.)</p>
+                        <p>Closed (Inspection workflow instance created and Closed)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-InspectionDate</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Date</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Inspection Date</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-InspectionType</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Text (50)</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Inspection Type</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-HasFindings</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">True/False</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-HasScoring</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">True/False</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Task Instance/Percent Complete</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Number (0-100)</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Source Task Completion Status.</p>
+                        <p>App sets this field to 100% when the workflow status = Complete</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Task Instance/Comments</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Text (7900)</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Tie between Source Task and Inspection Record Workflow.</p>
+                        <p>Populated by the App once the inspection workflow is created:</p>
+                        <p>EIA_ID:[workflowuniqueID]</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 id="h2_165778028" data-has-heading-anchor="true"><a name="Findings"></a>Findings<a href="/articles/appsolutions/inspectionrecords/a/h2_165778028" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/inspectionrecords/a/h2_165778028&#39;,this);"></a></h2>
+        <p>Findings are created during an inspection based on a response to a questions.  One more responses on a question may cause a finding to be created (if defined) or findings may be created ad hoc.  Corrective Actions can be added to findings during the Follow-up to the inspection.</p>
+        <table style="margin-left: 0px; margin-right: auto; border-width: 1px; border-color: #000000; border-collapse: collapse;" cellspacing="0" cellpadding="0">
+            <colgroup><col style="width: 203px;"/>
+            <col style="width: 98px;"/>
+            <col/>
+            </colgroup><thead>
+                <tr>
+                    <td class="subhead" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #000000;">Object/Field</td>
+                    <td class="subhead" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #000000;">Data Type</td>
+                    <td class="subhead" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #000000;">App Field/Behavior</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #000000;">Workflow Unique ID</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #000000;">Standard Field – Unique ID</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>Default ID generating scheme = EIA.Finding.{NumericID}
+
+</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #000000;">Workflow/EIA-RelatedQuestionID </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #000000;">Standard Field – Unique ID</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #000000;">EIA.Q.{NumericID}</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #000000;">Workflow Step/EIA-RelatedQuestion
+</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #000000;">Custom Field  – Textbox/Large</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>Workflow Step/EIA-FindingDescription</p>
+                    </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #000000;">Custom Field  – Textbox/Large</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #000000;">Finding Description</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>Workflow Step/EIA-FindingPriority[N]</p>
+                        <p>N=High, Medium, Low</p>
+                    </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #000000;">Custom Field  – Text (50)</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #000000;">Drop-down option N
+</td>
+                </tr>
+                <tr madcap:conditions="">
+                    <td style="border-width: 1px; border-style: solid; border-color: #000000;">Workflow Step/EIA-RelatedFindingDefinitionID</td>
+                    <td style="border-width: 1px; border-style: solid; border-color: #000000;">Custom Field  – Textbox/Large</td>
+                    <td style="border-width: 1px; border-style: solid; border-color: #000000;">EIA.Finding.{NumericID}</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2" id="h2_742477626" data-has-heading-anchor="true"><a name="InspectionForm"></a>Inspection Form<a href="/articles/appsolutions/inspectionrecords/a/h2_742477626" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/inspectionrecords/a/h2_742477626&#39;,this);"></a></h2>
+        <p>The Inspection is broken into several sections, one for general questions and one for each inspection point. Each section of the inspection form is represented as a child workflow of the Inspection, of type EIA-InspectionSection.  This Inspection Section workflow is populated by the app with all of the question IDs, questions, answers, and comments (including any triggered sub-questions)&nbsp;provided during the inspection and is associated with the relevant inspection point.</p>
+        <table cellspacing="0" cellpadding="0" style="border-width: 1px; border-color: #c0c0c0; border-collapse: collapse;">
+            <colgroup><col/>
+            <col/>
+            <col/>
+            </colgroup><thead>
+                <tr>
+                    <th class="subhead" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Object/Field</th>
+                    <th class="subhead" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Data Type</th>
+                    <th class="subhead" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">App Field/Behavior</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow/Associated Object </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">System Object</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Related Inspection Points</p>
+                        <p>For the General Information Section the workflow is associated with all inspection points included in the inspection.</p>
+                        <p>For the Inspection Point section this workflow is only associated with the related inspection point.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow/Name</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Text (250)</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>The App names the section using the following scheme:</p>
+                        <p> "General" OR [inspection point name].[InspectionType].[YYYY].[MM].[DD]</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow/ ID</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Unique ID</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">The App creates an ID for the inspection using this format: Inspection.[YYYY].[MM].[DD].[Facility Name].[Inspection Type]</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-Q000[N]-ID
+N = 1  to 100
+</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Text (20)</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Question N&nbsp;Unique ID</p>
+                        <p>The app inserts the Workflow ID field from the EIA-QuestionDefinition workflows for each applicable question in the selected inspection type for the selected inspection point.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-Q000[N]-Text
+N = 1  to 100
+</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Text (7900)</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Question N&nbsp;text</p>
+                        <p>The app inserts the Question text for each question on the inspection form in this field (EIA-QuestionText field from the EIA-InspectionQuestionDefinition workflows for each applicable question in the selected inspection type for the selected equipment).</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-Q000[N]-Answer
+N = 1  to 100
+</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Text (50)</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Question N answer</p>
+                        <p>The app inserts the answer provided by the user for this question.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-Q000N-Comment
+N = 1  to 100
+</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Text (7900)</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">The app inserts any comments provided by the user for this question.</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">WorkflowStep/EIA-InspectionTypeID</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Text</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow ID for Related Inspection Type Definition Workflow</td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">WorkflowStep/EIA-InspectionType</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Text (50)</td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Inspection Type</p>
+                        <p>EIA-InspectionType from Related Inspection Type Definition Workflow</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="BodyText">&nbsp;</p>
+        <h2 id="h2_748700333" data-has-heading-anchor="true"><a name="CARecord"></a>Corrective Actions<a href="/articles/appsolutions/inspectionrecords/a/h2_748700333" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/inspectionrecords/a/h2_748700333&#39;,this);"></a></h2>
+        <p>Corrective Actions can be created as follow-up to an inspection.  These Corrective Actions are represented as EIA-CorrectiveAction Workflows which are child workflows of the EIA-InspectionSection workflow and appear on the Corrective Action Calendar based on the workflow's due date.</p>
+        <table cellspacing="0" cellpadding="0" style="border-width: 1px; border-color: #c0c0c0; border-collapse: collapse;">
+            <colgroup><col/>
+            <col/>
+            <col/>
+            </colgroup><thead>
+                <tr>
+                    <th class="" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Object/Field</th>
+                    <th class="" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Data Type</th>
+                    <th class="" style="font-weight: bold; border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">App Field/Behavior</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Parent Workflow/Name</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Text (250</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Related Inspection</td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow/Name</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Dropdown/Text</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Corrective Action Name</p>
+                        <p>If the inspection question has child workflows, this field is a dropdown list with the child EIA-CorrectiveActionDefintion workflow names.</p>
+                        <p>If the inspection question does not have child workflows, this field is a text box.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow/Due Date</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Date</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Corrective Action Due Date</p>
+                        <p>If the corrective action was chosen from a dropdown of possible options, this date is set to Inspection Date + EIA-CorrectiveActionDueDate</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow/Assignee</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">User/Group</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Corrective Action Assignee</td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow/Status</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Text</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Corrective Action Status</td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-RecommendedAction</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Text (7900)</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Recommended Action</p>
+                        <p>If the corrective action was chosen from a dropdown of possible options, this field is set to EIA-CorrectiveActionRecommendedAction</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/EIA-ActualActionTaken</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Text (7900)</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Actual&nbsp;Action Taken</td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Workflow Step/ EIA-RequireActualActionTaken</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">True/False</td>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p>Require Actual Action Taken? </p>
+                        <p>If True, then an "Action Taken" field value is required before closing corrective actions.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <script type="text/javascript" src="/resources/Scripts/app-solutions/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

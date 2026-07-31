@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/appsolutions/applinks"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Links to Apps</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Links to Apps';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/appsolutions/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/appsolutions/jquery-1.12.42.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapGlobal2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapSlideshow2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapMerging2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapAliasFile2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapUtilities2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapBody2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapHighlighter2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffects2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffectsMenu2.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1__873835841" data-has-heading-anchor="true">Links to Apps<a href="/articles/appsolutions/applinks/a/h1__873835841" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/applinks/a/h1__873835841&#39;,this);"></a></h1>
+        
+        <p class="Body">Links to Apps can be configured to use in System Notifications or External Links. System Notifications are emails sent to users from the system to notify them of workflow assignments or status.&nbsp;External links are links to the app from a company web page, a browser bookmark, or from another App. </p>
+        <p>The following file (download)&nbsp;will help you construct the correct link syntax for your use:&nbsp;<b style="font-size: 11pt;"><a href="/resources/Storage/appsolutions/Common/AppLinkMaker.xlsx" target="_blank">AppLinkMaker Tool</a></b></p>
+        <h2 id="h2_1791104686" data-has-heading-anchor="true">General Information About Links<a href="/articles/appsolutions/applinks/a/h2_1791104686" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/applinks/a/h2_1791104686&#39;,this);"></a></h2><p>For external links, you will need the SystemID. You can find the SystemID in App&nbsp;Manager <b>(Setup &gt; Cority EMS Apps</b>). Select the app. The System ID is the last part of the "Link" value shown in the General tab. Use the Copy button to copy the link text, then select just the part after "SystemID=" to copy into the link format above, replacing [SystemID].</p>
+        <p><img src="images/View%20Cority%20EMS%20App.JPG" alt="" style="width: 561px; height: 222.564px;" loading="lazy"/></p><p class="Important" madcap:autonum="Important: &nbsp;"><span class="autonumber"></span>Do not use the full "Link" given on the General tab as it&nbsp; will not be supported in the future and may break. </p>
+        <p>Use EQL queries to obtain any other IDs (GUIDs) that you may need for your links, such as object IDs for object associations or workflow IDs.</p>
+        <p>Details of link formats and syntax are described below, for information or debugging.&nbsp;The AppLinkMaker tool will build these formats automatically for you.</p>
+        <h2 id="h2__1179304681" data-has-heading-anchor="true">Link Syntax Details<a href="/articles/appsolutions/applinks/a/h2__1179304681" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/applinks/a/h2__1179304681&#39;,this);"></a></h2><p>For  System Notifications used in email notifications, the {url::basePath} macro is used. The initial link syntax used in system emails is:</p>
+        <p class="BodyIndent">{url::basePath}AppName/</p>
+        <p>The {url::basePath} macro includes the "https:" prefix and the system id. This is the format you will use in a Notification Template.</p>
+        <p>For a link from an external page or to use for a bookmark,  the explicit link format is required, as the macros will not work. The link format includes the system id and the app name ending with a slash, as follows: </p>
+        <p class="BodyIndent">https://go.enviance.com/goto/[SystemId]/<i>AppName</i>/</p>
+        <p>Replace [SystemId] with  the System GUID (as shown above). </p>
+        <p>AppName is the name of the app on the General tab in App Manager. To find the App Name, select <b>Setup&nbsp;&gt;&nbsp;Cority EMS Apps</b> from the main menu. Do not use the name of the app as it appears on the main menu, as this may be different than the actual app name.</p>
+        <h2 id="h2__1565563611" data-has-heading-anchor="true"><b>App Name restrictions</b><a href="/articles/appsolutions/applinks/a/h2__1565563611" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/applinks/a/h2__1565563611&#39;,this);"></a></h2><p>The AppName is case-sensitive. In the case of custom Advanced Workflows (WAB)&nbsp;apps, the name of the app must end in "App". Spaces are not allowed (or must be url-encoded with %20).</p>
+        <p class="Body">To link to a specific page in the app, append a query and use "hash" for #, so the starting URL will be:</p>
+        <p class="BodyIndent">{url::basePath}AppName/?hash=/</p>
+        <p class="BodyIndent">or:</p>
+        <p class="BodyIndent">https://go.enviance.com/goto/[SystemId]/<i>AppName</i>/?hash=/</p>
+        <script type="text/javascript" src="/resources/Scripts/app-solutions/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    
+        <h2 style="" id="h2_1452165100" data-has-heading-anchor="true">Sample link formats<a href="/articles/appsolutions/applinks/a/h2_1452165100" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/applinks/a/h2_1452165100&#39;,this);"></a></h2>
+        <p>Sample link formats for various Apps are shown below. For links to specific App pages and items, see the documentation for each App.</p>
+        <table style="margin-left: 0;margin-right: auto;">
+            <colgroup><col/>
+            <col/>
+            </colgroup><tbody>
+                <tr>
+                    <td class="td_HeadGray" style="font-weight: bold;">System Notification</td>
+                    <td class="td_HeadGray" style="font-weight: bold;">External Link</td>
+                </tr>
+                <tr>
+                    <td class="border" style="font-weight: normal;">{url::basePath}AuditApp/</td>
+                    <td class="border" style="font-weight: normal;">https://go.enviance.com/goto/1db78fad-388f-401d-8487-dec74fee265b/Audit%20App/</td>
+                </tr>
+                <tr>
+                    <td class="border" style="font-weight: normal;">{url::basePath}IncidentApp/</td>
+                    <td class="border" style="font-weight: normal;">https://go.enviance.com/goto/1db78fad-388f-401d-8487-dec74fee265b/IncidentApp/</td>
+                </tr>
+                <tr>
+                    <td class="border" style="font-weight: normal;">{url::basePath}InspectionApp/</td>
+                    <td class="border" style="font-weight: normal;">https://go.enviance.com/goto/1db78fad-388f-401d-8487-dec74fee265b/Inspection%20App/</td>
+                </tr>
+                <tr>
+                    <td class="border" style="font-weight: normal;">{url::basePath}MoCApp/</td>
+                    <td class="border" style="font-weight: normal;">https://go.enviance.com/goto/a172b98d-b491-4ad0-9019-409c82f32a0c/ManagementOfChangeApp/</td>
+                </tr>
+                <tr>
+                    <td class="border" style="font-weight: normal;">{url::basePath}WABApp/</td>
+                    <td class="border" style="font-weight: normal;">https://go.enviance.com/goto/1db78fad-388f-401d-8487-dec74fee265b/WABApp/</td>
+                </tr>
+                <tr>
+                    <td class="border" style="font-weight: normal;">{url::basePath}Portal/</td>
+                    <td class="border" style="font-weight: normal;">https://go.enviance.com/goto/1db78fad-388f-401d-8487-dec74fee265b/Portal/</td>
+                </tr>
+                <tr>
+                    <td class="border" style="font-weight: normal;">{url::basePath}TaskApp/</td>
+                    <td class="border" style="font-weight: normal;">https://go.enviance.com/goto/1db78fad-388f-401d-8487-dec74fee265b/Task%20Completion%20App/</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Note" madcap:autonum="Note: &nbsp;"><span class="autonumber"></span>For new custom Apps, the "go to" linking ability must be initially configured in the database by Cority Support. </p>
+        <p>
+            </p><h2 id="h2__2135581316"><a name="NewItem"></a></h2>        <h2 id="h2__2135581316" data-has-heading-anchor="true"><a name="NewItem"></a>Link to 'Add New Item' Form for Apps<a href="/articles/appsolutions/applinks/a/h2__2135581316" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/applinks/a/h2__2135581316&#39;,this);"></a></h2>
+        <p>Links may be created to the Add New Item page for an App, similar to the buttons that can be added to a Portal page for this function.</p>
+        <p>The format for these links builds on the standard app link format, with the addition of "?hash=/new". Thus:</p>
+        <p> https://go.enviance.com/goto/SystemID/AppName/?hash=/new</p>
+        <p>Optionally, for WAB Apps, you can add parameters to associate the new item with compliance objects. The object selector must be present on the form to create a new item. The object parameters that can be used are:</p>
+        <p class="BodyIndent">'d' for Division</p>
+        <p class="BodyIndent">'f' for Facility</p>
+        <p class="BodyIndent">'u' for Unit</p>
+        <p class="BodyIndent">'p' for POI</p>
+        <p class="BodyIndent">'r' for Requirements</p>
+        <p>The values must be object GUIDs. Separate multiple objects of the same type with a semicolon. Separate parameters with an ampersand (&amp;). Example:</p>
+        <p class="BodyIndent">f=GUID&amp;p=GUID&amp;r=GUID1;GUID2)</p>
+        <p class="bold">Example:</p>
+        <div class="tri_example">
+            <p>https://go.enviance.com/goto/1db78fad-388f-401d-8487-dec74fee265b/IncidentApp/?hash=/new?d=80183144-75f2-4a8a-965f-5c92cb01f08f&amp;f=6e63abd6-dc29-4d42-be6b-99e41dad7d9d;9e3c3c31-102a-416c-8775-d7c307613923&amp;u=3680fd75-b447-4d05-a71c-c6012890bc56</p>
+        </div>
+        <p>If the Object Selector is not present on the first step of the workflow, any OS parameters in the URL will be ignored.</p>
+        <p>If the Object Selector is present on the first step of the workflow, but the OS parameter values passed into the URL do not exist in the scope of the OS, the App will display an error message in red on the form below the field "One or more values could not be found Please check this field and specify values as appropriate before proceeding."</p>
+        <p>The values specified in the URL will populate the OS in Advanced Workflows (WAB)&nbsp;even if that field is set to Read Only in Designer (but will still require the user to have appropriate System permissions).</p>
+        <script type="text/javascript" src="/resources/Scripts/app-solutions/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    
+        <script type="text/javascript" src="/resources/Scripts/app-solutions/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

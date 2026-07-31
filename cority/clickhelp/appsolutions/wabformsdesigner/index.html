@@ -1,0 +1,185 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/appsolutions/wabformsdesigner"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Form Designer</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Form Designer';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/appsolutions/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/appsolutions/jquery-1.12.42.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapGlobal2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapSlideshow2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapMerging2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapAliasFile2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapUtilities2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapBody2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapHighlighter2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffects2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffectsMenu2.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>        <h1 id="h1_891684236" data-has-heading-anchor="true">Form Designer<a href="/articles/appsolutions/wabformsdesigner/a/h1_891684236" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/wabformsdesigner/a/h1_891684236&#39;,this);"></a></h1>
+        <p class="BodyText">The Form Designer is available for all Advanced Workflows (WAB), including IncidentApp, and all Advanced Workflows (WAB)-based custom apps. The Form Designer allows you to edit the design of the forms used on each of the workflow steps, including:</p>
+        <ul class="brackets">
+            <li value="1">Fields to display on the form for each step</li>
+            <li value="2">Action buttons available at each workflow step</li>
+            <li value="3">Conditions applied to fields and buttons which may change their state based on form inputs</li>
+        </ul>
+        <p class="BodyText">The same underlying Form Template may be used at different steps in the workflow, with a different form design. In this way you can include or exclude fields, add initiators, edit action buttons, and modify conditions for each step, even if they share the same template.</p>
+        <p class="Note" madcap:autonum="Note: &nbsp;"><span class="autonumber"></span>&nbsp;To access the Form Designer you must have Manage Workflow rights for all workflow types and be a member of the App Role&nbsp;FormsDesigner. Membership in this role is set in Apps Manager (<b>Setup &gt; Apps</b>). Select the  Role Memberships tab for the App.</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To use Form Designer:</p>
+        <ol>
+            <li value="1">
+                <p>Select <b>Designer</b> from the main menu button.</p>
+                <img src="images/Designer01042020.png" alt="" style="width: 300px; height: 342px;" loading="lazy"/></li>
+            <li value="2">
+                <p>Select the <b>Form Type</b>. <br/>The form types shown in the drop-down list correspond to the underlying Workflow Types.</p>
+                <p><b>Status Settings</b>:&nbsp;Optional. Configure custom color-coding for workflow tabs and status indicators. Status setting can be set individually for each workflow type. See <a href="/articles/appsolutions/statusindicator" onclick="return n(&#39;!appsolutions/statusindicator&#39;,this);">Status Indicator Settings</a>. Click <b>Save </b>to save settings. It is not necessary to load a form to apply the status settings.</p>
+            </li>
+            <li value="3">
+                <p>Select the <b>Workflow Step</b> to open a form for editing. </p>
+                <p>The Form for the step will be loaded in edit mode.  </p>
+            </li>
+        </ol>
+        <h2 id="h2_212619956" data-has-heading-anchor="true">Header Fields<a href="/articles/appsolutions/wabformsdesigner/a/h2_212619956" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/wabformsdesigner/a/h2_212619956&#39;,this);"></a></h2>
+        <p>The Header fields names in the right pane are the read-only informational fields that are displayed in the form header in the App.</p>
+        <p><img src="images/FormDesignerList.png" alt="" style="width: 800px; height: 469px;" loading="lazy"/></p>
+        <p>Below see the header fields as they appear to the end user. Click the Info button&nbsp;<img src="images/InfoButton.png" class="borderless" loading="lazy"/>&nbsp; to hide/show header fields.</p>
+        <img src="images/FormHeader.png" alt="" style="width: 1100px; height: 107px;" loading="lazy"/>
+        <p><br/></p>
+        
+        <p>You can customize the header with fields of your choosing and specify default values for them, using macros to take values from other fields.</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To define header fields:</p>
+        <ol>
+            <li value="1">
+                <p>Drag a field you want to use onto the Header fields pane and drop it onto one of the four header field boxes.</p>
+            </li>
+            <li value="2">Select the plus (+) to show the field properties.</li>
+            <li value="3">
+                <p>In the Default Value field, type "{"  to see the list of fields available to be used as macros. Select a macro for a field you want to use. <br/>You can concatenate macros to define the default value. </p>
+                <p>For example, the default value for the Incident Name field can be concatenation of the Facility selected from the object selector, the Incident Type and the Incident Date:</p>
+                <p> {Field::Object Selector}.{Field::EII-IncidentType}.{Field::EII-IncidentDate}</p>
+                <p><img src="images/FieldDefaultMacros.png" alt="" style="width: 650px; height: 614px;" loading="lazy"/></p>
+            </li>
+        </ol>
+        <h2 id="h2__575559871" data-has-heading-anchor="true">Fields<a href="/articles/appsolutions/wabformsdesigner/a/h2__575559871" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/wabformsdesigner/a/h2__575559871&#39;,this);"></a></h2>
+        <p>When the form is first opened in Designer it will include all the fields on the Form Template associated with the step. You can remove fields you want to hide, and add other types of fields and form components. By default,  the first section is called "Form Fields".</p>
+        <img src="images/FieldDefaultMacros.png" alt="" style="width: 600px; height: 567px;" loading="lazy"/>
+        <p><br/></p>
+        
+        <p>The Fields that can be added to the form are shown in the left pane. Click the arrow on each category to view the fields. </p>
+        <ul>
+            <li value="1"><b>Object Selector</b>:&nbsp;The "Add and View Associated Objects" field allows users to associate a system model object with an item, or view associated objects as read-only. Select the field once it is on the form and then enable the appropriate object types.</li>
+            <li value="2"><b>Workflow</b> includes the standard fields for  workflows plus the form fields associated with the step. All fields on the form template are initially added to the form by default. Click the (x) to remove any fields you do not want to be on the form. </li>
+            <li value="3">
+                <p>Object Fields (<b>Division</b>, <b>Facility</b>, <b>Unit</b>, <b>POI</b>, <b>Requirement</b>):&nbsp;Standard and custom fields for the objects associated with a workflow may be included on the form. The fields for each object type include all standard fields and any custom fields applied to that object type in the system. Fields are in read-only mode on the form. After being added to the form, the fields may then be used in Conditions. </p>
+            </li>
+            <li value="4"><b>Documents</b>: The "Add and View Documents" field will place a Document upload button on the form, allowing users to upload documents. Uploaded documents are limited to 200 MB. Users must also have Edit permission on the document folder for the app. The location of the documents is defined in the App configuration file.</li>
+        </ul>
+        <p>Search for components by name using the Search text box at top. The components are automatically filtered as you type.</p>
+        <p>To add an item to the form. drag and drop it onto the form where you want it, or click the plus sign to add it to the bottom of the form. See <madcap:xref href="#AddField(s)"><a href="/articles/appsolutions/wabformsdesigner/a/AddField" onclick="return n(&#39;!appsolutions/wabformsdesigner/a/AddField&#39;,this);">Add Field(s)</a>&nbsp;for more information.</madcap:xref></p>
+        <h3 id="h3_1689518834" data-has-heading-anchor="true">Add Section<a href="/articles/appsolutions/wabformsdesigner/a/h3_1689518834" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/wabformsdesigner/a/h3_1689518834&#39;,this);"></a></h3><p class="StepIntro" style="font-weight: normal;" madcap:autonum="">Multiple sections can be created in a single form in Form Designer.&nbsp;Click <b>Add Section</b> to add a new section to the form. You can edit the section name by clicking the pencil icon. The section name can be up to 50 characters. You can change the order of the sections by moving them  up and down in the Field Section.</p>
+        <p class="BodyIndent"><img src="images/AddSection.png" alt="" style="width: 600px; height: 158px;" loading="lazy"/></p>
+        <h3 id="h3__935675737" data-has-heading-anchor="true">Add Field(s):<span id="AddField"></span><a href="/articles/appsolutions/wabformsdesigner/a/h3__935675737" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/wabformsdesigner/a/h3__935675737&#39;,this);"></a></h3><p>Below see the Section Selector with section names as they appear to the end user.</p>
+        <p><img src="images/FormSections.png" alt="" style="width: 1000px; height: 271px;" loading="lazy"/></p>
+        <p class="Note" madcap:autonum="Note: &nbsp;">To see a section in the Section Selector, the section must contain fields. </p>
+        <p>This feature allows users to access a list of sections and quickly navigate to the desired section. Click on the drop-down arrow to see all sections or select the desired section. You can also use side arrows to  select the desired section.</p>
+        <p class="StepIntro" madcap:autonum=""><a name="AddField(s)"></a></p>
+        <p>You can add fields to a section by clicking <b>Add Fields</b> in the desired section. </p>
+        <p><b>To move fields from one section to another:</b></p>
+        <ol>
+            <li value="1">Click <b>Add Fields</b>. The Add Field(s) window opens.</li>
+            <li value="2">Click the drop-down arrow in the left pane and select the desired section from the drop-down list of available sections. </li>
+            <li value="3">Click the drop-down arrow in the right pane and select the desired section  from the drop-down list of available sections. </li>
+        </ol>
+        <p class="BodyIndent"><img src="images/AddFields1.png" alt="" style="width: 500px; height: 211px;" loading="lazy"/></p>
+        <ol madcap:continue="true">
+            <li value="4">In a pane, select a field that you want to move, or click <b>Select All</b> to move all fields in the pane.</li>
+            <li value="5"> Use the right/left arrows to move the selected fields.</li>
+            <li value="6">
+                <p>Click <b>Apply</b> to apply changes without making them permanent. You can revert to the previously unsaved settings by clicking <b>Reset.</b></p>
+            </li>
+            </ol>
+        <p class="BodyIndent"><img src="images/AddFields.png" alt="" style="width: 518px; height: 491px;" loading="lazy"/></p>
+        <ol madcap:continue="true"><li value="7">Click&nbsp;<b>Save&nbsp;</b>when you are done.</li>
+        </ol>
+        <p class="BodyText">Select the plus (+) on the field button to view properties for the field.</p>
+        <p class="BodyText"><img src="images/apps-2022-01-09.png" alt="" style="width: 775px; height: 333px;" loading="lazy"/><br/></p>
+        <p class="BodyText">Field properties include:</p>
+        <ul><li class="BodyIndent"><b>Label</b>: The "caption" of the custom field is the default label value. You may edit the label by clicking the pencil icon. </li>
+        <li class="BodyIndent"><b>Label size</b>:&nbsp;Small, Medium, Large</li>
+        <li class="BodyIndent"><b>Label color</b>: Select from list of colors.</li>
+        <li class="BodyIndent"><b>Help Text</b>: Alt text that will appear on hovering over the field or selecting the help button. Use this to provide inline instructions or information for users.</li>
+        </ul><p class="BodyIndent" style="margin-left: 40px;"><img src="images/HelpText.png" alt="" style="width: 800px; height: 133px;" loading="lazy"/></p>
+        <ul><li class="BodyIndent"><b>Default Value</b>: Default value displayed on loading.&nbsp;May be edited. Some macros are available to use in this field. Type "{" to see a list of fields on the form that may be used. Macros include {Today} for date fields, {Now} for time fields,  and {Username}, as well as the values of other fields on the form. Values may be concatenated, subject to length restrictions. </li>
+        <li class="BodyIndent"><b>Process default value when field is hidden</b>: Allows default field value to be inserted in field even if field is hidden on the form. For more on hidden fields, see <a href="/articles/appsolutions/formconditions/a/UsingHiddenFields" class="MCXref_0" xrefformat="{paratext}" onclick="return n(&#39;!appsolutions/formconditions/a/UsingHiddenFields&#39;,this);">Using Hidden Fields</a>.</li>
+        <li class="BodyIndent"><b>Maximum Text Length</b>: Maximum number of characters that can be entered. (May be less but not more than the allowable field type.)</li>
+        <li class="BodyIndent"><b>Text pattern</b>:&nbsp;You can use this field to impose a format validation. Some examples include:<ul><li class="BodyIndent2">Phone no (format 123-456-7890): ^[0-9]{3}-[0-9]{3}-[0-9]{4}$<ul><li class="BodyIndent3">Help text:&nbsp;"Please enter in 123-456-7890 format"</li>
+        </ul></li>
+        <li class="BodyIndent2">Phone&nbsp;No format (123) 456-7890:&nbsp;^\([0-9]{3}\)\s[0-9]{3}-[0-9]{4}$<ul><li class="BodyIndent3">Help text:&nbsp;"Please enter in (123) 456-7890 format"</li>
+        </ul></li>
+        </ul></li>
+        <li class="BodyIndent"><b>Read Only</b>:&nbsp;Fields  marked read-only will not be editable for users. (Note:&nbsp;This will override field permissions granted through the workflow type.)</li>
+        <li class="BodyIndent"><b>Required when saving</b>: When selected for fields in designer mode, the fields must be completed on the form to save the form.</li>
+        <li class="BodyIndent"><b>Required when transitioning</b>: When selected for fields in designer mode, the fields must be completed on the form to select an action that moves the workflow to the next step.</li>
+        <li class="BodyIndent"><b>Required to close: </b>When selected for fields in designer mode, the fields must be completed on the form before closing the workflow.</li>
+        </ul><p class="BodyIndent Note">Closing a workflow is a status change and not a Workflow step transition. If "required when transitioning" is selected a user can still close a workflow without completing that field, unless "required to close" is selected.&nbsp;</p>
+        <ul><li class="BodyIndent"><b>Reprocess on Source Field Value Change:</b> When selected for fields in designer mode, Required for each field where default values can be updated in the WAB and need to be reprocessed (computed, recomputed, and written to the workflow). Conditions can be applied to this function see Defining Conditions for Forms.</li>
+        </ul><p class="BodyIndent Note">Field values not retrieved from the server (offline, connective, etc), will not be reprocessed.&nbsp;</p>
+        <p class="BodyIndent Note">The checkbox in front of the Reprocess on Source Field Value Change will be greyed out until Read Only is selected. .<br/></p>
+        <p class="BodyIndent" style="margin-left: 40px;"><span style="font-size: 10pt;"><img src="images/wabformsdesigner-2023-04-03-3.png" alt="" loading="lazy"/><br/></span>Once<b> Read Only</b> is selected the checkbox in front of Reprocess on Source Field Value Change can be checked.</p>
+        <p class="BodyIndent" style="margin-left: 40px;"><span style="font-size: 10pt; font-weight: bold;"><img src="images/wabformsdesigner-2023-04-03-4.png" alt="" loading="lazy"/></span></p>
+        <p class="BodyIndent Note">If the Default field value is empty, there will be an error message "The Default Value is empty. There is nothing to process for this field." Ensure a value is inputted in the Default value field.<br/></p>
+        <p class="BodyIndent" style="margin-left: 40px;"><span style="font-size: 10pt;"><img src="images/wabformsdesigner-2023-04-03-2.png" alt="Graphical user interface, text, application, chat or text messageDescription automatically generated" style="width: 614px; height: 178px;" loading="lazy"/><br/></span></p>
+        <ul><li class="BodyIndent"><b>Associated Object Type</b>:&nbsp;When you add an object field to the form, you can choose the object type from which the value will be pulled. This is useful when there is more than one object type, such as the Facility and the employee POI used in the Incident App.</li>
+        </ul><p class="BodyIndent" style="margin-left: 40px;"><img src="images/ObjectFldAssObjType.png" alt="" style="" loading="lazy"/></p>
+        <ul><li class="BodyIndent"><b>Enabling the GPS collection</b>: To enable GPS collection, place two numeric fields on the Form Template then use the macros {GPS::Latitude} and {GPS::Longitude} in the Default Value field of the Form Designer.</li>
+        </ul><p class="BodyIndent" style="margin-left: 40px;"><img src="images/GPS.png" loading="lazy"/></p>
+        <h2 id="h2_1406331569" data-has-heading-anchor="true">Actions<a href="/articles/appsolutions/wabformsdesigner/a/h2_1406331569" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/wabformsdesigner/a/h2_1406331569&#39;,this);"></a></h2>
+        <p class="BodyText">Actions that can be added to the form are shown in the Actions section. Click the arrow to expand the Action section to display possible actions. </p>
+        <p class="BodyText">If you do not want a particular action to be an option on the form, you can remove it by clicking the (x) on the button. </p>
+        <p class="BodyText"><img src="images/FormActions.png" alt="" style="width: 850px; height: 383px;" loading="lazy"/></p>
+        <p>You can edit the text on the button and choose the method to be used to assign the action from the Action properties. Select the Action to view and edit the properties from a sliding window.</p>
+        <p><img src="images/ActionProperties.png" alt="" style="width: 1250px; height: 469px;" loading="lazy"/></p>
+        <h1 id="h1__44326936" data-has-heading-anchor="true">Assignment Method<a href="/articles/appsolutions/wabformsdesigner/a/h1__44326936" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/wabformsdesigner/a/h1__44326936&#39;,this);"></a></h1><p>This method determines whether the user executing the action will be prompted to assign the destination step or if it will be automatically assigned.</p>
+        <p class="BodyIndent"><b>Calculated</b>:&nbsp;Prompts the user only if the user is not a role member of the destination step's role.</p>
+        <p class="BodyIndent">
+            
+        </p>
+        <p class="BodyIndent"><b>Automatic</b>: Automatically assigns the user to the next action step. Select the destination user from one of the options:</p>
+        <ul style="margin-left: 40px;">
+            <li value="1"><b>Executing User</b>: A destination step is assigned to the current user.</li>
+            <li value="2"><b>User That Completed Step</b>: Select the step from the drop-down list. The step is assigned to a destination user associated with this step. If the selected step hasn't yet been completed, the user is prompted to select an assignee from the destination step's Role Members.</li>
+            <li value="3"><b>All Role Members</b>: A destination step is assigned to all resolved Role Members for this step.</li>
+            <li value="4"><b>Specified Role</b>: Select a Role from the drop-down list. A destination step is assigned to any role associated with the workflow type, even if the role is not associated with the destination step.</li>
+        </ul>
+        <p class="BodyIndent">
+            
+        </p>
+        <p class="BodyIndent"><b>Manual</b>:&nbsp;Manually assigns the user to the next action step according to the user's role:</p>
+        <ul style="margin-left: 40px;">
+            <li value="1"><b>All Role Members:</b> The destination step can be assigned to  all resolved Role Members.</li>
+            <li value="2"><b>Specified Role</b>:  Select a Role from the drop-down list.  A destination step is assigned to any role associated with the workflow type, even if the role is not associated with the destination step.</li>
+        </ul>
+        <p class="BodyIndent">
+            
+        </p>
+        <p class="BodyIndent">For the <b>Calculated </b>and <b>Manual </b>assignment methods, additional settings are available:</p>
+        <ul style="margin-left: 40px;">
+            <li value="1"><b>Must Select Users Only</b>: Only individual users can be selected, including from the expanded User Group.</li>
+            <li value="2"><b>Must Select One Entity Only</b>: Only one User or one User Group can be selected.</li>
+            <li value="3"><b>Users may select any User in the system</b>: Any user in the system can be selected, including those that are not in the workflow process.</li>
+            <li value="4"><b>Users may select any User Group in the system</b>:  Any Group in the system can be selected, including those that are not in the workflow process.</li>
+        </ul>
+        <p class="BodyText">You can also create Conditions to control visibility of Action buttons. See <a href="/articles/appsolutions/formactions" onclick="return n(&#39;!appsolutions/formactions&#39;,this);">Defining Actions</a>.</p>
+        <h2 id="h2__921250684" data-has-heading-anchor="true">Conditions<a href="/articles/appsolutions/wabformsdesigner/a/h2__921250684" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/wabformsdesigner/a/h2__921250684&#39;,this);"></a></h2>
+        <p class="BodyText">Conditions allow you to define conditional behavior for the form, based on selected field values. See <a href="/articles/appsolutions/formconditions" onclick="return n(&#39;!appsolutions/formconditions&#39;,this);">Defining Conditions for Forms</a>.</p>
+        <p class="Warning" madcap:autonum="Warning: &nbsp;"><span class="autonumber"></span>Editing the step names in the Workflow Type or changing the workflow name may cause you to lose previously designed forms in Form Designer.</p>
+        <p> </p>
+        <script type="text/javascript" src="/resources/Scripts/app-solutions/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

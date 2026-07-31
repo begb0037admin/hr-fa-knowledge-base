@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/appsolutions/deeplinkforms"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Email Notification Links to Portal Forms</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Email Notification Links to Portal Forms';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/appsolutions/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/appsolutions/jquery-1.12.42.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapGlobal2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapSlideshow2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapMerging2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapAliasFile2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapUtilities2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapBody2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapHighlighter2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffects2.js" type="text/javascript"></script><script src="/resources/Scripts/appsolutions/MadCapEffectsMenu2.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1_1925063830" data-has-heading-anchor="true">Email Notification Links to Portal Forms<a href="/articles/appsolutions/deeplinkforms/a/h1_1925063830" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/deeplinkforms/a/h1_1925063830&#39;,this);"></a></h1>
+        <p class="Body">Links to the Cority EMS, Apps can be configured in Notification Templates and used in email notifications to let users go directly to forms to complete assignments for&nbsp;tasks, events, and workflows. When tasks are associated with workflows or events (or both), all associated fields are presented on the form.</p>
+        <p class="Body">The valid formats for a email notification link with the notification macros are:</p>
+        <ul><li class="BodyIndent">{url::basePath}Portal/index.html?route=form&amp;path=/<i>PageSet</i>/<i>Page</i>/<i>Panel</i>/&amp;uniqueid={flow::unique id}</li>
+        <li class="BodyIndent">{url::basePath}Portal/index.html?route=form&amp;path=/<i>PageSet</i>/<i>Page</i>/<i>Panel</i>/&amp;taskID={task::id}&amp;taskDueDate={task::due date param}</li><li class="BodyIndent">{url::basePath}Portal/?ForceDefaultLogin=true/index.html?route=form&amp;path=/<i>PageSet/Pages/Panel</i><font color="#4d4d4d"><i>/&amp;uniqueID</i>={flow::unique id}</font></li>
+        </ul><p>The following file (download)&nbsp;will help you construct the correct link syntax for your use:</p>
+        <p><a href="/resources/Storage/appsolutions/Common/AppLinkMaker.xlsx" target="_blank">AppLinkMaker Tool</a></p><p>Details of the link format and syntax are described below, for information or debugging.&nbsp;The AppLinkMaker tool will build these formats automatically for you.</p>
+        <h2 id="h2__1179304681" data-has-heading-anchor="true">Link Syntax Details<a href="/articles/appsolutions/deeplinkforms/a/h2__1179304681" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!appsolutions/deeplinkforms/a/h2__1179304681&#39;,this);"></a></h2><p class="Body">The first part is the {url::basepath} macro followed by "Portal/index.html" </p>
+        <p class="Note">"Portal" is case-sensitive. </p><p class="BodyIndent">{url::basePath}Portal/index.html</p>
+        <p class="Body">The variables to navigate directly to a form are:</p>
+        <p class="BodyIndent">route = Values are "form" or "platform"</p>
+        <p class="BodyIndent2">platform: goes to the Management System. </p>
+        <p class="BodyIndent2"> form: goes to the form in the Portal, using either the workflow unique Id or the task Id and due date:</p>
+        <p class="BodyIndent3">uniqueiD</p>
+        <p class="BodyIndent3">taskId</p>
+        <p class="BodyIndent3">taskDueDate</p>
+        <p class="BodyIndent">path = <i>PageSet</i>/<i>Page</i>/<i>Panel</i> (insert name of Pageset, Page and Panel). Names are case-sensitive and must be url-encoded for spaces and special characters. (i.e., My%20Pageset%20Name).</p>
+        <p class="BodyIndent">uniqueId= unique ID of workflow. In a notification template use the macro substitution {flow::unique id}</p>
+        <p class="Note" madcap:autonum="Note: &nbsp;"><span class="autonumber"></span>The generic "form" variable, which works the same for Workflow, Event and Task panels, replaces the former "formByTask" variable. The "formByTask" variable remains valid but "form" is now preferred.</p>
+        <p class="Note" madcap:autonum="Note: &nbsp;"><span class="autonumber"></span>No https:// prefix is required, as the URL basepath macro link resolves to:
+ https://go.enviance.com/goto/{SystemID}/</p>
+        <p class="Body" style="font-weight: bold;">Example 1: Go to Portal form using workflow unique Id</p>
+        <div class="tri_example">
+            <p class="C1Code">To complete the  form, click the link below:</p>
+            <p>{url::basePath}Portal/index.html?route=form&amp;path=/<i>PageSet</i>/<i>Page</i>/<i>Panel</i>/&amp;uniqueid={flow::unique id}</p>
+            <p><b>Note:</b>&nbsp;The Panel name in the string above may be a Workflow Panel, an&nbsp;Event Panel (where event has associated workflow), or a Task Panel (where task has associated workflow). The syntax will be the same.</p>
+        </div>
+        <p class="Body" style="font-weight: bold;">Example 2: Go to Portal form using task Id</p>
+        <div class="tri_example">
+            <p class="C1Code">To complete the form, click the link below:</p>
+            <p>{url::basePath}Portal/index.html?route=form&amp;path=/<i>PageSet</i>/<i>Page</i>/<i>Panel</i>/&amp;taskID={task::id}&amp;taskDueDate={task::due date param}</p>
+            <p class="Note">The Panel name in the string above may be a Workflow Panel (where workflow has associated task), an&nbsp;Event Panel (where event has associated task), or a Task Panel (where task may have event, workflow, both, or no associations). The syntax will be the same.</p>
+        </div>
+        <p class="Body">To show text for the link in place of the url string: In the notification editor, click the <b>Source</b> button to open the html editing window. Edit the text to add the link with the correct html syntax like this:</p>
+        <p class="bold">Example 3: Link encoded for html</p>
+        <div class="tri_example">
+            <p>&lt;p&gt;&lt;a href="{url::basePath}Portal/index.html?route=form&amp;path=/<i>PageSet</i>/<i>Page</i>/<i>Panel</i>/&amp;uniqueid={flow::unique id}"&gt;To complete the Change Request form click here.&lt;/a&gt;&lt;/p&gt;  </p>
+        </div>
+        <p class="N4Important">Be sure to remove any extraneous html in the link code that may have been added by the editor. Be careful that no html tags or extra spaces are inside the URL.</p>
+        <p class="Note" madcap:autonum="Note: &nbsp;"><span class="autonumber"></span>When using the {url::basePath} macro, do not include "http://" in the link, as it is already specified in the macro. </p>
+        <p class="N4Important">All links must be URL encoded (i.e., use %20 for spaces and encode special characters). See: <a href="http://www.w3schools.com/tags/ref_urlencode.asp" target="_blank">http://www.w3schools.com/tags/ref_urlencode.asp</a></p>
+        <p class="Tip" madcap:autonum="Tip: &nbsp;"><span class="autonumber"></span>Sample email text formats with pre-configured links are also available for download. See <a href="/articles/appsolutions/sampleemailallapps" class="MCXref_0" xrefformat="{paratext}" onclick="return n(&#39;!appsolutions/sampleemailallapps&#39;,this);">Sample Email Notifications</a>.</p>
+        <p>The URL basepath macro and other macros are for use in Notification Templates only for system-generated emails. To create a link to the app from an external web page or to share as a saved link in a browser, see <a href="/articles/appsolutions/applinks" class="MCXref_0" xrefformat="{paratext}" onclick="return n(&#39;!appsolutions/applinks&#39;,this);">Links to Enviance Apps</a>.</p>
+        <script type="text/javascript" src="/resources/Scripts/app-solutions/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>
