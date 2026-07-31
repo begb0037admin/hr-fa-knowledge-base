@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/gx2-and-mycority-2026-1-0-new-features-release-notes/ccc-19328-and-25809-for-clinical-test-results-the-valid"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-19328 and 25809: For Clinical Test Results, the ‘Valid Range’ functionality has been enhanced</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-19328 and 25809: For Clinical Test Results, the ‘Valid Range’ functionality has been enhanced';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/gx2-and-mycority-2026-1-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2_723843094" data-has-heading-anchor="true">
+			<a id="_Toc221882673"></a><span style="color: #2E75B5; background-color: #FFFFFF;">CCC-19328 and 25809: For Clinical Test Results, the &lsquo;Valid Range&rsquo; functionality has been enhanced</span><a href="/articles/gx2-and-mycority-2026-1-0-new-features-release-notes/ccc-19328-and-25809-for-clinical-test-results-the-valid/a/h2_723843094" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!gx2-and-mycority-2026-1-0-new-features-release-notes/ccc-19328-and-25809-for-clinical-test-results-the-valid/a/h2_723843094&#39;,this);"></a></h2>
+		<p style="font-weight: bold;">N/A</p><p><span style="background-color: #FFFFFF;">Previously, when a logged in user had a System of Units that aligned with a different Unit of Measure (UOM), the &lsquo;Valid Range&rsquo; was not being converted. <br/></span><span style="background-color: #FFFFFF; font-weight: bold;">Note:</span><span style="background-color: #FFFFFF;"> It converted the actual results, which were stored in the &lsquo;Converted Result&rsquo; and &lsquo;Converted Unit of Measure&rsquo; fields prior to the new updates.</span></p><p style="background-color: #FFFFFF;">The following enhancements have been made:</p><ol start="1">
+			<li><span style="background-color: #FFFFFF; font-weight: normal; font-style: normal;">The logic of the existing &lsquo;Current Range&rsquo; field in Clinical Test Results has been modified. &lsquo;Current Range&rsquo; will &nbsp;now reflect the appropriate values for the UOM that is associated with the result.</span><ol start="1">
+				<li>Previously, &lsquo;Current Range&rsquo; always reflected the &lsquo;Valid Range&rsquo; in the Unit of Measure selected in the &lsquo;Clinical Test Unit&rsquo; look-up table.</li><li>Now a conversion gets applied to the &lsquo;Current Range&rsquo; if the result UOM is different and if there is a conversion from the UOM in the look-up table record and the result UOM.</li><li>If there is not a conversion, then the &lsquo;Current Range&rsquo; will still reflect the &lsquo;Valid Range&rsquo; for the UOM in the look-up table. See #1 above.</li><li>For clarity, the UOM is now added to the &lsquo;Valid Range&rsquo; field.</li><li>Regardless, &nbsp;the employee&#39;s gender and age will still be applied to select the appropriate &lsquo;Current Range&rsquo;.</li></ol>
+			</li><li><span style="background-color: #FFFFFF; font-weight: normal; font-style: normal;">A new &lsquo;Converted Current Range&rsquo; field can be added to custom versions of the ML-00309 layout. This will convert the &lsquo;Valid Range&rsquo; (from #1 above) to a user&#39;s System of Unit (U.S. or U.K., for example) and the UOM for that System of Unit.<br/></span><span style="background-color: #FFFFFF; font-weight: bold; font-style: normal;">Note:</span><span style="background-color: #FFFFFF; font-weight: normal; font-style: normal;"> This applies, for example, when the &lsquo;Clinical Test Units Module&rsquo; system setting is set to User (not Global) and the logged in user has a different System of Unit than the user who entered the results.</span><ol start="1">
+				<li>For clarity, the new &lsquo;Converted Current Range &lsquo; field shows the UOM.</li><li>If the user viewing the record has a different System of Unit UOM than the UOM for the results and conversion information has been entered, then &lsquo;Converted Current Range&rsquo; will be populated.</li><li>If either of the conditions from #2 above is not true, then the field will be left empty.</li></ol>
+			</li></ol>
+		<p style="background-color: #FFFFFF;">&nbsp;</p><p><span style="color: #D35F0B;"> </span><a id="_Toc221882674"></a></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>
