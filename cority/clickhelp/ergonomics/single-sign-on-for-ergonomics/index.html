@@ -1,0 +1,293 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/ergonomics/single-sign-on-for-ergonomics"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Single Sign-On for Ergonomics</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Single Sign-On for Ergonomics';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/ergonomics/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/ergonomics/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/ergonomics/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/ergonomics/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/ergonomics/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/ergonomics/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/ergonomics/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/ergonomics/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/ergonomics/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/ergonomics/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1_420634214" data-has-heading-anchor="true">
+  Single Sign-On for Ergonomics<a href="/articles/ergonomics/single-sign-on-for-ergonomics/a/h1_420634214" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!ergonomics/single-sign-on-for-ergonomics/a/h1_420634214&#39;,this);"></a></h1><p> Single Sign-On&nbsp;(SSO) is a&nbsp;service that&nbsp;allows users to have one set of login credentials to access multiple web applications&nbsp;without the need to re-enter login credentials at each application.&nbsp;</p>
+<p>Cority uses the Security Assertion Markup Language (SAML) 2.0 protocol to enable applications to provide single sign-on&nbsp;for their users. The protocol&nbsp; allows identity providers (IdP) to pass authorization credentials to service providers (SP). All communications between components are secured.&nbsp;<span style="font-size: 10pt;">Using SAML, your Active Directory or other internal security authority can serve as the identity provider&nbsp;when employees want to login to EMS.&nbsp;</span><span style="font-size: 10pt;">Once setup, the SAML SSO integration allows your employees to use Cority EMS applications without any authentication steps other than what they do every day to authenticate to their corporate network.</span>
+</p>
+
+<p>
+  <span style="background-color: #ffffff; color: #545454;">Currently, EMS supports SSO for the following applications:&nbsp;</span>
+</p>
+<ul style="color: #4d4d4d; font-size: 14px; text-decoration-color: initial;">
+  <li>
+    <span style="color: #545454; background-color: #ffffff;">Management System</span>
+  </li>
+  <li>
+    <span style="color: #545454; background-color: #ffffff;">Chemical Management</span>
+  </li>
+  <li>
+    <span style="color: #545454; background-color: #ffffff;">Office Ergonomics Solution (OES)</span>
+  </li>
+</ul>
+<div>
+  <font face="Open Sans, sans-serif" color="#545454"></font>
+</div>
+<p> This document covers the following topics:</p>
+<ul style="color: #4d4d4d; font-size: 14px; text-decoration-color: initial;">
+  <li> Supported identity providers </li>
+  <li> Configuration steps&nbsp; </li>
+  <li> How Single Sign-On Works </li>
+  <li> Login Access&nbsp; Methods </li>
+  <li> Troubleshooting </li>
+</ul>
+<h4 id="h4__1987714392" data-has-heading-anchor="true"> Supported Identity Providers<a href="/articles/ergonomics/single-sign-on-for-ergonomics/a/h4__1987714392" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!ergonomics/single-sign-on-for-ergonomics/a/h4__1987714392&#39;,this);"></a></h4>
+<p> The following identity providers are supported:</p>
+<ul>
+  <li> Any SAML 2.0 compliant identity provider <br/>
+  </li>
+</ul>
+<ul class="BulletedListLevel1 BulletedListLevel1_2" style="color: #4d4d4d; font-size: 14px; text-decoration-color: initial;">
+  <li> PingFederate </li>
+  <li> Okta </li>
+  <li> AzureAD </li>
+  <li> ForgeRock </li>
+</ul>
+<h4 id="h4_1610624341" data-has-heading-anchor="true"> Configuration Steps<a href="/articles/ergonomics/single-sign-on-for-ergonomics/a/h4_1610624341" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!ergonomics/single-sign-on-for-ergonomics/a/h4_1610624341&#39;,this);"></a></h4>
+<p> Before you start configuration, ensure that you have the following:</p>
+<ul>
+  <li> Access to the Identity Provider </li>
+</ul>
+<p> Use the following steps as a general deployment guidelines for SSO:</p>
+<table style="border-width: 1px; border-color: #c0c0c0; height: 250px; width: 663px;" cellspacing="3" cellpadding="3">
+  <tbody>
+    <tr>
+      <td style="width: 20px; border-width: 1px; border-style: solid; border-color: #c0c0c0; text-align: center;">
+        <b style="background-color: #ffffff;">Step </b>
+      </td>
+      <td style="width: 200px; border-width: 1px; border-style: solid; border-color: #c0c0c0; text-align: center;">
+        <b style="background-color: #ffffff;"> Responsible Party </b>
+      </td>
+      <td style="width: 500px; border-width: 1px; border-style: solid; border-color: #c0c0c0; text-align: center;">
+        <b style="background-color: #ffffff;"> Action</b>
+      </td>
+    </tr>
+    <tr style="height: 0px; text-align: left;">
+      <td style="width: 20px; border-width: 1px; border-style: solid; border-color: #c0c0c0; text-align: center;"> 1 </td>
+      <td style="width: 200px; border-width: 1px; border-style: solid; border-color: #c0c0c0; text-align: center;">
+        <p>
+          <span data-contrast="none" class="TextRun SCXW157219822 BCX0" xml:lang="EN-US" style="user-select: text; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; background-repeat: repeat-x; background-position: left bottom; background-image: url(&quot;data:image/gif;&quot;);">Cority</span>
+        </p>
+      </td>
+      <td style="width: 500px; border-width: 1px; border-style: solid; border-color: #c0c0c0; text-align: left;">
+        <span class="EOP SCXW157219822 BCX0" data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}" style="user-select: text; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; line-height: 16px; font-family: Tahoma, Tahoma_MSFontService, sans-serif;"></span>Provide <span>metadata configuration file and IP addresses</span>
+        <br/>
+      </td>
+    </tr>
+    <tr>
+      <td style="width: 20px; border-width: 1px; border-style: solid; border-color: #c0c0c0; text-align: center;"> 2 </td>
+      <td style="width: 200px; border-width: 1px; border-style: solid; border-color: #c0c0c0; text-align: center;"> Customer<span class="EOP SCXW157219822 BCX0" data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}" style="user-select: text; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; line-height: 16px; font-family: Tahoma, Tahoma_MSFontService, sans-serif;">&nbsp;</span>
+        <br/>
+      </td>
+      <td style="width: 500px; border-width: 1px; border-style: solid; border-color: #c0c0c0; text-align: left;"> Provide metadata, certificates, IP addresses,&nbsp;<span class="SpellingError SCXW157219822 BCX0" style="user-select: text; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; background-repeat: repeat-x; background-position: left bottom; background-image: url(&quot;data:image/gif;border-bottom: 1px solid transparent;&quot;);">urls</span><span class="NormalTextRun SCXW157219822 BCX0" style="user-select: text; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent;">, and a test username/password</span><span class="EOP SCXW157219822 BCX0" data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}" style="user-select: text; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; line-height: 16px; font-family: Tahoma, Tahoma_MSFontService, sans-serif;">&nbsp;</span>
+        <br/>
+      </td>
+    </tr>
+    <tr>
+      <td style="width: 20px; border-width: 1px; border-style: solid; border-color: #c0c0c0; text-align: center;"> 3 </td>
+      <td style="width: 200px; border-width: 1px; border-style: solid; border-color: #c0c0c0; text-align: center;"> Customer<span class="EOP SCXW157219822 BCX0" data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}" style="user-select: text; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; line-height: 16px; font-family: Tahoma, Tahoma_MSFontService, sans-serif;">&nbsp;</span>
+        <br/>
+      </td>
+      <td style="width: 500px; border-width: 1px; border-style: solid; border-color: #c0c0c0; text-align: left;"> Configure Identity&nbsp;Provider <br/>
+      </td>
+    </tr>
+    <tr>
+      <td style="width: 20px; border-width: 1px; border-style: solid; border-color: #c0c0c0; text-align: center;"> 4 </td>
+      <td style="width: 200px; border-width: 1px; border-style: solid; border-color: #c0c0c0; text-align: center;"> Cority <br/>
+      </td>
+      <td style="width: 500px; border-width: 1px; border-style: solid; border-color: #c0c0c0; text-align: left;">
+        <span class="NormalTextRun SCXW157219822 BCX0" style="user-select: text; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent;">Configure&nbsp;</span><span class="SpellingError SCXW157219822 BCX0" style="user-select: text; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; background-repeat: repeat-x; background-position: left bottom; background-image: url(&quot;data:image/gif;border-bottom: 1px solid transparent;&quot;);">EMS</span>&nbsp;system<span class="EOP SCXW157219822 BCX0" data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}" style="user-select: text; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; line-height: 16px; font-family: Tahoma, Tahoma_MSFontService, sans-serif;">&nbsp;</span>
+        <br/>
+      </td>
+    </tr>
+    <tr>
+      <td style="width: 20px; border-width: 1px; border-style: solid; border-color: #c0c0c0; text-align: center;"> 5 </td>
+      <td style="width: 200px; border-width: 1px; border-style: solid; border-color: #c0c0c0; text-align: center;"> Customer<span class="EOP SCXW157219822 BCX0" data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}" style="user-select: text; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; line-height: 16px; font-family: Tahoma, Tahoma_MSFontService, sans-serif;">&nbsp;</span>
+        <br/>
+      </td>
+      <td style="width: 500px; border-width: 1px; border-style: solid; border-color: #c0c0c0; text-align: left;"> Verify all users have&nbsp;<span class="SpellingError SCXW157219822 BCX0" style="user-select: text; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; background-repeat: repeat-x; background-position: left bottom; background-image: url(&quot;data:image/gif;border-bottom: 1px solid transparent;&quot;);">EMS</span><span class="NormalTextRun SCXW157219822 BCX0" style="user-select: text; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent;">&nbsp;profiles</span><span class="EOP SCXW157219822 BCX0" data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}" style="user-select: text; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; line-height: 16px; font-family: Tahoma, Tahoma_MSFontService, sans-serif;">&nbsp;</span>
+        <br/>
+      </td>
+    </tr>
+    <tr>
+      <td style="width: 20px; border-width: 1px; border-style: solid; border-color: #c0c0c0; text-align: center;"> 6 </td>
+      <td style="width: 200px; border-width: 1px; border-style: solid; border-color: #c0c0c0; text-align: center;"> Customer<span class="EOP SCXW157219822 BCX0" data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}" style="user-select: text; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; line-height: 16px; font-family: Tahoma, Tahoma_MSFontService, sans-serif;">&nbsp;</span>
+        <br/>
+      </td>
+      <td style="width: 500px; border-width: 1px; border-style: solid; border-color: #c0c0c0; text-align: left;"> Test prior to rollout <br/>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p>
+</p>
+<h4 id="h4_901783575" data-has-heading-anchor="true"> How Single Sign-On Works<a href="/articles/ergonomics/single-sign-on-for-ergonomics/a/h4_901783575" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!ergonomics/single-sign-on-for-ergonomics/a/h4_901783575&#39;,this);"></a></h4>
+<p> The following diagram illustrates how EMS authenticates users via Customer's Identity Provider.</p>
+<p> Identity federation standards identify two operational roles in an Internet SSO transaction: </p>
+<ul>
+  <li> Identity Provider (IdP): An IdP, the Customer<span style="font-style: italic;"> </span>in this context, is the organization that provides user authentication service and the user information service utilizing the Customer’s corporate directory. </li>
+  <li> Service Provider (SP): An SP, EMS in this context, is referred to a vendor that hosts applications and accepts claims authorized by IdP. It provides software as a service to the users authenticated by IdP. EMS uses OpenAM, an open source software provided by ForgeRock, for its federated single sign-on solution. </li>
+</ul>
+<img src="images/SSO.png" alt=""/>
+<p id="h4_901783575">
+  <br/>
+</p>
+<ol>
+  <li> The user requests access to a protected resource and is directed to the Customer’s federation system. </li>
+  <li> The system validates if the user is already authenticated or not. If the user is not already logged in, then the user is asked for credentials and then authenticated. </li>
+  <li> This step is optional, and can be set to the user’s first, or given name. Assigned attributes can be included with assertion. See the table below. </li>
+  <li> After successful authentication, Customer’s federation system prepares a SAML assertion with agreed upon attribute and sends it across to Cority’s&nbsp;<a name="_Hlk523391089">SP&nbsp;</a>for consumption. Cority’s SP consumes this SAML assertion and converts it into the tokens that the protected applications can understand. </li>
+</ol>
+<p id="h4_901783575"> The following table lists&nbsp; parameters that are used in deploying SSO.</p>
+<table border="0" cellspacing="0" cellpadding="0" class="CHTable">
+  <tbody>
+    <tr>
+      <td valign="top" width="213" style="background-color: #a6a6a6; border-width: 1pt; border-style: solid; border-color: #000000;"> Parameter </td>
+      <td valign="top" width="213" style="background-color: #a6a6a6; border-width: 1pt; border-style: solid; border-color: #000000;"> Support </td>
+      <td valign="top" width="213" style="background-color: #a6a6a6; border-width: 1pt; border-style: solid; border-color: #000000;"> Comments </td>
+    </tr>
+    <tr>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> Assertion Lifetime </td>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> 5 minutes before or after </td>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;">
+        &nbsp;
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> SSO Request initiation </td>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> Service Provider (SP) or Identity Provider (IdP) Initiated </td>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> SP Initiated Preferred </td>
+    </tr>
+    <tr>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> SAML_Subject </td>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> urn:oasis:names:tc:SAML:2.0:nameid-format:transient </td>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> Required </td>
+    </tr>
+    <tr>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> Attributes </td>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> Agreed upon value </td>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> Typically user’s Employee ID or other unique value, sent as uid or other agreed upon value </td>
+    </tr>
+    <tr>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> AuthContext </td>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> Agreed upon value </td>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> Unspecified, unless otherwise requested. </td>
+    </tr>
+    <tr>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> On Logout </td>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> Redirect to logout URL </td>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;">
+        &nbsp;
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> Logout URL </td>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> Configurable per Customer’s requirement </td>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;">
+        &nbsp;
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> On Timeout </td>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> Closed user session </td>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;">
+        &nbsp;
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> On Timeout URL </td>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> Same as Logout URL </td>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;">
+        <p>
+          &nbsp;
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;">
+        <p> Digital Signing Certificate </p>
+      </td>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> Available with Metadata Exchange </td>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;">
+        &nbsp;
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> Encryption </td>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> Support for entire assertion encrypted </td>
+      <td valign="top" width="213" style="border-width: 1pt; border-style: solid; border-color: #000000;"> AES 256 Preferred </td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  &nbsp;
+</p>
+<h4 id="h4_901783575" data-has-heading-anchor="true"> SSO Login Methods<a href="/articles/ergonomics/single-sign-on-for-ergonomics/a/h4_901783575" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!ergonomics/single-sign-on-for-ergonomics/a/h4_901783575&#39;,this);"></a></h4>
+<p> The user may log into the&nbsp;EMS&nbsp;system using any of the following methods, if methods are allowed and supported by Customer network security policies:</p>
+<ol>
+  <li> SSO from inside the&nbsp;Customer&nbsp;network. The user logs into the Customer network when starting up the desktop computer that is connected to the network. Once authenticated by the network, those credentials are used to automatically log into the EMS&nbsp;system.&nbsp;&nbsp; </li>
+  <li> SSO from outside the Customer network using a VPN. When the user is outside the physical Customer network, the user can authenticate into the network through a VPN, if&nbsp; the VPN is supported by the Customer network. Once authenticated by the network, those credentials are used to automatically log into the&nbsp;EMS&nbsp;system. </li>
+  <li> SSO from outside the Customer network using a web page to authenticate into the network. When the user is outside the physical Customer network, a web page can be provided by the Customer&nbsp;SSO Solution&nbsp;to allow these remote users to authenticate into the network. This assumes the Customer network security policies allow such access, and the web page has been provided by the Customer for this use. Once authenticated by the network, those credentials are used to automatically log into the&nbsp;EMS&nbsp;system.&nbsp; </li>
+  <li> Bypassing SSO. Direct login to the&nbsp;EMS&nbsp;system from outside the Customer network. When users are physically outside the Customer network, they can use their&nbsp;EMS&nbsp;username and password to log directly into the&nbsp;EMS&nbsp;system. Bypassing the SSO method can be restricted by not providing EMS passwords to the users.&nbsp; <br/>
+  </li>
+</ol>
+<h4 id="h4_861724344" data-has-heading-anchor="true">
+  <span> Troubleshooting&nbsp; </span>
+<a href="/articles/ergonomics/single-sign-on-for-ergonomics/a/h4_861724344" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!ergonomics/single-sign-on-for-ergonomics/a/h4_861724344&#39;,this);"></a></h4>
+<table class="CHTable" style="width: 671px; height: 109px;" cellspacing="1" cellpadding="1">
+  <tbody>
+    <tr>
+      <td style="width: 50%;">
+        <b>Problem </b>
+      </td>
+      <td style="width: 50%;">
+        <b> Suggested solution</b>
+      </td>
+    </tr>
+    <tr>
+      <td style="width: 50%;"> An error message "<span style="color: #696969; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, Helvetica, Arial, sans-serif; font-size: 14px; text-align: left; text-decoration-color: initial;">User does not exist in the system"&nbsp;</span>&nbsp;is displayed when trying to log in using SSO. </td>
+      <td style="width: 50%;"> Ensure that the user is added to the EMS system. </td>
+    </tr>
+  </tbody>
+</table>
+<div class="SCXW95402212 BCX0">
+  <p>
+  </p>
+  <p>
+  </p>
+  <p>
+  </p>
+</div>
+
+<p>
+</p>
+
+<p>
+  <br/>
+</p>
+<h1 id="h1__1197098393">
+</h1>
+
+<h1 style="" id="h1_1016927183">
+</h1><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>
