@@ -84,7 +84,7 @@ This endpoint returns **`HTTP 200 OK` regardless of authentication.** Without a 
 - Reuse the authenticated browser/session context for every image fetch, never an anonymous request
 - Verify downloaded images aren't the placeholder before trusting them (by size/hash — do not assume HTTP 200 means success)
 
-This same failure mode should be assumed possible anywhere else Salesforce-hosted images are pulled without an authenticated session — worth keeping in mind if the Access Group/PeopleXD scraper is later extended to preserve images too (see §5).
+This same failure mode should be assumed possible anywhere else Salesforce-hosted images are pulled without an authenticated session — this is exactly the reason §5 below flags the Access Group/PeopleXD side as needing revisiting, not just a Cority-specific caveat.
 
 ---
 
@@ -102,7 +102,7 @@ This same failure mode should be assumed possible anywhere else Salesforce-hoste
 
 - Get an exact Knowledge-Article-only count via a Coveo content-type facet filter, rather than the mixed 11,673 figure
 - Decide whether to add a `schedule:` trigger to the new workflow for automatic refresh, or keep it manual-trigger-only like the existing one
-- **Revisit the Access Group/PeopleXD scraper separately to add image preservation** — its current deep-crawl path (`harvest_article_texts()` in `access_group_scraper.py`) extracts `innerText` only and drops all images from the ~1,948 web articles today. Explicitly deferred by Kevin (31 July 2026) to a later session — tracked here as a reminder, out of scope for the Cority build itself.
+- **Separate follow-up, not part of this build — revisit the Access Group/PeopleXD scraper to add image preservation.** Its current deep-crawl path (`harvest_article_texts()` in `access_group_scraper.py`) extracts `innerText` only and drops all images from the ~1,948 web articles today — the same placeholder-trap risk described in §3 applies there too, since Access Group's Salesforce org hosts images the same way. Explicitly deferred by Kevin (31 July 2026) to a later session. **Tracked as its own scoped entry in `ROADMAP.md` → "Parked — Technical Debt"** — see that file for the concrete step-by-step fix, so it isn't lost and doesn't need to be re-derived from this document.
 
 ---
 
@@ -112,4 +112,4 @@ Every claim above was tested directly, not inferred from documentation, includin
 - A loose text-selector click during login testing hit the wrong UI tile — fixed by switching to an exact-text locator
 - An early pass on the ClickHelp screenshot checked only HTTP status and byte count, not the actual image content — given the Salesforce-side placeholder trap found immediately after, that check was redone visually and confirmed genuine
 
-See also `knowledge-base-playbook` → Section 13, "Recommendations for Expansion" → "Cority (Health & Safety) — in progress" for a pointer back to this document from the general methodology reference.
+See also `knowledge-base-playbook` → Section 13, "Recommendations for Expansion" → "Cority (Health & Safety) — in progress" for a pointer back to this document from the general methodology reference, and `ROADMAP.md` in this repo for the separate Access Group image-preservation follow-up task referenced in §5.
