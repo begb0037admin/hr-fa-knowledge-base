@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-2022-1-0-new-features-and-fixes-release-notes/ccc-3924-and-3923-foundational-integration-between-the-cority-gx2"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-3924 and 3923: Foundational integration between the Cority GX2 and EMS platforms is now complete</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-3924 and 3923: Foundational integration between the Cority GX2 and EMS platforms is now complete';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-2022-1-0-new-features-and-fixes-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2_1530918489" data-has-heading-anchor="true">
+			<a id="_Toc95474329"></a><span style="color: #376092;">CCC-3924 and 3923: Foundational integration between the Cority GX2 and EMS platforms is now complete</span><a href="/articles/cority-2022-1-0-new-features-and-fixes-release-notes/ccc-3924-and-3923-foundational-integration-between-the-cority-gx2/a/h2_1530918489" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2022-1-0-new-features-and-fixes-release-notes/ccc-3924-and-3923-foundational-integration-between-the-cority-gx2/a/h2_1530918489&#39;,this);"></a></h2>
+		<ul>
+			<li><span style="font-weight: normal; font-style: normal;">This will enable (for examples):</span><ul>
+				<li>Cority Professional Services personnel to explore, test, and configure integrated solutions across the two environments without having to make any, often tedious manual changes.</li><li>Cority Implementation Consultants and/or Solutions Managers to easily test and port integrated configurations during implementations without having to make modifications to the base URL for EMS pages in embedded mode or make modifications to the API URL, username, or password for business rules that call the EMS API.</li><li>Such personnel to easily create relationships between the Cority Organizational Tree nodes and the EMS Compliance Object table (Locations and Programs on the UI).</li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">As well, the GX2 Equipment Management functionality has been enhanced to support EMS requirements.</span><ul>
+				<li><span style="font-weight: normal; font-style: normal;">The following two fields can now be added to custom versions of the &#39;Equipment Type&#39; look-up table layout:</span><ul>
+					<li>EMSTemplateCOID - a text field</li><li>EMSTemplateCOType - a drop-down list with Unit and POI options</li></ul>
+				</li><li>The new EMSCOID text field can be added to custom versions of the Equipment layout.</li><li><span style="font-weight: normal; font-style: normal;">Once an EMSTemplateCOID value has been specified for an Equipment Type, for Equipment records of that type:</span><ul>
+					<li>The record cannot be saved unless a Level 2 or Level 3 node has been specified for the &#39;EMS - Controlling Org Tree&#39; for the Equipment Type when the EMSTemplateCOType value is POI.</li><li>The record cannot be saved unless a Level 2 &nbsp;node has been specified for the &#39;EMS - Controlling Org Tree&#39; for the Equipment Type when the EMSTemplateCOType value is Unit.</li><li>The description must be 100 characters or less.</li><li>No two records can have the same description and &#39;EMS - Controlling Org Tree&#39; node.</li></ul>
+				</li><li><span style="font-weight: normal; font-style: normal;">Once an EMSTemplateCOID value has been specified for an Equipment Type, the creation of a new Equipment record of that type will result in:</span><ul>
+					<li>The new record existing where appropriate in GX2 and a linked (IDs saved in both systems) compliance object being created in EMS.</li><li>A new business rule action record (BRA-100601) being added to the BRA queue for processing.</li><li>The Cority Equipment ID being written to the &#39;Cority ID&#39; field in EMS.</li><li>A RESTful API call to the EMS for which the response will write the ID of the newly created compliance object to the EMSCOID field in GX2.</li></ul>
+				</li><li><span style="font-weight: normal; font-style: normal;">Changes to the description of an Equipment record in the &#39;Controlling Org Tree&#39; will result in:</span><ul>
+					<li>The renaming of the linked compliance object in EMS.</li><li>A new BRA record (BRA-100601) being added to the BRA queue for processing.</li></ul>
+				</li><li><span style="font-weight: normal; font-style: normal;">Changes to the &#39;EMS - Controlling Org Tree&#39; value of an Equipment record will result in:</span><ul>
+					<li>The relocation of the linked compliance object in EMS.</li><li>A new BRA record (BRA-100601) being added to the BRA queue for processing.</li></ul>
+				</li><li><span style="font-weight: normal; font-style: normal;">Deletion of an Equipment record will result in:</span><ul>
+					<li>A new BRA record (BRA-100601) being added to the BRA queue for processing. </li></ul>
+				</li></ul>
+			</li><li>In the Emissions Inventory &#39;Asset Management&#39; module, you can now add the new, filterable &#39;EMS Requirements&#39; tab (sublist) to custom versions of Asset layouts.</li><li><span style="font-weight: normal; font-style: normal;">This is accompanied by the new &#39;EMS Requirements Data View Per Layout&#39; look-up table. The out-of-the-box layout for the look-up table has the following two fields:</span><ul>
+				<li>Layout - a searchable drop-down list of all layouts in the GX2 system</li><li>EMS Data View - a drop-down list populated by a RESTful API call to the EMS EQL service</li></ul>
+			</li></ul>
+		<p> </p><ul>
+			<li><span style="font-weight: normal; font-style: normal;">When the user opens the &#39;EMS Requirements&#39; sublist on an Equipment record, its list will be retrieved and populated by the RESTful API call.</span><ul>
+				<li>Each record in the sublist will have a hyperlink to the EMS &#39;Edit Properties&#39; page of the requirement.</li><li>Each record in the sublist that is a numeric requirement will also include a Graph action, which will graph the requirement using the EMS &#39;Calc Graph Visualizer&#39;.</li></ul>
+			</li></ul>
+		<p><a id="_CCC-4068_and_3253:"></a><a id="_Toc95474330"></a>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>
