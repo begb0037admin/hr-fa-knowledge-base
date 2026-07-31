@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-2021-2-0-new-features-release-notes/ccc-2248-for-occupational-health-there-is-a-new-medical-correspondence-module"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script><title>CCC-2248: For Occupational Health, there is a new Medical Correspondence module</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-2248: For Occupational Health, there is a new Medical Correspondence module';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-2021-2-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h2 id="h2__481067553" data-has-heading-anchor="true">
+			<span style="font-size: 14pt; font-family: Cambria, Georgia, serif;"><a name="_Toc74142606" style="font-weight: normal;"><font color="#000080">CCC-2248: For Occupational Health, there is a new Medical Correspondence module</font></a></span><a href="/articles/cority-2021-2-0-new-features-release-notes/ccc-2248-for-occupational-health-there-is-a-new-medical-correspondence-module/a/h2__481067553" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-2-0-new-features-release-notes/ccc-2248-for-occupational-health-there-is-a-new-medical-correspondence-module/a/h2__481067553&#39;,this);"></a></h2>
+		<ul>
+			<li><font color="#000000">The module enables users to email a set of an employee&#39;s medical correspondence.</font></li><li><font color="#000000">The module is not available by default. It must be added by an Administrator for each user through Menu Configuration.</font></li><li><font color="#000000">Once added, the new &#39;Medical Correspondence&#39; module will be accessible from the Occupational Health menu.</font><ul>
+				<li><font color="#000000">As long as the user has access to each individual source (see the list of supported sources below) through security configuration, he or she will be able to access the &#39;Medical Correspondence&#39; module. The module does not get granted explicitly, because it is comprised of several independent components.</font></li></ul>
+			</li><li><font color="#000000">The module has the &#39;All Medical Correspondence&#39; list view.</font></li><li><font color="#000000">If a Global Employee is selected, the list view will be filtered by that employee.</font></li><li><font color="#000000">The list view has the &#39;Email&#39; and &#39;Export List to Excel&#39; actions, and the Create/Clone View functionality.</font></li><li><font color="#000000">By default, and for filtering, the list view has the following columns:</font><ul>
+				<li><font color="#000000">Employee - the employee to whom the record belongs</font></li><li><font color="#000000">Created Date - the date the record was created (and the column by which the view is sorted when first opened)</font></li><li><font color="#000000">Source (read-only) - the type/origin of the record (Medical Note, Case Note, Medical Document, Case Document, Medical Questionnaire, saved PDF Form, non-draft Medical Letter, non-draft Case Letter, or Email Log)</font></li><li><font color="#000000">Summary (read-only) - a summary of the record, if provided (for a Case Document, for example, this will be the &#39;Document Type&#39; description)</font></li></ul>
+			</li><li><font color="#000000">The following columns can be added to custom versions of the list view:</font><ul>
+				<li><font color="#000000">GDDLOFB - the GDDLOFB (both code and description) of the parent record (for example, of the Clinic Visit)</font></li><li><font color="#000000">Source ID - the record&#39;s ID</font></li><li><font color="#000000">Global Passport ID - the ID of the Global Passport record for the employee</font></li></ul>
+			</li><li><font color="#000000">A user can select one or more medical correspondence items from the view and execute the &#39;Email&#39; action to email the items to specified recipients.</font></li><li><font color="#000000">When the &#39;Email&#39; action is selected, the &#39;Email&#39; dialog box opens.</font><ul>
+				<li><font color="#000000">The dialog box is then used to provide &#39;To&#39; and &#39;CC&#39; recipients, a subject, and body content.</font></li><li><font color="#000000">On the dialog box, when the user clicks Send, two emails are generated and sent:</font><ul>
+					<li><font color="#000000">The first email will have the subject and body provided on the &#39;Email&#39; dialog box, and a password-protected zip file containing all of the selected medical correspondence items.</font><ul>
+						<li><font color="#000000">Output for Notes: A Clinic Visit / Case Progress report for the selected notes in a single file named MedicalNotes / CaseNotes</font></li><li><font color="#000000">Output for Questionnaires: One PDF that includes all of the questionnaire responses, each separated by a report header</font></li><li><font color="#000000">Output for Forms : An individual PDF file for each form, named the same as the form</font></li><li><font color="#000000">Output for Letters: An individual PDF file for each letter, named using the letter code</font></li><li><font color="#000000">Output for Documents: An individual file for each selected document in its original format</font><ul>
+							<li><font color="#000000"><span style="font-weight: bold;">Note:</span> If a document is a hyperlink (not an import file), it will not be included in the zip file</font></li></ul>
+						</li><li><font color="#000000">Output for Email Logs: One PDF for each log with file name EmailMessageId.PDF</font></li><li><font color="#000000">Output for attachments in the Email Log: A separate file for each email attachment with part of the file name EmailAttachmentMessageId.pdf so that the Message ID field can be used to identify the email that goes with the attachment</font></li></ul>
+					</li><li><font color="#000000">The second email will provide each recipient with a system-generated password for accessing the content in the zip file sent in the first email.</font><ul>
+						<li><font color="#000000">The subject of the second email will be Password.</font></li></ul>
+					</li></ul>
+				</li></ul>
+			</li><li><font color="#000000">For medical correspondence Emails (&#39;Email Log&#39; records):</font><ul>
+				<li><font color="#000000">&#39;My Email Log&#39; has been implemented to ensure the list is restricted to only those from the logged in user&#39;s email log.</font></li><li><font color="#000000">Emails sent out from the &#39;Medical Correspondence&#39; module are logged under the &#39;My Email Log&#39; with &#39;Medical Correspondence&#39; as the listed module. </font></li><li><font color="#000000">The Passwords can be retrieved from the Email Log if they need to be re-shared with the recipient(s) of the email. </font></li></ul>
+			</li><li><font color="#000000">On the new &#39;All Medical Correspondence&#39; list view, for a record (for example, a Case Note record), the user can click the employee&#39;s name to open the record in the appropriate, related layout. For example, when the user clicks the employee&#39;s name for a Medical &#39;Note&#39; record, the &#39;Note&#39; record will open in the layout that corresponds to where the note was created/generated.</font><ul>
+				<li><font color="#000000"><span style="font-weight: bold;">Note:</span> For a Form record, the PDF will either open in a new tab or be downloaded, depending on the browser&#39;s configuration.</font></li></ul>
+			</li></ul>
+		<h4 id="h4_1066401480" data-has-heading-anchor="true">
+			<i style=""><font color="#000080">Impact to Existing Users:</font></i><a href="/articles/cority-2021-2-0-new-features-release-notes/ccc-2248-for-occupational-health-there-is-a-new-medical-correspondence-module/a/h4_1066401480" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-2-0-new-features-release-notes/ccc-2248-for-occupational-health-there-is-a-new-medical-correspondence-module/a/h4_1066401480&#39;,this);"></a></h4>
+		<ul>
+			<li><font color="#000000">Occupational Health users now have a central location for easily viewing and assessing all of an employee&#39;s medical correspondence.</font></li><li><font color="#000000">A practitioner can now email one or more of the medical correspondence items for an employee to specified recipients in an easy and efficient way.</font></li></ul>
+		<h4 id="h4__1658765620" data-has-heading-anchor="true">
+			<i style=""><font color="#000080">Additional Configuration Considerations:</font></i><a href="/articles/cority-2021-2-0-new-features-release-notes/ccc-2248-for-occupational-health-there-is-a-new-medical-correspondence-module/a/h4__1658765620" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-2-0-new-features-release-notes/ccc-2248-for-occupational-health-there-is-a-new-medical-correspondence-module/a/h4__1658765620&#39;,this);"></a></h4>
+		<ul>
+			<li><font color="#000000">To experience all of the benefits of the module, the user&#39;s role will have to be granted access to all of the module&#39;s components.</font></li><li><font color="#000000">Beyond what is described above, no additional configuration is required.</font></li></ul>
+		<p style="font-weight: bold;"><font color="#000000">Opt-in</font></p><p><font color="#000000">&nbsp;</font></p><h1 id="h1_1547723302">
+  </h1><p>
+  <br/>
+</p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div></body></html>
