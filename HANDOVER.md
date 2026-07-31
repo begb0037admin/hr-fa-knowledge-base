@@ -1,7 +1,7 @@
 # Handover — HR FA Knowledge Base
 
 **To:** New session
-**From:** Session of 11 July 2026
+**From:** Session of 31 July 2026
 **Owner:** Kevin (kevin.lelitte@admin.ox.ac.uk · GitHub `begb0037admin`)
 
 Everything you need to drive this project is in this file plus the repo
@@ -9,9 +9,32 @@ itself. Trust the repo over memory; verify data, not just green ticks.
 
 ---
 
-## Current State — 11 July 2026
+## Current State — 31 July 2026
 
-**Voice vendor migration: ElevenLabs → Cloudflare Workers AI, done in code, not yet deployed.**
+**Two things happened this session: a full feasibility investigation of Cority as a new KB source, and a documentation reconciliation pass on this repo itself.**
+
+### Cority — new KB source, feasibility confirmed, not yet built
+Full technical findings are in `CORITY-FEASIBILITY.md` (new file, this repo). Short version: Cority (the University's Occupational Health/H&S system) has two independent content sources, both confirmed technically viable via live testing (real login, real articles opened, real network traffic inspected) — a ClickHelp-hosted docs portal needing no login at all, and a Salesforce Experience Cloud community needing the same email/password login pattern as Access Group, with a working Coveo bulk-search API for full-catalogue discovery. In several respects this looks like an *easier* build than the original Access Group harvest. Recommended build order (ClickHelp first, Salesforce Community second) and full architecture recommendation are in that document. **Nothing has been built yet** — this was pure recon, deliberately verified rigorously (including catching and correcting two mistakes made mid-investigation) before treating any of it as safe to act on.
+
+Cross-referenced from `knowledge-base-playbook` → Section 13 (Expansion), so the general methodology doc points at this project-specific one.
+
+### Documentation reconciliation — CLAUDE.md was stale, now fixed
+While double-checking that Access Group/PeopleXD was as well-documented as the fresh Cority work, found that `CLAUDE.md`'s headline "Status" and "Data State" sections were stuck at an 18 June snapshot (2,226 documents, 7,230 chunks) despite this file already recording the real 10 July figures (2,515 documents). Re-counted `data/kb.json` and `data/kb-index.json` directly rather than trusting either document's prose — confirmed **2,515 documents, 13,472 index chunks, 2,515/2,515 with both enhanced summaries**. `CLAUDE.md` is now corrected to match and includes a note to always re-verify against live data if the two docs ever disagree again.
+
+Also checked the Cloudflare Worker (`hr-kb-ai`) directly against Cloudflare, not just the repo: the Workers AI voice code (Aura-2 TTS, Whisper STT) described below as "not yet deployed" as of 11 July **is now confirmed deployed and live**. What's still not confirmed is whether anyone has actually run the full voice loop end-to-end, or what's happened with the ElevenLabs subscription — tracked in `ROADMAP.md`.
+
+**Three things now tracked in `ROADMAP.md` that weren't clearly surfaced before:**
+1. Access Group web articles drop all screenshots (text-only extraction) — found while investigating Cority, since the same class of Salesforce image-auth trap applies to both. Concrete fix steps included, not started.
+2. Voice migration needs one real end-to-end live test before it can be called done, plus a decision on the ElevenLabs subscription.
+3. The three data-protection gaps below (branch protection, single custodian, no off-GitHub backup) — these were already written into this file on 10 July as explicitly needing Kevin's action, still open, now also surfaced in the roadmap so they're not only findable in a long handover file.
+
+**Not done this session:** no code changes, no scraper changes, no changes to `index.html` or the Worker. Purely investigation (Cority) and documentation (this repo's own docs). Cority credentials used during testing were never stored, written to a file, or committed anywhere.
+
+---
+
+## Previous State — 11 July 2026
+
+**Voice vendor migration: ElevenLabs → Cloudflare Workers AI, done in code — confirmed deployed 31 July 2026, end-to-end live test still not confirmed (see Current State above and ROADMAP.md).**
 
 This is the pilot for a wider move — Kevin is dropping ElevenLabs entirely (both this app and AIMM), consolidating voice onto Cloudflare Workers AI, and cancelling the ElevenLabs subscription outright. An earlier pass this session targeted Inworld instead; superseded before anything was committed once Kevin proposed the Cloudflare consolidation, so no wasted migration — just a target-vendor change on top of the same shape.
 
@@ -75,7 +98,7 @@ Kevin has flagged this KB as heavily used and not to be lost under any circumsta
   ```
   Attempting to tag this commit for a friendlier name failed — this session's git proxy returned `403` on tag pushes (tags appear to be out of scope for the PAT in use). Use the commit SHA above until a tag can be pushed by a session/token with tag permissions.
 
-**Real gaps — not yet closed, need Kevin's action (outside what an AI session can do):**
+**Real gaps — not yet closed, need Kevin's action (outside what an AI session can do). Still open as of 31 July 2026 — also tracked in `ROADMAP.md` → "Parked — Needs Kevin's Action":**
 1. **No branch protection on `main`.** Nothing currently stops a force-push that rewrites history, or a branch deletion. Fix (2 minutes, GitHub web UI): repo **Settings → Branches → Add branch protection rule** for `main` → enable "Restrict deletions" and "Block force pushes." This does not require pull requests or reviews — it only blocks the two operations that could actually destroy history.
 2. **Single point of custodianship.** The repo lives under one GitHub account (`begb0037admin`). If that account were ever suspended, compromised, or deleted, git history alone doesn't help. Consider adding a second owner/admin (e.g. an Oxford IT service account) as a collaborator, purely as a break-glass measure.
 3. **No off-GitHub copy exists.** Everything currently lives only on GitHub. A periodic export (e.g. a scheduled workflow that copies `data/kb.json` + `data/kb-index.json` to a private storage location Kevin controls — OneDrive, SharePoint, or a second private repo) would protect against the (very unlikely) case of GitHub itself being unavailable or the repo being lost outright. Not yet built — flag if Kevin wants this as a follow-up task.
@@ -282,7 +305,7 @@ For any future harvest:
 | Piece | File | Notes |
 |---|---|---|
 | Site | `index.html` | Static SPA, Oxford-navy theme. BM25 retrieval → Cloudflare worker → Claude. Voice input + Listen. |
-| Worker | `worker/worker.js` | Routes: `/` Claude chat, `/tts` ElevenLabs, `/stt` Scribe v2. Secrets in Cloudflare. |
+| Worker | `worker/worker.js` | Routes: `/` Claude chat, `/tts` Cloudflare Workers AI (Aura-2), `/stt` Cloudflare Workers AI (Whisper, batch mode). Confirmed deployed and live 31 July 2026. Secrets in Cloudflare. |
 | Scraper | `scrapers/access_group_scraper.py` | Playwright. `--no-login` for public help centres. `--deep` harvests full article text. `--guides` / `--guides-only` for PDF guide harvest. Salesforce viewer downloads via `download_salesforce_via_page()`. |
 | Summariser (legacy) | `scrapers/summarise_docs.py` | Calls claude-haiku-4-5 to generate plain-English summaries (the `s` field) for Access Group PDF guides only. Run via `summarise-pdf-guides.yml` workflow. Superseded by the enhanced summariser below for card display, but `s` remains in the data and is never overwritten by it. |
 | Summariser (enhanced, two-level) | `scrapers/summarise_enhanced.py` | Generates `ss` (short, 3–4 sentence card preview) and `sl` (long, 6–10 sentence detailed summary) for ANY source. Never touches `s`. Args: `--source`, `--type` (pdf/web, Access Group only), `--limit`, `--dry-run`, `--force`. Run via `summarise-enhanced.yml` workflow (workflow_dispatch). All 2,515 docs enhanced as of 10 Jul 2026 — see Current State above. |
@@ -293,10 +316,10 @@ For any future harvest:
 
 ## Data State
 
-- **Current:** 2,515 documents ✅
-- **Breakdown:** 2,208 pre-existing + 307 new guide PDFs across 11 PeopleXD modules
+- **Current:** 2,515 documents, 13,472 index chunks — re-verified directly against live data 31 July 2026 ✅
+- **Breakdown (counted 31 July 2026 from `data/kb.json` itself):** 2,251 Access Group Help Centre (web articles + guide PDFs) + 209 How To Guides + 51 Change Management (SharePoint) + 4 Kevin's Guides
 - **Legacy summaries (`s` field):** All 307 PDF guides have AI-generated summaries (8 Jul 2026)
-- **Enhanced summaries (`ss` + `sl` fields):** All 2,515 documents, 100% complete (10 Jul 2026) — see Current State at top of this file
+- **Enhanced summaries (`ss` + `sl` fields):** All 2,515 documents, 100% complete — re-verified 31 July 2026
 
 ## Live Site
 
