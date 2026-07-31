@@ -55,6 +55,12 @@ These guides have drafted content but need to be created as proper Word document
   5. Before trusting any downloaded image, check it isn't a generic "no access" placeholder — don't rely on `HTTP 200` alone (see `CORITY-FEASIBILITY.md` §3 for exactly what that placeholder trap looks like and how it was confirmed).
 - **Status:** Not started. Explicitly kept separate from the Cority build — this is Access Group/PeopleXD scope, its own task, to be picked up later. Tracked here so it doesn't get forgotten.
 
+### Cority ClickHelp scraper — 3 images unresolved in one article
+- **What's wrong:** `scrapers/cority_clickhelp_scraper.py`'s full-corpus run (31 July 2026, `cority-user-guide` publication, 939/939 articles) left 3 images unfetched in a single article, `example-1-simple-data-visualization` (`cube_ex_1_3.png`, `cube_ex_1_5.png`, `cube_ex_1_6.png`).
+- **Why it happened:** Same transient network timeout (`WinError 10060`) that hit 49 whole articles during a live account-switch window — every one of those 49 articles succeeded cleanly on retry with no code changes, so this is very likely the identical transient cause, just not yet re-run at the image level (the scraper's `rehost_images()` leaves the original remote `src` in place on a failed fetch rather than retrying automatically).
+- **What doing this actually involves:** re-run `scrape_article("cority-user-guide", "example-1-simple-data-visualization", ...)` — a single-article, near-zero-cost retry. Not expected to reveal a real defect, just needs the retry actually run and the output re-committed.
+- **Status:** Not started — deliberately deferred 31 July 2026 to conserve session usage rather than chase 3 images across an account switch. Low risk, cheap to close later.
+
 ---
 
 ## Parked — Needs Kevin's Action (not something an AI session can do)
@@ -69,6 +75,13 @@ First flagged in `HANDOVER.md` (10 July 2026) as explicitly outside what an AI s
 ---
 
 ## In Progress
+
+### Cority ClickHelp scraper (Source 1) — code committed, corpus population still to come
+- **What's done (31 July 2026):** `scrapers/cority_clickhelp_scraper.py` committed to `main`. Proven live at full-publication scale before commit — the entire `cority-user-guide` publication (939/939 articles, 559 images, 14.2MB) scraped successfully with images correctly rehosted and HTML rewritten to reference local copies. No login required for this source (see `CORITY-FEASIBILITY.md` §2).
+- **What's not done yet:** the scraped output itself (939 articles' worth of HTML + images from this test run) was generated locally during verification and was **not** bulk-committed to the repo — deliberately, to avoid a very large manual push burning session usage. The remaining 118 publications haven't been run at all yet.
+- **Recommended next step:** build the GitHub Actions workflow for this scraper (modelled on the existing `.github/workflows/scrape-help-centres.yml`, see `CORITY-FEASIBILITY.md` §4), so the corpus gets generated and committed by CI rather than pushed by hand from a session. Then run it for real across all 119 publications.
+- **Known minor gap:** 3 images in one article need a cheap retry — see "Technical Debt" above.
+- **Not yet started:** Source 2, the Salesforce Community side (`uc.cority.com`) — needs authenticated Playwright login, reusing `access_group_scraper.py`'s pattern (see `CORITY-FEASIBILITY.md` §3).
 
 ### Colleges & Halls Guide — commit Word doc to library
 - **What:** Replace the broken placeholder `.md` version with Kevin's actual Word document (`HOWTOCreateNonPayrollCompanyHierarchy_professional.docx`)
