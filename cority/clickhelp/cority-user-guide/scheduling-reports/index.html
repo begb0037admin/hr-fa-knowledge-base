@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/scheduling-reports"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Scheduling Reports</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Scheduling Reports';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+
+<p>&nbsp;</p>
+
+<h2 id="h2_1772614861" data-has-heading-anchor="true"><a name="IX_scheduling_reports"></a><a name="IX_scheduling_1"></a><a name="XREF_11696_Scheduling_Reports"></a>Scheduling Reports<a href="/articles/cority-user-guide/scheduling-reports/a/h2_1772614861" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/scheduling-reports/a/h2_1772614861&#39;,this);"></a></h2>
+<p class="BodyLevel1">Use the Report Scheduler to generate output based 
+ on saved queries on a regular schedule, and send the output to specified 
+ individuals. You can also schedule a snapshot of a Dashboard view to be 
+ sent as a report.</p>
+<p class="Note">Instead of setting up multiple reports to be sent out individually, 
+ set up just one report to be sent to multiple recipients (using a Distribution 
+ List instead of individual recipients) that filters data by recipient 
+ (using the Is Me filter criterion in the report query).</p>
+<ol start="1">
+	<li style="list-style: decimal;"><p class="BodyLevel1">In the Business 
+	 Intelligence menu, click<span class="Bold"> <b>Report Scheduler</b>.</span>&nbsp;</p></li>
+	<li style="list-style: decimal;"><p class="BodyLevel1">Click a link 
+	 to edit an existing scheduled report, or click <b><span class="Bold">New</span></b>.</p></li>
+	<li style="list-style: decimal;"><p class="BodyLevel1">On the Report 
+	 Scheduler tab, enter the following information:</p>
+	<div style="text-align: left;">
+		<img alt="RPT_scheduler.gif" id="image75" src="images/RPT_scheduler.gif" style="margin-top: 5pt; margin-bottom: 10pt; border: Solid 0pt #999999;" border="0" loading="lazy"/> 
+	</div></li>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">Select the <i><span class="Emphasis">Query</span>&nbsp;</i>that 
+		 you want to schedule. This list only shows queries that you created 
+		 or that were shared, or Advanced Dashboards that you have permission 
+		 to view. The list can be filtered by Query Type (Custom Reports, 
+		 Dashboard views, &nbsp;standard Report queries, or Report Writer 
+		 queries).</p></li>
+		<li><p class="BodyLevel2">If you chose a Report or Report Writer 
+		 query, the criteria used is shown in read-only display. Choose 
+		 the <i><span class="Emphasis">Export Format</span>&nbsp;</i>that the 
+		 recipients should receive the report (Excel, PDF, RTF, Word or 
+		 XML; if the chosen report supports CSV export, you can schedule 
+		 it as CSV as well). Notes:</p></li>
+		<ul><li><p class="BodyLevel3">Exports to PDF, RTF or Word are limited 
+		 to 10,000 rows/records.</p></li>
+		<li><p class="BodyLevel3">If you chose to export to CSV, select 
+		 a delimiter (used to separate the data values) and, optionally, 
+		 a qualifier (used to indicate the beginning and end of each data 
+		 value). The delimiter and qualifier must be one character only 
+		 (Tab and Space are accepted). Note: The character used for the 
+		 qualifier should never appear within the data values themselves. 
+		 </p></li>
+		<li><p class="BodyLevel3">Exports to XML use the database field 
+		 names and ignore any field translations/alias.</p></li></ul>
+		<li><p class="BodyLevel2">If you want others to be able to see 
+		 (and edit) the report schedule, select <i><span class="Emphasis">Share 
+		 with others</span></i>. Note that this is different from the report 
+		 recipients defined in step 4.</p></li>
+		<li><p class="BodyLevel2">To prevent sending unnecessary emails, 
+		 select <i><span class="Emphasis">Send Only if Query Returns Data</span></i>&nbsp;(this 
+		 checkbox is not available for canned reports, nor if you are 
+		 scheduling an Advanced Dashboard).</p></li>
+		<li><p class="BodyLevel2">Indicate if the report will be delivered 
+		 via Email or to an FTP server. FTP allows you to distribute reports 
+		 to recipients who do not have an email address; each report, for 
+		 each recipient, will be stored as a separate file on the FTP server. 
+		 FTP can be either FTPS (FTP over SSL) or SFTP (FTP over SSH). 
+		 If you choose FTPS or SFTP, enter the <i><span class="Emphasis">FTP 
+		 Address</span>&nbsp;</i>(this can be an IP address or host, e.g. ftp://user:password@host:port/url), 
+		 <span class="Emphasis"><i>Port Number</i>,</span>&nbsp;optional <i><span class="Emphasis">Folder</span> </i>on the FTP server<span class="Emphasis">,</span>&nbsp;and 
+		 the <i><span class="Emphasis">User ID </span></i>and <i><span class="Emphasis">Password</span> </i>
+		 for the FTP site.</p></li>
+		<li><p class="BodyLevel2">Define the<span class="Emphasis"> <i>Recurrence 
+		 Pattern</i></span><i>&nbsp;</i>(how often it should be generated), and the 
+		 <i><span class="Emphasis">Range of Recurrence</span></i> (the period 
+		 that the recurrence is effective).</p></li>
+	</ul>
+	<li style="list-style: decimal;"><p class="BodyLevel1">On the Recipient 
+	 Details tab, identify who should receive the report when it is generated 
+	 on each recurrence. Recipients may be individual employees or a group 
+	 of employees or users (groups are created using a Report Writer query 
+	 and identified as a Distribution List).</p></li>
+	<p class="BodyLevel2">To add individual recipients, click <img alt="i_inline_add_new_record.gif" id="image76" src="images/i_inline_add_new_record.gif" style="margin-top: 5pt; 
+	 margin-bottom: 10pt; border: Solid 0pt #999999;" border="0" loading="lazy"/>&nbsp;in 
+	 the top section and select from a list of employees, or enter an email 
+	 address directly. The selected employee must have an email address 
+	 defined. To change the email address for a recipient, or to later 
+	 view the history of when they received this report, click the recipient 
+	 name.</p>
+	<p class="BodyLevel2">To add a group, click <img alt="i_inline_add_new_record00021.gif" id="image77" src="images/i_inline_add_new_record00021.gif" style="margin-top: 5pt; 
+													 margin-bottom: 10pt; 
+													 border: Solid 0pt #999999;" border="0" loading="lazy"/> in the 
+	 bottom section and retrieve the appropriate distribution list(s).</p>
+	<p class="Note">Only users with appropriate permission can make changes 
+	 to the Group Recipients sublist.</p>
+	<li style="list-style: decimal;"><p class="BodyLevel1">Click <b><span class="Bold">Save</span></b>.</p></li>
+</ol>
+<p>&nbsp;</p>
+ 
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

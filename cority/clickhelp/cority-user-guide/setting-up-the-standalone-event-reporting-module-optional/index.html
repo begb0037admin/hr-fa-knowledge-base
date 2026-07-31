@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/setting-up-the-standalone-event-reporting-module-optional"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Setting Up the Standalone Event Reporting Module (Optional)</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Setting Up the Standalone Event Reporting Module (Optional)';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+
+<p>&nbsp;</p>
+
+ <h3 id="h3__932028854" data-has-heading-anchor="true"><a name="IX_standalone_event"></a><a name="IX_standalone_setting_up"></a><a name="XREF_82162_Working_with_the"></a>Setting Up the Standalone Event Reporting Module (Optional)<a href="/articles/cority-user-guide/setting-up-the-standalone-event-reporting-module-optional/a/h3__932028854" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-the-standalone-event-reporting-module-optional/a/h3__932028854&#39;,this);"></a></h3>
+ <p class="BodyLevel1">The standalone Event Reporting module can be accessed by a non-Cority&nbsp;user. The URL for the standalone is comprised of the Virtual Directory Address system setting, plus the appropriate path <br/><span class="Emphasis">/safetyincidentselfreportselection/displaystandalone.rails</span>, <br/><span class="Emphasis">/environmentalincidentselfreportselection/displaystandalone.rails</span>, or <br/><span class="Emphasis">/ergonomicauditselfreportselection/displaystandalone.rails</span></p>
+ <p class="BodyLevel1">As with all Cority&nbsp;standalone applications, there is an anonymous user that logs into the application behind the scenes. In the case of Event Reporting, the anonymous user is called Anonymous_ISR, and this user is accessible by the Users list in the application so that clients can configure their roles. Note that these anonymous users cannot be deleted.</p>
+ <p class="BodyLevel1">There are four business rules for each event type that are configured to send an email notification whenever an Event Report is submitted (either through the standalone module or from within the Cority&nbsp;application). The body of the email will contain the details associated with submitted record, as well as a link to view the actual Event Report record. For more information, see <a href="/articles/cority-user-guide/setting-up-business-rules/a/XREF_34102_Business_Rules" onclick="return n(&#39;!cority-user-guide/setting-up-business-rules/a/XREF_34102_Business_Rules&#39;,this);">Setting Up Business Rules</a>.</p>
+ <p class="BodyLevel1">The link in the email is configured to bring the user to the standalone component to view the submitted Event Report record. However, the Allow Self Reporting Email Recipients to Bypass Login Screen system setting determines whether or not the user must first login to access the record. If this system setting is set to true, the system will automatically log in the Anonymous_ISR user. If this system setting is false, the user must first login successfully by providing their login credentials to view the record.</p>
+ <p>&nbsp;</p>
+  
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

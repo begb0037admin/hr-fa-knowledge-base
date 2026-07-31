@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/monitoring-data-quality"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Monitoring Data Quality</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Monitoring Data Quality';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h2 id="h2_2143026857" data-has-heading-anchor="true">Monitoring Data Quality<a href="/articles/cority-user-guide/monitoring-data-quality/a/h2_2143026857" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/monitoring-data-quality/a/h2_2143026857&#39;,this);"></a></h2><p class="BodyLevel1">The Data Quality module monitors how well your safety data supports the predictive models, and identifies any issues so that you can take any necessary corrective actions to improve confidence in the predictions. The module measures the completeness and accuracy of your data, and calculates an overall data quality score. It also tracks how quickly data is entered into Cority.</p><p class="BodyLevel1">In the Analytics menu, click&nbsp;<b><span class="Bold">Data Quality</span></b>. You will see four scores, ranging from 0 to 100. These scores are calculated whenever the Data Quality module is opened, and cannot be edited. If a module does not contain any data, it is excluded from the calculations.</p><p class="BodyLevel1">You can change the position of the score cards (remember to click<img src="images/monitoring-data-quality-2021-05-25.png" alt="" style="border-color: #ffffff; border-style: solid; width: 23px; height: 20.7px;" loading="lazy"/>&nbsp;and then&nbsp;<b><span class="Bold">Save</span></b>).</p><p class="BodyLevel1">The scores are color-coded to highlight whether the score is poor (red), good (orange) or excellent (green). These categories are defined as follows:</p><ul type="disc"><li><p class="BodyLevel1">Red/Poor: score is less than 50</p></li><li><p class="BodyLevel1">Orange/Good: score is equal to or greater than 50, but less than 80</p></li><li><p class="BodyLevel1">Green/Excellent: score is equal to or greater than 80.</p><p class="BodyLevel1"><img src="images/monitoring-data-quality-2021-05-25-1.png" alt="" style="width: 653px; height: 659.27px;" loading="lazy"/>&nbsp;</p></li></ul><p class="BodyLevel1">The individual scores are defined as follows:</p><ul type="disc"><li><p class="BodyLevel1"><span class="Emphasis" style="font-weight: bold;">Data Quality Score</span>&nbsp;- Overall score calculated as (Completeness score x Accuracy score) / 100. For details about the calculations, refer to&nbsp;<span style="font-style: italic;"><i>Working with Data Quality Scores</i></span>&nbsp;on the Cority&nbsp;User Community.</p></li><li><p class="BodyLevel1"><span class="Emphasis" style="font-weight: bold;">Data Completeness Score</span>&nbsp;- A measure of the degree of completeness of your safety data as it relates to the predictive models.</p></li></ul><p class="BodyLevel2" style="margin-left: 40px;">Each record is evaluated to identify the number of non-empty fields divided by the number of relevant fields (a record only requires one of its GDDLOFB fields to be populated in order for its Data Completeness Score to be calculated). This result is squared to arrive at a record score. The result favors situations where a minority of records have many empty fields vs situations where a majority of records have a few fields empty. The Data Completeness Score is then calculated as (sum of all record scores / count of all records) x 100.</p><p class="BodyLevel2" style="margin-left: 40px;">Below the Data Completeness Score are displayed the&nbsp;<i><span class="Emphasis">Lowest Quality Sources</span></i>; these are the three data sources that most negatively affect your overall data completeness score.</p><ul type="disc"><li><p class="BodyLevel1"><span class="Emphasis" style="font-weight: bold;">Data Accuracy Score</span>&nbsp;- A rating of the accuracy of your safety data. The score is calculated as ((sum of records - inaccurate records) / sum of records) x 100.<br/>Below the Data Accuracy Score are displayed the&nbsp;<i><span class="Emphasis">Lowest Quality Sources</span></i>; these are the two data sources that most negatively affect your overall data accuracy score. Hover over a score card to see a description of each including how it is calculated.</p></li><li><p class="BodyLevel1"><span class="Emphasis" style="font-weight: bold;">Data Timeliness Score</span>&nbsp;- The total average Timeliness Score of the data tables for which the Timeliness Score has been calculated. This score is out of 100, and is calculated using the following formula: ((Number of Optimal Days) / (Number of Actual Days)) * 100.</p></li></ul><p class="BodyLevel1">The Data Accuracy, Data Completeness and Timeliness scores may be added to a custom list or form layout, as follows:</p><p class="BodyLevel1"><img src="images/monitoring-data-quality-2021-05-25-2.png" alt="" style="width: 707px; height: 332.371px;" loading="lazy"/><br/></p><script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script><style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2">//<![CDATA[
+!dxheStartCommentTag
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Analytics\nMonitoring Data Quality");
+addButton("show",BTN_TEXT,"Show", , , , ,0,0, , , );
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../index.htm",  , ">", "Home", "../Introduction/Welcome_to_Cority.htm");
+document.write("<a href=\"Analytics1.htm\">Analytics<\/a> > Monitoring Data Quality<\/p>");
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+onLoadHandler = function()
+{
+  if (window.setRelStartPage)
+	{
+	setTimeout("setRelStartPage('../../index.htm');", 1)
+
+    setTimeout("UpdateBreadCrumbsMarker();", 1);
+	}
+}
+
+if (window.addEventListener){  
+	window.addEventListener('load', onLoadHandler, false);   
+} else if (window.attachEvent){  
+	window.attachEvent('onload', onLoadHandler);  
+}
+
+function onSetStartPage()
+{
+  autoSync(1);
+  sendSyncInfo();
+  sendAveInfoOut();
+}
+//!dxheEndCommentTag
+
+ 
+
+<p>&nbsp;</p>
+
+ <h2 id="h2_2143026857"><a name="IX_accuracy_data"></a><a name="IX_completeness_data"></a><a name="IX_quality"></a><a name="IX_data_quality"></a><a name="XREF_17371_H1"></a>Monitoring Data Quality</h2>
+ <p class="BodyLevel1">The Data Quality module monitors how well your safety data supports the predictive models, and identifies any issues so that you can take any necessary corrective actions to improve confidence in the predictions. The module measures the completeness and accuracy of your data, and calculates an overall data quality score. It also tracks how quickly data is entered into Cority. </p>
+ <p class="BodyLevel1">In the Analytics menu, click <span class="Bold">Data Quality</span>. You will see four scores, ranging from 0 to 100. These scores are calculated whenever the Data Quality module is opened, and cannot be edited. If a module does not contain any data, it is excluded from the calculations.</p>
+ <p class="BodyLevel1">You can change the position of the score cards (remember to click <img alt="i_action_bar.gif" style="margin-top : 5pt; margin-bottom : 10pt; border: Solid 0pt #999999; " id="image2" src="images/i_action_bar.gif"/>&nbsp;and then <span class="Bold">Save</span>).</p>
+ <p class="BodyLevel1">The scores are color-coded to highlight whether the score is poor (red), good (orange) or excellent (green). These categories are defined as follows:</p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1">Red/Poor: score is less than 50</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Orange/Good: score is equal to or greater than 50, but less than 80</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Green/Excellent: score is equal to or greater than 80.</p>
+  <div align="left"><img alt="Analytics_data_quality.gif" style="margin-top : 5pt; margin-bottom : 10pt; border: Solid 0pt #999999; " id="image3" src="images/Analytics_data_quality.gif"/>
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+</li>
+ </ul>
+ <p class="BodyLevel1">The individual scores are defined as follows:</p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1"><span class="Emphasis" style="font-weight : bold; ">Data Quality Score</span>&nbsp;- Overall score calculated as (Completeness score x Accuracy score) / 100. For details about the calculations, refer to <span style="font-style : italic; "><i>Working with Data Quality Scores</i></span>&nbsp;on the Cority&nbsp;User Community.</p>
+</li>
+  <li>
+  <p class="BodyLevel1"><span class="Emphasis" style="font-weight : bold; ">Data Completeness Score</span>&nbsp;- A measure of the degree of completeness of your safety data as it relates to the predictive models.</p>
+</li>
+ </ul>
+ <p class="BodyLevel2">Each record is evaluated to identify the number of non-empty fields divided by the number of relevant fields (a record only requires one of its GDDLOFB fields to be populated in order for its Data Completeness Score to be calculated). This result is squared to arrive at a record score. The result favors situations where a minority of records have many empty fields vs situations where a majority of records have a few fields empty. The Data Completeness Score is then calculated as (sum of all record scores / count of all records) x 100.</p>
+ <p class="BodyLevel2">Below the Data Completeness Score are displayed the <span class="Emphasis">Lowest Quality Sources</span>; these are the three data sources that most negatively affect your overall data completeness score.</p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1"><span class="Emphasis" style="font-weight : bold; ">Data Accuracy Score</span>&nbsp;- A rating of the accuracy of your safety data. The score is calculated as ((sum of records - inaccurate records) / sum of records) x 100.<br />Below the Data Accuracy Score are displayed the <span class="Emphasis">Lowest Quality Sources</span>; these are the two data sources that most negatively affect your overall data accuracy score. Hover over a score card to see a description of each including how it is calculated.</p>
+</li>
+  <li>
+  <p class="BodyLevel1"><span class="Emphasis" style="font-weight : bold; ">Data Timeliness Score</span>&nbsp;- The total average Timeliness Score of the data tables for which the Timeliness Score has been calculated. This score is out of 100, and is calculated using the following formula: ((Number of Optimal Days) / (Number of Actual Days)) * 100. </p>
+</li>
+ </ul>
+ <p class="BodyLevel1">The Data Accuracy, Data Completeness and Timeliness scores may be added to a custom list or formlayout, as follows:</p>
+ <div align="left"><img alt="Analytics_data_quality_list_form_indicators.gif" style="margin-top : 5pt; margin-bottom : 10pt; border: Solid 0pt #999999; " id="image4" src="images/Analytics_data_quality_list_form_indicators.gif"/>
+ </div>
+ <p>&nbsp;</p>
+  
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+!dxheStartCommentTag
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//!dxheEndCommentTag
+//]]&gt;</script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

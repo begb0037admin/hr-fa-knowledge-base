@@ -1,0 +1,154 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/setting-up-a-source-profile"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Setting Up a Source Profile</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Setting Up a Source Profile';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+
+<p>&nbsp;</p>
+
+ <h2 id="h2__1139866752" data-has-heading-anchor="true"><a name="IX_calculating_emissions"></a><a name="IX_calculations"></a><a name="IX_source_profile_1"></a><a name="IX_source_profile"></a><a name="XREF_27705_Source_Profile"></a>Setting Up a Source Profile<a href="/articles/cority-user-guide/setting-up-a-source-profile/a/h2__1139866752" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-a-source-profile/a/h2__1139866752&#39;,this);"></a></h2>
+ <p class="BodyLevel1">A source profile allows you to perform emission inventory calculations on a collection of assets, and use those calculations to analyze emissions from various pollution sources. Specifically, you can:</p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1">Define a collection of assets that you want to generate an emission inventory calculation for.</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Use the combined record to define how emissions will be calculated based on calculation methodology for each asset.</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Run speciated emission inventory calculations for controlled and uncontrolled pollutants.</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Report on emission inventory calculations for a selected reporting period. The calculations will use the emission factor according to the associated asset’s location and effective date.</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Inventory the emissions that result from a combustion reaction. </p>
+</li>
+ </ul>
+ <p class="BodyLevel1">To create or edit a source profile:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Emissions Inventory menu click<span class="Bold"> <b>Source Profile</b></span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click a link to edit a record, or click <b><span class="Bold">New</span></b>.</p>
+  <div align="left"><img alt="EI_source_profile_without_results.png" style="margin-top : 5pt; margin-bottom : 10pt; border: Solid 0pt #999999; " id="image11" src="images/EI_source_profile_without_results.png" loading="lazy"/>
+  </div></li>
+  <p class="Note" style="margin-top  : 0.000pt; margin-bottom : 0.000pt;">Use the Site Selector (at the top of the Emissions Inventory menu) to view just the source profiles related to a particular GDDLOFB or asset node.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the Source Profile tab, enter a <i><span class="Emphasis">Source Name</span>&nbsp;</i>and <i><span class="Emphasis">Start Date</span>&nbsp;</i>and <i><span class="Emphasis">End Date</span>&nbsp;</i>for the profile, along with any <i><span class="Emphasis">Notes</span></i>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the Related Assets tab, add the assets in the desired order:</p>
+</li>
+  <ul type="disc">
+   <li>
+   <p class="BodyLevel2">Select the<span class="Emphasis"> <i>Air Emission Asset</i></span>, the <i><span class="Emphasis">Emission Calculation Equation</span>&nbsp;</i>(from the <a href="/articles/cority-user-guide/equation/a/XREF_69344_GXPIII_749_Equation" onclick="return n(&#39;!cority-user-guide/equation/a/XREF_69344_GXPIII_749_Equation&#39;,this);">Equation</a> look-up table), <i><span class="Emphasis">Sequence</span>&nbsp;</i>(this defaults to the next available number if there are multiple assets already added), and the <i><span class="Emphasis">Start</span> </i>and<span class="Emphasis"> <i>End Dates</i></span><i>&nbsp;</i>(these must be within the source profile’s date range).</p>
+</li>
+   <li>
+   <p class="BodyLevel2">Select how the results should be aggregated in the <i><span class="Emphasis">Calculation Data Source</span>&nbsp;</i>field: “Stream Data” will aggregate the results using stream data speciation, while “Source Test Data” will aggregate the results using speciation of the selected <i><span class="Emphasis">Source Test Data</span> </i>record.</p>
+</li>
+   <li>
+   <p class="BodyLevel2">Indicate if this asset is <i><span class="Emphasis">Control Equipment</span></i>. No emission calculation will be performed on this asset (see also the related bullets in step 7). If this checkbox is selected, the <i><span class="Emphasis">Emission Calculation Equation </span></i>field will be cleared if an equation was previously selected.</p>
+</li>
+   <li>
+   <p class="BodyLevel2">If necessary, use the Chemical Reactions tab to capture any chemical reactions linked to the air emission asset.</p>
+</li>
+  </ul>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Repeat step 4 as required. When all assets are added, click <b><span class="Bold">Save</span></b>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the Source Profile tab, choose <b><span class="Bold">Actions»Generate Emission Calculation Report</span>&nbsp;</b>and select one or more<span class="Emphasis">&nbsp;</span>reporting periods (from the <a href="/articles/cority-user-guide/reportingperiod/a/XREF_56751_EI_ReportingPeriod" onclick="return n(&#39;!cority-user-guide/reportingperiod/a/XREF_56751_EI_ReportingPeriod&#39;,this);">ReportingPeriod</a>&nbsp;look-up table). Note that this report will only include values for assets whose date range falls within the selected reporting period(s).<br/>To delete the report for one or more period, choose <b><span class="Bold">Actions»Delete Emissions Calculation Report</span> </b>and select the period(s) that you want to delete the report for.</p>
+</li>
+  <p class="Note">You can also generate (or delete) emission calculation reports for multiple selected source profiles from the Source Profile list view. Each time you generate the report for one or more records, the emissions will be recalculated </p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">The emission calculations associated with each asset are performed and the aggregated results are shown in the Emission Results section at the bottom of the Source Profile tab. </p>
+  <div align="left"><img alt="EI_source_profile_with_results.png" style="margin-top : 5pt; margin-bottom : 10pt; border: Solid 0pt #999999; " id="image12" src="images/EI_source_profile_with_results.png" loading="lazy"/>
+  </div></li>
+ </ol>
+ <ul type="disc" style="margin-left: 40px;">
+  <li>
+  <p class="BodyLevel2">The equations selected in the Emission Calculation Equation field for each related asset (as well as in any Intermediate Calculation UDF_FK fields, if added to a custom layout) are used to calculate the emission results. Results will be calculated for each speciated chemical.</p>
+</li>
+  <li>
+  <p class="BodyLevel2">The Controlled Emission column is calculated using the following formula: <br/>(100 - DRE factor) / 100 * [Uncontrolled Emission value]. </p>
+</li>
+  <li>
+  <p class="BodyLevel2">If an asset in the sequence is marked as <i><span class="Emphasis">Control Equipment</span></i>, its DRE factor will apply to the assets that precede it in the sequence. For example, in a sequence of five assets, if assets 3 and 5 are marked as <i><span class="Emphasis">Control Equipment</span></i>, asset 3’s DRE factor will be applied to assets 1 and 2, and asset 5’s DRE factor will be applied to asset 4.</p>
+</li>
+  <li>
+  <p class="BodyLevel2">If a related asset has a chemical-specific DRE factor recorded and there is no asset ahead of it in the sequence marked as <i><span class="Emphasis">Control Equipment</span></i>, that factor will be used. If no DRE factor is defined, the asset factor related to the selected chemical property will be used.</p>
+</li>
+  <li>
+  <p class="BodyLevel2">The Emission UOM will be the unit of measure selected in the associated <a href="/articles/cority-user-guide/equation/a/XREF_69344_GXPIII_749_Equation" onclick="return n(&#39;!cority-user-guide/equation/a/XREF_69344_GXPIII_749_Equation&#39;,this);">Equation</a>&nbsp;look-up table record; if no unit of measure is selected, an error message will display.</p>
+</li>
+  <li>
+  <p class="BodyLevel2">If an asset includes hazards on the Chemical Reactions tab, the emissions will be organized by agent hazard and the report will only display uncontrolled emission results.</p>
+</li>
+ </ul>
+ <h4 id="h4__1834947474" data-has-heading-anchor="true">Updating Calculated Results<a href="/articles/cority-user-guide/setting-up-a-source-profile/a/h4__1834947474" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-a-source-profile/a/h4__1834947474&#39;,this);"></a></h4>
+ <p class="BodyLevel1">Results may be recalculated automatically via business rule actions in the following scenarios:</p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1">Updates to the source profile will recalculate the emission calculations.</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Updates to the asset details will recalculate related equipment attributes, equipment UDFs, emission parameters and emission calculations.</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Updates to the equipment attributes will recalculate related emission parameters, and emission calculations.</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Updates to the equipment UDFs will recalculate related emission parameters, and emission calculations.</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Updates to the emission parameters will recalculate related emission calculations.</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Updates to the stream details will recalculate the related stream composition, emission parameters, and emission calculations.</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Updates to the stream composition will update the related emission calculations.</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Updates to the agent hazard details will recalculate related vapor pressure, stream composition, and emission calculations.</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Updates to reporting periods will recalculate related emission calculations.</p>
+</li>
+ </ul>
+ <p class="Note">While the background table can be updated immediately by saving a related asset, you must choose <b><span class="Bold">Actions»Generate Emission Calculation Report</span>&nbsp;</b>again on the source profile to display updated values.</p>
+ <p class="BodyLevel1">If you want to see results presented differently, e.g. for a subset of data or other criteria, use the reporting features as described&nbsp;in <a href="/articles/cority-user-guide/emissions-inventory-reporting/a/XREF_62482_Emissions" onclick="return n(&#39;!cority-user-guide/emissions-inventory-reporting/a/XREF_62482_Emissions&#39;,this);">Emissions Inventory Reporting</a>.</p>
+ <p>&nbsp;</p>
+  
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

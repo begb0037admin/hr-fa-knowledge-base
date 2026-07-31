@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/posting-online-questionnaires"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Posting Online Questionnaires</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Posting Online Questionnaires';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+
+<p>&nbsp;</p>
+
+ <h3 id="h3_110806111" data-has-heading-anchor="true"><a name="XREF_13259_Posting_Public"></a>Posting Online Questionnaires<a href="/articles/cority-user-guide/posting-online-questionnaires/a/h3_110806111" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/posting-online-questionnaires/a/h3_110806111&#39;,this);"></a></h3>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the appropriate Cloud’s menu, click <b><span class="Bold">Questionnaire Inbox</span></b>. The Online Questionnaire list displays public online questionnaires submitted via the web site or the Portal.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">The default view is non-posted questionnaires; if necessary, change this to only view posted questionnaires or to view all questionnaires for that Cloud. <br/>The view will only display questionnaires corresponding to the site security that you have been granted. If the submitted questionnaire is not linked to any health center, or if the employee number entered is not validated in the application, then it will be visible for all users until posted.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click the link of the questionnaire you want to post. When it opens, make any changes required, click <b><span class="Bold">Save</span></b>, and then choose one of the following actions:</p>
+</li>
+ </ol>
+ <ul type="disc" style="margin-left: 40px;">
+  <li>
+  <p class="BodyLevel2"><b><span class="Bold">Actions»Post to Questionnaire</span>&nbsp;</b>-- The questionnaire will be visible in the Questionnaire list in the Cloud’s menu, as well as in the Posted view of the Questionnaire Inbox. You can also use this action at the Online Questionnaire list level to post multiple questionnaires at the same time.</p>
+</li>
+  <li>
+  <p class="BodyLevel2"><b><span class="Bold">Actions»Post to &lt;module&gt;</span>&nbsp;</b>-- Select a module (limited to the modules in the same Cloud). You are prompted to enter the number of the record to which the questionnaire will be attached. If the questionnaire is linked to the selected module, you have the option of creating a new record instead. In the new record, some fields will be populated with responses from the questionnaire’s; if more than one question maps to the same field, a new record will be created for each. The questionnaire is listed on the Questionnaires tab of the record. </p>
+</li>
+ </ul>
+ <p class="BodyLevel1">If multiple employee record matches are encountered and one of them is active, the questionnaire is linked to the active employee record, instead of any older, inactive employee records.</p>
+ <h4 id="h4__574723535" data-has-heading-anchor="true">Automatic Posting<a href="/articles/cority-user-guide/posting-online-questionnaires/a/h4__574723535" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/posting-online-questionnaires/a/h4__574723535&#39;,this);"></a></h4>
+ <p class="BodyLevel1">You can set up a business rule that will automatically post a questionnaire under specific conditions. For example, you may want to auto post a particular occupational health questionnaire taken by a user from standalone, portal, or myCority, where the score is above a given threshold.</p>
+ <p class="BodyLevel1">Whenever the questionnaire that meets these conditions is submitted, it will skip the Questionnaire Inbox and get automatically posted to the Questionnaire module of the related Cloud. If that particular questionnaire is mapped to a specific module (e.g. Travel), it would get posted to that module as a new record and not the Questionnaire module.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Create the business rule (see <a href="/articles/cority-user-guide/setting-up-business-rules/a/XREF_34102_Business_Rules" onclick="return n(&#39;!cority-user-guide/setting-up-business-rules/a/XREF_34102_Business_Rules&#39;,this);">Setting Up Business Rules</a>), selecting the appropriate <span class="Emphasis">[module]</span>PublicQRH entity, e.g. EnvironmentalPublicQRH.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Define the conditions under which the questionnaire will autopost. For example:</p>
+  <div align="left"><img alt="QUES_autopost_conditions.png" style="margin-top : 5pt; margin-bottom : 10pt; border: Solid 0pt #999999; " id="image13" src="images/QUES_autopost_conditions.png" loading="lazy"/>
+  </div></li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Set the Trigger to Update.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the Action List tab, create a <a href="/articles/cority-user-guide/setting-up-business-rule-actions" onclick="return n(&#39;!cority-user-guide/setting-up-business-rule-actions&#39;,this);">method action</a> that points to the AutoPostQuestionnaire method.</p>
+</li>
+ </ol>
+ <p>&nbsp;</p>
+  
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/customizing-smart-notes"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Customizing Smart Notes</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Customizing Smart Notes';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+
+<p>&nbsp;</p>
+
+ <h3 id="h3__798966854" data-has-heading-anchor="true"><a name="IX_customizing_1"></a><a name="XREF_75716_GXP_1449"></a>Customizing Smart Notes<a href="/articles/cority-user-guide/customizing-smart-notes/a/h3__798966854" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/customizing-smart-notes/a/h3__798966854&#39;,this);"></a></h3>
+ <p class="Note">We recommend that you watch the Smart Note training video on the Cority&nbsp;User Community and experiment with the templates provided before attempting to create your own templates. Many clients will find that they do not need to create their own templates.</p>
+ <h4 id="h4__468275503" data-has-heading-anchor="true"><a name="IX_creating_a_note_template"></a>Creating a Smart Note Template<a href="/articles/cority-user-guide/customizing-smart-notes/a/h4__468275503" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/customizing-smart-notes/a/h4__468275503&#39;,this);"></a></h4>
+ <p class="BodyLevel1">Cority&nbsp;provides SOAP and Admission Note templates for use in the <span class="Emphasis">Smart Note </span>field. You can edit these, use them as the basis for creating a new template, or create new templates from scratch. We recommend that you use the Admission Note template as the basis for new templates because it contains all the html &lt;div&gt; statements required to link to the controllers in the <span class="Emphasis">Smart Note </span>field in the clinic visit record; however, a Tags menu provides an easy way to add these div statements to other templates. </p>
+ <p class="Note">If you are using an AddNote layout other than the default layout, ensure that it includes a <i><span class="Emphasis">Smart Note&nbsp;</span>&nbsp;<span class="Emphasis">Template</span>&nbsp;</i>field. For more information, see <a href="/articles/cority-user-guide/defining-form-layouts/a/XREF_78676_Layouts" onclick="return n(&#39;!cority-user-guide/defining-form-layouts/a/XREF_78676_Layouts&#39;,this);">Defining Form Layouts</a>.</p>
+ <p class="Note">The font style and size for the section headings on the Smart Note templates can be configured using the “Default Font for Letters” and “Default Font Size for Letters” system settings.</p>
+ <p class="BodyLevel1" style="font-weight : bold;">To use the Admission Note template as the basis for a new template:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the <a href="/articles/cority-user-guide/addnote/a/XREF_26073_Note_Templates" onclick="return n(&#39;!cority-user-guide/addnote/a/XREF_26073_Note_Templates&#39;,this);">AddNote</a> look-up table, open the Admission Note template.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select everything in the note body and copy it to the clipboard, then click <b><span class="Bold">New</span>&nbsp;</b>to create a new note template.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the<span class="Emphasis"> Code</span>&nbsp;field, enter the name of the new template, and select Clinic Visit as the <i><span class="Emphasis">Category</span></i>. Select the <i><span class="Emphasis">Geographic Location</span></i><span class="Bold">&nbsp;</span>and <i><span class="Emphasis">Health Center</span></i>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Paste the note contents into the body and click <b><span class="Bold">Save</span></b>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Change the headings as required, but do not delete any yet so that you do not delete hidden &lt;div&gt; tags.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <img alt="i_smartnote_formattingBar.gif" style="margin-top : 5pt; margin-bottom : 10pt; border: Solid 0pt #999999; " id="image52" src="images/i_smartnote_formattingBar.gif" loading="lazy"/>&nbsp;at the top of the <span class="Emphasis">Smart Note Template </span>field to open the formatting toolbar and click <b><span class="Bold">Source</span> </b>to view the html.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">The &lt;div&gt; tags are used to connect a section to a controller, so that content created via that controller is placed in the correct location. If a controller does not have a corresponding &lt;div&gt; connection in the template, any content created via that controller will be placed at the cursor location. </p>
+</li>
+  <p class="BodyLevel2">Locate the appropriate &lt;div&gt; statement, cut it to the clipboard, then paste it <span style="font-style : italic; "><i>below</i></span>&nbsp;the desired section heading. For example:</p>
+
+  <table style="border-spacing: 0; padding-left: 6.00pt; padding-top: 6.00pt; padding-right: 6.00pt; padding-bottom: 4.00pt;float: alignleft;margin-left: 14.40pt; width: 375.75pt;" cellspacing="0">
+   <tbody><tr style=" height : 30.00pt;">
+   <th style="width : 279.000pt; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellHeading">This &lt;div&gt; statement…</p>
+</th>
+   <th style="width : 96.749pt; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellHeading">…will connect to this controller</p>
+</th>
+</tr>
+   <tr style=" height : 20.00pt;">
+   <td style="width : 279.000pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">&lt;div id="HPI_space" style="display: none;"&gt;&amp;nbsp;&lt;/div&gt;</p>
+</td>
+   <td style="width : 96.749pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">HPI</p>
+</td>
+</tr>
+   <tr style=" height : 20.00pt;">
+   <td style="width : 279.000pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">&lt;div id="ROS_space" style="display: none;"&gt;&amp;nbsp;&lt;/div&gt;</p>
+</td>
+   <td style="width : 96.749pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">ROS</p>
+</td>
+</tr>
+   <tr style=" height : 20.00pt;">
+   <td style="width : 279.000pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">&lt;div id="SocHX_space" style="display: none;"&gt;&amp;nbsp;&lt;/div&gt;</p>
+</td>
+   <td style="width : 96.749pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">SocHx</p>
+</td>
+</tr>
+   <tr style=" height : 20.00pt;">
+   <td style="width : 279.000pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">&lt;div id="FmHx_space" style="display: none;"&gt;&amp;nbsp;&lt;/div&gt;</p>
+</td>
+   <td style="width : 96.749pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">FmHx</p>
+</td>
+</tr>
+   <tr style=" height : 20.00pt;">
+   <td style="width : 279.000pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">&lt;div id="Exam_space" style="display: none;"&gt;&amp;nbsp;&lt;/div&gt;</p>
+</td>
+   <td style="width : 96.749pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Exam</p>
+</td>
+</tr>
+  </tbody></table>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">The &lt;div&gt; statement that relates to the Print controller, on the other hand, must be placed <span style="font-style : italic; "><i>above</i></span>&nbsp;what you want to print, so that everything below it will be printed. In the SOAP and Admission Note templates, this line is above the Assessment &amp; Plan section: <br/>&lt;div id="Print_space" style="display: none;"&gt;&amp;nbsp;&lt;/div&gt;<br/>If you want to print different content, cut this line and paste it above the section that you want to print. Note that everything below this line will be printed. If you want to limit what prints, move the desired section to the end of the note first, then place the &lt;div&gt; line above it.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">While in the Source view, delete any unrequired sections (being careful not to delete any required &lt;div&gt; statements).</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Save your template. If you want this to be the default Smart Note template, configure the Smart Note field in your clinic visit layout as described in <a href="/articles/cority-user-guide/customizing-smart-notes/a/XREF_10981_Changing_the" onclick="return n(&#39;!cority-user-guide/customizing-smart-notes/a/XREF_10981_Changing_the&#39;,this);">Defining the Default Smart Note Template</a>. Otherwise, it will be available for users to “swap in” as described in <a href="/articles/cority-user-guide/recording-smart-notes/a/XREF_94189_Temporarily" onclick="return n(&#39;!cority-user-guide/recording-smart-notes/a/XREF_94189_Temporarily&#39;,this);">Using a Different Smart Note Template</a>.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1" style="font-weight : bold;">To create a new template from scratch:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the <a href="/articles/cority-user-guide/addnote/a/XREF_26073_Note_Templates" onclick="return n(&#39;!cority-user-guide/addnote/a/XREF_26073_Note_Templates&#39;,this);">AddNote</a>&nbsp;look-up table, click <b><span class="Bold">New</span> </b>to create a new note template.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the<span class="Emphasis"> <i>Code</i></span><i>&nbsp;</i>field, enter the name of the new template, and select Clinic Visit as the <i><span class="Emphasis">Category</span></i>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the <i><span class="Emphasis">Smart Note Template</span>&nbsp;</i>field, enter the desired section headings and any other text for your note.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <img alt="i_smartnote_formattingBar00041.gif" style="margin-top : 5pt; margin-bottom : 10pt; border: Solid 0pt #999999; " id="image53" src="images/i_smartnote_formattingBar00041.gif" loading="lazy"/>&nbsp;at the top of the <i><span class="Emphasis">Smart Note Template </span></i>field to open the formatting toolbar, and apply any formatting as required.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">To connect the controllers in the Smart Note field of the clinic visit record to a section of your template, click in the heading you want to link, then choose the controller name from the <span class="Emphasis">Tags</span>&nbsp;list. You will not see a change to your note content, but if you view the Source (HTML) you will see the new &lt;div&gt; statement. For more information, see step 7 above. </p>
+</li>
+  <p class="Note">The &lt;div&gt; statement to identify content to be printed must be placed above the content - be sure to click before any content you want included before inserting the Print tag. Note that everything below this line will be printed.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">If you want to verify the placement of the &lt;div&gt; statements, click <i><span class="Emphasis">Source</span> </i>to view the html.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Save your template. If you want this to be the default Smart Note template, configure the Smart Note field in your clinic visit layout as described in <a href="/articles/cority-user-guide/customizing-smart-notes/a/XREF_10981_Changing_the" onclick="return n(&#39;!cority-user-guide/customizing-smart-notes/a/XREF_10981_Changing_the&#39;,this);">Defining the Default Smart Note Template</a>. Otherwise, it will be available for users to “swap in” as described in <a href="/articles/cority-user-guide/recording-smart-notes/a/XREF_94189_Temporarily" onclick="return n(&#39;!cority-user-guide/recording-smart-notes/a/XREF_94189_Temporarily&#39;,this);">Using a Different Smart Note Template</a>.</p>
+</li>
+ </ol>
+ <h4 id="h4__1231449625" data-has-heading-anchor="true"><a name="IX_creating_a_content"></a>Creating a Smart Note Content Questionnaire<a href="/articles/cority-user-guide/customizing-smart-notes/a/h4__1231449625" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/customizing-smart-notes/a/h4__1231449625&#39;,this);"></a></h4>
+ <p class="BodyLevel1">Cority&nbsp;includes many questionnaires designed specifically for use with Smart Notes, but you may wish to edit these or create new questionnaires. These questionnaires are called when a user clicks one of the controllers in the <i><span class="Emphasis">Smart Note </span></i>field in the clinic visit record.</p>
+ <p class="BodyLevel1">To create a new questionnaire for use in a Smart Note:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Use the <a href="/articles/cority-user-guide/questioncategory/a/XREF_82122_Question_Categories" onclick="return n(&#39;!cority-user-guide/questioncategory/a/XREF_82122_Question_Categories&#39;,this);">QuestionCategory</a>&nbsp;look-up table to create the question categories (e.g. HPI Chest Pain, HPI Rash, FmHx Father, etc.). </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Use the <a href="/articles/cority-user-guide/singlequestion/a/XREF_52536_Questions" onclick="return n(&#39;!cority-user-guide/singlequestion/a/XREF_52536_Questions&#39;,this);">SingleQuestion</a>&nbsp;look-up table to create the questions to be used in your Smart Note questionnaire (for example, for the HPI Chest Pain category, questions might be: Gradual, Sudden, Dull, Stabbing, etc.). </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the <a href="/articles/cority-user-guide/questionnaire1/a/XREF_83044_Questionnaires" onclick="return n(&#39;!cority-user-guide/questionnaire1/a/XREF_83044_Questionnaires&#39;,this);">Questionnaire</a>&nbsp;look-up table, create a new questionnaire or clone an existing Smart Note content questionnaire (e.g. HPI Cough, FmHx Mother, etc.), then add the appropriate questions.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the questionnaire record, specify the <i><span class="Emphasis">Smart Note Template</span>&nbsp;</i>type. This is the Smart Note field controller that you want to link the questionnaire to. For example, if you want the questionnaire to be available for selection when a user clicks the HPI controller in the clinic visit record, select “History of Presenting Illness”. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Optionally, select the <i><span class="Emphasis">Hide Question Numbers</span>&nbsp;</i>checkbox to prevent the question numbers from appearing beside the questions.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">To specify the order in which you want the questions to appear, open the Questionnaire Questions sublist and use the arrows to move questions to the desired order.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">For each question/response combination that you want to be used as content in your Smart Note, ensure that the <i><span class="Emphasis">Print Answer</span>&nbsp;</i>checkbox (on the Questionnaire Question - Note Configuration sublist) is selected.</p>
+</li>
+  <ul type="disc">
+   <li>
+   <p class="BodyLevel2">For “Text”, “Text Area”, “Date”, “Table or Query”, and “Formula” question types, the question/response will be placed in the Smart Note.</p>
+</li>
+   <li>
+   <p class="BodyLevel2">For “Instruction” questions, the question description provided in the <i><span class="Emphasis">Question</span>&nbsp;</i>field will be placed in the Smart Note.</p>
+</li>
+   <li>
+   <p class="BodyLevel2">For “Multiple Choice”, “Multiple Choice Checkbox”, “Checkbox”, “Normal or Abnormal”, and “Yes or No” question types, you can provide additional text to be displayed with each valid response. To do this, open the question on the <a href="/articles/cority-user-guide/singlequestion/a/XREF_52536_Questions" onclick="return n(&#39;!cority-user-guide/singlequestion/a/XREF_52536_Questions&#39;,this);">SingleQuestion</a>&nbsp;look-up table, open the appropriate record on the Valid Choices tab, and add the additional text to the <i><span class="Emphasis">Comments</span>&nbsp;</i>field. It is currently not possible to do this from the questionnaire itself.</p>
+</li>
+  </ul>
+  <p class="Note">If a number of “Checkbox” type questions have been configured to have a parent question that is of the “Instruction” type, those questions/responses will appear three to a row when added to a Smart Note.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <b><span class="Bold">Save</span></b>.</p>
+</li>
+ </ol>
+ <h4 id="h4_1578688043" data-has-heading-anchor="true"><a name="IX_default_template"></a><a name="IX_configuring_the_Smart"></a><a name="XREF_10981_Changing_the"></a>Defining the Default Smart Note Template<a href="/articles/cority-user-guide/customizing-smart-notes/a/h4_1578688043" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/customizing-smart-notes/a/h4_1578688043&#39;,this);"></a></h4>
+ <p class="BodyLevel1">You must configure the <i><span class="Emphasis">Smart Note</span> </i>field for the layouts on which you will be using it.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Retrieve the form layout. If the Smart Note field has not been added to the layout, add it to the appropriate location (recommended at the bottom of the form). </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Double-click on the Smart Note field to open its Field Properties.</p>
+  <div align="left"><img alt="admin_layouts_edit_smartNote.gif" style="margin-top : 5pt; margin-bottom : 10pt; border: Solid 0pt #999999; " id="image54" src="images/admin_layouts_edit_smartNote.gif" loading="lazy"/>
+  </div></li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the <i><span class="Emphasis">Default Template</span>&nbsp;</i>(e.g. SOAP, Admission, or a custom template) that will be presented in the Smart Note field whenever the form is opened.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the <i><span class="Emphasis">Controllers</span> </i>that you want to be available.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <b><span class="Bold">Done</span></b> and save the layout.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1">For more information about layouts, see <a href="/articles/cority-user-guide/defining-form-layouts/a/XREF_78676_Layouts" onclick="return n(&#39;!cority-user-guide/defining-form-layouts/a/XREF_78676_Layouts&#39;,this);">Defining Form Layouts</a>.</p>
+ <p>&nbsp;</p>
+  
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

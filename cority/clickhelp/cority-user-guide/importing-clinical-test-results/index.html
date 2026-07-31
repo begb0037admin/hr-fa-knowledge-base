@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/importing-clinical-test-results"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Importing Clinical Test Results</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Importing Clinical Test Results';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+
+<p>&nbsp;</p>
+
+ <h3 style="margin-top  : 4.000pt;" id="h3_1125533388" data-has-heading-anchor="true"><a name="IX_clinical_test_results"></a><a name="IX_clinical_testing_1"></a><a name="IX_importing_test_results"></a><a name="XREF_98709_Importing_Clinical"></a>Importing Clinical Test Results<a href="/articles/cority-user-guide/importing-clinical-test-results/a/h3_1125533388" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/importing-clinical-test-results/a/h3_1125533388&#39;,this);"></a></h3>
+ <p class="BodyLevel1">If Cority’s interface program with a laboratory is in place, you can import clinical test data from the laboratory. For information about setting up a laboratory interface, contact Cority&nbsp;support. Cority&nbsp;accepts HL7 2.2, HL7 2.3, ASTM-88, ASTM-94 and GammaDynaCare formats; the format to be used must be specified in the system settings. For more information, see <a href="/articles/cority-user-guide/changing-your-system-settings/a/XREF_72926_Changing_Your" onclick="return n(&#39;!cority-user-guide/changing-your-system-settings/a/XREF_72926_Changing_Your&#39;,this);">Changing Your System Settings</a>.</p>
+ <p class="Tip">The RESTful API can be used to acquire HL7 file data from different sources. Refer to the <a href="/articles/cority-user-guide/hl7mapper" onclick="return n(&#39;!cority-user-guide/hl7mapper&#39;,this);">HL7Mapper</a>&nbsp;look-up table and contact your GX2 administrator for assistance.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the <span style="letter-spacing : 0.01em; ">Clinical Test Sample list, </span>choose <b><span class="Bold">Actions»Import Results</span></b>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select or change the import <i><span class="Emphasis">Standard</span></i>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the <i><span class="Emphasis">Laboratory</span>&nbsp;</i>the results are being imported from. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Optionally, identify the <i><span class="Emphasis">Health Center</span>&nbsp;</i>and <i><span class="Emphasis">Practitioner</span></i>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <b><span class="Bold">Browse </span></b>to locate the test results file, then click <b><span class="Bold">Import</span>&nbsp;</b>to add the test results to the employees’ records.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1">Some records may not be imported because of an error with the data in the file, such as the employee number is not found. To view the list of test results, including these rejected records, choose <b><span class="Bold">Actions»Process Status and Log</span></b>. For each rejected record, the Process Log will display a reason for rejection. Rejected records as a result of incorrect data in the import file can be corrected directly in Cority. If there are related rejected records, make your corrections (e.g. employee number, name, DOB, etc.) in one record, and choose <b><span class="Bold">Actions»Apply Changes to All</span>&nbsp;</b>(if you do not do this, the changes will only be applied to the open record). Once you have saved your corrections, choose <b><span class="Bold">Actions»Reprocess</span></b>. View the log again to be sure all records have been saved. </p>
+ <p class="Note">If the import file contains clinical test battery codes, clinical test unit codes,or units of measure that are not stored in the look-up tables, the system will automatically add these new values to the corresponding tables with the test type defaulted to “text”. For HL7 imports, a system setting controls if the date of birth and/or the last name must be validated against the employee demographics, and another system setting defines the type of ID that imports should be matched to (employee number, SSN, or Medical Insurance Number). If any do not match, the import record will be rejected and the reason will appear in the Notes column of the import log.</p>
+ <h4 id="h4_53591171" data-has-heading-anchor="true"><a name="IX_Care360"></a><a name="IX_importing_from_Quest"></a><a name="IX_clinical_test_records"></a>Importing Results from Quest Diagnostics Care360<a href="/articles/cority-user-guide/importing-clinical-test-results/a/h4_53591171" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/importing-clinical-test-results/a/h4_53591171&#39;,this);"></a></h4>
+ <p class="BodyLevel1" style="font-weight : bold;"><span class="FM_Bold">Setting up the connection:</span></p>
+ <p class="BodyLevel1">Define the appropriate values for the Quest Care360 system settings:</p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1">Login Name and Password</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Link to Web Service - obtain from Quest Diagnostics.</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Notification Email - this is the email address at which you want to receive email notifications about imports into Cority&nbsp;from Quest Diagnostics Care360. </p>
+</li>
+ </ul>
+ <p class="BodyLevel1" style="font-weight : bold;">Importing the results:</p>
+ <p class="BodyLevel1">Log into Cority, then in another browser tab type: <br/><span style="font-style : italic; "><i>&lt;your </i></span><span class="Emphasis">Cority</span><span style="font-style : italic; "><i> domain&gt;</i></span>/questcare360import/doimport.rails <br/>and press <span class="GreyBold">Enter</span>.</p>
+ <p class="Note">An administrator can set up a task using Windows Task Scheduler that will trigger Cority&nbsp;to automatically import clinical test results from Quest Diagnostics Care360 at regular intervals.<br/>A business rule can automatically populate the record with the health center from the employee’s last clinic visit.</p>
+ <h4 id="h4_418281594" data-has-heading-anchor="true"><a name="IX_importing_from_LabCorp"></a><a name="IX_LabCorp"></a>Importing Results from LabCorp<a href="/articles/cority-user-guide/importing-clinical-test-results/a/h4_418281594" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/importing-clinical-test-results/a/h4_418281594&#39;,this);"></a></h4>
+ <p class="BodyLevel1" style="font-weight : bold;"><span class="FM_Bold">Setting up the connection:</span></p>
+ <p class="BodyLevel1">Define the appropriate values for the LabCorp system settings:</p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1">LabCorp’s FTP Address and Port Number</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Notification Email - this is the email address at which you want to receive email notifications about imports into Cority from LabCorp</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Login Name and Password</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Result File Directory - where results should be stored.</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Default Document Type</p>
+</li>
+ </ul>
+ <p class="BodyLevel1" style="font-weight : bold;">Importing the results:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Log into Cority, then in another browser tab enter the LabCorp URL and press <span class="GreyBold">Enter</span>. The URL will be in the following format:<br/>http://&lt;your Cority domain&gt;/labcorpimport/doimport.rails</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">An email message will be sent to the Notification Email address defined above, containing a log file that shows the number of records added, rejected, or updated. This information is also available in the Process Status and Log form (see <a href="/articles/cority-user-guide/viewing-import-logs/a/XREF_76439_Process_Status_Log" onclick="return n(&#39;!cority-user-guide/viewing-import-logs/a/XREF_76439_Process_Status_Log&#39;,this);">Viewing Import Logs</a>).</p>
+</li>
+ </ol>
+ <p class="Note">The National Provider Identifier (NPI) will map to the <i><span class="Emphasis">To Be Reviewed By</span>&nbsp;</i>field on the clinical test record. If a matching NPI is not found, or if there are multiple users associated with the same NPI, the <i><span class="Emphasis">To Be Reviewed By</span> </i>field will be left blank.</p>
+ <p class="Note">An administrator can set up a task using Windows Task Scheduler that will trigger Cority to automatically import clinical test results from LabCorp at regular intervals.</p>
+ <p>&nbsp;</p>
+  
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

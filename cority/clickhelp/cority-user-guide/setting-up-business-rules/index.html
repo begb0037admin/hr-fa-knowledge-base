@@ -1,0 +1,232 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/setting-up-business-rules"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Setting Up Business Rules</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Setting Up Business Rules';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+
+<p>&nbsp;</p>
+
+<h3 id="h3__1048115092" data-has-heading-anchor="true"><a name="IX_setting_up_2"></a><a name="XREF_34102_Business_Rules"></a>Setting 
+ Up Business Rules<a href="/articles/cority-user-guide/setting-up-business-rules/a/h3__1048115092" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-business-rules/a/h3__1048115092&#39;,this);"></a></h3>
+<p class="BodyLevel1">Business rules enforce constraints, provide pop-up 
+ messages, send email notifications, and perform other actions based on 
+ assigned conditions. Business rules usually paint a workflow picture; 
+ for example in Safety an incident approval process workflow is defined 
+ by a collection of business rules. </p>
+<p class="BodyLevel1">Clients may alter or add business rules so Cority&nbsp;works with their 
+ organizational workflow. </p>
+<p class="Note">Default business rules are identified (in the Details section) 
+ as “Cority&nbsp;Created” 
+ and cannot be deleted. These are listed in the System Guide. 
+ Rules that are critical to Cority’s 
+ operation are identified as “Essential Functionality” and cannot be inactivated.<br/>
+An administrator can migrate business rules from one environment to another; 
+ see <a href="/articles/cority-user-guide/migrating-configurations/a/XREF_57529_GXP_4229_Migrating" onclick="return n(&#39;!cority-user-guide/migrating-configurations/a/XREF_57529_GXP_4229_Migrating&#39;,this);">Migrating 
+ Configurations</a>.</p>
+<p class="Tip">While business rules trigger when a record is saved, Cority also provides functionality for "<a href="/articles/cority-user-guide/setting-up-display-rules" onclick="return n(&#39;!cority-user-guide/setting-up-display-rules&#39;,this);">Display Rules</a>" that trigger immediately when a field value changes.</p>
+<ol start="1">
+	<li style="list-style: decimal;"><p class="BodyLevel1">To view the 
+	 business rules defined in Cority, 
+	 in the Administrator menu click <b><span class="Bold">Business Rules</span></b>. 
+	 The list displays the code, description, rule type, entity, and active 
+	 status. </p></li>
+	<p class="Tip">Business Rule layouts include two Show Record History 
+	 actions:<br/>
+	- Show Record History (Details) displays the standard header changes.<br/>
+	- Show Record History (Conditions) displays a log of each time business 
+	 rule conditions were added, deleted, or changed.<br/>
+	The Show Record History action on the Action List tab displays each 
+	 time a user unlinked a business rule action from the business rule.</p>
+	<p class="Note">To export business rules to a JSON file, select the 
+	 rule(s) on the list view and then choose <b><span class="Bold">Actions»Export 
+	 Business Rule Configurations</span></b>. Conversely, you can import a 
+	 JSON file to create business rules. By default, <span class="Tip">Update 
+	 existing records</span>&nbsp;will be toggled off. If you want existing 
+	 records to be updated upon import, you must toggle the setting on 
+	 before selecting a file for import. You cannot import/update a Cority-created business rule.<br/>
+	To copy a business rule, open it and choose <span class="Bold"><b>Actions»Clone BR and link existing BRAs </b>(to link the existing BRAs to the cloned BR), or <b>Actions»Close BR and BRA(s)</b> (to clone the BRAs as well and link the new BR to the new BRAs)</span>.</p>
+	<li style="list-style: decimal;"><p class="BodyLevel1">Click a code 
+	 to open an existing rule, or click <b><span class="Bold">New</span></b>.</p>
+	</li>
+	<li style="list-style: decimal;"><p class="BodyLevel1">In the Details 
+	 section, enter a <i><span class="Emphasis">Code </span></i>and <i><span class="Emphasis">Description</span></i>, 
+	 select the <span class="Emphasis">Entity</span>&nbsp;for which the 
+	 rule will apply, and enter a <i><span class="Emphasis">Priority</span>&nbsp;</i>for 
+	 the rule. The priority can be any integer, and determines the order 
+	 that the rule is processed if there are multiple rules. Lower number 
+	 priorities are processed first.</p></li>
+	<li style="list-style: decimal;"><p class="BodyLevel1">In the Conditions 
+	 section, define the business rule:</p></li>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">Click <img alt="i_inline_multi_select.gif" id="image44" src="images/i_inline_multi_select.gif" style="margin-top: 5pt; 
+											 border: Solid 0pt #999999;" border="0" loading="lazy"/>&nbsp;to select 
+		 &nbsp;the property of the entity you wish to enforce a constraint 
+		 on (note that you can also select a system setting of the type 
+		 checkbox, look-up table, tree look-up, or free text). </p></li>
+		<li><p class="BodyLevel2">Define the criteria (operand) that you 
+		 want to apply to the property.</p></li>
+		<li><p class="BodyLevel2">A third field specifies any value that 
+		 the property should compare with. Depending on the type of property 
+		 you select, there may be a date selector or picklist icon to help 
+		 you choose a value. </p></li>
+	</ul>
+	<p class="BodyLevel2">To remove a condition, click the X at the end 
+	 of the row.</p>
+	<p class="BodyLevel2">By default, multiple conditions for the same 
+	 property are treated as OR. Conditions for different properties are 
+	 treated as AND. For example:</p>
+	<p class="BodyLevel2">1. Country, Equals, Canada<br/>
+	2. Country, Equals, USA<br/>
+	3. Sex, Equals Male<br/>
+	4. DateOfBirth, Less Than, January 1, 1978</p>
+	<p class="BodyLevel2">... would be evaluated logically as:<br/>
+	(1 or 2) and 3 and 4</p>
+	<p class="BodyLevel2">The numbers correspond to the row numbers assigned 
+	 to each condition. The default logic can be overridden in the <span class="Emphasis">Advanced Conditions</span>&nbsp;field by using the 
+	 row numbers to identify the individual conditions, e.g. <br/>
+	(1 and 3) or (2 and 4)</p>
+	<p class="BodyLevel2">If the field must start with a specified value 
+	 for the rule to fire, select the <span class="Emphasis">Before Update</span>&nbsp;check 
+	 box. In the following example, six conditions have been created for 
+	 the Campaign entity:<br/>
+	- If a user changes the <span class="Emphasis"> Description</span>&nbsp;and 
+	 clicks Save, the system will check the previous value before updating 
+	 it. <br/>
+	- If the previous value was “Phase 1”, the user will only be able to 
+	 change the value to “Phase 2” (conditions 1 and 2 and 3). <br/>
+	- If the previous value was “Phase 2”, the user will only be able to 
+	 change the value to “Phase 3” (conditions 4 and 5 and 6).</p>
+	<div style="">
+		<img src="images/welcome-to-cority-2022-03-01.png" alt="" loading="lazy"/> 
+	</div>
+	<p class="BodyLevel2">If date fields are used in a condition, they 
+	 can separately be specified as<span class="Emphasis"> <i>Before Update</i></span><i>&nbsp;</i>or 
+	 not (for example, date of termination (before update) is less than 
+	 date of hire (after update)). However, if <i><span class="Emphasis">Before 
+	 Update</span></i>&nbsp;is used on either (or both) of the date fields, 
+	 “Update” is the only trigger that can be used in the business rule.</p>
+	<div style="">
+		<img src="images/welcome-to-cority-2022-03-01-1.png" alt="" loading="lazy"/> 
+	</div>
+	<p class="Tip">You can include Query Builder/Report Writer queries 
+	 in business rule conditions to associate entities that are not already 
+	 linked. Set up the query and flag it as a Subquery (see <a href="/articles/cority-user-guide/working-with-ad-hoc-reports/a/XREF_24264_Using_the_Report" onclick="return n(&#39;!cority-user-guide/working-with-ad-hoc-reports/a/XREF_24264_Using_the_Report&#39;,this);">Working 
+	 with Ad Hoc Reports</a>), then identify it in the business rule with 
+	 the “Is Contained In” operand. You can also configure a subquery used 
+	 by a business rule to filter by one or more of the rule entity's fields; 
+	 the business rule will fire only for the configured field filter.<br/>
+	Examples of business rules that use a subquery:<br/>
+	- For an incident that resulted in a death, at least one witness must 
+	 be provided.<br/>
+	- A clinician must be alerted when working on a clinic visit for an 
+	 employee who has been diagnosed with influenza.<br/>
+	- A risk assessor must be alerted when the agent is a dermal skin notation.<br/>You can configure a business rule condition to assess the value of a subquery, e.g. 'Subquery Y' 'Greater Than' '75'. When the subquery runs, the 'first row, first column' is checked for a value, and that value is used for the condition's evaluation. Similarly, the value of the first cell in a subquery can be used by a Change action to set a look-up or tree field value on a layout.&nbsp;</p>
+	</ol>
+<ol start="1"><li value="5"><p class="BodyLevel1">In the Trigger 
+	 section, define where and when the rule will fire. </p></li>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">Select the <i><span class="Emphasis">Environment</span>&nbsp;</i>where 
+		 the rule will fire: Cority Platform (includes Portal), myCority, 
+		 or all three.</p></li>
+		<li><p class="BodyLevel2">For information about the <i><span class="Emphasis">Data 
+		 Retention</span>&nbsp;</i>checkbox, see <a href="/articles/cority-user-guide/archiving-or-purging-data/a/XREF_29516_Data_Retention" onclick="return n(&#39;!cority-user-guide/archiving-or-purging-data/a/XREF_29516_Data_Retention&#39;,this);">Archiving 
+		 or Purging Data</a>&nbsp;and the <span style="font-style: italic;">Cority 
+		 System Guide</span>.</p></li>
+		<li><p class="BodyLevel2">To define where the rule will fire, select 
+		 one of the following &nbsp;options:</p></li>
+<ul data-aura-rendered-by="12:332;a" style="box-sizing: border-box; margin-bottom: var(--lwc-spacingSmall,0.75rem); margin-left: var(--lwc-spacingLarge,1.5rem); padding: 0px; color: rgba(0, 0, 0, 0.8); font-family: FaktPro-Blond2; font-size: 12px; background-color: #ffffff; text-decoration-color: initial;"><li><p class="BodyLevel3">Insert - The rule will fire when a new 
+		 record is saved</p></li>
+		<li><p class="BodyLevel3">Update - The rule will fire when a record 
+		 is updated</p></li>
+		<li><p class="BodyLevel3">Delete - The rule will fire when a record 
+		 is deleted</p></li>
+<li><p class="BodyLevel3">New - The rule will fire when a new record is being created through an import, the default prompt is yes, the prompt is null, and the related action is either Change or Method only (New will not work with other actions, such as Email)</p></li>
+</ul></ul>
+	<p class="Note">If the <i><span class="Emphasis">Before Update</span></i>&nbsp;check 
+	 box is selected beside a Condition above, <i><span class="Emphasis">Update</span>&nbsp;</i>will 
+	 be selected in the Trigger section and the other checkboxes will 
+	 be disabled.</p>
+	<p class="BodyLevel2">The <i><span class="Emphasis">Rule Type</span> </i>determines 
+	 the kind of rule you are creating:</p>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">Message/Action - This type of rule will 
+		 always fire after the original triggering action has completed 
+		 (specify which actions should run on the Action List tab). The 
+		 <i><span class="Emphasis">Message</span>&nbsp;</i>box will be disabled 
+		 for this type as it is not used. You can enter a <i><span class="Emphasis">Prompt</span>&nbsp;</i>which 
+		 will be displayed to the user confirming if he/she wishes to execute 
+		 the defined actions for this rule. No prompt is displayed if the 
+		 rule was fired from a list, in which case the <i><span class="Emphasis">Default 
+		 Prompt Answer</span>&nbsp;</i>is used to determine whether or not 
+		 the defined actions will run.</p></li>
+		<li><p class="BodyLevel2">Hard Enforce - This type of rule fires 
+		 before the original triggering action completes. This rule will 
+		 require all conditions to be false in order for the original action 
+		 to continue or else it will be halted. Enter a <span class="Emphasis">Message 
+		 </span>that is displayed to the user if the conditions do not 
+		 pass, instructing the user what to do next. <span class="Emphasis"><i>Prompt </i>
+		 </span>and<span class="Emphasis"> <i>Default Prompt Answer</i></span><i>&nbsp;</i>are 
+		 not used for this type of rule.</p></li>
+		<li><p class="BodyLevel2">Soft Enforce - Similar to Hard Enforce, 
+		 in that the conditions must be false in order to continue, however 
+		 Soft Enforce rules give users the choice to bypass the rule even 
+		 if it does not pass. Enter a <i><span class="Emphasis">Prompt</span>&nbsp;</i>for 
+		 the user to ask if he/she wishes to bypass the rule if the rule 
+		 initially fails. No prompt is displayed if the rule was fired 
+		 from a list, in which case the <i><span class="Emphasis">Default 
+		 Prompt Answer</span>&nbsp;</i>is used to determine whether or not 
+		 to bypass the rule. If the answer is set to no, then the Soft 
+		 Enforce will act similarly to a Hard Enforce on lists. If set 
+		 to true, it will be as if the rule does not exist.</p></li>
+	</ul>
+	<li style="list-style: decimal;"><p class="BodyLevel1">Use the Business Rules Actions&nbsp;section (this section only appears after the rule has been saved) to specify actions to be performed when the rule is fired 
+	 successfully. Click the icon to add an existing action, or choose 
+	 from the <b><span class="Bold">Actions</span>&nbsp;</b>drop-down to create 
+	 a new action for the rule. For more information, see <a href="/articles/cority-user-guide/setting-up-business-rule-actions/a/XREF_64788_Business_Rule" onclick="return n(&#39;!cority-user-guide/setting-up-business-rule-actions/a/XREF_64788_Business_Rule&#39;,this);">Setting 
+	 Up Business Rule Actions</a>.</p></li>
+</ol>
+<p class="Tip">You can force any Change, Method, or scheduled Email actions 
+ to be run for any relevant records without waiting for the trigger; on 
+ the Business Rule tab, choose <b><span class="Bold">Actions»Add actions to 
+ queue for records matching conditions</span></b>. When you choose this action, 
+ all immediate email or scheduled email actions, as well as immediate change 
+ or method actions, will be added to the queue.<br/>
+For Change or Method actions, you will see the list of records that match 
+ the criteria specified in the business rule; select the desired records 
+ and then click <b><span class="Bold">Add to queue</span></b>.<br/>
+For Email actions, you will see a list of the available time-driven BRAs 
+ (BRAs for which the scheduled execution time is in the past are displayed 
+ but cannot be added to the queue); select the ones you want to run and 
+ then click <b><span class="Bold">Add to queue</span></b>. <br/>
+To view the queue, see <a href="/articles/cority-user-guide/setting-up-business-rule-actions/a/XREF_71524_Monitoring_the" onclick="return n(&#39;!cority-user-guide/setting-up-business-rule-actions/a/XREF_71524_Monitoring_the&#39;,this);">Monitoring 
+ the Business Rule Action Queue</a>.</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

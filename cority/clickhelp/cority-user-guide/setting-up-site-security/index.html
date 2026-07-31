@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/setting-up-site-security"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Setting Up Site Security</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Setting Up Site Security';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+
+<p>&nbsp;</p>
+
+ <h3 id="h3_811207780" data-has-heading-anchor="true"><a name="IX_site_security_1"></a><a name="IX_site_security"></a><a name="XREF_33056_Site_Security"></a>Setting Up Site Security<a href="/articles/cority-user-guide/setting-up-site-security/a/h3_811207780" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-site-security/a/h3_811207780&#39;,this);"></a></h3>
+ <p class="BodyLevel1">In addition to providing security by controlling access to modules and actions, Cority&nbsp;provides additional row level security that is designed for multiple sites that are using the application while the data is located on a single server. In this scenario, each site may need exclusive access to update its own records. Sites may also need to prevent other sites from updating their records. </p>
+ <p class="BodyLevel1">To provide this kind of security, Cority&nbsp;uses roles similar to the functional roles set up to handle permissions at module (or action) level (see <a href="/articles/cority-user-guide/setting-up-roles/a/XREF_60268_Roles" onclick="return n(&#39;!cority-user-guide/setting-up-roles/a/XREF_60268_Roles&#39;,this);">Setting Up Roles</a>). These site roles determine which sites users have access to. A role should be created for every site where the data needs to be kept separate. All users in that site will be members of that role. </p>
+ <p class="BodyLevel1">Site security uses the organization tree (see <a href="/articles/cority-user-guide/setting-up-an-organizational-tree/a/XREF_96839_Configuring_Fields" onclick="return n(&#39;!cority-user-guide/setting-up-an-organizational-tree/a/XREF_96839_Configuring_Fields&#39;,this);">Setting Up An Organizational Tree</a>) to identify the demographic area (e.g. Geographic Location, Department, Division, Location, Organization, Floor Area, Building) and Health Center. For each site role, different combinations of these demographic areas can be defined. For example, the site role COR_TORONTO has full rights to records exclusive to Toronto’s Accounting and Marketing departments. You can use different combinations of the fields to configure different site roles.</p>
+ <p class="BodyLevel1">With the two basic levels of security in mind, each user should be assigned both of the following:</p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1">at least one functional role, such as COR_CASE, that determines which actions they can execute </p>
+</li>
+  <li>
+  <p class="BodyLevel1">at least one site role, such as COR_TORONTO, that determines which rows of data in the tables they can view</p>
+</li>
+ </ul>
+ <p class="BodyLevel1">For example, user John Smith belongs to the Case Management team and is allowed only data restricted to the Toronto office. In this case, you should assign John the functional role COR_CASE and the site role COR_TORONTO.</p>
+ <p class="BodyLevel1">Functional roles should be set up before site roles.</p>
+ <p class="BodyLevel1">In cases where site security is not required and users do not need exclusive access to data for their site, you should create a generic site role such as COR_ALL_SITES and grant it to all users before they view or create records in the system.</p>
+ <p class="BodyLevel1">When a user navigates to a list or opens a record from the list, site security logic checks if the user's role has appropriate rights to see the record(s). It will compare the record's GDDLOFB and HC fields to be one of the following:</p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1">an exact match of the role's site security setup, OR</p>
+</li>
+  <li>
+  <p class="BodyLevel1">one of the parents on the path of the role's security setup, OR</p>
+</li>
+  <li>
+  <p class="BodyLevel1">one of the children of the role's site security setup.</p>
+</li>
+ </ul>
+ <p class="Note">Site security extends to sublists; in other words, users who are prohibited from viewing a certain type of record will also be prohibited from viewing any of its child records.<br/>In case of medical site security, it will also compare GDDLOFB and HC of the record's employee to the role's site security setup, in addition to the above.</p>
+ <p class="BodyLevel1">When a user saves/modifies/deletes a record(s), site security logic checks if the user's role has appropriate rights to manipulate the record(s). It will compare record's GDDLOFB and HC fields to be one of the following:</p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1">an exact match of the role's site security setup, OR</p>
+</li>
+  <li>
+  <p class="BodyLevel1">one of the children of the role's site security setup.</p>
+</li>
+ </ul>
+ <div></div>
+  <p class="Tip">If the "Provide Admins with Bypass Site Security option on customer configured Employee picklists"&nbsp;global setting is enabled,&nbsp;<span style="font-size: 10pt;">a <i>Bypass Site Security</i>&nbsp;check box can be added to custom Employee Picklist layouts.&nbsp;<br/></span><span style="font-size: 10pt;">When this check box is enabled for an Employee picklist, users can select employees outside of their site security when creating and assigning a record.</span></p>
+<p></p><h4 id="h4_1873425711" data-has-heading-anchor="true"><a name="XREF_52608_Creating_a_Site"></a>Creating a Site Role<a href="/articles/cority-user-guide/setting-up-site-security/a/h4_1873425711" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-site-security/a/h4_1873425711&#39;,this);"></a></h4>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Administrator menu, click <b><span class="Bold">Site Security</span></b>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <b><span class="Bold">New</span></b>.</p>
+</li>
+  <p class="Note">Site security roles may be imported into Cority using the Import Utility (see <a href="/articles/cority-user-guide/importing-text-or-xml-files-into-cority-tables/a/XREF_28375_Import_Utility" onclick="return n(&#39;!cority-user-guide/importing-text-or-xml-files-into-cority-tables/a/XREF_28375_Import_Utility&#39;,this);">Importing Text or XML Files into Cority Tables</a>). For each record, values are required for the Role and GDDLOFB fields. If the <i><span class="Emphasis">Automatically insert non-existing look-up table values</span>&nbsp;</i>checkbox is selected and a role specified in the import file does not exist in Cority, the system will create the new role. </p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the <i><span class="Emphasis">Role</span>&nbsp;</i>that you want to define site security for. This may be a role that was only created for site security purposes (i.e. not a functional role).</p>
+  </li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">For each demographic field, select the tree level you want to give access to. Users with this role will have access to that level in the tree along with all branches and nodes below that level. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the health center that this role is allowed to access, or select “Any” to allow access to all health centers.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the access permitted for this role at the selected demographic locations (i.e. Read, Update, Insert, or Delete data).</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <b><span class="Bold">Save</span></b>. The site role is now available to be granted to users (see <a href="/articles/cority-user-guide/setting-up-users/a/XREF_14161_Setting_Up_Users" onclick="return n(&#39;!cority-user-guide/setting-up-users/a/XREF_14161_Setting_Up_Users&#39;,this);">Setting Up Users</a>).</p>
+</li>
+ </ol>
+ <p>&nbsp;</p>
+  
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

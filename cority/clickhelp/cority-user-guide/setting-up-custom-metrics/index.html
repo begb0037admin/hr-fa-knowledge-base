@@ -1,0 +1,409 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/setting-up-custom-metrics"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Setting Up Custom Metrics</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Setting Up Custom Metrics';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+
+<p>&nbsp;</p>
+
+<h3 id="h3_509806619" data-has-heading-anchor="true"><a name="IX_setting_up_metrics"></a><a name="XREF_31946_Setting_Up_Metric"></a>Setting 
+ Up Custom Metrics<a href="/articles/cority-user-guide/setting-up-custom-metrics/a/h3_509806619" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-custom-metrics/a/h3_509806619&#39;,this);"></a></h3>
+<ol start="1">
+	<li style="list-style: decimal;"><p class="BodyLevel1">In the Business 
+	 Intelligence menu, click <b><span class="Bold">Custom Metrics</span></b>, 
+	 or in the Environmental menu, click <b><span class="Bold">Measure</span></b>.</p>
+	<div style="text-align: left;">
+		<img alt="BUS_custom_metric_profiles_list.png" id="image26" src="images/BUS_custom_metric_profiles_list.png" style="margin-top: 5pt; margin-bottom: 10pt; border: Solid 0pt #999999;" border="0" loading="lazy"/> 
+	</div></li>
+	<p class="Note">Users can view all measures that are not prohibited 
+	 (see <a href="/articles/cority-user-guide/setting-up-roles/a/XREF_60268_Roles" onclick="return n(&#39;!cority-user-guide/setting-up-roles/a/XREF_60268_Roles&#39;,this);">Setting 
+	 Up Roles</a>), but only an administrator can add or edit a metric.<br/>
+	This list of measures includes the standard Cority&nbsp;Measures 
+	 that are read-only and cannot be edited nor assigned to a location 
+	 or user. These measures &nbsp;can only be used in equations within 
+	 custom metrics and the Data Cube. When you click on one of these you 
+	 will see the metric information in a read-only state.<br/>
+	A measure cannot be deleted if it is part of a campaign (see <a href="/articles/cority-user-guide/grouping-metrics-into-a-campaign/a/XREF_50236_GXPII_732_Grouping" onclick="return n(&#39;!cority-user-guide/grouping-metrics-into-a-campaign/a/XREF_50236_GXPII_732_Grouping&#39;,this);">Grouping 
+	 Metrics into a Campaign</a>).</p>
+	<p class="Note">If you want to create a custom measure linked to a 
+	 Report Writer subquery, you must use a custom layout that includes 
+	 the <span class="Emphasis"><i>Subquery</i> </span>field. A custom measure 
+	 linked to a subquery cannot contain an equation, be a target, or have 
+	 locations/assignees records, and no findings or actions can be created 
+	 against the metrics in the Completion/History tab.</p>
+	<li style="list-style: decimal;"><p class="BodyLevel1">Click a link 
+	 to edit an existing measure, or click <b><span class="Bold">New</span></b>.</p>
+	<div style="text-align: left;">
+		<img alt="BUS_custom_metric_profiles_details.png" id="image27" src="images/BUS_custom_metric_profiles_details.png" style="margin-top: 5pt; 
+			 margin-bottom: 10pt; border: Solid 0pt #999999;" border="0" loading="lazy"/> 
+		 
+	</div></li>
+	<p class="Note">To create a metric that is very similar to an existing 
+	 one, select the metric and choose <b><span class="Bold">Actions»Clone 
+	 Custom Metric</span></b>. A copy is created with “C<span style="font-style: italic;">n</span>” 
+	 appended to the name. Open and edit the copied metric as required.</p>
+	<li style="list-style: decimal;"><p class="BodyLevel1">On the Profile 
+	 tab, enter the following information:</p></li>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">Enter a <i><span class="Emphasis">Code</span></i> 
+		 and<span class="Bold">&nbsp;</span><i><span class="Emphasis">Description</span> </i>
+		 for the metric.</p></li>
+		<li><p class="BodyLevel2">If this metric is typically entered all 
+		 at once by the user (e.g, 12 monthly targets entered at the start 
+		 of a year), select <i><span class="Emphasis">Is Target</span></i>. The 
+		 <i><span class="Emphasis">Equation</span> </i>field is disabled for target 
+		 metrics.<br/>
+		If this metric is not a target, you can choose a <i><span class="Emphasis">Related 
+		 Target</span></i>; this field allows you to choose from other metrics 
+		 that are defined as <i><span class="Emphasis">Is Target</span></i>. This 
+		 connection is used by the Objectives module to facilitate tracking 
+		 actual vs target.</p></li>
+		<li><p class="BodyLevel2">Select the <i><span class="Emphasis">Units 
+		 of Measure</span></i><span class="Bold">&nbsp;</span>and <i><span class="Emphasis">Recurrence 
+		 Frequency</span></i>. If the metric is tracked more than once but 
+		 not at a set interval, choose Irregular.</p></li>
+	</ul>
+	<p class="Note">When a custom metric has a related target, Cority&nbsp;ensures that their 
+	 recurrence frequencies cannot be mismatched.</p>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">Optionally, enter an <i><span class="Emphasis">Equation</span>&nbsp;</i>or 
+		 click <img alt="i_equation_builder.png" id="image28" src="images/i_equation_builder.png" style="margin-top: 5pt; margin-bottom: 10pt; border: Solid 0pt #999999;" border="0" loading="lazy"/>&nbsp;to use the formula builder to compose 
+		 the formula. <br/>
+		In the formula builder, select an element from the tabs on the 
+		 left (Custom Measures, Cority Measures, Factors, or Org Tree Attributes) 
+		 and click <b><span class="Bold">Add to Formula</span></b>, and use the 
+		 calculator buttons in the bottom right. Repeat as required to 
+		 build your formula. When you click <b><span class="Bold">OK</span></b>, 
+		 the builder closes and the formula is inserted into the <i><span class="Emphasis">Equation </span></i>field.</p></li>
+	</ul>
+	<p class="Note">You can define a metrics tree to organize and aggregate 
+	 metrics in a parent-child relationship. The <i><span class="Emphasis">Equation</span></i>&nbsp;field 
+	 of the top/parent metric will reflect its children. See <a href="/articles/cority-user-guide/setting-up-custom-metrics/a/XREF_39998_GXPII_284_Creating" onclick="return n(&#39;!cority-user-guide/setting-up-custom-metrics/a/XREF_39998_GXPII_284_Creating&#39;,this);">Creating 
+	 a Metrics Tree</a> below.</p>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">Select <i><span class="Emphasis">Apply MAEN 
+		 Settings </span></i>to automatically notify assigned users when they 
+		 have a metric due.<br/><span style="font-size: 10pt;">If you select this checkbox, you can override 
+	 the default notification settings if necessary: select </span><i><span class="Emphasis">Override 
+	 System-wide MAEN Settings for this metric</span></i><span style="font-size: 10pt;">, and change the settings 
+	 in the Automatic Email Notifications section as required. The settings 
+	 in this section, whether default or overwritten, will apply to each 
+	 metric assignment associated with the record.</span></p></li>
+	</ul>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">Select the <i><span class="Emphasis">Start 
+		 Date</span> </i>for the metric. Do not enter an<span class="Emphasis"> 
+		 <i>End Date</i></span><i>&nbsp;</i>unless you want recurring metric entries 
+		 to stop. An inactive metric is no longer due after this date (but 
+		 any metric entries assigned before the End Date will still be 
+		 considered due). If you selected <i><span class="Emphasis">Apply 
+		 MAEN Settings</span></i>, notifications will not be sent out after 
+		 this date.</p></li>
+		<li><p class="BodyLevel2">If you chose to <i><span class="Emphasis">Calculate 
+		 Parent Value by Aggregating Child Values</span></i>, the data cube 
+		 will aggregate (in the background) the calculated value for each 
+		 child organizational tree node and assign it to the parent node. 
+		 If this checkbox is not selected, the data cube will calculate 
+		 parent node values by performing the calculation in the <i><span class="Emphasis">Equation</span> </i>field. For example:</p></li>
+		<ul><li><p class="BodyLevel3">Given: <br/>
+		Measure A (input), Measure B (input), and Measure C = A x B<br/>
+		Location: USA&gt;CA and US&gt;NY<br/>
+		USA&gt;CA: Measure A = 2 and Measure B = 4<br/>
+		USA&gt;NY: Measure A = 3 and Measure B = 5</p></li>
+		<li><p class="BodyLevel3"><span style="font-style: italic;">If 
+		 checkbox is not selected on Measure C</span>, the results are 
+		 as follows:<br/>
+		<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Measure 
+		 A<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Measure 
+		 B<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Measure 
+		 C<br/>
+		USA<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>5<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>9<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>45 
+		 (sum of A x sum of B at a parent node)<br/>
+		USA&gt;CA<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>2<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>4<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>8<br/>
+		USA&gt;NY<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>3<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>5<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>15</p></li>
+		<li><p class="BodyLevel3"><span style="font-style: italic;">If 
+		 checkbox is selected on Measure C</span>, the results are as 
+		 follows:<br/>
+		<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Measure 
+		 A<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Measure 
+		 B<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Measure 
+		 C<br/>
+		USA<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>5<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>9<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>23 
+		 (sum of C at leaf node)<br/>
+		USA&gt;CA<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>2<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>4<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>8<br/>
+		USA&gt;NY<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>3<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>5<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>15</p></li></ul>
+		<li><p class="BodyLevel2">To create a qualitative metric for use 
+		 in reporting qualitative sustainability information for the Global 
+		 Reporting Initiative (GRI) or any other sustainability reporting 
+		 protocols, select the <i><span class="Emphasis">Qualitative Metric?</span></i>&nbsp;check 
+		 box. Any values entered in the <i><span class="Emphasis">Units of 
+		 Measure</span>&nbsp;</i>or <i><span class="Emphasis">Equation</span>&nbsp;</i>fields 
+		 are cleared.</p></li>
+		<li><p class="BodyLevel2">If you included other measures in the 
+		 <i><span class="Emphasis">Equation</span>&nbsp;</i>field, you can apply 
+		 filters to limit those measures. In the Filters section, click 
+		 <img alt="i_inline_multi_select.gif" id="image29" src="images/i_inline_multi_select.gif" style="margin-top: 5pt; margin-bottom: 10pt; border: Solid 0pt #999999;" border="0" loading="lazy"/>&nbsp;to select the dimension(s) related 
+		 to the measures in the <i><span class="Emphasis">Equation</span> </i>
+		 field.</p></li>
+		<li><p class="BodyLevel2">Optionally, enter the <i><span class="Emphasis">Upper</span> </i>
+		 and<span class="Emphasis"> <i>Lower Threshold Limit</i></span>. If a 
+		 user inputs a value below the <i><span class="Emphasis">Lower Threshold 
+		 Limit</span></i>, they are asked if they want to continue. If they 
+		 input a value above the <i><span class="Emphasis">Upper Threshold 
+		 Limit</span></i>, they are required to enter a reason. </p></li>
+		<li><p class="BodyLevel2">If the metric is not a target and a <i><span class="Emphasis">Related Target</span>&nbsp;</i>is selected and the 
+		 <i><span class="Emphasis">Qualitative Metric</span>&nbsp;</i>checkbox 
+		 is not selected, the metric will automatically be deemed a Key 
+		 Performance Indicator. Optionally change the icons that will be 
+		 used to represent the value compared to the target and the value 
+		 compared to the previous value. If you do not want the metric 
+		 to be considered a KPI, clear the <i><span class="Emphasis">KPI</span>&nbsp;</i>check 
+		 box. This functionality allows you to generate dashboard scorecards 
+		 for Custom Measures that have KPI properties. A scorecard shows 
+		 the measure's value along with the status of that value against 
+		 the measure's target and the trend of its values, period-over-period 
+		 (as shown on Data tab of the Data Cube).</p></li>
+	</ul>
+	<li style="list-style: decimal;"><p class="BodyLevel1">On the Locations 
+	 and Assignees tab, click <b><span class="Bold">New</span></b>:</p></li>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">Choose whether you want to assign the 
+		 metric to an asset or to a user.</p></li>
+		<li><p class="BodyLevel2">Select the person <span class="Emphasis"><i>Assigned</i> 
+		 to</span>&nbsp;complete the metric entry and their <i><span class="Emphasis">Start 
+		 Date</span></i>.</p></li>
+		<li><p class="BodyLevel2">To render the assignee inactive for this 
+		 metric, enter an<span class="Emphasis"> <i>End Date</i></span>. An inactive 
+		 assignee no longer accumulates due metric entries, but any metric 
+		 entries accumulated before this date will still be considered 
+		 due.</p></li>
+		<li><p class="BodyLevel2">If you chose to assign the metric to 
+		 an asset, select the <i><span class="Emphasis">Related Asset</span></i>.</p></li>
+		<li><p class="BodyLevel2">Select the specific location where this 
+		 metric entry is to be captured. This is often a sub-location to 
+		 the location identified for the metric. If you chose to assign 
+		 the metric to an asset, the metric inherits the GDDLOFB of the 
+		 asset.</p></li>
+	</ul>
+	<p class="Note">Only one assignee is permitted per metric/location 
+	 for a particular time period.<br/>
+	If added to a custom layout, you can assign the metric to an asset 
+	 or a group of assets (if defined in the <a href="/articles/cority-user-guide/equipmentgroup/a/XREF_73468_EquipmentGroup" onclick="return n(&#39;!cority-user-guide/equipmentgroup/a/XREF_73468_EquipmentGroup&#39;,this);">EquipmentGroup</a> 
+	 look-up table).<br/>
+	If you attempt to create more than one assignment with the same asset, 
+	 GDDLOFB and time period, you will receive an error message.<br/>
+	If you create more than one assignment with the same GDDLOFB and time 
+	 period but with unique assets, you will be advised that the assignment 
+	 may result in duplicate aggregations for this tree combination if 
+	 reported data is not filtered or displayed by asset.</p>
+	<li style="list-style: decimal;"><p class="BodyLevel1">The Completion/ 
+	 History tab shows all metric entries (regular users will only see 
+	 metrics to which they have been assigned).</p></li>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">The top list shows Due and Overdue Metric 
+		 Entries (can be changed to just Due Metric Entries). Click a link 
+		 to view or change the value entered (inspector can record the 
+		 value from this link) or approve the entry.</p></li>
+	</ul>
+	<p class="Note">To quickly update multiple metrics, select the check 
+	 boxes beside them and click <b><span class="Bold">Edit</span></b>. The <i><span class="Emphasis">Value</span></i> field becomes editable directly in the 
+	 list.</p>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">The bottom list shows Completed Metric 
+		 Entries. Optionally, select one or more records and choose <b><span class="Bold">Actions»Create Finding &amp; Action for this Entry</span></b>. 
+		 </p></li>
+	</ul>
+	<li style="list-style: decimal;"><p class="BodyLevel1">The Findings 
+	 and Actions tab displays all findings and actions relating to this 
+	 metric. For information about recording a finding and its actions, 
+	 see <a href="/articles/cority-user-guide/recording-a-new-finding/a/XREF_33588_Recording_a_New" onclick="return n(&#39;!cority-user-guide/recording-a-new-finding/a/XREF_33588_Recording_a_New&#39;,this);">Recording 
+	 a New Finding</a>.</p></li>
+</ol>
+<p class="Note">A metric entry cannot be approved by the administrator 
+ until all actions are also closed.</p>
+<p class="BodyLevel1">Approved metric entries are locked from further edits 
+ and are available for use in the Data Cube (see <a href="/articles/cority-user-guide/using-the-data-cube/a/XREF_42839_Using_the_Data_Cube" onclick="return n(&#39;!cority-user-guide/using-the-data-cube/a/XREF_42839_Using_the_Data_Cube&#39;,this);">Using 
+ the Data Cube</a>).</p>
+<h4 id="h4__557143792" data-has-heading-anchor="true">How Are Due Dates Calculated?<a href="/articles/cority-user-guide/setting-up-custom-metrics/a/h4__557143792" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-custom-metrics/a/h4__557143792&#39;,this);"></a></h4>
+<p class="BodyLevel1">Each metric entry’s due date is calculated based 
+ on the metric’s Start Date and Recurrence Frequency. For example if the 
+ metric’s start date is March 1:</p>
+
+<table style="padding-left: 6.00pt; padding-top: 6.00pt; padding-right: 6.00pt; 
+		 padding-bottom: 4.00pt;" cellspacing="0" width="437">
+	<tbody><tr style="height: 30.00pt;">
+		<th style="vertical-align: top; padding-left: 6.00pt; padding-top: 3.00pt; 
+			 padding-right: 6.00pt; padding-bottom: 3.00pt;" width="101"><p class="CellHeading">Recurrence </p></th>
+		<th style="vertical-align: top; padding-left: 6.00pt; padding-top: 3.00pt; 
+			 padding-right: 6.00pt; padding-bottom: 3.00pt;" width="112"><p class="CellHeading">Metric Entry 1<br/>
+		Due Date</p></th>
+		<th style="vertical-align: top; padding-left: 6.00pt; padding-top: 3.00pt; 
+			 padding-right: 6.00pt; padding-bottom: 3.00pt;" width="112"><p class="CellHeading">Metric Entry 2 <br/>
+		Start Date</p></th>
+		<th style="vertical-align: top; padding-left: 6.00pt; padding-top: 3.00pt; 
+			 padding-right: 6.00pt; padding-bottom: 3.00pt;" width="112"><p class="CellHeading">Metric Entry 2 <br/>
+		Due Date</p></th>
+	</tr>
+	<tr style="height: 20.00pt;">
+		<td style="vertical-align: top; padding-left: 6.00pt; padding-top: 3.00pt; 
+			 padding-right: 6.00pt; padding-bottom: 3.00pt;" width="101"><p class="CellBody">none</p></td>
+		<td style="vertical-align: top; padding-left: 6.00pt; padding-top: 3.00pt; 
+			 padding-right: 6.00pt; padding-bottom: 3.00pt;" width="112"><p class="CellBody">--</p></td>
+		<td style="vertical-align: top; padding-left: 6.00pt; padding-top: 3.00pt; 
+			 padding-right: 6.00pt; padding-bottom: 3.00pt;" width="112"><p class="CellBody">--</p></td>
+		<td style="vertical-align: top; padding-left: 6.00pt; padding-top: 3.00pt; 
+			 padding-right: 6.00pt; padding-bottom: 3.00pt;" width="112"><p class="CellBody">--</p></td>
+	</tr>
+	<tr style="height: 20.00pt;">
+		<td style="vertical-align: top; padding-left: 6.00pt; padding-top: 3.00pt; 
+			 padding-right: 6.00pt; padding-bottom: 3.00pt;" width="101"><p class="CellBody">weekly</p></td>
+		<td style="vertical-align: top; padding-left: 6.00pt; padding-top: 3.00pt; 
+			 padding-right: 6.00pt; padding-bottom: 3.00pt;" width="112"><p class="CellBody">March 7</p></td>
+		<td style="vertical-align: top; padding-left: 6.00pt; padding-top: 3.00pt; 
+			 padding-right: 6.00pt; padding-bottom: 3.00pt;" width="112"><p class="CellBody">March 8</p></td>
+		<td style="vertical-align: top; padding-left: 6.00pt; padding-top: 3.00pt; 
+			 padding-right: 6.00pt; padding-bottom: 3.00pt;" width="112"><p class="CellBody">March 14</p></td>
+	</tr>
+	<tr style="height: 20.00pt;">
+		<td style="vertical-align: top; padding-left: 6.00pt; padding-top: 3.00pt; 
+			 padding-right: 6.00pt; padding-bottom: 3.00pt;" width="101"><p class="CellBody">monthly</p></td>
+		<td style="vertical-align: top; padding-left: 6.00pt; padding-top: 3.00pt; 
+			 padding-right: 6.00pt; padding-bottom: 3.00pt;" width="112"><p class="CellBody">March 31</p></td>
+		<td style="vertical-align: top; padding-left: 6.00pt; padding-top: 3.00pt; 
+			 padding-right: 6.00pt; padding-bottom: 3.00pt;" width="112"><p class="CellBody">April 1</p></td>
+		<td style="vertical-align: top; padding-left: 6.00pt; padding-top: 3.00pt; 
+			 padding-right: 6.00pt; padding-bottom: 3.00pt;" width="112"><p class="CellBody">April 30</p></td>
+	</tr>
+	<tr style="height: 20.00pt;">
+		<td style="vertical-align: top; padding-left: 6.00pt; padding-top: 3.00pt; 
+			 padding-right: 6.00pt; padding-bottom: 3.00pt;" width="101"><p class="CellBody">quarterly</p></td>
+		<td style="vertical-align: top; padding-left: 6.00pt; padding-top: 3.00pt; 
+			 padding-right: 6.00pt; padding-bottom: 3.00pt;" width="112"><p class="CellBody">May 31</p></td>
+		<td style="vertical-align: top; padding-left: 6.00pt; padding-top: 3.00pt; 
+			 padding-right: 6.00pt; padding-bottom: 3.00pt;" width="112"><p class="CellBody">June 1</p></td>
+		<td style="vertical-align: top; padding-left: 6.00pt; padding-top: 3.00pt; 
+			 padding-right: 6.00pt; padding-bottom: 3.00pt;" width="112"><p class="CellBody">August 31</p></td>
+	</tr>
+</tbody></table>
+
+<p class="BodyLevel1">If a user was assigned after a due date has passed, 
+ the next due date applies. In the monthly example above, the first due 
+ date is March 31. A user assigned on April 15 will only have one due metric 
+ entry (due April 30) -- any metric entries of this metric before April 
+ 15 will not be deemed due/overdue.</p>
+<p class="BodyLevel1">Exceptions: </p>
+<ul style="list-style: disc;">
+	<li><p class="BodyLevel1">If the metric is identified as a Target, 
+	 all the related recurrences are considered due at the same time.</p></li>
+	<li><p class="BodyLevel1">If the metric is identified as “Irregular” 
+	 recurrency frequency, there is only ever one item on the Due list. 
+	 Irregular metrics are never overdue. They first appear on the Due 
+	 list based on the start date in their metric. Once the item is completed 
+	 and approved (and transferred to the Completed list), another item 
+	 appears immediately on the Due list with a due date of today (i.e.&nbsp;the 
+	 day the last item was completed). Unlike other metrics/recurrence 
+	 frequencies which use the due date when displaying information in 
+	 the Data Cube, the irregular recurrence type uses the date completed 
+	 to display in the cube.</p></li>
+</ul>
+<h4 id="h4__1264230415" data-has-heading-anchor="true"><a name="IX_tree"></a><a name="XREF_39998_GXPII_284_Creating"></a>Creating 
+ a Metrics Tree<a href="/articles/cority-user-guide/setting-up-custom-metrics/a/h4__1264230415" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-custom-metrics/a/h4__1264230415&#39;,this);"></a></h4>
+<p class="BodyLevel1">Use the Metrics Tree to create, organize, view, and 
+ aggregate/roll-up metrics in parent-child relationships using a tree structure.</p>
+<div style="text-align: left;">
+	<img alt="BUS_metric_tree.gif" id="image30" src="images/BUS_metric_tree.gif" style="margin-top: 5pt; margin-bottom: 10pt; border: Solid 0pt #999999;" border="0" loading="lazy"/> 
+</div>
+<p class="BodyLevel1">Metrics are organized in Categories at the highest 
+ level in the tree (below the Root). Each category can be rolled up independently. 
+ You can create as many categories as required. Nodes are added below categories 
+ in the following possible levels:</p>
+<ul style="list-style: disc;">
+	<li><p class="BodyLevel1">The second level is the Metric level, which 
+	 defines the <i><span class="Emphasis">Unit of Measure</span>&nbsp;</i>and 
+	 <i><span class="Emphasis">Recurrence Frequency</span> </i>for all of its 
+	 children.</p></li>
+	<li><p class="BodyLevel1">SubMetrics can provide optional additional 
+	 levels for separate aggregation. You can have multiple levels of SubMetrics 
+	 below SubMetrics. SubMetrics are hard-coded aggregated from lower 
+	 levels to higher levels (e.g., Level 3=Sum(Level 4), Level 4=Sum(Level 
+	 5), etc.).</p></li>
+	<li><p class="BodyLevel1">The “leaf” level is the lowest level, and 
+	 can be created below a Metric or SubMetric node. These are defined 
+	 as either Input Metric or Equation Metric.</p></li>
+</ul>
+<p class="BodyLevel1">In the example above, there are two categories: Greenhouse 
+ Gases Emissions and Water. Below Water are two Metrics (Water Consumption 
+ and Water Wit). Water Wit includes a SubMetric (Well Water), which contains 
+ an Input Metric (Well Water City) and an Equation Metric (Water Plant 
+ from Wells). </p>
+<p class="BodyLevel1" style="font-weight: bold;">Creating a metrics tree:</p>
+<ol start="1">
+	<li style="list-style: decimal;"><p class="BodyLevel1">In the Business 
+	 Intelligence menu, click<span class="Bold"> <b>Metrics Tree</b></span>.</p></li>
+	<li style="list-style: decimal;"><p class="BodyLevel1">To add a category, 
+	 hover over the Root and click <b><span class="Bold">+</span></b>. Enter a 
+	 <i><span class="Emphasis">Code</span>&nbsp;</i>and <i><span class="Emphasis">Description</span></i>.</p></li>
+	<li style="list-style: decimal;"><p class="BodyLevel1">Add nodes below 
+	 categories to create the Metrics (and SubMetrics, if required) levels. 
+	 Hover over a level and click <b><span class="Bold">+</span></b> to add a 
+	 node below it.</p></li>
+	<li style="list-style: decimal;"><p class="BodyLevel1">Leaf levels 
+	 are first created as a node, then defined as a measure:</p></li>
+</ol>
+<ul style="list-style: disc; margin-left: 40px;">
+	<li><p class="BodyLevel2">After creating the node as described in step 
+	 3, hover over the node and click <img alt="incident_cause_analysis_star.gif" id="image31" src="images/incident_cause_analysis_star.gif" style="margin-top: 5pt; margin-bottom: 10pt; 
+											 border: Solid 0pt #999999;" border="0" loading="lazy"/>. This is only 
+	 available at the lowest level of a branch (but cannot be created below 
+	 other measures).</p></li>
+	<li><p class="BodyLevel2">You are prompted to identify the measure 
+	 as an Input Metric or Equation Metric.</p></li>
+</ul>
+<p class="BodyLevel1">All metrics in the tree will be displayed in the 
+ Custom Metrics list. The <i><span class="Emphasis">Equation</span></i> field 
+ of the top/parent metric will reflect its children. The metrics tree and 
+ aggregated metrics are available for use in the Data Cube.</p>
+<p class="BodyLevel1" style="font-weight: bold;">Managing nodes:</p>
+<ul style="list-style: disc;">
+	<li><p class="BodyLevel1">You cannot delete a node that has associated 
+	 children/data until they are deleted.</p></li>
+	<li><p class="BodyLevel1">You can drag-and-drop a SubMetric or leaf 
+	 node under any Metric or SubMetric node that has the same UOM and 
+	 Recurrence Frequency. A Category cannot be moved.</p></li>
+	<li><p class="BodyLevel1">The tree structure (with no metrics values) 
+	 may be exported to a CSV file.</p></li>
+	<li><p class="BodyLevel1">Nodes may be imported. The parent's Metric 
+	 Id must be specified for each parent record in order for the table 
+	 to be generated properly. Any metric without a parent (that is, with 
+	 the Parent field left blank) will be added to the tree as a Category.</p></li>
+</ul>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

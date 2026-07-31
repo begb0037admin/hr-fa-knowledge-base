@@ -1,0 +1,119 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/running-traditional-and-bayesian-statistical-analysis"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Running Traditional and Bayesian Statistical Analysis</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Running Traditional and Bayesian Statistical Analysis';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+
+<p>&nbsp;</p>
+
+ <h3 id="h3_1229199866" data-has-heading-anchor="true"><a name="IX_BDA"></a><a name="IX_statistical_analysis_1"></a><a name="IX_Bayesian_Analysis"></a><a name="IX_IHDataAnalyst_exporting"></a><a name="IX_statistical_analysis_risk"></a><a name="IX_statistical_analysis"></a><a name="XREF_97498_Running"></a>Running Traditional and Bayesian Statistical Analysis<a href="/articles/cority-user-guide/running-traditional-and-bayesian-statistical-analysis/a/h3_1229199866" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/running-traditional-and-bayesian-statistical-analysis/a/h3_1229199866&#39;,this);"></a></h3>
+ <p class="BodyLevel1">Cority&nbsp;offers the ability to run both traditional and Bayesian statistical analysis within a risk assessment record. Once a qualitative assessment is performed, you can query the database for quantitative sampling data which is then used to calculate and store traditional and Bayesian statistical data. </p>
+ <p class="BodyLevel1">Both traditional and Bayesian statistical results are displayed in the Decision Analysis tab of the risk assessment record.</p>
+ <p class="BodyLevel1">The Bayesian statistical analysis performed within Cority&nbsp;is through a direct interface with IH Data Analyst©, a Bayesian decision analysis (BDA) tool developed by EASi Software Solutions, Inc. The BDA tool is designed to assist industrial hygienists in selecting the most appropriate exposure rating for a similar exposure group or task. The tool should be used in conjunction with standard descriptive and compliance statistics offered within Cority. BDA should not be used without training. BDA is best suited to industrial hygiene programs that use the AIHA exposure rating method and decision statistic is the 95th percentile.</p>
+ <p class="BodyLevel1">The advantages of BDA include:</p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1">the output is a set of easy to interpret decision charts;</p>
+</li>
+  <li>
+  <p class="BodyLevel1">professional judgment can be incorporated into the analysis;</p>
+</li>
+  <li>
+  <p class="BodyLevel1">it is best suited for small datasets;</p>
+</li>
+  <li>
+  <p class="BodyLevel1">it can handle non-detects;</p>
+</li>
+  <li>
+  <p class="BodyLevel1">it encourages the improvement of professional judgment through a built-in feedback.</p>
+  <div align="left"><img alt="StatisticalAnalysis_BDAchart.jpg" style="margin-top : 5pt; margin-bottom : 10pt; border: Solid 0pt #999999; " id="image8" src="images/StatisticalAnalysis_BDAchart.jpg" loading="lazy"/></div></li>
+ </ul>
+ <p class="BodyLevel1">The "Prior" decision chart summarizes what is known or assumed a priori about the SEG exposure profile. Each bar in the decision chart represents the probability that the true 95th percentile exposure falls within one of the AIHA exposure categories. <br/>The "Likelihood" decision chart is calculated from the data and indicates which exposure category of exposure profiles most likely generated the data. <br/>The "Posterior" decision chart combines the Prior and Likelihood decision charts, using the Bayesian method. You then have the option to base the final decision on either the Likelihood or Posterior decision chart.</p>
+ <p class="BodyLevel1">BDA provides feedback regarding the accuracy of professional judgment. If the Prior decision chart is clearly inconsistent with the Likelihood chart, the IH should conclude that either the initial rating was incorrect or the process has changed substantially since the last evaluation. The final decision should be made on the Likelihood decision chart, which reflects the most current exposure information.</p>
+ <p class="BodyLevel1">The following are the steps to perform both traditional and Bayesian statistical analysis within a risk assessment record. Please note that in order to perform Bayesian statistical analysis, you must first perform traditional statistical analysis so that the critical data necessary for Bayesian analysis is available on the risk assessment record.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Tasks-Hazards-Controls section on the Assessment Details tab of an Industrial Hygiene risk assessment record, select the checkbox beside a record and choose <b><span class="Bold">Actions»Run Statistical Analysis</span></b>. </p>
+</li>
+  <p class="Note">The Decision Analysis requires the post control fields (those ending with 2) on the task record be populated.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the query window, identify the parameters of the data set requested for the statistical analysis. Many filters are available including, but not limited to, SEG, process, task, location and sample date. For information about using the query fields, see <a href="/articles/cority-user-guide/data-entry-conventions/a/XREF_47654_Query_Filtering" onclick="return n(&#39;!cority-user-guide/data-entry-conventions/a/XREF_47654_Query_Filtering&#39;,this);">Query Filtering</a>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <b><span class="Bold">Lognorm&nbsp;</span></b>to execute the data query and present the data set in traditional statistical tool. Be sure to select the statistics tab on the tool so that the statistical analysis within the tool executes and stores the data on the decision analysis section of the risk assessment record.</p>
+</li>
+  <p class="Note">If you have not purchased the IH Data Analyst interface, after traditional statistics is performed you can export the query in .xls format and open the file in a standalone version of IH Data Analyst. You can then manually enter the Bayesian statistical data into Cority within the Decision Analysis record.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Once the traditional statistical analysis is complete, in the Decision Analysis section of the risk assessment record, open the Run ID for the analysis performed. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">If you have purchased the IH Data Analyst© interface and are flagged as an EASi Solutions software user in the user table, you can choose <b><span class="Bold">Actions » Run Bayesian Analysis</span></b>.</p>
+  <div align="left"><img alt="Risk_Decision_Analysis_BDA.GIF" style="margin-top : 5pt; margin-bottom : 10pt; border: Solid 0pt #999999; " id="image9" src="images/Risk_Decision_Analysis_BDA.GIF" loading="lazy"/></div></li>
+ </ol>
+ <ul type="disc" style="margin-left: 40px;">
+  <li>
+  <p class="BodyLevel2">Enter the&nbsp;<span class="Emphasis"><i>Prior Assumption, Initial Rating</i></span><i>&nbsp;</i>and <i><span class="Emphasis">Certainty</span></i>(only available if Prior Assumption=Generic). These are critical data points in the Bayesian analysis. </p>
+</li>
+  <li>
+  <p class="BodyLevel2">The <i><span class="Emphasis">GSD Maximum&nbsp;</span></i>defaults to 4; change this value if required for your sample data set.</p>
+</li>
+  <li>
+  <p class="BodyLevel2">Selected the appropriate <i><span class="Emphasis">Type of Decision Chart</span></i>. The <i><span class="Emphasis">Exposure Category Cutoffs&nbsp;</span></i>will change depending on your selection.</p>
+</li>
+  <li>
+  <p class="BodyLevel2">Click <b><span class="Bold">OK</span></b>. Once the analysis is completed, Cority&nbsp;will store the final BDA results and charts on the decision analysis record.</p>
+</li>
+ </ul>
+ <p class="BodyLevel1">In addition to executing and storing traditional and Bayesian statistical analysis, you can also enter additional information in the Decision Analysis section including, but not limited to, the final Exposure Profile, Exposure Scenario and PPE Conclusions. There are also three optional calculated fields:</p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1"><i><span class="Emphasis">Generic Professional Judgment&nbsp;</span></i>is a calculated field based on several system settings. A global setting determines if the calculation is based on the calculated Risk or the calculated Information Gathering Priority of the exposure assessment record. The Generic Professional Judgement can be a value of 0 through 4, based on the range of either the Risk or Information Gathering Priority. There are system settings that define the range for each value of 0 through 4.</p>
+</li>
+  <li>
+  <p class="BodyLevel1"><i><span class="Emphasis">Priority</span></i>= the exposure category with the highest probability in the Bayesian Analysis (Posterior) section x Hazard Rating.</p>
+</li>
+  <li>
+  <p class="BodyLevel1"><i><span class="Emphasis">Reassessment Date&nbsp;</span></i>is calculated based on the <a href="/articles/cority-user-guide/exposureassessmentreassessmentdate/a/XREF_27060_Reassessment_Date" onclick="return n(&#39;!cority-user-guide/exposureassessmentreassessmentdate/a/XREF_27060_Reassessment_Date&#39;,this);">ExposureAssessmentReassessmentDate</a> look-up table, which in turn uses the <i><span class="Emphasis">Priority&nbsp;</span></i>field. You may enter the reassessment date manually instead.</p>
+</li>
+ </ul>
+ <h4 style="" id="h4_923380238" data-has-heading-anchor="true">BDA PPE Analysis<a href="/articles/cority-user-guide/running-traditional-and-bayesian-statistical-analysis/a/h4_923380238" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/running-traditional-and-bayesian-statistical-analysis/a/h4_923380238&#39;,this);"></a></h4><p>Bayesian Decision Analysis can calculate exposure ratings to make a recommendation for respirator (PPE) selection. To do this you will:</p><ul>
+			</ul><ul>
+				<li>Define and store the Assigned Protection Factor (APF) respirators available to the organization.</li><li>Specify default APF values that will&nbsp;populate automatically when running BDA PPE Analysis or enter your own numeric values (between 1 and 10,000). You can select or enter five APF values only; these must be added in smallest to largest sequence for BDA to run.</li><li>Run BDA PPE Analysis.</li></ul>
+		
+		<p>The results will be displayed on a PPE (Respirator) Selection chart with an APF x-axis and a Decision Probability y-axis.&nbsp;If a change is made to the original BDA data, the chart will clear (no longer display).&nbsp;To re-populate the chart with the new result, you can simply re-run the BDA PPE Analysis.</p><ul></ul><ul>
+				</ul><h4 style="" id="h4_923380238" data-has-heading-anchor="true">EN689<a href="/articles/cority-user-guide/running-traditional-and-bayesian-statistical-analysis/a/h4_923380238" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/running-traditional-and-bayesian-statistical-analysis/a/h4_923380238&#39;,this);"></a></h4><p>To satisfy the requirements of the European EN689 workplace exposure standard,  an industrial hygienist can:
+</p><ul><li>Acquire the 70% upper tolerance limits (UTLs) for both the normal and lognormal distribution 95th-percentile exposure estimates.
+</li><li>Perform an exposure compliance test between both the normal and lognormal UTLs and the OEL, for exposure profile acceptability.
+</li><li>Perform a dataset-screening test when running a data analysis, as per the EN689 standard. This includes whether any data points exceed the OEL.
+</li><li>Perform a U-test for group compliance of the dataset when running SEG data analysis.
+</li><li>View the results of required EN689 calculations clearly displayed in the new 'EN689 Compliance Statistics' subsection.</li></ul>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

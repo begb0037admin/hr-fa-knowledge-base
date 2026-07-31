@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/about-security"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>About Security</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='About Security';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+
+<p>&nbsp;</p>
+
+ <h3 id="h3_922257283" data-has-heading-anchor="true"><a name="XREF_49979_About_Security"></a>About Security<a href="/articles/cority-user-guide/about-security/a/h3_922257283" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/about-security/a/h3_922257283&#39;,this);"></a></h3>
+ <p class="BodyLevel1">All security within Cority&nbsp;is controlled by the application. At the time of installation, you should set up security according to the standard practices and specific requirements of your users and your organization. </p>
+ <p class="BodyLevel1">Cority&nbsp;provides two basic levels of security, Role and Site, as well as Case Type. These are described below.</p>
+ <p class="BodyLevel1">Normally, security is defined by assigning rights to groups of users (roles) rather than to individual users. Even in cases where a group only has a single user, it is easier to manage security defined at role level. This way, if the user’s role assignment changes, you can drop them from the role and put a new person in. Given that the two basic levels of security are best handled by the use of roles, each user should be assigned one functional role and one site role at the minimum. More functional or site roles can be granted according to the security requirements.</p>
+ <h4 id="h4__1360949896" data-has-heading-anchor="true">Role Security<a href="/articles/cority-user-guide/about-security/a/h4__1360949896" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/about-security/a/h4__1360949896&#39;,this);"></a></h4>
+ <p class="BodyLevel1">Role Security limits users to certain modules based on their functional roles in the business process. </p>
+ <p class="BodyLevel1">Typically, roles are set up based on the breakdown of functional areas within the application such as COR_MEDICAL, COR_SAFETY, COR_CASE and COR_IH. Each user is assigned to one or more of these roles based on their functional responsibilities in the business process. Additional role such as COR_ADMIN should also be set up for users who handle administrative functions within the Cority&nbsp;application. Only a very limited number of users should be given administrative privileges. </p>
+ <p class="BodyLevel1">These functional roles can be further divided depending on the specific business requirements:</p>
+ <ul><li class="BodyLevel1">For example, in order to allow users in each functional area to perform certain administrative tasks, a separate ADMIN role can be created for each of the functional areas such as COR_CASE_ADMIN or COR_IH_ADMIN. </li>
+ <li class="BodyLevel1">Similarly, a functional role can be further broken down based on the differences in data access privileges. For example, a COR_CASE_MANAGER role can be defined that allows users at managerial level not only to view and create case records in the system, but also to update and delete records upon review, whereas general Case users can only read and create records.</li>
+ <li class="BodyLevel1">An Administrator can use security subqueries to restrict record access based on criteria other than GDDLOFB. For example, say you have a security role named Contractor Manager. You also created a subquery (in the&nbsp;<a href="/articles/cority-user-guide/editing-or-creating-an-ad-hoc-report-in-query-builder" style="font-size: 10pt;" onclick="return n(&#39;!cority-user-guide/editing-or-creating-an-ad-hoc-report-in-query-builder&#39;,this);">Query Builder</a><span style="font-size: 10pt;">), identified as a security query, with the same name that restricts to only records accessible by the Contractor Manager's contractors. Add this security query to the role's Row Level Security tab. Users assigned this role will only be able to open the records to which their contractors have access.&nbsp;</span>If more than one security query is added to a role, the queries will be added together and respected together, along with any other site security defined for the role.</li>
+ </ul><p class="BodyLevel1">Users in most functional roles will normally be granted all security actions for the module by granting the appropriate security module to their role. If specific requirements apply, the functional security can be further tailored at individual security action level, by granting/prohibiting security actions explicitly. In addition you can limit the data user is able to access by adding prohibited reports and measures for the role. </p>
+ <p class="BodyLevel1">Look-up tables should be centrally managed by a limited number of users in COR_ADMIN group.</p>
+ <h4 id="h4__1370094595" data-has-heading-anchor="true">Site Security<a href="/articles/cority-user-guide/about-security/a/h4__1370094595" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/about-security/a/h4__1370094595&#39;,this);"></a></h4>
+ <p class="BodyLevel1">Site Security is applied when users at multiple sites share a centralized database server. It allows administrators to limit users' access to data that is exclusive to their sites. </p>
+ <p class="BodyLevel1">Site Security is also accomplished through the use of roles. Site roles are generally set up according to the different sites or locations where users are located, such as COR_TORONTO or COR_WASHDC. Similar to functional roles, site roles can be further divided based on tighter site requirements, for example, you might use COR_TORONTO_ACCT to restrict data access to the Accounting department in a Toronto location. </p>
+ <h4 id="h4__154923976" data-has-heading-anchor="true">Case Type Security<a href="/articles/cority-user-guide/about-security/a/h4__154923976" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/about-security/a/h4__154923976&#39;,this);"></a></h4>
+ <p class="BodyLevel1">Case Type Security, available if you use the Case Management module, allows restricted users' access to limited Case records based on the defined Case Types. </p>
+ <h4 id="h4__1820880580" data-has-heading-anchor="true">Suggested Configuration Workflow<a href="/articles/cority-user-guide/about-security/a/h4__1820880580" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/about-security/a/h4__1820880580&#39;,this);"></a></h4>
+ <p class="BodyLevel1">The following workflow is a suggested order for configuring security:</p>
+ <ol>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Define the functional roles - see <a href="/articles/cority-user-guide/setting-up-roles/a/XREF_60268_Roles" onclick="return n(&#39;!cority-user-guide/setting-up-roles/a/XREF_60268_Roles&#39;,this);">Setting Up Roles</a>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Define Site Security - see <a href="/articles/cority-user-guide/setting-up-site-security/a/XREF_33056_Site_Security" onclick="return n(&#39;!cority-user-guide/setting-up-site-security/a/XREF_33056_Site_Security&#39;,this);">Setting Up Site Security</a>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Define Case Security - see <a href="/articles/cority-user-guide/setting-up-case-type-security/a/XREF_19659_Case_Type_Security" onclick="return n(&#39;!cority-user-guide/setting-up-case-type-security/a/XREF_19659_Case_Type_Security&#39;,this);">Setting Up Case Type Security</a></p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Create user records - see <a href="/articles/cority-user-guide/setting-up-users/a/XREF_14161_Setting_Up_Users" onclick="return n(&#39;!cority-user-guide/setting-up-users/a/XREF_14161_Setting_Up_Users&#39;,this);">Setting Up Users</a> and then:</p>
+</li>
+ </ol>
+ <ul type="disc" style="margin-left: 40px;">
+  <li>
+  <p class="BodyLevel2">assign a functional role to control what modules they can access</p>
+</li>
+  <li>
+  <p class="BodyLevel2">assign a site role to control what records they can access within those modules</p>
+</li>
+  <li>
+  <p class="BodyLevel2">to become even more granular, grant case type roles to control what case type records the user can see within the Case Management module. </p>
+</li>
+ </ul>
+ <h4 id="h4__1118046964" data-has-heading-anchor="true">Understanding the Security Decisions<a href="/articles/cority-user-guide/about-security/a/h4__1118046964" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/about-security/a/h4__1118046964&#39;,this);"></a></h4>
+ <p class="BodyLevel1">The following matrix illustrates the overall flow of decisions made by the application when determining if a user has rights to perform an action: </p>
+ <div align="left"><img alt="security.jpg" style="margin-top : 5pt; margin-bottom : 10pt; border: Solid 0pt #999999; " id="image0" src="images/security.jpg" loading="lazy"/>
+ </div>
+ <h4 id="h4__1364960714" data-has-heading-anchor="true"><a name="IX_granted_vs_prohibited"></a><a name="XREF_63726_Granted_vs"></a>Granted vs Prohibited<a href="/articles/cority-user-guide/about-security/a/h4__1364960714" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/about-security/a/h4__1364960714&#39;,this);"></a></h4>
+ <p class="BodyLevel1">Granting an action to one of a user’s roles overrides prohibiting the same action on a different role. For example:</p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1">If a user has a functional or site security role that grants a specific action and a different role that prohibits that same action, the action will be granted. This scenario is useful when necessary to grant temporary access (e.g.&nbsp;granting administrator rights to a user while the administrator is on vacation). This scenario should not be used when configuring permanent access.</p>
+</li>
+  <li>
+  <p class="BodyLevel1">If a user has multiple roles and an action is prohibited on only one role, it will be prohibited as long as there is no overriding grant for the same action on any of their roles.</p>
+</li>
+ </ul>
+ <p class="Note"><span style="font-weight : bold; ">Important: </span>A field that is prohibited will not be provided in the available fields list for the Report Writer entity, and data related to that field will not appear on list views but the field will still display on the default layout. In order to prohibit fields on a form, create a new layout that does not contain the fields you want to prohibit and then assign roles to the layout accordingly.</p>
+ <p>&nbsp;</p>
+  
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

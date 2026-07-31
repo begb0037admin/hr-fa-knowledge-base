@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/reporting"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Reporting</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Reporting';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h3 id="h3__251686140" data-has-heading-anchor="true"><a name="IX_reporting_1"></a><a name="XREF_78101_Reporting"></a>Reporting<a href="/articles/cority-user-guide/reporting/a/h3__251686140" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/reporting/a/h3__251686140&#39;,this);"></a></h3>
+ <p class="BodyLevel1">There are no canned reports related to waste management records. Use Report Writer subqueries to create metrics that can be analyzed in the Data Cube, as follows:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Create the subquery - use the provided Waste Metrics Subquery or clone it to create your own. <br/>If you are creating a subquery for use in a custom measure:<br/>- the first column must be a number field (e.g. Amount)<br/>- the second column must be a date/time field<br/>- subsequent columns must be the GDDLOFB ID fields, in that order)<br/>Note that the Subquery field is not available on default custom measure layouts.<br/>For more information about creating Report Writer queries, see <a href="/articles/cority-user-guide/editing-or-creating-an-ad-hoc-report-in-report-writer/a/XREF_59509_Editing_or" onclick="return n(&#39;!cority-user-guide/editing-or-creating-an-ad-hoc-report-in-report-writer/a/XREF_59509_Editing_or&#39;,this);">Editing or Creating an Ad Hoc Report in Report Writer</a>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Create a custom layout for custom measures to add the <i><span class="Emphasis">Subquery</span>&nbsp;</i>field. For more information, see <a href="/articles/cority-user-guide/defining-form-layouts/a/XREF_78676_Layouts" onclick="return n(&#39;!cority-user-guide/defining-form-layouts/a/XREF_78676_Layouts&#39;,this);">Defining Form Layouts</a>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Associate the subquery to a new or existing custom measure. For more information, see <a href="/articles/cority-user-guide/setting-up-custom-metrics/a/XREF_31946_Setting_Up_Metric" onclick="return n(&#39;!cority-user-guide/setting-up-custom-metrics/a/XREF_31946_Setting_Up_Metric&#39;,this);">Setting Up Custom Metrics</a>. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When the custom measure is linked to the subquery and saved, individual metrics records are created from the waste management record and listed on the Completion/History tab.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">The custom measure is available for use in the Data Cube as usual. For more information, see <a href="/articles/cority-user-guide/using-the-data-cube/a/XREF_42839_Using_the_Data_Cube" onclick="return n(&#39;!cority-user-guide/using-the-data-cube/a/XREF_42839_Using_the_Data_Cube&#39;,this);">Using the Data Cube</a>.</p>
+</li>
+ </ol>
+<h4 style="" id="h4_445977412" data-has-heading-anchor="true">Biennial RCRA Reporting<a href="/articles/cority-user-guide/reporting/a/h4_445977412" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/reporting/a/h4_445977412&#39;,this);"></a></h4>
+<p>Waste Generators can accurately report biennially (every other year) on the amount of waste generated onsite, received onsite, managed onsite, and/or shipped offsite. This includes the following files:</p>
+<ul><li><span style="font-size: 10pt;">Waste Generation and Management (GM)</span></li>
+  <li>Waste Received Offsite (WR)</li>	
+  <li>Site Identification Information (SI ID)</li>
+  <li>Offsite Identification (OI)</li></ul>
+<p class="Note">Only manifested waste will be considered for either on-site or off-site treatment. That is, waste records must have a relationship to a waste manifest whether the waste is shipped off-site or treated on-site.<br/>When there is no entered data to pull into the file, the file will still be generated but empty.<br/>For the GM1 file to be created properly, the following value must be added to the Units of Measure look-up table in order to map the Density Unit of Measure information for the file:	<br/>Code=lbs/gal, Description=Pounds per Gallon.</p>
+<p>To populate, generate, and download the biennial waste forms:</p><ol><li>In the Environmental menu, click <b>Location Details</b>.</li><li>Choose <b>Actions»Generate Biennial Report</b>.</li><li>Select the <i>Form Type</i> (as listed above) and <i>Reporting Period</i>.&nbsp;If you select the <i>Include in National Report</i>&nbsp;checkbox, the EPA will include the generated data in the national report.</li><li>Click <b>Select</b>. A file will be generated and downloaded in the appropriate file format (for example, ZIP). The files conform to the specifications outlined by the RCRA, and named in the format: SSFFFNNN.FIL where:<ul><li>SS – the state postal code</li><li>FFF – the file identifier (e.g. SI2 for Site Identification Information Form 2)</li><li>NNN – the date the file was created</li><li>For example, the name for the SI2 file containing KS data, produced on February 4th, would be KSSI3035.FIL.</li></ul></li></ol>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

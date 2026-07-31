@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/creating-streams"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Creating Streams</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Creating Streams';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+
+ <h2 id="h2__1387363524" data-has-heading-anchor="true"><a name="IX_streams_creating_1"></a><a name="IX_streams_creating"></a><a name="XREF_43430_Streams"></a>Creating Streams<a href="/articles/cority-user-guide/creating-streams/a/h2__1387363524" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/creating-streams/a/h2__1387363524&#39;,this);"></a></h2>
+ <p class="BodyLevel1">The Streams module allows you to group chemicals into process streams used in air emissions inventories in order to: </p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1">Track the stream composition for materials over time.</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Produce accurate air emissions inventories.</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Calculate the air emissions inventories at various time intervals based on the correct stream composition.</p>
+</li>
+ </ul>
+ <p class="BodyLevel1">To create or update a stream:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Emissions Inventory menu click<span class="Bold"> <b>Streams</b></span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click a link to view details of a stream, or click <b><span class="Bold">New</span> </b>to enter a new stream.</p>
+  <div align="left"><img alt="EI_stream_profile.png" style="margin-top : 5pt; margin-bottom : 10pt; border: Solid 0pt #999999; " id="image4" src="images/EI_stream_profile.png" loading="lazy"/>
+  </div>
+  </li>
+  <p class="Note" style="margin-top  : 0.000pt; margin-bottom : 0.000pt;">Use the Site Selector (at the top of the Emissions Inventory menu) to view just the streams related to a particular GDDLOFB node.</p>
+  <p class="Note">To make a copy of an existing stream, select the checkbox beside the stream record in the list view, then choose <b><span class="Bold">Actions»Clone Stream</span></b>. When you do this:<br/>- the <i><span class="Emphasis">Stream Name</span>&nbsp;</i>will be the name of the original stream followed by a sequential number<br/>- the <i><span class="Emphasis">Stream #</span> </i>will be the same as the original stream<br/>- the <i><span class="Emphasis">Start Date</span>&nbsp;</i>will be the current date <br/>- the <i><span class="Emphasis">Effective Date</span> </i>for any stream composition records will be the current date<br/>- the Related Assets tab will be blank<br/>- all other fields will have the same value as the original record.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Enter a <i><span class="Emphasis">Stream Name</span>&nbsp;</i>and <i><span class="Emphasis">Start Date</span></i>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the Stream Composition tab, add the chemicals that comprise this stream:</p>
+</li>
+  <p class="BodyLevel2">Click<span class="Bold"> <b>New</b></span><b>&nbsp;</b>and select the <i><span class="Emphasis">Chemical</span>&nbsp;</i>and enter the <i><span class="Emphasis">% Weight Composition</span>&nbsp;</i>and the <i><span class="Emphasis">Effective Date</span></i>. For example, as of Jan. 1 the stream was made up of 60% xylene and 40% ethylbenzene. Select the <i><span class="Emphasis">Vapor Pressure Calculation Method</span>&nbsp;</i>to be used for this chemical in the emission calculations (from those set up on the Vapor Pressure Coefficients tab in the related chemical record). The remaining VP Calculation fields are available for your use but are not used in the emission calculations.</p>
+  <p class="BodyLevel2">Repeat for all chemicals that are part of this stream.</p>
+  <p class="Note">While a business rule ensures that the sum of all <span class="Emphasis">% Weight Composition</span>&nbsp;values for an effective date does not exceed 100%, it is up to you to ensure that the values add up to 100%.</p>
+  <p class="BodyLevel2">To update the composition of chemicals in a stream, select a chemical and choose <b><span class="Bold">Actions»Add a New Stream Composition Version</span></b>. You are prompted to select the new effective date. All chemicals with the same effective date as the one originally selected are replicated with the new effective date. Open each to change the <i><span class="Emphasis">% Weight Composition</span>&nbsp;</i>as required, or remove or add chemicals as applicable. </p>
+  <p class="Note">A version’s effective date must occur within the start and end dates of the main stream record.</p>
+  <p class="BodyLevel2">To delete a composition version, select a chemical with the date you want to delete, then choose <b><span class="Bold">Actions»Delete Selected Composition Version</span></b>. All chemicals with the same effective date are removed.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">The Related Assets tab displays the assets associated with this stream on the asset’s Emission Parameters tab (see <a href="/articles/cority-user-guide/recording-assets/a/XREF_33937_Asset_Management" onclick="return n(&#39;!cority-user-guide/recording-assets/a/XREF_33937_Asset_Management&#39;,this);">Recording Assets</a>).</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <b><span class="Bold">Save</span></b>.</p>
+</li>
+ </ol>
+ <p>&nbsp;</p>
+  
+<script type="text/javascript" language="javascript1.2" data-aspx-savednextwhitespace="%0A">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

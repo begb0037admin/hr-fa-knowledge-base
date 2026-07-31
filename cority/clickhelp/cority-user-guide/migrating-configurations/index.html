@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/migrating-configurations"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Migrating Configurations</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Migrating Configurations';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+
+<p>&nbsp;</p>
+
+ <h3 id="h3__420775929" data-has-heading-anchor="true"><a name="XREF_57529_GXP_4229_Migrating"></a>Migrating Configurations<a href="/articles/cority-user-guide/migrating-configurations/a/h3__420775929" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/migrating-configurations/a/h3__420775929&#39;,this);"></a></h3>
+ <p class="BodyLevel1">This function enables you to quickly and easily import or export business rules, dashboards, layouts, PDF forms, questionnaires, reports, and/or system settings from one environment to another. You can import or export links to dashboards (e.g. links from the My Views dashboard gadget); if importing, the dashboard(s) must already exist in the target environment.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Administrator menu, click <b><span class="Bold">Migrate Config</span>&nbsp;</b>(you may have to add this to your menu). </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">If you want the import/export of an object to apply only to certain records, select the object and click <b><span class="Bold">Edit</span></b>, then select a <i><span class="Emphasis">Query</span></i>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">To export a configuration, select the object(s) that you want to export and choose <b><span class="Bold">Actions»Export Configuration</span></b>. A JSON file will be downloaded to your computer containing the configurations for each of the selected objects.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">To import a configuration:</p>
+</li>
+ </ol>
+ <ul type="disc" style="margin-left: 40px;">
+  <li>
+  <p class="BodyLevel2">Choose <b><span class="Bold">Actions»Import Configuration</span></b>.</p>
+</li>
+  <li>
+  <p class="BodyLevel2">If you want to update existing records, you must set the toggle before selecting the file to import.</p>
+</li>
+  <li>
+  <p class="BodyLevel2">Select the JSON file to import. </p>
+</li>
+  <li>
+  <p class="BodyLevel2">When the import is complete, the Import Configuration dialog will refresh and list each of the objects that were imported, as well as any errors encountered during the import. Click <b><span class="Bold">View Log</span>&nbsp;</b>to view the Process Status &amp; Log (see <a href="/articles/cority-user-guide/viewing-import-logs/a/XREF_76439_Process_Status_Log" onclick="return n(&#39;!cority-user-guide/viewing-import-logs/a/XREF_76439_Process_Status_Log&#39;,this);">Viewing Import Logs</a>) that will show a detailed record for each of the imported objects.</p>
+</li>
+ </ul>
+ <p class="Tip">&nbsp;You can export (or import) configurations from select modules directly from the Actions menu in their list view. For example, in the Users list view you can choose to Export User Configurations, Export User Menu Configurations, Export User Setting Configurations, etc. This applies to look-up tables, standard views, translations, roles, users, and workflows.</p><h4 style="" id="h4__757397446" data-has-heading-anchor="true">Migrate Configuration Checklist/Best Practices
+<a href="/articles/cority-user-guide/migrating-configurations/a/h4__757397446" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/migrating-configurations/a/h4__757397446&#39;,this);"></a></h4><ol><li><b>Schedule Downtime</b><br/>Do not migrate configuration into a live system — the configuration being migrated will affect the system for users that are logged in.  Moving configuration data will have unintended consequences if the system is live.</li><li><b>Test Import</b><br/>Before migrating into a production environment, the process, objects, queries and sequence should be tested in a non-production environment.<br/>Additionally, the procedure should be documented, steps, sequence, expected results and actual results to establish the validity of the process.</li><li><b>Backup Target</b><br/>Before moving any configuration into a production environment it must be backed up in the event the migration does not go to plan or fails verification/testing.<ul><li>Take a snapshot of the entire database the configuration and date.</li><li>The configuration of the target environment should be well documented to ensure the configuration can be restored manually if necessary.</li></ul></li><li><b>Review/report </b>on the export queries, publish the queries to:<ul><li>Dashboard</li><li>Reports</li></ul></li><li><b>Document Changes</b><br/>Print reports from source, verify in target date and sign</li><li><b>Be precise </b>with the configuration being migrated — don’t migrate everything<ul><li>Only configuration that’s been added/changed as part of the project</li><li>Always use a query to limit the scope</li><li>Exclude negative IDs</li><li>Exclude Cority Translations</li></ul></li></ol><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

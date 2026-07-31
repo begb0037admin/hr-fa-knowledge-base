@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/setting-up-roles"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Setting Up Roles</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Setting Up Roles';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h3 id="h3__157152810" data-has-heading-anchor="true"><a name="IX_roles_setting_up_1"></a><a name="IX_roles_setting_up"></a><a name="XREF_60268_Roles"></a>Setting Up Roles<a href="/articles/cority-user-guide/setting-up-roles/a/h3__157152810" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-roles/a/h3__157152810&#39;,this);"></a></h3>
+ <p class="BodyLevel1">Non-admin users with the appropriate security action privileges can also create new users.</p>
+ <p class="Note">You can use the Generic Import Utility to add roles to (or remove roles from) users in bulk.<br/>Create a CSV file with column headings LoginName and RoleName, and list users next to their role(s) under the column headings. You can assign more than one role to a user: create a row for each role. In the import screen, select <i><span class="Emphasis">Add Role to User</span></i>&nbsp;or <i><span class="Emphasis">Remove Role from User </span></i>as appropriate. For more information, see <a href="/articles/cority-user-guide/importing-text-or-xml-files-into-cority-tables/a/XREF_28375_Import_Utility" onclick="return n(&#39;!cority-user-guide/importing-text-or-xml-files-into-cority-tables/a/XREF_28375_Import_Utility&#39;,this);">Importing Text or XML Files into Cority Tables</a>.</p>
+ <p class="Tip">Use the Clone function to make a copy of an existing role. When you clone a role, the following are not copied to the new role: Assigned Users, Site Security, Case-type Security, and Row-level Security.<br/></p>
+ <p class="BodyLevel1">To create a role:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Administrator menu, click <b><span class="Bold">Roles</span></b>.</p>
+  </li>
+  <p class="Note">To identify the list views that have been granted to a role, choose <b><span class="Bold">Actions»List Views That Have Been Granted To Roles</span></b>. If you delete a view/role combination from this list, the view will be removed from the corresponding role.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <b><span class="Bold">New</span></b>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Enter the <i><span class="Emphasis">Role Name</span>&nbsp;</i>and, optionally, a <i><span class="Emphasis">Role Description</span></i>.</p>
+</li>
+  <p class="Note">Do not use spaces or special characters in role names.</p>
+   <li style="list-style: decimal;">If you are using the Incident Role layout, you can  limit if users in this role can view the names of employees involved in safety incidents (in related list views or picklists). Other employees' names will either be filtered out or masked, depending on the form.&nbsp;Select the <i>Can only view employee name if supervisor </i>or <i>Can only view employee name if investigating supervisor&nbsp;</i>checkbox as appropriate.<p class="Note">This security feature will not mask the employee's picture or date of birth on the Employee Banner or the employee's name on Absences or Notes records. If you do not want such information exposed, those fields and sublists must not be used (must be omitted through configuration).&nbsp; This feature does not apply to events, record history, queries/reports, or myCority.</p></li>
+<li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <b><span class="Bold">Save</span></b>. The role is now available to be granted to users (see <a href="/articles/cority-user-guide/setting-up-users/a/XREF_14161_Setting_Up_Users" onclick="return n(&#39;!cority-user-guide/setting-up-users/a/XREF_14161_Setting_Up_Users&#39;,this);">Setting Up Users</a>). The Assigned Users tab displays all users who have been assigned to this role.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Use the Granted Modules tab to grant or deny access to security modules. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Use the remaining tabs, as appropriate, to further tailor permissions by granting access to specific actions, views or dashboards; denying access to specific views, published reports, non-published queries, actions, fields or measures;&nbsp; prohibiting the creation of new views of selected lists, pinning particular list views, etc.<br/><span style="font-size: 10pt;">A role may be granted the ability to (or be prohibited from) delete, display, create new, or save &nbsp;records across the application (*.delete, *.display, *.new *.save).</span></p>
+</li>
+ <li style="list-style: decimal;">
+  <p class="BodyLevel1"><span style="font-size: 10pt;">The Row Level Security tab allows an Administrator to use security subqueries to restrict record access based on criteria other than GDDLOFB. <br/>For example, say you have a security role named Contractor Manager. You also created a subquery (in the <a href="/articles/cority-user-guide/editing-or-creating-an-ad-hoc-report-in-query-builder" onclick="return n(&#39;!cority-user-guide/editing-or-creating-an-ad-hoc-report-in-query-builder&#39;,this);">Query Builder</a>), identified as a security query, with the same name that restricts to only records accessible by the Contractor Manager's contractors. Add this security query to the role's Row Level Security tab. When the Contractor Manager role is assigned to a user, that user will only be able to open the records to which their contractors have access.<br/>If more than one security query is added to a role, the queries will be added together and respected together, along with any other site security defined for the role.</span></p>
+</li>
+ </ol>
+ <p class="Note">See <a href="/articles/cority-user-guide/about-security/a/XREF_63726_Granted_vs" onclick="return n(&#39;!cority-user-guide/about-security/a/XREF_63726_Granted_vs&#39;,this);">Granted vs Prohibited</a>&nbsp;for information about which takes precedence.</p>
+ <p class="Note"><span style="font-weight : bold; ">Important: </span>A field that is prohibited will not be provided in the available fields list for the Report Writer entity, and data related to that field will not appear on list views, but the field will still display on the default layout. In order to prohibit fields on a form, create a new &nbsp;layout that does not contain the fields you want to prohibit and then assign roles to the layout accordingly.<br/>Be aware that even if you prohibit the Employee Number, there are some fields where this information still appears (e.g. InjuredEmployee). On any list views or Report Writer reports that include FullNameandNumber, employee number values will be masked using the 'XXXX’ format.</p>
+ <p>&nbsp;</p>
+  
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

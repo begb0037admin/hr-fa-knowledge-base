@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/creating-and-managing-invoices"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Creating and Managing Invoices</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Creating and Managing Invoices';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h3 id="h1_1547723302" style="" data-has-heading-anchor="true">
+  Creating and Managing Invoices<a href="/articles/cority-user-guide/creating-and-managing-invoices/a/h1_1547723302" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/creating-and-managing-invoices/a/h1_1547723302&#39;,this);"></a></h3>
+<h4 style="" id="h4_60010495" data-has-heading-anchor="true">Creating Invoices<a href="/articles/cority-user-guide/creating-and-managing-invoices/a/h4_60010495" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/creating-and-managing-invoices/a/h4_60010495&#39;,this);"></a></h4>
+<p>The Biller uses the Uninvoiced Items module to review all individual billing items created from clinic visit records, and make them ready to be added to an invoice.</p>
+<ol><li>In the Billing menu, choose&nbsp;<b>Uninvoiced Items</b>.</li>
+  <li>Choose <b>Actions»Generate Invoice</b>.</li>
+  <li>In the Generate Invoice window, indicate the date range. </li>
+  <li>If you only want to generate an invoice for a particular&nbsp;<i>Organization&nbsp;</i>and <i>Payer</i>, select those here. If you don't specify an Employer or Payer, the system will generate separate invoices for each employer and payer for which uninvoiced items exist.&nbsp;All individual billing items for the employer and payer will be grouped under a single invoice number.</li>
+  <li>Optionally, select the <i>Health Center </i>and/or <i>Fee Schedule</i> to further filter the invoices generated.</li>
+  <li>To add the letter template associated with the <a href="/articles/cority-user-guide/payer" onclick="return n(&#39;!cority-user-guide/payer&#39;,this);">Payer</a>&nbsp;to each invoice, select the <i>Include invoice associated to Payer </i>checkbox. If you need to make any changes to the invoice letter, use the "Revert to Draft" action.<br/>If you selecte&nbsp;<i>Include invoice associated to Payer</i>, you can also select the <i style="font-size: 10pt;">Move invoices to Submitted Status</i><span style="font-size: 10pt;"> checkbox. The newly created invoice records will go straight to Submitted status and a PDF of each letter will be added to the Documents tab of each respective invoice.&nbsp;</span></li>
+  <li>Enter the <i>Invoice Date </i>and <i>Due Date</i>. </li>
+  <li>Click <b>Generate</b>.</li></ol>
+<p>Invoices are generated and will be listed on the Invoices list view.</p>
+<h4 style="" id="h4__608865985" data-has-heading-anchor="true">Sending an Invoice to an Employer<a href="/articles/cority-user-guide/creating-and-managing-invoices/a/h4__608865985" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/creating-and-managing-invoices/a/h4__608865985&#39;,this);"></a></h4>
+<p>Once the invoice is created, it is not automatically sent to the employer. You must first create the letter that the invoice will be attached to.</p>
+<ol><li>In the Billing menu, click <b>Invoices</b>.</li>
+<li>Open the invoice record that you want to submit, then go to the Letters tab.</li>
+<li>Select the appropriate letter template that is marked as an Invoice and make any necessary changes.&nbsp;<br/></li>
+<li>Click <b>Submit to Employer</b>. This changes the status of the invoice and sends an email to the employer notifying them that an invoice has been generated. This email does not include the invoice itself.&nbsp;</li>
+<li>To send the invoice to the employer, choose <b>Actions»Email</b>. A PDF of the invoice is attached to the email.</li></ol>
+<p>A PDF of the invoice is added to the Documents tab with a description informing the invoice number and date/time of submission.</p>
+<h4 style="" id="h4__608865985" data-has-heading-anchor="true">Viewing Invoices<a href="/articles/cority-user-guide/creating-and-managing-invoices/a/h4__608865985" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/creating-and-managing-invoices/a/h4__608865985&#39;,this);"></a></h4>
+<p>All invoices appear on the <b>Invoices</b> list view. Here you can manage and track invoices from any selected employee, employers, and payers; apply payments; or dispute an invoice or individual billing items.</p>
+<p>Invoices will have one of the following statuses: </p>
+<ul><li>Blank - no letter template has been added to an invoice's Letter tab</li>
+<li>Pending -&nbsp;the letter template was added to the invoice but has not yet been submitted to the employer</li>
+<li>Submitted - the letter template (invoice) was sent to the employer through the Submit to Employer action</li>
+<li>Partially Paid - payment(s) have been applied but Outstanding Amount &gt; zero</li>
+<li>Fully Paid - payment(s) have been applied and Outstanding Amount &lt;= zero</li>
+<li>Disputed - the invoice or individual billing items have been disputed by the Billing user or the employer</li>
+<li>Written Off - all items on the invoice have been written off.</li>
+</ul>
+<p>Open an invoice to view the date range it covers, the date it was generated, and the due date, as well as the overall invoice amount and outstanding amount. The individual billing items included on an invoice are listed on the Billing Items tab. </p>
+<p>Once an invoice is submitted to an employer, fields become available to enter Amounts Received or Written Off; amounts entered here are applied to each billing item covered by the invoice until all items are fully paid.</p>
+<p>You can apply a payment directly to a billing item on the Billing Items tab, or you can record payments or written off amounts on the Payment Tracker tab. All payments, whether applied at the invoice or item level, are reflected in the Outstanding Amount field for the invoice, and may affect the invoice status.</p>
+<p>Other invoice views that you may have access to:</p>
+<ul><li>The Invoice Details module lists all individual billing items that have been added to an invoice, including the billed and outstanding amounts for each item.</li>
+  <li>The Billing Documents module lists all documents associated with any invoice, e.g. for bulk printing of multiple documents.</li><li>The Clinic Visit Items module lists only items that originated in the Billing tab of a clinic visit record, regardless if the Coding Completed checkbox has been selected or not. Viewing an item from this list view provides a direct link to the clinic visit record, so the user must also have access to the Clinic Visit module.</li></ul>
+<h4 style="" id="h4__1675316559" data-has-heading-anchor="true">Disputing an Invoice<a href="/articles/cority-user-guide/creating-and-managing-invoices/a/h4__1675316559" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/creating-and-managing-invoices/a/h4__1675316559&#39;,this);"></a></h4>
+<p>An invoice, or individual billing items, can be disputed by the biller or the employer. The status is changed to Disputed until the Cancel Dispute action is triggered. When cancelled, the invoice status reverts to the status it held when the Dispute action was triggered.</p>
+<div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/working-with-maen-settings"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Working with MAEN Settings</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Working with MAEN Settings';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+
+<p>&nbsp;</p>
+
+ <h3 id="h3_1243628893" data-has-heading-anchor="true"><a name="IX_notification_settings"></a><a name="IX_MAEN_settings"></a><a name="XREF_51679_MAEN_Settings"></a>Working with MAEN Settings<a href="/articles/cority-user-guide/working-with-maen-settings/a/h3_1243628893" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/working-with-maen-settings/a/h3_1243628893&#39;,this);"></a></h3>
+ <p class="BodyLevel1">The MAEN system is used to send reminders and/or notification emails for time sensitive modules (such as incident investigation, actions, equipment calibration, and scheduling) in Cority. </p>
+ <p class="BodyLevel1">MAEN must be turned on for hosted clients. If you are self-hosted, refer to the <span style="font-style : italic; "><i>Cority Email Notification Utility Guide</i>&nbsp;</span>and/or contact your Cority representative for assistance with setup.</p>
+ <p class="Note">Email-related settings can be auto-configured based on Cority's initialization parameters to ensure that emails sent from the Cority&nbsp;application are delivered, even if you have not configured any email settings. <br/>You can also define the “Email Prefix” system setting that will affix standard prefix text to the beginning of all outgoing emails.<br/>Contact your Cority representative for assistance.</p>
+ <p class="BodyLevel1">First, define application-wide settings in the Email Configuration section. For example, the server to be used for sending email, whether the administrator should receive a log of emails, and who serves as the administrator.</p>
+ <div align="left"><img alt="Admin_MAEN_email.gif" style="margin-top : 5pt; margin-bottom : 10pt; border: Solid 0pt #999999; " id="image10" src="images/Admin_MAEN_email.gif" loading="lazy"/>
+ </div>
+ <p class="BodyLevel1">Then complete the remaining sections, corresponding to the types of email notification, as required.</p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1">In the Surveillance Recall, Actions, Equipment, Audits and Inspections, Surveys, Metrics, Case and Management of Change sections, define settings for automated emails for recalls, different kinds of corrective actions, change request workflow, etc. The Actions section includes separate tabs for different types of actions, such as safety, IH, environmental, etc.</p>
+</li>
+ </ul>
+ <p class="BodyLevel2" style="margin-left: 40px;">In each of these sections, you can choose separate settings depending on whether the event you are notifying/reminding about is due or overdue. The Cority Email Notification Utility will generate emails according to your choices in the “Due Setting” area when the due date is approaching, and separate emails according to your choices in the “Overdue Setting” area once the date has past.</p>
+ <p class="BodyLevel2" style="margin-left: 40px;">These settings will always use the current due date in the record; that is, if the due date is changed in the record, the notification settings are adjusted accordingly. If any notifications have been sent before the due date was changed, the count is reset for the <i><span class="Emphasis">Max # of Reminders</span></i>.</p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1">In the Incident Investigation section, define settings for automated emails for each stage of an incident investigation.</p>
+</li>
+ </ul>
+ <p class="Note">Turning on MAEN for modules which have a large volume of historical records can cause the system to send a very large volume of emails. Contact Cority&nbsp;for support in understanding how to prevent these unwanted historical emails.</p>
+ <p class="BodyLevel1">For more information, refer to the <span style="font-style : italic; "><i>Cority Email Notification Utility Guide</i></span>.</p>
+
+ <table style="border-spacing: 0; padding-left: 6.00pt; padding-top: 6.00pt; padding-right: 6.00pt; padding-bottom: 4.00pt;float: alignleft; width: 396.68pt;" cellspacing="0">
+  <tbody><tr style=" height : 19.00pt;">
+  <th style="width : 168.622pt; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" class="">
+  <p class="CellHeading">Setting Name</p>
+</th>
+  <th style="width : 228.059pt; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" class="">
+  <p class="CellHeading">Use this setting to specify:</p>
+</th>
+</tr>
+  <tr style=" height : 19.00pt;">
+  <td colspan="2" style="width : 396.681pt; background : #ffffff;border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading"><b>Email Configuration</b></p>
+</td>
+</tr>
+  <tr style=" height : 32.00pt;">
+  <td style="width : 168.622pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody" style="font-family : Verdana; font-style : italic; font-size  : 8.5pt;"><span class="Emphasis">Send Email As</span></p>
+</td>
+  <td style="width : 228.059pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">whether the generated email should be sent as formatted in HTML or plain text</p>
+</td>
+</tr>
+  <tr style=" height : 20.00pt;">
+  <td style="width : 168.622pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody" style="font-family : Verdana; font-style : italic; font-size  : 8.5pt;"><span class="Emphasis">Send log file to Administrator?</span></p>
+</td>
+  <td style="width : 228.059pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">whether a log file should be sent to the administrator</p>
+</td>
+</tr>
+  <tr style=" height : 20.00pt;">
+  <td style="width : 168.622pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-family : Verdana; font-style : italic; font-size  : 8.5pt;"><span class="Emphasis">Administrator's Email </span></p>
+</td>
+  <td style="width : 228.059pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">the administrator's email address</p>
+</td>
+</tr>
+  <tr style=" height : 32.00pt;">
+  <td style="width : 168.622pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-family : Verdana; font-style : italic; font-size  : 8.5pt;"><span class="Emphasis">FROM field email </span></p>
+</td>
+  <td style="width : 228.059pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">the “From” field of emails to be sent to the administrator</p>
+</td>
+</tr>
+  <tr style=" height : 32.00pt;">
+  <td style="width : 168.622pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-family : Verdana; font-style : italic; font-size  : 8.5pt;"><span class="Emphasis">SMTP Server </span></p>
+</td>
+  <td style="width : 228.059pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1">the SMTP server address (DNS addresses are supported)</p>
+</td>
+</tr>
+  <tr style=" height : 20.00pt;">
+  <td style="width : 168.622pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-family : Verdana; font-style : italic; font-size  : 8.5pt;"><span class="Emphasis">SMTP Port</span></p>
+</td>
+  <td style="width : 228.059pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">the Port for the SMTP server (1 - 65535)</p>
+</td>
+</tr>
+  <tr style=" height : 32.00pt;">
+  <td style="width : 168.622pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-family : Verdana; font-style : italic; font-size  : 8.5pt;"><span class="Emphasis">MAEN Max run time </span></p>
+</td>
+  <td style="width : 228.059pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1">the maximum time the MAEN process is allowed to execute</p>
+</td>
+</tr>
+  <tr style=" height : 30.00pt;">
+  <td colspan="2" style="width : 396.681pt; background : #ffffff;border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading"><b>Surveillance Recall, Actions, Equipment, Audits and Inspections, Metrics, Management of Change</b></p>
+</td>
+</tr>
+  <tr style=" height : 20.00pt;">
+  <td style="width : 168.622pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-family : Verdana; font-style : italic; font-size  : 8.5pt;"><span class="Emphasis">Enable/Disable</span></p>
+</td>
+  <td style="width : 228.059pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1">whether to enable generated emails of this type</p>
+</td>
+</tr>
+  <tr style=" height : 44.00pt;">
+  <td style="width : 168.622pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-family : Verdana; font-style : italic; font-size  : 8.5pt;">(Management of Change only)<br/>Include all open change requests in each notification/reminder?</p>
+</td>
+  <td style="width : 228.059pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1">if selected, all open records are included in the email; if not selected, only due and overdue records are included</p>
+</td>
+</tr>
+  <tr style=" height : 39.50pt;">
+  <td style="width : 168.622pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-family : Verdana; font-style : italic; font-size  : 8.5pt;">(Actions section only)<br/>Include All Open Actions in in each notification/reminder?</p>
+</td>
+  <td style="width : 228.059pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1">selected by default; clear to include only Due and Overdue open actions</p>
+</td>
+</tr>
+  <tr style=" height : 60.50pt;">
+  <td style="width : 168.622pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-family : Verdana; font-style : italic; font-size  : 8.5pt;"><span class="Emphasis">Copy individuals in the </span><a href="/articles/cority-user-guide/incidentinvestigationemail/a/XREF_35785_Incident" onclick="return n(&#39;!cority-user-guide/incidentinvestigationemail/a/XREF_35785_Incident&#39;,this);">IncidentInvestigationEmail</a><span class="Emphasis">&nbsp;look-up table on email notifications? (This field appears only in Actions, and only on some of the tabs)</span></p>
+</td>
+  <td style="width : 228.059pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1">whether to copy this email to people involved in the investigation (those whose email addresses are listed in the <a href="/articles/cority-user-guide/incidentinvestigationemail/a/XREF_35785_Incident" onclick="return n(&#39;!cority-user-guide/incidentinvestigationemail/a/XREF_35785_Incident&#39;,this);">IncidentInvestigationEmail</a> look-up table)</p>
+</td>
+</tr>
+  <tr style=" height : 44.00pt;">
+  <td style="width : 168.622pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-family : Verdana; font-style : italic; font-size  : 8.5pt;"><span class="Emphasis">Send Notification</span></p>
+</td>
+  <td style="width : 228.059pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1">whether to send notifications, and how many days before (Due setting) or after (Overdue setting) the due date</p>
+</td>
+</tr>
+  <tr style=" height : 20.00pt;">
+  <td style="width : 168.622pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-family : Verdana; font-style : italic; font-size  : 8.5pt;"><span class="Emphasis">Send Reminders</span></p>
+</td>
+  <td style="width : 228.059pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1">whether to send reminders, and how often</p>
+</td>
+</tr>
+  <tr style=" height : 44.00pt;">
+  <td style="width : 168.622pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-family : Verdana; font-style : italic; font-size  : 8.5pt;">(Surveillance Recall section only)<br/>Include Non-Mandatory activities in Notifications &amp; Reminders </p>
+</td>
+  <td style="width : 228.059pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1">selected by default; clear to exclude non-mandatory surveillance activities from Due and Overdue notifications and reminders</p>
+</td>
+</tr>
+  <tr style=" height : 50.00pt;">
+  <td style="width : 168.622pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-family : Verdana; font-style : italic; font-size  : 8.5pt;"><span class="Emphasis">Max # of Reminders (In the Surveillance Recall function, separate fields for non-mandatory and mandatory activities)</span></p>
+</td>
+  <td style="width : 228.059pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1">the maximum number of reminders to be sent</p>
+</td>
+</tr>
+  <tr style=" height : 44.00pt;">
+  <td style="width : 168.622pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-family : Verdana; font-style : italic; font-size  : 8.5pt;"><span class="Emphasis">Letter sent with notifications/reminders</span></p>
+</td>
+  <td style="width : 228.059pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1">whether a letter should replace the text in the notification/reminder, and which letter template should be used</p>
+</td>
+</tr>
+  <tr style=" height : 56.00pt;">
+  <td style="width : 168.622pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-family : Verdana; font-style : italic; font-size  : 8.5pt;"><span class="Emphasis">Send Email To</span></p>
+</td>
+  <td style="width : 228.059pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1">whether the email should be sent to the employee, the supervisor, or both <br/>(Management of Change: whether the email should be sent to the approver, initiator, or both)</p>
+</td>
+</tr>
+  <tr style=" height : 18.50pt;">
+  <td colspan="2" style="width : 396.681pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-family : Verdana; font-style : italic; font-size  : 8.5pt;">On each Actions tab, choose the applicable GDDLOFB.</p>
+</td>
+</tr>
+  <tr style=" height : 19.00pt;">
+  <td colspan="2" style="width : 396.681pt; background : #ffffff;border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading"><b>Incident Investigation</b></p>
+</td>
+</tr>
+  <tr style=" height : 20.00pt;">
+  <td style="width : 168.622pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-family : Verdana; font-style : italic; font-size  : 8.5pt;"><span class="Emphasis">Enable/Disable</span></p>
+</td>
+  <td style="width : 228.059pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1">whether to enable generated emails of this type</p>
+</td>
+</tr>
+  <tr style=" height : 72.00pt;">
+  <td colspan="2" style="width : 396.681pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1">On the Init.Investigation (Supervisor) tab only: </p>
+  <p class="BodyLevel2">If your company policy is for users to initiate the investigation by choosing <b><span class="Bold">Actions»Supervisor Email</span></b>, select <i><span class="Emphasis">Only send if “Supervisor Email” action triggered</span></i>.<br/>If your company policy is to begin the investigation immediately when the incident is saved, leave this checkbox clear.</p>
+</td>
+</tr>
+  <tr style=" height : 39.50pt;">
+  <td style="width : 168.622pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-family : Verdana; font-style : italic; font-size  : 8.5pt;"><span class="Emphasis">Copy individuals in the </span><a href="/articles/cority-user-guide/incidentinvestigationemail/a/XREF_35785_Incident" onclick="return n(&#39;!cority-user-guide/incidentinvestigationemail/a/XREF_35785_Incident&#39;,this);">IncidentInvestigationEmail</a><span class="Emphasis">&nbsp;look-up table on email notifications? </span></p>
+</td>
+  <td style="width : 228.059pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1">whether to copy this email to people involved in the investigation</p>
+</td>
+</tr>
+  <tr style=" height : 20.00pt;">
+  <td style="width : 168.622pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-family : Verdana; font-style : italic; font-size  : 8.5pt;"><span class="Emphasis">Send Reminders</span></p>
+</td>
+  <td style="width : 228.059pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1">whether to send reminders, and how often</p>
+</td>
+</tr>
+  <tr style=" height : 50.00pt;">
+  <td style="width : 168.622pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-family : Verdana; font-style : italic; font-size  : 8.5pt;"><span class="Emphasis">Max # of Reminders (In the Surveillance Recall function, separate fields for non-mandatory and mandatory activities)</span></p>
+</td>
+  <td style="width : 228.059pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1">the maximum number of reminders to be sent</p>
+</td>
+</tr>
+  <tr style=" height : 44.00pt;">
+  <td style="width : 168.622pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-family : Verdana; font-style : italic; font-size  : 8.5pt;"><span class="Emphasis">Letter sent with notifications/reminders</span></p>
+</td>
+  <td style="width : 228.059pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1">whether a letter should replace the text in the notification/reminder, and which letter template should be used</p>
+</td>
+</tr>
+ </tbody></table>
+
+ <p>&nbsp;</p>
+  
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

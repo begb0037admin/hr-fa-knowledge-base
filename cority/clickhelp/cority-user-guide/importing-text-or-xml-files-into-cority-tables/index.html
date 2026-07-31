@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/importing-text-or-xml-files-into-cority-tables"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Importing Text or XML Files into Cority Tables</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Importing Text or XML Files into Cority Tables';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+
+<p>&nbsp;</p>
+
+ <h3 id="h3_1189834426" data-has-heading-anchor="true"><a name="IX_text_files_importing"></a><a name="IX_text_files_into_Cority"></a><a name="XREF_28375_Import_Utility"></a>Importing Text or XML Files into Cority Tables<a href="/articles/cority-user-guide/importing-text-or-xml-files-into-cority-tables/a/h3_1189834426" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/importing-text-or-xml-files-into-cority-tables/a/h3_1189834426&#39;,this);"></a></h3>
+ <p class="BodyLevel1">The Import Utility imports CSV text files and XML files into Cority&nbsp;look-up tables and data tables (including site security definitions). The import form allows you to determine how and which data is imported. Each file may contain up to 2000 records.</p>
+ <h4 id="h4_170259671" data-has-heading-anchor="true">About CSV Text Files<a href="/articles/cority-user-guide/importing-text-or-xml-files-into-cority-tables/a/h4_170259671" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/importing-text-or-xml-files-into-cority-tables/a/h4_170259671&#39;,this);"></a></h4>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1">It is not necessary to enclose values in &nbsp;(e.g. “John”, “Doe”, “Aug 10, 1984”); however, if the data contains commas &nbsp;as with the date field example, then it must be enclosed in quotes.</p>
+</li>
+  <li>
+  <p class="BodyLevel1">If the file includes special characters (e.g. words that contain diacritical marks), use UTF-8 encoding.</p>
+</li>
+ </ul>
+ <h4 id="h4_686020529" data-has-heading-anchor="true">About XML Files<a href="/articles/cority-user-guide/importing-text-or-xml-files-into-cority-tables/a/h4_686020529" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/importing-text-or-xml-files-into-cority-tables/a/h4_686020529&#39;,this);"></a></h4>
+ <p class="BodyLevel1">The XML format supported in the Generic Import Utility is XML Data file, not XML spreadsheet file.</p>
+ <p class="BodyLevel1">When you import an XML file, the import utility reads the import format from the XML file, not from the import utility template, but the field names in the XML file must match the field names shown in the import utility. For example, you may have saved an employee import template with 30 fields selected, but you can import an XML file that has only three of those fields defined (e.g. EmployeeNo, LastName, FirstName).</p>
+ <h4 id="h4__898436749" data-has-heading-anchor="true">About Importing Site Security Definitions<a href="/articles/cority-user-guide/importing-text-or-xml-files-into-cority-tables/a/h4__898436749" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/importing-text-or-xml-files-into-cority-tables/a/h4__898436749&#39;,this);"></a></h4>
+ <p class="BodyLevel1">When importing into the Site Security table, values are required for the Role and GDDLOFB fields. If the <i><span class="Emphasis">Automatically insert non-existing look-up table values</span>&nbsp;</i>checkbox is selected and a role specified in the import file does not exist in Cority, the system will create the new role. The Site Security table provides the following optional fields: Allow Read, Allow Insert, Allow Update, Allow Delete, and Role Description. After import, the system will create the Site Security record(s) and associate each with the role specified.</p>
+ <h4 id="h4__946072552" data-has-heading-anchor="true">Importing the File<a href="/articles/cority-user-guide/importing-text-or-xml-files-into-cority-tables/a/h4__946072552" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/importing-text-or-xml-files-into-cority-tables/a/h4__946072552&#39;,this);"></a></h4>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Administrator menu, click <b><span class="Bold">Import Utility</span></b>. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the view (Data Tables or Look-up Tables) to display the tables that can be imported into.</p>
+  </li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the table you are importing into.</p>
+  </li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the <i><span class="Emphasis">XML File </span></i>checkbox to have the <b><span class="Bold">Browse</span>&nbsp;</b>button only show XML files. If you do not select the <i><span class="Emphasis">XML</span>&nbsp;</i>checkbox, but browse and choose an XML file, the import utility will still use the XML logic (i.e. ignore the import utility template and read the format from the XML file.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <b><span class="Bold">Browse</span>&nbsp;</b>to retrieve the file. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Indicate if existing records should be updated, if look-up table values should be inserted automatically, and if the import file contains a header row (so that the import utility will ignore that row). If you are importing date fields, select the Date Format. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">If you are importing into the Employees data table, indicate if you want to auto-create a portal-only (myCority) user. If a login ID is provided in the import file, a new user will be created with the login ID as the username. The user will be assigned the Portal role, and their user record will be populated with any other details provided (e.g. a linked Employee record).</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">If you are importing into the Treemaster look-up table, select the tree you are importing into.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">All fields in the table are listed in the Available Fields list. Select the fields that you are importing into: select a field in the Available Fields list, and click <b><span class="Bold">Add</span>&nbsp;</b>to add it to the Selected Fields list.</p>
+</li>
+  <p class="Note">There may be one or more fields already in the Selected Fields list, shown in red text. These are default fields that comprise of the unique key for that table. In the case of the DT_Employee table shown below, the EmployeeNumber is the one field that makes up the unique key. These unique key fields must be populated in the import file, and it cannot be removed from the Selected Fields list. In some scenarios, a field of the unique key can be left blank. In this scenario, an asterisk * will be specified beside the field indicating that it can be blank.<br/><br/>Refer to the <span style="font-style : italic; "><i>Data Dictionary</i></span>&nbsp;values for a selected field at the bottom of the form to see the character limits. &nbsp;Imported values &nbsp;that exceed this limit may &nbsp;be truncated or result in an error. </p>
+  <p class="Tip">If you are importing a finding, you can use the Action fields to import child records and automatically link them to the parent finding. If you are importing child fields into a parent table, you must select the corresponding <i><span class="Emphasis">ImportGroupingId</span>&nbsp;</i>field, and denote the parent/child relationships in the import file.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Use the buttons to move the selected fields up or down as required to match the order they are listed in the file.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">The number of selected fields must match the number of fields in the file. If there are fields in the file that do not have an equivalent/corresponding field in Cority, click <b><span class="Bold">Add Filler</span>&nbsp;</b>to create the necessary number of placeholder fields so the import will work. Filler fields are not stored in the application.</p>
+</li>
+  <p class="Tip">If you may be importing these fields again from another file, choose <b><span class="Bold">Actions»Save Format</span> </b>so that you don’t have to define your options and fields again.<br/>To create a spreadsheet (.csv format) with column titles that correspond to the fields in the Selected Fields list, choose <b><span class="Bold">Actions»Export Template</span></b>.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When you are finished, click <b><span class="Bold">Import</span></b>.</p>
+</li>
+ </ol>
+ <h4 style="margin-top  : 10.000pt;" id="h4_694723923" data-has-heading-anchor="true">What Happens Next?<a href="/articles/cority-user-guide/importing-text-or-xml-files-into-cority-tables/a/h4_694723923" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/importing-text-or-xml-files-into-cority-tables/a/h4_694723923&#39;,this);"></a></h4>
+ <p class="BodyLevel1">The import utility checks all tables that are related to the main import table to ensure that the codes/foreign keys exist in the related tables. If the related table is a look-up table, then usually the code will be the field which needs to be included in the import text field. </p>
+ <p class="BodyLevel2">Example: The <a href="/articles/cority-user-guide/findingtype/a/XREF_21821_Audit_Finding_Types" onclick="return n(&#39;!cority-user-guide/findingtype/a/XREF_21821_Audit_Finding_Types&#39;,this);">FindingType</a> table may have the following entries:<br/>“ENV5”, “A dig permit has not been completed for the worksite”<br/>“ENV6”, “Workers in the area are not following HAZWOPER work procedures”</p>
+ <p class="BodyLevel2">The codes in this case are ENV5 and ENV6 and these are what need to be included in the import &nbsp;file. If the code does not exist in the <a href="/articles/cority-user-guide/findingtype/a/XREF_21821_Audit_Finding_Types" onclick="return n(&#39;!cority-user-guide/findingtype/a/XREF_21821_Audit_Finding_Types&#39;,this);">FindingType</a>&nbsp;table, it will be added if you have selected <i><span class="Emphasis">Automatically insert non-existing look-up table values</span></i>. If this checkbox is not selected, the record will be rejected.</p>
+ <p class="BodyLevel1">The import utility adds new records to the database and updates existing records &nbsp;if the corresponding checkbox is selected. If the checkbox is not selected and the record already exists, the record will be rejected with a message indicating that it is a duplicate.</p>
+ <p class="Note">When importing new GDDLOFB tree values, if the tree node is not in the database, it will be attached to the root of the specified GDDLOFB tree. The administrator can later move the node to the desired node/location (see <a href="/articles/cority-user-guide/setting-up-an-organizational-tree/a/XREF_96839_Configuring_Fields" onclick="return n(&#39;!cority-user-guide/setting-up-an-organizational-tree/a/XREF_96839_Configuring_Fields&#39;,this);">Setting Up An Organizational Tree</a>.</p>
+ <p class="BodyLevel1">When the import is complete, you will receive a message indicating the results of the import: i.e.&nbsp;how many records were added to the database, and how many records were rejected or updated. It will also indicate the number of records added to the log file which is the summation of the records added, rejected, and updated.</p>
+ <p class="BodyLevel1">To view details of why records were rejected, choose <b><span class="Bold">Actions»Process Status and Log</span>&nbsp;</b>(for more information, see <a href="/articles/cority-user-guide/viewing-import-logs/a/XREF_76439_Process_Status_Log" onclick="return n(&#39;!cority-user-guide/viewing-import-logs/a/XREF_76439_Process_Status_Log&#39;,this);">Viewing Import Logs</a>).</p>
+ <p>&nbsp;</p>
+  
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

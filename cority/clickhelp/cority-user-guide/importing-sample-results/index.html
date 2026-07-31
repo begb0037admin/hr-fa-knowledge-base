@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/importing-sample-results"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Importing Sample Results</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Importing Sample Results';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+
+<p>&nbsp;</p>
+
+ <h3 id="h3_1619423977" data-has-heading-anchor="true"><a name="IX_air_sample_results"></a><a name="IX_importing_air_sample"></a><a name="IX_importing_industrial"></a><a name="XREF_89618_Importing_Sample"></a>Importing Sample Results<a href="/articles/cority-user-guide/importing-sample-results/a/h3_1619423977" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/importing-sample-results/a/h3_1619423977&#39;,this);"></a></h3>
+ <p class="BodyLevel1">Sample results can be imported from a .csv file. For information about importing laboratory results, see <a href="/articles/cority-user-guide/entering-laboratory-results/a/XREF_90224_Entering" onclick="return n(&#39;!cority-user-guide/entering-laboratory-results/a/XREF_90224_Entering&#39;,this);">Entering Laboratory Results</a>.</p>
+ <h4 id="h4__1859135116" data-has-heading-anchor="true">Preparing the Import File<a href="/articles/cority-user-guide/importing-sample-results/a/h4__1859135116" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/importing-sample-results/a/h4__1859135116&#39;,this);"></a></h4>
+ <p class="BodyLevel1">There is a unique import template for each module.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">To obtain the correct template, in either the Monitoring or Noise Monitoring list, choose <b><span class="Bold">Actions»Download Import File Template</span></b>. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Enter and save data in the template. The fields within the template provide field-by-field guidance regarding what data is allowed in each field. Some fields are linked to corresponding look-up tables for easy selection.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Save file as .csv.</p>
+</li>
+ </ol>
+ <p class="Note" style="margin-right : 0.000pt;">If you do not know an employee's ID, you can provide the first name, last name, gender, and date of birth in the template instead. This information will be used to find the employee's ID in Cority.<br/>For Monitoring sample imports, instead of entering agents separately, you can select the Agent Group (from the <a href="/articles/cority-user-guide/ihagentgroup/a/XREF_53052_Agent_Groups" onclick="return n(&#39;!cority-user-guide/ihagentgroup/a/XREF_53052_Agent_Groups&#39;,this);">IHAgentGroup</a>&nbsp;look-up table). The Agent tab/sublist for the corresponding sample record will be populated with a record for each agent in the group.</p>
+ <h4 id="h4__343789148" data-has-heading-anchor="true">Importing the Results<a href="/articles/cority-user-guide/importing-sample-results/a/h4__343789148" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/importing-sample-results/a/h4__343789148&#39;,this);"></a></h4>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Monitoring or Noise Monitoring list, choose <b><span class="Bold">Actions»Import Samples</span></b>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <b><span class="Bold">Browse</span> </b>to locate the file.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the <i><span class="Emphasis">Date Format</span>&nbsp;</i>used within dataset present within the import samples template. Any records that have dates that do not match the specified <i><span class="Emphasis">Date Format</span> </i>will be rejected.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Indicate if you want to update any existing records, and if you want new values automatically added to look-up tables.</p>
+</li>
+  <p class="Note">The Administrator should restrict who has rights to select the <i><span class="Emphasis">Add to Look-Up Tables</span>&nbsp;</i>checkbox by including the following prohibited action on user roles: genericimport.allowcreationofnewbasetablerecords. For more information, see <a href="/articles/cority-user-guide/setting-up-roles/a/XREF_60268_Roles" onclick="return n(&#39;!cority-user-guide/setting-up-roles/a/XREF_60268_Roles&#39;,this);">Setting Up Roles</a>.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <b><span class="Bold">Import</span>&nbsp;</b>to add the sample results to the monitoring record. Once the file is imported, a pop-up will advise whether the import was successful and how many records were imported. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">To see the details of the import and any errors, choose <b><span class="Bold">Actions»Process Status and Log</span></b>. Once any errors have been corrected, choose <b><span class="Bold">Actions»Reprocess</span></b>.</p>
+</li>
+ </ol>
+ <p>&nbsp;</p>
+  
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

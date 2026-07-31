@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/using-the-management-referral-workflow"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Using the Management Referral Workflow</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Using the Management Referral Workflow';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 style="" id="h1_1858447708"><br/></h1><h2 id="h1_1547723302" style="" data-has-heading-anchor="true">Using the Management Referral Workflow<a href="/articles/cority-user-guide/using-the-management-referral-workflow/a/h1_1547723302" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/using-the-management-referral-workflow/a/h1_1547723302&#39;,this);"></a></h2>
+<p>Cority provides functionality for a Management Referral workflow that integrates the Appointments and Case Management modules to make it easy for:</p>
+<ul><li>A manager to refer an employee to a clinic</li>
+<li>The clinician(s) to address and carry out the referral and any clinic visits</li>
+<li>The manager and clinician(s) to communicate throughout the process.</li>
+</ul>
+<p class="Note">Related fields and actions must be added to custom form layouts. Please contact your system administrator for assistance. </p>
+<p>This article provides an overview of the workflow functionality. The following is a general example of the workflow:</p>
+<ol><li>A manager submits a referral questionnaire (in <a href="/smart/mycority-user-guide/referring-an-employee-for-an-appointment" target="_blank">myCority</a>) to refer an employee to a clinic. </li>
+<li>The auto-post to Case feature is configured, so a case is created for the referral. </li>
+<li>A clinician opens the Case record and from that record starts a referral appointment using the Appointments module. When creating the appointment, the clinician links it to a clinic-visit-related activity, which creates a Clinic Visit record. These records maintain a link through the case number which is added to the appointment and clinic visit records.</li>
+<li>The case continues with added information, perhaps one or more additional clinic visits, and messages back and forth between the clinicians (using GX2) and the referring manager (using myCority). The clinician's assessment is shared with the employee, and includes consent fields so that the employee can indicate if the medical assessment questionnaire may be shared with the supervisor. </li>
+<li>The case is eventually closed.
+</li>
+</ol><h3 style="" id="h3_897429271" data-has-heading-anchor="true">Configuration (High-Level)<a href="/articles/cority-user-guide/using-the-management-referral-workflow/a/h3_897429271" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/using-the-management-referral-workflow/a/h3_897429271&#39;,this);"></a></h3>
+<h4 style="" id="h3_897429271" data-has-heading-anchor="true">Schedule Entry <a href="/articles/cority-user-guide/using-the-management-referral-workflow/a/h3_897429271" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/using-the-management-referral-workflow/a/h3_897429271&#39;,this);"></a></h4>
+<p>The Case Number field must be added to a custom layout. When you select an employee, the Case Number field is filtered by that employee. </p>
+<p>If the relevant schedule case type security action is granted to the user, case type security will apply on schedule entry: if a Schedule Entry is linked to a case to which the user does not have access, they will not be able to see that Schedule Entry. They will only be able to reassign and/or cancel appointments, when linked to cases, that are linked to cases they can see. To view the Schedule Entry,&nbsp;the user's role must be granted the appropriate permissions.</p>
+<h4 style="" id="h4_2105999663" data-has-heading-anchor="true">Clinic Visit<a href="/articles/cority-user-guide/using-the-management-referral-workflow/a/h4_2105999663" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/using-the-management-referral-workflow/a/h4_2105999663&#39;,this);"></a></h4>
+<p>The Schedule Follow-up action will open the Appointments calendar, but if the Clinic Visit record is linked to a case (the Case Number field is populated on the visit record), the case number will populate on the schedule entry.</p>
+<h4 style="" id="h4__1966747430" data-has-heading-anchor="true">Case<a href="/articles/cority-user-guide/using-the-management-referral-workflow/a/h4__1966747430" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/using-the-management-referral-workflow/a/h4__1966747430&#39;,this);"></a></h4>
+<ul><li>A Schedule History tab may be added to the Case layout to show all appointment history for the case record or current and upcoming appointments.</li>
+<li>A Schedule Referral action may be added that functions the same as the Schedule Follow-Up Appointment in the Clinic Visit module. For example: </li>
+</ul><ol style="margin-left: 40px;"><li>Select this action, the Appointments calendar opens.&nbsp;</li>
+  <li>Click <b>New</b> to create the referral appointment and populate the Schedule Entry with date, time, and health center. The employee's name and the case number are populated automatically. Select a clinic-visit-related activity and save the appointment.</li>
+  <li>The appointment is listed on the Schedule History tab on the case record. After the appointment occurs, open it and designate it completed by selecting the Link action to create the corresponding Clinic Visit record, which will open that new record.&nbsp;</li>
+  <li>The Clinic Visit record will have the case number, treatment date and visit reason populated automatically. When the Clinic Visit record is saved, a notification advises that the clinic visit is linked to a case.</li>
+<li>If the employee requires another clinic visit, use the New action on the Case's Schedule History tab, or the Schedule Referral action, to create the revisit. Both Clinic Visit records will be listed on the Clinic Visit tab for the original Case record.</li>
+</ol>
+<ul><li>A Messages tab may be added to allow conversations between the clinicians and the supervisor/manager.</li>
+</ul><p>Additional fields may be added to a Case layout to capture values used to measure clinic efficiency and the efficiency and proactiveness of the clinicians when attending to and completing management referrals (for analysis and reporting).</p>
+<p><br/></p>
+<div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

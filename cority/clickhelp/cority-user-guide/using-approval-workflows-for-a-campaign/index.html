@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/using-approval-workflows-for-a-campaign"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Using Approval Workflows for a Campaign</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Using Approval Workflows for a Campaign';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+
+<p>&nbsp;</p>
+
+ <h3 id="h3_1173549841" data-has-heading-anchor="true"><a name="IX_approving_metric"></a><a name="IX_approval_workflow_1"></a><a name="IX_approval_workflow"></a><a name="XREF_99362_GXPIII_469_Setting"></a>Using Approval Workflows for a Campaign<a href="/articles/cority-user-guide/using-approval-workflows-for-a-campaign/a/h3_1173549841" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/using-approval-workflows-for-a-campaign/a/h3_1173549841&#39;,this);"></a></h3>
+ <p class="BodyLevel1">You can route all metrics associated with a campaign through an automated approval workflow to ensure that the company is using only approved data for internal reporting and external messaging, and to create an audit trail for third-party sustainability auditing.</p>
+ <p class="BodyLevel1">An approval workflow record for a campaign displays all recorded campaign data (read-only), as well as any associated findings and actions. A user with appropriate permission can delete any record that they do not want taken through the approval process.</p>
+ <p class="BodyLevel1">When an approver approves a metric, the campaign is then routed to the next level of approver, who receives an email notification that a campaign record is awaiting their review and approval. Upon final approval, the person who initiated the request is notified.</p>
+ <p class="Note">You can configure the notification email message in the <a href="/articles/cority-user-guide/letterstemplate/a/XREF_49671_Letter_Templates" onclick="return n(&#39;!cority-user-guide/letterstemplate/a/XREF_49671_Letter_Templates&#39;,this);">LettersTemplate</a>&nbsp;look-up table. If enabled in the Cority Email Notification Utility settings, an email may be sent to alert approvers (or initiators, or both) that an approval is due or overdue. For more information, see <a href="/articles/cority-user-guide/working-with-maen-settings/a/XREF_51679_MAEN_Settings" onclick="return n(&#39;!cority-user-guide/working-with-maen-settings/a/XREF_51679_MAEN_Settings&#39;,this);">Working with MAEN Settings</a>).</p>
+ <h4 id="h4_2028141618" data-has-heading-anchor="true">Setting Up an Approval Workflow<a href="/articles/cority-user-guide/using-approval-workflows-for-a-campaign/a/h4_2028141618" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/using-approval-workflows-for-a-campaign/a/h4_2028141618&#39;,this);"></a></h4>
+ <p class="BodyLevel1">In order to use the approval workflow process for campaign data, the following must be established:</p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1">Set up the supporting look-up tables: the <a href="/articles/cority-user-guide/biworkflowapprovaltype/a/XREF_32281" onclick="return n(&#39;!cority-user-guide/biworkflowapprovaltype/a/XREF_32281&#39;,this);">BIWorkflowApprovalType</a>&nbsp;table contains approval types related to different approval layouts.</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Optionally, set up a swimlane view to view and manage the approval workflows (see <a href="/articles/cority-user-guide/changing-what-is-shown-on-a-list-or-form/a/XREF_90040_547_Working_with" onclick="return n(&#39;!cority-user-guide/changing-what-is-shown-on-a-list-or-form/a/XREF_90040_547_Working_with&#39;,this);">Working with Swimlane Views</a>).</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Set up a campaign that is defined to automatically create approval records and indicates which Approval Workflow type should be used (see <a href="/articles/cority-user-guide/grouping-metrics-into-a-campaign/a/XREF_50236_GXPII_732_Grouping" onclick="return n(&#39;!cority-user-guide/grouping-metrics-into-a-campaign/a/XREF_50236_GXPII_732_Grouping&#39;,this);">Grouping Metrics into a Campaign</a>).</p>
+</li>
+ </ul>
+ <h4 id="h4_1274514135" data-has-heading-anchor="true">Approving a Campaign’s Data<a href="/articles/cority-user-guide/using-approval-workflows-for-a-campaign/a/h4_1274514135" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/using-approval-workflows-for-a-campaign/a/h4_1274514135&#39;,this);"></a></h4>
+ <p class="BodyLevel1">An approval record is automatically created for each metric instance recorded by each assignee in the campaign. The workflow process is not triggered until the assignment is 100% complete (that is, all metric values have been recorded).</p>
+ <p class="BodyLevel1">Designated approvers review the campaign’s approval records and approve them to move them to the next approval stage.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Business Intelligence menu, click <b><span class="Bold">Approval Workflows</span></b>.&nbsp;All campaigns that have some data recorded are listed. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Open an approval workflow record and review the metric data. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When you are ready to approve the change request, select the date beside your name in the Approvals list. The next approver is notified. If you were the final approver, the person who initiated the request is notified.</p>
+</li>
+ </ol>
+ <p class="Note">The status of an approval workflow record will revert to “In Progress” if an associated measure or campaign metric is deleted. </p>
+ <p class="Note">If a swimlane view has been set up, you can switch to that view. Drag and drop the record into another approval role swimlane. Click an entry to view the approval record.</p>
+ <h4 id="h4_398291942" data-has-heading-anchor="true">Making Changes to the Campaign<a href="/articles/cority-user-guide/using-approval-workflows-for-a-campaign/a/h4_398291942" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/using-approval-workflows-for-a-campaign/a/h4_398291942&#39;,this);"></a></h4>
+ <p class="BodyLevel1">Approval records are separate from the campaign they were created for. For this reason:</p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1">If you clear the <i><span class="Emphasis">Auto-Create Approval Workflow for This Campaign</span>&nbsp;</i>checkbox, no further approval records will be created but you must manually delete any that have already been created.</p>
+</li>
+  <li>
+  <p class="BodyLevel1">If you want to change the<span class="Emphasis"> <i>Approval Workflow</i></span><i> </i>type selected for a campaign:</p>
+<ul type="disc"><li>
+  <p class="BodyLevel2">Clear the <i><span class="Emphasis">Auto-Create Approval Workflow for This Campaign</span> </i>checkbox.</p>
+</li>
+  <li>
+  <p class="BodyLevel2">Delete all approval records that were created for the campaign.</p>
+</li>
+  <li>
+  <p class="BodyLevel2">Select the <i><span class="Emphasis">Auto-Create Approval Workflow for This Campaign</span>&nbsp;</i>checkbox again and select the appropriate <i><span class="Emphasis">Workflow Approval </span></i>type.</p>
+</li>
+ </ul>
+ </li>
+  </ul>
+ <p class="BodyLevel1">If a metric is added to the campaign, or if a metric value is added or modified, the workflow status will change depending on the new completion status. If an associated measure or campaign metric is deleted, the status of the approval workflow record will revert to “In Progress”.</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

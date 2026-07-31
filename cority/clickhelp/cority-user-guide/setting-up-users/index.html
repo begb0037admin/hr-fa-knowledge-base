@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/setting-up-users"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Setting Up Users</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Setting Up Users';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h2 id="h1_1547723302" data-has-heading-anchor="true">
+  Setting Up Users<a href="/articles/cority-user-guide/setting-up-users/a/h1_1547723302" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-users/a/h1_1547723302&#39;,this);"></a></h2>
+<p class="Tip">Users defined as <i>MEIP User </i>can run the Cority HR Integration Utility to import large numbers of employees. For more information, refer to the <i>Cority System Guide</i>.<br/>myCority users can be auto-created with the generic Import Utility; for more information, see&nbsp;<a href="/articles/cority-user-guide/importing-text-or-xml-files-into-cority-tables" onclick="return n(&#39;!cority-user-guide/importing-text-or-xml-files-into-cority-tables&#39;,this);">Importing Text or XML Files into Cority Tables</a>.</p>
+<p>Non-admin users with “user.new” and “user.save” security action privileges can also create new users.</p>
+<p class="Note">If the active user count is at the maximum licensed, you will receive an email notification if you attempt to add (or import) a user or change an inactive user to active. The following users are not included in the “Active” user count:<br/>- users flagged as inactive<br/>- users who are not assigned any roles<br/>- portal users<br/>- anonymous/public users</p>
+<p>To create a user:</p>
+<ol><li>In the Administrator menu, click <b>Users</b>. A list of all user accounts that have been defined appears.<br/></li>
+  <li>Click <b>New</b>.</li>
+  <li>Enter a <i>Login Name/Profile Name </i>and <i>Login Password</i>, and complete as many of the fields as necessary.
+<ul><li>To prevent a Portal user from accessing the Cority application, select the <i>Portal Only </i>checkbox.</li>
+  <li>To prevent this user from viewing or creating their own medical records when the “Restrict Users from Viewing Their Employee Medical Records” system setting is on, select their <i>Employee</i>. This logic is also carried over into Portal.</li>
+  <li>To enable Mixed Authentication SSO and Password function for this user, select the <i>Allow Mixed Mode Authentication </i>checkbox.&nbsp;<br/><b>Note</b>&nbsp; The "Authentication Method" and "Portal/myCority Authentication Method" system settings must be set to "Mixed Mode (SSO SAML 2.0 and UserID/Password)". If the user clicks&nbsp;<b>Login with SSO</b> on the GX2 login screen,&nbsp;they will be directed to your organization's IDP SSO login screen (as defined in the&nbsp;<a href="/articles/cority-user-guide/samlkey" onclick="return n(&#39;!cority-user-guide/samlkey&#39;,this);">SAMLKey</a>&nbsp;look-up table record that is set to "Default for Main Application"). If you want users to be taken directly to your IDP's login screen without having to click <b>Login with SSO</b>, you must modify your GX2 URL to include the additional required URL parameter. </li>
+  <li>Users flagged as <i>MEIP User </i>or <i>MGIP User </i>will not become inactive and their passwords won’t expire.</li>
+  <li>If you have defined profiles of system settings and/or menu configuration, select the appropriate <i>Default Profile </i>for this user.</li>
+  <li><i>For OH Users: </i>Indicate if the user may be selected as a <i>Practitioner </i>in OH modules, and/or if the user may be selected as a <i>Case Manager </i>in the Case Management module.</li>
+  <li><i>For Scheduling Users:</i> Indicate if the user may be selected as a <i>Scheduling User </i>in the Appointment or Scheduling modules.</li></ul>
+ </li><li>Click <b>Save</b>. If you entered an email address, you are prompted to send a verification link to the user. This verification is required before the user can access the online user community (see <a href="/articles/cority-user-guide/getting-help/a/h4__1758334419" onclick="return n(&#39;!cority-user-guide/getting-help/a/h4__1758334419&#39;,this);">Online User Community</a>).</li>
+ <li>On the Granted Roles tab, define which role(s) apply to this user.<br/>
+   <p class="Note">Before assigning roles to users, be sure you have configured the roles according to your needs; these may include functional roles, site security roles, and/or case type security roles (<a href="/articles/cority-user-guide/setting-up-roles" onclick="return n(&#39;!cority-user-guide/setting-up-roles&#39;,this);">Setting Up Roles</a>, <a href="/articles/cority-user-guide/setting-up-site-security" onclick="return n(&#39;!cority-user-guide/setting-up-site-security&#39;,this);">Setting Up Site Security</a>, and <a href="/articles/cority-user-guide/setting-up-case-type-security" onclick="return n(&#39;!cority-user-guide/setting-up-case-type-security&#39;,this);">Setting Up Case Type Security</a>).</p></li>
+  <li>Optionally, use the remaining tabs to link the user to one or more health center or geographic location.</li>
+  </ol>
+<p>To prevent a user from logging in to Cority, mark them as <i>Inactive</i>. If you just want to temporarily stop a user from being able to log in, a <i>Block Login </i>flag can be added to a custom layout. The user will be blocked across all entry points, e.g. myCority, API, standalone links, etc.), and they will see a message to contact their administrator.</p>
+<h3 style="" id="h3_467952862" data-has-heading-anchor="true">Enforcing Two-Factor Authentication for Users<a href="/articles/cority-user-guide/setting-up-users/a/h3_467952862" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-users/a/h3_467952862&#39;,this);"></a></h3>
+<p>If your company is using username/password authentication, you can set up 2FA within Cority as described below. If your company is using SSO, you can set up MFA on your internal network (your SSO provider will handle the MFA).</p><p>The <i>Enforce 2 Factor Authentication</i>&nbsp;global system setting provides the following options: Disabled (default), Every 30 Days, and Every Login.&nbsp;<b>Note:</b>&nbsp;The setting is only available if the <i>Authentication Method</i>&nbsp;is set to ‘Application User ID and Password’.&nbsp;</p><p><span style="font-size: 10pt;">When set to ‘Every 30 Days’ or ‘Every Login’ and the user attempts to log in at one of those times, the Cority login screen will display a two-factor authentication message followed by an <i>Enter PIN code</i>&nbsp;field and a <b>Verify</b>&nbsp;button.</span></p><ul type="disc"><li><span style="font-size: 10pt;">If the user has an email address specified on their User record, the following message will display: ‘Please check your email for a verification code, and enter the code below to log into the Cority Platform’.&nbsp;</span><span style="font-size: 10pt;">The system will then send an email to the user’s email address. The subject of the email will be ‘Please complete 2 Factor Authentication with Cority’ and the body of the email will contain a 6-digit verification code for logging into Cority. After 10 minutes, the verification code will expire.<br/></span>The user can enter the 6-digit code in the field provided, and then click <b>Verify</b>&nbsp;to log into Cority. The login screen will also have a <b>Resend</b>&nbsp;button. If the user has lost or forgotten the six-digit code, or if it has expired, they can click <b>Resend</b>&nbsp;to receive a new verification email and code.</li><li>If there is no email address on the user's User record, the following message will display: ‘2 Factor Authentication is enabled. A valid email address has not been provided for you, so please contact your Cority Administrator’. Once a Cority Administrator has added the user’s email address to their User record, the user will be able to receive a verification code for use with two-factor authentication. When the user has entered the six-digit verification code and clicked <b>Verify</b>, they will be able to log in and out of Cority as usual for that session.</li></ul><p>When a user logs into Cority using a six-digit verification code, a record of the event will be added to the ‘User Sessions’ view. To view this information, in the ‘[User Name] Settings’ screen choose <b>Actions»Show User Sessions</b>. The entries can be deleted or exported to Excel.</p><h3 style="" id="h3__194692217"></h3>
+
+  
+<h3 style="" id="h3_610597442" data-has-heading-anchor="true">Impersonating a User for Troubleshooting Purposes
+<a href="/articles/cority-user-guide/setting-up-users/a/h3_610597442" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-users/a/h3_610597442&#39;,this);"></a></h3>
+
+  
+<p>An administrator may be granted security permission to view the software, view data, and make
+changes as another user. The administrator may also impersonate the user in myCority, if the corresponding action has been added to a custom User layout. The impersonated user’s role must also be granted the General Security
+security module. The following functionality is not supported while impersonating another user:
+ePrescribing, refilling ePrescriptions, and Translations Mode.
+</p>
+
+  
+<p class="Note"><b>Important Security Note </b>for clients who must adhere to GDPR or other such
+regulations: This gives the user permission to impersonate any user, and therefore
+potentially the permission to view any record in the system. The impersonating user
+could then view records in modules that they otherwise do not have access to, and
+view sites outside of their site security settings. This privilege is best limited to
+support personnel who require this broad-level access in order to perform their jobs.
+</p>
+
+  
+<p>To impersonate a user, open the user record, then choose <b>Actions»View Application as this
+User</b>&nbsp;(or <b>Actions»View myCority Application as this User</b>). While you are impersonating another user:
+</p>
+
+  
+<ul><li>A reminder notification will be displayed across the top of the screen.<br/><img src="images/welcome-to-cority-2021-11-24.png" alt="" loading="lazy"/><br/></li>
+
+  
+<li>Any changes you make will be logged under your own user name in the appropriate log. </li>
+
+  
+<li>All security settings will be respected (based on the user you are impersonating) when
+navigating and/or making changes.
+</li>
+
+  
+</ul><p>To stop impersonating the user and return to your own GX2 account, click <img src="images/welcome-to-cority-2021-11-24-1.png" alt="" loading="lazy"/>&nbsp;in the banner notification.</p>
+
+  
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

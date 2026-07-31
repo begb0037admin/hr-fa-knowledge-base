@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/workflow"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Workflow</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Workflow';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+
+<p>&nbsp;</p>
+
+<h3 id="h3__1306378709" data-has-heading-anchor="true"><a name="XREF_31728_Workflow"></a>Workflow<a href="/articles/cority-user-guide/workflow/a/h3__1306378709" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/workflow/a/h3__1306378709&#39;,this);"></a></h3>
+<p class="BodyLevel1">This table is used to define a workflow that can 
+ be associated with a layout to provide a visualization of the steps and 
+ current step of a record. These are displayed in a banner at the top of 
+ the layout, as shown below:</p>
+<div style="text-align: left;">
+	<img alt="intro_visualize_workflow.png" id="image139" src="images/intro_visualize_workflow.png" style="margin-top: 5pt; margin-bottom: 10pt; border: Solid 0pt #999999;" border="0" loading="lazy"/> 
+</div>
+<p class="BodyLevel1">A workflow may be connected to a module, or it may 
+ be connected to a swimlane view in one of two ways: </p>
+<ul style="list-style: disc;">
+	<li><p class="BodyLevel1">Build the workflow and create the steps, 
+	 and then create the swimlane from that workflow, or</p></li>
+	<li><p class="BodyLevel1">Build a swimlane (see <a href="/articles/cority-user-guide/changing-what-is-shown-on-a-list-or-form/a/XREF_90040_547_Working_with" onclick="return n(&#39;!cority-user-guide/changing-what-is-shown-on-a-list-or-form/a/XREF_90040_547_Working_with&#39;,this);">Working 
+	 with Swimlane Views</a>) and then create a workflow with steps from 
+	 that swimlane.</p></li>
+</ul>
+<p class="Tip">&nbsp;The Administrator menu provides a shortcut, in the Tools section, to the Workflow look-up table.</p>
+<h4 style="" id="h4__105801614" data-has-heading-anchor="true">Creating a Workflow Connected 
+ to a Module<a href="/articles/cority-user-guide/workflow/a/h4__105801614" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/workflow/a/h4__105801614&#39;,this);"></a></h4>
+<ol start="1">
+	<li style="list-style: decimal;"><p class="BodyLevel1">In the list 
+	 view, click <b><span class="Bold">New</span></b>.</p></li>
+	<li style="list-style: decimal;"><p class="BodyLevel1">Enter a <i><span class="Emphasis">Code</span>&nbsp;</i>and <span class="Emphasis"><i>Description </i>
+	 </span>of the workflow.</p></li>
+	<li style="list-style: decimal;"><p class="BodyLevel1">Select the <i><span class="Emphasis">Module</span> </i>that the workflow relates to, and the<span class="Emphasis"> <i>Workflow Source</i></span><i>&nbsp;</i>(a column in the selected 
+	 module).</p></li>
+	<li style="list-style: decimal;"><p class="BodyLevel1">Click <b><span class="Bold">Save</span></b>.</p></li>
+	<li style="list-style: decimal;"><p class="BodyLevel1">On the Steps 
+	 tab, define the steps in the workflow:</p></li>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">Select the <i><span class="Emphasis">Workflow 
+		 Source Value</span> </i>and enter a<span class="Emphasis"> <i>Step Title</i></span><i>&nbsp;</i>to 
+		 be displayed in the workflow banner (which may or may not mirror 
+		 the Value). Enter the <i><span class="Emphasis">Sequence</span>&nbsp;</i>of 
+		 this step in the workflow. Optionally enter a<span class="Emphasis"> 
+		 <i>Step Description</i></span><i>&nbsp;</i>that will be displayed when the user 
+		 clicks on the step in the workflow banner.</p></li>
+		<li><p class="BodyLevel2">Optionally, on the Workflow Actions tab:</p></li>
+		<ul><li><p class="BodyLevel3">Create business rule actions that will 
+		 fire when the record reaches this step (see&nbsp;<a href="/articles/cority-user-guide/workflow/a/h4__488248894" onclick="return n(&#39;!cority-user-guide/workflow/a/h4__488248894&#39;,this);">Using Business Rule Actions to Manage Workflow</a>&nbsp;below and&nbsp;<a href="/articles/cority-user-guide/setting-up-business-rule-actions/a/XREF_64788_Business_Rule" onclick="return n(&#39;!cority-user-guide/setting-up-business-rule-actions/a/XREF_64788_Business_Rule&#39;,this);">Setting 
+		 Up Business Rule Actions</a>).</p></li>
+		<li><p class="BodyLevel3">Create workflow actions to identify fields 
+		 that are required or read-only at this step.</p></li>
+		<li><p class="BodyLevel3">Create workflow actions (e.g. for approve 
+		 or reject) and define:<br/>
+		- <i><span class="Emphasis">Destination Status</span>&nbsp;</i>- the status 
+		 that the record will progress to upon completion of the workflow 
+		 step<br/>
+		- <i><span class="Emphasis">Permissions</span>&nbsp;</i>- only the user 
+		 or employee selected here will see the button/action and can complete 
+		 the workflow step<br/>
+		- <i><span class="Emphasis">Permissions - Group and Team</span>&nbsp;</i>- 
+		 only a member of the selected group or team, who is an active employee in the group or team within the Start-End Date period, can complete the workflow 
+		 step<br/>
+		- <i><span class="Emphasis">eSignature</span>&nbsp;</i>- if you are using 
+		 LDAP or SAML, user will be prompted to enter their password; if 
+		 you are using the “Application User ID and Passwords” authentication 
+		 method, user will be prompted to enter their user ID and password. 
+		 This functionality will be available for the SSO authentication 
+		 method in a future release.<br/>
+		- <i><span class="Emphasis">Require Comments </span></i>- a Comments text 
+		 box will be available and required for this step<br/>
+		- <i><span class="Emphasis">Map Comments To</span> </i>- any comments 
+		 entered will be displayed in the selected field<br/>
+		- <i><span class="Emphasis">Display as Button</span>&nbsp;</i>- the action 
+		 will display as a button on the layout instead of in the Actions 
+		 menu.</p></li><li><p class="BodyLevel3">To configure multiple approvals (up to eight) at each step within the workflow, in the Workflow Actions section choose <b>Actions»Create new parallel approval workflow action</b>&nbsp;and define the approval action. The record will not advance to the next status until all approvals for the step have been completed. When a rejection is executed, the record goes back to the first approval step. The approval button or action will be available for the individual approver or the approver within the approver group only when at the defined workflow step. All approve or reject actions, along with the associated comments, are recorded in the Approval History for the record.</p></li></ul>
+	</ul>
+	<li style="list-style: decimal;"><p class="BodyLevel1">If you want 
+	 to create a swimlane view, choose <b><span class="Bold">Actions»Create 
+	 swimlane from workflow</span></b>. The swimlane editor opens, with the 
+	 workflow steps displayed as selected source fields; select the columns 
+	 to appear in the swimlane (see <a href="/articles/cority-user-guide/changing-what-is-shown-on-a-list-or-form/a/XREF_90040_547_Working_with" onclick="return n(&#39;!cority-user-guide/changing-what-is-shown-on-a-list-or-form/a/XREF_90040_547_Working_with&#39;,this);">Working 
+	 with Swimlane Views</a>).</p></li>
+	<li style="list-style: decimal;"><p class="BodyLevel1">Edit the layout(s) 
+	 to reference this workflow (see <a href="/articles/cority-user-guide/defining-form-layouts/a/XREF_78676_Layouts" onclick="return n(&#39;!cority-user-guide/defining-form-layouts/a/XREF_78676_Layouts&#39;,this);">Defining 
+	 Form Layouts</a>). <br/>
+	The Linked Layouts tab will display all layouts that have been associated 
+	 with this workflow.<br/>A Workflow History sublist may be added to layouts to capture the workflow history for the record being viewed.</p></li>
+</ol>
+<h4 id="h4__300957293" data-has-heading-anchor="true">Creating a Workflow Based on a Swimlane’s Columns<a href="/articles/cority-user-guide/workflow/a/h4__300957293" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/workflow/a/h4__300957293&#39;,this);"></a></h4>
+<ol start="1">
+	<li style="list-style: decimal;"><p class="BodyLevel1">In the list 
+	 view, click <b><span class="Bold">New</span></b>.</p></li>
+	<li style="list-style: decimal;"><p class="BodyLevel1">Enter a <i><span class="Emphasis">Code</span>&nbsp;</i>and <span class="Emphasis"><i>Description </i>
+	 </span>of the workflow.</p></li>
+	<li style="list-style: decimal;"><p class="BodyLevel1">Select the swimlane 
+	 in the <i><span class="Emphasis">User List View </span></i>field.</p></li>
+	<li style="list-style: decimal;"><p class="BodyLevel1">Click <b><span class="Bold">Save</span></b>. The Steps tab is populated based on the 
+	 columns in the swimlane. Modify the <i><span class="Emphasis">Sequence</span>&nbsp;</i>or 
+	 <i><span class="Emphasis">Description</span> </i>of each step if required.</p></li>
+	<li style="list-style: decimal;"><p class="BodyLevel1">Edit the layout(s) 
+	 to reference this workflow (see <a href="/articles/cority-user-guide/defining-form-layouts/a/XREF_78676_Layouts" onclick="return n(&#39;!cority-user-guide/defining-form-layouts/a/XREF_78676_Layouts&#39;,this);">Defining 
+	 Form Layouts</a>). <br/>
+	The Linked Layouts tab will display all layouts that have been associated 
+	 with this workflow.</p></li>
+</ol>
+<h4 style="" id="h4__488248894" data-has-heading-anchor="true">Using Business Rule Actions to Manage Workflow<a href="/articles/cority-user-guide/workflow/a/h4__488248894" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/workflow/a/h4__488248894&#39;,this);"></a></h4>
+ 
+<p>The following business rule actions can assist in managing and monitoring workflows:</p><ul><li>Email action - when a record is in a workflow and an action defined with "Current Workflow Step Owners" in the email merge field is triggered, for each Permissions and Permissions Group for all of the workflow actions for the step that triggered the email action, the email address for each related individual will be added to the To/CC field. For groups and teams, this only applies to active employees.</li><li>Lock Record/Unlock Record method actions - These can be created from a business rule action or from a workflow step. When configured and used in a workflow step, new actions are only visible and executable on the workflow step on which they were created, not throughout the workflow. In a workflow, the action will execute once when the workflow status becomes "Workflow Step".&nbsp;<br/>When triggered (by a workflow action only), the record will be locked and not editable. A workflow action can be configured at the step to unlock the record for editing.</li></ul><p>For more information, see <a href="/articles/cority-user-guide/setting-up-business-rule-actions" onclick="return n(&#39;!cority-user-guide/setting-up-business-rule-actions&#39;,this);">Setting Up Business Rule Actions</a>.</p><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

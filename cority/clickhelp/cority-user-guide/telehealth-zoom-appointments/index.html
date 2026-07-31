@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/telehealth-zoom-appointments"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Telehealth/Zoom Appointments</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Telehealth/Zoom Appointments';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h3 id="h1_1547723302" style="" data-has-heading-anchor="true">
+  Telehealth/Zoom Appointments<a href="/articles/cority-user-guide/telehealth-zoom-appointments/a/h1_1547723302" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/telehealth-zoom-appointments/a/h1_1547723302&#39;,this);"></a></h3>
+<p>The Appointments module may be integrated with Zoom to allow you to provide Telehealth medical care to employees who cannot physically travel to your clinics. </p>
+<p>The Zoom meetings do not occur within GX2; there is no need to log into Outlook or Zoom to book the meetings or generate the Zoom links. The meetings are created and scheduled through the Appointments module and are represented on the calendar in the Appointments module, and the link to the meeting is included in the schedule entry.</p>
+<p>Telehealth supports recurring meetings <b>with the following exceptions</b>:</p>
+<ul><li>Yearly recurrence</li><li>More than 50 occurrences</li><li>A daily recurrence pattern with a repeat interval greater than 90</li><li>A weekly recurrence pattern with a repeat interval greater than 12</li><li>A monthly recurrence pattern with a repeat interval greater than 3</li></ul><h4 style="" id="h4_270599055" data-has-heading-anchor="true">Setup Requirements<a href="/articles/cority-user-guide/telehealth-zoom-appointments/a/h4_270599055" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/telehealth-zoom-appointments/a/h4_270599055&#39;,this);"></a></h4>
+<ul>
+  <li>In order to use this functionality, your organization requires the Cority "Remote Expert" license key, which is not included with the "Occupational Health" license key.</li>
+  <li>There are three related system settings:<ul><li>Zoom OAuth Client ID, Zoom OAuth Client Secret — These are global settings that must be configured for OAuth authentication between Zoom and GX2.</li>
+      <li>Zoom Credentials Email —&nbsp;While this setting is present in both System Settings and in My Settings, you should leave the one in System Settings empty (blank). Each Scheduling User should provide their email address in My Settings. If an email address is not provided for that setting and you are creating a Telehealth schedule entry in the Appointments module, the email address on your User record will be used instead. If no email address is provided there either, the email address on the Employee record associated with your User record will be used. If no email address is provided for any of those, you will be prompted to provide one before creating any Telehealth schedule entries.</li>
+      </ul>
+    </li>
+  <li>You must add the <i>Telehealth </i>and <i>Employee Zoom Meeting Link </i>fields to your custom Schedule Entry layout.</li><li>Additional configuration through Zoom Marketplace is required for connection authentication between Zoom and the GX2 Appointments module. Please contact your Cority contact for instructions or assistance.</li></ul>
+<p>When the above is properly configured, a <i>Telehealth Appointments – Zoom Connected</i> toggle is available at the bottom right of the Appointments module screen (this toggle will be hidden if either of the <i>Zoom OAuth Client ID</i> or <i>Zoom OAuth Client Secret</i> system settings is not configured).</p>
+<p class="Tip">A Meetings Log in the Administrator Tools lists every meeting in the GX2 system. For each meeting it displays Created Date, Meeting Date, Created By, Meeting Link, etc. The log also distinguishes between the creator and host, if the creator configured the meeting host to be someone else.</p>
+<h4 style="" id="h4_94372335" data-has-heading-anchor="true">Booking a Telehealth Appointment<a href="/articles/cority-user-guide/telehealth-zoom-appointments/a/h4_94372335" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/telehealth-zoom-appointments/a/h4_94372335&#39;,this);"></a></h4>
+<ol><li>If not already set, click the <i>Telehealth Appointments – Zoom Connected</i>&nbsp;toggle on. You are prompted to connect to your Zoom account.&nbsp;Once connected to your Zoom account, the <i>Zoom Connected</i>&nbsp;will remain on.
+  <p class="Note">Only users who will be creating, modifying, and cancelling meetings require a Zoom account. We recommend your organization purchase your corporate Zoom account(s) because the free accounts have additional functional limitations. For example, a scheduling user with a purchased Zoom account can perform only 100 API calls (meeting-related actions like booking, modifying, cancelling) per day. Refer to the Zoom platform website for information on Zoom account limitations.</p></li>
+<li>Create an appointment  the same as described in&nbsp;<a href="/articles/cority-user-guide/scheduling-appointments1" onclick="return n(&#39;!cority-user-guide/scheduling-appointments1&#39;,this);">Scheduling Appointments</a>, but also select the <i>Telehealth</i> checkbox. The <i>Duration</i> field must be greater than 0.</li><li>When you save the entry, Cority will create the Zoom meeting in the background, then the meeting link will be added to the schedule entry. </li><li>If you previously created a letter template including the Employee Zoom Meeting Link merge field and you select "Use Email Template" in the <i>Send Email</i> field, the employee will be sent an email containing the meeting ICS file (to enable them to accept or decline the invitation) and the Zoom meeting ID and link. If they accept the invitation, the meeting (and Zoom link) are added to their calendar.</li></ol>
+<p>If you change the meeting date or time (either by moving it on the calendar, or via the schedule entry), you will be asked if you want to send an updated invitation email with new Zoom meeting link to the employee.
+</p>
+<p>To remove the Telehealth (Zoom) meeting component from the schedule entry, simply open the entry, deselect the <i>Telehealth </i>checkbox, and click <b>Save</b>. The Zoom meeting will be cancelled and the Zoom link will be removed from the schedule entry, but the schedule entry itself will be retained.</p>
+<p>If you cancel the meeting  altogether while the <i>Telehealth</i> checkbox is still selected, then both the schedule entry and the Zoom meeting will be cancelled.</p>
+<div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

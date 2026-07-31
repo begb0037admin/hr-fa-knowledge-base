@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/setting-up-user-access-to-the-erx-drug-database-and-or"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Setting Up User Access to the eRx Drug Database and/or ePrescribing</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Setting Up User Access to the eRx Drug Database and/or ePrescribing';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+
+<p>&nbsp;</p>
+
+ <h3 id="h3__1908703216" data-has-heading-anchor="true"><a name="IX_see_eRx_1"></a><a name="IX_see_eRx"></a><a name="IX_setting_up_users"></a><a name="XREF_19015_Setting_Up_Users"></a>Setting Up User Access to the eRx Drug Database and/or ePrescribing<a href="/articles/cority-user-guide/setting-up-user-access-to-the-erx-drug-database-and-or/a/h3__1908703216" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-user-access-to-the-erx-drug-database-and-or/a/h3__1908703216&#39;,this);"></a></h3>
+ <p class="Note">eRx is supported for Cority-hosted, U.S. clients only.</p>
+ <p class="BodyLevel1">There are two roles related to eRx:</p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1">eRx Admin - allows a user to perform the administrative tasks associated with eRx, such as assign the eRx Prescriber role to the appropriate users to grant them access to Surescripts and FDB, and manage eRx Prescribers’ registration at health centers.</p>
+</li>
+  <li>
+  <p class="BodyLevel1">eRx Prescriber - allows a user to access the FDB database, create and transmit prescriptions electronically and manage refill requests (see note below)</p>
+</li>
+ </ul>
+ <p class="Note">Cority&nbsp;recommends that all users who access Employee Medication records be granted the eRx Prescriber role so they can access the FDB drug database. Even users who will not electronically prescribe Employee Medications will benefit from the drug database features, such as having more accurate Employee Medication records, in addition to having access to drug interaction alerts and patient information sheets. Users granted the eRx Prescriber Role cannot prescribe electronically unless they are also registered with Surescripts at a health center, as described in <a href="/articles/cority-user-guide/setting-up-user-access-to-the-erx-drug-database-and-or/a/XREF_88038_Activating_an_eRx" onclick="return n(&#39;!cority-user-guide/setting-up-user-access-to-the-erx-drug-database-and-or/a/XREF_88038_Activating_an_eRx&#39;,this);">Activating an eRx Prescriber’s ePrescription privileges at a health center</a> below.</p>
+ <p class="BodyLevel1">You need a separate license for each user who is assigned the FDB Security module. As well, those who will be prescribing electronically require Surescripts Prescriber ID for each health center that they will be prescribing from. The eRx Prescriber role grants the user access to the FDB module, and the number of users granted access to the FDB module is limited to the number of eRx licenses purchased from Cority.</p>
+ <p class="BodyLevel1">At this time a provider cannot designate a surrogate user to send ePrescriptions or to view or complete refill requests, even if the surrogate has the eRx Prescriber role.</p>
+ <h4 id="h4__1569110344" data-has-heading-anchor="true">Identifying a Cority&nbsp;user as an eRx Drug Database User and/or Prescriber<a href="/articles/cority-user-guide/setting-up-user-access-to-the-erx-drug-database-and-or/a/h4__1569110344" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-user-access-to-the-erx-drug-database-and-or/a/h4__1569110344&#39;,this);"></a></h4>
+ 
+  <p class="BodyLevel1">Assign the eRx Prescriber role to the user, either via Users&gt;Granted Roles, or Roles&gt;Assigned Users.</p>
+<h4 id="h4__289714311" data-has-heading-anchor="true"><a name="XREF_88038_Activating_an_eRx"></a>Activating an eRx Prescriber’s ePrescription privileges at a health center<a href="/articles/cority-user-guide/setting-up-user-access-to-the-erx-drug-database-and-or/a/h4__289714311" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-user-access-to-the-erx-drug-database-and-or/a/h4__289714311&#39;,this);"></a></h4>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the User table, on the User tab, ensure the <i><span class="Emphasis">NPI Number </span></i>is recorded in the Medical/Case Users section.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the Linked Health Centers tab, add the health center that the user will be prescribing from, then choose <b><span class="Bold">Actions»Manage registration in Surescripts</span></b>. You will be prompted to select the service level; that is, what the provider is allowed to do at this health center: create New Rx, approve or deny Renewal Rx, Cancel Rx (cancel new or refill response transactions), and/or prescribe Controlled Substances electronically. A Surescripts Provider ID (SPI) will be assigned that identifies the provider and location and the service level assigned.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">An eRx Prescriber may have multiple Linked Health Centers. Repeat Step 2 for each health center that the provider prescribes from. Each will have a different SPI. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">The user must ensure their Default Health Center is set in their My Settings area. If they are actively registered for eRx at multiple health centers, they must change their Default Health Center to match the health center they are currently prescribing from.</p>
+</li>
+ </ol>
+ <p class="Note">The SPI # is a 13-digit Surescripts Provider ID that identifies an ePrescriber at a particular health center. The first 10 digits (the “SPI Root”) identify the ePrescriber, and the last three digits identify the location. The first time an ePrescriber is registered with Surescripts and assigned an SPI#, the SPI Root is also recorded on the User tab in the Medical/Case Users section.</p>
+ <h4 id="h4_799169978" data-has-heading-anchor="true">Removing an eRx Prescriber’s ePrescription privileges at a health center<a href="/articles/cority-user-guide/setting-up-user-access-to-the-erx-drug-database-and-or/a/h4_799169978" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-user-access-to-the-erx-drug-database-and-or/a/h4_799169978&#39;,this);"></a></h4>
+ <p class="BodyLevel1">There are two options to &nbsp;prevent a provider from being able to prescribe medications electronically and manage refill requests: </p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1">To remove the provider’s privileges from a health center but retain their use of an eRx license to be assigned privileges at another health center, on the Linked Health Centers tab of the User record, select the health center and choose <b><span class="Bold">Actions»Unregister from Surescripts</span></b>.</p>
+</li>
+  <li>
+  <p class="BodyLevel1">If the user is not actively registered as an ePrescriber at any health center, <span style="font-style : italic; "><i>and should not be</i></span>, you can release the license by removing the eRx Prescriber role from that user, either via Users&gt;Granted Roles, or Roles&gt;Assigned Users.</p>
+</li>
+ </ul>
+ <h4 id="h4__1007244484" data-has-heading-anchor="true">About the eRx Employee Medication Layout<a href="/articles/cority-user-guide/setting-up-user-access-to-the-erx-drug-database-and-or/a/h4__1007244484" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-user-access-to-the-erx-drug-database-and-or/a/h4__1007244484&#39;,this);"></a></h4>
+ <p class="BodyLevel1">Changes to the eRx Employee Medication layout are strongly discouraged: In order for an ePrescription to be transmitted successfully, Surescripts requires specific fields on the layout to be populated correctly. If any of the required information is missing or if the required workflow is altered, the eRx functionality may not work. </p>
+ <p>&nbsp;</p>
+  
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/working-with-ad-hoc-reports"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Working with Ad Hoc Reports</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Working with Ad Hoc Reports';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+ <h2 id="h2__715968009" data-has-heading-anchor="true"><a name="IX_about_13"></a><a name="IX_ad_hoc_queries_about"></a><a name="IX_about_12"></a><a name="IX_about_11"></a><a name="IX_about_10"></a><a name="XREF_24264_Using_the_Report"></a>Working with Ad Hoc Reports<a href="/articles/cority-user-guide/working-with-ad-hoc-reports/a/h2__715968009" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/working-with-ad-hoc-reports/a/h2__715968009&#39;,this);"></a></h2>
+ <p class="BodyLevel1">Use the Query Builder or Report Writer to drill down through data sets and create your own reports that can be viewed on screen, exported to Excel or PDF, or emailed. These two modules allow you to:</p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1">filter values (e.g. PractitionerName = “BLACK”) including search using wildcard characters (i.e. * and ?)</p>
+</li>
+  <li>
+  <p class="BodyLevel1">define sort order, both for records within a field and also the order that fields appear in the report</p>
+</li>
+  <li>
+  <p class="BodyLevel1">click on a specific sample in a report output and launch sample details</p>
+</li>
+  <li>
+  <p class="BodyLevel1">save the report template for future queries using the same data set.</p>
+</li>
+ </ul>
+ <p class="Note">The Query Builder is an intuitive interface that replaces the Report Writer, which will eventually be removed from the Cority application. In the interim, you can use either module and any queries/reports will appear in both. For more information, see <br/><a href="/articles/cority-user-guide/editing-or-creating-an-ad-hoc-report-in-query-builder/a/XREF_90431_Editing_or" onclick="return n(&#39;!cority-user-guide/editing-or-creating-an-ad-hoc-report-in-query-builder/a/XREF_90431_Editing_or&#39;,this);">Editing or Creating an Ad Hoc Report in Query Builder</a>&nbsp;or <br/><a href="/articles/cority-user-guide/editing-or-creating-an-ad-hoc-report-in-report-writer/a/XREF_59509_Editing_or" onclick="return n(&#39;!cority-user-guide/editing-or-creating-an-ad-hoc-report-in-report-writer/a/XREF_59509_Editing_or&#39;,this);">Editing or Creating an Ad Hoc Report in Report Writer</a>.<br/>When you click the Navigate to Source icon on an Advanced Dashboard indicator, the query will open in the tool defined in the “Default Data Query Tool” system setting.</p>
+ <p class="Note">An administrator can migrate reports from one environment to another; see <a href="/articles/cority-user-guide/migrating-configurations/a/XREF_57529_GXP_4229_Migrating" onclick="return n(&#39;!cority-user-guide/migrating-configurations/a/XREF_57529_GXP_4229_Migrating&#39;,this);">Migrating Configurations</a>.</p>
+ <p class="Note">Columns with high character counts will be either resized where spacing allows, or the content will be wrapped within the column. This is controlled by the "Wrap report columns with high character count" system setting.&nbsp;</p>
+ <p class="Tip">A user with appropriate security permissions can take ownership of any reports owned by an inactive user: in the list view, select the report and choose <b>Actions»Take Ownership</b>.</p>
+ <h4 id="h4_1303176697" data-has-heading-anchor="true">Using OData<a href="/articles/cority-user-guide/working-with-ad-hoc-reports/a/h4_1303176697" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/working-with-ad-hoc-reports/a/h4_1303176697&#39;,this);"></a></h4>
+ <p class="BodyLevel1">The Query Builder and Report Writer support OData connections; please refer to the documentation for the external application (Excel, SQL Server, etc.) for instructions on setting up a connection. The path to the Enterprise Data Gateway that Cority&nbsp;has provided to you typically takes the form of: <br/>https://<span style="font-style : italic; "><i>yourcompany</i></span>.cority.com/<span style="font-style : italic; "><i>yourproductionsite</i></span>/odata/querybuilder <br/>(where <span style="font-style : italic; "><i>yourcompany</i></span>&nbsp;and <span style="font-style : italic; "><i>yourproductionsite</i></span> are specific to your configuration).</p>
+ <p class="BodyLevel1">For information about filtering results from these queries, refer to OData filtering documentation, e.g. <span class="WebJump"><a href="https://docs.microsoft.com/en-us/dynamics-nav/using-filter-expressions-in-odata-uris" target="_top">https://docs.microsoft.com/en-us/dynamics-nav/using-filter-expressions-in-odata-uris&nbsp;</a></span>.</p>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="BodyLevel1"><a href="/articles/cority-user-guide/using-existing-ad-hoc-reports/a/XREF_98893_Using_Existing_Ad" onclick="return n(&#39;!cority-user-guide/using-existing-ad-hoc-reports/a/XREF_98893_Using_Existing_Ad&#39;,this);">Using Existing Ad Hoc Reports</a></p>
+ <p class="BodyLevel1"><a href="/articles/cority-user-guide/editing-or-creating-an-ad-hoc-report-in-query-builder/a/XREF_90431_Editing_or" onclick="return n(&#39;!cority-user-guide/editing-or-creating-an-ad-hoc-report-in-query-builder/a/XREF_90431_Editing_or&#39;,this);">Editing or Creating an Ad Hoc Report in Query Builder</a></p>
+ <p class="BodyLevel1"><a href="/articles/cority-user-guide/editing-or-creating-an-ad-hoc-report-in-report-writer/a/XREF_59509_Editing_or" onclick="return n(&#39;!cority-user-guide/editing-or-creating-an-ad-hoc-report-in-report-writer/a/XREF_59509_Editing_or&#39;,this);">Editing or Creating an Ad Hoc Report in Report Writer</a></p>
+ <p>&nbsp;</p>
+  
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

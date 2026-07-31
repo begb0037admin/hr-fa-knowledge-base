@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/setting-up-an-organizational-tree"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Setting Up An Organizational Tree</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Setting Up An Organizational Tree';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+
+<p>&nbsp;</p>
+
+ <h3 id="h3__887389736" data-has-heading-anchor="true"><a name="IX_tree_organizational"></a><a name="IX_setting_up_1"></a><a name="IX_hierarchy_organizational"></a><a name="XREF_96839_Configuring_Fields"></a><a name="XREF_55526_Organizational_Tree"></a>Setting Up An Organizational Tree<a href="/articles/cority-user-guide/setting-up-an-organizational-tree/a/h3__887389736" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-an-organizational-tree/a/h3__887389736&#39;,this);"></a></h3>
+ <p class="BodyLevel1">Cority&nbsp;allows you to view your organization in an expandable/collapsible tree hierarchy. You can use standard GDDLOFB trees, or build multiple trees to define your organization and meet complex reporting requirements (e.g.&nbsp;an organization may have an organizational tree and a location tree for reporting purposes).</p>
+ <p class="BodyLevel1">Organizational trees are easy to build and modify as your organization changes over time; to view the tree as it existed at any point in the past (and to reactivate any nodes that may have since been inactivated), click <b><span class="Bold">Historical Trees</span></b>.</p>
+ <div align="left"><img alt="Admin_org_tree_history.gif" style="margin-top : 5pt; margin-bottom : 10pt; border: Solid 0pt #999999; " id="image32" src="images/Admin_org_tree_history.gif" loading="lazy"/>
+ </div>
+ <p class="Note">For each tree, a system setting allows you to force selection in a record to a leaf node; the default is not selected, i.e. a user can select a non-leaf node from the tree.</p>
+ <p class="BodyLevel1">Depending on the size and complexity of your organizational hierarchy, you may choose to import your hierarchy (recommended) or build it manually.</p>
+ <p class="BodyLevel1">The tree definitions are stored in three look-up tables: <a href="/articles/cority-user-guide/treemaster-treemastercode-treemastercodetype/a/XREF_87911_TreeMasterCodeType" onclick="return n(&#39;!cority-user-guide/treemaster-treemastercode-treemastercodetype/a/XREF_87911_TreeMasterCodeType&#39;,this);">TreeMaster, TreeMasterCode, TreeMasterCodeType</a>. These can be populated or edited directly, via the Generic Import Utility, or via the Organizational Tree builder function. </p>
+ <h4 id="h4_307302377" data-has-heading-anchor="true">Importing or Exporting Organizational Hierarchy<a href="/articles/cority-user-guide/setting-up-an-organizational-tree/a/h4_307302377" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-an-organizational-tree/a/h4_307302377&#39;,this);"></a></h4>
+ <p class="BodyLevel1">To import values from a text file into the Treemaster look-up table, click <b><span class="Bold">Import</span></b>. For more information, see <a href="/articles/cority-user-guide/importing-text-or-xml-files-into-cority-tables/a/XREF_28375_Import_Utility" onclick="return n(&#39;!cority-user-guide/importing-text-or-xml-files-into-cority-tables/a/XREF_28375_Import_Utility&#39;,this);">Importing Text or XML Files into Cority Tables</a>. </p>
+ <p class="BodyLevel1">The following fields should be included in the text file for import:</p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1">Code</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Description</p>
+</li>
+  <li>
+  <p class="BodyLevel1">End Date</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Inactive</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Start Date</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Parent.Code</p>
+</li>
+ </ul>
+ <p class="BodyLevel1">When importing new GDDLOFB tree values, if the tree node is not in the database, it will be attached to the root of the specified GDDLOFB tree. The administrator can later move the node to the desired node/location using the Organizational Tree Builder.</p>
+ <p class="BodyLevel1">The current tree, or any historical tree, may be exported to Excel.</p>
+ <h4 id="h4_323902948" data-has-heading-anchor="true"><a name="XREF_85831_Using_the"></a>Using the Organizational Tree Builder<a href="/articles/cority-user-guide/setting-up-an-organizational-tree/a/h4_323902948" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-an-organizational-tree/a/h4_323902948&#39;,this);"></a></h4>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Administrator menu, click <b><span class="Bold">Organizational Tree</span></b>. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Expand the nodes as required to see the levels you need to work with.</p>
+</li>
+  <ul type="disc">
+   <li>
+   <p class="BodyLevel2">To add a node, click the text of its parent node then click <b><span class="Bold">Insert New Node</span></b>. Enter a <i><span class="Emphasis">Code</span>&nbsp;</i>and <i><span class="Emphasis">Description</span></i>.</p>
+   <div align="left"><img alt="Admin_org_tree_add_node.gif" style="margin-top : 5pt; margin-bottom : 10pt; border: Solid 0pt #999999; " id="image33" src="images/Admin_org_tree_add_node.gif" loading="lazy"/>
+   </div></li>
+   <li>
+   <p class="BodyLevel2">To edit a node, click its text label then click <b><span class="Bold">Edit node</span></b>.</p>
+</li>
+   <li>
+   <p class="BodyLevel2">To move a node (and all its children) to a different parent, drag and drop it to its new location. You can move a node within the same tree or to a different tree. You are prompted to confirm the move. </p>
+</li>
+  </ul>
+  <p class="Tip" style="margin-top  : 7.000pt; margin-bottom : 7.000pt;">If you have customized a TreeMasterCode (or TreeMasterCode with Attributes) look-up table layout to include Related fields, you can define any nodes that should always be associated with this node. When this node is selected in a form, its related fields are automatically populated.</p>
+  <p class="Tip" style="margin-top  : 7.000pt; margin-bottom : 7.000pt;">You can capture node attributes or other fields for any node; when adding or editing a n<span style="font-size: 10pt; letter-spacing: 0em; text-indent: -1pt;">ode, change the layout to Tree Master with Attributes layout. Complete as many of the fields as required. If you will be performing compliance Applicability Assessment for this node (see </span><a href="/articles/cority-user-guide/identifying-applicable-regulations/a/XREF_77259_GXPIII_516" style="font-size: 10pt; letter-spacing: 0em; text-indent: -1pt;" onclick="return n(&#39;!cority-user-guide/identifying-applicable-regulations/a/XREF_77259_GXPIII_516&#39;,this);">Identifying Applicable Regulations</a><span style="font-size: 10pt; letter-spacing: 0em; text-indent: -1pt;">), you must complete at least one of </span><i><span class="Emphasis">State</span>, <span class="Emphasis">County</span></i><span style="font-size: 10pt; letter-spacing: 0em; text-indent: -1pt;">&nbsp;or </span><i><span class="Emphasis">Country</span></i><span style="font-size: 10pt; letter-spacing: 0em; text-indent: -1pt;">.</span></p>
+  <p class="Note" style="margin-top  : 7.000pt; margin-bottom : 7.000pt;">You can select the checkbox beside multiple nodes to make them inactive or to move them under a different parent. Click <b><span class="Bold">Historical Trees</span>&nbsp;</b>and choose an earlier date to view nodes that have been inactivated; you can select these and click <b><span class="Bold">Re-activate Node</span></b>. Reactivated nodes are added back to the current tree in their original location. Inactive nodes may be included in reports, and Report Writer queries.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When you are finished making your changes, click <b><span class="Bold">Save</span></b>.</p>
+</li>
+ </ol>
+ <p>&nbsp;</p>
+  
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

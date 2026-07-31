@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/setting-up-office-ergonomics"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Setting Up Office Ergonomics</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Setting Up Office Ergonomics';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>		<h2 id="h2_937092313" data-has-heading-anchor="true">
+			<a id="_Toc123641585"></a>Setting Up Office Ergonomics<a href="/articles/cority-user-guide/setting-up-office-ergonomics/a/h2_937092313" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-office-ergonomics/a/h2_937092313&#39;,this);"></a></h2>
+		<h3 id="h3_573106813" data-has-heading-anchor="true">
+			<a id="_Toc123641586"></a>Related Look-Up Tables<a href="/articles/cority-user-guide/setting-up-office-ergonomics/a/h3_573106813" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-office-ergonomics/a/h3_573106813&#39;,this);"></a></h3>
+		<p>The Office Ergonomics module is supported by several look-up tables:</p><ul>
+			<li>RiskInventory</li><li>RiskInventoryCategory</li><li>RiskProfile</li><li>RiskRecommendation</li><li>RiskType</li><li>RiskTypeOverall</li></ul>
+		<p>Some of these (RiskInventory, RiskProfile, and RiskType) are accessible from the Ergonomics cloud menu for convenience.</p><h3 id="h3_2117030254" data-has-heading-anchor="true">
+			<a id="_Toc123641587"></a>Setting Up Risk Inventories<a href="/articles/cority-user-guide/setting-up-office-ergonomics/a/h3_2117030254" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-office-ergonomics/a/h3_2117030254&#39;,this);"></a></h3>
+		<p>Risk inventories are the individual elements that are evaluated. A risk inventory has multiple possible responses, each with a value and multiplier to generate a risk score.</p>
+<ol start="1">
+			<li>Open the RiskInventory look-up table, or choose <span style="font-weight: bold; font-style: normal;">Risk Inventory Configuration</span> in the Ergonomics cloud menu.</li>
+<li>Enter a <span style="font-weight: normal; font-style: italic;">Code</span> and <span style="font-weight: normal; font-style: italic;">Description</span>. The <span style="font-weight: normal; font-style: italic;">Definition</span> field may be used to capture a more detailed description. </li>
+  <li>To allow a GX2 user to change the value for this risk inventory on the "Manage Employee Risk" page, select the <span style="font-weight: normal; font-style: italic;">Resolvable</span> checkbox. If this is not selected, the risk inventory value selected by the employee will be read-only. For example, this is commonly used for evaluations of stress; only the employee can attest to their stress level.</li>
+  <li>Some risk inventories are “just part of the job”; they can’t be changed but would still contribute to the overall risk score. For these, select the <span style="font-weight: normal; font-style: italic;">Count as Fact</span> checkbox. A user will still have the option to select "I have read the recommendations" from My Tasks in myCority, but a value is not required to be selected to “resolve” the issue.</li>
+  <li>Select the <span style="font-weight: normal; font-style: italic;">Risk Inventory Category</span>; this is simply to group the inventories into logical groupings on the Manage Employee Risk page.</li>
+  <li>Select the <span style="font-weight: normal; font-style: italic;">Risk Inventory Image</span> that will be presented in the self-assessment.</li>
+  <li>In the Risk Inventory Value section, create all the values that can be selected by the employee (or in the Manage Employee Risk page, if flagged as <span style="font-weight: normal; font-style: italic;">Resolvable</span>. Use the arrows to change the order of appearance. See “Configuring Values” below for more information.</li>
+  <li>Add the risk inventory to the appropriate risk profiles and risk types (see “<a href="/articles/cority-user-guide/setting-up-office-ergonomics/a/_Ref121385213" style="text-decoration: none;;color: #0000FF; text-decoration: underline;" onclick="return n(&#39;!cority-user-guide/setting-up-office-ergonomics/a/_Ref121385213&#39;,this);">Setting Up Risk Profiles</a>” and “<a href="/articles/cority-user-guide/setting-up-office-ergonomics/a/_Ref121385216" style="text-decoration: none;;color: #0000FF; text-decoration: underline;" onclick="return n(&#39;!cority-user-guide/setting-up-office-ergonomics/a/_Ref121385216&#39;,this);">Setting Up Risk Types</a>" below). The Risk Profiles and Risk Types tabs display which profiles and types the risk inventory has been added to.</li></ol>
+		<p style="font-weight: bold;">Configuring Values</p>
+<p>For each value:</p>
+<ol start="1">
+			<li>Enter an <span style="font-weight: normal; font-style: italic;">Employee Description</span> (e.g. a layperson definition) that employees will see in myCority.</li>
+  <li>Select the appropriate checkbox(es):
+    <ul>
+				<li><span style="font-weight: normal; font-style: italic;">Not Applicable</span> – the value that this inventory will be set to when it does not apply to an employee, typically due to a relationship with another value (see below). This value can never be selected manually from the "Manage Employee Risk" page.</li>
+      <li><span style="font-weight: normal; font-style: italic;">Resolves</span> – the neutral state/desired value, has no risk associated with it</li>
+      <li><span style="font-weight: normal; font-style: italic;">Re-initializes</span> – the value that will be set if a N/A relationship no longer applies (see below)</li>
+      <li><span style="font-weight: normal; font-style: italic;">Awaiting Info</span> – the value that is set when more information is needed about a risk inventory for an employee</li>
+      <li><span style="font-weight: normal; font-style: italic;">Default</span> – the value that this inventory will default to when there has been no previous entry</li></ul>
+			</li>
+  <li>Select the color of the <span style="font-weight: normal; font-style: italic;">Icon</span> to be displayed when the value is selected (Red, Yellow, Green, or None).</li>
+  <li>Optionally, enter the value’s <span style="font-weight: normal; font-style: italic;">Ranking</span>. This is used in conjunction with other values to identify if the issue got better or worse.</li>
+  <li>The <span style="font-weight: normal; font-style: italic;">Risk Equation Value</span> and <span style="font-weight: normal; font-style: italic;">Risk Multiplier</span> are used to calculate the risk score.</li>
+  <li>Use the Issue Resolution Config tab to configure the issue resolution content that employees will see in myCority.<br/><img src="images/setting-up-office-ergonomics-img0001.png" width="624" height="276" alt="Graphical user interface, text, email
+
+Description automatically generated" style="border-width: 0px;" loading="lazy"/></li>
+  <li>Use the Risk Inventory Relationships tab to build relationships between risk inventories. Any risk inventory value added to this list will be set to Not Applicable when the current Risk Inventory Value is selected. See below for more detail.</li>
+  <li>Use the Translation tab to translate the value’s Description; use the Issue Resolution Translation tab to translate the content on the Issue Resolution Config tab.</li></ol>
+		<p style="font-weight: bold;">Setting Up Relationships with Other Inventories</p>
+<p>There may be some risk inventories that should be considered not applicable if a particular risk inventory value is selected. For example, if the employee selects “Never Experiences Discomfort” in the Frequency of Discomfort risk inventory, then inventories for specific types of discomfort (e.g. lower back discomfort, shoulder discomfort, etc.) are not relevant.</p><p>To set this up, in the Values section, click the value that you want to base the relationship on (e.g. Never Experiences Discomfort). On the Risk Inventory Relationships tab, identify all inventories that should be set to N/A if the initial inventory value is selected. In our example we’ll add the other discomfort inventories (lower back discomfort, shoulder discomfort, etc.).</p><p>In the Values section for each of these other inventories, identify the Re-Initializes value, i.e. the one that should be selected if the relationship no longer applies. For example, if the Frequency of Discomfort is changed to “Infrequent Work-Related Discomfort”, then in the Shoulder Discomfort inventory you may want to specify a specific value to be set, or it could be set to “Information Not Available But Needed” to alert the employee or GX2 admin that a response is now required for that inventory.</p>
+<h3 id="h3_197127976" data-has-heading-anchor="true">
+			<a id="_Ref121385213"></a><a id="_Toc123641588"></a>Setting Up Risk Profiles<a href="/articles/cority-user-guide/setting-up-office-ergonomics/a/h3_197127976" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-office-ergonomics/a/h3_197127976&#39;,this);"></a></h3>
+		<p>A risk profile is used to determine which risk factors are assigned to a worker.  Generally, you will only have one or two risk profiles for Office Ergonomics (e.g. Office Ergonomics, Office Ergonomics Working from Home, etc.).<br/></p><p>Open the RiskProfile look-up table, or choose <span style="font-weight: bold;">Risk Profiles </span>in the Ergonomics cloud menu.</p><ol start="1">
+			<li>On the Risk Inventory tab, select all of the risk inventories that are applicable to this profile.</li><li>A risk profile is associated to one or more employee group/team. (Use the <a href="/articles/cority-user-guide/groupandteam" onclick="return n(&#39;!cority-user-guide/groupandteam&#39;,this);">GroupAndTeam</a> look-up table to select the employees who are part of that group/team.) On the profile’s Groups and Teams tab, select the group(s) who should be assigned this profile. Risk profiles may also be assigned using Linked Queries (also on the GroupandTeam table).</li><li>Capture any Incompatible Risk Profiles: profiles added to this sublist cannot be assigned to an employee while the current profile is assigned. For example: an employee has profile A assigned. Profile A is incompatible with Profile B. The employee cannot have Profile B assigned to them until Profile A has been removed.</li></ol>
+		<h3 id="h3__1634505217" data-has-heading-anchor="true">
+			<a id="_Ref121385216"></a><a id="_Toc123641589"></a>Setting Up Risk Types<a href="/articles/cority-user-guide/setting-up-office-ergonomics/a/h3__1634505217" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-office-ergonomics/a/h3__1634505217&#39;,this);"></a></h3>
+		<p>Open the RiskType look-up table, or choose <span style="font-weight: bold;">Risk Type Configuration</span> in the Ergonomics cloud menu.</p><ol start="1">
+			<li><span style="font-weight: normal; font-style: normal;">Indicate if this risk type </span><span style="font-weight: normal; font-style: italic;">Does Not Contribute to Overall Risk</span><span style="font-weight: normal; font-style: normal;">. For example, you may choose not to include Discomfort in the metrics for wellness. </span></li><li><span style="font-weight: normal; font-style: normal;">Select the </span><span style="font-weight: normal; font-style: italic;">Expose on My Ergo Dashboard</span><span style="font-weight: normal; font-style: normal;"> checkbox to have this risk type appear in the Personal Risk section of myCority. &nbsp;If this checkbox is not selected, the data will be collected (e.g. as a baseline) but not reported. </span></li><li><span style="font-weight: normal; font-style: normal;">If you want employees to be able to view and change any of their risk inventory values in myCority, select the </span><span style="font-weight: normal; font-style: italic;">Discomfort</span><span style="font-weight: normal; font-style: normal;"> checkbox. If not selected, the "Update Discomfort" link will take the employee to their My Tasks page filtered to ergonomic issues.</span></li><li><span style="font-weight: normal; font-style: normal;">For each Risk Range value, select the </span><span style="font-weight: normal; font-style: italic;">Risk Color</span><span style="font-weight: normal; font-style: normal;"> that will display for this risk type on the Manage Employee Risk page in GX2 and in myCority. </span></li><li><span style="font-weight: normal; font-style: normal;">On the Risk Inventories tab, select all of the risk inventories that are applicable to this type.</span><a id="_Toc123641593"></a></li></ol>
+	<div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/managing-absence-reports-from-mycority"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Managing Absence Reports from myCority</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Managing Absence Reports from myCority';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+
+<p>&nbsp;</p>
+
+ <h3 id="h3__1765083016" data-has-heading-anchor="true"><a name="XREF_69359_GXP_4005_Managing"></a>Managing Absence Reports from myCority<a href="/articles/cority-user-guide/managing-absence-reports-from-mycority/a/h3__1765083016" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/managing-absence-reports-from-mycority/a/h3__1765083016&#39;,this);"></a></h3>
+ <p class="BodyLevel1">Employees can report their own absences in myCority. (This functionality is only available for the myCority SSO and LDAP authentication methods.) For more information, please refer to the myCority documentation.</p>
+ <p class="BodyLevel1">These reports are then reviewed in Cority and posted to a new or existing case.</p>
+ <h4 id="h4__1805646755" data-has-heading-anchor="true">Viewing Absence Reports Sent from myCority<a href="/articles/cority-user-guide/managing-absence-reports-from-mycority/a/h4__1805646755" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/managing-absence-reports-from-mycority/a/h4__1805646755&#39;,this);"></a></h4>
+ <p class="BodyLevel1">When an absence report has been submitted through myCority, it will display in the Absence Reporting Inbox module in Cority's Occupational Health menu. You must add this module to your menu (see <a href="/articles/cority-user-guide/running-the-program/a/XREF_17202_Customizing_Your" onclick="return n(&#39;!cority-user-guide/running-the-program/a/XREF_17202_Customizing_Your&#39;,this);">Customizing Your Menu</a>), and you must be granted the appropriate permission.<span style="font-size: 10pt;">&nbsp;</span></p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Occupational Health menu, click <b><span class="Bold">Absence Reporting Inbox</span></b>. The list displays all submitted but non-posted absence reports.</p>
+</li>
+  <p class="Note">The myCority user can update or cancel the report before it is posted to a case. A cancelled absence report continues to display in the Absence Reporting Inbox list in Cority, with the <i><span class="Emphasis">Cancelled</span>&nbsp;</i>checkbox selected. The Post and Go to Case actions will be disabled for the record.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click an Employee link to open the absence report. </p>
+</li>
+  <p class="BodyLevel2">The absence report is assigned the “myCority_AbsenceReport” <i><span class="Emphasis">Case Type</span>&nbsp;</i>(unless the related business rule is changed). Any to-do activities linked to this case type (in the <a href="/articles/cority-user-guide/casetype/a/XREF_84660_Case_Types" onclick="return n(&#39;!cority-user-guide/casetype/a/XREF_84660_Case_Types&#39;,this);">CaseType</a>&nbsp;look-up table) are listed on the To Do List tab. If a to-do activity associated with this case type is flagged <i><span class="Emphasis">Assign to Employee</span></i>, the activity is assigned to the employee when they submit the absence report. These to-do activities are not added to the main To-Do List module until the absence report is posted to a case record.</p>
+  <p class="BodyLevel2">The record also includes any documents that the myCority user attached to the report.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Choose the appropriate action:</p>
+</li>
+ </ol>
+ <ul type="disc" style="margin-left: 40px;">
+  <li>
+  <p class="BodyLevel2"><b><span class="Bold">Go to Case</span>&nbsp;</b>– If the absence report is already posted to a case, choose this to view the case record.</p>
+</li>
+  <li>
+  <p class="BodyLevel2"><b><span class="Bold">Post and Create a New Case</span>&nbsp;</b>– On the new case record, the <i><span class="Emphasis">Case Managed</span>&nbsp;</i>checkbox will be selected, and the <i><span class="Emphasis">Enrollment Date</span>&nbsp;</i>will display the date the absence report was submitted. If there are any documents or to-do activities linked to the absence report, they will display on the case’s Documents and To-Do List tabs respectively.<br/>On the absence report, the <i><span class="Emphasis">Case Number</span>&nbsp;</i>field will display the new case number and all fields will become read-only.</p>
+</li>
+  <li>
+  <p class="BodyLevel2"><b><span class="Bold">Post and Link to Existing Case</span>&nbsp;</b>– You are prompted to select the case record. All absence, document, and to-do information will be copied to the selected case.<br/>On the absence report, the <i><span class="Emphasis">Case Number</span>&nbsp;</i>field will display the linked case number, and the Post actions will be disabled.</p>
+</li>
+ </ul>
+ <p class="Note">When an absence report is posted to a case, the <i><span class="Emphasis">Absence Status</span>&nbsp;</i>will be “myCority_AbsenceReport” (unless the related business rule is changed); this absence status is associated with the “Lost Work Day” absence type.<br/>An absence must be manually ended by updating the absence status on the case record.</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

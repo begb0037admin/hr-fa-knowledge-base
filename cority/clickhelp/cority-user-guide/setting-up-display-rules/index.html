@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/setting-up-display-rules"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Setting Up Display Rules</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Setting Up Display Rules';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><p id="h1_1547723302" style=""><br/></p>
+<h2 id="h1_1547723302" style="" data-has-heading-anchor="true">Setting Up Display Rules<a href="/articles/cority-user-guide/setting-up-display-rules/a/h1_1547723302" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/setting-up-display-rules/a/h1_1547723302&#39;,this);"></a></h2>
+<p>A display rule is similar to a <a href="/articles/cority-user-guide/setting-up-business-rules" onclick="return n(&#39;!cority-user-guide/setting-up-business-rules&#39;,this);">business rule</a>, except that display rules trigger immediately on values changing as opposed to triggering when the record is saved.&nbsp;<b style="font-size: 10pt;">Note: </b><span style="font-size: 10pt;">M</span><span class="ui-provider ee bgq bcr cbg cbh cbi cbj cbk cbl cbm cbn cbo cbp cbq cbr cbs cbt cbu cbv cbw cbx cby cbz cca ccb ccc ccd cce ccf ccg cch cci ccj cck ccl" dir="ltr" style="font-size: 10pt;">ost display rules will trigger without save, however a Layout display rule requires a save for the layout to change.</span></p>
+<p><span style="font-size: 10pt;">Display rules dictate what should happen to a layout or set of layouts as a record moves through a workflow. This can involve the following types of actions:</span></p>
+<ul><li>A <b>Message/Toast</b> action will display a standard pop-up message that the end user must close, or a "toast" message that fades after five seconds.</li>
+<li>A <b>Read-Only </b>action will make a field read-only if a specific value is entered, locking it from editing.</li>
+<li>A <b>Filter </b>action will filter a second field's picklist when a specific value is entered for a corresponding first field.</li><li>A <b>Layout </b>action will associate any record produced, or opened, with a specific layout when the rule's conditions are met within a workflow step. This overrides any associated, pre-configured layout logic, and the layout selector on applicable records will be disabled. <b>Note:</b> The Layout action requires a save for the layout to change.&nbsp;</li><li>A <b>Require</b>&nbsp;action identifies a specified field that is required on a workflow step's layout if the step meets the rule’s conditions. Note that while both workflow step configuration and display rules have the required and read-only options, these should not be configured in both for the same field. For a particular field, required and/or read-only should be configured in either the workflow step or a display rule, not both.</li></ul>
+<p class="Note">Only one of each action type can be used per display rule, i.e. one Filter action and one Read-Only action. A field can only be added once to a display rule. </p>
+<p class="Note">If two different display rules fire at the same time, one making field A required and another making field A read-only:<br/>- If the two rules' priorities differ, the rule with the lower priority value will take precedence.<br/>- If the two rules' priorities are the same, the rule with the lower ID will take precedence.<br/>If a display rule to make a field read-only has fired, another that makes the field required cannot be created until the first is deleted (and vice versa).</p>
+<p><b>Example:</b>&nbsp;You can set up a display rule so that if <i>Chief Complaint </i>= "sprain" on the Occupational Illness/Injury layout, the following will happen:
+<br/>- the <i>Clinic Visit Reason</i>, <i>Discharge Date</i>, <i>Discharge Time</i>, and <i>Geographic Location</i> fields will become read-only (disabled from editing), and<br/>- the only option in the&nbsp;<i>Clinic Visit Status </i>list will be "Arrived"
+<br/>If the <i>Chief Complaint </i>is set to any value other than “sprain”, then those fields become editable again and the <i>Clinic Visit Status </i>field shows all options.
+</p>
+<p>To create a display rule:</p>
+<ol><li>In the Administrator menu, choose <b>Display Rules</b>.</li>
+  <li>Click a code to open an existing rule, or click <b>New</b>.</li>
+  <li>In the Details section, enter a <i>Code </i>and <i>Description</i>, select the <i>Entity </i>for which the rule will apply, and enter a <i>Priority </i>for the rule. The priority can be any integer, and determines the order that the rule is processed if there are multiple rules. Lower number priorities are processed first. Select one or more <i>Layout </i>associated with the selected <i>Entity</i>. The display rule will trigger when conditions are true on any of the specified layouts. If no layout is specified, the display rule will trigger on all layouts associated with the selected <i>Entity</i>.</li>
+  <li>In the Conditions section, define the conditions that will trigger the rule:
+    <ol><li>Click&nbsp;<img alt="i_inline_multi_select.gif" id="image44" src="images/i_inline_multi_select.gif" border="0" style="margin-top: 5pt; border: 0pt solid #999999;" loading="lazy"/>&nbsp;to select the property of the entity you wish to enforce a constraint on (currently only first-level fields are supported).</li><li>Currently only the Equals operator is supported.</li><li>Specify any value that the property should compare with. Depending on the type of property you select, there may be a date selector or picklist icon to help you choose a value.<br/></li></ol>
+    <p class="BodyLevel2">To remove a condition, click the <b>X</b> at the end of the row.</p>
+    <p class="BodyLevel2">By default, multiple conditions for the same property are treated as OR. Conditions for different properties are treated as AND. For example:</p>
+       <p class="BodyLevel2">1. Country, Equals, Canada<br/>
+    2. Country, Equals, USA<br/>
+    3. Sex, Equals, Male<br/>4. Employee Type, Equals, Contractor</p>
+    <p class="BodyLevel2">... would be evaluated as:<br/>(1 or 2) AND 3 AND 4</p>
+    <p class="BodyLevel2">The numbers correspond to the row numbers assigned to each condition. The default logic can be overridden in the Advanced Conditions field by using the row numbers to identify the individual conditions, e.g.&nbsp;(1 and 3) OR (2 and 4).</p>
+       <p class="BodyLevel2"><img alt="Admin_bus_rule_conditions.png" id="image45" src="images/Admin_display_rule_conditions.png" border="0" style="margin-top: 5px; border-style: solid; border-color: #999999; border-image: initial; color: #4d4d4d; text-decoration-color: initial;" loading="lazy"/></p>
+    </li>
+  <li>Click <b>Save</b>.</li>
+<li>In the Display Rule Actions section (this section only appears after the rule has been saved), specify the actions to be performed when the rule is fired.&nbsp;
+<p class="Note">Only one of each action type can be used per display rule, i.e. one Filter action and one Read-Only action.&nbsp;A field can only be added once to a display rule. If multiple actions including a Message/Toast action are executed for a given condition, the Message/Toast will be executed last.</p>
+<p><b>To create a Message/Toast action:</b></p>
+<ol><li>Ensure at least one condition is defined with "&lt;field&gt; Equals &lt;value&gt;".</li>  <li>Choose&nbsp;<b>Actions»Create new Display Rule Message/Toast Action</b>.</li>
+    <li>Enter a&nbsp;<i>Name&nbsp;</i>and optionally a&nbsp;<i>Description.</i></li>
+  <li>Enter the text of the <i>Message</i>. </li>
+  <li>If you want the message to fade automatically after five seconds, select the <i>Is&nbsp;</i><i>Toast </i>checkbox. If this is not selected, the end user will have to manually dismiss the message when they see it.</li>
+  <li>Click&nbsp;<b>Save</b>.</li>
+  </ol>
+<p><b>To create a Read Only action:</b></p>
+<ol><li>Ensure at least one condition is defined with "&lt;field&gt; Equals &lt;value&gt;".</li>
+  <li>Choose <b>Actions»Create new Display Rule Read Only Action</b>.</li>
+    <li>Enter a <i>Name </i>and optionally a <i>Description</i>, then click <b>Save</b>.</li>
+  <li>In the Fields section, enter the field(s) that should be made read-only if the condition field value is met. The field(s) will remain editable if the condition is not met.</li>
+</ol>
+<p><b>To create a Filter action:</b></p>
+<ol><li>Ensure at least one condition is defined with "&lt;field&gt; Equals &lt;value&gt;".</li>
+  <li>Choose <b>Actions»Create new Display Rule Filter Action</b>.</li>
+  <li>Enter a <i>Name </i>and optionally a <i>Description</i>, then click <b>Save</b>.</li>
+  <li>In the Fields section, select the secondary field to be filtered when the condition field value is met, and the values (up to 10) that will be allowed in that field.</li>
+  </ol>
+<p><b>To create a Layout action:</b></p>
+<ol><li>Ensure at least one condition is defined with "&lt;field&gt; Equals &lt;value&gt;".</li>
+  <li>Choose <b>Actions»Create new Display Rule Layout Action</b>.</li>
+  <li>Enter a <i>Name </i>and optionally a <i>Description</i>, then select one of the layouts that are compatible with the entity specified.</li>
+  <li>Click <b>Save</b>.</li>
+  </ol>
+<p><b>To create a Require action:</b></p>
+<ol><li>Ensure at least one condition is defined with "&lt;field&gt; Equals &lt;value&gt;".</li>
+  <li>Choose <b>Actions»Create new Display Rule Require Action</b>.</li>
+  <li>Enter a <i>Name </i>and optionally a <i>Description</i>.</li>
+  <li>Click <b>Save</b>.</li>
+  <li>Select the field(s) that are compatible with the entity specified.</li>
+  <li>Click <b>Save </b>again.</li>
+  </ol>
+</li></ol><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

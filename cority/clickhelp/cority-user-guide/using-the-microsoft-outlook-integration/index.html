@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/using-the-microsoft-outlook-integration"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Using the Microsoft Outlook Integration</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Using the Microsoft Outlook Integration';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h2 id="h1_1547723302" style="" data-has-heading-anchor="true">
+  Using the Microsoft Outlook Integration<a href="/articles/cority-user-guide/using-the-microsoft-outlook-integration/a/h1_1547723302" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/using-the-microsoft-outlook-integration/a/h1_1547723302&#39;,this);"></a></h2>
+<p>This integration, provided with the GX2 OH license, can improve scheduling efficiency, prevent double-bookings, and expand virtual care options with a built-in Microsoft Teams integration.
+It provides:
+</p>
+<ul><li>Seamless calendar sync: Overlay Outlook calendars within GX2 and automatically send Outlook meeting invites.</li>
+<li>Integrated virtual care: Link GX2 appointments with Microsoft Teams for secure, efficient telehealth visits. </li>
+<li>A New Scheduling Assistant: Checks employee availability within Outlook to prevent double-booking. </li>
+<li>Streamlined communication: Outlook meeting responses feed directly back into GX2 for real-time status updates. </li>
+<li>Time savings: Automates scheduling and notifications, reducing administrative effort for clinicians and employees. </li>
+<li>A Notification Bell: Displays meeting status in a Bell icon within the Appointments module.
+</li>
+</ul>
+<h4 style="" id="h3__2051240644" data-has-heading-anchor="true">Configuration<a href="/articles/cority-user-guide/using-the-microsoft-outlook-integration/a/h3__2051240644" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/using-the-microsoft-outlook-integration/a/h3__2051240644&#39;,this);"></a></h4><ul><li>An Azure App is required to connect GX2 with Outlook.
+Engagement between your IT Team and Cority Professional Services is required for the Azure App build and initial testing/setup. Contact your Cority Account Manager or Customer Success Manager for more information. The following system settings require information from the Azure App:<ul><li>Microsoft Graph Client ID → from the Azure ‘Application (client) ID“</li><li>Microsoft Graph Client Secret → from the Azure value</li><li>Microsoft Graph Tenant ID → from the Azure ‘Directory (tenant)’</li></ul>
+<p class="Note">&nbsp;Configuring these Microsoft Graph system settings will effectively turn on the Outlook Integration for every user. Meeting invitation emails will begin to be sent automatically.
+</p>
+</li><li>Ensure that the "Enable OAuth 2.0 Authentication" system setting is selected. </li><li>Ensure that the "Synchronize Appointments from Outlook Exchange Server" system setting is selected.</li></ul>
+<ul><li>The following system settings are now deprecated for Outlook use with the Appointments module but should remain populated, especially if using the Inbox feature:
+<ul><li>Exchange AAD Client ID </li><li>Exchange AAD Client Secret </li><li>Exchange AAD Tenant ID
+</li></ul></li></ul><p>Once the integration is configured, the Appointments module will automatically send meetings created within GX2 to Outlook.</p><p>Turn on the Outlook toggle in the Appointments module to display the user's Outlook calendar in the GX2 Appointments calendar.&nbsp;The Outlook events will display.</p><p>The following fields have been added to the Schedule Entry layout: </p><ul><li>Scheduling Assistant </li><li>MS Teams – Telehealth </li><li>MS Teams Meeting Link </li><li>Outlook Event ID </li><li>Outlook iCalUid</li></ul><h4 style="" id="h4__1757067249" data-has-heading-anchor="true">Using the Scheduling Assistant<a href="/articles/cority-user-guide/using-the-microsoft-outlook-integration/a/h4__1757067249" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/using-the-microsoft-outlook-integration/a/h4__1757067249&#39;,this);"></a></h4><p>For the Scheduling Assistant to populate, the following fields must have values: </p><ul><li>Scheduling user </li><li>Employee</li><li>Date </li><li>Time
+</li></ul><p><b>Scheduling Assistant – Time Slots </b>— The available times will be displayed as chips for up to 10 days in the future, which mimics Outlook behavior.
+Availability slots respect the workday/worktime for users as configured in Outlook.
+Navigation arrows are provided for displaying additional timeslots.</p><p class="Note">&nbsp; The system does not verify the Scheduling User against GX2 availability because it is assumed the person creating the appointment is looking at that calendar.
+If no availability is displayed, you must select a new date and time.</p><p><b>Scheduling Assistant – Statuses:</b></p><ul><li>“All users are available at the selected time” – the users are available&nbsp;</li><li>“Not all users are available at the selected time” – either the Scheduling User or the employee is not available </li><li>“No users are available for the next 10 days” – the users are unavailable
+</li></ul><h4 style="" id="h4__1564338422" data-has-heading-anchor="true">Microsoft Teams Integration<a href="/articles/cority-user-guide/using-the-microsoft-outlook-integration/a/h4__1564338422" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/using-the-microsoft-outlook-integration/a/h4__1564338422&#39;,this);"></a></h4><p>
+Microsoft Teams fields can be added to custom Schedule Entry layouts.
+</p><p>To link the appointment record to a Teams meeting, you must first obtain the license key for Remote Expert users. </p><ul><li>If you add Teams fields to a custom layout but do not have a license key that includes the Remote Expert license, those fields will be disabled.</li><li>If you have Teams as part of your corporate license, have configured the Outlook Integration in GX2, but do not have the Remote Expert license:<ul><li>If booking within GX2, the default email will not include a Teams link.</li><li>If booking within Outlook, the default email will have a Teams link.</li></ul>
+</li></ul><h4 style="" id="h4__539800998" data-has-heading-anchor="true">Fields for Troubleshooting
+<a href="/articles/cority-user-guide/using-the-microsoft-outlook-integration/a/h4__539800998" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/using-the-microsoft-outlook-integration/a/h4__539800998&#39;,this);"></a></h4><p>These fields are optional, but should be used for troubleshooting.
+When a meeting is successfully sent to Outlook, these two fields populate:
+</p><ul><li><i>Outlook Event ID</i>: This is the ID of an event resource type, which is a unique identifier for an individual event on a particular calendar.
+<br/><b>Important</b>&nbsp; This ID is specific to the calendar in which the event is stored and could change if the event is moved to a different calendar.
+</li><li><i>Outlook iCal UID</i>: This is returned by the calendar event resource type in Microsoft Graph, and is a unique, read-only identifier shared by all instances of an event across different calendars.
+</li></ul><h4 id="h4_1961005090" data-has-heading-anchor="true">Automated Meeting Emails
+<a href="/articles/cority-user-guide/using-the-microsoft-outlook-integration/a/h4_1961005090" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/using-the-microsoft-outlook-integration/a/h4_1961005090&#39;,this);"></a></h4><p>There is a system setting to "Define the Email template to be used with Outlook integration".
+</p><p>The system will merge the BRA's email body with the Outlook meeting details (subject, additional recipients, any Teams information, etc.). <br/><b>Note&nbsp;</b>&nbsp;If the Subject is blank, an error will occur. Ensure you always populate the recipients, subject, and email body.
+</p><p>The <i>Send Email</i>&nbsp;field on the Schedule Entry layout is to be used for resending ics files (if necessary) or for recurring GX2 appointments. Recurrences are otherwise not supported. Responses for recurrences from Outlook will be given the status TBD within the Notification Bell (described below).
+</p><p>The GX2 Appointments module invitation will map to the Outlook invitation: The current logged in GX2 user will be the Organizer, the Scheduling User will be Attendee #1, and the Employee will be Attendee #2.
+The integration automatically includes Teams meeting information (if applicable) in the body of the invitation.
+<br/><b>Note</b>&nbsp;If you do not have a Remote Expert license, the Teams meeting details will be omitted.
+</p><p>If you have not configured a custom version of BRA-000542 (business rule email action) and defined it in system settings, the system will instead send out a default email that contains the basic appointment information.
+</p><p>Meetings booked within GX2 will be sent automatically to Outlook, and any edits made within GX2 will be reflected in Outlook.
+</p><h4 style="" id="h4_1477599770" data-has-heading-anchor="true">Notification Bell (Meeting Responses)
+<a href="/articles/cority-user-guide/using-the-microsoft-outlook-integration/a/h4_1477599770" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/using-the-microsoft-outlook-integration/a/h4_1477599770&#39;,this);"></a></h4><p>The notification bell in the Appointments module:
+</p><ul><li>Provides a count of the inbound notifications for all Accepted, Declined, and Tentative responses that have not been viewed
+</li><li>Provides the status of the meeting
+</li><li>Updates every 5 minutes
+</li></ul><p class="Note">&nbsp;The notifications are for meetings the logged-in user created.&nbsp;Reports and business rules can be configured for this functionality and will apply for all responses received by GX2, regardless of the meeting creator (organizer).
+The entity for this data table is Inbound Notifications.</p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/importing-drug-testing-results"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Importing Drug Testing Results</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Importing Drug Testing Results';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+
+<p>&nbsp;</p>
+
+ <h3 id="h3_994596421" data-has-heading-anchor="true"><a name="IX_drug_testing_results"></a><a name="IX_importing_results"></a><a name="XREF_37709_Importing_Drug"></a>Importing Drug Testing Results<a href="/articles/cority-user-guide/importing-drug-testing-results/a/h3_994596421" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/importing-drug-testing-results/a/h3_994596421&#39;,this);"></a></h3>
+ <p class="BodyLevel1"><a href="/articles/cority-user-guide/importing-drug-testing-results/a/XREF_20448_Importing_Results" onclick="return n(&#39;!cority-user-guide/importing-drug-testing-results/a/XREF_20448_Importing_Results&#39;,this);">Importing Results Manually</a></p>
+ <p class="BodyLevel1"><a href="/articles/cority-user-guide/importing-drug-testing-results/a/XREF_93843_GXP_2499_Importing" onclick="return n(&#39;!cority-user-guide/importing-drug-testing-results/a/XREF_93843_GXP_2499_Importing&#39;,this);">Importing Records Directly from Quest Diagnostics</a></p>
+ <h4 id="h4__560789144" data-has-heading-anchor="true"><a name="XREF_20448_Importing_Results"></a>Importing Results Manually<a href="/articles/cority-user-guide/importing-drug-testing-results/a/h4__560789144" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/importing-drug-testing-results/a/h4__560789144&#39;,this);"></a></h4>
+ <p class="BodyLevel1">You can import test results of the following format standards: ASTM, LabCorp, Medtox, Quest, or a Source HL7v23 lab file. Optionally specify the default import standard &nbsp;in the ”Drug Sample Import Format” system setting (see <a href="/articles/cority-user-guide/changing-your-system-settings/a/XREF_72926_Changing_Your" onclick="return n(&#39;!cority-user-guide/changing-your-system-settings/a/XREF_72926_Changing_Your&#39;,this);">Changing Your System Settings</a>). </p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Occupational Health menu, click <b><span class="Bold">Drug Testing</span></b>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the Drug Tests list, choose <b><span class="Bold">Actions»Import Results</span></b>.</p>
+  <div align="left"><img alt="DRUG_ImportTestResults.gif" style="margin-top : 5pt; margin-bottom : 10pt; border: Solid 0pt #999999; " id="image6" src="images/DRUG_ImportTestResults.gif" loading="lazy"/>
+  </div></li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select or change the import <i><span class="Emphasis">Standard</span></i>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the <i><span class="Emphasis">Laboratory</span>&nbsp;</i>the results are being imported from. If using LabCorp, also select the <i><span class="Emphasis">Drug Testing Battery</span></i>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Optionally, identify the <i><span class="Emphasis">Health Center</span>&nbsp;</i>and <i><span class="Emphasis">Practitioner</span></i>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <b><span class="Bold">Browse </span></b>to locate the test results file, then click <span class="Bold">Import</span>&nbsp;to add the test results to the employees’ records.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1">If there are two employees with the same SSN but with different employee numbers, and only one of the employees is active, the drug test results will be imported for the active employee only. Additional validation is provided by several system settings: </p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1">“Validate Date of Birth for HL7 Drug Test Imports” &nbsp;ensures that the date of birth in the HL7 file matches the date of birth on an existing drug test record in Cority</p>
+</li>
+  <li>
+  <p class="BodyLevel1">“Validate Last Name for [ASTM/HL7] Drug Test Imports” &nbsp;ensures that the last name in the HL7 file matches the last name on an existing drug test record in Cority</p>
+</li>
+  <li>
+  <p class="BodyLevel1">“Validate Specimen ID for HL7 Drug Test Imports” &nbsp;ensures that the Specimen ID in the HL7 file matches the Specimen ID on an existing drug test record in Cority</p>
+</li>
+  <li>
+  <p class="BodyLevel1">“ID to Match for Import of Drug Tests” defines the type of ID that imports should be matched to (employee number, SSN, or Medical Insurance Number). </p>
+</li>
+ </ul>
+ <p class="BodyLevel1">Some records may not be imported due to errors in the source data, e.g. if the employee number is not found. To view the list of test results, including these rejected records, choose <b><span class="Bold">Actions»Process Status and Log</span></b>. For each rejected record, the Process Log will display a reason for rejection.</p>
+ <p class="BodyLevel1">Rejected records as a result of incorrect data in the import file can be corrected directly in Cority. Once corrected, choose <b><span class="Bold">Actions»Reprocess</span>&nbsp;</b>to reprocess all rejected records and add them to the database. It is important to view the log again to be sure all records have been saved.</p>
+ <p class="BodyLevel1">If an imported test includes a unit of measure that does not exist in the <a href="/articles/cority-user-guide/unitsofmeasure/a/XREF_81398_Units_Of_Measure" onclick="return n(&#39;!cority-user-guide/unitsofmeasure/a/XREF_81398_Units_Of_Measure&#39;,this);">UnitsOfMeasure</a>&nbsp;look-up table, the test will be imported and the unit of measure will be added to the table.</p>
+ <h4 id="h4__1160985141" data-has-heading-anchor="true"><a name="IX_importing_directly_from"></a><a name="IX_drug_test_records"></a><a name="XREF_93843_GXP_2499_Importing"></a>Importing Records Directly from Quest Diagnostics<a href="/articles/cority-user-guide/importing-drug-testing-results/a/h4__1160985141" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/importing-drug-testing-results/a/h4__1160985141&#39;,this);"></a></h4>
+ <p class="BodyLevel1" style="font-weight : bold;"><span class="FM_Bold">Setting up the connection:</span></p>
+ <p class="BodyLevel1">Define the appropriate values for the Quest Drug Testing system settings:</p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1">Login Name and Password</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Server, Port Number and Results File Directory - obtain from Quest Diagnostics</p>
+</li>
+  <li>
+  <p class="BodyLevel1">Notification Email - this is the email address at which you want to receive email notifications about imports into Cority&nbsp;from Quest Diagnostics. </p>
+</li>
+ </ul>
+ <p class="BodyLevel1" style="font-weight : bold;">Importing the results:</p>
+ <p class="BodyLevel1">Log into Cority, then in another browser tab type: <br/><span style="font-style : italic; "><i>&lt;your </i></span><span class="Emphasis">Cority</span><span style="font-style : italic; "><i> domain&gt;/questdrugimport/doimport.rails<br/></i></span>and press <span class="GreyBold">Enter</span>.</p>
+ <p class="Note">An administrator can set up a task using Windows Task Scheduler that will trigger Cority&nbsp;to automatically import test results from Quest Diagnostics at regular intervals.<br/>A business rule can automatically populate the record with the health center from the employee’s last clinic visit.</p>
+ <p>&nbsp;</p>
+  
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

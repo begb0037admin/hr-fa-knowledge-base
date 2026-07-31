@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/pdfform"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>PDFForm</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='PDFForm';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+
+<p>&nbsp;</p>
+
+ <h3 id="h3_33950266" data-has-heading-anchor="true"><a name="XREF_36665_GXP_2416_PDFForm"></a>PDFForm<a href="/articles/cority-user-guide/pdfform/a/h3_33950266" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/pdfform/a/h3_33950266&#39;,this);"></a></h3>
+ <p class="BodyLevel1">The PDFForm table includes all default Workers' Compensation (WC) forms. You can import PDF versions of additional forms, such as WC forms that are currently not supported, corporate process forms, or forms specific to a module such as an audit, clinic visit, waste management, etc. </p>
+ <p class="BodyLevel1">Cority&nbsp;data can be mapped to fields on these user-created forms: these sources include fields in module records (including sublists), a questionnaire response, a subquery, or an image or image-type field. These fields will be populated automatically when the form is generated for an employee (user must click Save in the form to retain that data, or Delete to discard it).</p>
+ <p class="Tip">You can configure a subquery used by a form to filter by one or more of a specific entity's fields; see <a href="/articles/cority-user-guide/working-with-ad-hoc-reports/a/XREF_24264_Using_the_Report" onclick="return n(&#39;!cority-user-guide/working-with-ad-hoc-reports/a/XREF_24264_Using_the_Report&#39;,this);">Working with Ad Hoc Reports</a>.</p>
+ <p class="Note">If a time field is mapped to a PDF, only the time will be shown; if a date field is mapped to a PDF, only the date will be shown.<br/>If you are mapping a sublist field that contains multiple records (e.g. multiple Nature of Injuries for an Injury Illness Case) to a field on the PDF (Field1 in this example), the records will be:<br/>- listed in one field (with a limit of 10), each separated by semi-colon, if only one Field1 exists.<br/>- listed in separate fields, if there are multiple Field1s using the same prefix (e.g. Field1[0], Field1[1], ... Field1[n]).<br/>- used to create and select checkboxes based on the record/value pairs in the sublist. That is, the records in the sublist are used to create the checkboxes and the corresponding values are used to select or deselect the checkboxes.</p>
+ <p class="BodyLevel1">Alternatively, for fields that are not linked to a Cority&nbsp;field, you can assign a data type (number, text, date, yes/no) that allows a user to enter and save their own values, or you can enter a default value to always appear in a field.</p>
+ <p class="BodyLevel1">In the PDFForm list view, the default WC forms are identified as <i><span class="Emphasis">Cority Created</span></i>; these cannot be cloned, and you can only edit their <i><span class="Emphasis">Description</span></i>. </p>
+ <p class="BodyLevel1">User-created forms may be categorized as one of the following<span class="Emphasis"> <i>Mode</i></span><i>s</i>:</p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel1">Draft:</p>
+<ul type="disc"><li>
+  <p class="BodyLevel2">The <i><span class="Emphasis">Code</span></i>, <i><span class="Emphasis">Description</span></i>, and data on the Mapping tab can be edited.</p>
+</li>
+  <li>
+  <p class="BodyLevel2">The form will not display in its linked module.</p>
+</li>
+  </ul>
+ </li>
+  <li>
+  <p class="BodyLevel1">Preview:</p>
+<ul type="disc"><li>
+  <p class="BodyLevel2">The <i><span class="Emphasis">Code</span>, <span class="Emphasis">Description</span></i>, and data on the Mapping tab can be edited.</p>
+</li>
+  <li>
+  <p class="BodyLevel2">The form cannot be saved.</p>
+</li>
+  </ul>
+ </li>
+  <li>
+  <p class="BodyLevel1">Published:</p>
+<ul type="disc"><li>
+  <p class="BodyLevel2">The <i><span class="Emphasis">Code</span>, <span class="Emphasis">Description</span></i>, and data on the Mapping tab are read-only.</p>
+</li>
+  <li>
+  <p class="BodyLevel2">The form can be saved.</p>
+</li>
+  <li>
+  <p class="BodyLevel2">The form’s Mode cannot be changed to Draft or Preview.</p>
+</li>
+  </ul>
+ </li>
+  <li>
+  <p class="BodyLevel1">Deprecated:</p>
+<ul type="disc"><li>
+  <p class="BodyLevel2">If a deprecated PDF form has a <i><span class="Emphasis">Deprecated Date</span>&nbsp;</i>value, it will only display on records that were created prior to that date. If <i><span class="Emphasis">Deprecated Date</span>&nbsp;</i>is blank, the form will continue to display on any existing records where there was data saved, but will not display on new records in the linked created module or existing record where there was no data saved.</p>
+</li>
+  <li>
+  <p class="BodyLevel2">The form’s Mode cannot be changed to Draft or Preview.</p>
+</li>
+ </ul>
+ </li>
+  </ul>
+ <p class="BodyLevel1">For both Preview and Published modes, the form will display as follows:</p>
+ <ul type="disc">
+  <li>
+  <p class="BodyLevel2">If the linked module is Incident, it can be added to the First Report of Injury Forms tab on the <a href="/articles/cority-user-guide/jurisdiction/a/XREF_23377_Jurisdictions" onclick="return n(&#39;!cority-user-guide/jurisdiction/a/XREF_23377_Jurisdictions&#39;,this);">Jurisdiction</a>&nbsp;look-up table for the ALL (%) jurisdiction. It will display on every incident record’s Forms tab.</p>
+</li>
+  <li>
+  <p class="BodyLevel2">If the linked module is Injury/Illness, the form can be added to the First Report of Injury Forms tab on the <a href="/articles/cority-user-guide/jurisdiction/a/XREF_23377_Jurisdictions" onclick="return n(&#39;!cority-user-guide/jurisdiction/a/XREF_23377_Jurisdictions&#39;,this);">Jurisdiction</a>&nbsp;look-up table for any jurisdiction not equal to ALL (%). It will display on any Injury/Illness record with that particular jurisdiction.</p>
+</li>
+  <li>
+  <p class="BodyLevel2">For all other linked modules, the form will be available on each record’s Forms tab, if available on the layout.</p>
+  <div align="left"><img alt="TBL_PDFForm_list.gif" style="margin-top : 5pt; margin-bottom : 10pt; border: Solid 0pt #999999; " id="image100" src="images/TBL_PDFForm_list.gif" loading="lazy"/>
+  </div></li>
+ </ul>
+ <h4 id="h4__1481337250" data-has-heading-anchor="true">Adding a PDF Form and Mapping its Fields<a href="/articles/cority-user-guide/pdfform/a/h4__1481337250" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/pdfform/a/h4__1481337250&#39;,this);"></a></h4>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Ensure that the PDF has fields drawn on it (using an application such as Acrobat Pro or Nitro Pro). It must include at least one field as well as Save and Delete buttons labelled “save” and “delete” (lowercase) respectively. For example, you may add fields such as “Incident Date” and “Incident Time” to a form; when you import the PDF into the PDFForm table, you can then map fields in the Cority Incident database to the fields in the PDF.</p>
+</li>
+  <p class="BodyLevel2">Since PDF forms do not have a field type for images, if you want to map an image field, include a button field on the PDF for each image (other than save and delete). These will be translated as image type fields when imported to the <a href="/articles/cority-user-guide/pdfform/a/XREF_36665_GXP_2416_PDFForm" onclick="return n(&#39;!cority-user-guide/pdfform/a/XREF_36665_GXP_2416_PDFForm&#39;,this);">PDFForm</a> look-up table.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <b><span class="Bold">New</span></b>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Enter a <i><span class="Emphasis">Code</span>&nbsp;</i>and <i><span class="Emphasis">Description</span> </i>for the form.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <b><span class="Bold">Browse</span>&nbsp;</b>to select the <i><span class="Emphasis">Import File </span></i>PDF.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the <i><span class="Emphasis">Linked Module </span></i>and <i><span class="Emphasis">Language</span></i>.</p>
+</li>
+  <p class="BodyLevel2">When a custom form is selected on a record in the linked module, the mapped fields will display in the language specified here for the PDF form. If a mapped field does not have a translation, the default value for the field will be displayed. If no default value is available, the field will be empty (or null). (This applies to fields with table values, not to free-text fields.)</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the <i><span class="Emphasis">Short Date Style</span>&nbsp;</i>and <i><span class="Emphasis">Time Format </span></i>used in the PDF. </p>
+</li>
+  <p class="Note">PDF forms created prior to release 2018.2 default to dd-MMM-yyyy and must continue to use that format. If you want to use a different date format, clone the form, change the date format, and then save the clone.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">If this form should not be displayed unless explicitly added to a record, select the <i><span class="Emphasis">Form not to show by default</span>&nbsp;</i>checkbox. These forms will be available on the Forms tab of an incident record in the “Available, Not Selected Forms” view.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <b><span class="Bold">Save</span></b>.</p>
+  <div align="left"><img alt="TBL_PDFForm.png" style="margin-top : 5pt; margin-bottom : 10pt; border: Solid 0pt #999999; " id="image101" src="images/TBL_PDFForm.png" loading="lazy"/>
+  </div></li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">The Mapping tab lists all fields defined in the PDF, in the same order as they appear in the import file. Button fields (other than save and delete) are imported as mappable image fields with default name of Image<span style="font-style : italic; "><i>n </i></span>(e.g. Image1, Image2, etc.).</p>
+</li>
+  <p class="BodyLevel2">To map text fields or subqueries:</p>
+  <ul type="disc">
+   <li>
+   <p class="BodyLevel2">To map a field to a Cority&nbsp;field, click <img alt="i_lookup_selector.gif" style="margin-top : 5pt; margin-bottom : 10pt; border: Solid 0pt #999999; " id="image102" src="images/i_lookup_selector.gif" loading="lazy"/>&nbsp;to select the <i><span class="Emphasis">Mapped Field Name</span></i>. The lookup will display all mappable fields from the linked module and its sublists, including questions from the linked module’s questionnaires (except Instruction or Drawn Response question types). It also displays all published subqueries that you have access to. </p>
+</li>
+   <li>
+   <p class="BodyLevel2">To allow a user to enter their own values, select the <i><span class="Emphasis">Data Type</span></i>.</p>
+</li>
+   <li>
+   <p class="BodyLevel2">To have a field pre-populated, enter the <i><span class="Emphasis">Default Value</span></i>.</p>
+</li>
+  </ul>
+  <p class="BodyLevel2">To map image fields:</p>
+  <ul type="disc">
+   <li>
+   <p class="BodyLevel2">To map an image field to a specific image, select “Image” in the <i><span class="Emphasis">Data Type</span>&nbsp;</i>field, then click the add link in the <i><span class="Emphasis">Default Value</span> </i>column to select the image.</p>
+</li>
+   <li>
+   <p class="BodyLevel2">To map an image field to an image-type field in Cority, select the <i><span class="Emphasis">Mapped Field Name</span>&nbsp;</i>and choose from Signature or Photo fields or Draw-type questions.</p>
+   <div align="left"><img alt="TBL_PDFForm_mapping.gif" style="margin-top : 5pt; margin-bottom : 10pt; border: Solid 0pt #999999; " id="image103" src="images/TBL_PDFForm_mapping.gif" loading="lazy"/>
+   </div></li>
+  </ul>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">New PDF forms are marked as <i><span class="Emphasis">Draft</span>&nbsp;</i>initially. After you have uploaded the Import File, linked it to a module, and mapped the fields as required, clear the <i><span class="Emphasis">Draft</span>&nbsp;</i>checkbox on the PDF Form tab to enable the form to be available in the Clinic Visit, Case Management and Incident module (as well as the <a href="/articles/cority-user-guide/jurisdiction/a/XREF_23377_Jurisdictions" onclick="return n(&#39;!cority-user-guide/jurisdiction/a/XREF_23377_Jurisdictions&#39;,this);">Jurisdiction</a> look-up table).</p>
+</li>
+ </ol>
+ <p class="Note">Once the<span class="Emphasis"> <i>Draft</i></span><i>&nbsp;</i>checkbox is cleared, the PDF Form record becomes read-only and cannot be returned to Draft state. You can change the <i><span class="Emphasis">Description</span>&nbsp;</i>only; if you need to make other changes, choose <b><span class="Bold">Actions»Clone</span>&nbsp;</b>to create a copy (you must provide a unique <i><span class="Emphasis">Code</span>&nbsp;</i>and <i><span class="Emphasis">Description</span></i>). You cannot clone Cority-created forms.<br/>You can delete a form only if the form is not being used in any jurisdictions, and no data is saved on the form.</p>
+ <h4 id="h4__200396429" data-has-heading-anchor="true">Importing a Mapped PDF<a href="/articles/cority-user-guide/pdfform/a/h4__200396429" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/pdfform/a/h4__200396429&#39;,this);"></a></h4>
+ <p class="BodyLevel1">When you import an updated (or new) PDF form that contains mapped fields into an existing PDFForm look-up table record, any existing fields along with their mappings will be retained on the Mapping tab. Any new fields will be added to the Mapping tab and any fields that do not exist in the updated/new PDF will be removed from the Mapping tab.</p>
+ <p class="BodyLevel1">An administrator can migrate PDF forms from one environment to another; see <a href="/articles/cority-user-guide/migrating-configurations/a/XREF_57529_GXP_4229_Migrating" onclick="return n(&#39;!cority-user-guide/migrating-configurations/a/XREF_57529_GXP_4229_Migrating&#39;,this);">Migrating Configurations</a>.</p>
+ <p>&nbsp;</p>
+  
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-user-guide/editing-or-creating-an-ad-hoc-report-in-report-writer"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Editing or Creating an Ad Hoc Report in Report Writer</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Editing or Creating an Ad Hoc Report in Report Writer';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-user-guide/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span> 
+ 
+
+<p>&nbsp;</p>
+
+<h3 style="margin-top: 12.000pt; margin-bottom: 0.000pt;" id="h3_316913220" data-has-heading-anchor="true"><a name="IX_adding_ad_hoc_reports_to_1"></a><a name="IX_creating_4"></a><a name="IX_creating_3"></a><a name="IX_creating_ad_hoc_1"></a><a name="IX_creating_ad_hoc_queries_1"></a><a name="XREF_59509_Editing_or"></a>Editing 
+ or Creating an Ad Hoc Report in Report Writer<a href="/articles/cority-user-guide/editing-or-creating-an-ad-hoc-report-in-report-writer/a/h3_316913220" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-user-guide/editing-or-creating-an-ad-hoc-report-in-report-writer/a/h3_316913220&#39;,this);"></a></h3>
+<p class="Note" style="margin-top: 0.000pt; margin-bottom: 6.000pt;">The 
+ Query Builder is an intuitive interface that replaces the Report Writer, 
+ which will eventually be removed from the Cority application. In the interim, 
+ you can use either module and any queries/reports will appear in both. 
+ For more information, see <a href="/articles/cority-user-guide/editing-or-creating-an-ad-hoc-report-in-query-builder/a/XREF_90431_Editing_or" onclick="return n(&#39;!cority-user-guide/editing-or-creating-an-ad-hoc-report-in-query-builder/a/XREF_90431_Editing_or&#39;,this);">Editing 
+ or Creating an Ad Hoc Report in Query Builder</a>.</p>
+<ol start="1">
+	<li style="list-style: decimal;"><p class="BodyLevel1">In the Business 
+	 Intelligence menu, click<span class="Bold"> <b>Report Writer</b></span>. 
+	 </p></li>
+	<li style="list-style: decimal;"><p class="BodyLevel1">Click a link 
+	 to edit an existing custom report, or click <b><span class="Bold">New</span></b>.</p></li>
+	<p class="Note" style="margin-top: 3.000pt; margin-bottom: 3.000pt;">Only 
+	 the author, and users granted appropriate permission, may edit or 
+	 delete custom reports. If you do not have such permission and make 
+	 any changes to a custom report, when you save you are prompted to 
+	 enter a different report name. Alternatively, you can create an exact 
+	 copy of the report with “Copy” at the end of the report name, as described 
+	 in <a href="/articles/cority-user-guide/using-existing-ad-hoc-reports/a/XREF_98893_Using_Existing_Ad" onclick="return n(&#39;!cority-user-guide/using-existing-ad-hoc-reports/a/XREF_98893_Using_Existing_Ad&#39;,this);">Using 
+	 Existing Ad Hoc Reports</a>.<br/>
+	The <i><span class="Emphasis">Dependent Objects</span>&nbsp;</i>field on the 
+	 Details tab lists all object types (e.g. business rule, letter template, 
+	 dashboard views, custom metrics, etc.) that reference the report. 
+	 Each object type is a clickable link that allows you to open the the 
+	 object to unlink or modify it before editing or deleting the report. 
+	 If the object is another Report Writer report, it will appear in the 
+	 <i><span class="Emphasis">Dependent Objects</span>&nbsp;</i>list only if 
+	 you are permitted to view it.</p>
+	<p class="Note">To export a report’s configuration as a JSON file, 
+	 choose <b><span class="Bold">Actions»Export Report Configurations</span></b>. 
+	 Conversely, you can import a JSON file to create a report. An administrator 
+	 can migrate reports from one environment to another; see <a href="/articles/cority-user-guide/migrating-configurations/a/XREF_57529_GXP_4229_Migrating" onclick="return n(&#39;!cority-user-guide/migrating-configurations/a/XREF_57529_GXP_4229_Migrating&#39;,this);">Migrating 
+	 Configurations</a>. All reports will be created as new records</p>
+	<li style="list-style: decimal;"><p class="BodyLevel1">On the Details 
+	 tab, enter the following information:</p>
+	<div style="text-align: left;">
+		<img alt="RPTwriter_details.gif" id="image65" src="images/RPTwriter_details.gif" style="margin-top: 5pt; margin-bottom: 10pt; border: Solid 0pt #999999;" border="0" loading="lazy"/> 
+	</div></li>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">Enter a <i><span class="Emphasis">Name</span> </i>
+		 for the report.</p></li>
+		<li><p class="BodyLevel2">Select the <i><span class="Emphasis">Entity 
+		 Type</span></i>, then select the <i><span class="Emphasis">Entity</span></i>, 
+		 that the report will be based on. The entities are the tables 
+		 or subqueries that the data will be pulled from.<br/><span style="font-size: 10pt;">If you have appropriate permissions, you may 
+	 specify multiple entities to combine data. </span><span style="font-size: 10pt; font-style: italic; font-weight: bold;">System 
+	 performance will be affected if you make a large report that joins 
+	 many entities. </span><span style="font-size: 10pt;">Select the additional </span><i><span class="Emphasis">Entity</span></i><span style="font-size: 10pt;">, 
+	 then identify what fields should be matched to be included in the 
+	 query. First select the </span><i><span class="Emphasis">Child Matching Fields</span></i><span style="font-size: 10pt;">; 
+	 that is, one or more fields from the additional entity you just added. 
+	 Then select the </span><i><span class="Emphasis">Parent Matching Field</span></i><span style="font-size: 10pt;">; 
+	 that is, one or more fields from any entity above the entity you just 
+	 added. For each child entity, indicate if all parent records should 
+	 be included or only matching records.<br/></span><span style="font-size: 10pt;">For example, to create a report that presents 
+	 lost and restricted work days, add the IncidentOshaCountsCubeByMonthTemp 
+	 and Case Master entities, then join them using the Case ID for the 
+	 Parent Matching Field.</span></p></li>
+	</ul>
+	<p class="Note">If you change the <i><span class="Emphasis">Entity</span>&nbsp;</i>of 
+	 a previously saved report, settings on the remaining tabs will be 
+	 cleared. If you change only the <i><span class="Emphasis">Child Matching 
+	 Field</span>&nbsp;</i>or <i><span class="Emphasis">Parent Matching Field</span></i>, 
+	 the Field Selection and Criteria tabs will retain their selections.</p>
+	<p class="Note">If you are creating a subquery that will be joined 
+	 with another subquery in a new report but there is no common field 
+	 to join them, create an “Arithmetic” field with a value of 1 in each 
+	 subquery.</p>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">Indicate if you want to <i><span class="Emphasis">Disable 
+		 Site Security</span></i>, e.g. for summary reports or if the report 
+		 does not contain sensitive information. This also applies to the 
+		 regular and Advanced Dashboard; exported Query Builder and Report 
+		 Writer reports; subqueries used in reports, letters, and business 
+		 rules; OData; and the Report Writer Utility. <br/>
+		If this checkbox is selected, site security is not applied to 
+		 any entities.<br/>
+		If not selected, site security will apply only to the main entity 
+		 selected. </p></li>
+	</ul>
+	<p class="Note">For reports that were created prior to 2018.3, the 
+	 checkbox will be unselected. If a report is used as a subquery in 
+	 another report, the data in each report will be filtered according 
+	 to their respective Site Security settings.</p>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">Indicate if this query is to create a 
+		 <i><span class="Emphasis">Distribution List</span>&nbsp;</i>for use in 
+		 scheduled reports or Business Rule Email Actions. </p></li>
+		<li><p class="BodyLevel2">If this query will be used in a business 
+		 rule, letter template, custom measure or other report, select 
+		 the <i><span class="Emphasis">Subquery</span>&nbsp;</i>checkbox. This 
+		 will help minimize the risk of a user editing or deleting the 
+		 report and breaking other workflows that use it. A subquery cannot 
+		 be deleted if it is in use; the association must be removed first.<br/><span style="font-size: 10pt;">If you want to filter the subquery by a field 
+	 value that is not in the main source entity on the Details tab, select 
+	 the </span><i><span class="Emphasis">Filter Entity</span></i><span style="font-size: 10pt;">. Then on the Criteria 
+	 tab add a filter (for an integer, number or string field type), select 
+	 the “Is Filtered By” operator and select a field from the </span><i><span class="Emphasis">Filter 
+	 Entity</span></i><span style="font-size: 10pt;">. A business rule configured to trigger on condition 
+	 of this subquery will fire only for the configured field filter. (</span><span style="font-size: 10pt; font-weight: bold;">Note:</span><span style="font-size: 10pt;">&nbsp;The data preview on the 
+	 Data tab will show the data unfiltered by this condition because the 
+	 report won't be filtered by that condition until the business rule 
+	 is triggered.)</span></p></li>
+	</ul>
+	<p class="Note">When a Report Writer report uses a subquery, that report 
+	 cannot be used as a subquery in another report. When a report is being 
+	 used as a subquery, that report cannot be edited.</p>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">If you want other users to be able to 
+		 use this report (and you have the appropriate permission), select 
+		 <i><span class="Emphasis">Publish Report</span></i>. The report is added 
+		 to the list of standard reports available by module (linked to 
+		 the module associated with the Selected Entity). Users can modify 
+		 the report criteria without saving their criteria changes or save 
+		 it as a new query. See <a href="/articles/cority-user-guide/generating-standard-reports/a/XREF_89282_Generating" onclick="return n(&#39;!cority-user-guide/generating-standard-reports/a/XREF_89282_Generating&#39;,this);">Generating 
+		 Standard Reports</a>. <br/>
+		The original ad hoc report is also still available in the User 
+		 Reports list. The user who created the report can change the criteria 
+		 which will be reflected in the published report. Other users can 
+		 open a shared report and run it with different criteria without 
+		 saving it as a new query.<br/>
+		To remove a published report from the standard Reports list, clear 
+		 <i><span class="Emphasis">Publish Report</span></i>. You cannot delete 
+		 an ad hoc report that has been published; you must clear <i>Publish 
+		 Report </i>first.</p></li>
+	</ul>
+	<li style="list-style: decimal;"><p class="BodyLevel1">On the Fields 
+	 Selection tab, select the fields that you want to include on the report:</p>
+	<div style="text-align: left;">
+		<img alt="RPTwriter_fields.gif" id="image66" src="images/RPTwriter_fields.gif" style="margin-top: 5pt; margin-bottom: 10pt; border: Solid 0pt #999999;" border="0" loading="lazy"/> 
+	</div></li>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">Click the “add” icon <img alt="i_inline_multi_select00018.gif" id="image67" src="images/i_inline_multi_select00018.gif" style="margin-top: 5pt; 
+															 margin-bottom: 10pt; 
+															 border: Solid 0pt #999999;" border="0" loading="lazy"/>&nbsp;(see 
+		 <a href="/articles/cority-user-guide/data-entry-conventions/a/XREF_95354_Adding_New_Records" onclick="return n(&#39;!cority-user-guide/data-entry-conventions/a/XREF_95354_Adding_New_Records&#39;,this);">Adding 
+		 New Records</a>).</p></li>
+		<li><p class="BodyLevel2">From the list of available fields (according 
+		 to the entity table(s) selected on the Details tab), select the 
+		 required field(s), then click <b><span class="Bold">Finish</span></b>. 
+		 You are limited to 100 fields (including calculated fields) to 
+		 ensure that server performance is not negatively impacted.</p></li>
+		<li><p class="BodyLevel2">The <i><span class="Emphasis">Field Name</span>&nbsp;</i>is 
+		 prefixed with the name of the associated entity; to use a shorter 
+		 or more user-friendly name, select the field and click <b><span class="Bold">Edit</span></b>, 
+		 then enter the <i><span class="Emphasis">Field Alias</span></i>. The 
+		 new name appears on outputs and on the Visual tab (<i><span class="Emphasis">Select 
+		 Field to Graph</span> </i>list).</p></li>
+		<li><p class="BodyLevel2">To specify the fields to be aggregated, 
+		 select the field(s) and click <b><span class="Bold">Edit</span></b>, 
+		 then select the <i><span class="Emphasis">Aggregation</span> </i>type; 
+		 the options vary depending if the field is numeric, Boolean, or 
+		 neither.<br/>
+		If an aggregation type is defined for at least one field, data 
+		 is grouped by the remaining fields that do not have an aggregation 
+		 type defined. If no aggregation type is defined for any of the 
+		 fields, data is not grouped.</p></li>
+		<li><p class="BodyLevel2">Fields appear on the report according 
+		 to the Sequence number, which is initially set according to the 
+		 order they were added. To change the field order, use the arrows 
+		 to move fields up or down; the Sequence numbers are updated to 
+		 reflect the order of the fields shown.</p></li>
+	</ul>
+	<p class="Note">If you are creating a Distribution List of <br/>
+	- employees: one of the columns must be Employee #<br/>
+	- Cority users: 
+	 one of the columns must be Login Name<br/>
+	- email addresses: one of the columns must be Email Address.</p>
+	<p class="Note">If you are creating a subquery for use in a custom 
+	 measure:<br/>
+	- the first column must be a number field (e.g. Amount)<br/>
+	- the second column must be a date/time field<br/>
+	- subsequent columns must be the GDDLOFB ID fields, in that order)<br/>
+	Note that the Subquery field is not available on default custom measure 
+	 layouts.</p>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">You can create a field that applies a 
+		 calculation to one or more other fields. For example, if you want 
+		 to monitor that corrective actions are verified in a timely manner 
+		 after completion, you can create a field that calculates the number 
+		 of days between those two dates. While the fields in the calculation 
+		 do not have to be included in the Field Selection, a calculation 
+		 field can be used by another calculation field (as long as the 
+		 output type of the first field matches the required input type 
+		 of the field using it). To create a calculated field, click <img alt="i_calculation.gif" id="image68" src="images/i_calculation.gif" style="margin-top: 5pt; 
+		 margin-bottom: 10pt; border: Solid 0pt #999999;" border="0" loading="lazy"/>&nbsp;and 
+		 select the <i><span class="Emphasis">Calculation</span> </i>type:&nbsp;</p>
+		<div style="text-align: left;">
+			<img alt="RPTwriter_fields_calculation.gif" id="image69" src="images/RPTwriter_fields_calculation.gif" style="margin-top: 5pt; margin-bottom: 10pt; border: Solid 0pt #999999;" border="0" loading="lazy"/> 
+		</div></li>
+		<ul><li><p class="BodyLevel3">Date Component Name, Date Component Number 
+		 - Pull the name or number of a component of a selected date field. 
+		 For example, the name of the month or day, or various number options 
+		 such as the calendar year/quarter/month, etc., day of year/week, 
+		 hour or minute.</p></li>
+		<li><p class="BodyLevel3">Date Differential - Calculate the amount 
+		 of time between two dates, which can be hard dates selected from 
+		 a calendar or any date field in the selected data table.</p></li>
+		<li><p class="BodyLevel3">Time Differential - Calculate the amount 
+		 of time between any two time or date/time fields in the system. 
+		 There are several fields available for this calculation that are 
+		 not included in form layouts; for example, TreatmentDateTime combines 
+		 the Treatment Date and Treatment Time.</p></li>
+		<li><p class="BodyLevel3">Accumulation - Calculate the cumulative 
+		 statistical values for a selected number field; you cannot specify 
+		 another Accumulation field, the Count Distinct aggregator, or 
+		 a calculation field that always returns the same value (e.g. a 
+		 datediff between two constant dates).</p></li>
+		<li><p class="BodyLevel3">Arithmetic - Perform a calculation using 
+		 the specified arithmetic formula. If you want the calculation 
+		 to be performed after the data for the field has been aggregated, 
+		 select the <i><span class="Emphasis">After Aggregation </span></i>check 
+		 box. If the checkbox is selected:<br/>
+		- The calculation cannot be selected as a field in the Concatenate 
+		 Columns, Concatenate Rows, or Categorize calculations.<br/>
+		- If the calculation is then used by another field in the report, 
+		 the <i><span class="Emphasis">After Aggregation</span>&nbsp;</i>check 
+		 box becomes disabled and cannot be deselected. <br/>
+		- You can add the calculation to the Criteria tab only in the “Criteria 
+		 (after aggregation)” section.</p></li>
+		<li><p class="BodyLevel3">Round - Round a selected number field 
+		 to the specified number of decimal places.</p></li>
+		<li><p class="BodyLevel3">Concatenate Columns - Combine values 
+		 from two or more fields into a single string, with each value 
+		 separated by a user-defined delimiter such as a comma or semicolon. 
+		 For example, combine the separate Street, City, Province, Postal 
+		 Code fields into a single Address field.</p></li>
+		<li><p class="BodyLevel3">Concatenate Rows - Combine values from 
+		 a given field into a single string, with each value separated 
+		 by a user-defined delimiter such as a comma or semicolon. For 
+		 example, you might want one row for each case that includes a 
+		 field showing all activities, rather than having a separate row 
+		 for each activity.</p></li>
+		<li><p class="BodyLevel3">Categorize - Define how a particular 
+		 field’s values will be categorized: either as a fixed output value 
+		 or as a selected field. For example, you can choose to categorize 
+		 all employee diagnoses that use an ICD-9 medical code as “ICD-9”, 
+		 and everything else display the proper medical code description. 
+		 You can also use this calculation field to group medical conditions 
+		 by major diagnoses; for example group all diagnoses that are (for 
+		 example) equal to, or less than, or not equal to a particular 
+		 medical code:</p>
+		<div style="text-align: left;">
+			<img alt="RPTwriter_fields_calculation_categorize00019.gif" id="image70" src="images/RPTwriter_fields_calculation_categorize00019.gif" style="margin-top: 5pt; margin-bottom: 10pt; border: Solid 0pt #999999;" border="0" loading="lazy"/> 
+		</div></li>
+		<li><p class="BodyLevel3">Convert to Number - convert the values 
+		 of the selected text field to numeric values (integers or decimals) 
+		 so that they can be used in other calculations.</p></li></ul>
+	</ul>
+	<p class="BodyLevel3">The calculation field is added to the Field Selection 
+	 list, hyperlinked to allow for editing. Calculation fields are treated 
+	 the same as other fields in Report Writer queries (e.g. as criterion, 
+	 for selection in visualization, included in the dashboard, etc.). 
+	 If a calculated field is edited or deleted, any criteria (on the Criteria 
+	 tab) that uses the calculated field will be deleted automatically 
+	 from the report. </p>
+	<p class="Note">Calculation fields inherit the security configured 
+	 for the fields used to create them. For example, a user will not be 
+	 able to view data generated by a calculation field if the field was 
+	 created using another field that is prohibited from the user.<br/>
+	If a field is prohibited from a role, any calculated fields that are 
+	 based on that field will not be available on the Criteria tab. If 
+	 a report has a calculated field that is based on a prohibited field, 
+	 the value of the calculated field will be masked using the “XXXX” 
+	 format.</p>
+	<li style="list-style: decimal;"><p class="BodyLevel1">On the Criteria 
+	 tab, define how the data should be filtered, sorted, grouped, and 
+	 how/if totals will be included.</p>
+	<div style="text-align: left;">
+		<img alt="RPTwriter_criteria.gif" id="image71" src="images/RPTwriter_criteria.gif" style="margin-top: 5pt; margin-bottom: 10pt; border: Solid 0pt #999999;" border="0" loading="lazy"/> 
+	</div></li>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">In the Criteria section, define your 
+		 filters. The available fields depend on the entity table selected 
+		 on the Details tab. For more information, see <a href="/articles/cority-user-guide/data-entry-conventions/a/XREF_71181_Filtering_Records" onclick="return n(&#39;!cority-user-guide/data-entry-conventions/a/XREF_71181_Filtering_Records&#39;,this);">Filtering 
+		 Records</a>. If you choose a tree field, you can choose a node 
+		 from either the current tree or a historical tree (select the 
+		 date). You can optionally choose the fields but leave the filters 
+		 empty to allow end users to enter their own values.<br/><span style="font-size: 10pt;">In the Criteria (after aggregation) section, 
+	 define filters for any fields identified (on the Fields Selection 
+	 tab) with an aggregation type.<br/></span><span style="font-size: 10pt;">Anything configured in the Criteria section will 
+	 be applied to the report query before any aggregation and associated 
+	 grouping is performed. Anything configured in the Criteria (after 
+	 aggregation) section will be applied after any aggregation and associated 
+	 grouping is performed.<br/></span><span style="font-size: 10pt;">If this is a subquery and you want to filter 
+	 by a field value that is not in the main source entity, select the 
+	 </span><i><span class="Emphasis">Filter Entity</span></i><span style="font-size: 10pt;">&nbsp;on the Details tab, 
+	 then on the Criteria tab add a filter (for an integer, number or string 
+	 field type), select the “Is Filtered By” operator and select a field 
+	 from the <i>Filter Entity</i>.</span></p></li>
+	</ul>
+	<p class="Note">If you are defining a subquery for use in a <a href="/articles/cority-user-guide/letterstemplate/a/XREF_49671_Letter_Templates" onclick="return n(&#39;!cority-user-guide/letterstemplate/a/XREF_49671_Letter_Templates&#39;,this);">LettersTemplate</a>, 
+	 you can limit the letter to only include data related to the record 
+	 the letter is sent from. In the Criteria section, select a field that 
+	 ends in “ID”, then in the operator field beside it, select “Equals 
+	 Main Record ID”. Note that no data will be shown on the Data tab because 
+	 it must be generated from a record in the application.</p>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">Select the field (from the Fields Selection 
+		 tab) the report should sort on, and the sort order. This sort 
+		 order also applies to data points selected for graphs unless a 
+		 specific Field to Sort and sort order is defined on the Visual 
+		 tab.</p></li>
+		<li><p class="BodyLevel2">Optionally, to limit the amount of data 
+		 that is returned, enter a number in the <i><span class="Emphasis">Row 
+		 Limit</span>&nbsp;</i>field and select either <i><span class="Emphasis">Rows</span>&nbsp;</i>or 
+		 <i><span class="Emphasis">Percent</span></i>. For example: if you set 
+		 a row limit of 50% on a report that would normally return 200 
+		 rows, the report will return only the first or last 100 rows (depending 
+		 on the ascending/descending Sorting criteria). If you select <i><span class="Emphasis">Include Ties</span>&nbsp;</i>and the last row returned 
+		 has ties, those rows will also be included in the report.<br/><span style="font-size: 10pt;">The row limit is applied after data is aggregated 
+	 and grouped, and will be applied wherever the report is used (e.g. 
+	 in Report Scheduler, Dashboard indicators, etc.). The Row Limit overrides 
+	 the default Dashboard data point limit of 12.</span></p></li>
+	</ul>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">Optionally, choose any field(s) to group 
+		 the report by (for best performance, only choose one grouping). 
+		 For each grouping, select either:</p></li>
+		<ul><li><p class="BodyLevel3" style="margin-top: 0.000pt; margin-bottom: 0.000pt;"><i><span class="Emphasis">Display Record Count</span>&nbsp;</i>(shows the number 
+		 of records in that group, beside each group name) <span style="font-style: italic;">or</span></p></li>
+		<li><p class="BodyLevel3" style="margin-top: 0.000pt;"><i><span class="Emphasis">Display 
+		 Sum of Columns</span>&nbsp;</i>(choose the column to sum, shows the 
+		 group sum in the last line of each group).</p></li></ul>
+		<li><p class="BodyLevel2">Optionally, indicate if totals and sums 
+		 should be displayed for the entire report:</p></li>
+		<ul><li><p class="BodyLevel3"><i><span class="Emphasis">Display Report 
+		 Count Total</span>&nbsp;</i>(shows the total number of records for 
+		 the entire report above the report column headers)</p></li>
+		<li><p class="BodyLevel3"><i><span class="Emphasis">Display Report 
+		 Column Sums</span>&nbsp;</i>(choose the column to sum, shows the grand 
+		 total sum in the last line of the report).</p></li></ul>
+	</ul>
+	<li style="list-style: decimal;"><p class="BodyLevel1">On the Formatting 
+	 tab, indicate whether to include the <i><span class="Emphasis">Company 
+	 Name</span></i>, the <i><span class="Emphasis">Report Confidentiality Statement</span></i>, 
+	 and/or the <i><span class="Emphasis">Company Logo</span>&nbsp;</i>(as defined 
+	 in the system settings of the same names). </p></li>
+	<p class="BodyLevel2">Optionally, enter any further information to 
+	 appear in the <i><span class="Emphasis">Page Header</span></i>; this will 
+	 appear above the report title but below the company logo.</p>
+	<div style="text-align: left;">
+		<img alt="RPT_formatting.gif" id="image72" src="images/RPT_formatting.gif" style="margin-top: 5pt; margin-bottom: 10pt; border: Solid 0pt #999999;" border="0" loading="lazy"/> 
+	</div>
+	<li style="list-style: decimal;"><p class="BodyLevel1">To see the records 
+	 that match the criteria specified, click the Data tab.</p>
+	<div style="text-align: left;">
+		<img alt="RPTwriter_data.gif" id="image73" src="images/RPTwriter_data.gif" style="margin-top: 5pt; margin-bottom: 10pt; border: Solid 0pt #999999;" border="0" loading="lazy"/> 
+	</div></li>
+	<p class="Note">Numeric field values use the format specified in the 
+	 Number Style system setting, with the following exceptions:<br/>
+	- For aggregation types Average, Standard Deviation, Standard Deviation 
+	 Population, Variance, Variance Population, Percent of Total (Count), 
+	 Percent of Total (Sum), Sum, Minimum, and Maximum, the resulting values 
+	 will have a maximum of six decimal places. <br/>
+	- For Count and Count Distinct aggregations, the resulting values will 
+	 be formatted as whole numbers.<br/>
+	- If the report is exported to CSV or Excel, any aggregation values 
+	 will be formatted as raw numbers.</p>
+	<p class="Note">Data may be hidden based on your role and security 
+	 privileges.</p>
+	<li style="list-style: decimal;"><p class="BodyLevel1">To view the 
+	 data for any of the selected fields in visual form, click the Visual 
+	 tab and select the presentation <i><span class="Emphasis">Type</span></i>.</p></li>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">To have the data appear in the Dashboard 
+		 as an interactive table, select Table as the <i><span class="Emphasis">Type</span></i>. 
+		 The table will be organized according to the options selected 
+		 on the Criteria tab. </p></li>
+		<li><p class="BodyLevel2">For the “standard” chart types (bar, 
+		 line, area, point, pie), select which <i><span class="Emphasis">Field 
+		 to Graph/Drill</span></i>. A chart can have multiple drill-down levels; 
+		 the drill-down order is determined by the order in this list. 
+		 To add, remove, or reorder fields, click <img alt="i_inline_multi_select00020.gif" id="image74" src="images/i_inline_multi_select00020.gif" style="margin-top: 5pt; 
+														 margin-bottom: 10pt; 
+														 border: Solid 0pt #999999;" border="0" loading="lazy"/>. 
+		 The selection list does not include any fields that have an aggregation 
+		 type. <br/>
+		If an enum field is selected as the <i><span class="Emphasis">Field 
+		 to Graph/Drill</span></i>, then the enum values are displayed (instead 
+		 of the corresponding numeric values) on the indicator's x-axis 
+		 and tooltip.</p></li>
+		<li><p class="BodyLevel2">For charts only: Select the <i><span class="Emphasis">Value 
+		 to Graph</span></i>: &nbsp;either a simple Count of Records or any 
+		 field defined with an aggregation type that results in a numeric 
+		 value (Count, Sum, Average, Percent Sum, Percent Count, any Standard 
+		 Deviation, or any Variance). For single-value visualization types 
+		 (Radial Gauge, Circular, Number Only), if the query returns more 
+		 than one value, the indicator will use the first one returned.</p></li>
+	</ul>
+	<p class="Note">For the “standard” chart types, the chart will use 
+	 the first <i><span class="Emphasis">Field to Graph/Drill</span>&nbsp;</i>field 
+	 for the x coordinates and the <i><span class="Emphasis">Value to Graph</span>&nbsp;</i>for 
+	 its y coordinates. That is, the query will group by the <i><span class="Emphasis">Field 
+	 to Graph</span></i>, and aggregate by the <i><span class="Emphasis">Value 
+	 to Graph</span>&nbsp;</i>according to the aggregation type specified. 
+	 If the user drills down on a data point, it will filter by the value 
+	 of that data point and then group by the next field in the <i><span class="Emphasis">Field 
+	 to Graph/Drill</span> </i>field.<br/>
+	For Pie charts, each slice will represent a distinct <i><span class="Emphasis">Field 
+	 to Graph</span></i>&nbsp;value, and the value of each slice will be generated 
+	 according to what is selected for the <i><span class="Emphasis">Value 
+	 to Graph</span></i>. </p>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">For the “standard” chart types, optionally 
+		 select a <i><span class="Emphasis">Field to Sort</span>&nbsp;</i>by and 
+		 indicate if it should sort <i><span class="Emphasis">Ascending</span> </i>
+		 or<span class="Emphasis"> <i>Descending</i></span><i>&nbsp;</i>(this overrides 
+		 any sort order indicated on the Criteria tab. This field does 
+		 not have to be used in the chart. For example, if you are showing 
+		 data by month, you want to sort it by month number, not by month 
+		 name. If no <i><span class="Emphasis">Field to Sort </span></i>is selected, 
+		 the chart will sort data by the <i><span class="Emphasis">Field to 
+		 Graph </span></i>selection.</p></li>
+	</ul>
+	<p class="Note">If the selected <i><span class="Emphasis">Field to Sort</span>&nbsp;</i>does 
+	 not have an aggregation type or associated grouping, the chart will 
+	 group data by the <i><span class="Emphasis">Field to Sort</span></i>, which 
+	 may result in what appears to be duplicate entries in the chart.</p>
+	<ul style="list-style: disc;">
+		<li><p class="BodyLevel2">Specify how (or if) <i><span class="Emphasis">Records 
+		 will</span>&nbsp;</i>open from the Dashboard. This applies to tables 
+		 and “standard” chart types at the lowest drill-down level. For 
+		 records opened from charts, you can select which entity to open 
+		 records from (the <span class="Emphasis">From</span>&nbsp;field 
+		 only lists entities that have an associated layout). For example, 
+		 if the report includes Case Master and Clinic Visit data, you 
+		 can specify whether the case record or the clinic visit record 
+		 would open.</p></li>
+		<li><p class="BodyLevel2">For Radial Gauge charts, enter the <i><span class="Emphasis">Maximum Value on Gauge</span></i>. </p></li>
+		<li><p class="BodyLevel2">For Circular charts, indicate if the 
+		 <i><span class="Emphasis">Maximum Value on Gauge</span>&nbsp;</i>value 
+		 is a static number (and enter the number) or the total of a specified 
+		 aggregate field. You can also define how color ranges are depicted 
+		 in dashboard indicators: select the measure to be used for the 
+		 upper and lower boundaries (can be the same or different) and 
+		 the colors to represent where the data falls in relation to those 
+		 ranges.</p></li>
+		<li><p class="BodyLevel2">For the “standard” chart types (bar, 
+		 line, area, or point), enter the minimum and maximum values to 
+		 be shown on the X and Y axes. For this functionality to work as 
+		 expected for an x-axis on a dashboard, you must use Advanced Dashboard 
+		 and define a numeric field to graph for your x-axis.</p></li>
+		<li><p class="BodyLevel2">If you want to include the chart or table 
+		 on your Dashboard, enter a <i><span class="Emphasis">Dashboard Indicator 
+		 Name</span>&nbsp;</i>and click <b><span class="Bold">Create/Update Dashboard 
+		 Indicator</span></b>. For more information, see <a href="/articles/cority-user-guide/using-the-dashboards/a/XREF_13339_Setting_Up_the" onclick="return n(&#39;!cority-user-guide/using-the-dashboards/a/XREF_13339_Setting_Up_the&#39;,this);">Using 
+		 the Dashboards</a>.</p></li>
+		<li><p class="BodyLevel2">The dashboard indicator will reflect 
+		 the Criteria tab. If you want to allow dashboard users to add 
+		 or modify criteria, select an option in the <i><span class="Emphasis">Dashboard 
+		 Filtering </span></i>field:</p></li>
+		<ul><li><p class="BodyLevel3">Disabled prevents any further filtering 
+		 on the indicator.</p></li>
+		<li><p class="BodyLevel3">Enabled For Adding Criteria Only locks 
+		 the query criteria from view but allows users to add additional 
+		 criteria fields.</p></li>
+		<li><p class="BodyLevel3">Enabled For Adding and Modifying Criteria 
+		 allows users to view and modify the query criteria as well as 
+		 add additional criteria fields.</p></li></ul>
+	</ul>
+	<p class="Note">“Circular” and “Number Only” types can be added to 
+	 the Advanced Dashboard only. </p>
+	<p class="Note">The “Injuries by Part of Body” report uses a “BodyMap” 
+	 type that allows the data to be viewed as a heat map on this tab or 
+	 in a dashboard indicator. For more information, see <a href="/articles/cority-user-guide/incident-reports/a/XREF_81325_GXPIII_121" onclick="return n(&#39;!cority-user-guide/incident-reports/a/XREF_81325_GXPIII_121&#39;,this);">Monitoring 
+	 Injuries by Part of Body on a Heat Map</a>.</p>
+	<li style="list-style: decimal;"><p class="BodyLevel1">If you want 
+	 to save the report template for future queries, click <b><span class="Bold">Save</span></b>. 
+	 Saved queries can be scheduled for recurring generation; see <a href="/articles/cority-user-guide/scheduling-reports/a/XREF_11696_Scheduling_Reports" onclick="return n(&#39;!cority-user-guide/scheduling-reports/a/XREF_11696_Scheduling_Reports&#39;,this);">Scheduling 
+	 Reports</a>.</p></li>
+	<li style="list-style: decimal;"><p class="BodyLevel1">Optionally, 
+	 do one of the following:</p></li>
+</ol>
+<ul style="list-style: disc; margin-left: 40px;">
+	<li><p class="BodyLevel2">To send the report via email, choose <b><span class="Bold">Actions»Email</span></b>. Change any of the message fields 
+	 as required. The report is attached as a PDF. Note that the PDF will 
+	 be limited to 10,000 rows/records.</p></li>
+	<li><p class="BodyLevel2">To export the content to a spreadsheet, choose 
+	 <b><span class="Bold">Actions»Export to Excel</span></b>. You are prompted 
+	 to identify the file name and location. </p></li>
+	<li><p class="BodyLevel2">To export the content to a CSV file, choose 
+	 <b><span class="Bold">Actions»Export to CSV</span></b>. You are prompted 
+	 to select a delimiter (used to separate the data values) and, optionally, 
+	 a qualifier (used to indicate the beginning and end of each data value). 
+	 The delimiter and qualifier must be one character only (Tab and Space 
+	 are accepted). Note: The character used for the qualifier should never 
+	 appear within the data values themselves. Click <b><span class="Bold">Export</span></b>.</p></li>
+	<li><p class="BodyLevel2">To save a PDF version of this report to print 
+	 later, choose <b><span class="Bold">Actions»Export to PDF</span></b>. When 
+	 the PDF opens, choose the print or save function as required. Note 
+	 that exports to PDF are limited to 10,000 rows/records.</p></li>
+</ul>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>
