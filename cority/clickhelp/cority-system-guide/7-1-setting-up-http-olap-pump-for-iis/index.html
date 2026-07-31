@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-system-guide/7-1-setting-up-http-olap-pump-for-iis"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>7.1 Setting up HTTP OLAP pump for IIS</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='7.1 Setting up HTTP OLAP pump for IIS';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-system-guide/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2__48562727">
+			<a id="_Toc53424191"></a></h2>
+		<h1 id="h1__48562727" data-has-heading-anchor="true">7.1 Setting up HTTP OLAP pump for IIS<a href="/articles/cority-system-guide/7-1-setting-up-http-olap-pump-for-iis/a/h1__48562727" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-system-guide/7-1-setting-up-http-olap-pump-for-iis/a/h1__48562727&#39;,this);"></a></h1><p>Cority communicates with the Analysis Service through IIS HTTP OLAP pump. Please refer to the following guide for the Microsoft portion of the OLAP pump setup:</p><table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse;" class="CHTable">
+			<tbody><tr>
+				<td valign="top" width="166" style="border-top: none; border-right: 1pt #C4BD97 solid; border-bottom: none; border-left: none;"><p>IIS 7.0/7.5</p><p>Windows 7</p><p>Windows Server 2008</p><p>Windows Server 2008 R2</p></td><td valign="top" width="435" style="border-top: none; border-right: none; border-bottom: none; border-left: 1pt #C4BD97 solid;">http://msdn.microsoft.com/en-us/library/gg492140.aspx</td></tr>
+		</tbody></table>
+		<p class="Note">Depending on your security configuration, your domain account might need to be granted specific policies. For example, if your organization is using Windows authentication for SSAS and SSAS is configured on a server other than the one that is hosting the OLAP pump on IIS (web server), then ideally the domain account is able to communicate with both SSAS and the web server; for that domain account to be able to trigger certain calls while running the OLAP application pool, it will need to be granted ‘Log on as a batch job’ from the Local Security Policy manager or be part of a group that has that policy granted.</p><p>After completing the Microsoft portion of the OLAP pump setup, proceed with the following steps:</p><p> </p><ol start="1">
+			<li>The guide describes a few types of authentication. Enable Anonymous Authentication and check “Application pool identity”.</li></ol>
+		<p><img src="images/7-1-setting-up-http-olap-pump-for-iis-img0001.png" width="397" height="232" alt="" style="border-width: 0px;" loading="lazy"/></p><ol start="2">
+			<li>Adjust the SessionTimeout parameter of the Msmdpump.ini file, as described in the guide, to 7200.</li><li>Write down the anonymous user name (IUSR_&lt;computername&gt;). This will be useful in the steps that follow.</li></ol>
+		<p>To make sure that the HTTP pump is set up correctly, go to a browser without security-enhancement (not IE in Windows Servers) and try accessing the URL for the msmdpump.dll. You should not see “Page not found” or an internal error. If you see an XML message similar to the following, you have successfully set up the HTTP pump. </p><p><img src="images/7-1-setting-up-http-olap-pump-for-iis-img0002.png" width="624" height="275" alt="" style="border-width: 0px;" loading="lazy"/><a id="_7.2_Permitting_communication"></a><a id="_Toc53424192"></a></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

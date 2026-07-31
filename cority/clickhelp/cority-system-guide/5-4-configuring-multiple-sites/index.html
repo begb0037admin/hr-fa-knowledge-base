@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-system-guide/5-4-configuring-multiple-sites"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>5.4 Configuring Multiple Sites</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='5.4 Configuring Multiple Sites';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-system-guide/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2_1138867984">
+			<a id="_Toc53424170"></a></h2>
+		<h1 id="h1_1138867984" data-has-heading-anchor="true">5.4 Configuring Multiple Sites<a href="/articles/cority-system-guide/5-4-configuring-multiple-sites/a/h1_1138867984" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-system-guide/5-4-configuring-multiple-sites/a/h1_1138867984&#39;,this);"></a></h1><p>A single instance of the Cority application can serve multiple sites. With this, you can have your production and development sites as a single application but using different databases. This helps eliminate the overhead of having multiple Cority instances running on the webserver.</p><p>To enable this, create a “sites” folder in c:\inetpub\wwwroot\cority\config”.</p><p><img src="images/5-4-configuring-multiple-sites-img0001.png" width="600" height="229" alt="" style="border-width: 0px;" loading="lazy"/></p><p>The configuration for each site is in a site configuration file like so:</p><p><img src="images/5-4-configuring-multiple-sites-img0002.png" width="600" height="231" alt="" style="border-width: 0px;" loading="lazy"/></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>The filename should match the domain name that you wish to use for the site. In this example the domain name for the site would be “test.mydomain.com”. All site configuration files start with the domain name and end in “.site”. These files can be configured while the Cority instance is running and changes will take effect immediately.</p><p>A site file contains the following:</p><p>&lt;site&gt;</p><p>&lt;connection.connection_string&gt;Server=mywebserver;initial catalog=mydatabase;user id=myusername;password=mypassword&lt;/connection.connection_string&gt;</p><p>	&lt;default_schema&gt;mydefaultschema.dbo&lt;/default_schema&gt;</p><p>	&lt;olapdatasource&gt;http://olapserver/olap009/msmdpump.dll&lt;/olapdatasource&gt;</p><p>	&lt;olapdatabase&gt;myolapdatabase&lt;/olapdatabase&gt;</p><p>&lt;/site&gt;</p><p>It is a standard text file with three sections that need to be configured. </p><table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse;" class="CHTable">
+			<tbody><tr>
+				<td valign="top" width="304" style="background-color: #262626; border-top: none; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">Property</td><td valign="top" width="297" style="background-color: #262626; border-top: none; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">Description</td></tr>
+			<tr>
+				<td valign="top" width="304" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">&lt;connectionl.connection_string&gt;</td><td valign="top" width="297" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">The connection string for the database that corresponds to this site.</td></tr>
+			<tr>
+				<td valign="top" width="304" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">&lt;default_schema&gt;</td><td valign="top" width="297" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">The default database.</td></tr>
+			<tr>
+				<td valign="top" width="304" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">&lt;olapdatasource&gt;</td><td valign="top" width="297" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">The datasource for OLAP.</td></tr>
+			<tr>
+				<td valign="top" width="304" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: none; border-left: none;">&lt;olapdatabase&gt;</td><td valign="top" width="297" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: none; border-left: 1pt #C4BD97 solid;">The OLAP database.</td></tr>
+		</tbody></table>
+		<p> <a id="_Toc466632835"></a><a id="_Toc53424171"></a></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

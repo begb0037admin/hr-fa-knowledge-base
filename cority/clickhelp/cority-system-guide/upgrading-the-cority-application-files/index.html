@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-system-guide/upgrading-the-cority-application-files"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Upgrading the Cority Application Files</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Upgrading the Cority Application Files';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-system-guide/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h3 id="h3__2045138091">
+			<a id="_Toc433359363"></a><a id="_Toc53424116"></a></h3>
+		<h1 id="h1__2045138091" data-has-heading-anchor="true">Upgrading the Cority Application Files<a href="/articles/cority-system-guide/upgrading-the-cority-application-files/a/h1__2045138091" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-system-guide/upgrading-the-cority-application-files/a/h1__2045138091&#39;,this);"></a></h1><p>To upgrade the Cority application files, perform the following steps:</p><ol start="1">
+			<li>Locate your existing Cority application folder.</li><li>Back up the contents of the folder.</li><li>Copy the contents of the “Cority” folder, located in the new installation package (under \Web folder), to your existing application folder (for example, C:\inetpub\wwwroot\Cority).</li></ol>
+		<p><img src="images/upgrading-the-cority-application-files-img0001.png" width="545" height="372" alt="" style="border-width: 0px;" loading="lazy"/></p><p>Rename web.config.sample, properties.config.sample, logging.config.sample, and server.config.sample to web.config, properties.config, logging.config, and server.config.</p><p>Modify the configuration in web.config, properties.config, and if necessary, server.config and logging.config (as described in the subsection ‘Modify the Configuration Files on the Web Server’).</p><p>For existing clients, there is a file named utils.config.sample, which contains a sample key. You must create a new utils.config file with the actual key. Note: This key will be provided by Cority Helpdesk.</p><ol start="4">
+			<li>Delete existing model.xml and/or nhibernate.factory.dat files</li><li>Restart Microsoft IIS.</li><li><span style="font-weight: normal; font-style: normal;">Test that Cority is now upgraded by launching it and verifiying that the correct version is displayed in the banner of the Login page. </span><a id="_Toc53424117"></a></li></ol>
+	<div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

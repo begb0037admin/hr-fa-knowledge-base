@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-system-guide/cube-database"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Cube Database</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Cube Database';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-system-guide/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2_1356713476">
+			<a id="_Toc53424092"></a></h2>
+		<h1 id="h1_1356713476" data-has-heading-anchor="true"><span style="font-weight: bold;">Cube Database</span><a href="/articles/cority-system-guide/cube-database/a/h1_1356713476" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-system-guide/cube-database/a/h1_1356713476&#39;,this);"></a></h1><ul>
+			<li>Microsoft SQL Server Analysis Service (SSAS),</li><li>Microsoft SQL Server Management Studio (SSMS)</li></ul>
+		<ul>
+			<ul>
+				<li>SSAS and SSMS are components of Microsoft SQL Server. Refer to the Microsoft SQL Server documentation for information on how to install these components.</li></ul>
+		</ul>
+		<li>15 GB HDD, 4 GB RAM</li><ul>
+			<ul>
+				<li>The requirement for hard drive space depends on the size of the data tables in the Cority relational database. The larger the relational database grows, the larger the cube database grows. 15 GB of hard drive space is enough storage for the cube server to generate cubes for a relational database of moderate size. </li></ul>
+		</ul>
+		<li>Fast disk access</li><ul>
+			<ul>
+				<li>To ensure a timely response from the cubes, use hard drives in RAID arrays.</li></ul>
+		</ul>
+		<li>Optional dedicated Analysis Service server</li><ul>
+			<ul>
+				<li>The Analysis Service does not have to be installed on the same machine as SQL Server. Ideally, the Analysis Service should be installed on a dedicated machine because the Analysis Service requires a lot of hard drive activity for queries and data processing.</li></ul>
+		</ul>
+		<li>A user, either locally on the SQL Server machine or in the active directory domain, that has read access to the relational database.</li><h2 id="h2__424529597" data-has-heading-anchor="true"><span style="font-weight: bold;">Tested Configuration</span><a href="/articles/cority-system-guide/cube-database/a/h2__424529597" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-system-guide/cube-database/a/h2__424529597&#39;,this);"></a></h2><table border="0" cellspacing="0" cellpadding="0" width="631" style="border-collapse: collapse;" class="CHTable">
+			<tbody><tr><td style="text-align: center;"><b>Component Type</b></td><td style="text-align: center;"><b>Vendor</b></td><td style="text-align: center;"><b>Product Name</b></td><td style="text-align: center;"><b>Version</b></td><td style="text-align: center;"><b>Service Pack / Revision Number</b></td></tr><tr>
+				<td colspan="5" valign="top" width="631" style="background-color: #FCDDBA; border-top: 1pt #A6A6A6 solid; border-right: none; border-bottom: 1pt #A6A6A6 solid; border-left: none;">Web Server</td></tr>
+			<tr>
+				<td valign="top" width="117" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: none;">OS</td><td valign="top" width="130" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">Microsoft</td><td valign="top" width="114" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">Windows</td><td valign="top" width="130" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">2008 R2 / 2012 / 2016</td><td valign="top" width="142" style="border-top: 1pt #A6A6A6 solid; border-right: none; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">SP1 / &nbsp;N/A &nbsp;/ N/A</td></tr>
+			<tr>
+				<td valign="top" width="117" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: none;">ODBC/OLEDB</td><td valign="top" width="130" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">Microsoft</td><td valign="top" width="114" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">SQL Server</td><td valign="top" width="130" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">6.01.7601.17514</td><td valign="top" width="142" style="border-top: 1pt #A6A6A6 solid; border-right: none; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="117" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: none;">Report Engine</td><td valign="top" width="130" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">Business Objects</td><td valign="top" width="114" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">Crystal Reports </td><td valign="top" width="130" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">2011</td><td valign="top" width="142" style="border-top: 1pt #A6A6A6 solid; border-right: none; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="117" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: none;">MDAC </td><td valign="top" width="130" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">Microsoft</td><td valign="top" width="114" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">Microsoft Data Access Components</td><td valign="top" width="130" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">2.82.3959</td><td valign="top" width="142" style="border-top: 1pt #A6A6A6 solid; border-right: none; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">&nbsp;</td></tr>
+			<tr>
+				<td colspan="5" valign="top" width="631" style="background-color: #FCDDBA; border-top: 1pt #A6A6A6 solid; border-right: none; border-bottom: 1pt #A6A6A6 solid; border-left: none;">Database Server</td></tr>
+			<tr>
+				<td valign="top" width="117" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: none;">OS</td><td valign="top" width="130" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">Microsoft</td><td valign="top" width="114" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">Windows</td><td valign="top" width="130" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">2012</td><td valign="top" width="142" style="border-top: 1pt #A6A6A6 solid; border-right: none; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="117" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: none; border-left: none;">Database</td><td valign="top" width="130" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: none; border-left: 1pt #A6A6A6 solid;">Microsoft<br/></td><td valign="top" width="114" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: none; border-left: 1pt #A6A6A6 solid;">SQL Server 2016<br/></td><td valign="top" width="130" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: none; border-left: 1pt #A6A6A6 solid;">13.0.4435.0<br/></td><td valign="top" width="142" style="border-top: 1pt #A6A6A6 solid; border-right: none; border-bottom: none; border-left: 1pt #A6A6A6 solid;">&nbsp;</td></tr>
+			<tr>
+				<td colspan="5" valign="top" width="631" style="background-color: #FCDDBA; border-top: 1pt #A6A6A6 solid; border-right: none; border-bottom: 1pt #A6A6A6 solid; border-left: none;">Client Work Station</td></tr>
+			<tr>
+				<td valign="top" width="117" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: none;">OS</td><td valign="top" width="130" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">Microsoft</td><td valign="top" width="114" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">Windows</td><td valign="top" width="130" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">7</td><td valign="top" width="142" style="border-top: 1pt #A6A6A6 solid; border-right: none; border-bottom: 1pt #A6A6A6 solid; border-left: 1pt #A6A6A6 solid;">SP1</td></tr>
+			<tr>
+				<td valign="top" width="117" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: none; border-left: none;">Browser</td><td valign="top" width="130" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: none; border-left: 1pt #A6A6A6 solid;">Google </td><td valign="top" width="114" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: none; border-left: 1pt #A6A6A6 solid;">Chrome </td><td valign="top" width="130" style="border-top: 1pt #A6A6A6 solid; border-right: 1pt #A6A6A6 solid; border-bottom: none; border-left: 1pt #A6A6A6 solid;">71.0.3578.98</td><td valign="top" width="142" style="border-top: 1pt #A6A6A6 solid; border-right: none; border-bottom: none; border-left: 1pt #A6A6A6 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="117" style="border-top: none; border-right: 1pt #A6A6A6 solid; border-bottom: none; border-left: none;">&nbsp;</td><td valign="top" width="130" style="border-top: none; border-right: 1pt #A6A6A6 solid; border-bottom: none; border-left: 1pt #A6A6A6 solid;">Apple </td><td valign="top" width="114" style="border-top: none; border-right: 1pt #A6A6A6 solid; border-bottom: none; border-left: 1pt #A6A6A6 solid;">Safari </td><td valign="top" width="130" style="border-top: none; border-right: 1pt #A6A6A6 solid; border-bottom: none; border-left: 1pt #A6A6A6 solid;">5.1.7</td><td valign="top" width="142" style="border-top: none; border-right: none; border-bottom: none; border-left: 1pt #A6A6A6 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="117" style="border-top: none; border-right: 1pt #A6A6A6 solid; border-bottom: none; border-left: none;">&nbsp;</td><td valign="top" width="130" style="border-top: none; border-right: 1pt #A6A6A6 solid; border-bottom: none; border-left: 1pt #A6A6A6 solid;">Mozilla </td><td valign="top" width="114" style="border-top: none; border-right: 1pt #A6A6A6 solid; border-bottom: none; border-left: 1pt #A6A6A6 solid;">FireFox </td><td valign="top" width="130" style="border-top: none; border-right: 1pt #A6A6A6 solid; border-bottom: none; border-left: 1pt #A6A6A6 solid;">64.0.2</td><td valign="top" width="142" style="border-top: none; border-right: none; border-bottom: none; border-left: 1pt #A6A6A6 solid;">&nbsp;</td></tr>
+			</tbody></table>
+		<p>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-system-guide/5-5-configuring-data-archive-or-purge"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>5.5 Configuring Data Archive or Purge</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='5.5 Configuring Data Archive or Purge';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-system-guide/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h2 id="h2__1553664507">
+  <a id="_Toc466632835"></a><a id="_Toc53424171"></a>
+</h2>
+<h1 id="h1__1553664507" data-has-heading-anchor="true">
+  <span style="font-weight: bold;">5.5 Configuring Data Archive or Purge</span>
+<a href="/articles/cority-system-guide/5-5-configuring-data-archive-or-purge/a/h1__1553664507" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-system-guide/5-5-configuring-data-archive-or-purge/a/h1__1553664507&#39;,this);"></a></h1>
+<p>
+  When configuring data archive or purge, you can set up business rules to fire based on specified time criteria instead of a particular action or event (for example, an administrator can schedule a business rule to archive an employee’s records when exactly five years have passed since the employee’s termination date).
+</p>
+<p>
+  The following procedures can be used for setting up and reporting on data archive and purge.
+</p>
+<ul>
+  <li>
+    Archiving employee records
+  </li>
+  <li>
+    Preventing certain employee records from being archived
+  </li>
+  <li>
+    Moving records from Archived to Ready to Purge
+  </li>
+  <li>
+    Purging employee records
+  </li>
+</ul>
+<p class="Note">
+  To enable this functionality, in the &lt;your Cority domain&gt;\config\server.config file DataRetention must be set to TRUE.
+</p>
+<p>
+  <br/>
+  <img src="images/5-5-configuring-data-archive-or-purge-img0001.png" width="318" height="90" alt="" style="border-width: 0px;" loading="lazy"/>
+</p>
+<p class="Important">
+  With this functionality there is no rollback, so you must be very careful to ensure that the conditions for these business rules meet your requirements.
+</p>
+<p>
+  To set up employee record archiving:
+</p>
+<ol start="1">
+  <li>
+    Create a business rule with conditions for archiving. See the image below.
+  </li>
+</ol>
+<p class="Note">
+  Archive and purge business rules should only be set up using the Employee entity.
+</p>
+<p>
+  <img src="images/5-5-configuring-data-archive-or-purge-img0002.png" width="545" height="445" alt="" style="border-width: 0px;" loading="lazy"/>
+  <br/>
+</p>
+<p>
+  Archiving removes the Employee record and any associated records (Audiometric tests, Clinic Visits, etc.) for that employee from the system. An exception to this is if the employee is referenced on another employee’s record(s), e.g. as a supervisor or witness; in that case, the archived employee’s demographics record would be retained through those records.
+  <br/>
+  <br/>
+  For additional information on working with business rules, see the <span style="font-style: italic;">Cority User Guide</span>.
+  <br/>
+</p>
+<ol start="2">
+  <li>
+    Using the Action List tab, add the BRA-Archive action to the business rule.
+    <br/>
+    <br/>
+    <img src="images/5-5-configuring-data-archive-or-purge-img0003.png" width="543" height="168" alt="" style="border-width: 0px;" loading="lazy"/>
+  </li>
+  <li>
+    <span style="font-weight: normal; font-style: normal;">From the Actions menu on the Business Rule tab, select </span><span style="font-weight: bold; font-style: normal;">Preview Records to Archive</span><span style="font-weight: normal; font-style: normal;">.</span>
+  </li>
+</ol>
+<p>
+  <img src="images/5-5-configuring-data-archive-or-purge-img0004.png" width="544" height="133" alt="" style="border-width: 0px;" loading="lazy"/>
+</p>
+<p>
+  This displays all the employee Demographics records that meet the criteria conditions specified on the business rule and will be archived once the process has run.
+</p>
+<p>
+  You can prevent records for certain employees from being archived, even if they meet the conditions defined in your business rule for archiving. 
+</p>
+<p class="StepIntro">
+  To prevent records for certain employees from being archived:
+</p>
+<ol start="1">
+  <li>
+    <span style="font-weight: normal; font-style: normal;">Clone the ML-000001 layout and add the Employee Flags tab to the new custom layout.
+      <br/>
+      <img src="images/5-5-configuring-data-archive-or-purge-img0005.png" width="304" height="83" alt="" style="border-width: 0px;" loading="lazy"/>
+      <br/>
+      <br/>
+      For information about creating custom layouts, see the </span><span style="font-weight: normal; font-style: italic;">Cority User Guide</span><span style="font-weight: normal; font-style: normal;">.
+    <br/>
+    </span>
+  </li>
+  <li>
+    Using the new layout, open the Employee record for the employee you want excluded from archiving.
+  </li>
+  <li>
+    Click the Employee Flags tab and add a Flag Reason record. You will need to select Hold for the Flag Reason value.
+    <br/>
+    <br/>
+    <img src="images/5-5-configuring-data-archive-or-purge-img0006.png" width="537" height="149" alt="" style="border-width: 0px;" loading="lazy"/>
+  </li>
+</ol>
+<p>
+  Once a Flag Reason of Hold is created for the Employee record, the employee's records cannot be archived. To return the employee to the pool of employees who can be archived, simply delete the Flag Reason record.
+</p>
+<div>
+  <span style="font-weight: normal; font-style: normal;">Run the Start Trigger Thread script (<a href="https://med-lap247.medgate.com/gx2pdemo/businessrules/starttriggerthread.rails" style="text-decoration: none;;color: #0000FF; text-decoration: underline;" target="_top">&lt;your Cority domain&gt;/businessrules/starttriggerthread.rails</a></span><span style="color: #0000FF; font-weight: normal; font-style: normal; text-decoration: underline;">)</span><span style="font-weight: normal; font-style: normal;"> to archive the employee records that meet the conditions defined in your archiving business rule.
+  </span>
+  <p class="Important">Important: Once an employee has been archived, the Employee record and all associated records for that employee will be permanently deleted. A row (visible to administrator users only) indicating a status of Archived will be added to the Record Change History of each relevant list view.</p>
+</div>
+<p>
+  <br/>
+</p>
+<p>
+  To report on archived Employee records:
+</p>
+<ol start="1">
+  <li>
+    <span style="font-weight: normal; font-style: normal;">Create a Report Writer report using the Employee Record History entity (RecordHistories.EmployeeRecordHistory) and add the criteria you require.
+    </span><span style="font-weight: bold; font-style: normal;">Note:</span><span style="font-weight: normal; font-style: normal;"> To report on the records that have been archived, you will need to add the Employee Record History Reason and make it equal to 4 (for Archived).
+    <br/>
+    <br/>
+    <img src="images/5-5-configuring-data-archive-or-purge-img0007.png" width="546" height="125" alt="" style="border-width: 0px;" loading="lazy"/>
+    <br/>
+    <br/>
+    For more specific information on creating Report Writer reports, see the&nbsp;</span>
+    Cority User Guide<span style="font-size: 11pt;">.</span>
+  </li>
+</ol>
+<ol start="2">
+  <li>
+    Run your report. The report will list the records that have been archived.
+  </li>
+</ol>
+<p>
+  <img src="images/5-5-configuring-data-archive-or-purge-img0008.png" width="543" height="152" alt="" style="border-width: 0px;" loading="lazy"/>
+</p>
+<p>
+  <a id="_Toc53424172"></a>
+</p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

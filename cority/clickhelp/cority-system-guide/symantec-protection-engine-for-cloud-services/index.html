@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-system-guide/symantec-protection-engine-for-cloud-services"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Symantec Protection Engine for Cloud Services</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Symantec Protection Engine for Cloud Services';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-system-guide/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h1 id="h1_923050169" data-has-heading-anchor="true">
+			<a id="_Toc53424113"></a>Symantec Protection Engine for Cloud Services<a href="/articles/cority-system-guide/symantec-protection-engine-for-cloud-services/a/h1_923050169" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-system-guide/symantec-protection-engine-for-cloud-services/a/h1_923050169&#39;,this);"></a></h1>
+		<p>Cority can scan uploaded files for viruses using the Symantec Protection Engine for Cloud Services. Follow Symantec’s installation instructions to install the software. Once Symantec Protection Engine for Cloud Services is installed, the port number and login credentials specified during the installation will enable you to access its console.</p><p><img src="images/3-3-symantec-protection-engine-for-cloud-services-img0001.png" width="567" height="394" alt="" style="border-width: 0px;" loading="lazy"/></p><p style="font-weight: bold;"> </p><p class="Note">The port number can be changed at any time using the Protection Engine’s console settings.</p><p><img src="images/3-3-symantec-protection-engine-for-cloud-services-img0002.png" width="559" height="382" alt="" style="border-width: 0px;" loading="lazy"/></p><p> </p><p>For the Protection Engine to run properly, ensure that in <span style="font-weight: bold;">Configuration</span> &gt; <span style="font-weight: bold;">Protocol</span>, ICAP is set as the communication protocol and that an appropriate port number is provided.</p><p><img src="images/3-3-symantec-protection-engine-for-cloud-services-img0003.png" width="521" height="360" alt="" style="border-width: 0px;" loading="lazy"/></p><p>In the Cority <span style="font-style: italic;">server.config</span> file, add the lines of code shown below: </p><p class="Note">Address is the URL of the server on which Protection Engine is installed and Port is the port number specified in the Protection Engine console settings.</p><p>&lt;ScanEngine&gt;</p><p>	&lt;Address&gt;[Installed URL]&lt;/Address&gt;</p><p>	&lt;Port&gt;[ICAP Port]&lt;/Port&gt;</p><p>&lt;/ScanEngine&gt;</p><p>In this case it would be:</p><p>&lt;ScanEngine&gt;</p><p>	&lt;Address&gt;10.10.10.49&lt;Address&gt;</p><p>	&lt;Port&gt;1344&lt;/Port&gt;</p><p>&lt;/ScanEngine&gt;</p><p> </p><p>With the following system setting, Cority’s use of the Protection Engine can be toggled on or off:</p><p><img src="images/3-3-symantec-protection-engine-for-cloud-services-img0004.png" width="599" height="284" alt="" style="border-width: 0px;" loading="lazy"/></p><p>When the system setting is selected, documents being uploaded will be scanned automatically. If a document contains a virus, you will see an error message.</p><p><img src="images/3-3-symantec-protection-engine-for-cloud-services-img0005.png" width="549" height="123" alt="" style="border-width: 0px;" loading="lazy"/></p><p><a id="_Toc433359361"></a><a id="_Toc423416797"></a> <a id="_Toc53424114"></a></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-system-guide/5-6-configuring-the-nightly-exposure-group-compliance-report"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>5.6 Configuring the Nightly Exposure Group Compliance Report</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='5.6 Configuring the Nightly Exposure Group Compliance Report';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-system-guide/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2__1411556669">
+			<a id="_Toc53424174"></a></h2>
+		<h1 id="h1__1411556669" data-has-heading-anchor="true"><span style="font-weight: bold;">5.6 Configuring the Nightly Exposure Group Compliance Report </span><a href="/articles/cority-system-guide/5-6-configuring-the-nightly-exposure-group-compliance-report/a/h1__1411556669" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-system-guide/5-6-configuring-the-nightly-exposure-group-compliance-report/a/h1__1411556669&#39;,this);"></a></h1><p>The nightly Exposure Group Compliance report is similar to the regular Exposure Group Compliance report. The difference is that the former can be scheduled to run nightly, during off hours. This is useful when you want to run the report in a large corporation and the report will take a long time to generate.</p><p>To set up a scheduled task to generate the report nightly:</p><ol start="1">
+			<li><span style="font-weight: normal; font-style: normal;">Select </span><span style="font-weight: bold; font-style: normal;">Start</span><span style="font-weight: normal; font-style: normal;"> &gt; </span><span style="font-weight: bold; font-style: normal;">Administrative Tools</span><span style="font-weight: normal; font-style: normal;"> &gt; </span><span style="font-weight: bold; font-style: normal;">Task Scheduler</span><span style="font-weight: normal; font-style: normal;">.</span></li><li><span style="font-weight: normal; font-style: normal;">On the Task Scheduler window, click </span><span style="font-weight: bold; font-style: normal;">Create Basic Task</span><span style="font-weight: normal; font-style: normal;">.</span></li></ol>
+		<p><img src="images/5-6-configuring-the-nightly-exposure-group-compliance-report-img0001.png" width="564" height="260" alt="" style="border-width: 0px;" loading="lazy"/></p><p> </p><ol start="3">
+			<li><span style="font-weight: normal; font-style: normal;">Name the task (for example, Reports Nightly Update), and then click </span><span style="font-weight: bold; font-style: normal;">Next</span><span style="font-weight: normal; font-style: normal;">.</span></li></ol>
+		<p><img src="images/5-6-configuring-the-nightly-exposure-group-compliance-report-img0002.png" width="502" height="345" alt="" style="border-width: 0px;" loading="lazy"/></p><ol start="4">
+			<li><span style="font-weight: normal; font-style: normal;">Choose the update frequency you want, and then click </span><span style="font-weight: bold; font-style: normal;">Next</span><span style="font-weight: normal; font-style: normal;">.</span></li></ol>
+		<p><img src="images/5-6-configuring-the-nightly-exposure-group-compliance-report-img0003.png" width="500" height="343" alt="" style="border-width: 0px;" loading="lazy"/></p><ol start="5">
+			<li><span style="font-weight: normal; font-style: normal;">Set the start date and time for when you want the task first performed, and then click </span><span style="font-weight: bold; font-style: normal;">Next</span><span style="font-weight: normal; font-style: normal;">.</span></li></ol>
+		<p><img src="images/5-6-configuring-the-nightly-exposure-group-compliance-report-img0004.png" width="505" height="346" alt="" style="border-width: 0px;" loading="lazy"/></p><ol start="6">
+			<li><span style="font-weight: normal; font-style: normal;">For Action, select Start a program, and then click </span><span style="font-weight: bold; font-style: normal;">Next</span><span style="font-weight: normal; font-style: normal;">.</span></li></ol>
+		<p><img src="images/5-6-configuring-the-nightly-exposure-group-compliance-report-img0005.png" width="505" height="346" alt="" style="border-width: 0px;" loading="lazy"/></p><p> </p><ol start="7">
+			<li>&nbsp;Click <b>Browse </b>and navigate to the Internet Explorer program (for example, C:\Program Files (x86)\Internet Explorer\iexplore.exe).You also need the report update URL for your Cority installation. <br/>For example, if your Cority application URL is: <a href="http://dev." target="_top">Cority.com/pr" style="font-size: 11pt; color: #0000ff;">http://dev.Cority.com/pr</a><span style="font-size: 11pt; color: #0000ff; text-decoration: underline;"> </span><span style="font-size: 11pt;">then your report update URL is: &nbsp;</span><a href="http://dev." target="_top">Cority.com/pr/report/nightlyupdate.rails" style="font-size: 11pt; color: #0000ff;">http://dev.Cority.com/pr/report/nightlyupdate.rails</a></li></ol>
+		<ol start="8">
+			<li>Enter the report update URL into the ‘Add arguments (optional)’ field.</li></ol>
+		<p><img src="images/5-6-configuring-the-nightly-exposure-group-compliance-report-img0006.png" width="560" height="387" alt="" style="border-width: 0px;" loading="lazy"/></p><p> </p><ol start="9">
+			<li><span style="font-weight: normal; font-style: normal;">Ensure that ‘Open the Properties dialog for this task when I click Finish’ is checked, and then click </span><span style="font-weight: bold; font-style: normal;">Finish</span><span style="font-weight: normal; font-style: normal;">.</span></li></ol>
+		<p><img src="images/5-6-configuring-the-nightly-exposure-group-compliance-report-img0007.png" width="502" height="345" alt="" style="border-width: 0px;" loading="lazy"/></p><ol start="10">
+			<li><span style="font-weight: normal; font-style: normal;">Click <b>Change User or Group</b>, select the credentials you want the task to use, and then click </span><span style="font-weight: bold; font-style: normal;">OK</span><span style="font-weight: normal; font-style: normal;">.</span></li></ol>
+		<p><img src="images/5-6-configuring-the-nightly-exposure-group-compliance-report-img0008.png" width="510" height="374" alt="" style="border-width: 0px;" loading="lazy"/></p><p><img src="images/5-6-configuring-the-nightly-exposure-group-compliance-report-img0009.png" width="418" height="220" alt="" style="border-width: 0px;" loading="lazy"/></p><ol start="11">
+			<li><span style="font-weight: normal; font-style: normal;">&nbsp;Select <b>Run whether user is logged on or not</b>, and then click </span><span style="font-weight: bold; font-style: normal;">OK</span><span style="font-weight: normal; font-style: normal;">.</span></li></ol>
+		<p><img src="images/5-6-configuring-the-nightly-exposure-group-compliance-report-img0010.png" width="558" height="409" alt="" style="border-width: 0px;" loading="lazy"/></p><p>	The nightly Exposure Group Compliance report will now update at the start time and 	then with the frequency you configured. </p><p><span style="font-style: italic;"> </span><a id="_Toc53424175"></a></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-system-guide/5-10-enabling-the-time-driven-business-rules-tdbr-functionality"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>5.10 Enabling the Time-driven Business Rules (TDBR) Functionality</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='5.10 Enabling the Time-driven Business Rules (TDBR) Functionality';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-system-guide/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2_2098003730">
+			<a id="_Toc53424182"></a></h2>
+		<h1 id="h1_2098003730" data-has-heading-anchor="true"><span style="font-weight: bold;">5.10 Enabling the Time-driven Business Rules (TDBR) Functionality</span><a href="/articles/cority-system-guide/5-10-enabling-the-time-driven-business-rules-tdbr-functionality/a/h1_2098003730" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-system-guide/5-10-enabling-the-time-driven-business-rules-tdbr-functionality/a/h1_2098003730&#39;,this);"></a></h1><p>This functionality provides the ability to set up business rules that are time-driven.</p><p>To enable time-driven business rules:</p><ol start="1">
+			<li>Obtain the source files from the TDBR directory of the installation package.</li><li>Copy those files into a folder on the server.</li><li><span style="font-weight: normal; font-style: normal;">Inside the Sites folder provided, there is a site file (with .site extension). In the site file, provide the following nodes from your </span><span style="font-weight: normal; font-style: italic;">properties.config</span><span style="font-weight: normal; font-style: normal;"> file (actual values in brackets): connection.connection_string (nhConnectionString), default_schema (nhDefaultSchema), olapdatasource (nhOlapDataSource), olapdatabase (nhOlapDatabase)</span></li><li>Open the Windows Command Prompt application in Administrator mode.</li><li>Execute: cd C:\Windows\Microsoft.NET\Framework\v4.0.30319 (or other version, if applicable)<br/>Optional: If you are installing multiple instances or changing the frequency, open the config file Medgate.NMedgate.TDBRS.exe.config, and make changes to respective nodes.</li><li>Execute: InstallUtil.exe [folder location on the server]\Medgate.NMedgate.TDBRS.exe</li><li>Open Local Services in Windows. Locate the TDBR Service. Right-click TDBR Service and select Start Service.<br/>If you want the site file to be encrypted, change EncryptSiteFiles to true in Medgate.NMedgate.TDBRS.exe.config. Then right-click the TDBR service, select Properties, select Log On, and specify Local System account.</li><li>Open the TDBRLog.evtx log file under C:\Windows\System32\winevt\Logs\ to check the process log and ensure the service is running successfully.</li></ol>
+		<p>If you have trouble with any of these steps, contact Cority Support.</p><p>&nbsp;</p><p><span style="font-weight: bold;"> </span><a id="_Toc53424183"></a></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-system-guide/hl7-v2-3-clinical-lab-testing-standards"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>HL7 v2.3 Clinical Lab Testing Standards</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='HL7 v2.3 Clinical Lab Testing Standards';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-system-guide/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2_61003670" data-has-heading-anchor="true">
+			<a id="_Toc2076992"></a><a id="_Toc53424186"></a><span style="font-weight: bold;">HL7 v2.3 Clinical Lab Testing Standards</span><a href="/articles/cority-system-guide/hl7-v2-3-clinical-lab-testing-standards/a/h2_61003670" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-system-guide/hl7-v2-3-clinical-lab-testing-standards/a/h2_61003670&#39;,this);"></a></h2>
+		<p>Below is the list of the fields and tables in the Clinical Lab Testing import file from which the Cority import interface reads, based on HL7 v2.3 standards.</p><table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse;" class="CHTable">
+			<tbody><tr><td style="text-align: center;"><b>ASTM: Field Mnemonic - Field</b></td><td style="text-align: center;"><b>Cority: Property</b></td></tr><tr>
+				<td colspan="2" valign="top" width="600" style="background-color: #FCDDBA; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: none;">Message Header Segment – ‘MSH’</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">MSH-00 - Segment Type ID</td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">MSH-01 - Field Separator</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">MSH-02 - Encoding Characters</td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">MSH-03 – Sending Application</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">MSH-04 – Sending Facility</td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">MSH-05 – Receiving Application</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">MSH-06 – Receiving Facility</td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">ClinicalTestSample.LabAccountNo</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">MSH-07 – Date/Time of Message</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">MSH-09 – Message Type (Message Type ^ Event Code)</td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">MSH-10 – Message Control ID</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">MSH-11 – Processing ID</td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">MSH-12 – Version ID</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td colspan="2" valign="top" width="600" style="background-color: #FCDDBA; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: none;">Patient Identifying Segment – ‘PID’</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">PID-00 - Segment Type ID</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">PID-02 – Patient ID (External ID)</td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">ClinicalTestSample.Employee.EmployeeNumber</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">PID-03 – Patient ID (Internal ID)</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">PID-04 – Alternate Patient ID</td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;"><p>PID-05 – Patient’s Name</p><p>(Last Name ^</p><p>First Name ^</p><p>MI)</p></td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">PID-07 - Patient Date of Birth</td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">PID-08 - Patient Sex</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">PID – 10 – Patient Race</td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;"><p>PID – 11 – Patient Address (Address Line 1 ^</p><p>Address Line 2 ^ City ^ State ^ Zip)</p></td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">PID-13 – Home Phone Number</td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">PID-14 – Business Phone Number</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">PID-18 – Patient Account Number</td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">PID-19 – SSN, Canadian HCN</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td colspan="2" valign="top" width="600" style="background-color: #FCDDBA; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: none;">Observation Request Segment – ‘OBR’</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">OBR-00 - Segment Type ID</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">OBR-02 – Placer Order Number</td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">OBR-03 – Filler Order Number</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">ClinicalTestSample.SpecimenId</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;"><p>OBR-04 – Universal Service ID</p><p>(Test Code ^</p><p>Test Name)</p></td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;"><p>ClinicalTestSampleBattery.ClinicalTestBattery.Code</p><p>ClinicalTestSampleBattery.ClinicalTestBattery.Description</p></td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">OBR-05 - Priority</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">OBR-06 – Requested Date/Time</td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">OBR-07 – Observation Date/Time</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;"><p>ClinicalTestSample.SampleDate</p><p>ClinicalTestSample.SampleTime</p></td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">OBR-09 – Collection Volume</td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">OBR-11 – Specimen Action Code</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">OBR-14 – Received Date/Time</td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">ClinicalTestSampleBattery.ResultsDate</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">OBR-25 – Result Status</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">Observation Result Segment – ‘OBX’</td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">OBX-00 – Segment Type ID</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">OBX-01 – Sequence Number</td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">OBX-02 – Value Type</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;"><p>OBX-03 – Observation Identifier</p><p>(Analyte number ^</p><p>Analyte Name ^</p><p>Remaining analyte name)</p></td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;"><p>ClinicalTestResult.ClinicalTestUnit.Code</p><p>ClinicalTestResult.ClinicalTestUnit.Description</p></td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">OBX-05 – Observation Results</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">ClinicalTestResult.Result</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">OBX-06 – Units of Measure</td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">ClinicalTestResult.Units</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">OBX-07 – Reference Ranges</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">ClinicalTestResult.LabRange</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">OBX-08 – Abnormal Flags</td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">ClinicalTestResult.ResultFlag</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">OBX-11 – Observation Result Status</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td colspan="2" valign="top" width="600" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: none;">Comment Segment – ‘NTE’</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">NTE-00 – Segment Type ID</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">NTE-01 – Sequence Number</td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: 1pt #C4BD97 solid; border-left: none;">NTE-02 - Comment Source</td><td valign="top" width="321" style="background-color: #F2F2F2; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: 1pt #C4BD97 solid; border-left: 1pt #C4BD97 solid;">&nbsp;</td></tr>
+			<tr>
+				<td valign="top" width="280" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: 1pt #C4BD97 solid; border-bottom: none; border-left: none;">NTE-03 - Comment Text</td><td valign="top" width="321" style="background-color: #FFFFFF; border-top: 1pt #C4BD97 solid; border-right: none; border-bottom: none; border-left: 1pt #C4BD97 solid;">ClinicalTestResult.Comments</td></tr>
+		</tbody></table>
+		<p><a id="_Toc2076993"></a><a id="_Toc53424187"></a>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

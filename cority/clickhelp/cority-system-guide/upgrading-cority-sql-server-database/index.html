@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-system-guide/upgrading-cority-sql-server-database"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Upgrading Cority (SQL Server) Database</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Upgrading Cority (SQL Server) Database';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-system-guide/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2_247615860">
+			<a id="_Toc433359362"></a><a id="_Toc53424115"></a></h2>
+		<h1 id="h1_247615860" data-has-heading-anchor="true"><span style="font-weight: bold;">Upgrading Cority (SQL Server) Database</span><a href="/articles/cority-system-guide/upgrading-cority-sql-server-database/a/h1_247615860" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-system-guide/upgrading-cority-sql-server-database/a/h1_247615860&#39;,this);"></a></h1><p>To upgrade the Cority database, back up your existing database and then upgrade&nbsp;your existing database to the new one using the appropriate set of scripts in the “SQLServer” folder of the new Cority package.&nbsp;</p><p class="Warning">Do not proceed without first backing up your existing database.</p><table cellspacing="0" cellpadding="0" style="border-collapse: collapse; border-width: 0px;" class="CHTable"><thead><tr class="">
+				<th valign="top" width="255" style="" class="" scope="col">Cority version you are upgrading from</th><th valign="top" width="346" style="" class="" scope="col">Scripts to run</th></tr>
+			</thead>
+			<tbody><tr>
+				<td valign="top" width="255" style="">GX2</td><td valign="top" width="346" style="">01_update_gx2_to_gx2a.sql</td></tr>
+			<tr>
+				<td valign="top" width="255" style="background-color: #f2f2f2;">GX2a</td><td valign="top" width="346" style="background-color: #f2f2f2;">01a_update_gx2a_to_gx2a_patch_A.sql</td></tr>
+			<tr>
+				<td valign="top" width="255" style="">GX2b</td><td valign="top" width="346" style="">02_update_gx2a_to_gx2b.sql</td></tr>
+			<tr>
+				<td valign="top" width="255" style="background-color: #f2f2f2;">GX2c</td><td valign="top" width="346" style="background-color: #f2f2f2;">03_update_gx2b_to_gx2c.sql</td></tr>
+			<tr>
+				<td valign="top" width="255" style="">GX2d</td><td valign="top" width="346" style="">04_update_gx2c_to_gx2d.sql</td></tr>
+			<tr>
+				<td valign="top" width="255" style="background-color: #f2f2f2;">GX2e</td><td valign="top" width="346" style="background-color: #f2f2f2;">05_update_gx2d_to_gx2e.sql</td></tr>
+			<tr>
+				<td valign="top" width="255" style="">GX2f</td><td valign="top" width="346" style="">06_update_gx2e_to_gx2f.sql</td></tr>
+			<tr>
+				<td valign="top" width="255" style="background-color: #f2f2f2;">GX2g</td><td valign="top" width="346" style="background-color: #f2f2f2;">07_update_gx2f_to_gx2g.sql</td></tr>
+			<tr>
+				<td valign="top" width="255" style="">GX2h</td><td valign="top" width="346" style="">08_update_gx2g_to_gx2h.sql</td></tr>
+			<tr>
+				<td valign="top" width="255" style="background-color: #f2f2f2;">GX2i</td><td valign="top" width="346" style="background-color: #f2f2f2;"><p>09_update_gx2h_to_gx2i.sql</p><p>10_update_gx2i_to_gx2j.sql</p></td></tr>
+			<tr>
+				<td valign="top" width="255" style="">GX2j</td><td valign="top" width="346" style=""><p>10a_update_gx2j_to_gx2j_patch_a.sql</p><p>10a_update_gx2j_to_gx2j_patch_a_hotfix1.sql</p><p>10a_update_gx2j_to_gx2j_patch_a_hotfix2.sql</p><p>10a_update_gx2j_to_gx2j_patch_a_hotfix3.sql</p><p>10a_update_gx2j_to_gx2j_patch_a_hotfix4.sql</p><p>10b_update_gx2j_patch_a_to_gx2j_patch_b.sql</p><p>10c_update_gx2j_patch_b_to_gx2j_patch_c.sql</p><p>10d_update_gx2j_patch_c_to_gx2j_patch_d.sql</p><p>11_update_gx2j_to_gx2k.sql</p></td></tr>
+			<tr>
+				<td valign="top" width="255" style="background-color: #f2f2f2;">GX2k</td><td valign="top" width="346" style="background-color: #f2f2f2;"><p>11a_update_gx2k_to_gx2k_patch_a.sql</p><p>11b_update_gx2k_patch_a_to_gx2k_patch_b.sql</p><p>11c_update_gx2k_patch_b_to_gx2k_patch_c.sql</p><p>11d_update_gx2k_patch_c_to_gx2k_patch_d.sql</p><p>12_update_gx2k_to_gx2l.sql</p></td></tr>
+			<tr>
+				<td valign="top" width="255" style="">GX2l</td><td valign="top" width="346" style=""><p>12a_update_gx2l_to_gx2l_patch_a.sql</p><p>12b_update_gx2l_patch_a_to_gx2l_patch_b.sql</p><p>12c_update_gx2l_patch_b_to_gx2l_patch_c.sql</p><p>13_update_gx2l_to_gx2m.sql</p></td></tr>
+			<tr>
+				<td valign="top" width="255" style="background-color: #f2f2f2;">GX2m</td><td valign="top" width="346" style="background-color: #f2f2f2;"><p>13a_update_gx2m_to_gx2m_patch_a.sql</p><p>13b_update_gx2m_patch_a_to_gx2m_patch_b.sql</p><p>13c_update_gx2m_patch_b_to_gx2m_patch_c.sql</p><p>14_update_gx2m_to_gx2n.sql</p></td></tr>
+			<tr>
+				<td valign="top" width="255" style="">GX2n</td><td valign="top" width="346" style=""><p>14a_update_gx2n_to_gx2n_patch_a.sql</p><p>14b_update_gx2n_patch_a_to_gx2n_patch_b.sql</p><p>15_update_gx2n_to_gx2o.sql</p></td></tr>
+			<tr>
+				<td valign="top" width="255" style="background-color: #f2f2f2;">GX2o</td><td valign="top" width="346" style="background-color: #f2f2f2;"><p>15a_update_gx2o_to_gx2o_patch_a.sql</p><p>15b_update_gx2o_patch_a_to_gx2o_patch_b.sql</p><p>16_update_gx2o_to_gx2p.sql</p></td></tr>
+			<tr>
+				<td valign="top" width="255" style="">GX2p</td><td valign="top" width="346" style=""><p>16a_update_gx2p_to_gx2p_patch_a.sql</p><p>16b_update_gx2p_patch_a_to_gx2p_patch_b.sql</p><p>17_update_gx2p_to_gx2q.sql</p></td></tr>
+			<tr>
+				<td valign="top" width="255" style="background-color: #f2f2f2;">GX2q</td><td valign="top" width="346" style="background-color: #f2f2f2;"><p>17a_update_gx2q_to_gx2q_patch_a.sql</p><p>17b_update_gx2q_patch_a_to_gx2q_patch_b.sql</p><p>18_update_gx2q_to_gx2r.sql</p></td></tr>
+			<tr>
+				<td valign="top" width="255" style="">GX2r</td><td valign="top" width="346" style=""><p>18a_update_gx2r_to_gx2r_patch_a.sql</p><p>18b_update_gx2r_patch_a_to_gx2r_patch_b.sql</p><p>19_update_gx2r_to_gx2s.sql</p></td></tr>
+			<tr>
+				<td valign="top" width="255" style="background-color: #f2f2f2;">GX2s</td><td valign="top" width="346" style="background-color: #f2f2f2;"><p>19a_update_gx2s_to_gx2s_patch_a.sql</p><p>19b_update_gx2s_patch_a_to_gx2s_patch_b.sql</p><p>20_update_gx2s_to_gx2t.sql</p></td></tr>
+			<tr>
+				<td valign="top" width="255" style="">GX2t</td><td valign="top" width="346" style=""><p>20a_update_gx2t_to_gx2t_patch_a.sql</p><p>20b_update_gx2t_patch_a_to_gx2t_patch_b.sql</p><p>21_update_gx2t_to_gx2u.sql</p></td></tr>
+			<tr>
+				<td valign="top" width="255" style="">GX2u</td><td valign="top" width="346" style=""><p>21a_update_gx2u_to_gx2u_patch_a.sql</p><p>21b_update_gx2u_patch_a_to_gx2u_patch_b.sql</p><p>22_update_gx2u_to_gx2v.sql</p></td></tr>
+			<tr>
+				<td valign="top" width="255" style="">2018.1</td><td valign="top" width="346" style=""><p>22a_update_gx2v_to_gx2v_patch_a.sql</p><p>22b_update_gx2v_patch_a_to_gx2v_patch_b.sql</p><p>23_update_gx2v_to_gx2w.sql</p></td></tr>
+			<tr>
+				<td valign="top" width="255" style="">2018.2</td><td valign="top" width="346" style=""><p>23a_update_gx2w_to_gx2w_patch_a.sql</p><p>23b_update_gx2w_patch_a_to_gx2w_patch_b.sql</p><p>24_update_gx2w_to_gx2x.sql</p></td></tr>
+			<tr>
+				<td valign="top" width="255" style="">2018.3</td><td valign="top" width="346" style=""><p>24a_update_gx2x_to_gx2x_patch_a.sql</p><p>24b_update_gx2x_patch_a_to_gx2x_patch_b.sql</p><p>25_update_gx2x_to_gx2y.sql</p></td></tr>
+			<tr>
+				<td valign="top" width="255" style="">2019.1</td><td valign="top" width="346" style=""><p>25a_update_gx2y_to_gx2y_patch_a.sql</p><p>25b_update_gx2y_patch_a_to_gx2y_patch_b.sql</p><p>26_update_gx2y_to_gx2z.sql</p></td></tr>
+			<tr>
+				<td valign="top" width="255" style="">2019.2</td><td valign="top" width="346" style=""><p>26a_update_gx2z_to_gx2z_patch_a.sql</p><p>26b_update_gx2z_patch_a_to_gx2z_patch_b.sql</p><p>27_2019_3.sql</p></td></tr>
+			<tr>
+				<td valign="top" width="255" style="">2019.3</td><td valign="top" width="346" style=""><p>27a_2019_3_patch_a.sql</p><p>27b_2019_3_patch_b.sql</p><p>28_2020_1.sql</p></td></tr>
+			<tr>
+				<td valign="top" width="255" style="">2020.1.0</td><td valign="top" width="346" style="">2020.1.1.sql</td></tr>
+			<tr>
+				<td valign="top" width="255" style="">2020.1.1</td><td valign="top" width="346" style="">2020.1.2.sql</td></tr>
+			<tr>
+				<td valign="top" width="255" style="">2020.1.2</td><td valign="top" width="346" style="">2020.2.0.15.sql</td></tr>
+			<tr>
+				<td valign="top" width="255" style="">2020.2.0</td><td valign="top" width="346" style="">2020.2.1.11.sql</td></tr>
+			<tr>
+				<td valign="top" width="255" style="">2020.2.1</td><td valign="top" width="346" style="">2020.2.3.2.sql</td></tr>
+			<tr>
+				<td valign="top" width="255" style="">2020.2.3</td><td valign="top" width="346" style="">2020.3.0.8.sql</td></tr>
+			<tr>
+				<td valign="top" width="255" style="">2020.3.0</td><td valign="top" width="346" style="">2020.3.1.7.sql</td></tr>
+		<tr><td style=""><p>2020.3.1.7</p></td><td style=""><p>2020.3.2.12.sql</p></td></tr>
+		<tr><td style=""><p>2020.3.2.12</p></td><td style=""><p>2021.1.0.6.sql</p></td></tr>
+		<tr><td style=""><p>2021.1.0.6</p></td><td style=""><p>2021.1.1.4.sql</p></td></tr>
+		<tr><td style=""><p>2021.1.1.4</p></td><td style=""><p>2021.1.2.1.sql</p></td></tr>
+		<tr><td style=""><p>2021.1.2.1</p></td><td style=""><p>2021.1.2.3.sql</p></td></tr>
+		<tr><td style=""><p>2021.1.2.3</p></td><td style=""><p>2021.2.0.3.sql</p></td></tr>
+		<tr><td style=""><p>2021.2.0.3</p></td><td style=""><p>2021.2.0.4.sql</p></td></tr>
+		<tr><td style=""><p>2021.2.0.4</p></td><td style=""><p>2021.2.1.4.sql</p></td></tr>
+		<tr><td style=""><p>2021.2.1.4</p></td><td style=""><p>2021.2.2.6.sql</p></td></tr>
+		<tr><td style=""><p>2021.2.2.6</p></td><td style=""><p>2021.3.0.6.sql</p></td></tr>
+		<tr><td style="">2021.3.0.6<br/></td><td style="">2021.3.2.6.sql<br/></td></tr>
+		<tr><td style="">2021.3.2.6<br/></td><td style="">2022.1.0.6.sql<br/></td></tr>
+		<tr><td style="">2022.1.0.6<br/></td><td style="">2022.1.0.10.sql<br/></td></tr>
+		<tr><td style="">2022.1.0.10<br/></td><td style="">2022.1.1.5.sql<br/></td></tr>
+		<tr><td style="">2022.1.1.5<br/></td><td style="">2022.1.1.6.sql<br/></td></tr>
+		<tr><td style="">2022.1.1.6<br/></td><td style="">2022.1.2.6.sql<br/></td></tr>
+		<tr><td style="">2022.1.2.6<br/></td><td style="">2022.2.0.5.sql</td></tr>
+		<tr><td style="">2022.2.0.5<br/></td><td style="">2022.2.1.4.sql<br/></td></tr>
+		<tr><td style="">2022.2.1.4<br/></td><td style="">2022.2.2.7.sql<br/></td></tr>
+		<tr><td style="">2022.2.2.7<br/></td><td style="">2022.3.0.6.sql</td></tr>
+		</tbody></table>
+		<p>&nbsp;</p><p>After you successfully complete this step, your database will be upgraded.</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

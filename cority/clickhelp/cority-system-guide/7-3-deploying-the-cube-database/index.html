@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-system-guide/7-3-deploying-the-cube-database"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>7.3 Deploying the cube database</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='7.3 Deploying the cube database';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-system-guide/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2__2083975300">
+			<a id="_Toc53424193"></a></h2>
+		<h1 id="h1_1774297852" data-has-heading-anchor="true"><span style="font-weight: bold;">7.3 Deploying the Cube Database</span><a href="/articles/cority-system-guide/7-3-deploying-the-cube-database/a/h1_1774297852" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-system-guide/7-3-deploying-the-cube-database/a/h1_1774297852&#39;,this);"></a></h1><p>The script folder of the Cority installation package contains a script file called Cube_Create_2018.2.xmla. This file is all you need to create a ready-to-use cube database.</p><ol start="1">
+			<li><span style="font-weight: normal; font-style: normal;">From the menu bar, go to </span><span style="font-weight: bold; font-style: normal;">File </span><span style="font-weight: normal; font-style: normal;">&gt; </span><span style="font-weight: bold; font-style: normal;">Open</span><span style="font-weight: normal; font-style: normal;"> &gt; </span><span style="font-weight: bold; font-style: normal;">File</span><span style="font-weight: normal; font-style: normal;">. Then open the Cube_Create_2018.2.xmla file. SSMS will open the script in a new window.</span></li><li>Change the ID and the Name attribute of the xml file to suit your needs. <br/>Give them the same value, and keep the value as short as possible.</li></ol>
+		<p><img src="images/7-3-deploying-the-cube-database-img0001.png" width="599" height="113" alt="" style="border-width: 0px;" loading="lazy"/></p><ol start="3">
+			<li>Press F5 to execute the script. Wait for SSMS to finish. When it is finished, it will display the following at the bottom:</li></ol>
+		<p><img src="images/7-3-deploying-the-cube-database-img0002.png" width="624" height="18" alt="" style="border-width: 0px;" loading="lazy"/></p><ol start="4">
+			<li>Click the refresh button to refresh the database. <br/>You should see that the newly created cube database now exists under Databases.</li></ol>
+		<p><img src="images/7-3-deploying-the-cube-database-img0003.png" width="365" height="101" alt="" style="border-width: 0px;" loading="lazy"/></p><ol start="5">
+			<li>Right-click the newly created database, click properties, and click the “…” box of Data source Impersonation Info. In the Impersonation Information dialog box, choose “Use a specific Windows user name and password”, and enter the credentials of the user that has read access to your Cority relational database  </li><li><span style="font-weight: normal; font-style: normal;">&nbsp;Click </span><span style="font-weight: bold; font-style: normal;">OK</span><span style="font-weight: normal; font-style: normal;">. <br/>On the Database Properties dialog box, click </span><span style="font-weight: bold; font-style: normal;">OK</span><span style="font-weight: normal; font-style: normal;"> again.</span></li></ol>
+		<p><img src="images/7-3-deploying-the-cube-database-img0004.png" width="317" height="262" alt="" style="border-width: 0px;" loading="lazy"/></p><ol start="7">
+			<li>Expand your database, then expand “Data Sources”. Right-click “Cority”, and then right-click <b>Properties</b>. <br/>Under “Impersonation Info”, click the “<b>…</b>” button, and then under the Impersonation Information dialog box, repeat step 5.</li><li><span style="font-weight: normal; font-style: normal;">Click the “<b>…</b>” of Connection String. In the Connection Manager dialog box, enter the name of the server where Cority relational database is hosted, and then select Cority’s database under “Connect to a database”. <br/>Input the information as required to connect to the relational database. Click OK. On the Data Source Properties dialog box, click </span><span style="font-weight: bold; font-style: normal;">OK</span><span style="font-weight: normal; font-style: normal;"> again.</span></li></ol>
+		<ol start="9">
+			<li>Right-click the cube database, and click Process. On the Process Database dialog box, click OK. The Analysis Service will start reading data from the relational database and constructing the cube database. Take note of the length of processing time. This is approximately how much time your cube will take to refresh its data when you run the cube rebuilding client. As the relational database grows, the processing time of your cube database will increase.<br/><img src="images/7-3-deploying-the-cube-database-img0005.png" width="511" height="460" alt="" loading="lazy"/><br/></li></ol>
+		<p> </p><ol start="10">
+			<li><span style="font-weight: normal; font-style: normal;">Right-click <b>localhost &gt; properties</b>, and then click <b>Security </b>on the left. Click <b>Add</b>. Type the name you used in step 3 of the <a href="/articles/cority-system-guide/7-2-permitting-communication-between-iis-and-the-analysis-service/a/_7.2_Permitting_communication" style="text-decoration: none;;color: #0000FF; text-decoration: underline;" onclick="return n(&#39;!cority-system-guide/7-2-permitting-communication-between-iis-and-the-analysis-service/a/_7.2_Permitting_communication&#39;,this);">Permitting communication between IIS and Analysis Service</a></span><span style="font-weight: normal; font-style: normal;"> section.</span></li></ol>
+		<p><img src="images/7-3-deploying-the-cube-database-img0006.png" width="580" height="262" alt="" style="border-width: 0px;" loading="lazy"/></p><ol start="11">
+			<li><span style="font-weight: normal; font-style: normal;">Click </span><span style="font-weight: bold; font-style: normal;">OK</span><span style="font-weight: normal; font-style: normal;">, and then click </span><span style="font-weight: bold; font-style: normal;">OK</span><span style="font-weight: normal; font-style: normal;"> again.</span></li><li>Go to your Cority virtual directory, and under config &gt; properties.config, modify nhOlapDataSource to be the url of the msmdpump.dll and nhOlapDatabase to be the name of the cube database you defined in step 2.<br/></li></ol>
+		<p><img src="images/7-3-deploying-the-cube-database-img0007.png" width="582" height="28" alt="" style="border-width: 0px;" loading="lazy"/></p><p>	Your cube database is now ready to use.<a id="_Toc53424194"></a></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-system-guide/7-2-permitting-communication-between-iis-and-the-analysis-service"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>7.2 Permitting communication between IIS and the Analysis Service</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='7.2 Permitting communication between IIS and the Analysis Service';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-system-guide/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2__871256568">
+			<a id="_7.2_Permitting_communication"></a><a id="_Toc53424192"></a></h2>
+		<h1 id="h1__871256568" data-has-heading-anchor="true"><span style="font-weight: bold;">7.2 Permitting communication between IIS and the Analysis Service</span><a href="/articles/cority-system-guide/7-2-permitting-communication-between-iis-and-the-analysis-service/a/h1__871256568" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-system-guide/7-2-permitting-communication-between-iis-and-the-analysis-service/a/h1__871256568&#39;,this);"></a></h1><ol start="1">
+			<li><span style="font-weight: normal; font-style: normal;">After installing SSAS on the server, with the same administrator account on the same server, open SSMS. In the Object Explorer, select </span><span style="font-weight: bold; font-style: normal;">Connect</span><span style="font-weight: normal; font-style: normal;"> &gt; </span><span style="font-weight: bold; font-style: normal;">Analysis Services</span><span style="font-weight: normal; font-style: normal;">.</span></li></ol>
+		<p><img src="images/7-2-permitting-communication-between-iis-and-the-analysis-service-img0001.png" width="544" height="300" alt="" style="border-width: 0px;" loading="lazy"/></p><ol start="2">
+			<li><span style="font-weight: normal; font-style: normal;">Enter “localhost” for the server name, and then press connect. <br/>You should now be connected to the Analysis Service. Now right-click localhost and select </span><span style="font-weight: bold; font-style: normal;">Properties</span><span style="font-weight: normal; font-style: normal;">.</span></li></ol>
+		<p><img src="images/7-2-permitting-communication-between-iis-and-the-analysis-service-img0002.png" width="245" height="286" alt="" style="border-width: 0px;" loading="lazy"/></p><ol start="3">
+			<li><span style="font-weight: normal; font-style: normal;">Click </span><span style="font-weight: bold; font-style: normal;">Security</span><span style="font-weight: normal; font-style: normal;"> at the left, and then click </span><span style="font-weight: bold; font-style: normal;">Add</span><span style="font-weight: normal; font-style: normal;">.</span></li>
+			<li><span style="font-weight: normal; font-style: normal;">Enter the anonymous internet user account that you wrote down earlier. It should be IUSR_&lt;computername&gt;, by default. <br/>You have now permitted IIS to communicate with the Analysis Service.</span><a id="_Toc53424193"></a></li></ol>
+	<div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-system-guide/installing-the-session-state-database-using-the-aspnet-regsql-exe-tool"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Installing the Session State Database Using the Aspnet_regsql.exe Tool</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Installing the Session State Database Using the Aspnet_regsql.exe Tool';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-system-guide/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h3 id="h3__605540231">
+			<a id="_Toc53424098"></a></h3><h1 id="h1_2063682676" data-has-heading-anchor="true">Installing the Session Start Database Using the Aspnet_regsql.exe Tool<a href="/articles/cority-system-guide/installing-the-session-state-database-using-the-aspnet-regsql-exe-tool/a/h1_2063682676" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-system-guide/installing-the-session-state-database-using-the-aspnet-regsql-exe-tool/a/h1_2063682676&#39;,this);"></a></h1><p>The session state database is needed for storing the session variables in the database instead of storing in memory.</p><p>To install the session state database on SQL Server, run the Aspnet_regsql.exe tool located in the <span style="font-style: italic;">systemroot</span>\Microsoft.NET\Framework\<span style="font-style: italic;">versionNumber</span> folder on your database server (e.g. C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319).</p><p>From the command prompt (Start, Run, cmd), go to the folder where the aspnet_regsql.exe is located and execute <span style="font-weight: bold; font-style: italic;">aspnet_regsql.exe -S SampleSqlServer -E -ssadd -sstype p</span>. Replace ‘SampleSqlServer’ with the name of the SQL Server.</p><p class="Note">The user running this command must have administrative privileges on the SQL Server.</p><p>The user created in the previous step (“gxuser”) needs to have “db_owner” privileges assigned to the ASPState database.<a id="_Install_and_Configure"></a><a id="_Toc473686964"></a><a id="_Toc423420707"></a><a id="_Toc53424099"></a><a id="_Toc474067634"></a><a id="_Toc441660186"></a></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

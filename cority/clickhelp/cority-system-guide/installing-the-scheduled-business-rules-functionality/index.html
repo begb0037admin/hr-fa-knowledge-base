@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-system-guide/installing-the-scheduled-business-rules-functionality"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>5.12 Installing the Scheduled Business Rules Functionality</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='5.12 Installing the Scheduled Business Rules Functionality';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-system-guide/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1_1404786513" data-has-heading-anchor="true"><span style="font-weight: bold;">5.12 Installing the Scheduled Business Rules Functionality</span><a href="/articles/cority-system-guide/installing-the-scheduled-business-rules-functionality/a/h1_1404786513" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-system-guide/installing-the-scheduled-business-rules-functionality/a/h1_1404786513&#39;,this);"></a></h1><p>This will provide the ability to configure and use Scheduled Business Rules (TDBRWorker).</p><p class="StepIntro">To enable Scheduled Business Rules:</p><ol start="1">
+			<li><p>Obtain the source files from the TDBRWorker directory of the installation package.</p></li><li><p>Run the <span style="font-style: italic;">TDBRWorker.sql </span>script on your database.</p></li><li><p>Copy the files into a folder on the server and copy the <span style="font-style: italic;">utils.config</span> from your Web folder.</p></li></ol>
+		<ol start="4">
+			<li><p>In the Sites folder provided, there is a site file (with <span style="font-style: italic;">.site</span> extension). Within that site file, provide the following nodes from your <span style="font-style: italic;">properties.config</span> file (the required values are in parentheses): connection.connection_string (nhConnectionString), default_schema (nhDefaultSchema), olapdatasource (nhOlapDataSource), olapdatabase (nhOlapDatabase)</p></li>
+			<li><p>In the config file (<span style="font-style: italic;">Medgate.NMedgate.TDBRWorker.exe.config</span>):</p></li></ol>
+		<p style="margin-left: 80px;">a. Set the CentralDbConnectionString parameter to the nhConnectionString from your <span style="font-style: italic;">properties.config</span> file. <br/><span style="font-weight: bold;"></span>You can provide a UTF-8 encryption based on the key within the <span style="font-style: italic;">utils.config</span>.</p><p style="margin-left: 80px;">b. Set the TDBRWorkerId parameter to TDBRWorker_1.</p><p style="margin-left: 80px;">c. Set the ServerId parameter to Release.</p><p style="margin-left: 80px;">d. Set the MaxActiveThreads parameter to 1.</p><p style="margin-left: 80px;">e. Set the EOPdfLicense parameter to the EOPdfLicense from your Web folder’s <span style="font-style: italic;">server.config</span>.</p><ol start="6">
+			<li><p>Open the Windows Command Prompt application in Administrator mode.</p></li></ol>
+		<p style="margin-left: 80px;">1. Execute the following command: cd C:\Windows\Microsoft.NET\Framework\v4.0.30319 (or your installed version, if applicable)</p><p style="margin-left: 80px;">2. If you are installing multiple instances or changing the frequency, open the config file (<span style="font-style: italic;">Medgate.NMedgate.TDBRWorker.exe.config</span>), and make the changes to the appropriate nodes.</p><p style="margin-left: 80px;">3. Execute: InstallUtil.exe [folder location on the server]\Medgate.NMedgate.TDBRWorker.exe</p><ol start="7">
+			<li><p>Open Local Services in Windows. Locate the TDBR Service. Right-click TDBR Service and select Start Service.</p></li>
+			<li><p>If you want the site file to be encrypted:</p></li></ol>
+		<p style="margin-left: 80px;">1. Change EncryptSiteFiles to true within <i>Medgate.NMedgate.TDBRWorker.exe.config</i>.</p><p style="margin-left: 80px;">2. Right-click the TDBR service, select Properties, select Log On, and specify Local System account.</p><p style="margin-left: 80px;">3. Open the <i>TDBRWLog.evtx</i> log file under C:\Windows\System32\winevt\Logs\ to check the process log and ensure the service is running successfully.</p><p>If you have trouble with any of these steps, contact Cority Support.</p><p> <a id="_Toc2076990"></a><a id="_Toc53424184"></a></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

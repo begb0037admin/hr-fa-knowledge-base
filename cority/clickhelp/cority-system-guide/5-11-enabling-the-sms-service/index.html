@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-system-guide/5-11-enabling-the-sms-service"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>5.11 Enabling the SMS Service</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='5.11 Enabling the SMS Service';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-system-guide/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h2 id="h2_728999628">
+  <a id="_Toc53424183"></a>
+</h2>
+<h1 id="h1_728999628" data-has-heading-anchor="true">
+  <span style="font-weight: bold;">5.11 Enabling the SMS Service</span>
+<a href="/articles/cority-system-guide/5-11-enabling-the-sms-service/a/h1_728999628" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-system-guide/5-11-enabling-the-sms-service/a/h1_728999628&#39;,this);"></a></h1>
+<p>
+  This service provides the ability for business rules to send SMS notifications to users.
+</p>
+<p class="Note">
+  If it is not already installed, on your server install the .NET Core Windows Server Hosting bundle. 
+  <br/>
+  You can acquire this from <a href="https://dotnet.microsoft.com" style="color: #0000ff;" target="_top">https://dotnet.microsoft.com</a>.&nbsp;You will have to restart the server after the installation is complete. The .Net Core version must be 2.1.1 or newer.
+  <br/>
+</p>
+<p>
+  To enable the SMS service:
+</p>
+<ol start="1">
+  <li>
+    <span style="font-weight: normal; font-style: normal;">If it is not already installed, on your server install the .NET Core Windows Server Hosting bundle. 
+      <br/>
+    </span><span style="font-weight: normal; font-style: normal;"></span>
+  </li>
+  <li>
+    Copy the SMS software from the zip file (sms v8.0.25.0.0.zip) in the SMS folder of the Cority Installation Package to the Web Server.
+  </li>
+  <li>
+    Use Windows IIS to create the application pool. 
+    <br/>
+    Expand your computer/server name, click <b>Application Pools</b>, and select <b>Add Application Pool</b>.
+    <br/>
+    <br/>
+    <img src="images/5-11-enabling-the-sms-service-img0001.png" width="256" height="232" alt="" style="border-width: 0px;" loading="lazy"/>
+  </li>
+</ol>
+<p>
+</p>
+<ol start="4">
+  <li>
+    Create the Application.
+    <br/>
+    Use the path of the package and the application pool created in the previous steps.
+    <br/>
+    <img src="images/5-11-enabling-the-sms-service-img0002.png" width="428" height="298" alt="" style="border-width: 0px;" loading="lazy"/>
+    <br/>
+    Use Test Settings. You might have to log in with a different path than the default if you encounter an error trying to access the default path.
+    <br/>
+    Also, in order for the encryption to work, the application pool identity must have Admin rights.
+    <br/>
+  </li>
+</ol>
+<h2 id="h2__649843810" data-has-heading-anchor="true">
+  Sites
+<a href="/articles/cority-system-guide/5-11-enabling-the-sms-service/a/h2__649843810" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-system-guide/5-11-enabling-the-sms-service/a/h2__649843810&#39;,this);"></a></h2>
+<ol start="1">
+  <li>
+    Inside the Sites folder provided, there is a site file (with .site extension). The IIS application pool should have the right to read from it.
+  </li>
+  <li>
+    <span style="font-weight: normal; font-style: normal;">Specify the full path inside appsettings.json. See the example below. If you want the files to be encrypted and they are not encrypted, mark </span><span style="color: #2E75B6; font-weight: normal; font-style: normal;">EncryptSiteFiles</span><span style="font-weight: normal; font-style: normal;"> as true.
+    <br/>
+    <br/>
+    </span><span style="color: #2E75B6; font-weight: normal; font-style: normal;">"AppSettings"</span><span style="font-weight: normal; font-style: normal;">: {</span><span style="font-weight: normal; font-style: normal;">
+    <br/>
+    </span><span style="font-weight: normal; font-style: normal;">&nbsp; &nbsp;&nbsp;</span><span style="color: #2E75B6; font-weight: normal; font-style: normal;">"SiteFilesProvider"</span><span style="font-weight: normal; font-style: normal;">: </span><span style="color: #A31515; font-weight: normal; font-style: normal;">"Files"</span><span style="font-weight: normal; font-style: normal;">,</span><span style="font-weight: normal; font-style: normal;">
+    <br/>
+    </span><span style="font-weight: normal; font-style: normal;">&nbsp; &nbsp;&nbsp;</span><span style="color: #2E75B6; font-weight: normal; font-style: normal;">"SiteFilesFolder"</span><span style="font-weight: normal; font-style: normal;">: </span><span style="color: #A31515; font-weight: normal; font-style: normal;">"C:</span><span style="color: #FF007F; font-weight: normal; font-style: normal;">\\</span><span style="color: #A31515; font-weight: normal; font-style: normal;">smsService</span><span style="color: #FF007F; font-weight: normal; font-style: normal;">\\</span><span style="color: #A31515; font-weight: normal; font-style: normal;">sites"</span><span style="font-weight: normal; font-style: normal;">,</span><span style="font-weight: normal; font-style: normal;">
+    <br/>
+    </span><span style="color: #2E75B6; font-weight: normal; font-style: normal;">&nbsp; &nbsp;&nbsp;"EncryptSiteFiles"</span><span style="font-weight: normal; font-style: normal;">: </span><span style="color: #0000FF; font-weight: normal; font-style: normal;">true,
+    <br/>
+    </span>
+  </li>
+  <li>
+    The site file name must match the site file name in Cority.
+  </li>
+</ol>
+<p style="font-weight: bold;">
+</p>
+<h2 id="h2__1509905588" data-has-heading-anchor="true">
+  Security
+<a href="/articles/cority-system-guide/5-11-enabling-the-sms-service/a/h2__1509905588" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-system-guide/5-11-enabling-the-sms-service/a/h2__1509905588&#39;,this);"></a></h2>
+<p>
+  The Web api is secured using simple Windows Authentication provided by IIS.
+</p>
+<ol start="1">
+  <li>
+    Open Windows IIS, open your application pool (set up in the previous steps), select the sms website, and click Authorization Rules.
+    <br/>
+    <img src="images/5-11-enabling-the-sms-service-img0003.png" width="264" height="184" alt="" style="border-width: 0px;" loading="lazy"/>
+    <br/>
+  </li>
+  <li>
+    Delete the Allow All rule then add rules for all the application pools/identities that will call this service. See below.
+    <br/>
+    <img src="images/5-11-enabling-the-sms-service-img0004.png" width="483" height="298" alt="" style="border-width: 0px;" loading="lazy"/>
+    <br/>
+    <br/>
+  </li>
+  <li>
+    <span style="font-weight: normal; font-style: normal;">As the user who made the changes with IIS, open </span><span style="font-weight: normal; font-style: italic;">web.config</span><span style="font-weight: normal; font-style: normal;"> and verify the modifications. You can manually add or edit rules directly in </span><span style="font-weight: normal; font-style: italic;">web.config</span><span style="font-weight: normal; font-style: normal;"> in the future.
+    <br/>
+    <br/>
+    &lt;system.webServer&gt;
+    <br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;security&gt;
+    <br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;authorization&gt;
+    <br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove users="*" roles="" verbs="" /&gt;
+    <br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;add accessType="Allow" users="MEDGATE\sroberts" /&gt;
+    <br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/authorization&gt;
+    <br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/security&gt;
+    <br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/system.webServer&gt;</span>
+  </li>
+</ol>
+<h2 id="h2__104783573" data-has-heading-anchor="true">
+  Logs
+<a href="/articles/cority-system-guide/5-11-enabling-the-sms-service/a/h2__104783573" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-system-guide/5-11-enabling-the-sms-service/a/h2__104783573&#39;,this);"></a></h2>
+<p>
+  The process Logs are stored in each client’s database. The error logs are rolled out into the Logs folder for each day. You can change the log configurations in AppSettings.
+</p>
+<pre class="inlineCode"><code>"Serilog": {
+  "MinimumLevel": "Information",
+  "WriteTo:Async": {
+    "Name": "Async",
+    "Args": {
+      "configure": [
+        {
+          "Name": "File",
+          "Args": {
+            "path": "logs\\.txt",
+            "rollingInterval": "Day",
+            "fileSizeLimitBytes": 10485760,
+            "rollOnFileSizeLimit": true
+          }
+        }
+      ]
+    }
+  },
+  "Enrich": [ "FromLogContext", "WithMachineName", "WithThreadId" ],
+  "Properties": {
+    "Application": "SMSService"
+  }
+}</code></pre>
+<a id="_Toc2076990"></a><a id="_Toc53424184"></a><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

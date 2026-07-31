@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-system-guide/install-cority-on-iis-7-x"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Install Cority on IIS 7.x</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Install Cority on IIS 7.x';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-system-guide/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2_557795552">
+			<a id="_Toc423420709"></a><a id="_Toc53424101"></a></h2>
+		<h1 id="h1_557795552" data-has-heading-anchor="true"><span style="font-weight: bold;">Install Cority on IIS 7.x</span><a href="/articles/cority-system-guide/install-cority-on-iis-7-x/a/h1_557795552" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-system-guide/install-cority-on-iis-7-x/a/h1_557795552&#39;,this);"></a></h1><ol start="1">
+			<li>Copy the Cority folder, located in the installation package (under \Web folder), to the X:\inetpub\wwwroot\ folder.<br/><img src="images/install-cority-on-iis-7-x-img0001.png" width="545" height="372" alt="" style="border-width: 0px;" loading="lazy"/></li><li>Start IIS Manager.</li></ol>
+		<p><img src="images/install-cority-on-iis-7-x-img0002.png" width="258" height="324" alt="" style="border-width: 0px;" loading="lazy"/></p><ol start="3">
+			<li>In IIS Manager, create a new application pool.</li></ol>
+		<p><img src="images/install-cority-on-iis-7-x-img0003.png" width="599" height="434" alt="" style="border-width: 0px;" loading="lazy"/></p><ol start="4">
+			<li>Specify a name for the pool such as “Cority”, and ensure that the .NET Framework version is 4.0.30319 and managed pipeline mode is set to “Integrated”.</li><li><span style="font-weight: normal; font-style: normal;">When you are finished, click </span><span style="font-weight: bold; font-style: normal;">OK</span><span style="font-weight: normal; font-style: normal;">.</span></li></ol>
+		<p><img src="images/install-cority-on-iis-7-x-img0004.png" width="286" height="244" alt="" style="border-width: 0px;" loading="lazy"/></p><p> </p><ol start="6">
+			<li>The new pool will appear in the list of pools.</li></ol>
+		<p><img src="images/install-cority-on-iis-7-x-img0005.png" width="595" height="326" alt="" style="border-width: 0px;" loading="lazy"/></p><ol start="7">
+			<li>Configure the new pool’s identity by right-clicking it and choosing “Advanced Settings…”.</li></ol>
+		<p><img src="images/install-cority-on-iis-7-x-img0006.png" width="583" height="399" alt="" style="border-width: 0px;" loading="lazy"/></p><ol start="8">
+			<li>Choose the appropriate account for the pool’s identity (for example “NetworkService”).</li></ol>
+		<ul>
+			<li><span style="font-weight: bold; font-style: normal;">NetworkService</span><span style="font-weight: normal; font-style: normal;"> - A built-in Windows identity that does not require a password, has user privileges only, and is relatively low-privileged.</span></li><li><span style="font-weight: bold; font-style: normal;">ApplicationPoolIdentity</span><span style="font-weight: normal; font-style: normal;"> - A virtual account with the name of the new application pool.</span></li></ul>
+		<p>Either NetworkService or ApplicationPoolIdentity should provide sufficient privileges to the pool for running Cority properly, however if you encounter problems accessing network resources, configure Cority to be run as a true domain user.</p><p><img src="images/install-cority-on-iis-7-x-img0007.png" width="372" height="447" alt="" style="border-width: 0px;" loading="lazy"/></p><p> </p><ol start="9">
+			<li>Create a new application for Cority.</li></ol>
+		<p><img src="images/install-cority-on-iis-7-x-img0008.png" width="545" height="395" alt="" style="border-width: 0px;" loading="lazy"/></p><ol start="10">
+			<li><span style="font-weight: normal; font-style: normal;">Choose an alias for the application (“cority” is suggested), select the application pool created in the previous step and the path where the files were copied, and then click </span><span style="font-weight: bold; font-style: normal;">OK</span><span style="font-weight: normal; font-style: normal;">.</span></li></ol>
+		<p class="Note">The application alias must be in lower case.</p><p>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/install-cority-on-iis-7-x-img0009.png" width="344" height="275" alt="" style="border-width: 0px;" loading="lazy"/> </p><ol start="11">
+			<li>The application will now appear in IIS Manager.</li></ol>
+		<p><img src="images/install-cority-on-iis-7-x-img0010.png" width="599" height="377" alt="" style="border-width: 0px;" loading="lazy"/></p><p><a id="_Toc423420710"></a> <a id="_Toc53424102"></a></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>
