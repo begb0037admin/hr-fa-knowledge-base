@@ -1,0 +1,481 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/authenticate"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Authentication and Session APIs and Data Types</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Authentication and Session APIs and Data Types';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><p>
+	</p><p class="Note">For the most up to date API documentation, please see the&nbsp;<a href="https://api.enviance.com/swagger.svc/index.html?url=/Swagger.svc/swagger.json#/Authentication" target="_blank">Authentication API Documentation on Swagger</a>.<br/></p><p></p><nav>
+  
+    
+  
+</nav>
+
+    <section>
+    <h1 id="authentication-and-session-apis-and-data-types" data-has-heading-anchor="true">Authentication and Session APIs and Data Types<a href="/articles/fordevelopers/authenticate/a/authentication-and-session-apis-and-data-types" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/authentication-and-session-apis-and-data-types&#39;,this);"></a></h1>
+<h2 id="version" data-has-heading-anchor="true">Version:<a href="/articles/fordevelopers/authenticate/a/version" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/version&#39;,this);"></a></h2>
+
+<p><strong>License:</strong> <a href="http://www.enviance.com" target="_top">Enviance, Inc.</a></p>
+
+<h3 id="sessions" data-has-heading-anchor="true">/sessions<a href="/articles/fordevelopers/authenticate/a/sessions" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/sessions&#39;,this);"></a></h3>
+
+<h4 id="post" data-has-heading-anchor="true">POST<a href="/articles/fordevelopers/authenticate/a/post" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/post&#39;,this);"></a></h4>
+<h5 id="description" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/authenticate/a/description" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/description&#39;,this);"></a></h5>
+
+<p>Creates a new session by authenticating via username and password.</p>
+
+<p><strong>Security:</strong> All users.</p>
+
+<p><strong>SDK API (create):</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.authentication.authenticate(userName, password, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/authenticate/a/parameters" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/parameters&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-collapse: collapse; border-color: #000000;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">authenticateInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Login information.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/authenticate/a/authenticateinfo" onclick="return n(&#39;!fordevelopers/authenticate/a/authenticateinfo&#39;,this);">authenticateInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/authenticate/a/responses" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/responses&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-collapse: collapse; border-color: #000000;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">201</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) for the newly created session.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">POST</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">AuthenticationService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">sessions</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">UTF</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+ 
+{
+  <span class="cm-property">userName</span>: <span class="cm-string">&quot;username&quot;</span>,
+  <span class="cm-property">password</span>: <span class="cm-string">&quot;pass111&quot;</span>
+}</pre></pre></td></tr></table>
+
+<p id="sessionscert"><br/></p><h3 id="sessionscert" data-has-heading-anchor="true">/sessions/cert<a href="/articles/fordevelopers/authenticate/a/sessionscert" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/sessionscert&#39;,this);"></a></h3>
+
+<h4 id="patch" data-has-heading-anchor="true">PATCH<a href="/articles/fordevelopers/authenticate/a/patch" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/patch&#39;,this);"></a></h4>
+<h5 id="description-1" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/authenticate/a/description-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/description-1&#39;,this);"></a></h5>
+
+<p>Creates a new session by authenticating via encrypted username and certification id.</p>
+
+<p><strong>Security:</strong> All users.</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.authentication.authenticateByCert(encryptedUserName, certUniqueId, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-1" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/authenticate/a/parameters-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/parameters-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">authenticateByCertInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Login information.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/authenticate/a/authenticatebycertinfo" onclick="return n(&#39;!fordevelopers/authenticate/a/authenticatebycertinfo&#39;,this);">authenticateByCertInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-1" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/authenticate/a/responses-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/responses-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">201</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) for the newly created session.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">PATCH</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">AuthenticationService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">sessions</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">UTF</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+ 
+{
+  <span class="cm-property">encryptedUserName</span>: <span class="cm-string">&quot;username&quot;</span>,
+  <span class="cm-property">certUniqueId</span>: <span class="cm-string">&quot;abcd23456789&quot;</span>,
+}</pre></pre></td></tr></table>
+
+<p id="currentsession"><br/></p><h3 id="currentsession" data-has-heading-anchor="true">/currentSession<a href="/articles/fordevelopers/authenticate/a/currentsession" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/currentsession&#39;,this);"></a></h3>
+
+<h4 id="get" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/authenticate/a/get" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/get&#39;,this);"></a></h4>
+<h5 id="description-2" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/authenticate/a/description-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/description-2&#39;,this);"></a></h5>
+
+<p>Gets information about the current session. The current session is determined using the session id specified in the Authorization header.</p>
+
+<p><strong>Security:</strong> All users.</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.authentication.getCurrentSession(onsuccess, onerror)</font></code></p>
+
+<h5 id="responses-2" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/authenticate/a/responses-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/responses-2&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An instance of the sessionInfo data structure.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/authenticate/a/sessioninfo" onclick="return n(&#39;!fordevelopers/authenticate/a/sessioninfo&#39;,this);">sessionInfo</a></td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">GET</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">AuthenticationService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">currentsession</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table><h4 id="delete" data-has-heading-anchor="true">DELETE<a href="/articles/fordevelopers/authenticate/a/delete" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/delete&#39;,this);"></a></h4>
+<h5 id="description-3" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/authenticate/a/description-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/description-3&#39;,this);"></a></h5>
+
+<p>Ends the current session, logging off the User. The current session is determined using the session id specified in the Authorization header.</p>
+
+<p><strong>Security:</strong> All users.</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.authentication.endCurrentSession(onsuccess, onerror)</font></code></p>
+
+<h5 id="responses-3" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/authenticate/a/responses-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/responses-3&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">204</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Current session ended.</td>
+    </tr>
+  </tbody>
+</table></section><section>
+
+<p id="models"><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">DELETE</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">AuthenticationService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">currentsession</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table><br/></p><h3 id="models"><br/></h3><h3 id="models" data-has-heading-anchor="true">Models<a href="/articles/fordevelopers/authenticate/a/models" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/models&#39;,this);"></a></h3><h4 id="authenticateinfo" data-has-heading-anchor="true">authenticateInfo<span id="authenticateInfo"></span>&nbsp;<a href="/articles/fordevelopers/authenticate/a/authenticateinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/authenticateinfo&#39;,this);"></a></h4>
+
+<p>Authenticate info.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">username</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The username string.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">password</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The password string.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table><h4 id="authenticatebycertinfo" data-has-heading-anchor="true">authenticateByCertInfo<span id="authenticateByCertInfo"></span>&nbsp;<a href="/articles/fordevelopers/authenticate/a/authenticatebycertinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/authenticatebycertinfo&#39;,this);"></a></h4>
+
+<p>Authenticate by Cert info</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">encryptedUserName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The encrypted username string.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">certUniqueId</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The unique id string for the certification.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table><h4 id="sessioninfo" data-has-heading-anchor="true">sessionInfo<span id="sessionInfo"></span>&nbsp;<a href="/articles/fordevelopers/authenticate/a/sessioninfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/sessioninfo&#39;,this);"></a></h4>
+
+<p>Represents a User session in the Management System.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;"><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th></tr>
+  </thead>
+  <tbody>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) of the session.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">homeSystemId</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string of the User Home System.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">currentSystemId</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string of the User current System.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">systems</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">A mapping of System ids to System names.&nbsp; See <a href="/articles/fordevelopers/authenticate/a/sessionSystem" onclick="return n(&#39;!fordevelopers/authenticate/a/sessionSystem&#39;,this);">sessionSystem</a>.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">sessionTimeout</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The minutes remaining in the User session.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">userTimeZone</td><td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/authenticate/a/timeZone" onclick="return n(&#39;!fordevelopers/authenticate/a/timeZone&#39;,this);">timeZone</a></td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The user Time Zone</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+  <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/authenticate/a/appSettings" onclick="return n(&#39;!fordevelopers/authenticate/a/appSettings&#39;,this);">appSettings</a></td><td style="border-width: 1px; border-style: solid; border-color: #000000;">object</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">List of system/environment settings in name/value pair format.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr></tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default">{
+  <span class="cm-string property">&quot;id&quot;</span>: <span class="cm-string">&quot;2F198558-1111-1111-1111-E812D99CD199&quot;</span>,
+  <span class="cm-string property">&quot;homeSystemId&quot;</span>: <span class="cm-string">&quot;2DADBAC1-1FD6-4CC3-AD80-5DFF1434F599&quot;</span>,
+  <span class="cm-string property">&quot;currentSystemId&quot;</span>: <span class="cm-string">&quot;80CBE1AF-DC47-4420-953F-A94814E35AB2&quot;</span>,
+  <span class="cm-string property">&quot;systems&quot;</span>: {
+    <span class="cm-string property">&quot;2DADBAC1-1FD6-4CC3-AD80-5DFF1434F599&quot;</span>: <span class="cm-string">&quot;ABC System&quot;</span>,
+    <span class="cm-string property">&quot;80CBE1AF-DC47-4420-953F-A94814E35AB2&quot;</span>: <span class="cm-string">&quot;DEF System&quot;</span>
+  },
+  <span class="cm-string property">&quot;sessionTimeout&quot;</span>: <span class="cm-number">30</span>,
+  <span class="cm-string property">&quot;userTimeZone&quot;</span>: {
+    <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;USA Pacific&quot;</span>,
+    <span class="cm-string property">&quot;stdOffset&quot;</span>: <span class="cm-operator">-</span><span class="cm-number">480</span>,
+    <span class="cm-string property">&quot;dstOffset&quot;</span>: <span class="cm-operator">-</span><span class="cm-number">420</span>,
+    <span class="cm-string property">&quot;currentOffset&quot;</span>: <span class="cm-operator">-</span><span class="cm-number">420</span>
+  }
+  <span class="cm-string">&quot;appSettings&quot;</span>: {
+  <span class="cm-string">&quot;UUIDBaseUrl&quot;</span>: <span class="cm-string">&quot;https://uuid.enviance.com/api&quot;</span>,
+  <span class="cm-string">&quot;WebUrl&quot;</span>: <span class="cm-string">&quot;https://go.enviance.com&quot;</span>
+  }
+}</pre></pre></td></tr></table><h4 id="timezone"></h4></section><section><h4 id="timezone" data-has-heading-anchor="true">appSettings&nbsp;<span id="appSettings"></span>&nbsp;<a href="/articles/fordevelopers/authenticate/a/timezone" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/timezone&#39;,this);"></a></h4><p>JSON object containing a list of system and/or environment settings in a name/value pair format.</p><table cellspacing="0" cellpadding="4" style="border: 1px none #000000; width: 616px;"><thead><tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;"><th style="border: 1px solid #000000;"><font color="#ffffff">Name</font></th><th style="border: 1px solid #000000;"><font color="#ffffff">Type</font></th><th style="border: 1px solid #000000;"><font color="#ffffff">Description</font></th><th style="border: 1px solid #000000;"><font color="#ffffff">Required</font></th></tr></thead><tbody><tr><td style="border: 1px solid #000000;">appSettings</td><td style="border: 1px solid #000000;">Object (JSON)</td><td style="border: 1px solid #000000;">App settings key.</td><td style="border: 1px solid #000000;">No</td></tr></tbody></table></section><p></p><p><br/></p><h4 id="timezone" data-has-heading-anchor="true">sessionSystem<span id="sessionSystem"></span>&nbsp;&nbsp;<a href="/articles/fordevelopers/authenticate/a/timezone" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/timezone&#39;,this);"></a></h4><p>List of systems user has access to in the current session.</p><table cellspacing="0" cellpadding="4" style="border: 1px none #000000; width: 616px;"><thead><tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;"><th style="border: 1px solid #000000;"><font color="#ffffff">Name</font></th><th style="border: 1px solid #000000;"><font color="#ffffff">Type</font></th><th style="border: 1px solid #000000;"><font color="#ffffff">Description</font></th><th style="border: 1px solid #000000;"><font color="#ffffff">Required</font></th></tr></thead><tbody><tr><td style="border: 1px solid #000000;">sessionSystem</td><td style="border: 1px solid #000000;">string</td><td style="border: 1px solid #000000;">A mapping of System ids to System names.</td><td style="border: 1px solid #000000;">Default</td></tr></tbody></table><br/><section><h4 id="timezone" data-has-heading-anchor="true">timeZone<span id="timeZone"></span>&nbsp;<a href="/articles/fordevelopers/authenticate/a/timezone" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/timezone&#39;,this);"></a></h4>
+
+<p>Describes a time zone, including its offsets from UTC.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The name of the time zone.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">stdOffset</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The offset in minutes from UTC during standard time.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dstOffset</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The offset in minutes from UTC during daylight savings time (DST). This property will be identical to “stdOffset” for time zones that do not observe DST.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">currentOffset</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The current offset in minutes from UTC (which can change upon whether the time zone is currently observing DST or not).</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+    </section>
+    <font color="#555555"><br/></font><h3 id="h3_1513398527" data-has-heading-anchor="true">
+			/oauthtoken<a href="/articles/fordevelopers/authenticate/a/h3_1513398527" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/h3_1513398527&#39;,this);"></a></h3>
+		<h4 id="h4_782856060" data-has-heading-anchor="true">
+			POST<a href="/articles/fordevelopers/authenticate/a/h4_782856060" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/h4_782856060&#39;,this);"></a></h4>
+		<h5 id="h5__1233091186" data-has-heading-anchor="true">
+			Description:<a href="/articles/fordevelopers/authenticate/a/h5__1233091186" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/h5__1233091186&#39;,this);"></a></h5>
+		<p>Authentication by OAuth token. Creates a new Access Token, which used for access to the system.</p><p>Security:&nbsp;All users.</p><h5 id="h5_922718170" data-has-heading-anchor="true">
+			Parameters<a href="/articles/fordevelopers/authenticate/a/h5_922718170" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/h5_922718170&#39;,this);"></a></h5>
+		<table width="616" class="CHTable" cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;"><thead>
+      <tr>
+				<th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999" scope="col"><font color="#ffffff">Name</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999" scope="col"><font color="#ffffff">Located in</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999" scope="col"><font color="#ffffff">Description</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999" scope="col"><font color="#ffffff">Required</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999" scope="col"><font color="#ffffff">Schema</font></th></tr>
+			</thead>
+			<tbody><tr>
+				<td style="border-width: 1px; border-style: solid; border-color: #000000;">oAuthRefreshToken</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">Refresh token crypted string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td><td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/authenticate/a/authenticatebycertinfo" onclick="return n(&#39;!fordevelopers/authenticate/a/authenticatebycertinfo&#39;,this);">string</a></td></tr>
+		</tbody></table>
+		<h5 id="h5__1052052302" data-has-heading-anchor="true">
+			Responses<a href="/articles/fordevelopers/authenticate/a/h5__1052052302" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/h5__1052052302&#39;,this);"></a></h5>
+		<table width="616" class="CHTable" cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;"><thead><tr style="background-color: #999999;">
+				<th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Code</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Description</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Schema</font></th></tr>
+			</thead>
+			<tbody><tr>
+				<td style="border-width: 1px; border-style: solid; border-color: #000000;">201</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) for the newly created session.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/authenticate/a/oAuthGetAccesTokenResponseInfo" onclick="return n(&#39;!fordevelopers/authenticate/a/oAuthGetAccesTokenResponseInfo&#39;,this);">oAuthGetAccesTokenResponseInfo</a></td></tr>
+		</tbody></table>
+		<table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">POST</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">AuthenticationService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">oauthtoken</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">UTF</span><span class="cm-operator">-</span><span class="cm-number">8</span> 
+
+{
+  <span class="cm-property">oAuthRefreshToken</span>: <span class="cm-string">&quot;oMcjJnTgMI6dQrHMu+QvApclywH1MppMh2KWzCZ1xxGUnm9RDjbhgre4jgkwStlgvPlKZ/ggyLBq4JBXCW1t24EPSIG5jgP5w56w6xQ48xA=&quot;</span>
+}</pre></pre></td></tr></table>
+<h3 id="h3_2098299409">
+			<img src="images/authenticate-2024-11-14-1.png" alt="" style="width: 609px; height: 348px;" loading="lazy"/></h3>
+		<h3 id="h3_1791668140">
+			&nbsp;</h3>
+		<h3 id="h3__265346804" data-has-heading-anchor="true">
+			Models<a href="/articles/fordevelopers/authenticate/a/h3__265346804" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/h3__265346804&#39;,this);"></a></h3>
+		<h4 id="h4_916451387" data-has-heading-anchor="true">
+			authenticateInfo&nbsp;<a href="/articles/fordevelopers/authenticate/a/h4_916451387" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/h4_916451387&#39;,this);"></a></h4>
+		<p>Authenticate info.</p><table class="CHTable" cellspacing="0" cellpadding="4" style="border-width: 1px; border-color: #000000; border-collapse: collapse; width: 616px;"><thead><tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+				<th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Name</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Type</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Description</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Required</font></th></tr>
+			</thead>
+			<tbody><tr>
+				<td style="border-width: 1px; border-style: solid; border-color: #000000;">username</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The username string.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+			<tr>
+				<td style="border-width: 1px; border-style: solid; border-color: #000000;">password</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The password string.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+		</tbody></table>
+		<h4 id="h4__1954918684" data-has-heading-anchor="true">
+			authenticateByCertInfo&nbsp;<a href="/articles/fordevelopers/authenticate/a/h4__1954918684" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/h4__1954918684&#39;,this);"></a></h4>
+		<p>Authenticate by Cert info</p><table width="616" class="CHTable" cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;"><thead><tr style="background-color: #999999;">
+				<th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Name</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Type</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Description</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Required</font></th></tr>
+			</thead>
+			<tbody><tr>
+				<td style="border-width: 1px; border-style: solid; border-color: #000000;">encryptedUserName</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The encrypted username string.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+			<tr>
+				<td style="border-width: 1px; border-style: solid; border-color: #000000;">certUniqueId</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The unique id string for the certification.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+		</tbody></table>
+		<h4 id="h4_1000630242" data-has-heading-anchor="true">
+			sessionInfo&nbsp;<a href="/articles/fordevelopers/authenticate/a/h4_1000630242" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/h4_1000630242&#39;,this);"></a></h4>
+		<p>Represents a User session in the Management System.</p><table width="616" class="CHTable" cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;"><thead><tr style="background-color: #999999;">
+				<th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Name</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Type</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Description</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Required</font></th></tr>
+			</thead>
+			<tbody><tr>
+				<td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) of the session.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+			<tr>
+				<td style="border-width: 1px; border-style: solid; border-color: #000000;">homeSystemId</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string of the User Home System.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+			<tr>
+				<td style="border-width: 1px; border-style: solid; border-color: #000000;">currentSystemId</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string of the User current System.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+			<tr>
+				<td style="border-width: 1px; border-style: solid; border-color: #000000;">systems</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">A mapping of System ids to System names.&nbsp; See&nbsp;<a href="/articles/fordevelopers/authenticate/a/sessionSystem" onclick="return n(&#39;!fordevelopers/authenticate/a/sessionSystem&#39;,this);">sessionSystem</a>.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+			<tr>
+				<td style="border-width: 1px; border-style: solid; border-color: #000000;">sessionTimeout</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The minutes remaining in the User session.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+			<tr>
+				<td style="border-width: 1px; border-style: solid; border-color: #000000;">userTimeZone</td><td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/authenticate/a/timeZone" onclick="return n(&#39;!fordevelopers/authenticate/a/timeZone&#39;,this);">timeZone</a></td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The user Time Zone</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+			<tr>
+				<td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/authenticate/a/appSettings" onclick="return n(&#39;!fordevelopers/authenticate/a/appSettings&#39;,this);">appSettings</a></td><td style="border-width: 1px; border-style: solid; border-color: #000000;">object</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">List of system/environment settings in name/value pair format.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+		</tbody></table>
+		<p><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default">{
+  <span class="cm-string property">&quot;id&quot;</span>: <span class="cm-string">&quot;2F198558-1111-1111-1111-E812D99CD199&quot;</span>,
+  <span class="cm-string property">&quot;homeSystemId&quot;</span>: <span class="cm-string">&quot;2DADBAC1-1FD6-4CC3-AD80-5DFF1434F599&quot;</span>,  
+  <span class="cm-string property">&quot;currentSystemId&quot;</span>: <span class="cm-string">&quot;80CBE1AF-DC47-4420-953F-A94814E35AB2&quot;</span>,  
+  <span class="cm-string property">&quot;systems&quot;</span>: {
+    <span class="cm-string property">&quot;2DADBAC1-1FD6-4CC3-AD80-5DFF1434F599&quot;</span>: <span class="cm-string">&quot;ABC System&quot;</span>,
+    <span class="cm-string property">&quot;80CBE1AF-DC47-4420-953F-A94814E35AB2&quot;</span>: <span class="cm-string">&quot;DEF System&quot;</span>  
+  },
+  <span class="cm-string property">&quot;sessionTimeout&quot;</span>: <span class="cm-number">30</span>,
+  <span class="cm-string property">&quot;userTimeZone&quot;</span>: {    
+    <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;USA Pacific&quot;</span>,
+    <span class="cm-string property">&quot;stdOffset&quot;</span>: <span class="cm-operator">-</span><span class="cm-number">480</span>,
+    <span class="cm-string property">&quot;dstOffset&quot;</span>: <span class="cm-operator">-</span><span class="cm-number">420</span>,
+    <span class="cm-string property">&quot;currentOffset&quot;</span>: <span class="cm-operator">-</span><span class="cm-number">420</span>  
+  }
+  <span class="cm-string">&quot;appSettings&quot;</span>: {
+  <span class="cm-string">&quot;UUIDBaseUrl&quot;</span>: <span class="cm-string">&quot;https://uuid.enviance.com/api&quot;</span>,
+  <span class="cm-string">&quot;WebUrl&quot;</span>: <span class="cm-string">&quot;https://go.enviance.com&quot;</span>
+  }
+}</pre></pre></td></tr></table></p><p><br/></p><p><span style="color: #555555; font-family: &quot;Open Sans&quot;, sans-serif; font-size: 10pt; font-weight: bold;">appSettings&nbsp;&nbsp;</span></p><p>JSON object containing a list of system and/or environment settings in a name/value pair format.</p><table width="616" class="CHTable" cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;"><thead><tr style="height: 35px; background-color: #999999;">
+				<th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999; height: 35px;" scope="col"><font color="#ffffff">Name</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999; height: 35px;" scope="col"><font color="#ffffff">Type</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999; height: 35px;" scope="col"><font color="#ffffff">Description</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999; height: 35px;" scope="col"><font color="#ffffff">Required</font></th></tr>
+			</thead>
+			<tbody><tr style="height: 35px;">
+				<td style="border-width: 1px; border-style: solid; border-color: #000000;">appSettings</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">Object (JSON)</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">App settings key.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+		</tbody></table>
+		<p>&nbsp;</p><h4 id="h4__936412545" data-has-heading-anchor="true">
+			sessionSystem&nbsp;&nbsp;<a href="/articles/fordevelopers/authenticate/a/h4__936412545" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/h4__936412545&#39;,this);"></a></h4>
+		<p>List of systems user has access to in the current session.</p><table width="616" class="CHTable" cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;"><thead><tr style="background-color: #999999;">
+				<th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Name</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Type</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Description</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Required</font></th></tr>
+			</thead>
+			<tbody><tr>
+				<td style="border-width: 1px; border-style: solid; border-color: #000000;">sessionSystem</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">A mapping of System ids to System names.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">Default</td></tr>
+		</tbody></table>
+		<p><br/><br/></p><h4 id="h4_1777686807" data-has-heading-anchor="true">
+			timeZone&nbsp;<a href="/articles/fordevelopers/authenticate/a/h4_1777686807" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/h4_1777686807&#39;,this);"></a></h4>
+		<p>Describes a time zone, including its offsets from UTC.</p><table width="616" class="CHTable" cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;"><thead><tr style="background-color: #999999;">
+				<th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Name</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Type</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Description</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Required</font></th></tr>
+			</thead>
+			<tbody><tr>
+				<td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The name of the time zone.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+			<tr>
+				<td style="border-width: 1px; border-style: solid; border-color: #000000;">stdOffset</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The offset in minutes from UTC during standard time.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+			<tr>
+				<td style="border-width: 1px; border-style: solid; border-color: #000000;">dstOffset</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The offset in minutes from UTC during daylight savings time (DST). This property will be identical to “stdOffset” for time zones that do not observe DST.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+			<tr>
+				<td style="border-width: 1px; border-style: solid; border-color: #000000;">currentOffset</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The current offset in minutes from UTC (which can change upon whether the time zone is currently observing DST or not).</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+		</tbody></table>
+		<p>&nbsp;</p><h4 id="h4_91497362" data-has-heading-anchor="true">
+			oAuthGetAccesTokenResponseInfo&nbsp;<a href="/articles/fordevelopers/authenticate/a/h4_91497362" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/authenticate/a/h4_91497362&#39;,this);"></a></h4>
+		<p>Represents an AccessToken result info structure.</p><table width="616" class="CHTable" cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;"><thead><tr style="background-color: #999999;">
+				<th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Name</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Type</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Description</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" scope="col"><font color="#ffffff">Required</font></th></tr>
+			</thead>
+			<tbody><tr>
+				<td style="border-width: 1px; border-style: solid; border-color: #000000;">AccessToken</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">Token string which used for authenticate to the system.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+			<tr>
+				<td style="border-width: 1px; border-style: solid; border-color: #000000;">RefreshToken</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">Refresh token string for next obtaining access token, when it will expired.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+			<tr>
+				<td style="border-width: 1px; border-style: solid; border-color: #000000;">AccessTokenExpiryDateTime</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">datetime </td><td style="border-width: 1px; border-style: solid; border-color: #000000;">Access token expiration date.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+		</tbody></table>
+		<p><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default">{
+  <span class="cm-string property">&quot;AccessToken&quot;</span>: <span class="cm-string">&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aWQiOiI5Yjc3ODQzOS04ZTU1LTRjMGQtYmEyZi0xMGY3NDNkNDQ0ZjciLCJ1aWQiOiI3NDA4ZTM2OS1jNmQyLTQ0YzEtODgyMS04NzM5MjU2YTg1NzYiLCJzeXMiOiJmY2NhMTBjZS0wOWJlLTRhNmYtYTBjNy1kZWZiMGYxMjRhMjkiLCJuYmYiOjE3MTEzNjcyODgsImV4cCI6MTcxMTM2ODE4OCwiaWF0IjoxNzExMzY3Mjg4fQ.NPTH8O1fa7hKRvit7rtY6vGQ5cppEabC3mzRD0aBWBM&quot;</span>,
+ 
+  <span class="cm-string property">&quot;RefreshToken&quot;</span>: <span class="cm-string">&quot;P54mJ2ZN+a8ubNWdUbZi5qbQZ98i5vrDwzPRXHys//zg8jo6Smknf4i56xWdcGns7dpFEEd/xHcfZ6LR/vTJSaqeMSKeVJ951V6TgVphpRc=&quot;</span>,
+  <span class="cm-string property">&quot;AccessTokenExpiryDateTime&quot;</span>: <span class="cm-string">&quot;2024-03-25T12:03:08&quot;</span> 
+}</pre></pre></td></tr></table></p>
+<p>&nbsp;</p><p><img src="images/authenticate-2024-11-15.png" alt="" style="width: 611px; height: 345.462px;" loading="lazy"/><br/></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

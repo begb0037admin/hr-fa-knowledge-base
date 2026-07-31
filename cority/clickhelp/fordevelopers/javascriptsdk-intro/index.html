@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/javascriptsdk-intro"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Using the EMS JavaScript SDK</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Using the EMS JavaScript SDK';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 class="Heading1" id="h1_1032268257" data-has-heading-anchor="true">Using the EMS JavaScript SDK<a href="/articles/fordevelopers/javascriptsdk-intro/a/h1_1032268257" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/javascriptsdk-intro/a/h1_1032268257&#39;,this);"></a></h1>
+        <p class="Legal">Use of the APIs requires an express EMS Connectors license from EMS, Inc., and is subject to the restrictions on use as set forth herein and in the license, provided that in all cases, the terms of the license shall control.  Unauthorized use is prohibited. Please contact Customer Service or your EMS Sales Representative for further information.</p>
+        <p><b>About Versions</b>: If you are starting a new project, please use the latest API versions. Prior version descriptions are provided for reference only for older apps.</p>
+        <h2 class="Heading2" id="h2_1037365166" data-has-heading-anchor="true">Requirements<a href="/articles/fordevelopers/javascriptsdk-intro/a/h2_1037365166" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/javascriptsdk-intro/a/h2_1037365166&#39;,this);"></a></h2>
+        <p>The EMS JavaScript SDK depends upon the following third party libraries:</p>
+        <p class="BodyIndent">Core AJAX/DOM Handling:&nbsp;<a href="http://jquery.com/" target="_blank">jQuery</a> , jquery.1.8.3.min.j</p>
+        <p class="BodyIndent">JSON Serialization/Deserialization: <a href="https://github.com/douglascrockford/JSON-js" target="_blank">json2</a> , json2.js
+</p>
+        <p class="BodyText">These libraries are hosted on the Management System under "/Packages/Libs" for your convenience.</p>
+        <h2 class="Heading2" id="h2__967276711" data-has-heading-anchor="true">Quick Start<a href="/articles/fordevelopers/javascriptsdk-intro/a/h2__967276711" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/javascriptsdk-intro/a/h2__967276711&#39;,this);"></a></h2>
+        <p class="BodyText">If you choose to use the EMS JavaScript SDK in a custom application, follow these steps for best results.</p>
+        <p class="BodyText"><b>First</b>, include the library dependencies for the EMS SDK.</p>
+        <p class="Code1">&lt;script src="/Packages/Libs/jquery.1.8.3.min.js"&gt;</p>
+        <p class="Code1">&lt;/script&gt;</p>
+        <p class="Code1">&lt;script src="/Packages/Libs/json2.js"&gt;</p>
+        <p class="Code1">&lt;/script&gt;</p>
+        <p class="Code1">&nbsp;</p>
+        <p class="BodyText"><b>Second</b>, include the SDK library from the api.enviance.com website.  It is always best to use the latest available version.</p>
+        <p class="Code1">&lt;script src="https://api.enviance.com/SDK/ver2/Enviance.SDK.js"&gt;</p>
+        <p class="Code1">&lt;/script&gt;</p>
+        <p class="Code1">&nbsp;</p>
+        <p class="BodyText"><b>Third</b>, manually configure the base address for the APIs.  The base address will almost always be api.enviance.com.</p>
+        <p class="Code1">&lt;script </p>
+        <p class="Code1">envianceSdk.configure({</p>
+        <p class="Code2">baseAddress: "https://api.enviance.com"</p>
+        <p class="Code1">});</p>
+        <p class="Code1">&nbsp;</p>
+        <p class="BodyText"><b>Fourth</b>, authenticate to the APIs.</p>
+        <p class="Code1">envianceSdk.authentication.authenticate(username, password);</p>
+        <p class="Code1">&nbsp;</p>
+        <p class="BodyText"><b>Finally</b>, perform any desired work/calls to the SDK.</p>
+        <p class="Code1">…</p>
+        <p class="Code1">&lt;/script&gt;</p>
+        <h2 class="Heading2" id="h2_1818182805" data-has-heading-anchor="true">Handling Results and Errors<a href="/articles/fordevelopers/javascriptsdk-intro/a/h2_1818182805" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/javascriptsdk-intro/a/h2_1818182805&#39;,this);"></a></h2>
+        <p class="BodyText">All of the methods in the JavaScript SDK take two parameters for callback functions: "onsuccess" and "onerror".  These parameters by convention will be the first last two parameters of the method signature.</p>
+        <p class="BodyText">When programming a JavaScript application, it is recommend practice to use asynchronous callbacks and an event-driven design.  This is to allow for a responsive user interface that will not block during the execution of potentially long running remote AJAX calls.</p>
+        <p class="BodyText">Therefore, you will want to specify a function for the "onsuccess" callback to handle the change in application state that should occur on the completion of a method call.</p>
+        <p class="BodyText">Specifying a function for the "onerror" callback is optional.  If not specified, a generic error handler defined in the SDK will inspect the result of an error and raise alerts with some relevant messages according to the error type.</p>
+        <h2 class="Heading2" id="h2__62817418" data-has-heading-anchor="true">Call Result Object<a href="/articles/fordevelopers/javascriptsdk-intro/a/h2__62817418" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/javascriptsdk-intro/a/h2__62817418&#39;,this);"></a></h2>
+        <p class="BodyText">The functions to be used for the "onsuccess" and "onerror" callbacks should take a single parameter, which is an instance of the response object.</p>
+        <p class="BodyText">The result object has the following properties:</p>
+        <p class="BodyIndent"><b>metadata</b>	This property contains the following "EnvApi-" HTTP response headers as sub-properties:</p>
+        <p class="BodyIndent3"> version</p>
+        <p class="BodyIndent3">remainingCalls</p>
+        <p class="BodyIndent3">remainingInterval</p>
+        <p class="BodyIndent3">warnings</p>
+        <p class="BodyIndent2">Some other standard response headers and codes are also present, such as:</p>
+        <p class="BodyIndent3">location</p>
+        <p class="BodyIndent"><b>result</b>	This property contains the response of the API, if the call is successful. The structure of the data in this property depends upon the API. This property is not present if an error occurs.</p>
+        <p class="BodyIndent"><b>error</b>	This property contains information about any error that occurs. This property is not present if the call is successful.</p>
+        <p class="BodyText">From this object, you will have access to the metadata, result, and error properties.  The result property will contain the return value of the call during the "onsuccess" callback, and the error property will contain the error details during the "onerror" callback.  Note that if the call is successful, the error property will not exist on the result object, and similarly, if the call causes an error, the result property will not exist.</p>
+        <p class="BodyText">For details on the properties of the Result object, see the section on API Response Data Format.</p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js" data-aspx-savednextwhitespace="%0A%20%20%20%20">
+        </script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

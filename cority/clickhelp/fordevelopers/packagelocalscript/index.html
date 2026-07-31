@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/packagelocalscript"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Package Local Script</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Package Local Script';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h2 class="Heading2" id="h2_1461224760" data-has-heading-anchor="true">Package Local Script<a href="/articles/fordevelopers/packagelocalscript/a/h2_1461224760" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/packagelocalscript/a/h2_1461224760&#39;,this);"></a></h2>
+        <p class="BodyText">The EMS App SDK supports the use of a "local" script to allow for functionality to be replaced when an EMS App is running outside of the Management System.</p>
+        <p class="BodyText">The local script should be a JavaScript file with the name "package.local.js", placed in the same directory as the display page of the App.</p>
+        <p class="BodyText">When hosted within the Management System, this file is always ignored by the EMS App SDK and has no effect on behavior.</p>
+        <p class="BodyText">However, when an EMS App is being run outside of the Management System (for instance, within a development environment), this file is executed by the SDK on initialization if the option "enablePackageLocalScript" is set to true (the default is false).</p>
+        <p class="BodyText">The following variables and objects can be replaced in the local configuration script:</p>
+        <p class="BodyIndent"><b>packageId</b>	An EMS App ID obtained from the Management System by creating a new EMS App in the <a href="/articles/fordevelopers/managingapps" onclick="return n(&#39;!fordevelopers/managingapps&#39;,this);">EMS App Manager</a>.
+</p>
+        <p class="BodyIndent"><b>envianceSdk.packages.appData</b>	An optional javascript object which will be used to  handle app data requests instead of the EMS App runtime.</p>
+        <p class="BodyIndent2">The object specified can override the following methods:</p>
+        <p class="BodyIndent3">get
+</p>
+        <p class="BodyIndent3">set
+</p>
+        <p class="BodyIndent3">del</p>
+        <p class="BodyIndent2"><b>envianceSdk.packages.userData</b>	An optional javascript object which will be used to handle <a href="/articles/fordevelopers/appdatastorage/a/User" onclick="return n(&#39;!fordevelopers/appdatastorage/a/User&#39;,this);">user data</a> requests instead of the EMS App runtime.</p>
+        <p class="BodyIndent2">The object specified can override the following methods:</p>
+        <p class="BodyIndent3">get
+</p>
+        <p class="BodyIndent3">set
+</p>
+        <p class="BodyIndent3">del</p>
+        <p class="BodyIndent2"><b>envianceSdk.packages.user</b>	A javascript object which will be used to handle authentication and authorization calls instead of the EMS App runtime.</p>
+        <p class="BodyIndent2">The object specified can override the following methods:</p>
+        <p class="BodyIndent3">authenticate  </p>
+        <p class="BodyIndent3">hasAccessTo  </p>
+        <p class="BodyIndent3">isInRole  </p>
+        <p class="BodyIndent3">availableRoles</p>
+        <p class="BodyText">Also, the following event handlers can be used to execute code at different points during the init() function execution of the EMS App SDK:</p>
+        <p class="BodyIndent"><b>envianceSdk.packages.configStarting</b>	This event is called just before the configuration options (either specified in the call to init() or placed in the package.cfg file) are used to set behavior of the SDK. The loaded options are passed as the single parameter to the event handler, such that options can be conditionally changed during this event. The following is an example of setting an event handler for this event:</p>
+        <p class="Code3">envianceSdk.packages.configStarting.add( function(options) { ...; } );</p>
+        <p class="BodyIndent"><b>envianceSdk.packages.configComplete</b>	This event is called just after the configuration options have been used to set behavior of the SDK. The following is an example of setting an event handler for this event:</p>
+        <p class="Code3">envianceSdk.packages.configComplete.add( function(options) { ...; } );</p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js" data-aspx-savednextwhitespace="%0A%20%20%20%20">
+        </script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

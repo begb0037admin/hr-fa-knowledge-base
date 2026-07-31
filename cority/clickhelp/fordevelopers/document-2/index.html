@@ -1,0 +1,1151 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/document-2"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Document APIs and Data Types</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Document APIs and Data Types';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><span class="Note">For the most up to date API documentation, please see the&nbsp;</span><a href="https://api.enviance.com/swagger.svc/index.html?url=/Swagger.svc/swagger.json#/Document" target="_blank" class="Note">Document API Documentation on Swagger</a><span class="Note">.</span><p>
+</p>
+<nav>
+  
+  
+  
+</nav>
+
+<h1 id="h1__328026202" data-has-heading-anchor="true">
+  Document APIs and Data Types
+<a href="/articles/fordevelopers/document-2/a/h1__328026202" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h1__328026202&#39;,this);"></a></h1>
+<div class="app-desc">
+</div>
+
+<h4 id="h4__2011966005" data-has-heading-anchor="true">
+  BasePath: /ver2/DocumentService.svc
+<a href="/articles/fordevelopers/document-2/a/h4__2011966005" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h4__2011966005&#39;,this);"></a></h4>
+<h4 id="h4_726963744" data-has-heading-anchor="true">
+  License: <a href="http://www.enviance.com" target="_top">Enviance, Inc.</a>
+<a href="/articles/fordevelopers/document-2/a/h4_726963744" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h4_726963744&#39;,this);"></a></h4>
+<p>
+  <br/>
+</p>
+<h2 id="h2_2060849948" data-has-heading-anchor="true">
+  Methods<span id="Methods"></span>
+<a href="/articles/fordevelopers/document-2/a/h2_2060849948" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h2_2060849948&#39;,this);"></a></h2>
+<b>[<span style="font-family: &quot;Open Sans&quot;, sans-serif; font-size: 10pt;">Jump to&nbsp;</span><span style="font-family: &quot;Open Sans&quot;, sans-serif; font-size: 10pt;"><a href="/articles/fordevelopers/document-2/a/h2__265346804" onclick="return n(&#39;!fordevelopers/document-2/a/h2__265346804&#39;,this);">Models</a></span><span style="font-family: &quot;Open Sans&quot;, sans-serif; font-size: 10pt;">]</span></b><h3 id="h3_1510773337" data-has-heading-anchor="true">
+  Table of Contents<span id="MethodToC"></span> 
+<a href="/articles/fordevelopers/document-2/a/h3_1510773337" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_1510773337&#39;,this);"></a></h3>
+<div class="method-summary">
+</div>
+<h4 id="h4__728703673">
+  <a href="#Default" target="_top"></a>
+</h4>
+<div>
+  <div>
+    <ul>
+      <li>
+        <b><a href="/articles/fordevelopers/document-2/a/POSTdocuments" onclick="return n(&#39;!fordevelopers/document-2/a/POSTdocuments&#39;,this);">POST /documents</a></b>
+      </li>
+      <li>
+        <b><a href="/articles/fordevelopers/document-2/a/POSTfolders" onclick="return n(&#39;!fordevelopers/document-2/a/POSTfolders&#39;,this);">POST /folders</a></b>
+      </li>
+      <li>
+        <b><a href="/articles/fordevelopers/document-2/a/DELETEfolders" onclick="return n(&#39;!fordevelopers/document-2/a/DELETEfolders&#39;,this);">DELETE /folders/{documentFolderIdOrPath}</a></b>
+      </li>
+      <li>
+        <b><a href="/articles/fordevelopers/document-2/a/DELETEdocuments" onclick="return n(&#39;!fordevelopers/document-2/a/DELETEdocuments&#39;,this);">DELETE /documents/{documentIdOrPath}</a></b>
+      </li>
+      <li>
+        <b><a href="/articles/fordevelopers/document-2/a/GETfolders" onclick="return n(&#39;!fordevelopers/document-2/a/GETfolders&#39;,this);">GET /folders/{documentFolderIdOrPath}</a></b>
+      </li>
+      <li>
+        <b><a href="/articles/fordevelopers/document-2/a/GETdocuments" onclick="return n(&#39;!fordevelopers/document-2/a/GETdocuments&#39;,this);">GET /documents/{documentIdOrPath}</a></b>
+      </li>
+      <li>
+        <b><a href="/articles/fordevelopers/document-2/a/PATCHfolders" onclick="return n(&#39;!fordevelopers/document-2/a/PATCHfolders&#39;,this);">PATCH /folders/{documentFolderIdOrPath}</a></b>
+      </li>
+      <li>
+        <b><a href="/articles/fordevelopers/document-2/a/PATCHdocuments" onclick="return n(&#39;!fordevelopers/document-2/a/PATCHdocuments&#39;,this);">PATCH /documents/{documentIdOrPath}</a></b>
+      </li>
+      <li>
+        <b><a href="/articles/fordevelopers/document-2/a/POSTUpdateDocument" onclick="return n(&#39;!fordevelopers/document-2/a/POSTUpdateDocument&#39;,this);">POST /documents/{documentIdOrPath}</a></b>
+      </li>
+    </ul>
+  </div>
+  <div class="method-notes">
+    <p>
+      <br/>
+    </p>
+    <h3 style="" id="h3__485691213" data-has-heading-anchor="true">
+      POST /documents<span id="POSTdocuments"></span>
+    <a href="/articles/fordevelopers/document-2/a/h3__485691213" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__485691213&#39;,this);"></a></h3>
+  </div>
+  <div class="method-notes">
+    <p>
+      Creates a new Document, alternately by copying an existing Document. When creating a Document, the Document will be created in the specified parent folder. If a value is not specified, the Document will be created in the root Folder of Document Manager. The new Document will inherit the security permissions of its parent Folder.
+    </p>
+    <p>
+      <strong>Security:</strong> Requires Edit permissions on the parent Folder, or the Manage Documents right.
+    </p>
+    <p>
+      <strong>SDK API (create):</strong>  <code style="background-color: #f9f2f4;"><font color="#ff0000">envianceSdk.documents.createDocumentBinary (fileInput, documentInfo, onsuccess, onerror)</font></code>
+    </p>
+    <p>
+      <strong>SDK API (create):</strong>  <code style="background-color: #f9f2f4;"><font color="#ff0000">envianceSdk.documents.createDocument(documentInfo, onsuccess, onerror)</font></code>
+    </p>
+    <p>
+      <strong>SDK API (copy):</strong>  <code style="background-color: #f9f2f4;"><font color="#ff0000">envianceSdk.documents.copyDocument (documentInfo, copyFrom, onsuccess, onerror)</font></code>
+    </p>
+  </div>
+  
+  
+  <h3 class="field-label" id="h3__1383914501" data-has-heading-anchor="true">
+    Consumes
+  <a href="/articles/fordevelopers/document-2/a/h3__1383914501" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__1383914501&#39;,this);"></a></h3>
+  </div><p>This API call consumes the following media types via the Content-Type request header:</p><div>
+  <ul>
+    <li>
+      <code>application/json</code>
+    </li>
+  </ul>
+  
+  <h3 class="field-label" id="h3_266753409" data-has-heading-anchor="true">
+    Request body
+  <a href="/articles/fordevelopers/document-2/a/h3_266753409" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_266753409&#39;,this);"></a></h3>
+  <div class="field-items">
+    <div class="param">
+      </div><p>documentCreate <a href="#documentCreate" target="_top">documentCreate</a> (required)
+    </p></div><p>
+    
+    </p><div class="field-items"><p>
+      <span class="param-type">Body Parameter</span> — Create Document body info</p><div class="param-desc"> 
+    </div>
+    
+  </div>
+  <!-- field-items -->
+  
+  
+  
+  
+  <h3 class="field-label" id="h3__1478619096" data-has-heading-anchor="true">
+    Return type
+  <a href="/articles/fordevelopers/document-2/a/h3__1478619096" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__1478619096&#39;,this);"></a></h3>
+  <p>
+    
+    String
+  </p>
+  
+  <!--Todo: process Response Object and its headers, schema, examples -->
+  
+  <h3 class="field-label" id="h3__680848592" data-has-heading-anchor="true">
+    Example data
+  <a href="/articles/fordevelopers/document-2/a/h3__680848592" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__680848592&#39;,this);"></a></h3>
+  <p>
+    Content-Type: application/json
+  </p>
+  <pre class="example"><code><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">POST</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">DocumentService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">documents</span><span class="cm-operator">/</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+ 
+{
+  <span class="cm-string property">&quot;documentInfo&quot;</span>: {
+    <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Quarterly Rundown Checklist&quot;</span>,
+    <span class="cm-string property">&quot;fileName&quot;</span>: <span class="cm-string">&quot;Checklist.doc&quot;</span>,
+    <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;The quarterly rundown checklist.&quot;</span>,
+    <span class="cm-string property">&quot;folder&quot;</span>: <span class="cm-string">&quot;/Site Z/&quot;</span>,
+      <span class="cm-string property">&quot;content&quot;</span>: <span class="cm-string">&quot; TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2ljaW5nIGVsaXQsIHNlZCBkbyBlaXVzbW9kIHRlbXBvciBpbmNpZGlkdW50IHV0IGxhYm9yZSBldCBkb2xvcmUgbWFnbmEgYWxpcXVhLiBVdCBlbmltIGFkIG1pbmltIHZlbmlhbSwgcXVpcyBub3N0cnVkIGV4ZXJjaXRhdGlvbiB1bGxhbWNvIGxhYm9yaXMgbmlzaSB1dCBhbGlxdWlwIGV4IGVhIGNvbW1vZG8gY29uc2VxdWF0LiBEdWlzIGF1dGUgaXJ1cmUgZG9sb3IgaW4gcmVwcmVoZW5kZXJpdCBpbiB2b2x1cHRhdGUgdmVsaXQgZXNzZSBjaWxsdW0gZG9sb3JlIGV1IGZ1Z2lhdCBudWxsYSBwYXJpYXR1ci4gRXhjZXB0ZXVyIHNpbnQgb2NjYWVjYXQgY3VwaWRhdGF0IG5vbiBwcm9pZGVudCwgc3VudCBpbiBjdWxwYSBxdWkgb2ZmaWNpYSBkZXNlcnVudCBtb2xsaXQgYW5pbSBpZCBlc3QgbGFib3J1bS4=&quot;</span>,
+    <span class="cm-string property">&quot;objects&quot;</span>: [<span class="cm-string">&quot;/Facility A/Unit X/Parameter Z&quot;</span>],
+    <span class="cm-string property">&quot;tasks&quot;</span>: [<span class="cm-string">&quot;b3d15bf6-995e-43d3-a240-6fd6f9626748&quot;</span>],
+    <span class="cm-string property">&quot;workflows&quot;</span>: [<span class="cm-string">&quot;d66ded7e-5355-488a-a3b7-c243acb83527&quot;</span>, <span class="cm-string">&quot;ABC123&quot;</span>]
+  }
+}</pre></pre></td></tr></table>&nbsp;</code>
+</pre>
+  
+  <h3 class="field-label" id="h3_1080383001" data-has-heading-anchor="true">
+    Produces
+  <a href="/articles/fordevelopers/document-2/a/h3_1080383001" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_1080383001&#39;,this);"></a></h3>
+  </div><p>This API call produces the following media types according to the <span class="header">Accept</span> request header;
+  the media type will be conveyed by the <span class="header">Content-Type</span> response header.</p><div>
+  <ul>
+    <li>
+      <code>application/json</code>
+    </li>
+  </ul>
+  
+  <h3 class="field-label" id="h3__1052052302" data-has-heading-anchor="true">
+    Responses
+  <a href="/articles/fordevelopers/document-2/a/h3__1052052302" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__1052052302&#39;,this);"></a></h3>
+  <h4 class="field-label" id="h4_104526608" data-has-heading-anchor="true">
+    200
+  <a href="/articles/fordevelopers/document-2/a/h4_104526608" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h4_104526608&#39;,this);"></a></h4>
+  </div><p>The id string (GUID) for the new Document.</p><div>
+</div>
+<!-- method -->
+<hr/>
+<div class="method">
+  <a name="createCopyDocumentFolder">
+  </a>
+  <div>
+    <a name="createCopyDocumentFolder">
+    </a></div><p><a href="/articles/fordevelopers/document-2/a/MethodToC" onclick="return n(&#39;!fordevelopers/document-2/a/MethodToC&#39;,this);">Up</a></p><div>
+  <p><b>POST /folders</b><span id="POSTfolders"></span></p>
+  </div>
+  <div class="method-summary">
+    </div><p><b>(<span class="nickname">createCopyDocumentFolder</span>)</b></p><div class="method-summary">
+  </div>
+  <div class="method-notes">
+    <p>Creates a new Document Folder, potentially with Documents and sub-Folders copied from another existing Folder. UpWhen creating a Folder, the Folder will be created in the specified parent Folder. If a value is not specified, the Folder will be created in the root Folder of Document Manager. The new Folder will inherit the security permissions of its parent Folder.
+    </p>
+    <p>
+      <strong>Security:</strong> Requires Edit permissions on the parent Folder, or the Manage Documents right.
+    </p>
+    <p>
+      <strong>SDK API (create):</strong>  <code style="background-color: #f9f2f4;"><font color="#ff0000">envianceSdk.documents.createDocumentFolder(documentFolderInfo, onsuccess, onerror)</font></code>
+    </p>
+    <p>
+      <strong>SDK API (copy):</strong>  <code><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.documents.copyDocumentFolder(documentFolderInfo, copyFrom, onsuccess, onerror)</font></code>
+    </p>
+  </div>
+  
+  
+  <h3 class="field-label" id="h3__1909350687" data-has-heading-anchor="true">
+    Consumes
+  <a href="/articles/fordevelopers/document-2/a/h3__1909350687" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__1909350687&#39;,this);"></a></h3>
+  </div><p>This API call consumes the following media types via the <span class="header">Content-Type</span> request header:</p><div class="method">
+  <ul>
+    <li>
+      <code>application/json</code>
+    </li>
+  </ul>
+  
+  <h3 class="field-label" id="h3_1699254794" data-has-heading-anchor="true">
+    Request body
+  <a href="/articles/fordevelopers/document-2/a/h3_1699254794" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_1699254794&#39;,this);"></a></h3>
+  <div class="field-items">
+    <div class="param">
+      </div><p>documentFolderInfo <a href="/articles/fordevelopers/document-2/a/h3_507750095" onclick="return n(&#39;!fordevelopers/document-2/a/h3_507750095&#39;,this);">documentFolderInfo</a> (required)</p><div class="param">
+    </div>
+    
+    <div class="param-desc">
+      </div><p><span class="param-type">Body Parameter</span> — A documentFolderInfo structure.</p><div class="param-desc"> 
+    </div>
+    
+  </div>
+  <!-- field-items -->
+  
+  
+  
+  
+  <h3 class="field-label" id="h3_1183535156" data-has-heading-anchor="true">
+    Return type
+  <a href="/articles/fordevelopers/document-2/a/h3_1183535156" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_1183535156&#39;,this);"></a></h3>
+  <p>
+    
+    String
+  </p>
+  
+  <!--Todo: process Response Object and its headers, schema, examples -->
+  
+  <h3 class="field-label" id="h3__1304568357" data-has-heading-anchor="true">
+    Example data
+  <a href="/articles/fordevelopers/document-2/a/h3__1304568357" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__1304568357&#39;,this);"></a></h3>
+  <p>
+    Content-Type: application/json
+  </p>
+  <pre class="example"><code><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">POST</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">DocumentService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">folders</span><span class="cm-operator">/</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+ 
+{
+  <span class="cm-string property">&quot;documentFolderInfo&quot;</span>: {
+    <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Checklists&quot;</span>,
+    <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;All site checklists.&quot;</span>,
+    <span class="cm-string property">&quot;parentFolder&quot;</span>: <span class="cm-string">&quot;/Site X/&quot;</span>
+  },
+  <span class="cm-string property">&quot;copyFrom&quot;</span>: <span class="cm-string">&quot;/Site Y/Checklists/&quot;</span>
+}
+</pre></pre></td></tr></table>&nbsp;</code>
+</pre>
+  
+  <h3 class="field-label" id="h3__1045033505" data-has-heading-anchor="true">
+    Produces
+  <a href="/articles/fordevelopers/document-2/a/h3__1045033505" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__1045033505&#39;,this);"></a></h3>
+  </div><p>This API call produces the following media types according to the <span class="header">Accept</span> request header;
+  the media type will be conveyed by the <span class="header">Content-Type</span> response header.</p><div class="method"><ul><li>
+      <code>application/json</code>
+    </li>
+  </ul>
+  
+  <h3 class="field-label" id="h3_1731904205" data-has-heading-anchor="true">
+    Responses
+  <a href="/articles/fordevelopers/document-2/a/h3_1731904205" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_1731904205&#39;,this);"></a></h3>
+  <h4 class="field-label" id="h4__1578317927" data-has-heading-anchor="true">
+    200
+  <a href="/articles/fordevelopers/document-2/a/h4__1578317927" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h4__1578317927&#39;,this);"></a></h4>
+  </div><p>The id string (GUID) for the new Folder.</p>
+<!-- method -->
+<hr/>
+<div class="method">
+  <a name="delete">
+  </a>
+  <div class="method-path">
+    <a name="delete">
+    </a></div><p><a class="up" href="/articles/fordevelopers/document-2/a/MethodToC" onclick="return n(&#39;!fordevelopers/document-2/a/MethodToC&#39;,this);">Up</a>
+  </p><div class="method-path"><h3 id="h3_234405364" data-has-heading-anchor="true"><code class="huge"><span style="color: #555555; font-family: &quot;Open Sans&quot;, sans-serif; font-size: 13.3333px; text-decoration-color: initial;">DELETE /folders/{documentFolderIdOrPath}</span></code><span id="DELETEfolders"></span><a href="/articles/fordevelopers/document-2/a/h3_234405364" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_234405364&#39;,this);"></a></h3>
+  </div>
+  <div class="method-summary">
+    </div><p><b>(<span class="nickname">delete</span>)</b></p><div class="method-summary">
+  </div>
+  <div class="method-notes">
+    <p>
+      Deletes an existing Document Folder, including all of its sub-Folders, Documents, their versions and their content. <em>Deletions are permanent</em>.
+    </p>
+    <p>
+      <strong>Security:</strong> Requires Edit permissions on the parent Folder, or the Manage Documents right.</p>
+    <p>
+      <strong>SDK API:</strong>  <code><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.documents.deleteDocumentFolder(documentFolderIdOrPath, onsuccess, onerror)</font></code>
+    </p>
+  </div>
+  
+  <h3 class="field-label" id="h3__1747826069" data-has-heading-anchor="true">
+    Path parameters
+  <a href="/articles/fordevelopers/document-2/a/h3__1747826069" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__1747826069&#39;,this);"></a></h3>
+  <p>
+    </p><p>
+      documentFolderIdOrPath (required)</p><div class="field-items">
+    
+    </div><div class="field-items"><div class="param-desc">
+      </div><p><span class="param-type">Path Parameter</span> — The id string (GUID) or path of the Folder. Any string that matches the pattern of a GUID is interpreted as the id string, and not the path. A path string must be URL encoded.</p><div class="param-desc"> 
+    </div>
+  </div>
+  <!-- field-items -->
+  
+  <h3 class="field-label" id="h3__354916351" data-has-heading-anchor="true">
+    Consumes
+  <a href="/articles/fordevelopers/document-2/a/h3__354916351" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__354916351&#39;,this);"></a></h3>
+  </div><p>This API call consumes the following media types via the <span class="header">Content-Type</span> request header:</p><div class="method"><ul><li>
+      <code>application/json</code>
+    </li>
+  </ul>
+  
+  
+  
+  
+  
+  
+  <!--Todo: process Response Object and its headers, schema, examples -->
+  
+  
+  <h3 class="field-label" id="h3__2091089264" data-has-heading-anchor="true">Example data<a href="/articles/fordevelopers/document-2/a/h3__2091089264" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__2091089264&#39;,this);"></a></h3><p><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">DELETE</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">DocumentService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">folders</span><span class="cm-operator">/</span><span class="cm-variable">f261b753</span><span class="cm-operator">-</span><span class="cm-number">8</span><span class="cm-variable">d7a</span><span class="cm-operator">-</span><span class="cm-number">4</span><span class="cm-variable">a73</span><span class="cm-operator">-</span><span class="cm-number">9</span><span class="cm-variable">aa1</span><span class="cm-operator">-</span><span class="cm-number">8e1</span><span class="cm-variable">adadbb878</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table><br/></p><h3 class="field-label" id="h3__2091089264" data-has-heading-anchor="true">Produces
+  <a href="/articles/fordevelopers/document-2/a/h3__2091089264" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__2091089264&#39;,this);"></a></h3>
+  </div><p>This API call produces the following media types according to the <span class="header">Accept</span> request header;
+  the media type will be conveyed by the <span class="header">Content-Type</span> response header.</p><div class="method"><ul><li>
+      <code>application/json</code>
+    </li>
+  </ul>
+  
+  <h3 class="field-label" id="h3__533082117" data-has-heading-anchor="true">
+    Responses
+  <a href="/articles/fordevelopers/document-2/a/h3__533082117" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__533082117&#39;,this);"></a></h3>
+  <h4 class="field-label" id="h4_104526604" data-has-heading-anchor="true">
+    204
+  <a href="/articles/fordevelopers/document-2/a/h4_104526604" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h4_104526604&#39;,this);"></a></h4>
+  </div><p>Folder deleted.</p><div class="method">
+  <a href="#" target="_top"></a>
+</div>
+<!-- method -->
+<hr/>
+<div class="method">
+  <a name="deleteDocument">
+  </a>
+  <div class="method-path">
+    <a name="deleteDocument">
+    </a></div><p><a class="up" href="/articles/fordevelopers/document-2/a/MethodToC" onclick="return n(&#39;!fordevelopers/document-2/a/MethodToC&#39;,this);">Up</a>
+  </p><div class="method-path"><h3 id="h3__184713551" data-has-heading-anchor="true"><code class="huge"><span style="color: #555555; font-family: &quot;Open Sans&quot;, sans-serif; font-size: 13.3333px; text-decoration-color: initial;">DELETE /documents/{documentIdOrPath}<span id="DELETEdocuments"></span>&nbsp;</span></code><a href="/articles/fordevelopers/document-2/a/h3__184713551" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__184713551&#39;,this);"></a></h3>
+  </div>
+  <div class="method-summary">
+    </div><p><b>(<span class="nickname">deleteDocument</span>)</b></p><div class="method-summary">
+  </div>
+  <div class="method-notes">
+    <p>
+      Deletes an existing Document, including all of its versions and their content. <em>Deletions are permanent</em>.
+    </p>
+    <p>
+      <strong>Security:</strong> Requires Edit permissions on the parent Folder, or the Manage Documents right.</p>
+    <p>
+      <strong>SDK API:</strong>  <code><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.documents.deleteDocument(documentIdOrPath, onsuccess, onerror)</font></code>
+    </p>
+  </div>
+  
+  <h3 class="field-label" id="h3_946337564" data-has-heading-anchor="true">
+    Path parameters
+  <a href="/articles/fordevelopers/document-2/a/h3_946337564" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_946337564&#39;,this);"></a></h3>
+  <div class="field-items">
+    <p>
+      documentIdOrPath (required)
+    </p>
+    
+    <div class="param-desc">
+      </div><p><span class="param-type">Path Parameter</span> — The id string (GUID) or path of the Document. Any string that matches the pattern of a GUID is interpreted as the id string, and not the path. A path string must be URL encoded.</p><div class="param-desc"> 
+    </div>
+  </div>
+  <!-- field-items -->
+  
+  <h3 class="field-label" id="h3__1106360909" data-has-heading-anchor="true">
+    Consumes
+  <a href="/articles/fordevelopers/document-2/a/h3__1106360909" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__1106360909&#39;,this);"></a></h3>
+  </div><p>This API call consumes the following media types via the <span class="header">Content-Type</span> request header:</p><div class="method">
+  <ul>
+    <li>
+      <code>application/json</code>
+    </li>
+  </ul>
+  
+  
+  
+  
+  
+  
+  <!--Todo: process Response Object and its headers, schema, examples -->
+  
+  
+  <h3 class="field-label" id="h3__1309201789" data-has-heading-anchor="true">Example data<a href="/articles/fordevelopers/document-2/a/h3__1309201789" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__1309201789&#39;,this);"></a></h3><p>Content-Type: application/json</p><p><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">DELETE</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">DocumentService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">documents</span><span class="cm-operator">/</span><span class="cm-operator">%</span><span class="cm-number">2</span><span class="cm-variable">FFacility</span><span class="cm-operator">%</span><span class="cm-number">20</span><span class="cm-variable">A</span><span class="cm-operator">%</span><span class="cm-number">20</span><span class="cm-variable">Docs</span><span class="cm-operator">%</span><span class="cm-number">2</span><span class="cm-variable">FChecklists</span><span class="cm-operator">%</span><span class="cm-number">2</span><span class="cm-variable">FChecklist</span>.<span class="cm-property">doc</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table><br/></p><h3 class="field-label" id="h3__1309201789" data-has-heading-anchor="true">Produces
+  <a href="/articles/fordevelopers/document-2/a/h3__1309201789" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__1309201789&#39;,this);"></a></h3>
+  </div><p>This API call produces the following media types according to the <span class="header">Accept</span> request header;
+  the media type will be conveyed by the <span class="header">Content-Type</span> response header.</p><div class="method"><ul><li>
+      <code>application/json</code>
+    </li>
+  </ul>
+  
+  <h3 class="field-label" id="h3__408828321" data-has-heading-anchor="true">
+    Responses
+  <a href="/articles/fordevelopers/document-2/a/h3__408828321" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__408828321&#39;,this);"></a></h3>
+  <h4 class="field-label" id="h4_1426306584" data-has-heading-anchor="true">
+    204
+  <a href="/articles/fordevelopers/document-2/a/h4_1426306584" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h4_1426306584&#39;,this);"></a></h4>
+  </div><p>Document deleted.</p><div class="method">
+  <a href="#" target="_top"></a>
+</div>
+<!-- method -->
+<hr/>
+<div class="method">
+  <a name="get">
+  </a>
+  <div class="method-path">
+    <a name="get">
+    </a></div><p><a class="up" href="/articles/fordevelopers/document-2/a/MethodToC" onclick="return n(&#39;!fordevelopers/document-2/a/MethodToC&#39;,this);">Up</a>
+  </p><div class="method-path"><h3 id="h3__6204659" data-has-heading-anchor="true"><code class="huge"><span style="color: #555555; font-family: &quot;Open Sans&quot;, sans-serif; font-size: 13.3333px; text-decoration-color: initial;">GET /folders/{documentFolderIdOrPath}<span id="GETfolders"></span>&nbsp;</span></code><a href="/articles/fordevelopers/document-2/a/h3__6204659" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__6204659&#39;,this);"></a></h3>
+  </div>
+  <div class="method-summary">
+    </div><p><b>(<span class="nickname">get</span>)</b></p><div class="method-summary">
+  </div>
+  <div class="method-notes">
+    <p>
+      Retrieves information about a Document Folder.
+    </p>
+    <p>
+      <strong>Security:</strong> Requires Edit permissions on the parent Folder, or the Manage Documents right.</p>
+    <p>
+      <strong>SDK API:</strong>  <code><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.documents.getDocumentFolder(documentFolderIdOrPath, onsuccess, onerror)</font></code>
+    </p>
+  </div>
+  
+  <h3 class="field-label" id="h3_1857192308" data-has-heading-anchor="true">
+    Path parameters
+  <a href="/articles/fordevelopers/document-2/a/h3_1857192308" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_1857192308&#39;,this);"></a></h3>
+  <div class="field-items">
+    <p>
+      documentFolderIdOrPath (required)
+    </p>
+    
+    <div class="param-desc">
+      </div><p><span class="param-type">Path Parameter</span> — The id string (GUID) or path of the Folder. Any string that matches the pattern of a GUID is interpreted as the id string, and not the path. A path string must be URL encoded.</p><div class="param-desc"> 
+    </div>
+  </div>
+  <!-- field-items -->
+  
+  <h3 class="field-label" id="h3__1651490452" data-has-heading-anchor="true">
+    Consumes
+  <a href="/articles/fordevelopers/document-2/a/h3__1651490452" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__1651490452&#39;,this);"></a></h3>
+  </div><p>This API call consumes the following media types via the <span class="header">Content-Type</span> request header:</p><div class="method">
+  <ul>
+    <li>
+      <code>application/json</code>
+    </li>
+  </ul>
+  
+  
+  
+  
+  
+  <h3 class="field-label" id="h3_1285315769" data-has-heading-anchor="true">
+    Return type
+  <a href="/articles/fordevelopers/document-2/a/h3_1285315769" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_1285315769&#39;,this);"></a></h3>
+  <div class="return-type">
+    </div><p><a href="/articles/fordevelopers/document-2/a/h3_507750095" onclick="return n(&#39;!fordevelopers/document-2/a/h3_507750095&#39;,this);">documentFolderInfo</a></p><div class="return-type">
+    
+  </div></div><div class="method">
+  
+  <!--Todo: process Response Object and its headers, schema, examples -->
+  
+  </div><div class="method"><h3 class="field-label" id="h3__825103718" data-has-heading-anchor="true">
+    Example data
+  <a href="/articles/fordevelopers/document-2/a/h3__825103718" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__825103718&#39;,this);"></a></h3>
+  <p>
+    Content-Type: application/json
+  </p></div><div class="method">
+  </div><div class="method"><pre class="example"><code><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">GET</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">DocumentService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">folders</span><span class="cm-operator">/</span><span class="cm-operator">%</span><span class="cm-number">2</span><span class="cm-variable">FSite</span><span class="cm-operator">%</span><span class="cm-number">20</span><span class="cm-variable">X</span><span class="cm-operator">%</span><span class="cm-number">2</span><span class="cm-variable">FChecklists</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+
+<span class="cm-comment">//RESPONSE</span>
+{
+  <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Checklists&quot;</span>,
+  <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;All site checklists.&quot;</span>,
+  <span class="cm-string property">&quot;parentFolder&quot;</span>: <span class="cm-string">&quot;/Site X/&quot;</span>
+}</pre></pre></td></tr></table>&nbsp;</code>
+</pre>
+  <h3 class="field-label" id="h3__985595767" data-has-heading-anchor="true">
+    Example data
+  <a href="/articles/fordevelopers/document-2/a/h3__985595767" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__985595767&#39;,this);"></a></h3>
+  <p>
+    Content-Type: application/xml
+  </p>
+  
+  
+  <h3 class="field-label" id="h3__1637553846" data-has-heading-anchor="true">
+    Produces
+  <a href="/articles/fordevelopers/document-2/a/h3__1637553846" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__1637553846&#39;,this);"></a></h3>
+  </div><p>This API call produces the following media types according to the <span class="header">Accept</span> request header;
+  the media type will be conveyed by the <span class="header">Content-Type</span> response header.</p><div class="method"><ul><li>
+      <code>application/json</code>
+    </li>
+    <li>
+      <code>application/xml</code>
+    </li>
+  </ul>
+  
+  <h3 class="field-label" id="h3__167283381" data-has-heading-anchor="true">
+    Responses
+  <a href="/articles/fordevelopers/document-2/a/h3__167283381" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__167283381&#39;,this);"></a></h3>
+  <h4 class="field-label" id="h4_2098959813" data-has-heading-anchor="true">
+    200
+  <a href="/articles/fordevelopers/document-2/a/h4_2098959813" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h4_2098959813&#39;,this);"></a></h4>
+  </div><p>An instance of the documentFolderInfo structure.</p><div class="method">
+  </div><p><a href="/articles/fordevelopers/document-2/a/h3_507750095" onclick="return n(&#39;!fordevelopers/document-2/a/h3_507750095&#39;,this);">documentFolderInfo</a></p><div class="method">
+</div>
+<!-- method -->
+<hr/>
+<div class="method">
+  <a name="getDocument">
+  </a>
+  <div class="method-path">
+    <a name="getDocument">
+    </a></div><p><a class="up" href="/articles/fordevelopers/document-2/a/MethodToC" onclick="return n(&#39;!fordevelopers/document-2/a/MethodToC&#39;,this);">Up</a></p><div class="method-path">
+    <h3 id="h3_1005521950" data-has-heading-anchor="true"><code class="huge"><span style="color: #555555; font-family: &quot;Open Sans&quot;, sans-serif; font-size: 13.3333px; text-decoration-color: initial;">GET /documents/{documentIdOrPath}<span id="GETdocuments"></span>&nbsp;</span></code><a href="/articles/fordevelopers/document-2/a/h3_1005521950" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_1005521950&#39;,this);"></a></h3>
+  </div>
+  <div class="method-summary">
+    </div><p><b>(<span class="nickname">getDocument</span>)</b></p><div class="method-summary">
+  </div>
+  <div class="method-notes">
+    <p>
+      Retrieves information about a Document.
+    </p>
+    <p>
+      <strong>Security:</strong> Requires Edit permissions on the parent Folder, or the Manage Documents right.</p>
+    <p>
+      <strong>SDK API:</strong>  <code><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.documents.getDocument(documentIdOrPath, onsuccess, onerror)</font></code>
+    </p>
+    <p>
+      <strong>SDK API:</strong>  <code><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.documents.getDocumentContentBinary (documentIdOrPath, onsuccess, onerror)</font></code>
+    </p>
+  </div>
+  
+  <h3 class="field-label" id="h3__691018741" data-has-heading-anchor="true">
+    Path parameters
+  <a href="/articles/fordevelopers/document-2/a/h3__691018741" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__691018741&#39;,this);"></a></h3>
+  <div class="field-items">
+    <p>
+      documentIdOrPath (required)
+    </p>
+    
+    <div class="param-desc">
+      </div><p><span class="param-type">Path Parameter</span> — The id string (GUID) or path of the Document. Any string that matches the pattern of a GUID is interpreted as the id string, and not the path. A path string must be URL encoded.</p><p>content (optional)</p><p><span style="font-family: Courier; background-color: #ffffff;">?content</span> - Appending this&nbsp;to the path string will return the the contents of the document.</p><div class="param-desc"> 
+    </div>
+  </div>
+  <!-- field-items -->
+  
+  <h3 class="field-label" id="h3__760665756" data-has-heading-anchor="true">
+    Consumes
+  <a href="/articles/fordevelopers/document-2/a/h3__760665756" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__760665756&#39;,this);"></a></h3>
+  </div><p>This API call consumes the following media types via the <span class="header">Content-Type</span> request header:</p><div class="method">
+  <ul>
+    <li>
+      <code>application/json</code>
+    </li>
+  </ul>
+  
+  
+  
+  
+  
+  
+  <!--Todo: process Response Object and its headers, schema, examples -->
+  
+  
+  <h3 class="field-label" id="h3_317889308" data-has-heading-anchor="true"><span style="font-weight: 400;"><b>Example data</b></span><a href="/articles/fordevelopers/document-2/a/h3_317889308" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_317889308&#39;,this);"></a></h3><p>Content-Type: application/json</p><p><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">GET</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">DocumentService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">documents</span><span class="cm-operator">/</span><span class="cm-operator">%</span><span class="cm-number">2</span><span class="cm-variable">FFacility</span><span class="cm-operator">%</span><span class="cm-number">20</span><span class="cm-variable">A</span><span class="cm-operator">%</span><span class="cm-number">20</span><span class="cm-variable">Docs</span><span class="cm-operator">%</span><span class="cm-number">2</span><span class="cm-variable">FChecklists</span><span class="cm-operator">%</span><span class="cm-number">2</span><span class="cm-variable">FChecklist</span>.<span class="cm-property">doc</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+
+<span class="cm-comment">//RESPONSE</span>
+{
+  <span class="cm-string property">&quot;id&quot;</span>: <span class="cm-string">&quot;60f7b719-d430-4bd6-b489-60079795dc9a&quot;</span>,
+  <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Checklist.doc&quot;</span>,
+  <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;My checklist.&quot;</span>,
+  <span class="cm-string property">&quot;folder&quot;</span>: <span class="cm-string">&quot;/Site X/Checklists&quot;</span>,
+  <span class="cm-string property">&quot;contentUrl&quot;</span>: <span class="cm-string">&quot;https://go.enviance.com/Documents/DocumentDownload.aspx?docID=60f7b719-d430-4bd6-b489-60079795dc9a&quot;</span>,
+  <span class="cm-string property">&quot;version&quot;</span>: <span class="cm-number">10</span>,
+  <span class="cm-string property">&quot;objects&quot;</span>: [<span class="cm-string">&quot;/Division X/Facility 1&quot;</span>, <span class="cm-string">&quot;52fbb610-0fa5-4873-9f2b-53cdb0bb00f2&quot;</span>],
+  <span class="cm-string property">&quot;tasks&quot;</span>: [<span class="cm-string">&quot;51c6d230-9546-4e68-9664-63749d4daf57&quot;</span>, <span class="cm-string">&quot;2244248e-e583-4345-8460-fecbc7c32059&quot;</span>],
+  <span class="cm-string property">&quot;workflows&quot;</span>: [<span class="cm-string">&quot;4e66b342-da0e-43a5-8215-7be26d882249&quot;</span>, <span class="cm-string">&quot;ABC123&quot;</span>]
+}</pre></pre></td></tr></table><br/></p><h3 class="field-label" id="h3_317889308" data-has-heading-anchor="true">Produces
+  <a href="/articles/fordevelopers/document-2/a/h3_317889308" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_317889308&#39;,this);"></a></h3>
+  </div><p>This API call produces the following media types according to the <span class="header">Accept</span> request header;
+  the media type will be conveyed by the <span class="header">Content-Type</span> response header.</p><div class="method">
+  <ul>
+    <li>
+      <code>application/json</code>
+    </li>
+    <li>
+      <code>application/xml</code>
+    </li>
+  </ul>
+  
+  <h3 class="field-label" id="h3_1191444287" data-has-heading-anchor="true">
+    Responses
+  <a href="/articles/fordevelopers/document-2/a/h3_1191444287" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_1191444287&#39;,this);"></a></h3>
+  <h4 class="field-label" id="h4__342868032" data-has-heading-anchor="true">
+    200
+  <a href="/articles/fordevelopers/document-2/a/h4__342868032" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h4__342868032&#39;,this);"></a></h4>
+  </div><p>An instance of the documentInfo structure, representing the latest version of the Document.</p><div class="method">
+  <a href="#" target="_top"></a>
+</div>
+<!-- method -->
+<hr/>
+<div class="method">
+  <a name="update">
+  </a>
+  <div class="method-path">
+    <a name="update">
+    </a></div><p><a class="up" href="/articles/fordevelopers/document-2/a/MethodToC" onclick="return n(&#39;!fordevelopers/document-2/a/MethodToC&#39;,this);">Up</a></p><div class="method-path">
+    <h3 id="h3_442151860" data-has-heading-anchor="true"><code class="huge"><span style="color: #555555; font-family: &quot;Open Sans&quot;, sans-serif; font-size: 13.3333px; text-decoration-color: initial;">PATCH /folders{documentFolderIdOrPath}<span id="PATCHfolders"></span>&nbsp;</span></code><a href="/articles/fordevelopers/document-2/a/h3_442151860" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_442151860&#39;,this);"></a></h3>
+  </div>
+  <div class="method-summary">
+    </div><p><b>(<span class="nickname">update</span>)</b></p><div class="method-summary">
+  </div>
+  <div class="method-notes">
+    <p>
+      Updates the properties of a Document Folder, potentially moving it to a new Folder. Updating the parent Folder of a Folder effectively moves that Folder to the new parent folder. When updating a Folder, if the value specified for parentFolder is different from the current parent Folder of the Folder being updated, the Folder will be moved to the specified location.
+    </p>
+    <p>
+      <strong>Security:</strong> Requires Edit permissions on the parent Folder, or the Manage Documents right.</p>
+    <p>
+      <strong>SDK API:</strong>  <code><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.documents.updateDocumentFolder(documentFolderIdOrPath, documentFolderInfo, onsuccess, onerror)</font></code>
+    </p>
+  </div>
+  
+  <h3 class="field-label" id="h3_1308570199" data-has-heading-anchor="true">
+    Path parameters
+  <a href="/articles/fordevelopers/document-2/a/h3_1308570199" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_1308570199&#39;,this);"></a></h3>
+  <div class="field-items">
+    <p>
+      documentFolderIdOrPath (required)
+    </p>
+    
+    <div class="param-desc">
+      </div><p><span class="param-type">Path Parameter</span> — The id string (GUID) or path of the Folder. Any string that matches the pattern of a GUID is interpreted as the id string, and not the path. A path string must be URL encoded.</p><div class="param-desc"> 
+    </div>
+  </div>
+  <!-- field-items -->
+  
+  <h3 class="field-label" id="h3__616149179" data-has-heading-anchor="true">
+    Consumes
+  <a href="/articles/fordevelopers/document-2/a/h3__616149179" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__616149179&#39;,this);"></a></h3>
+  </div><p>This API call consumes the following media types via the <span class="header">Content-Type</span> request header:</p><div class="method"><ul><li>
+      <code>application/json</code>
+    </li>
+  </ul>
+  
+  <h3 class="field-label" id="h3__556210045" data-has-heading-anchor="true">
+    Request body
+  <a href="/articles/fordevelopers/document-2/a/h3__556210045" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__556210045&#39;,this);"></a></h3>
+  <div class="field-items">
+    <div class="param">
+      </div><p>documentFolderInfo <a href="#documentFolderInfo" target="_top">documentFolderInfo</a> (required)</p><div class="param">
+    </div>
+    
+    <div class="param-desc">
+      </div><p><span class="param-type">Body Parameter</span> — A documentFolderInfo structure.</p><div class="param-desc"> 
+    </div>
+    
+  </div>
+  <!-- field-items -->
+  
+  
+  
+  
+  <h3 class="field-label" id="h3__1758876720" data-has-heading-anchor="true">
+    Return type
+  <a href="/articles/fordevelopers/document-2/a/h3__1758876720" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__1758876720&#39;,this);"></a></h3>
+  <p>
+    
+    String
+  </p>
+  
+  <!--Todo: process Response Object and its headers, schema, examples -->
+  
+  <h3 class="field-label" id="h3_1066975571" data-has-heading-anchor="true">
+    Example data
+  <a href="/articles/fordevelopers/document-2/a/h3_1066975571" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_1066975571&#39;,this);"></a></h3>
+  <p>
+    Content-Type: application/json
+  </p>
+  <pre class="example"><code><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">PATCH</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">DocumentService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">folders</span><span class="cm-operator">/</span><span class="cm-variable">f261b753</span><span class="cm-operator">-</span><span class="cm-number">8</span><span class="cm-variable">d7a</span><span class="cm-operator">-</span><span class="cm-number">4</span><span class="cm-variable">a73</span><span class="cm-operator">-</span><span class="cm-number">9</span><span class="cm-variable">aa1</span><span class="cm-operator">-</span><span class="cm-number">8e1</span><span class="cm-variable">adadbb878</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+ 
+{
+  <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Checklists2&quot;</span>,
+  <span class="cm-string property">&quot;parentFolder&quot;</span>: <span class="cm-string">&quot;/Site Z/&quot;</span>
+}</pre></pre></td></tr></table>&nbsp;</code>
+</pre>
+  
+  <h3 class="field-label" id="h3_1460181889" data-has-heading-anchor="true">
+    Produces
+  <a href="/articles/fordevelopers/document-2/a/h3_1460181889" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_1460181889&#39;,this);"></a></h3>
+  </div><p>This API call produces the following media types according to the <span class="header">Accept</span> request header;
+  the media type will be conveyed by the <span class="header">Content-Type</span> response header.</p><div class="method">
+  <ul>
+    <li>
+      <code>application/json</code>
+    </li>
+  </ul>
+  
+  <h3 class="field-label" id="h3_393645961" data-has-heading-anchor="true">
+    Responses
+  <a href="/articles/fordevelopers/document-2/a/h3_393645961" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_393645961&#39;,this);"></a></h3>
+  <h4 class="field-label" id="h4_98477120" data-has-heading-anchor="true">
+    200
+  <a href="/articles/fordevelopers/document-2/a/h4_98477120" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h4_98477120&#39;,this);"></a></h4>
+  </div><p>Document Folder updated.</p>
+<!-- method -->
+<hr/>
+<div class="method">
+  <a name="updateDocument">
+  </a>
+  <div class="method-path">
+    <a name="updateDocument">
+    </a></div><p><a class="up" href="/articles/fordevelopers/document-2/a/MethodToC" onclick="return n(&#39;!fordevelopers/document-2/a/MethodToC&#39;,this);">Up</a></p><div class="method-path">
+    <h3 id="h3_423432345" data-has-heading-anchor="true"><code class="huge"><span style="color: #555555; font-family: &quot;Open Sans&quot;, sans-serif; font-size: 13.3333px; text-decoration-color: initial;">PATCH /documents{documentIdOrPath}<span id="PATCHdocuments"></span>&nbsp;</span></code><a href="/articles/fordevelopers/document-2/a/h3_423432345" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_423432345&#39;,this);"></a></h3>
+  </div>
+  <div class="method-summary">
+    </div><p><b>(<span class="nickname">updateDocument</span>)</b></p><div class="method-summary">
+  </div>
+  <div class="method-notes">
+    <p>
+      Updates the properties and content of a Document. Updating the parent Folder of a Document effectively moves that Document to the new parent folder. When  updating a Document, if the value specified for parent Folder is different from the current parent Folder of the Document, the Document will be moved to the specified location.</p>
+    <p>
+      <strong>Security:</strong> Requires Edit permissions on the parent Folder, or the Manage Documents right.documentFolderInfo</p>
+    <p>
+      <strong>SDK API:</strong>  <code><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.documents.updateDocument(documentIdOrPath, documentInfo, onsuccess, onerror)</font></code>
+    </p>
+  </div>
+  
+  <h3 class="field-label" id="h3__619116476" data-has-heading-anchor="true">
+    Path parameters
+  <a href="/articles/fordevelopers/document-2/a/h3__619116476" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__619116476&#39;,this);"></a></h3>
+  <div class="field-items">
+    <p>
+      documentIdOrPath (required)
+    </p>
+    
+    <div class="param-desc">
+      </div><p><span class="param-type">Path Parameter</span> — The id string (GUID) or path of the Document. Any string that matches the pattern of a GUID is interpreted as the id string, and not the path. A path string must be URL encoded.</p><div class="param-desc"> 
+    </div>
+  </div>
+  <!-- field-items -->
+  
+  <h3 class="field-label" id="h3_2003472224" data-has-heading-anchor="true">
+    Consumes
+  <a href="/articles/fordevelopers/document-2/a/h3_2003472224" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_2003472224&#39;,this);"></a></h3>
+  </div><p>This API call consumes the following media types via the <span class="header">Content-Type</span> request header:</p><div class="method"><ul><li>
+      <code>application/json</code>
+    </li>
+  </ul>
+  
+  <h3 class="field-label" id="h3__685123492" data-has-heading-anchor="true">
+    Request body
+  <a href="/articles/fordevelopers/document-2/a/h3__685123492" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__685123492&#39;,this);"></a></h3>
+  <div class="field-items">
+    <div class="param">
+      </div><p>documentInfo <a href="#documentInfo" target="_top">documentInfo</a> (required)</p><div class="param">
+    </div></div><div class="field-items">
+    
+    </div><div class="field-items"><div class="param-desc">
+      </div><p><span class="param-type">Body Parameter</span> — A documentInfo structure. Some properties of this structure are ignored during this operation.</p><div class="param-desc"> 
+    </div>
+    
+  </div>
+  <!-- field-items -->
+  
+  
+  
+  
+  <h3 class="field-label" id="h3__392341726" data-has-heading-anchor="true">
+    Return type
+  <a href="/articles/fordevelopers/document-2/a/h3__392341726" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__392341726&#39;,this);"></a></h3>
+  <p>
+    
+    String
+  </p>
+  
+  <!--Todo: process Response Object and its headers, schema, examples -->
+  
+  <h3 class="field-label" id="h3__2102646698" data-has-heading-anchor="true">
+    Example data
+  <a href="/articles/fordevelopers/document-2/a/h3__2102646698" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__2102646698&#39;,this);"></a></h3>
+  <p>
+    Content-Type: application/json
+  </p>
+  <pre class="example"><code><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">PATCH</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">DocumentService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">documents</span><span class="cm-operator">/</span><span class="cm-number">60</span><span class="cm-variable">f7b719</span><span class="cm-operator">-</span><span class="cm-variable">d430</span><span class="cm-operator">-</span><span class="cm-number">4</span><span class="cm-variable">bd6</span><span class="cm-operator">-</span><span class="cm-variable">b489</span><span class="cm-operator">-</span><span class="cm-number">60079795</span><span class="cm-variable">dc9a</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+ 
+{
+  <span class="cm-string property">&quot;documentInfo&quot;</span>: {
+    <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Checklist_Done.doc&quot;</span>,
+    <span class="cm-string property">&quot;content&quot;</span>: <span class="cm-string">&quot;TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2ljaW5nIGVsaXQsIHNlZCBkbyBlaXVzbW9kIHRlbXBvciBpbmNpZGlkdW50IHV0IGxhYm9yZSBldCBkb2xvcmUgbWFnbmEgYWxpcXVhLiBVdCBlbmltIGFkIG1pbmltIHZlbmlhbSwgcXVpcyBub3N0cnVkIGV4ZXJjaXRhdGlvbiB1bGxhbWNvIGxhYm9yaXMgbmlzaSB1dCBhbGlxdWlwIGV4IGVhIGNvbW1vZG8gY29uc2VxdWF0LiBEdWlzIGF1dGUgaXJ1cmUgZG9sb3IgaW4gcmVwcmVoZW5kZXJpdCBpbiB2b2x1cHRhdGUgdmVsaXQgZXNzZSBjaWxsdW0gZG9sb3JlIGV1IGZ1Z2lhdCBudWxsYSBwYXJpYXR1ci4gRXhjZXB0ZXVyIHNpbnQgb2NjYWVjYXQgY3VwaWRhdGF0IG5vbiBwcm9pZGVudCwgc3VudCBpbiBjdWxwYSBxdWkgb2ZmaWNpYSBkZXNlcnVudCBtb2xsaXQgYW5pbSBpZCBlc3QgbGFib3J1bS4=&quot;</span>
+  }
+}
+
+<span class="cm-comment">//EXAMPLE (Move)</span>
+
+<span class="cm-variable">PATCH</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">DocumentService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">documents</span><span class="cm-operator">/</span><span class="cm-number">60</span><span class="cm-variable">f7b719</span><span class="cm-operator">-</span><span class="cm-variable">d430</span><span class="cm-operator">-</span><span class="cm-number">4</span><span class="cm-variable">bd6</span><span class="cm-operator">-</span><span class="cm-variable">b489</span><span class="cm-operator">-</span><span class="cm-number">60079795</span><span class="cm-variable">dc9a</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+ 
+{
+  <span class="cm-string property">&quot;documentInfo&quot;</span>: {
+    <span class="cm-string property">&quot;folder&quot;</span>: <span class="cm-string">&quot;/Facility A Docs/Checklists_Old/&quot;</span>
+  }
+}</pre></pre></td></tr></table>&nbsp;</code>
+</pre>
+  
+  <h3 class="field-label" id="h3_530342815" data-has-heading-anchor="true">
+    Produces
+  <a href="/articles/fordevelopers/document-2/a/h3_530342815" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_530342815&#39;,this);"></a></h3>
+  </div><p>This API call produces the following media types according to the <span class="header">Accept</span> request header;
+  the media type will be conveyed by the <span class="header">Content-Type</span> response header.</p><div class="method">
+  <ul>
+    <li>
+      <code>application/json</code>
+    </li>
+  </ul>
+  
+  <h3 class="field-label" id="h3_263465701" data-has-heading-anchor="true">
+    Responses
+  <a href="/articles/fordevelopers/document-2/a/h3_263465701" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_263465701&#39;,this);"></a></h3>
+  <h4 class="field-label" id="h4_1394887030" data-has-heading-anchor="true">
+    200
+  <a href="/articles/fordevelopers/document-2/a/h4_1394887030" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h4_1394887030&#39;,this);"></a></h4>
+  </div><p>The id string (GUID) for the updated Document.</p>
+<!-- method -->
+<hr/>
+<div class="method">
+  <a name="updateDocumentBinary">
+  </a>
+  <div class="method-path">
+    <a name="updateDocumentBinary">
+    </a></div><p><a class="up" href="/articles/fordevelopers/document-2/a/MethodToC" onclick="return n(&#39;!fordevelopers/document-2/a/MethodToC&#39;,this);">Up</a>
+    </p><div class="method-path"><h3 id="h3_1854885796" data-has-heading-anchor="true"><code class="huge"><span style="color: #555555; font-family: &quot;Open Sans&quot;, sans-serif; font-size: 13.3333px; text-decoration-color: initial;">POST /documents/{documentIdOrPath}<span id="POSTUpdateDocument"></span>&nbsp;</span></code><a href="/articles/fordevelopers/document-2/a/h3_1854885796" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_1854885796&#39;,this);"></a></h3>
+  </div>
+  <div class="method-summary">
+    </div><p><b>(<span class="nickname">updateDocumentBinary</span>)</b></p><div class="method-summary">
+  </div>
+  <div class="method-notes">
+    <p>
+      Updates the binary content of a document.
+    </p>
+    <p>
+      <strong>Security:</strong> Requires Edit permissions on the parent Folder, or the Manage Documents right.</p>
+    <p>
+      <strong>SDK API:</strong>  <code><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.documents.updateDocumentBinary (fileInput, documentIdOrPath, documentInfo, updateExistingVersion, onsuccess, onerror)</font></code>
+    </p>
+    <p>
+      <strong>SDK API:</strong>  <code style="background-color: #f9f2f4;"><font color="#ff0000">envianceSdk.documents.updateDocument(documentIdOrPath, documentInfo, onsuccess, onerror)</font></code>
+    </p>
+  </div>
+  
+  <h3 class="field-label" id="h3_757463793" data-has-heading-anchor="true">
+    Path parameters
+  <a href="/articles/fordevelopers/document-2/a/h3_757463793" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_757463793&#39;,this);"></a></h3>
+  <div class="field-items">
+    <p>
+      documentIdOrPath (required)
+    </p>
+    
+    <div class="param-desc">
+      </div><p><span class="param-type">Path Parameter</span> — The id string (GUID) or path of the Document. Any string that matches the pattern of a GUID is interpreted as the id string, and not the path. A path string must be URL encoded.</p><div class="param-desc"> 
+    </div>
+  </div>
+  <!-- field-items -->
+  
+  <h3 class="field-label" id="h3__1697107114" data-has-heading-anchor="true">
+    Consumes
+  <a href="/articles/fordevelopers/document-2/a/h3__1697107114" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__1697107114&#39;,this);"></a></h3>
+  </div><p>This API call consumes the following media types via the <span class="header">Content-Type</span> request header:</p><div class="method"><ul><li>
+      <code>application/json</code>
+    </li>
+  </ul>
+  
+  <h3 class="field-label" id="h3_1673943010" data-has-heading-anchor="true">
+    Request body
+  <a href="/articles/fordevelopers/document-2/a/h3_1673943010" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_1673943010&#39;,this);"></a></h3>
+  <div class="field-items">
+    <div class="param">
+      </div><p>documentInfo <a href="/articles/fordevelopers/document-2/a/h3__469756199" onclick="return n(&#39;!fordevelopers/document-2/a/h3__469756199&#39;,this);">documentInfo</a> (required)</p><div class="param">
+    </div></div><div class="field-items">
+    
+    </div><div class="field-items"><div class="param-desc">
+      </div><p><span class="param-type">Body Parameter</span> — A DocumentInfo structure.</p><div class="param-desc"> 
+    </div></div><div class="field-items">
+    
+  </div></div><div class="method">
+  <!-- field-items -->
+  
+  
+  
+  
+  </div><div class="method"><h3 class="field-label" id="h3__1734086687" data-has-heading-anchor="true">
+    Return type
+  <a href="/articles/fordevelopers/document-2/a/h3__1734086687" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__1734086687&#39;,this);"></a></h3>
+  <p>
+    
+    String
+  </p>
+  
+  <!--Todo: process Response Object and its headers, schema, examples -->
+  
+  
+  
+  <h3 class="field-label" id="h3_1603297243" data-has-heading-anchor="true">
+    Produces
+  <a href="/articles/fordevelopers/document-2/a/h3_1603297243" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_1603297243&#39;,this);"></a></h3>
+  </div><p>This API call produces the following media types according to the <span class="header">Accept</span> request header;
+  the media type will be conveyed by the <span class="header">Content-Type</span> response header.</p><div class="method">
+  <ul>
+    <li>
+      <code>application/json</code>
+    </li>
+  </ul>
+  
+  <h3 class="field-label" id="h3__1555403912" data-has-heading-anchor="true">
+    Responses
+  <a href="/articles/fordevelopers/document-2/a/h3__1555403912" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__1555403912&#39;,this);"></a></h3>
+  <h4 class="field-label" id="h4_457457492" data-has-heading-anchor="true">
+    200
+  <a href="/articles/fordevelopers/document-2/a/h4_457457492" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h4_457457492&#39;,this);"></a></h4>
+  </div><p>Document updated.</p>
+<!-- method -->
+<hr/>
+
+<h2 id="h2__265346804" data-has-heading-anchor="true">
+  Models<span id="Models"></span>
+<a href="/articles/fordevelopers/document-2/a/h2__265346804" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h2__265346804&#39;,this);"></a></h2>
+<p><b>[ Jump to&nbsp;<a href="/articles/fordevelopers/document-2/a/h2_2060849948" onclick="return n(&#39;!fordevelopers/document-2/a/h2_2060849948&#39;,this);">Methods</a>]</b></p>
+
+<h3 id="h3__546396102" data-has-heading-anchor="true">
+  Table of Contents<span id="ModelsToC"></span>
+<a href="/articles/fordevelopers/document-2/a/h3__546396102" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__546396102&#39;,this);"></a></h3>
+<ul><li><code><p><b><a href="#documentCreate" target="_top">documentCreate</a></b></p></code></li></ul><ul><li><code><p><b><a href="#documentFolderInfo" target="_top">documentFolderInfo</a></b></p></code></li></ul><ul><li><code><p><b><a href="#documentInfo" target="_top">documentInfo</a></b></p></code></li></ul><ol>
+  
+  
+  
+</ol>
+
+<div>
+  <h3 id="h3__951693981">
+    </h3><p><br/></p><h3 id="h3_2026081195" data-has-heading-anchor="true"><code><span style="font-family: &quot;Open Sans&quot;, sans-serif;">documentCreate<span id="documentCreate"></span></span></code><a href="/articles/fordevelopers/document-2/a/h3_2026081195" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_2026081195&#39;,this);"></a></h3><p> <a href="/articles/fordevelopers/document-2/a/ModelsToC" onclick="return n(&#39;!fordevelopers/document-2/a/ModelsToC&#39;,this);">- Up</a></p><h3 id="h3__951693981">
+  </h3>
+  <p>
+    Creation info for Document
+  </p>
+  <div class="field-items">
+    <p>
+      <b>documentInfo (optional)</b>
+    </p>
+    <div class="param-desc">
+      </div><p><span class="param-type">array -&nbsp;</span><span class="param-type" style="font-size: 10pt;">[<a href="/articles/fordevelopers/document-2/a/h3__469756199" onclick="return n(&#39;!fordevelopers/document-2/a/h3__469756199&#39;,this);">documentInfo</a>]</span></p><p><span style="font-size: 10pt;">A documentInfo structure</span></p><div class="param-desc"> 
+    </div>
+    <p><b>
+      copyFrom (optional)
+    </b></p>
+    <div class="param-desc">
+      </div><p><span class="param-type">String</span>&nbsp;- The full path to an existing Document whose content will be copied and used as the content of the new Document. Specifying this property allows you to copy an existing Document to another location in Document Manager. This property will be ignored if the "content" property of documentInfo has a value.</p><div class="param-desc"> 
+    </div>
+  </div>
+  <!-- field-items -->
+</div>
+<div>
+  <p><br/></p><h3 id="h3_507750095" data-has-heading-anchor="true"><code><span style="font-family: &quot;Open Sans&quot;, sans-serif;">documentFolderInfo<span id="documentFolderInfo"></span>&nbsp;</span></code><a href="/articles/fordevelopers/document-2/a/h3_507750095" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3_507750095&#39;,this);"></a></h3><p> -  <a href="/articles/fordevelopers/document-2/a/ModelsToC" onclick="return n(&#39;!fordevelopers/document-2/a/ModelsToC&#39;,this);">Up</a>
+  </p>
+  <p>
+    Information about a Folder in Document Manager.
+  </p>
+  <div class="field-items">
+    <p><b>
+      id (optional)
+    </b></p>
+    <div class="param-desc">
+      </div><p><span class="param-type">String</span>&nbsp;- The id string (GUID) of the Folder. Ignored for: Create Document Folder, Update Document Folder</p><div class="param-desc"> 
+    </div>
+    <p><b>
+      name (optional)
+    </b></p>
+    <div class="param-desc">
+      </div><p><span class="param-type">String</span>&nbsp;- The name of the Folder.</p><div class="param-desc"> 
+    </div>
+    <p><b>
+      description (optional)
+    </b></p>
+    <div class="param-desc">
+      </div><p><span class="param-type">String</span>&nbsp;- The description of the Folder.</p><div class="param-desc"> 
+    </div>
+    <p><b>
+      parentFolderIdOrPath (optional)
+    </b></p>
+    <div class="param-desc">
+      </div><p><span class="param-type">String</span>&nbsp;- The id string (GUID) or full path of the Document Folder in which this Folder is placed. Any string that matches the pattern of a GUID is interpreted as the id string, and not the path of the parent Folder. The path of a Folder should be URL encoded.</p><div class="param-desc"> 
+    </div>
+    <p><b>
+      copyFrom (optional)
+    </b></p>
+    <div class="param-desc">
+      </div><p><span class="param-type">String</span>&nbsp;- The full path to an existing Document whose content will be copied and used as the content of the new Document. Specifying this property allows you to copy an existing Document to another location in Document Manager. This property will be ignored if the "content" property of documentInfo has a value.</p><p><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default">{
+  <span class="cm-string property">&quot;id&quot;</span>: <span class="cm-string">&quot;624bbbcf-9d83-4140-b461-e965c317402c&quot;</span>,
+  <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Inspection Pictures&quot;</span>,
+  <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;Pictures taken during inspections.&quot;</span>,
+  <span class="cm-string property">&quot;parentFolderIdOrPath&quot;</span>: <span class="cm-string">&quot;/Site X/&quot;</span> 
+}</pre></pre></td></tr></table><br/></p><div class="param-desc"> 
+    </div>
+  </div>
+  <!-- field-items -->
+</div>
+<div>
+  <p><br/></p><h3 id="h3__469756199" data-has-heading-anchor="true"><code><span style="font-family: &quot;Open Sans&quot;, sans-serif;">documentInfo<span id="documentInfo"></span></span></code><a href="/articles/fordevelopers/document-2/a/h3__469756199" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document-2/a/h3__469756199&#39;,this);"></a></h3><p> -  <a href="/articles/fordevelopers/document-2/a/ModelsToC" onclick="return n(&#39;!fordevelopers/document-2/a/ModelsToC&#39;,this);">Up</a>
+  </p>
+  <p>
+    Information about a Document in Document Manager. If contentUrl is specified during a call to Create Document or Update Document, then the latest version of the Document will simply be a URL to the content hosted at this location.
+  </p>
+  <div class="field-items">
+    <p><b>
+      id (optional)
+    </b></p>
+    <div class="param-desc">
+      </div><p><span class="param-type">String</span>&nbsp;- The id string (GUID) of the Document. Ignored for: Create Document, Update Document</p><div class="param-desc"> 
+    </div>
+    <p><b>
+      name (optional)
+    </b></p>
+    <div class="param-desc">
+      </div><p><span class="param-type">String</span>&nbsp;- The name of the Document. May be empty or null for Update Document and field will not be modified</p><div class="param-desc"> 
+    </div>
+    <p><b>
+      mimeType (optional)
+    </b></p>
+    <div class="param-desc">
+      </div><p><span class="param-type">String</span>&nbsp;- The mime type of the Document. If left unspecified when creating or updating a Document the application will assign a mime type according to the file extension.</p><div class="param-desc"> 
+    </div>
+    <p><b>
+      fileName (optional)
+    </b></p>
+    <div class="param-desc">
+      </div><p><span class="param-type">String</span>&nbsp;- The original file name of the Document. This is only required when the content property is used. It allows the Management System to detect the mime type and use it for the Download Document API. May be empty or null for Update Document and field will not be modified. Required for Create Document, Update Document if content is specified. Ignored for Get Document</p><div class="param-desc"> 
+    </div>
+    <p><b>
+      description (optional)
+    </b></p>
+    <div class="param-desc">
+      </div><p><span class="param-type">String</span>&nbsp;- The description of the Document.</p><div class="param-desc"> 
+    </div>
+    <p><b>
+      folder (optional)
+    </b></p>
+    <div class="param-desc">
+      </div><p><span class="param-type">String</span>&nbsp;- The id string (GUID) or full path of the Document Folder in which this Document is placed. Any string that matches the pattern of a GUID is interpreted as the id string, and not the path of the Folder.</p><div class="param-desc"> 
+    </div>
+    <p><b>
+      content (optional)
+    </b></p>
+    <div class="param-desc">
+      </div><p><span class="param-type">String</span>&nbsp;- The content of the Document, Base64 encoded.</p><div class="param-desc"> 
+    </div>
+    <p><b>
+      contentUrl (optional)
+    </b></p>
+    <div class="param-desc">
+      </div><p><span class="param-type">String</span>&nbsp;- The url for the Document content. In the case of Documents hosted outside of Document Manager, this url will be the value specified for the Document location.</p><div class="param-desc"> 
+    </div>
+    <p><b>
+      version (optional)
+    </b></p>
+    <div class="param-desc">
+      </div><p><span class="param-type">Integer</span>&nbsp;- The version number of the Document. Currently, only the latest version is returned. Ignored for: Create Document, Update Document</p><div class="param-desc"> 
+    </div>
+    <p><b>
+      objects (optional)
+    </b></p>
+    <div class="param-desc">
+      </div><p><span class="param-type">String</span>&nbsp;- An optional array of Compliance Model object id strings (GUIDs) or paths, specifying zero or more Objects to which the Document is associated. Any string that matches the pattern of a GUID is interpreted as an id string, and not a path.</p><div class="param-desc"> 
+    </div>
+    <p><b>
+      tasks (optional)
+    </b></p>
+    <div class="param-desc">
+      </div><p><span class="param-type">String</span>&nbsp;- An optional array of Task id strings (GUIDs), specifying zero or more Tasks to which the Document is associated.</p><div class="param-desc"> 
+    </div>
+    <p><b>
+      workflows (optional)
+    </b></p>
+    <div class="param-desc">
+      </div><p><span class="param-type">String</span>&nbsp;- An optional array of Workflow id strings (GUIDs) or unique ids, specifying zero or more Workflows to which the Document is associated. Any string that matches the pattern of a GUID is interpreted as an id string, and not a unique id.</p><div class="param-desc"> 
+    </div>
+    <p><b>
+      comments (optional)
+    </b></p>
+    <div class="param-desc">
+      </div><p><span class="param-type">String</span>&nbsp;- An optional. String of the version comments.</p><div class="param-desc"> 
+    </div>
+    <p><b>
+      nameSuffixOnDuplication (optional)
+    </b></p>
+    <div class="param-desc">
+      </div><p><span class="param-type">String</span>&nbsp;- An optional field which provides a way of generating new unique name with the suffix on document duplication during it creating. Can be: "Timestamp||Guid||Increment||None(by default)".</p><p><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default">{
+  <span class="cm-string property">&quot;id&quot;</span>: <span class="cm-string">&quot;92b32d0e-8b6f-45a6-9e7c-ab3957dfd38d&quot;</span>,
+  <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Quarterly Rundown Checklist&quot;</span>,
+  <span class="cm-string property">&quot;fileName&quot;</span>: <span class="cm-string">&quot;Checklist.doc&quot;</span>,
+  <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;The quarterly rundown checklist.&quot;</span>,
+  <span class="cm-string property">&quot;folder&quot;</span>: <span class="cm-string">&quot;/Site Z/&quot;</span>,
+  <span class="cm-string property">&quot;content&quot;</span>: <span class="cm-string">&quot; TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2ljaW5nIGVsaXQsIHNlZCBkbyBlaXVzbW9kIHRlbXBvciBpbmNpZGlkdW50IHV0IGxhYm9yZSBldCBkb2xvcmUgbWFnbmEgYWxpcXVhLiBVdCBlbmltIGFkIG1pbmltIHZlbmlhbSwgcXVpcyBub3N0cnVkIGV4ZXJjaXRhdGlvbiB1bGxhbWNvIGxhYm9yaXMgbmlzaSB1dCBhbGlxdWlwIGV4IGVhIGNvbW1vZG8gY29uc2VxdWF0LiBEdWlzIGF1dGUgaXJ1cmUgZG9sb3IgaW4gcmVwcmVoZW5kZXJpdCBpbiB2b2x1cHRhdGUgdmVsaXQgZXNzZSBjaWxsdW0gZG9sb3JlIGV1IGZ1Z2lhdCBudWxsYSBwYXJpYXR1ci4gRXhjZXB0ZXVyIHNpbnQgb2NjYWVjYXQgY3VwaWRhdGF0IG5vbiBwcm9pZGVudCwgc3VudCBpbiBjdWxwYSBxdWkgb2ZmaWNpYSBkZXNlcnVudCBtb2xsaXQgYW5pbSBpZCBlc3QgbGFib3J1bS4=&quot;</span>,
+  <span class="cm-string property">&quot;contentUrl&quot;</span>: <span class="cm-string">&quot;&quot;</span>,
+  <span class="cm-string property">&quot;version&quot;</span>: <span class="cm-number">1</span>,
+  <span class="cm-string property">&quot;objects&quot;</span>: [<span class="cm-string">&quot;/Facility A/Unit X/Parameter Z&quot;</span>],
+  <span class="cm-string property">&quot;tasks&quot;</span>: [<span class="cm-string">&quot;b3d15bf6-995e-43d3-a240-6fd6f9626748&quot;</span>],
+  <span class="cm-string property">&quot;workflows&quot;</span>: [<span class="cm-string">&quot;d66ded7e-5355-488a-a3b7-c243acb83527&quot;</span>, <span class="cm-string">&quot;d978ba24-d65d-489a-97fd-bc1db09092a2&quot;</span>]
+}</pre></pre></td></tr></table><br/></p><div class="param-desc"> 
+    </div>
+  </div>
+  <!-- field-items -->
+</div><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

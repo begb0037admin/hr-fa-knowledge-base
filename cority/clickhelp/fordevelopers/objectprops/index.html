@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/objectprops"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Object Properties Tool</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Object Properties Tool';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1_2013570984" data-has-heading-anchor="true">
+  Object Properties Tool
+<a href="/articles/fordevelopers/objectprops/a/h1_2013570984" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/objectprops/a/h1_2013570984&#39;,this);"></a></h1>
+<p class="BodyText">
+  The Object Properties Editing Tool is used to assign property values to existing objects in the system. You can run it after creating objects with the Object Copy Tool to assign property values for the new objects, or to edit properties for any existing System Model objects.
+</p>
+<h2 class="Heading2" id="h2_166535805" data-has-heading-anchor="true">
+  Preparation
+<a href="/articles/fordevelopers/objectprops/a/h2_166535805" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/objectprops/a/h2_166535805&#39;,this);"></a></h2>
+<p class="BodyText">
+  Create the objects first, using the Object Copy Tool, if necessary. Determine the number and type of properties to be edited.
+</p>
+<p class="BodyText">
+  If custom fields are required for the objects, create the custom fields and Custom Field Templates and associate them with the objects. Note:&nbsp;There is no bulk tool for creating custom fields and templates. However once the fields and custom field template(s) are created, you can use the <a href="/articles/fordevelopers/templateupdate" onclick="return n(&#39;!fordevelopers/templateupdate&#39;,this);">Template Edit Tool</a> to associate objects with templates using the template bulk tool.
+</p>
+<p class="BodyText">
+  These templates are available, depending on the types of properties you want to edit:
+</p>
+<ul class="brackets">
+  <li value="1">
+    <a href="/articles/fordevelopers/objectpropssimple" class="MCXref_Heading_0" onclick="return n(&#39;!fordevelopers/objectpropssimple&#39;,this);">Object Properties Editing Tool - Simple Properties </a>
+  </li>
+  <li value="2">
+    <a href="/articles/fordevelopers/objectpropscomplex" class="MCXref_Heading_0" onclick="return n(&#39;!fordevelopers/objectpropscomplex&#39;,this);">Object Properties Editing Tool - Complex Properties&nbsp;</a>
+  </li>
+  <li value="3">
+    <a href="/articles/fordevelopers/objectpropsmonreqt" class="MCXref_Heading_0" onclick="return n(&#39;!fordevelopers/objectpropsmonreqt&#39;,this);">Object Properties Editing Tool&nbsp;- Monitored Requirements&nbsp;</a>
+  </li>
+  <li value="4">
+    <a href="/articles/fordevelopers/objectnameslocalization" class="MCXref_Heading_0" onclick="return n(&#39;!fordevelopers/objectnameslocalization&#39;,this);">Object Names Localization</a>
+  </li>
+</ul>
+<p class="BodyText">
+  Simple properties are single property fields with one-to-one property-value associations. Complex properties are those that involve multiple related fields—for example, Data Collection/Sampling Frequency on a parameter has two fields, one for numerical value and one for the time period (hour, day, week, month).
+</p>
+<p class="BodyText">
+  The Monitored Requirements tool can be used to edit just the "Monitored Requirement(s)" field for Event Logs. It allows you to enter one requirement per row, rather than including all requirements on the same line (as required on the other tools).
+</p>
+<p class="Note">
+  <span class="autonumber"><span class="note_et_al">Note: &nbsp;</span></span>Property names are not case-sensitive.
+</p>
+<p class="Tip">
+  <span class="autonumber"><span class="note_et_al">Tip: &nbsp;</span></span>Grouping the same properties in a job file will get the best results from the Object Properties tool. You may group the properties by type—simple fields vs. complex fields—and use the appropriate tool if only a few properties are being edited per object. However if many properties are being edited for the same objects then all properties (both simple and complex) for the objects should be included in the same job file. You can edit both simple and complex properties on the complex properties template, or on separate worksheets in the same file.
+</p>
+<p class="BodyText">
+  Blank values in a property value field are ignored and existing property values in the system will not be changed.&nbsp;
+</p>
+<p class="BodyText">
+  To delete an existing value for a field, enter <b>&lt;clear&gt;</b> in the value column.
+</p>
+<h2 class="Heading2" id="h2__1391543021" data-has-heading-anchor="true">
+  Excluded Fields
+<a href="/articles/fordevelopers/objectprops/a/h2__1391543021" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/objectprops/a/h2__1391543021&#39;,this);"></a></h2>
+<p class="BodyText">
+  The following types of fields cannot be edited with the Object Properties Editing Tool:
+</p>
+<ul>
+  <li value="1">
+    ID Control
+  </li>
+  <li value="2">
+    Hyperlink field types other than Default URL
+  </li>
+  <li value="3">
+    Label
+  </li>
+  <li value="4">
+    Time zone updates
+  </li>
+  <li value="5">
+    Parent object update (i.e., cannot move objects by editing parent object path)</li>
+<li>Valid range limits</li>
+</ul>
+<p>
+</p>
+<p>
+  For the following types of fields, use the <a href="/articles/fordevelopers/calcedit" class="MCXref_Heading_0" onclick="return n(&#39;!fordevelopers/calcedit&#39;,this);">Calculations&nbsp;Edit Tool</a>:
+</p>
+<ul>
+  <li value="1" class="Important">
+    Calculated Numeric
+  </li>
+  <li value="2">
+    <span style="background-color: #ffffff;">Number fields of type Numeric Lookup</span></li>
+  
+    </ul><ul><p class="Caution Important"><b>Note</b>: When a field of this type is on the custom field template, then use the&nbsp;<span style="color: #696969; font-size: 10pt;"><a href="/articles/fordevelopers/objectpropscomplex" onclick="return n(&#39;!fordevelopers/objectpropscomplex&#39;,this);">Object Properties Editing - Complex Properties</a>&nbsp;</span><span style="color: #696969; font-size: 10pt;">tool and load the alias value (not the numeric value) in the appropriate&nbsp;</span><span style="color: #696969; font-size: 10pt;">colum</span><span style="color: #696969; font-size: 10pt;">n.</span></p></ul><ul><li value="3">
+    Calculation Template fields
+  </li>
+  <li value="4">
+    Fields that trigger calculations (includes limits, scripts, calculated UDFs)</li>
+  </ul>
+<p>
+  <br/>
+</p>
+<script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+</script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

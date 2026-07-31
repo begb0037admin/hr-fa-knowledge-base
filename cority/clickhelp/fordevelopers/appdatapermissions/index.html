@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/appdatapermissions"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>App Data Permissions</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='App Data Permissions';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h2 class="Heading2" id="h2_938723693" data-has-heading-anchor="true">App Data Permissions<a href="/articles/fordevelopers/appdatapermissions/a/h2_938723693" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/appdatapermissions/a/h2_938723693&#39;,this);"></a></h2>
+        <p class="BodyText">As part of configuring an EMS App, you may specify <a href="/articles/fordevelopers/approles" onclick="return n(&#39;!fordevelopers/approles&#39;,this);">Role</a>-based read and/or write permissions for App Data key-value pairs within the EMS App.</p>
+        <p class="BodyText">Valid permissions are "AllowRead", "AllowWrite", "DenyRead", and "DenyWrite".</p>
+        <p class="BodyText">Permissions are mapped to any valid key by a "match string", and all keys that match the string are granted the specified permissions.  Match strings are matched to keys with a trailing wildcard (i.e. "string*").  If two or more permissions match the same key, "longer" (more specific) match strings take precedence over "shorter" match strings.  Only one permission set can be applied to a given key.</p>
+        <p class="BodyText">For each match string, you may specify a list of one or more allowed App Roles for read access, one or more allowed App Roles for write access, one or more denied App Roles for read access, and one or more denied App Roles for write access.</p>
+        <p class="BodyText">Unless specified otherwise, all key-value pairs with an EMS App default to being allowed read (but not write) access for the "Everyone" Role.</p>
+        <p class="BodyText">When enforcing permissions for a User and key, Allow and Deny read/write settings are calculated as follows:</p>
+        <ol>
+            <li value="1">The set of all Roles in which the User is a member (either directly or through a Group membership) is collected.</li>
+            <li value="2">All permission sets which match part or all of the key are collected.</li>
+            <li value="3">The permission sets are filtered for those Roles in which the User is a member.</li>
+            <li value="4">The single permission set with the most specific (longer) match string that matches all or part of the key is used.</li>
+            <li value="5">If any Role is denied for the Item, the User has no access.</li>
+            <li value="6">Otherwise, if the User is allowed for the Item at least once through any Role, the User is allowed access.</li>
+            <li value="7">Otherwise, the User has no access.</li>
+        </ol>
+        <p class="BodyText">The same calculation steps are used for read and write access separately, such that a User can be allowed read and/or write access, denied read and/or write access, or have none (no access).</p>
+        <p class="BodyText">You can allow or deny access to the "Everyone" Role to allow/deny all Users (other than Administrators).</p>
+        <p class="Note" madcap:autonum="Note: &nbsp;"><span class="autonumber"><span class="note_et_al">Note: &nbsp;</span></span>EMS Administrators always have access to all data within all EMS Apps.</p>
+        <p class="BodyText">For example, the following is a list of permissions and resulting access for successively more specific match strings:</p>
+        <p class="BodyIndent">AuditConfig	</p>
+        <p class="BodyIndent3">Auditor: Allow Read, Allow Write	 </p>
+        <p class="BodyIndent3">Result:&nbsp;Members of the Auditor Role are granted read and write access to any keys that start with "AuditConfig". All other Roles have no access.</p>
+        <p class="BodyIndent">AuditConfig_ReviewStep	</p>
+        <p class="BodyIndent3">Manager: Allow Read, Allow Write</p>
+        <p class="BodyIndent3">Auditor: Allow Read	</p>
+        <p class="BodyIndent3">Result:&nbsp;Members of the Manager Role are granted read and write access to any keys that start with "AuditConfig_ReviewStep". Members of the Auditor Role only have read access (unless they are also members of the Manager Role), as the Role is not granted write access in this permission set.</p>
+        <p class="BodyIndent">AuditConfig_ReviewStepHistory	Admin: Allow Read</p>
+        <p class="BodyIndent3">Auditor: Deny Write</p>
+        <p class="BodyIndent3">Manager: Deny Write	</p>
+        <p class="BodyIndent3">Result:&nbsp;Members of the Admin Role have read access to any keys that start with "AuditConfig_ReviewStepHistory".</p>
+        <p class="BodyIndent3">All other roles have no access.</p>
+        <p class="BodyIndent3">Additionally, members of the Auditor, Inspector, and Manager Roles are denied write access (regardless of their membership in other Roles) to these keys.</p>
+        <p class="BodyText">&nbsp;</p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js" data-aspx-savednextwhitespace="%0A%20%20%20%20">
+        </script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

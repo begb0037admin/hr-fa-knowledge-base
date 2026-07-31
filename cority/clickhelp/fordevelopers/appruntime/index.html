@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/appruntime"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>App Runtime</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='App Runtime';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>        <h1 class="Heading1" id="h1__942529375" data-has-heading-anchor="true">App Runtime<a href="/articles/fordevelopers/appruntime/a/h1__942529375" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/appruntime/a/h1__942529375&#39;,this);"></a></h1>
+        <div class="toc">
+            <p class="bold">JavaScript Functions</p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/appruntime/a/packages.init" onclick="return n(&#39;!fordevelopers/appruntime/a/packages.init&#39;,this);">packages.init</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/appruntime/a/packageId" onclick="return n(&#39;!fordevelopers/appruntime/a/packageId&#39;,this);">packageId</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/appruntime/a/packageConfig" onclick="return n(&#39;!fordevelopers/appruntime/a/packageConfig&#39;,this);">packageConfig</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/appruntime/a/user.isInRole" onclick="return n(&#39;!fordevelopers/appruntime/a/user.isInRole&#39;,this);">user.isInRole</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/appruntime/a/user.availableRoles" onclick="return n(&#39;!fordevelopers/appruntime/a/user.availableRoles&#39;,this);">user.availableRoles</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/appruntime/a/user.authenticate" onclick="return n(&#39;!fordevelopers/appruntime/a/user.authenticate&#39;,this);">user.authenticate</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/appruntime/a/user.hasAccessTo" onclick="return n(&#39;!fordevelopers/appruntime/a/user.hasAccessTo&#39;,this);">user.hasAccessTo</a>
+            </p>
+        </div>
+        <div class="methods">
+            <h2 class="jsmethod" id="h2__71865472" data-has-heading-anchor="true"><a name="packages.init"></a>envianceSdk.packages.init<a href="/articles/fordevelopers/appruntime/a/h2__71865472" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/appruntime/a/h2__71865472&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1147621038_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1147621038_0" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description	</p>
+            <p class="BodyIndent">This function initializes the current User context as well as the EMS SDK.</p>
+            <p class="bold">Parameters	</p>
+            <p>A JSON object literal with the following properties:</p>
+            <p class="BodyIndent"><b>webAppVirtualPath</b>  The path to the EMS  web application. The default is calculated automatically.</p>
+            <p class="BodyIndent"><b>packageId</b>  The id string (GUID) for the App. An EMS App automatically detects its own id when hosted inside the Management System. This option should only be used during local development to specify an id while the App is being run outside of the Management System runtime.</p>
+            <p class="BodyIndent"><b>baseAddress</b>  A string containing the full URI to the EMS API host. Typically, this will be https://api.enviance.com. The default is null.</p>
+            <p class="BodyIndent"><b>ensureIsHosted</b> <i>Boolean</i>True/false value that specifies whether or not the EMS App should force itself to be hosted inside the Management System. The default is false.</p>
+            <p class="BodyIndent"><b>setupSessionTimeoutHandling</b> <i>Boolean</i>True/false value that specifies whether or not the SDK shall alert the User when their session is about to timeout on the Management System. The default is true.</p>
+            <p class="BodyIndent"><b>enablePackageConfig</b> <i>Boolean</i>True/false value that enables the use of the package.cfg file. The default is true.</p>
+            <p class="BodyIndent"><b>enablePackageLocalScript</b> <i>Boolean</i>True/false value that enables the use of the package.local.js file. The default is false.</p>
+            <p class="BodyIndent"><b>crossDomainWorkaround</b>  Specifies whether or not the SDK will use alternative methods for making cross domain calls. Valid options are "ifneeded", "always", "off". When set to "ifneeded", the SDK will detect if the browser make and version requires it. Default is "ifneeded".</p>
+            <p class="bold">Return Value	</p>
+            <p class="BodyIndent">None</p>
+            <p class="bold">Callbacks	</p>
+            <p class="BodyIndent"><b>oncomplete</b>  An optional callback function to use upon completion.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.package.init({
+</p>
+            <p class="Code2">  ensureIsHosted: false
+</p>
+            <p class="Code1">}, function() {
+  </p>
+            <p class="Code2">alert("Init is complete!");
+</p>
+            <p class="Code1">});</p>
+            <h2 class="jsmethod" id="h2_348560471" data-has-heading-anchor="true"><a name="packageId"></a>envianceSdk.packages.packageId<a href="/articles/fordevelopers/appruntime/a/h2_348560471" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/appruntime/a/h2_348560471&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1147621038_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1147621038_1" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description	</p>
+            <p class="BodyIndent">This property can be used to get or set the id string (GUID) for the App.</p>
+            <p class="Code1">envianceSdk.package.packageId = "afb32050-bb8c-4e34-bcd9-87bcc1f8c91a";</p>
+            <h2 class="jsmethod" id="h2__1564244368" data-has-heading-anchor="true"><a name="packageConfig"></a>envianceSdk.packages.packageConfig<a href="/articles/fordevelopers/appruntime/a/h2__1564244368" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/appruntime/a/h2__1564244368&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1147621038_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1147621038_2" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">This dictionary holds all configuration options as specified in the <a href="/articles/fordevelopers/packageconfigurationfile" onclick="return n(&#39;!fordevelopers/packageconfigurationfile&#39;,this);">package.cfg</a> file.
+</p>
+            <p class="example">Example</p>
+            <p class="Code1">var config = </p>
+            <p class="Code1">envianceSdk.packages.packageConfig;</p>
+            <p class="Code1">var wfTypeName = config['wfTypeName'].value;</p>
+            <h2 class="jsmethod" id="h2__1050128018" data-has-heading-anchor="true"><a name="user.isInRole"></a>envianceSdk.packages.user.isInRole<a href="/articles/fordevelopers/appruntime/a/h2__1050128018" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/appruntime/a/h2__1050128018&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1147621038_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1147621038_3" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description	</p>
+            <p class="BodyIndent">This method checks to see if the current User is a member of a specified App Role.</p>
+            <p class="bold">Parameters	</p>
+            <p class="BodyIndent"><b>roleName</b> The name of the App Role.</p>
+            <p class="bold">Return Value	</p>
+            <p class="BodyIndent">True or false</p>
+            <p class="example">Example</p>
+            <p class="Code1">if (envianceSdk.packages.user.isInRole( "Plant A Managers" ) {</p>
+            <p class="Code2">alert("You may proceed.");</p>
+            <p class="Code1">}</p>
+            <p class="Code1">else {</p>
+            <p class="Code2">alert("Access denied.");</p>
+            <p class="Code1">}</p>
+            <h2 class="jsmethod" id="h2__932355807" data-has-heading-anchor="true"><a name="user.availableRoles"></a>envianceSdk.packages.user.availableRoles<a href="/articles/fordevelopers/appruntime/a/h2__932355807" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/appruntime/a/h2__932355807&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1147621038_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1147621038_4" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description	</p>
+            <p class="BodyIndent">This method returns a list of all App Roles in which the current User is a member.</p>
+            <p class="bold">Parameters	</p>
+            <p class="BodyIndent">None</p>
+            <p class="bold">Return Value	</p>
+            <p class="BodyIndent">An array of Role names.</p>
+            <p class="example">Example</p>
+            <p class="Code1">var roles = </p>
+            <p class="Code1">envianceSdk.packages.user.availableRoles();</p>
+            <h2 class="jsmethod" id="h2_1157681656" data-has-heading-anchor="true"><a name="user.authenticate"></a>envianceSdk.packages.user.authenticate<a href="/articles/fordevelopers/appruntime/a/h2_1157681656" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/appruntime/a/h2_1157681656&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1147621038_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1147621038_5" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description	</p>
+            <p class="BodyIndent">This function is a no-op function which can be overridden if needed in the package.local.js file in order to handle authentication outside of the EMS App runtime.</p>
+            <p class="BodyIndent">Note: Hosted EMS Apps have NO reason to call this function.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndent"><b>username</b>  The username of the User.</p>
+            <p class="BodyIndent"><b>password</b>  The password of the User.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">	None</p>
+            <p class="bold">Callbacks</p>
+            <p class="BodyIndent"><b>onsuccess</b>  An optional callback function to use upon success.</p>
+            <p class="BodyIndent"><b>onfailure</b>  An optional callback function to use upon error.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.packages.user.authenticate(user, pass, </p>
+            <p class="Code1">function() {</p>
+            <p class="Code2">console.log("Authenticated");</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2__1105868232" data-has-heading-anchor="true"><a name="user.hasAccessTo"></a>envianceSdk.packages.user.hasAccessTo<a href="/articles/fordevelopers/appruntime/a/h2__1105868232" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/appruntime/a/h2__1105868232&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1147621038_6" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1147621038_6" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description	</p>
+            <p class="BodyIndent">This method checks to see if the current User has access to an Item in the EMS App.</p>
+            <p class="bold">Parameters	</p>
+            <p class="BodyIndent"><b>itemPath</b> The path, starting from the root of the EMS App, to the EMS App Item.</p>
+            <p class="bold">Return Value	</p>
+            <p class="BodyIndent">True or false</p>
+            <p class="example">Example</p>
+            <p class="Code1">if (envianceSdk.package.user.hasAccessTo( "/Management/Unit_Upkeep.html" ) {</p>
+            <p class="Code2">alert("You may proceed.");</p>
+            <p class="Code1">}</p>
+            <p class="Code1">else {</p>
+            <p class="Code2">alert("Access denied.");</p>
+            <p class="Code1">}</p>
+        </div>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js" data-aspx-savednextwhitespace="%0A%20%20%20%20">
+        </script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

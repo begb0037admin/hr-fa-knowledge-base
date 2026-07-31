@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/eqlqueries"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>EQLQueries</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='EQLQueries';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h2 class="Heading2" id="h2_120768208" data-has-heading-anchor="true">EQLQueries<a href="/articles/fordevelopers/eqlqueries/a/h2_120768208" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eqlqueries/a/h2_120768208&#39;,this);"></a></h2>
+        <p class="BodyText">A type of EMS App Item with special handling is the EQL Query Item.</p>
+        <p class="BodyText">Any EMS App Item with the extension ".eql" will be handled as an EQL Query.</p>
+        <p class="BodyText">EQL Queries must have JSON content with the following properties:</p>
+        <p class="BodyIndent"><b>eql</b>	The EQL query that defines the view. EQL queries may be parameterized using named parameters with an @ sign before them (see the example below). Allowed characters for parameter names are letters, digits and underscores only ([_0-9a-z]). Parameter names are case INsensitive. Parameter values are replaced as TEXT in the EQL query, regardless of the actual value type. See the example below where a list of integers (years) is parameterized as a single text replacement.</p>
+        <p class="BodyIndent"><b>cacheMinutes</b>	 This property is reserved for future use.</p>
+        <p class="BodyIndent"><b>keepWarm</b>	This property is reserved for future use.</p>
+        <p class="example">EQL Query Item Example JSON</p>
+        <p class="Code1">{</p>
+        <p class="Code2">"eql": "select</p>
+        <p class="Code2">d.Value,</p>
+        <p class="Code2">YEAR(d.Collected) as [Year]</p>
+        <p class="Code2">from DataPoint d</p>
+        <p class="Code2">join Requirement r on d</p>
+        <p class="Code2">where r.Name = @Name and YEAR(d.Collected) in (@Years)"</p>
+        <p class="Code1">}</p>
+        <p class="BodyText">Unlike other EMS App Items, EQL Queries are executed on the server.</p>
+        <p class="BodyText">To execute an EQL Query, you must issue an HTTP POST or GET request to the Item URL relative to the EMS App root.</p>
+        <p class="BodyText">A POST request must be a JSON literal with the following properties:</p>
+        <p class="BodyIndent"><b>parameters</b>	A JSON dictionary of parameter name to value mappings.</p>
+        <p class="BodyIndent2">Parameter names should NOT be specified with the @ sign preceding them.</p>
+        <p class="BodyIndent2">Parameter values cannot contain the following character sequences:</p>
+        <p class="BodyIndent3">quotes (")</p>
+        <p class="BodyIndent3">tick marks (')</p>
+        <p class="BodyIndent3">double dashes (--)</p>
+        <p class="BodyIndent3">slash-asterisk (/*)</p>
+        <p class="BodyIndent3">asterisk-slash (*/)</p>
+        <p class="BodyIndent"><b>page</b>	The page number within the entire result set to return.</p>
+        <p class="BodyIndent"><b>pageSize</b>	The number of records for each page. Maximum page size is 1000. If no page size is specified, the "page" parameter is ignored (if specified) and the entire result set will be streamed in one response.</p>
+        <p class="BodyText">A GET request may specify parameters to the query as standard URL query parameters, including the "page" and "pageSize" parameters.  Parameter names and values should be URL encoded.</p>
+        <p class="Note" madcap:autonum="Note: &nbsp;"><span class="autonumber"><span class="note_et_al">Note: &nbsp;</span></span>Unlike other EMS App Items, EQL Stored Query Items support the HTTP Basic Authentication protocol.</p>
+        <p class="example">Example EQL Query POST Request</p>
+        <p class="Code1">POST /2012Data.eql HTTP/1.1</p>
+        <p class="Code1">Content-Type: application/json; charset=UTF-8</p>
+        <p class="Code1">&nbsp;</p>
+        <p class="Code1">{</p>
+        <p class="Code2">"parameters": {"Name": "BOD5 Daily Mass", "Years": "2011,2012" },</p>
+        <p class="Code2">"page": 1,</p>
+        <p class="Code2">"pageSize": 50</p>
+        <p class="Code1">}</p>
+        <p class="Code1">&nbsp;</p>
+        <p class="Code1">HTTP/1.1 200 OK</p>
+        <p class="Code1">Content-Type: application/json; charset=utf-8</p>
+        <p class="Code1">&nbsp;</p>
+        <p class="Code1">[</p>
+        <p class="Code2">{</p>
+        <p class="Code3">"columns":[</p>
+        <p class="Code4">{"name":"Value","dataType":"Double","size":-1},</p>
+        <p class="Code4">{"name":"Year","dataType":"Int32","size":-1}</p>
+        <p class="Code3">],</p>
+        <p class="Code3">"rows":[</p>
+        <p class="Code4">{"values":["2011", 231.678]},</p>
+        <p class="Code4">{"values":["2012", 86406.76]}</p>
+        <p class="Code3">]</p>
+        <p class="Code2">}</p>
+        <p class="Code1">]</p>
+        <p class="example">Example EQL Query GET Request</p>
+        <p class="Code1">GET /Data.eql?Name=BOD5%20Daily%20Mass&amp;Years=2011%2C2012&amp;page=1&amp;pageSize=50 HTTP/1.1</p>
+        <p class="Code1">Content-Type: application/json; charset=UTF-8</p>
+        <p class="Code1">&nbsp;</p>
+        <p class="Code1">HTTP/1.1 200 OK</p>
+        <p class="Code1">Content-Type: application/json; charset=utf-8</p>
+        <p class="Code1">&nbsp;</p>
+        <p class="Code1">[</p>
+        <p class="Code2">{</p>
+        <p class="Code3">"columns":[</p>
+        <p class="Code4">{"name":"Value","dataType":"Double","size":-1},</p>
+        <p class="Code4">{"name":"Year","dataType":"Int32","size":-1}</p>
+        <p class="Code3">],</p>
+        <p class="Code3">"rows":[</p>
+        <p class="Code4">{"values":["2011", 231.678]},</p>
+        <p class="Code4">{"values":["2012", 86406.76]}</p>
+        <p class="Code3">]</p>
+        <p class="Code2">}</p>
+        <p class="Code1">]</p>
+        <p class="Code1">&nbsp;</p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js" data-aspx-savednextwhitespace="%0A%20%20%20%20">
+        </script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

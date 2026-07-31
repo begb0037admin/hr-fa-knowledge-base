@@ -1,0 +1,1953 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/portalservice"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Portal Service API</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Portal Service API';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><p>
+	</p><p></p><nav><span class="Note">For the most up to date API documentation, please see the&nbsp;</span><a href="https://api.enviance.com/swagger.svc/index.html?url=/Swagger.svc/swagger.json#/Portal" target="_blank" class="Note">Portal API Documentation on Swagger</a><span class="Note">.</span><br/></nav>
+
+    <p></p><p></p><nav>
+  
+</nav>
+
+    <section>
+    <h1 id="portal-service-api" data-has-heading-anchor="true">Portal Service API<a href="/articles/fordevelopers/portalservice/a/portal-service-api" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/portal-service-api&#39;,this);"></a></h1>
+<h2 id="version" data-has-heading-anchor="true">Version:<a href="/articles/fordevelopers/portalservice/a/version" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/version&#39;,this);"></a></h2>
+
+<p><strong>License:</strong> <a href="http://www.enviance.com" target="_top">Enviance, Inc.</a></p>
+
+<h3 id="dashboard"><br/></h3><h3 id="dashboard" data-has-heading-anchor="true">/dashboard<a href="/articles/fordevelopers/portalservice/a/dashboard" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/dashboard&#39;,this);"></a></h3>
+
+<h4 id="get" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/portalservice/a/get" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/get&#39;,this);"></a></h4>
+<h5 id="description" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description&#39;,this);"></a></h5>
+
+<p>Load all Page Groups with Pages and nested Panels Info and permissions calculated for current user</p>
+
+<p><strong>Security:</strong> Allowed for all users. Result filtered by User Permissions on Page and nested Panels</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.getDashboard (onsuccess, onerror)</font></code></p>
+
+<h5 id="responses" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ok response</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/portalservice/a/pagegroupbulkinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/pagegroupbulkinfo&#39;,this);">PageGroupBulkInfo</a> ]</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dashboardpagegroups"><br/></h3><h3 id="dashboardpagegroups" data-has-heading-anchor="true">/dashboard/pagegroups<a href="/articles/fordevelopers/portalservice/a/dashboardpagegroups" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/dashboardpagegroups&#39;,this);"></a></h3>
+
+<h4 id="get-1" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/portalservice/a/get-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/get-1&#39;,this);"></a></h4>
+<h5 id="description-1" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-1&#39;,this);"></a></h5>
+
+<p>Return all Page Groups with Pages</p>
+
+<p><strong>Security:</strong> Allowed for all users. Filter result by User Permission(required at least View on Page or View on nested Panel)</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.getPageGroups(onsuccess, onerror)</font></code></p>
+
+<h5 id="responses-1" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">Code</th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">Description</th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">Schema</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ok response</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/portalservice/a/pagegrouponelevelinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/pagegrouponelevelinfo&#39;,this);">PageGroupOneLevelInfo</a> ]</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="post" data-has-heading-anchor="true">POST<a href="/articles/fordevelopers/portalservice/a/post" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/post&#39;,this);"></a></h4>
+<h5 id="description-2" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-2&#39;,this);"></a></h5>
+
+<p>Creates a new Page Group with properties (optional)</p>
+
+<p><strong>Security:</strong> Allowed for admin only</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.createPageGroup (pageGroupInfo, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/portalservice/a/parameters" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/parameters&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageGroupInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Page Group with properties</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/portalservice/a/pagegroupinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/pagegroupinfo&#39;,this);">PageGroupInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-2" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-2&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">201</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Object created. Id returned</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dashboardpagegroupspagegroupidorname"><br/></h3><h3 id="dashboardpagegroupspagegroupidorname" data-has-heading-anchor="true">/dashboard/pagegroups/{pageGroupIdOrName}<a href="/articles/fordevelopers/portalservice/a/dashboardpagegroupspagegroupidorname" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/dashboardpagegroupspagegroupidorname&#39;,this);"></a></h3>
+
+<h4 id="get-2" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/portalservice/a/get-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/get-2&#39;,this);"></a></h4>
+<h5 id="description-3" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-3&#39;,this);"></a></h5>
+
+<p>Load Page Group by name or ID (with properties)</p>
+
+<p><strong>Security:</strong> Allowed for admin only</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000"><span style="background-color: #f9f2f4;">envianceSdk.portal.getPageGroup(pageGroupIdOrName, onsuccess, onerror)</span></font></code></p>
+
+<h5 id="parameters-1" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/portalservice/a/parameters-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/parameters-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageGroupIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for page group to get</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-3" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-3&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Object found and returned</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/portalservice/a/pagegroupinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/pagegroupinfo&#39;,this);">PageGroupInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="patch" data-has-heading-anchor="true">PATCH<a href="/articles/fordevelopers/portalservice/a/patch" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/patch&#39;,this);"></a></h4>
+<h5 id="description-4" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-4&#39;,this);"></a></h5>
+
+<p>Update Page Group by name or ID</p>
+
+<p><strong>Security:</strong> Allowed for Admin only</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.updatePageGroup(pageGroupIdOrName, pageGroupInfo, onsuccess, onerror)</font></code></p>
+
+<p>Patch method only updates 1st level differences: e.g. Name updated only if specified, properties replaced if specified. Note: Keys (Property Name) are case-insensitive for create/update operations.</p>
+
+<h5 id="parameters-2" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/portalservice/a/parameters-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/parameters-2&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageGroupIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for page group to get</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageGroupInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Page Group with properties to update</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/portalservice/a/pagegroupinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/pagegroupinfo&#39;,this);">PageGroupInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-4" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-4&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">204</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Object updated</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="delete" data-has-heading-anchor="true">DELETE<a href="/articles/fordevelopers/portalservice/a/delete" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/delete&#39;,this);"></a></h4>
+<h5 id="description-5" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-5&#39;,this);"></a></h5>
+
+<p>Delete Page Group by its name or ID (with properties)</p>
+
+<p><strong>Security:</strong> Allowed for Admin only</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.deletePageGroup(pageGroupIdOrName, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-3" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/portalservice/a/parameters-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/parameters-3&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageGroupIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for page group to get</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-5" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-5&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">204</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Object found and deleted</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dashboardpagegroupspagegroupidornamepages"><br/></h3><h3 id="dashboardpagegroupspagegroupidornamepages" data-has-heading-anchor="true">/dashboard/pagegroups/{pageGroupIdOrName}/pages<a href="/articles/fordevelopers/portalservice/a/dashboardpagegroupspagegroupidornamepages" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/dashboardpagegroupspagegroupidornamepages&#39;,this);"></a></h3>
+
+<h4 id="get-3" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/portalservice/a/get-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/get-3&#39;,this);"></a></h4>
+<h5 id="description-6" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-6" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-6&#39;,this);"></a></h5>
+
+<p>Return all Pages by specified Page Group</p>
+
+<p><strong>Security:</strong> Allowed for all users. Filter result by User Permission (requires at least View on Page or View on nested Panel)</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.getPages (pageGroupIdOrName, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-4" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/portalservice/a/parameters-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/parameters-4&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageGroupIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for page group to get</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-6" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-6" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-6&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ok response</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/portalservice/a/pageinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/pageinfo&#39;,this);">PageInfo</a> ]</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="post-1" data-has-heading-anchor="true">POST<a href="/articles/fordevelopers/portalservice/a/post-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/post-1&#39;,this);"></a></h4>
+<h5 id="description-7" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-7" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-7&#39;,this);"></a></h5>
+
+<p>Creates a new Page with properties (optional)</p>
+
+<p><strong>Security:</strong> Allowed for Admin only</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.createPage (pageGroupIdOrName, pageInfo, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-5" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/portalservice/a/parameters-5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/parameters-5&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageGroupIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for parent page group</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Page with properties(and user/group permissions)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/portalservice/a/pageextendedinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/pageextendedinfo&#39;,this);">PageExtendedInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-7" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-7" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-7&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">201</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Object created. Id returned</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dashboardpagegroupspagegroupidornamepagespageidorname"><br/></h3><h3 id="dashboardpagegroupspagegroupidornamepagespageidorname" data-has-heading-anchor="true">/dashboard/pagegroups/{pageGroupIdOrName}/pages/{pageIdOrName}<a href="/articles/fordevelopers/portalservice/a/dashboardpagegroupspagegroupidornamepagespageidorname" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/dashboardpagegroupspagegroupidornamepagespageidorname&#39;,this);"></a></h3>
+
+<h4 id="get-4" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/portalservice/a/get-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/get-4&#39;,this);"></a></h4>
+<h5 id="description-8" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-8" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-8&#39;,this);"></a></h5>
+
+<p>Load Page by name or ID (with properties) under specified Page Group</p>
+
+<p><strong>Security:</strong>  Requires at least View Permission on page required. Note: Users and Groups populated only if requested by Admin.</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.getPage(pageGroupIdOrName, pageIdOrName, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-6" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/portalservice/a/parameters-6" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/parameters-6&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageGroupIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name of parent page group</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for page to get</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-8" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-8" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-8&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse; height: 55px;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Object found and returned</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/portalservice/a/pageextendedinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/pageextendedinfo&#39;,this);">PageExtendedInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="patch-1" data-has-heading-anchor="true">PATCH<a href="/articles/fordevelopers/portalservice/a/patch-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/patch-1&#39;,this);"></a></h4>
+<h5 id="description-9" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-9" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-9&#39;,this);"></a></h5>
+
+<p>Partially update Page. Patch method only updates 1st level differences: e.g. Name updated only if specified, properties replaced if specified. Note: Keys (Property Name) are case-insensitive for create/update operations.</p>
+
+<p><strong>Security:</strong>  By Admin or User with Edit Permission. Note: Users and Groups may be updated only by Admin.</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.updatePage (pageGroupIdOrName, pageIdOrName, pageInfo, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-7" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/portalservice/a/parameters-7" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/parameters-7&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageGroupIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for page group to find</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for page to find</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Page with properties (and permissions optionally) to update</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/portalservice/a/pageextendedinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/pageextendedinfo&#39;,this);">PageExtendedInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-9" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-9" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-9&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">204</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Object updated</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="delete-1" data-has-heading-anchor="true">DELETE<a href="/articles/fordevelopers/portalservice/a/delete-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/delete-1&#39;,this);"></a></h4>
+<h5 id="description-10" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-10" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-10&#39;,this);"></a></h5>
+
+<p>Delete Page by name or ID under specified Page Group</p>
+
+<p><strong>Security:</strong> Allowed for Admin only</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.deletePage (pageGroupIdOrName, pageIdOrName, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-8" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/portalservice/a/parameters-8" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/parameters-8&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageGroupIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for page group to get</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for page to get</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-10" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-10" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-10&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">204</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Object found and deleted</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dashboardpagegroupspagegroupidornamepagespageidornamesettings"><br/></h3><h3 id="dashboardpagegroupspagegroupidornamepagespageidornamesettings" data-has-heading-anchor="true">/dashboard/pagegroups/{pageGroupIdOrName}/pages/{pageIdOrName}/settings<a href="/articles/fordevelopers/portalservice/a/dashboardpagegroupspagegroupidornamepagespageidornamesettings" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/dashboardpagegroupspagegroupidornamepagespageidornamesettings&#39;,this);"></a></h3>
+
+<h4 id="get-5" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/portalservice/a/get-5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/get-5&#39;,this);"></a></h4>
+<h5 id="description-11" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-11" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-11&#39;,this);"></a></h5>
+
+<p>Load Page Settings by Current User by specified Page Group and Page name or ID</p>
+
+<p><strong>Security:</strong>  Requires at least View Permission required for page or nested panel.</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.getPageSettings (pageGroupIdOrName, pageIdOrName, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-9" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/portalservice/a/parameters-9" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/parameters-9&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageGroupIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name of parent page group</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for page to get</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-11" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-11" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-11&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-color: #000000; border-width: 1px; border-style: solid; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-color: #000000; border-width: 1px; border-style: solid; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-color: #000000; border-width: 1px; border-style: solid; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-color: #000000; border-width: 1px; border-style: solid;">200</td>
+      <td style="border-color: #000000; border-width: 1px; border-style: solid;">ok</td>
+      <td style="border-color: #000000; border-width: 1px; border-style: solid;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="put" data-has-heading-anchor="true">PUT<a href="/articles/fordevelopers/portalservice/a/put" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/put&#39;,this);"></a></h4>
+<h5 id="description-12" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-12" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-12&#39;,this);"></a></h5>
+
+<p>Save current User Settings (text value) for Page by specified Page Group and Page name or ID</p>
+
+<p><strong>Security:</strong>  Requires at least View Permission required for page or nested panel</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.savePageSettings (pageGroupIdOrName, pageIdOrName, pageSettings, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-10" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/portalservice/a/parameters-10" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/parameters-10&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageGroupIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for page group to find</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for page to find</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageSettings</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-12" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-12" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-12&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">204</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">updated</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dashboardpagegroupspagegroupidornamepagespageidornamepanels"><br/></h3><h3 id="dashboardpagegroupspagegroupidornamepagespageidornamepanels" data-has-heading-anchor="true">/dashboard/pagegroups/{pageGroupIdOrName}/pages/{pageIdOrName}/panels<a href="/articles/fordevelopers/portalservice/a/dashboardpagegroupspagegroupidornamepagespageidornamepanels" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/dashboardpagegroupspagegroupidornamepagespageidornamepanels&#39;,this);"></a></h3>
+
+<h4 id="get-6" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/portalservice/a/get-6" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/get-6&#39;,this);"></a></h4>
+<h5 id="description-13" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-13" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-13&#39;,this);"></a></h5>
+
+<p>Return all Panels by specified Page under Page Group</p>
+
+<p><strong>Security:</strong> Requires at least View Permission required on Page or any nested panels. Filter result by User Permission (requires at least View on Page or View on nested Panel)</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.getPanels (pageGroupIdOrName, pageIdOrName, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-11" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/portalservice/a/parameters-11" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/parameters-11&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageGroupIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for page group to find</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for page to find</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-13" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-13" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-13&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ok response</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/portalservice/a/panelinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/panelinfo&#39;,this);">PanelInfo</a> ]</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="post-2" data-has-heading-anchor="true">POST<a href="/articles/fordevelopers/portalservice/a/post-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/post-2&#39;,this);"></a></h4>
+<h5 id="description-14" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-14" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-14&#39;,this);"></a></h5>
+
+<p>Creates a new Panel with properties (optional) under specified Page and Page Group</p>
+
+<p><strong>Security:</strong> By Admin or with Page Edit Permission. User/Group permission may be specified only by Admin</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.createPanel (pageGroupIdOrName, pageIdOrName, panelInfo, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-12" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/portalservice/a/parameters-12" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/parameters-12&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageGroupIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for parent page group</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for page to find</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">panelInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Panel with properties(and user/group permissions)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/portalservice/a/pageextendedinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/pageextendedinfo&#39;,this);">PanelExtendedInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-14" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-14" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-14&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">201</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Object created. Id returned</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dashboardpagegroupspagegroupidornamepagespageidornamepanelspanelidorname"><br/></h3><h3 id="dashboardpagegroupspagegroupidornamepagespageidornamepanelspanelidorname" data-has-heading-anchor="true">/dashboard/pagegroups/{pageGroupIdOrName}/pages/{pageIdOrName}/panels/{panelIdOrName}<a href="/articles/fordevelopers/portalservice/a/dashboardpagegroupspagegroupidornamepagespageidornamepanelspanelidorname" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/dashboardpagegroupspagegroupidornamepagespageidornamepanelspanelidorname&#39;,this);"></a></h3>
+
+<h4 id="get-7" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/portalservice/a/get-7" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/get-7&#39;,this);"></a></h4>
+<h5 id="description-15" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-15" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-15&#39;,this);"></a></h5>
+
+<p>Load Panel by name or ID (with properties) under specified Page Group and Page</p>
+
+<p><strong>Security:</strong>  Requires at least View Permission required for panel or parent page.</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.getPanel (pageGroupIdOrName, pageIdOrName, panelIdOrName, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-13" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/portalservice/a/parameters-13" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/parameters-13&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageGroupIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name of parent page group</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name of parent page</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">panelIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for panel to get</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-15" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-15" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-15&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Object found and returned</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/portalservice/a/panelextendedinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/panelextendedinfo&#39;,this);">PanelExtendedInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="patch-2" data-has-heading-anchor="true">PATCH<a href="/articles/fordevelopers/portalservice/a/patch-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/patch-2&#39;,this);"></a></h4>
+<h5 id="description-16" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-16" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-16&#39;,this);"></a></h5>
+
+<p>Update Panel by  name or ID, parent Page Group and Page</p>
+
+<p><strong>Security:</strong>  By Admin or User with Edit Permission on Panel(or Page). User/Group permission may be updated only by Admin</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.updatePanel (pageGroupIdOrName, pageIdOrName, panelIdOrName, panelInfo, onsuccess, onerror)</font></code></p>
+
+<p>Patch method only updates 1st level differences: e.g. Name updated only if specified, properties replaced if specified. Note: Keys (Property Name) are case-insensitive for create/update operations.</p>
+
+<h5 id="parameters-14" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/portalservice/a/parameters-14" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/parameters-14&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageGroupIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for page group to find</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for page to find</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">panelIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for panel to get</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">panelInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Panel with properties (and permissions optionally) to update</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/portalservice/a/panelextendedinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/panelextendedinfo&#39;,this);">PanelExtendedInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-16" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-16" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-16&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">204</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Object updated</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="delete-2" data-has-heading-anchor="true">DELETE<a href="/articles/fordevelopers/portalservice/a/delete-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/delete-2&#39;,this);"></a></h4>
+<h5 id="description-17" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-17" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-17&#39;,this);"></a></h5>
+
+<p>Delete Panel by name or ID under specified Page Group and Page</p>
+
+<p><strong>Security:</strong> By Admin or user with Edit Permission on parent Page</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.deletePanel (pageGroupIdOrName, pageIdOrName, panelIdOrName, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-15" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/portalservice/a/parameters-15" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/parameters-15&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageGroupIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for page group to get</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for page to get</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">panelIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for panel to get</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-17" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-17" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-17&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">204</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Object found and deleted</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dashboardpagegroupspagegroupidornamepagespageidornamepanelspanelidornamesettings"><br/></h3><h3 id="dashboardpagegroupspagegroupidornamepagespageidornamepanelspanelidornamesettings" data-has-heading-anchor="true">/dashboard/pagegroups/{pageGroupIdOrName}/pages/{pageIdOrName}/panels/{panelIdOrName}/settings<a href="/articles/fordevelopers/portalservice/a/dashboardpagegroupspagegroupidornamepagespageidornamepanelspanelidornamesettings" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/dashboardpagegroupspagegroupidornamepagespageidornamepanelspanelidornamesettings&#39;,this);"></a></h3>
+
+<h4 id="get-8" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/portalservice/a/get-8" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/get-8&#39;,this);"></a></h4>
+<h5 id="description-18" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-18" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-18&#39;,this);"></a></h5>
+
+<p>Load Panel Settings by Current User by specified Panel, Page and Page Group name or ID</p>
+
+<p><strong>Security:</strong>  Requires at least View Permission required on panel or parent page.</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.getPanelSettings (pageGroupIdOrName, pageIdOrName, panelIdOrName, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-16" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/portalservice/a/parameters-16" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/parameters-16&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageGroupIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name of parent page group</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name of parent page</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">panelIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for panel to get settings</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-18" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-18" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-18&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Object found and returned</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="put-1" data-has-heading-anchor="true">PUT<a href="/articles/fordevelopers/portalservice/a/put-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/put-1&#39;,this);"></a></h4>
+<h5 id="description-19" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-19" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-19&#39;,this);"></a></h5>
+
+<p>Save current User Settings (text value) for Panel by specified Panel, Page and Page Group name or ID</p>
+
+<p><strong>Security:</strong>  Requires at least View Permission required on panel or parent page</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.savePanelSettings (pageGroupIdOrName, pageIdOrName, panelIdOrName, panelSettings, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-17" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/portalservice/a/parameters-17" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/parameters-17&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageGroupIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for page group to find</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for page to find</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">panelIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for panel to get</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">panelSettings</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">settings text</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-19" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-19" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-19&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">204</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Object updated</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dashboardpaneltemplates" data-has-heading-anchor="true">/dashboard/panelTemplates<a href="/articles/fordevelopers/portalservice/a/dashboardpaneltemplates" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/dashboardpaneltemplates&#39;,this);"></a></h3>
+
+<h4 id="get-9" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/portalservice/a/get-9" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/get-9&#39;,this);"></a></h4>
+<h5 id="description-20" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-20" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-20&#39;,this);"></a></h5>
+
+<p>Return all Panel Templates</p>
+
+<p><strong>Security:</strong> by any user</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.getPanelTemplates(onsuccess, onerror)</font></code></p>
+
+<h5 id="responses-20" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-20" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-20&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ok response</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/portalservice/a/paneltemplateinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/paneltemplateinfo&#39;,this);">PanelTemplateInfo</a> ]</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="post-3" data-has-heading-anchor="true">POST<a href="/articles/fordevelopers/portalservice/a/post-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/post-3&#39;,this);"></a></h4>
+<h5 id="description-21" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-21" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-21&#39;,this);"></a></h5>
+
+<p>Creates a new Panel Template with properties (optional)</p>
+
+<p><strong>Security:</strong> Allowed for Admin only</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.createPanelTemplate (pageGroupInfo, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-18" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/portalservice/a/parameters-18" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/parameters-18&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">panelTemplateInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Panel Template with properties</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/portalservice/a/paneltemplateinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/paneltemplateinfo&#39;,this);">PanelTemplateInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-21" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-21" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-21&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">201</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Object created. Id returned</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dashboardpaneltemplatespaneltemplateidorname"><br/></h3><h3 id="dashboardpaneltemplatespaneltemplateidorname" data-has-heading-anchor="true">/dashboard/panelTemplates/{panelTemplateIdOrName}<a href="/articles/fordevelopers/portalservice/a/dashboardpaneltemplatespaneltemplateidorname" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/dashboardpaneltemplatespaneltemplateidorname&#39;,this);"></a></h3>
+
+<h4 id="get-10" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/portalservice/a/get-10" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/get-10&#39;,this);"></a></h4>
+<h5 id="description-22" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-22" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-22&#39;,this);"></a></h5>
+
+<p>Load Panel Template by name or ID (with properties)</p>
+
+<p><strong>Security:</strong> by any user</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.getPanelTemplate(panelTemplateIdOrName, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-19" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/portalservice/a/parameters-19" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/parameters-19&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">panelTemplateIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for panel template to find</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-22" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-22" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-22&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Object found and returned</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/portalservice/a/paneltemplateinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/paneltemplateinfo&#39;,this);">PanelTemplateInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="patch-3" data-has-heading-anchor="true">PATCH<a href="/articles/fordevelopers/portalservice/a/patch-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/patch-3&#39;,this);"></a></h4>
+<h5 id="description-23" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-23" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-23&#39;,this);"></a></h5>
+
+<p>Partially update (patch) Panel Template. Patch method only updates 1st level differences: e.g. Name updated only if specified, properties replaced if specified. Note: Keys (Property Name) are case-insensitive for create/update operations.</p>
+
+<p><strong>Security:</strong> Allowed for Admin only</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.updatePanelTemplate(panelTemplateIdOrName, panelTemplateInfo, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-20" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/portalservice/a/parameters-20" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/parameters-20&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">panelTemplateIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for Panel Template to update</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">panelTemplateInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Panel Template with properties to update</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/portalservice/a/paneltemplateinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/paneltemplateinfo&#39;,this);">PanelTemplateInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-23" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-23" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-23&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">204</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Object updated</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="delete-3" data-has-heading-anchor="true">DELETE<a href="/articles/fordevelopers/portalservice/a/delete-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/delete-3&#39;,this);"></a></h4>
+<h5 id="description-24" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/portalservice/a/description-24" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/description-24&#39;,this);"></a></h5>
+
+<p>Delete Panel Template by name or ID (with properties)</p>
+
+<p><strong>Security:</strong> Allowed for Admin only</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.portal.deletePanelTemplate(panelTemplateIdOrName, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-21" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/portalservice/a/parameters-21" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/parameters-21&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">panelTemplateIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ID or Name for panel template to delete</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-24" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/portalservice/a/responses-24" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/responses-24&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">204</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Object found and deleted</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="models"><br/></h3><h3 id="models" data-has-heading-anchor="true">Models<a href="/articles/fordevelopers/portalservice/a/models" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/models&#39;,this);"></a></h3>
+
+<h4 id="idnameinfo" data-has-heading-anchor="true">IdNameInfo<span id="IdNameInfo"></span>&nbsp;<a href="/articles/fordevelopers/portalservice/a/idnameinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/idnameinfo&#39;,this);"></a></h4>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="useraccessinfo" data-has-heading-anchor="true">UserAccessInfo<span id="UserAccessInfo"></span>&nbsp;<a href="/articles/fordevelopers/portalservice/a/useraccessinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/useraccessinfo&#39;,this);"></a></h4>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">user id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">User Last, Fisrt Name(GET only)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">accesslevel</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">User access level</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="groupaccessinfo" data-has-heading-anchor="true">GroupAccessInfo<span id="GroupAccessInfo"></span>&nbsp;<a href="/articles/fordevelopers/portalservice/a/groupaccessinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/groupaccessinfo&#39;,this);"></a></h4>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">group id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Group name(GET only)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">accesslevel</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">User access level</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="pagegroupinfo" data-has-heading-anchor="true">PageGroupInfo<span id="PageGroupInfo"></span>&nbsp;<a href="/articles/fordevelopers/portalservice/a/pagegroupinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/pagegroupinfo&#39;,this);"></a></h4>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">unique identifier of Page Group. (Ignored in Create/Update operations)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">properties</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">object</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="pageinfo" data-has-heading-anchor="true">PageInfo<span id="PageInfo"></span>&nbsp;<a href="/articles/fordevelopers/portalservice/a/pageinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/pageinfo&#39;,this);"></a></h4>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">unique identifier of Page. (Ignored in  Create/Update operations)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pagegroupid</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">properties</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">object</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="pageextendedinfo" data-has-heading-anchor="true">PageExtendedInfo<span id="PageExtendedInfo"></span>&nbsp;<a href="/articles/fordevelopers/portalservice/a/pageextendedinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/pageextendedinfo&#39;,this);"></a></h4>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">unique identifier of Page. (Ignored in  Create/Update operations)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pagegroupid</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">properties</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">object</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">users</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/portalservice/a/useraccessinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/useraccessinfo&#39;,this);">UserAccessInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">groups</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/portalservice/a/groupaccessinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/groupaccessinfo&#39;,this);">GroupAccessInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="pagegrouponelevelinfo" data-has-heading-anchor="true">PageGroupOneLevelInfo<span id="PageGroupOneLevelInfo"></span>&nbsp;<a href="/articles/fordevelopers/portalservice/a/pagegrouponelevelinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/pagegrouponelevelinfo&#39;,this);"></a></h4>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">unique identifier of Page Group.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">properties</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">object</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pages</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/portalservice/a/idnameinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/idnameinfo&#39;,this);">IdNameInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="panelinfo" data-has-heading-anchor="true">PanelInfo<span id="PanelInfo"></span>&nbsp;<a href="/articles/fordevelopers/portalservice/a/panelinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/panelinfo&#39;,this);"></a></h4>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">unique identifier of Panel. (Ignored in  Create/Update operations)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageid</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">properties</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">object</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="panelextendedinfo" data-has-heading-anchor="true">PanelExtendedInfo<span id="PanelExtendedInfo"></span>&nbsp;<a href="/articles/fordevelopers/portalservice/a/panelextendedinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/panelextendedinfo&#39;,this);"></a></h4>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">unique identifier of Panel. (Ignored in  Create/Update operations)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageid</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">properties</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">object</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">users</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/portalservice/a/useraccessinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/useraccessinfo&#39;,this);">UserAccessInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">groups</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/portalservice/a/groupaccessinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/groupaccessinfo&#39;,this);">GroupAccessInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="paneltemplateinfo" data-has-heading-anchor="true">PanelTemplateInfo<span id="PanelTemplateInfo"></span>&nbsp;<a href="/articles/fordevelopers/portalservice/a/paneltemplateinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/paneltemplateinfo&#39;,this);"></a></h4>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">unique identifier of Panel Template. (Ignored in  Create/Update operations)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">properties</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">object</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="panelbulkinfo" data-has-heading-anchor="true">PanelBulkInfo<span id="PanelBulkInfo"></span>&nbsp;<a href="/articles/fordevelopers/portalservice/a/panelbulkinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/panelbulkinfo&#39;,this);"></a></h4>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">unique identifier of Panel. (Ignored in Create/Update operations)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pagegroupid</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">permissions</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ string ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">settings</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">properties</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">object</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="pagebulkinfo" data-has-heading-anchor="true">PageBulkInfo<span id="PageBulkInfo"></span>&nbsp;<a href="/articles/fordevelopers/portalservice/a/pagebulkinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/pagebulkinfo&#39;,this);"></a></h4>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">unique identifier of Page. (Ignored in Create/Update operations)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pagegroupid</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">permissions</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ string ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">settings</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">properties</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">object</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">panels</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/portalservice/a/panelbulkinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/panelbulkinfo&#39;,this);">PanelBulkInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="pagegroupbulkinfo" data-has-heading-anchor="true">PageGroupBulkInfo<span id="PageGroupBulkInfo"></span>&nbsp;<a href="/articles/fordevelopers/portalservice/a/pagegroupbulkinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/portalservice/a/pagegroupbulkinfo&#39;,this);"></a></h4>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">unique identifier of Page Group. (Ignored in Create/Update operations)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">properties</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">object</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pages</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/portalservice/a/panelbulkinfo" onclick="return n(&#39;!fordevelopers/portalservice/a/panelbulkinfo&#39;,this);">PageBulkInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+    </section>
+    <br/><p></p><p><br/></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

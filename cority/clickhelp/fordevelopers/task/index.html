@@ -1,0 +1,567 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/task"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Task Functions and Classes</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Task Functions and Classes';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>        <h1 class="Heading1" id="h1_815035695" data-has-heading-anchor="true">Task Functions and Classes<a href="/articles/fordevelopers/task/a/h1_815035695" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task/a/h1_815035695&#39;,this);"></a></h1>
+        <div class="toc">
+            <p class="bold">JavaScript Functions</p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/task/a/createTask" onclick="return n(&#39;!fordevelopers/task/a/createTask&#39;,this);">createTask</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/task/a/copyTask" onclick="return n(&#39;!fordevelopers/task/a/copyTask&#39;,this);">copyTask</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/task/a/updateTask" onclick="return n(&#39;!fordevelopers/task/a/updateTask&#39;,this);">updateTask</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/task/a/getTask" onclick="return n(&#39;!fordevelopers/task/a/getTask&#39;,this);">getTask</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/task/a/getTaskOccurrence" onclick="return n(&#39;!fordevelopers/task/a/getTaskOccurrence&#39;,this);">getTaskOccurrence</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/task/a/completeTaskOccurrence" onclick="return n(&#39;!fordevelopers/task/a/completeTaskOccurrence&#39;,this);">completeTaskOccurrence</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/task/a/deleteTask" onclick="return n(&#39;!fordevelopers/task/a/deleteTask&#39;,this);">deleteTask</a>
+            </p>
+            <p class="bold">Classes</p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/task/a/TaskInfo" onclick="return n(&#39;!fordevelopers/task/a/TaskInfo&#39;,this);">TaskInfo</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/task/a/TaskScheduleInfo" onclick="return n(&#39;!fordevelopers/task/a/TaskScheduleInfo&#39;,this);">TaskScheduleInfo</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/task/a/RecurrenceInterval" onclick="return n(&#39;!fordevelopers/task/a/RecurrenceInterval&#39;,this);">RecurrenceInterval</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/task/a/TaskOccurrenceInfo" onclick="return n(&#39;!fordevelopers/task/a/TaskOccurrenceInfo&#39;,this);">TaskOccurrenceInfo</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/task/a/TaskNotificationInfo" onclick="return n(&#39;!fordevelopers/task/a/TaskNotificationInfo&#39;,this);">TaskNotificationInfo</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/task/a/NotificationConditions" onclick="return n(&#39;!fordevelopers/task/a/NotificationConditions&#39;,this);">NotificationConditions</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/task/a/DueDateCondition" onclick="return n(&#39;!fordevelopers/task/a/DueDateCondition&#39;,this);">DueDateCondition</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/task/a/NotificationRecipients" onclick="return n(&#39;!fordevelopers/task/a/NotificationRecipients&#39;,this);">NotificationRecipients</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/task/a/CompletionStatus" onclick="return n(&#39;!fordevelopers/task/a/CompletionStatus&#39;,this);">CompletionStatus</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/task/a/taskWorkflowInfo" onclick="return n(&#39;!fordevelopers/task/a/taskWorkflowInfo&#39;,this);">TaskWorkflowInfo</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/task/a/workflowTriggerInfo" onclick="return n(&#39;!fordevelopers/task/a/workflowTriggerInfo&#39;,this);">TaskWorkflowInfo.WorkflowTriggerInfo</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/task/a/timeToCreateInfo" onclick="return n(&#39;!fordevelopers/task/a/timeToCreateInfo&#39;,this);">TaskWorkflowInfo.TimeToCreateInfo</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/task/a/timeToCreateValue" onclick="return n(&#39;!fordevelopers/task/a/timeToCreateValue&#39;,this);">TaskWorkflowInfo.TimeToCreateInfo.TimeToCreateValue</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/task/a/dueDateInfo" onclick="return n(&#39;!fordevelopers/task/a/dueDateInfo&#39;,this);">TaskWorkflowInfo.DueDateInfo</a>
+            </p>
+        </div>
+        <div class="methods">
+            <h2 class="jsmethod" id="h2__627031244" data-has-heading-anchor="true"><a name="createTask"></a>envianceSdk.tasks.createTask<a href="/articles/fordevelopers/task/a/h2__627031244" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task/a/h2__627031244&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_678203078_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_678203078_0" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Creates a new simple (single occurrence) Task definition.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>taskInfo</b>  An instance of the <a href="/articles/fordevelopers/task/a/TaskInfo" onclick="return n(&#39;!fordevelopers/task/a/TaskInfo&#39;,this);">taskInfo</a> object. Some properties of this object are ignored by this function; see details of this object for more info.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">The id string (GUID) of the new Task will be passed to the onsuccess callback in the result property.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.tasks.createTask(taskInfo,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert("Created new task with id: " + response.result);</p>
+            <p class="Code2">});</p>
+        </div>
+        <div class="method">
+            <h2 class="jsmethod" id="h2__1064764461" data-has-heading-anchor="true"><a name="copyTask"></a>envianceSdk.tasks.copyTask<a href="/articles/fordevelopers/task/a/h2__1064764461" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task/a/h2__1064764461&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_678203078_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_678203078_1" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Creates a new Task definition as a copy of an existing Task definition.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>taskInfo</b>  An instance of the <a href="/articles/fordevelopers/task/a/TaskInfo" onclick="return n(&#39;!fordevelopers/task/a/TaskInfo&#39;,this);">taskInfo</a> object. Any properties specified for this object will be used instead of the existing properties on the Task being copied. Some properties of this object are ignored by this function; see details of this object for more info.</p>
+            <p class="BodyIndentHanging"><b>copyFrom</b>  The id string (GUID) of an existing Task whose properties will be copied and used as the properties of the newly created Task.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">The id string (GUID) of the new Task will be passed to the onsuccess callback in the result property.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.tasks.copyTask(taskInfo,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert("Task generated with id: " + response.result);</p>
+            <p class="Code2">});</p>
+        </div>
+        <div class="method">
+            <h2 class="jsmethod" id="h2_310837847" data-has-heading-anchor="true"><a name="updateTask"></a>envianceSdk.tasks.updateTask<a href="/articles/fordevelopers/task/a/h2_310837847" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task/a/h2_310837847&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_678203078_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_678203078_2" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Updates (and potentially moves) an existing Task definition in the Compliance Model.</p>
+            <p class="BodyIndent">Specifying path(s) associates the Task to the specified Location(s) – and removes any unspecified associations.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>taskId</b>  The id string (GUID) for an existing Task.</p>
+            <p class="BodyIndentHanging"><b>taskInfo</b>  An instance of the <a href="/articles/fordevelopers/task/a/TaskInfo" onclick="return n(&#39;!fordevelopers/task/a/TaskInfo&#39;,this);">taskInfo</a> object. Some properties of this object are ignored by this function; see details of this object for more info.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.tasks.updateTask(</p>
+            <p class="Code2">"ddef6b59-6289-41c9-ac7a-ee87a773ce0e",</p>
+            <p class="Code2">taskInfo,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert("Task updated.");</p>
+            <p class="Code2">});</p>
+        </div>
+        <div class="method">
+            <h2 class="jsmethod" id="h2__2082243526" data-has-heading-anchor="true"><a name="getTask"></a>envianceSdk.tasks.getTask<a href="/articles/fordevelopers/task/a/h2__2082243526" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task/a/h2__2082243526&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_678203078_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_678203078_3" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Gets information about the specified Task definition. Though it can be used to retrieve information about single occurrence or recurring Tasks, this function currently does not provide information about the notification or scheduling setup of the Task.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>taskId</b>  The id string (GUID) for an existing Task.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">A <a href="/articles/fordevelopers/task/a/TaskInfo" onclick="return n(&#39;!fordevelopers/task/a/TaskInfo&#39;,this);">taskInfo</a> object will be passed to the onsuccess callback in the result property.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.tasks.getTask("ddef6b59-6289-41c9-ac7a-ee87a773ce0e",</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">var task = response.result;</p>
+            <p class="Code3">alert("Retrieved task with name: " + task.name);</p>
+            <p class="Code2">});</p>
+        </div>
+        <div class="method">
+            <h2 class="jsmethod" id="h2_593488447" data-has-heading-anchor="true"><a name="getTaskOccurrence"></a>envianceSdk.tasks.getTaskOccurrence<a href="/articles/fordevelopers/task/a/h2_593488447" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task/a/h2_593488447&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_678203078_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_678203078_4" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Gets information about a Task occurrence.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>taskId</b>  The id string (GUID) for an existing Task.</p>
+            <p class="BodyIndentHanging"><b>dueDate</b> <i>Date</i>. The date and time when the Task occurrence is due.</p>
+            <p class="BodyIndentHanging"><b>objectIdOrPath</b>  An optional object specifier, as an id string (GUID) or path, uniquely identifying an object in the Compliance Model to which the Task is associated. Any string that matches the pattern of a GUID is interpreted as the id string, and not the path of the object.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An array of <a href="/articles/fordevelopers/task/a/TaskOccurrenceInfo" onclick="return n(&#39;!fordevelopers/task/a/TaskOccurrenceInfo&#39;,this);">TaskOccurrenceInfo</a> objects, one for each object to which the Task is associated, will be passed to the onsuccess callback in the result property. When an object id or path is specified, this array will have only a single element.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.tasks.getTaskOccurrence(</p>
+            <p class="Code2">"ddef6b59-6289-41c9-ac7a-ee87a773ce0e",</p>
+            <p class="Code2">"2013-09-19T20:00:00",</p>
+            <p class="Code2">"2d4fc954-b062-433d-9405-ce709c36a353",</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">var occurrence = response.result;</p>
+            <p class="Code3">alert("Task occurrence is % complete:" + occurrence.percentComplete);</p>
+            <p class="Code2">});</p>
+        </div>
+        <div class="method">
+            <h2 class="jsmethod" id="h2_1068376610" data-has-heading-anchor="true"><a name="completeTaskOccurrence"></a>envianceSdk.tasks.completeTaskOccurrence<a href="/articles/fordevelopers/task/a/h2_1068376610" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task/a/h2_1068376610&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_678203078_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_678203078_5" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Updates the status of a Task occurrence (on a given date and time).</p>
+            <p class="BodyIndent">The Task occurrence may also be dismissed for one or more objects by setting the dismissed property to true for the TaskOccurenceInfo instance(s) related to the object(s).</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>taskId</b>  The id string (GUID) for an existing Task.</p>
+            <p class="BodyIndentHanging"><b>dueDate</b> <i>Date</i>. The date and time when the Task occurrence is due.</p>
+            <p class="BodyIndentHanging"><b>objectIdOrPath</b>  An optional object specifier, as an id string (GUID) or path, uniquely identifying an object in the Compliance Model to which the Task is associated. Any string that matches the pattern of a GUID is interpreted as the id string, and not the path of the object.</p>
+            <p class="BodyIndentHanging"><b>taskOccurrenceInfos</b>  An array of <a href="/articles/fordevelopers/task/a/TaskOccurrenceInfo" onclick="return n(&#39;!fordevelopers/task/a/TaskOccurrenceInfo&#39;,this);">TaskOccurrenceInfo</a> objects. Some properties of these objects are ignored by this function; see details of this object for more info.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="bold">Notes</p>
+            <p class="BodyIndent">If an object id or path is specified, then only one <a href="/articles/fordevelopers/task/a/TaskOccurrenceInfo" onclick="return n(&#39;!fordevelopers/task/a/TaskOccurrenceInfo&#39;,this);">TaskOccurrenceInfo</a> structure may be specified, and if the object property is specified it must be for the same object.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.tasks.completeTaskOccurrence(</p>
+            <p class="Code2">"ddef6b59-6289-41c9-ac7a-ee87a773ce0e",</p>
+            <p class="Code2">"2013-09-19T20:00:00",</p>
+            <p class="Code2">statuses,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert("Task occurrence has been updated.");</p>
+        </div>
+        <div class="method">
+            <h2 class="jsmethod" id="h2__442259893" data-has-heading-anchor="true"><a name="deleteTask"></a>envianceSdk.tasks.deleteTask<a href="/articles/fordevelopers/task/a/h2__442259893" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task/a/h2__442259893&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_678203078_6" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_678203078_6" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Deletes an existing Task definition.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>taskId</b>  The id string (GUID) for an existing Task.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="bold">Notes</p>
+            <p class="BodyIndent">Deletions are <i>permanent</i>.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.tasks.deleteTask("ddef6b59-6289-41c9-ac7a-ee87a773ce0e",</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert("Task deleted.");</p>
+            <p class="Code2">});</p>
+        </div>
+        <div class="method">
+            <h2 class="jsclass" id="h2_1116794892" data-has-heading-anchor="true"><a name="TaskInfo"></a>envianceSdk.tasks.taskInfo<a href="/articles/fordevelopers/task/a/h2_1116794892" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task/a/h2_1116794892&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_678203078_7" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_678203078_7" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Constructs a TaskInfo object instance in JavaScript.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>name </b> The name of the Task.
+</p>
+            <p class="BodyIndentHanging"><b>description </b> A description.
+
+</p>
+            <p class="BodyIndentHanging"><b>dueDate </b> <i>Date</i>. The due date of the Workflow.
+
+</p>
+            <p class="BodyIndentHanging"><b>timeZone </b> The name of a time zone for the Task.
+</p>
+            <p class="BodyIndentHanging"><b>assignor </b> The assignor of the Task.
+</p>
+            <p class="BodyIndentHanging"><b>assignees</b> <i>Array</i>. An array of <a href="/articles/fordevelopers/common/a/UserAssignee" onclick="return n(&#39;!fordevelopers/common/a/UserAssignee&#39;,this);">UserAssignees</a> and/or <a href="/articles/fordevelopers/common/a/GroupAssignee" onclick="return n(&#39;!fordevelopers/common/a/GroupAssignee&#39;,this);">GroupAssignees</a>.
+
+</p>
+            <p class="BodyIndentHanging"><b>calendars </b> <i>Array</i>. An array of strings listing the types of EMS calendars on which this Workflow is shown. Valid values are "My", "Object", "System".
+
+</p>
+            <p class="BodyIndentHanging"><b>objects </b> <i>Array</i>. An array of Compliance Model object id strings (GUIDs) or paths, specifying zero or more Compliance Model objects to which the Task is associated. Any string that matches the pattern of a GUID is interpreted as an id string, and not a path.
+
+</p>
+            <p class="BodyIndentHanging"><b>documents </b> <i>Array</i>. An array of Document id strings (GUIDs) or paths, specifying zero or more Documents attached to the Workflow. Any string that matches the pattern of a GUID is interpreted as an id string, and not a path.
+</p>
+            <p class="BodyIndentHanging"><b>schedules</b> <i>Array</i>. An array of strings specifying the task schedules.</p>
+            <p class="BodyIndentHanging"><b>notifications</b> <i>Array</i>. An array of strings specifying the task notifications.</p>
+            <p class="BodyIndentHanging"><b>templateIdOrName</b> <i>Array</i>. An array of strings specifying the notification template ID or name.</p>
+            <p class="BodyIndentHanging"><b>workflowtrigger</b> <i>Array</i>. An array of strings specifying the workflow trigger options.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An instance of the TaskInfo class.</p>
+            <p class="bold">Instance Methods</p>
+            <p class="BodyIndentHanging"><b>addPathAssociatedObject(objectPath)</b> This is a convenience method to add an object path to the objects array property.</p>
+            <p class="BodyIndentHanging"><b>addIdAssociatedObject(objectId)</b> This is a convenience method to add an object id to the objects array property.</p>
+            <p class="BodyIndentHanging"><b>addUserAssignee(userIdOrName)</b> This is a convenience method to add a UserAssignee to the assignees array property.</p>
+            <p class="BodyIndentHanging"><b>addGroupAssignee(groupIdOrName)</b> This is a convenience method to add a GroupAssignee to the assignees array property.</p>
+            <p class="BodyIndentHanging"><b>addDocument(path)</b> This is a convenience method to add a Document by path to the documents property.</p>
+            <p class="BodyIndentHanging"><b>addSchedule</b> This is a convenience method to add a Schedule to the schedules array object.</p>
+            <p class="BodyIndentHanging"><b>addNotification</b> This is a convenience method to add a notification to the notifications array object.</p>
+            <p class="example">Example</p>
+            <p class="Code1">var task = new envianceSdk.tasks.TaskInfo(</p>
+            <p class="Code2">"One Time Walk Through",</p>
+            <p class="Code2">"In response to a hazard report, walk through the facility.",</p>
+            <p class="Code2">"2013-09-30T00:00:00",</p>
+            <p class="Code2">"Pacific Time (US &amp; Canada) (UTC-08:00) (With DST)",</p>
+            <p class="Code2">"jsmith",</p>
+            <p class="Code2">null, // no assignees here</p>
+            <p class="Code2">["My", "Object"],</p>
+            <p class="Code2">["/Division A/Facility X", "/Division A/Facility B"],</p>
+            <p class="Code2">["/Tasks/WalkthroughChecklist.xls"]</p>
+            <p class="Code1">);</p>
+            <p class="Code1">task.addUserAssignee("jsmith").addGroupAssignee("Administrators");</p>
+        </div>
+        <div class="method">
+            <h2 class="jsclass" id="h2__1220198043" data-has-heading-anchor="true"><a name="TaskScheduleInfo"></a>envianceSdk.tasks.TaskScheduleInfo<a href="/articles/fordevelopers/task/a/h2__1220198043" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task/a/h2__1220198043&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_678203078_8" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_678203078_8" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Constructs a TaskScheduleInfo object instance in JavaScript.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>startDate</b> <i>Date</i>. The start date of the task schedule. Required for all schedule types.</p>
+            <p class="BodyIndentHanging"><b>endDate</b> <i>Date</i>. The end date of the task schedule.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An instance of theTaskScheduleInfo class.</p>
+            <p class="bold">Instance Methods</p>
+            <p class="BodyIndentHanging"><b>BuildHourlySchedule</b> (startTime, endTime, daysOfWeek)&nbsp;Convenience method to build an hourly schedule.</p>
+            <p class="BodyIndentHanging"><b>BuildDailyScheduleByInterval</b> (startTime, recurrenceInterval) Convenience method to build a daily schedule.</p>
+            <p class="BodyIndentHanging"><b>BuildDailyScheduleByWeekdays</b> (startTime) Convenience method to build a daily schedule by weekdays.</p>
+            <p class="BodyIndentHanging"><b>BuildWeeklySchedule</b> (startTime, <a href="/articles/fordevelopers/task/a/RecurrenceInterval" onclick="return n(&#39;!fordevelopers/task/a/RecurrenceInterval&#39;,this);">recurrenceInterval</a>, daysOfWeek) Convenience method to build a weekly schedule.</p>
+            <p class="BodyIndentHanging"><b>BuildMonthlySchedule</b>  (startTime, <a href="/articles/fordevelopers/task/a/RecurrenceInterval" onclick="return n(&#39;!fordevelopers/task/a/RecurrenceInterval&#39;,this);">recurrenceInterval</a>, dayOfMonthNumber) Convenience method to build a monthly schedule by day number.</p>
+            <p class="BodyIndentHanging"><b>BuildMonthlyScheduleExt</b> (startTime, <a href="/articles/fordevelopers/task/a/RecurrenceInterval" onclick="return n(&#39;!fordevelopers/task/a/RecurrenceInterval&#39;,this);">recurrenceInterval</a>, dayOccurrence, dayOfWeek) Convenience method to build a monthly schedule by day of week.</p>
+            <p class="BodyIndentHanging"><b>BuildYearlySchedule</b>  (startTime, <a href="/articles/fordevelopers/task/a/RecurrenceInterval" onclick="return n(&#39;!fordevelopers/task/a/RecurrenceInterval&#39;,this);">recurrenceInterval</a>, monthOfYear, dayOfMonthNumber) Convenience method to build a yearly schedule.</p>
+            <p class="BodyIndentHanging"><b>BuildYearlyScheduleExt</b>  (startTime, <a href="/articles/fordevelopers/task/a/RecurrenceInterval" onclick="return n(&#39;!fordevelopers/task/a/RecurrenceInterval&#39;,this);">recurrenceInterval</a>, monthOfYear, dayOccurrence, dayOfWeek) Convenience method to build a yearly schedule by day of week.</p>
+            <p class="BodyIndentHanging"><b>BuildAfterLastCompletionSchedule</b>  (startTime, hours, days, weeks, months)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsclass" id="h2_1058058378" data-has-heading-anchor="true"><a name="RecurrenceInterval"></a>envianceSdk.tasks.TaskScheduleInfo.RecurrenceInterval<a href="/articles/fordevelopers/task/a/h2_1058058378" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task/a/h2_1058058378&#39;,this);"></a></h2>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Constructs a RecurrenceInterval object instance in JavaScript.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>hours </b> <i>Number</i>. An integer value which defines the number of hours of the recurrence interval</p>
+            <p class="BodyIndentHanging"><b>days </b> <i>Number</i>. An integer value which defines the number of days of the recurrence interval</p>
+            <p class="BodyIndentHanging"><b>weeks </b> <i>Number</i>. An integer value which defines the number of weeks of the recurrence interval</p>
+            <p class="BodyIndentHanging"><b>months </b> <i>Number</i>. An integer value which defines the number of months of the recurrence interval</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An instance of the RecurrenceInterval class.</p>
+        </div>
+        <div class="method">
+            <h2 class="jsclass" id="h2__1610752681" data-has-heading-anchor="true"><a name="TaskOccurrenceInfo"></a>envianceSdk.tasks.TaskOccurrenceInfo<a href="/articles/fordevelopers/task/a/h2__1610752681" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task/a/h2__1610752681&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_678203078_9" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_678203078_9" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Constructs a TaskOccurrenceInfo object instance in JavaScript.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>objectIdOrPath</b> An id string (GUID) or path of a Compliance Model object, related to the Task, for which this Task occurrence information applies.  Any string that matches the pattern of a GUID is interpreted as an id string, and not a path.  If no object property is specified, the Task occurrence information relates to all objects associated with the Task.</p>
+            <p class="BodyIndentHanging"><b>dismissed</b> An optional Boolean flag indicating whether or not this Task occurrence should be dismissed (and not completed).  If this value is True, no update will be made for percentComplete and statusChangeDate.  Default is False.</p>
+            <p class="BodyIndentHanging"><b>percentComplete</b> <i>Number</i>. An optional integer between 0 and 100 specifying the percent completion of the Task occurrence.  Default is 0 percent.
+</p>
+            <p class="BodyIndentHanging"><b>hoursToComplete</b> <i>Number</i>. An optional decimal value indicating a whole or partial number of hours required to complete the Task occurrence.  Default is 0.</p>
+            <p class="BodyIndentHanging"><b>costToComplete</b> <i>Number</i>. An optional decimal value indicating the cost to complete the Task occurrence.  Currently, this value is in US Dollars.  Default is 0.
+</p>
+            <p class="BodyIndentHanging"><b>comment</b> An optional comment about the completion of the Task occurrence.
+</p>
+            <p class="BodyIndentHanging"><b>statusChangeDate</b> <i>Date</i>. An optional date and time at which the Task occurrence status was last updated.
+Default is the current date and time, in the Task's time zone.
+</p>
+            <p class="BodyIndentHanging"><b>eventInstanceId</b> <i>String</i>. The id (GUID) of an associated event instance.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An instance of the TaskOccurrenceInfo class.</p>
+            <p class="example">Example</p>
+            <p class="Code1">var taskOccurrence = new envianceSdk.tasks.TaskOccurrenceInfo(</p>
+            <p class="Code2">"/Division A/Facility X/Unit Y",</p>
+            <p class="Code2">false,</p>
+            <p class="Code2">80,</p>
+            <p class="Code2">2.5,</p>
+            <p class="Code2">1200.25,</p>
+            <p class="Code2">"Still some more work to do here.",</p>
+            <p class="Code2">2017-04-17T16:28:55,</p>
+            <p class="Code2">"7d431e4d-ea20-43a9-b0ef-81e191504eb2"</p>
+            <p class="Code1">);</p>
+        </div>
+        <div class="method">
+            <h2 class="jsclass" id="h2__1251801299" data-has-heading-anchor="true"><a name="TaskNotificationInfo"></a>envianceSdk.tasks.TaskNotificationInfo<a href="/articles/fordevelopers/task/a/h2__1251801299" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task/a/h2__1251801299&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_678203078_10" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_678203078_10" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Constructs a TaskNotificationInfo object instance in JavaScript.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>conditions</b> <i>Array[<a href="/articles/fordevelopers/task/a/NotificationConditions" onclick="return n(&#39;!fordevelopers/task/a/NotificationConditions&#39;,this);">notificationConditions</a>]</i>. An array of one or more <a href="/articles/fordevelopers/task/a/NotificationConditions" onclick="return n(&#39;!fordevelopers/task/a/NotificationConditions&#39;,this);">notificationConditions</a> or DueDateConditions structure</p>
+            <p class="BodyIndentHanging"><b>recipients</b> <i>Array[<a href="/articles/fordevelopers/task/a/NotificationRecipients" onclick="return n(&#39;!fordevelopers/task/a/NotificationRecipients&#39;,this);">notificationRecipients</a>]</i>. An array of one or more of <a href="/articles/fordevelopers/task/a/NotificationRecipients" onclick="return n(&#39;!fordevelopers/task/a/NotificationRecipients&#39;,this);">notificationRecipients</a> structure.</p>
+            <p class="BodyIndentHanging"><b>deliveryMethod</b>A string which defines the delivery method of the notification:&nbsp;Inbox, Email, InboxAndEmail</p>
+            <p class="BodyIndentHanging"><b>comments</b> Text comments</p>
+            <p class="BodyIndentHanging"><b>templateIdOrName</b><i>Array</i>. An array of strings specifying the notification template ID or name.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An instance of the TaskNotificationInfo class.</p>
+        </div>
+        <div class="method">
+            <h2 class="jsclass" id="h2__2070937990" data-has-heading-anchor="true"><a name="NotificationConditions"></a>envianceSdk.tasks.TaskNotificationInfo.NotificationConditions<a href="/articles/fordevelopers/task/a/h2__2070937990" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task/a/h2__2070937990&#39;,this);"></a></h2>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Constructs a NotificationConditions object instance in JavaScript.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>immediately</b> <i>Boolean</i>. True/false value indicating whether the notification should be triggered immediately upon the creation.</p>
+            <p class="BodyIndentHanging"><b>whenDismissed</b> <i>Boolean</i>. True/false value indicating whether the notification should be triggered when the task is dismissed.</p>
+            <p class="BodyIndentHanging"><b>byDueDate</b> A DueDateCondition structure which defines whether the notification should be triggered when certain conditions for the task Due Date are met.</p>
+            <p class="BodyIndentHanging"><b>byCompletionStatus</b> A CompletionStatusCondition structure which defines whether the notification should be triggered when certain conditions for the task completion status are met.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An instance of the NotificationConditions class.</p>
+            <p class="bold">Notes</p>
+            <p class="BodyIndent">All these properties are optional, but at least one of them must be specified.
+
+There is an additional limitation: you cannot specify "<i>byDueDate</i>" condition if "<i>CompletionStatusCondition.onlyWhenPastDue = true</i></p>
+            <h2 class="jsclass" id="h2_923169548" data-has-heading-anchor="true"><a name="DueDateCondition"></a>envianceSdk.tasks.TaskNotificationInfo.DueDateCondition<a href="/articles/fordevelopers/task/a/h2_923169548" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task/a/h2_923169548&#39;,this);"></a></h2>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Constructs a DueDateCondition object instance in JavaScript.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>conditionType </b>A string which specifies the type of the condition. Must be one of the following:
+<br/>"<i>IntervalBefore</i>" - The notification must be triggered the specified interval before the task Due Date.
+<br/>"<i>IntervalAfter</i>" - The notification must be triggered the specified interval after the task Due Date.
+<br/>"<i>PastDue</i>" - The notification must be triggered when the task is past due.
+</p>
+            <p class="BodyIndentHanging"><b>intervalValue </b> <i>Number</i>. An integer value which defines the interval (ignored for conditionType=PastDue)
+
+</p>
+            <p class="BodyIndentHanging"><b>intervalType </b>A string which defines the type of the interval (ignored for conditionType=PastDue). Must be one of the following:
+<br/>"<i>QuarterHour</i>", "<i>Hour</i>", "<i>Day</i>", "<i>Week</i>", "<i>Month</i>", "<i>Year</i>"
+</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An instance of the DueDateCondition class.</p>
+        </div>
+        <div class="method">
+            <h2 class="jsclass" id="h2__1548531008" data-has-heading-anchor="true"><a name="NotificationRecipients"></a>envianceSdk.tasks.TaskNotificationInfo.NotificationRecipients<a href="/articles/fordevelopers/task/a/h2__1548531008" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task/a/h2__1548531008&#39;,this);"></a></h2>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Constructs a NotificationRecipients object instance in JavaScript.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>toAssignees </b> <i>Boolean</i>. A boolean value which indicates whether the notification should be delivered to the task assignee(s).
+</p>
+            <p class="BodyIndentHanging"><b>toAssignor </b> <i>Boolean</i>. A boolean value which indicates whether the notification should be delivered to the task assignor.
+
+</p>
+            <p class="BodyIndentHanging"><b>users </b>An array of id strings (GUIDs) which defines specific users to deliver the notification to.
+
+</p>
+            <p class="BodyIndentHanging"><b>groups </b>An array of id strings (GUIDs) which defines specific groups to deliver the notification to.
+</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An instance of the NotificationRecipients class.</p>
+            <p class="bold">Notes</p>
+            <p class="BodyIndent">All properties are optional but at least one of them must be specified.</p>
+        </div>
+        <div class="method">
+            <h2 class="jsclass" id="h2_234996220" data-has-heading-anchor="true"><a name="CompletionStatus"></a>envianceSdk.tasks.TaskNotificationInfo.CompletionStatusCondition<a href="/articles/fordevelopers/task/a/h2_234996220" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task/a/h2_234996220&#39;,this);"></a></h2>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Constructs a CompletionStatusCondition object instance in JavaScript.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>completionPercent </b>An integer value which defines the percentage of the task completion that should trigger the notification. Possible values are from 0 to 100, with increments of 10 percent.
+
+</p>
+            <p class="BodyIndentHanging"><b>comparisionLogic </b>A string which defines how the task's completion status should be compared to the completionPercent property to trigger the notification. Must be one of the following:
+<br/>"=", "&lt;", "&gt;", "&lt;=", "&gt;="
+
+</p>
+            <p class="BodyIndentHanging"><b>onlyWhenPastDue </b>A boolean value which indicates that the notification must be triggered only if the task is past due. Optional.
+</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An instance of the CompletionStatusCondition class.</p>
+        </div>
+        <div class="method">
+            <h2 class="jsclass" id="h2_1198515163" data-has-heading-anchor="true"><a name="taskWorkflowInfo"></a>envianceSdk.tasks.TaskWorkflowInfo<a href="/articles/fordevelopers/task/a/h2_1198515163" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task/a/h2_1198515163&#39;,this);"></a></h2>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Defines a workflow associated triggered by a task.</p>
+            <p class="bold">Properties</p>
+            <p class="BodyIndentHanging"><b>isAutocloseTask</b> Indicates whether task is automatically closed when workflow is closed.</p>
+            <p class="BodyIndentHanging"><b>taskCompletionFields</b> Determines influence on task status by workflow. </p>
+            <p class="BodyIndentHanging"><b>workflows</b> Array of <a href="/articles/fordevelopers/task/a/workflowTriggerInfo" onclick="return n(&#39;!fordevelopers/task/a/workflowTriggerInfo&#39;,this);">WorkflowTriggerInfo</a> which defines a structure for trigger options.</p>
+            <p class="bold">Instance Methods</p>
+            <p class="BodyIndentHanging"><b>addWorkflow (workflow)</b> Convenience method to add workflows.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.tasks.taskWorkflowInfo (isAutocloseTask, taskCompletionFields, workflows)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsclass" id="h2__166178528" data-has-heading-anchor="true"><a name="workflowTriggerInfo"></a>envianceSdk.tasks.TaskWorkflowInfo.WorkflowTriggerInfo<a href="/articles/fordevelopers/task/a/h2__166178528" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task/a/h2__166178528&#39;,this);"></a></h2>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Workflow task trigger options.</p>
+            <p class="bold">Properties</p>
+            <p class="BodyIndentHanging"><b>workflowTypeIdorName</b> Id or name of Workflow&nbsp;Type triggered by task.</p>
+            <p class="BodyIndentHanging"><b>workflowName</b> Name of workflow instance triggered by task. </p>
+            <p class="BodyIndentHanging"><b>calendars</b> Array of possible Calendars to display. Values:&nbsp;<i>My</i>, <i>Object</i>, <i>System</i><br/></p>
+            <p class="BodyIndentHanging"><b>dueDateFlags</b> Array of possible duedate options (only one is possible in time).</p>
+            <p class="BodyIndentHanging"><b>dueDateAmount</b> Value for duedate options.</p>
+            <p class="BodyIndentHanging"><b>timeToCreateOptions</b> Value for duedate options.</p>
+            <p class="BodyIndentHanging"><b>assignee</b> A set of assignees (User name or id and/or Group name or id) for the Workflow.</p>
+            <p class="bold">Instance Methods</p>
+            <p class="BodyIndentHanging"><b>addAssignor ()</b> Convenience method to add task assignor.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.tasks.TaskWorkflowInfo.WorkflowTriggerInfo (workflowTypeIdorName, workflowName, calendars, dueDateFlags, dueDateAmount, timeToCreateOptions, assignee)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsclass" id="h2_1707960757" data-has-heading-anchor="true"><a name="timeToCreateInfo"></a>envianceSdk.tasks.TaskWorkflowInfo.TimeToCreateInfo<a href="/articles/fordevelopers/task/a/h2_1707960757" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task/a/h2_1707960757&#39;,this);"></a></h2>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Represents a structure which defines the time to create info.</p>
+            <p class="bold">Properties</p>
+            <p class="BodyIndentHanging"><b>category</b> When to create workflow. Values:&nbsp;(<i>Immediatly</i>, <i>ByDueDate</i>, <i>ByCompleteStatus</i>, <i>OnDismissActivate</i></p>
+            <p class="BodyIndentHanging"><b>value</b> Value for create info. </p>
+            <p class="bold">Instance Methods</p>
+            <p class="BodyIndentHanging"><b>BuildByCompleteStatus (val, compare, operation)</b> </p>
+            <p class="BodyIndentHanging"><b>BuildImmediatly ()</b> </p>
+            <p class="BodyIndentHanging"><b>BuildOnDismissActivate ()</b> </p>
+            <p class="BodyIndentHanging"><b>BuildByDueDate (val, hours, period)</b> </p>
+            <p class="BodyIndentHanging"><b>BuildOn PastDue()</b> </p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.tasks.taskWorkflowInfo,timeToCreateInfo (category, value)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsclass" id="h2_1094984434" data-has-heading-anchor="true"><a name="timeToCreateValue"></a>envianceSdk.tasks.TaskWorkflowInfo.TimeToCreateValue<a href="/articles/fordevelopers/task/a/h2_1094984434" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task/a/h2_1094984434&#39;,this);"></a></h2>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Represents a structure which defines the time to create value.</p>
+            <p class="bold">Properties</p>
+            <p class="BodyIndentHanging"><b>past</b> A flag which defines is value in future or in past. </p>
+            <p class="BodyIndentHanging"><b>operation</b> A string which defines operation with value. Values:&nbsp;<i>AND</i>, <i>OR</i></p>
+            <p class="BodyIndentHanging"><b>value</b> Value for create info (number). </p>
+            <p class="BodyIndentHanging"><b>hours</b> String that defines hours. Values:&nbsp;<i>QuarterHour</i>, <i>Hour</i>, <i>Day</i>, <i>Week</i>, <i>Month</i><!--CDATA[[]]--><i>Year</i></p>
+            <p class="BodyIndentHanging"><b>period</b> A string which defines period. Values:&nbsp;<i>Before</i>, <i>After</i></p>
+            <p class="BodyIndentHanging"><b>percent</b> Integer value that defines percent. Values:&nbsp;0, 10, 20, 30, 40, 50, 60, 70, 80, 100</p>
+            <p class="BodyIndentHanging"><b>compare</b> A string which defines comparison type. Values:&nbsp;= , &lt; , &gt; , &lt;= , &gt;=</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.tasks.TaskWorkflowInfo,TimeToCreateInfo (past, operation, value, hours, period, percent, compare)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsclass" id="h2_1033562699" data-has-heading-anchor="true"><a name="dueDateInfo"></a>envianceSdk.tasks.TaskWorkflowInfo.DueDateInfo<a href="/articles/fordevelopers/task/a/h2_1033562699" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task/a/h2_1033562699&#39;,this);"></a></h2>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Time to create task info.</p>
+            <p class="bold">Properties</p>
+            <p class="BodyIndentHanging"><b>value</b> A string which defines workflow definition Id or Name.</p>
+            <p class="BodyIndentHanging"><b>hours</b> String that defines hours. Values:&nbsp;<i>QuarterHour</i>, <i>Hour</i>, <i>Day</i>, <i>Week</i>, <i>Month</i><!--CDATA[[]]--><i>Year</i></p>
+            <p class="BodyIndentHanging"><b>period</b> A string which defines period. Values:&nbsp;<i>Before</i>, <i>After</i></p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.tasks.TaskWorkflowInfo,DueDateInfo (value, hours, period)</p>
+        </div>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js" data-aspx-savednextwhitespace="%0A%20%20%20%20">
+        </script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/ws-eventservice"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Event Service</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Event Service';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h2 class="Heading2" id="h2__1456179363" data-has-heading-anchor="true">Event Service<a href="/articles/fordevelopers/ws-eventservice/a/h2__1456179363" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/ws-eventservice/a/h2__1456179363&#39;,this);"></a></h2>
+        <p class="BodyText"><a href="https://webservices.enviance.com/2010/EventService.asmx" target="_blank">https://webservices.enviance.com/2010/EventService.asmx</a>
+        </p>
+        <p class="BodyText"><a href="https://webservices.enviance.com/2010/EventService.wsdl" target="_blank">https://webservices.enviance.com/2010/EventService.wsdl</a>
+        </p>
+        <p class="BodyText"><a href="https://webservices.enviance.com/2009/schemas/common.xsd" target="_blank">https://webservices.enviance.com/2009/schemas/common.xsd</a>
+        </p>
+        <h3 class="Heading3" id="h3__1360973126" data-has-heading-anchor="true">SubmitEventInstances<a href="/articles/fordevelopers/ws-eventservice/a/h3__1360973126" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/ws-eventservice/a/h3__1360973126&#39;,this);"></a></h3>
+        <p class="BodyText">This method can be used to create event instances or update existing event instances.</p>
+        <p class="BodyText">When creating a new event instance the input parameters are:</p>
+        <ul>
+            <li value="1">Event Log ID</li>
+            <li value="2">Requirement ID</li>
+            <li value="3">Event Instance ID</li>
+            <li value="4">Begin and End dates</li>
+            <li value="5">Accept as Deviation</li>
+            <li value="6">Name/Value pair for all custom fields</li>
+        </ul>
+        <h3 id="h3__2144736138" data-has-heading-anchor="true">Creating new Event Instance<a href="/articles/fordevelopers/ws-eventservice/a/h3__2144736138" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/ws-eventservice/a/h3__2144736138&#39;,this);"></a></h3>
+        <p class="BodyText">Event Instance should have ID property set to null.</p>
+        <p class="BodyText">RequirementId and EventLogId MUST be set to appropriate Requirement and EventLog. ID can be either TagId or GUIDId type.</p>
+        <p class="BodyText">Mandatory fields: Begin Date, End Date, Name MUST be set.</p>
+        <p class="BodyText">RequirementId and EventLogId are independent and CAN be of different type.</p>
+        <h3 id="h3_1883569044" data-has-heading-anchor="true">Creating new Event Instance with result ID<a href="/articles/fordevelopers/ws-eventservice/a/h3_1883569044" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/ws-eventservice/a/h3_1883569044&#39;,this);"></a></h3>
+        <p class="BodyText">If client needs to know GUIDs for newly created Event Instances, then temporary ID is used: NewId. NewId indicates client's interest in obtaining GUID of Event Instance to be created. Client should supply some kind of ID to NewId. For each Event Instance where ID is set to NewId, the function result will contain a map of client-supplied ID to EMS GUID generated for this Event Instance.</p>
+        <h3 id="h3_1923328720" data-has-heading-anchor="true">Updating Event Instance by Tag<a href="/articles/fordevelopers/ws-eventservice/a/h3_1923328720" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/ws-eventservice/a/h3_1923328720&#39;,this);"></a></h3>
+        <p class="BodyText">When client knows the Ids of existing Event Instances, ID property should be set to TagId. If Event Instances with specified Tags are not found, an error will be generated. The error message will contain tags which do not exist.</p>
+        <h3 id="h3__2116139047" data-has-heading-anchor="true">Updating Event Instance by GUID<a href="/articles/fordevelopers/ws-eventservice/a/h3__2116139047" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/ws-eventservice/a/h3__2116139047&#39;,this);"></a></h3>
+        <p class="BodyText">If client knows GUIDs of Event Instances then ID property should be GUIDId.</p>
+        <p class="BodyText">A batchID is returned for both operations, create and update. The batchID is the input value for GetBatchStatus.</p>
+        <h3 id="h3__596142242" data-has-heading-anchor="true">GetEventInstances<a href="/articles/fordevelopers/ws-eventservice/a/h3__596142242" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/ws-eventservice/a/h3__596142242&#39;,this);"></a></h3>
+        <p class="BodyText">This method can be used to return a set of event instances and all of their associated fields. The input is a set of unique event instance tags.</p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js" data-aspx-savednextwhitespace="%0A%20%20%20%20">
+        </script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

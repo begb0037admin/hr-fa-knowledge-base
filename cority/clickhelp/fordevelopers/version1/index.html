@@ -1,0 +1,528 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/version1"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Version 1 Methods</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Version 1 Methods';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>        <h1 class="Heading1" id="h1_89663323" data-has-heading-anchor="true">Version 1 Methods<a href="/articles/fordevelopers/version1/a/h1_89663323" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/version1/a/h1_89663323&#39;,this);"></a></h1>
+        <p>Use the main TOC links to each method to see the current version of each API by default. Links to previous versions are available from each description, if needed. If you are starting a new project, please use the latest API versions.&nbsp;These version 1 descriptions are provided for reference only for older apps.</p>
+        <h2 class="jsmethod" id="h2__508730084" data-has-heading-anchor="true"><a name="authenticate"></a>envianceSdk.authentication.authenticate<a href="/articles/fordevelopers/version1/a/h2__508730084" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/version1/a/h2__508730084&#39;,this);"></a></h2>
+        <p class="bold">Version 1.0</p>
+        <div class="MCDropDown_0">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4249949788_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_4249949788_0" style="display: none;">
+                <p><a href="/articles/fordevelopers/authentication/a/authenticate" onclick="return n(&#39;!fordevelopers/authentication/a/authenticate&#39;,this);">Version 2.0</a>
+                </p>
+            </div>
+        </div>
+        <p class="bold">Description</p>
+        <p class="BodyIndent">Creates a new session in the Management System by authenticating via username and password.</p>
+        <p class="BodyIndent">The result value is the id string for the newly created session.</p>
+        <p class="bold">Parameters</p>
+        <p class="BodyIndentHanging"><b>userName</b> The user name string of the EMS User account.</p>
+        <p class="BodyIndentHanging"><b>password</b> The password string of the EMS account.</p>
+        <p class="BodyIndentHanging"><b>onsuccess</b> An optional callback function to handle the call result.</p>
+        <p class="BodyIndentHanging"><b>onerror</b> An optional callback function to handle any call error.</p>
+        <p class="bold">Return Value</p>
+        <p class="BodyIndent">The id string (GUID) for the newly created session.</p>
+        <p class="bold">Notes</p>
+        <p class="BodyIndent">Upon successful authentication, the session id and home system id for the User are automatically persisted during the rest of the browser session, and used for all subsequent calls to the EMS APIs. Therefore, you should not have to worry about tracking the session id and passing it along to each API when using the SDK functions.</p>
+        <p class="example">Example</p>
+        <p class="Code1">envianceSdk.authentication.authenticate(“JSmith”, “1234”,</p>
+        <p class="Code2">function(response) {</p>
+        <p class="Code3">alert(“You have been logged in!”);</p>
+        <p class="Code2">},</p>
+        <p class="Code2">function(response) {</p>
+        <p class="Code3">alert(“An error occurred trying to login: ” + response.error);</p>
+        <p class="Code2">});</p>
+        <h2 class="jsmethod" id="h2__110943105" data-has-heading-anchor="true"><a name="getSessionInfo"></a>envianceSdk.authentication.getSessionInfo<a href="/articles/fordevelopers/version1/a/h2__110943105" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/version1/a/h2__110943105&#39;,this);"></a></h2>
+        <p class="bold">Version 1.0</p>
+        <div class="MCDropDown_0">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4249949788_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_4249949788_1" style="display: none;">
+                <p><a href="/articles/fordevelopers/authentication/a/getCurrentSession" onclick="return n(&#39;!fordevelopers/authentication/a/getCurrentSession&#39;,this);">Version 2.0</a>
+                </p>
+            </div>
+        </div>
+        <p class="bold">Description</p>
+        <p class="BodyIndent">Gets information about the current session. The current session is determined using the session id specified in the Authorization header.</p>
+        <p class="bold">Parameters</p>
+        <p class="BodyIndentHanging"><b>sessionID</b> The User's current session id string.</p>
+        <p class="BodyIndentHanging"><b>onsuccess</b> An optional callback function to handle the call result.</p>
+        <p class="BodyIndentHanging"><b>onerror</b> An optional callback function to handle any call error.</p>
+        <p class="bold">Return Value</p>
+        <p class="BodyIndent">A SessionInfo object</p>
+        <p class="bold">Notes</p>
+        <p class="BodyIndent">This API is  is replaced in version 2.0 with envianceSdk.authentication.getCurrentSession</p>
+        <p class="example">Example</p>
+        <p class="Code1">envianceSdk.authentication.getSessionInfo(function(response) {</p>
+        <p class="Code2">result = response.result;</p>
+        <p class="Code2">homeSystemName = result.systems[result.homeSystemId];</p>
+        <p class="Code2">alert("Your home system is " + homeSystemName);</p>
+        <p class="Code1">});</p>
+        <h2 class="jsmethod" id="h2_1640698810" data-has-heading-anchor="true"><a name="endSession"></a>envianceSdk.authentication.endSession<a href="/articles/fordevelopers/version1/a/h2_1640698810" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/version1/a/h2_1640698810&#39;,this);"></a></h2>
+        <p class="bold">Version 1.0</p>
+        <div class="MCDropDown_0">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4249949788_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_4249949788_2" style="display: none;">
+                <p><a href="/articles/fordevelopers/authentication/a/endCurrentSession" onclick="return n(&#39;!fordevelopers/authentication/a/endCurrentSession&#39;,this);">Version 2.0</a>
+                </p>
+            </div>
+        </div>
+        <p class="bold">Description</p>
+        <p class="BodyIndent">Ends the current user's session. The current session is determined using the session id specified in the Authorization header.</p>
+        <p class="bold">Parameters</p>
+        <p class="BodyIndentHanging"><b>onsuccess</b> An optional callback function to handle the call result.</p>
+        <p class="BodyIndentHanging"><b>onerror</b> An optional callback function to handle any call error.</p>
+        <p class="bold">Return Value</p>
+        <p class="BodyIndent">None</p>
+        <p class="bold">Notes</p>
+        <p class="BodyIndent">This API is  is replaced in version 2.0 with envianceSdk.authentication.endCurrentSession</p>
+        <p class="example">Example</p>
+        <p class="Code1">envianceSdk.authentication.endSession(function() {</p>
+        <p class="Code2">alert(“You have been logged off!”);</p>
+        <p class="Code1">});</p>
+        <h2 class="jsmethod" id="h2_1499918635" data-has-heading-anchor="true"><a name="selectComplianceObjects"></a>envianceSdk.compliance.selectComplianceObjects<a href="/articles/fordevelopers/version1/a/h2_1499918635" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/version1/a/h2_1499918635&#39;,this);"></a></h2>
+        <p class="bold">Version 1.0</p>
+        <div class="MCDropDown_0">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4249949788_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_4249949788_3" style="display: none;">
+                <p><a href="/articles/fordevelopers/compliancemodel/a/getLocation" onclick="return n(&#39;!fordevelopers/compliancemodel/a/getLocation&#39;,this);">Version 2.0</a>
+                </p>
+            </div>
+        </div>
+        <p class="bold">Description</p>
+        <p class="BodyIndent">This function queries for all Compliance Objects in the System Model to which the current User has access. An optional name filter may be specified.</p>
+        <p class="bold">Parameters</p>
+        <p class="BodyIndentHanging"><b>page	</b>The page number within the entire result set to return.</p>
+        <p class="BodyIndentHanging"><b>pageSize	</b>The number of records to assign to each page.</p>
+        <p class="BodyIndentHanging"><b>onsuccess	</b>An optional callback function to handle the call result.</p>
+        <p class="BodyIndentHanging"><b>onerror</b>: An optional callback function to handle any call error.</p>
+        <p class="BodyIndentHanging"><b>nameFilter	</b>An optional string to filter Compliance Objects by  name (full substring matching is used).</p>
+        <p class="bold">Return Value</p>
+        <p class="BodyIndent">The result is an EQL Table with the following columns:</p>
+        <p class="BodyIndent" style="font-weight: bold;">
+ID</p>
+        <p class="BodyIndent" style="font-weight: bold;">Name</p>
+        <p class="BodyIndent" style="font-weight: bold;">Type</p>
+        <p class="BodyIndent" style="font-weight: bold;">Path</p>
+        <p class="BodyIndent" style="font-weight: bold;">WarningNotificationInbox</p>
+        <p class="BodyIndent" style="font-weight: bold;">WarningNotificationEmail</p>
+        <p class="BodyIndent" style="font-weight: bold;">TemplateName</p>
+        <p class="BodyIndent" style="font-weight: bold;">CreateOn</p>
+        <p class="BodyIndent" style="font-weight: bold;">ActiveDate</p>
+        <p class="BodyIndent" style="font-weight: bold;">InactiveDate</p>
+        <p class="BodyIndent" style="font-weight: bold;">ResponsibleUser
+</p>
+        <p class="BodyIndent">For more information on these fields, see the EQL documentation.
+</p>
+        <p class="example">Example</p>
+        <p class="Code1">envianceSdk.compliance.selectComplianceObjects(1, 10,</p>
+        <p class="Code2">function(response) {</p>
+        <p class="Code3">alert("First well by name: " + response.result.rows[0].values[0]);</p>
+        <p class="Code2">},</p>
+        <p class="Code2">function(response) {</p>
+        <p class="Code3">alert("Error occurred retrieving well information.");</p>
+        <p class="Code2">},</p>
+        <p class="Code2">"Well"</p>
+        <p class="Code1">);</p>
+        <h2 class="jsmethod" id="h2_456325076" data-has-heading-anchor="true"><a name="eql.execute"></a>envianceSdk.eql.execute<a href="/articles/fordevelopers/version1/a/h2_456325076" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/version1/a/h2_456325076&#39;,this);"></a></h2>
+        <p class="bold">Version 1.0</p>
+        <div class="MCDropDown_0">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4249949788_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_4249949788_4" style="display: none;">
+                <p><a href="/articles/fordevelopers/eql/a/eql.execute" onclick="return n(&#39;!fordevelopers/eql/a/eql.execute&#39;,this);">Version 2.0</a>
+                </p>
+            </div>
+        </div>
+        <p class="bold">Description</p>
+        <p class="BodyIndent">This function executes a batch of one or more EQL queries. The result is an array of EQL Tables.</p>
+        <p class="bold">Parameters</p>
+        <p class="BodyIndentHanging"><b>eql</b> The EQL batch to execute. For details on EQL syntax, see the documentation on EQL.</p>
+        <p class="BodyIndentHanging"><b>page</b> The page number within the entire result set to return.</p>
+        <p class="BodyIndentHanging"><b>pageSize</b> The number of records to assign to each page.</p>
+        <p class="BodyIndentHanging"><b>onsuccess</b> An optional callback function to handle the call result.</p>
+        <p class="BodyIndentHanging"><b>onerror</b> An optional callback function to handle any call error.</p>
+        <p class="bold">Return Value</p>
+        <p class="BodyIndent">An array of EQL Tables.</p>
+        <p class="example">Example</p>
+        <p class="Code1">envianceSdk.eql.execute(</p>
+        <p class="Code2">"SELECT TOP 1 f.Name FROM Facility f ORDER BY f.Name", 1, 10,</p>
+        <p class="Code2">function(response) {</p>
+        <p class="Code3">alert("First facility by name: " + response.result.rows[0].values[0]);</p>
+        <p class="Code2">}</p>
+        <p class="Code1">);</p>
+        <h2 class="jsmethod" id="h2__93392756" data-has-heading-anchor="true"><a name="addScalarFieldValue"></a>addScalarFieldValue<a href="/articles/fordevelopers/version1/a/h2__93392756" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/version1/a/h2__93392756&#39;,this);"></a></h2>
+        <p class="bold">Version 1.0</p>
+        <div class="MCDropDown_0">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4249949788_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_4249949788_5" style="display: none;">
+                <p><a href="/articles/fordevelopers/customfield/a/addScalarFieldValue" onclick="return n(&#39;!fordevelopers/customfield/a/addScalarFieldValue&#39;,this);">Version 2.0</a>
+                </p>
+            </div>
+        </div>
+        <p class="bold">Description</p>
+        <p class="BodyIndent">This function will add a Custom Field value for any scalar (single value) type of Custom Field other than date/time.  For date/time values, see addDateFieldValue.</p>
+        <p class="bold">Parameters</p>
+        <p class="BodyIndent">None</p>
+        <p class="bold">Return Value</p>
+        <p class="BodyIndent">None</p>
+        <p class="example">Example</p>
+        <p class="Code1">myWorkflow.addScalarFieldValue("SmallTextField", "small text");</p>
+        <p class="Code1">myWorkflow.addScalarFieldValue("NumericField", 2.5);</p>
+        <p class="Code1">myWorkflow.addScalarFieldValue("NumericAliasField", "pi");</p>
+        <p class="CodeLast">myWorkflow.addScalarFieldValue("BooleanField", true);</p>
+        <p class="BodyIndent">Or, using call chains:</p>
+        <p class="Code1">myWorkflow</p>
+        <p class="Code1">.addScalarFieldValue("SmallTextField", "small text");</p>
+        <p class="Code1">.addScalarFieldValue("NumericField", 2.5);</p>
+        <p class="Code1">.addScalarFieldValue("NumericAliasField", "pi");</p>
+        <p class="CodeLast">.addScalarFieldValue("BooleanField", true);</p>
+        <h2 class="jsmethod" id="h2__496886232" data-has-heading-anchor="true"><a name="addDateFieldValue"></a>addDateFieldValue<a href="/articles/fordevelopers/version1/a/h2__496886232" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/version1/a/h2__496886232&#39;,this);"></a></h2>
+        <p class="bold">Version 1.0</p>
+        <div class="MCDropDown_0">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4249949788_6" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_4249949788_6" style="display: none;">
+                <p><a href="/articles/fordevelopers/customfield/a/addDateFieldValue" onclick="return n(&#39;!fordevelopers/customfield/a/addDateFieldValue&#39;,this);">Version 2.0</a>
+                </p>
+            </div>
+        </div>
+        <p class="bold">Description</p>
+        <p class="BodyIndent">This function will add a Custom Field value for any date/time type of Custom Field.</p>
+        <p class="bold">Parameters</p>
+        <p class="BodyIndent">None</p>
+        <p class="bold">Return Value</p>
+        <p class="BodyIndent">None</p>
+        <p class="example">Example</p>
+        <p class="Code1">myWorkflow.addDateFieldValue("DateTimeField", "2012-09-27T23:00:00");</p>
+        <h2 class="jsmethod" id="h2_1123163456" data-has-heading-anchor="true"><a name="addMultiFieldValues"></a>addMultiFieldValues<a href="/articles/fordevelopers/version1/a/h2_1123163456" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/version1/a/h2_1123163456&#39;,this);"></a></h2>
+        <p class="bold">Version 1.0</p>
+        <div class="MCDropDown_0">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4249949788_7" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_4249949788_7" style="display: none;">
+                <p><a href="/articles/fordevelopers/customfield/a/addMultiFieldValues" onclick="return n(&#39;!fordevelopers/customfield/a/addMultiFieldValues&#39;,this);">Version 2.0</a>
+                </p>
+            </div>
+        </div>
+        <p class="bold">Description</p>
+        <p class="BodyIndent">This function will add a Custom Field value for any multi-select style field.</p>
+        <p class="bold">Parameters</p>
+        <p class="BodyIndent">None</p>
+        <p class="bold">Return Value</p>
+        <p class="BodyIndent">None</p>
+        <p class="example">Example</p>
+        <p class="CodeLast">myWorkflow.addUrlFieldValue("MultiSelectField", ["Cats", "Horses", "Dogs"]);</p>
+        <h2 class="jsmethod" id="h2__2008422645" data-has-heading-anchor="true"><a name="addUrlFieldValue"></a>addUrlFieldValue<a href="/articles/fordevelopers/version1/a/h2__2008422645" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/version1/a/h2__2008422645&#39;,this);"></a></h2>
+        <p class="bold">Version 1.0</p>
+        <div class="MCDropDown_0">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4249949788_8" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_4249949788_8" style="display: none;">
+                <p><a href="/articles/fordevelopers/customfield/a/addUrlFieldValue" onclick="return n(&#39;!fordevelopers/customfield/a/addUrlFieldValue&#39;,this);">Version 2.0</a>
+                </p>
+            </div>
+        </div>
+        <p class="bold">Description</p>
+        <p class="BodyIndent">This function will add a Custom Field value for any hyperlink field.</p>
+        <p class="bold">Parameters</p>
+        <p class="BodyIndent">None</p>
+        <p class="bold">Return Value</p>
+        <p class="BodyIndent">None</p>
+        <p class="example">Example</p>
+        <p class="CodeLast">myWorkflow.addUrlFieldValue("HyperLinkField", "google", "http://www.google.com");</p>
+        <h2 class="jsmethod" id="h2__1245672161" data-has-heading-anchor="true"><a name="uri.toDocumentDownload"></a>envianceSdk.utilities.uri.toDocumentDownload<a href="/articles/fordevelopers/version1/a/h2__1245672161" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/version1/a/h2__1245672161&#39;,this);"></a></h2>
+        <p class="bold">Version 1.0</p>
+        <div class="MCDropDown_0">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4249949788_9" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_4249949788_9" style="display: none;">
+                <p><a href="/articles/fordevelopers/utility/a/uri.toDocumentDownload" onclick="return n(&#39;!fordevelopers/utility/a/uri.toDocumentDownload&#39;,this);">Version 2.0</a>
+                </p>
+            </div>
+        </div>
+        <p class="bold">Description</p>
+        <p class="BodyIndent">This function creates the URI to download a Document which has been uploaded to the Management System.</p>
+        <p class="bold">Parameters</p>
+        <p class="BodyIndentHanging"><b>id</b> The unique id string for a Document in the Management System.</p>
+        <p class="bold">Return Value</p>
+        <p class="BodyIndent">The URI.</p>
+        <p class="example">Example</p>
+        <p class="Code1">var uri = envianceSdk.utilities.uri.toDocumentDownload("8530a433-de47-445b-9591-9c8f59a9de15");</p>
+        <p class="Code1">window.open(uri, "Document Download");</p>
+        <h2 class="jsmethod" id="h2_754416327" data-has-heading-anchor="true"><a name="uri.gotoUrl"></a>envianceSdk.utilities.uri.gotoUrl<a href="/articles/fordevelopers/version1/a/h2_754416327" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/version1/a/h2_754416327&#39;,this);"></a></h2>
+        <p class="bold">Version 1.0</p>
+        <div class="MCDropDown_0">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4249949788_10" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_4249949788_10" style="display: none;">
+                <p><a href="/articles/fordevelopers/utility/a/gotoUrl" onclick="return n(&#39;!fordevelopers/utility/a/gotoUrl&#39;,this);">Version 2.0</a>
+                </p>
+            </div>
+        </div>
+        <p class="bold">Description</p>
+        <p class="BodyIndent">This function is simply a convenience wrapper to navigate the current browser window to another URL.</p>
+        <p class="bold">Parameters</p>
+        <p class="BodyIndentHanging"><b>pagePath</b> The URI string for a web page.</p>
+        <p class="bold">Return Value</p>
+        <p class="BodyIndent">None</p>
+        <p class="example">Example</p>
+        <p class="Code1">envianceSdk.utilities.uri.gotoUrl("/Pages/PageA.html");</p>
+        <h2 class="jsmethod" id="h2_2056639529" data-has-heading-anchor="true"><a name="uri.toQuickLink"></a>envianceSdk.utilities.uri.toQuickLink<a href="/articles/fordevelopers/version1/a/h2_2056639529" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/version1/a/h2_2056639529&#39;,this);"></a></h2>
+        <p class="bold">Version 1.0</p>
+        <div class="MCDropDown_0">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4249949788_11" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_4249949788_11" style="display: none;">
+                <p><a href="/articles/fordevelopers/utility/a/uri.toQuickLink" onclick="return n(&#39;!fordevelopers/utility/a/uri.toQuickLink&#39;,this);">Version 2.0</a>
+                </p>
+            </div>
+        </div>
+        <p class="bold">Description</p>
+        <p class="BodyIndent">This function creates the URI to a Quick Link which has been configured in the Management System. Unlike envianceSdk.packages.utilities.uri.toQuickLink, this function will return the URI to load the Quick Link in the content frame of the Management System.</p>
+        <p class="bold">Parameters</p>
+        <p class="BodyIndentHanging"><b>id</b> The unique id string for a Quick Link in the Management System.</p>
+        <p class="bold">Return Value</p>
+        <p class="BodyIndent">The URI.</p>
+        <p class="example">Example</p>
+        <p class="Code1">var uri = envianceSdk.utilities.uri.toQuickLink("67fed526-4787-4fed-9627-32cd01a44c32");</p>
+        <p class="Code1">envianceSdk.utilities.uri.gotoUrl(uri);</p>
+        <h2 class="jsmethod" id="h2__2030650968" data-has-heading-anchor="true"><a name="getSessionId"></a>envianceSdk.getSessionId<a href="/articles/fordevelopers/version1/a/h2__2030650968" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/version1/a/h2__2030650968&#39;,this);"></a></h2>
+        <p class="bold">Version 1.0</p>
+        <div class="MCDropDown_0">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4249949788_12" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_4249949788_12" style="display: none;">
+                <p><a href="/articles/fordevelopers/utility/a/getSessionId" onclick="return n(&#39;!fordevelopers/utility/a/getSessionId&#39;,this);">Version 2.0</a>
+                </p>
+            </div>
+        </div>
+        <p class="bold">Description</p>
+        <p class="BodyIndent">This function retrieves the current saved session id for the User.</p>
+        <p class="bold">Parameters</p>
+        <p class="BodyIndent">None</p>
+        <p class="bold">Return Value</p>
+        <p class="BodyIndent">Current user's session id</p>
+        <p class="example">Example</p>
+        <p class="Code1">var sessionId = envianceSdk.getSessionId();</p>
+        <h2 class="jsmethod" id="h2__1295057868" data-has-heading-anchor="true"><a name="setSessionId"></a>envianceSdk.setSessionId<a href="/articles/fordevelopers/version1/a/h2__1295057868" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/version1/a/h2__1295057868&#39;,this);"></a></h2>
+        <p class="bold">Version 1.0</p>
+        <div class="MCDropDown_0">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4249949788_13" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_4249949788_13" style="display: none;">
+                <p><a href="/articles/fordevelopers/utility/a/setSessionId" onclick="return n(&#39;!fordevelopers/utility/a/setSessionId&#39;,this);">Version 2.0</a>
+                </p>
+            </div>
+        </div>
+        <p class="bold">Description</p>
+        <p class="BodyIndent">This function saves the User's session id, for subsequent use in other SDK methods that call the EMS APIs.</p>
+        <p class="BodyIndent">Typically, you will not call this function directly, unless you have manually authenticated the User and have a new session id. Note that envianceSdk.authentication.authenticate calls this function automatically for you to save the resulting session id.</p>
+        <p class="bold">Parameters</p>
+        <p class="BodyIndentHanging"><b>sessionId</b> The session id string.</p>
+        <p class="bold">Return Value</p>
+        <p class="BodyIndent">None</p>
+        <p class="example">Example</p>
+        <p class="Code1">envianceSdk.setSessionId("68f5e005-e060-4699-8741-a80d8b788189");</p>
+        <h2 class="jsmethod" id="h2_170966445" data-has-heading-anchor="true"><a name="getSystemId"></a>envianceSdk.getSystemId<a href="/articles/fordevelopers/version1/a/h2_170966445" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/version1/a/h2_170966445&#39;,this);"></a></h2>
+        <p class="bold">Version 1.0</p>
+        <div class="MCDropDown_0">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4249949788_14" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_4249949788_14" style="display: none;">
+                <p><a href="/articles/fordevelopers/utility/a/getSystemId" onclick="return n(&#39;!fordevelopers/utility/a/getSystemId&#39;,this);">Version 2.0</a>
+                </p>
+            </div>
+        </div>
+        <p class="bold">Description</p>
+        <p class="BodyIndent">This function retrieves the current saved session id for the User.</p>
+        <p class="bold">Parameters</p>
+        <p class="BodyIndent">None</p>
+        <p class="bold">Return Value</p>
+        <p class="BodyIndent">None</p>
+        <p class="example">Example</p>
+        <p class="Code1">var sessionId = envianceSdk.getSystemId();</p>
+        <h2 class="jsmethod" id="h2_907361057" data-has-heading-anchor="true"><a name="setSystemId"></a>envianceSdk.setSystemId<a href="/articles/fordevelopers/version1/a/h2_907361057" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/version1/a/h2_907361057&#39;,this);"></a></h2>
+        <p class="bold">Version 1.0</p>
+        <div class="MCDropDown_0">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4249949788_15" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_4249949788_15" style="display: none;">
+                <p><a href="/articles/fordevelopers/utility/a/setSystemId" onclick="return n(&#39;!fordevelopers/utility/a/setSystemId&#39;,this);">Version 2.0</a>
+                </p>
+            </div>
+        </div>
+        <p class="bold">Description</p>
+        <p class="BodyIndent">This function saves the User's current system id, for subsequent use in other SDK functions that call the EMS APIs. Typically, you will not need to call this function directly, unless you want to force a change in the User's system context.</p>
+        <p class="bold">Parameters</p>
+        <p class="BodyIndentHanging"><b>systemId</b> The system id.</p>
+        <p class="bold">Return Value</p>
+        <p class="BodyIndent">None</p>
+        <p class="example">Example</p>
+        <p class="Code1">envianceSdk.setSystemId("52acfb0e-cea3-4b06-a985-fb37eff8f57a");</p>
+        <h2 class="jsmethod" id="h2_427851665" data-has-heading-anchor="true"><a name="createWorkflow"></a>envianceSdk.workflow.createWorkflow<a href="/articles/fordevelopers/version1/a/h2_427851665" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/version1/a/h2_427851665&#39;,this);"></a></h2>
+        <p class="bold">Version 1.0</p>
+        <div class="MCDropDown_0">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4249949788_16" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_4249949788_16" style="display: none;">
+                <p><a href="/articles/fordevelopers/workflow/a/createWorkflow" onclick="return n(&#39;!fordevelopers/workflow/a/createWorkflow&#39;,this);">Version 2.0</a>
+                </p>
+            </div>
+        </div>
+        <p class="bold">Description</p>
+        <p class="BodyIndent">This function creates a new Workflow, and places it on the "Init" Step.</p>
+        <p class="bold">Parameters</p>
+        <p class="BodyIndentHanging"><b>workflowCreationInformation</b>  The WorkflowCreationInformation necessary to create the Workflow.</p>
+        <p class="BodyIndentHanging"><b>onsuccess</b> An optional callback function to handle the call result.</p>
+        <p class="BodyIndentHanging"><b>onerror</b> An optional callback function to handle any call error.</p>
+        <p class="bold">Return Value</p>
+        <p class="BodyIndent">The unique id of the Workflow</p>
+        <p><b>Notes</b>
+        </p>
+        <p class="BodyIndent">None</p>
+        <p class="example">Example</p>
+        <p class="Code1">var wf = new envianceSdk.workflow.CreationInformation(</p>
+        <p class="Code2">"Incident Workflow", "A new Workflow", "123456", "2012-12-30T00:00");</p>
+        <p class="Code1">wf.addTagAssociatedObject("ObjectTag"); // object tag</p>
+        <p class="Code1">wf.addPathAssociatedObject("System\\Division\\Facility\\Unit A"); // path to object</p>
+        <p class="Code1">wf.addDocument("System\\Folder A\\Folder B\\Document.doc");</p>
+        <p class="Code1">envianceSdk.workflow.createWorkflow(wf, function(response) {</p>
+        <p class="Code2">var uniqueId = response.result;</p>
+        <p class="Code2">alert("Workflow has been created:" + uniqueId);</p>
+        <p class="Code1">});</p>
+        <h2 class="jsmethod" id="h2_1652682928" data-has-heading-anchor="true"><a name="deleteWorkflow"></a>envianceSdk.workflow.deleteWorkflow<a href="/articles/fordevelopers/version1/a/h2_1652682928" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/version1/a/h2_1652682928&#39;,this);"></a></h2>
+        <p class="bold">Version 1.0</p>
+        <div class="MCDropDown_0">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4249949788_17" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_4249949788_17" style="display: none;">
+                <p><a href="/articles/fordevelopers/workflow/a/deleteWorkflow" onclick="return n(&#39;!fordevelopers/workflow/a/deleteWorkflow&#39;,this);">Version 2.0</a>
+                </p>
+            </div>
+        </div>
+        <p class="bold">Description</p>
+        <p class="BodyIndent">This function deletes an existing Workflow.</p>
+        <p class="bold">Parameters</p>
+        <p class="BodyIndentHanging"><b>id	</b>The id string (GUID) of the Workflow to delete.</p>
+        <p class="BodyIndentHanging"><b>onsuccess	</b>An optional callback function to handle the call result.</p>
+        <p class="BodyIndentHanging"><b>onerror	</b>An optional callback function to handle any call error.</p>
+        <p class="bold">Return Value</p>
+        <p class="BodyIndent">None</p>
+        <p class="example">Example</p>
+        <p class="Code1">envianceSdk.workflow.deleteWorkflow("123456", function(response) {</p>
+        <p class="Code1">alert("Workflow has been deleted!");</p>
+        <p class="Code1">});</p>
+        <h2 class="jsmethod" id="h2__626671820" data-has-heading-anchor="true"><a name="generateUniqueIds"></a>envianceSdk.workflow.generateUniqueIds<a href="/articles/fordevelopers/version1/a/h2__626671820" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/version1/a/h2__626671820&#39;,this);"></a></h2>
+        <p class="bold">Version 1.0</p>
+        <div class="MCDropDown_0">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4249949788_18" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_4249949788_18" style="display: none;">
+                <p><a href="/articles/fordevelopers/workflow/a/generateUniqueIds" onclick="return n(&#39;!fordevelopers/workflow/a/generateUniqueIds&#39;,this);">Version 2.0</a>
+                </p>
+            </div>
+        </div>
+        <p class="bold">Description</p>
+        <p class="BodyIndent">This function generates a series of Workflow unique id strings, using the unique id generation scheme that has been configured for the Workflow Type. Note that for generation schemes that use numeric counters, the counter will be incremented for each generated unique id, whether or not the unique id is subsequently used.</p>
+        <p class="bold">Parameters</p>
+        <p class="BodyIndentHanging"><b>workflowTypeName	</b>The name of the Workflow Type.</p>
+        <p class="BodyIndentHanging"><b>count	</b>The number of unique ids to generate.</p>
+        <p class="BodyIndentHanging"><b>onsuccess	</b>An optional callback function to handle the call result.</p>
+        <p class="BodyIndentHanging"><b>onerror	</b>An optional callback function to handle any call error.</p>
+        <p class="bold">Return Value</p>
+        <p class="BodyIndent">An array of unique id strings.</p>
+        <p class="example">Example</p>
+        <p class="Code1">envianceSdk.workflow.generateUniqueIds("Spill Incident", 1, function(response) {</p>
+        <p class="Code2">alert("Workflow unique id generated: " + response.result[0]);</p>
+        <p class="Code1">});</p>
+        <h2 class="jsmethod" id="h2_1277614416" data-has-heading-anchor="true"><a name="updateWorkflowStep"></a>envianceSdk.workflow.updateWorkflowStep<a href="/articles/fordevelopers/version1/a/h2_1277614416" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/version1/a/h2_1277614416&#39;,this);"></a></h2>
+        <p class="bold">Version 1.0</p>
+        <div class="MCDropDown_0">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4249949788_19" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_4249949788_19" style="display: none;">
+                <p><a href="/articles/fordevelopers/workflow/a/updateWorkflowStep" onclick="return n(&#39;!fordevelopers/workflow/a/updateWorkflowStep&#39;,this);">Version 2.0</a>
+                </p>
+            </div>
+        </div>
+        <p class="bold">Description</p>
+        <p class="BodyIndent">This function updates the Form Field values of the current Step of an existing Workflow.
+Optionally, a Step Action (including Close) that exists on the current Step and which is valid for the current User may also be specified, resulting in a transition of the Workflow to another Step.
+</p>
+        <p class="bold">Parameters</p>
+        <p class="BodyIndentHanging"><b>workflowStepInformation	</b>The WorkflowStepInformation with which to update the Step.</p>
+        <p class="BodyIndentHanging"><b>id	</b>The id string (GUID) of the Workflow to update.</p>
+        <p class="BodyIndentHanging"><b>stepName	</b>The name of the Step to update.</p>
+        <p class="BodyIndentHanging"><b>onsuccess	</b>An optional callback function to handle the call result.</p>
+        <p class="BodyIndentHanging"><b>onerror	</b>An optional callback function to handle any call error.</p>
+        <p class="bold">Return Value</p>
+        <p class="BodyIndent">None</p>
+        <p class="example">Example</p>
+        <p class="Code1">var wfStep = new envianceSdk.workflow.StepInformation("My comment");</p>
+        <p class="Code1">wfStep.addScalarFieldValue("Field A", 1); // simple scalar</p>
+        <p class="Code1">wfStep.addMultiFieldValues("Field B", ["One", "Two", "Three"]); // multi-select</p>
+        <p class="Code1">wfStep.transition("Review", "2012-12-30", "Joe Smith"); // transition to "Review"</p>
+        <p class="Code1">envianceSdk.workflow.updateWorkflowStep(wfStep, "3febcaae-b8c0-4988-93b8-6e11b1953fc0", "Record Incident",</p>
+        <p class="Code2">function(response) {</p>
+        <p class="Code3">alert("Workflow has been updated!");</p>
+        <p class="Code2">}</p>
+        <p class="Code1">);</p>
+        <h2 class="jsmethod" id="h2__1063882413" data-has-heading-anchor="true"><a name="configure"></a>envianceSdk.configure<a href="/articles/fordevelopers/version1/a/h2__1063882413" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/version1/a/h2__1063882413&#39;,this);"></a></h2>
+        <p class="bold">Version:&nbsp;1.0</p>
+        <div class="MCDropDown_0">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4249949788_20" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_4249949788_20" style="display: none;">
+                <p><a href="/articles/fordevelopers/configuration/a/configure" onclick="return n(&#39;!fordevelopers/configuration/a/configure&#39;,this);">Version 2.0</a>
+                </p>
+            </div>
+        </div>
+        <p class="bold">Description	</p>
+        <p class="BodyIndent">Sets configuration parameters that control the behavior of the SDK.</p>
+        <p class="bold">Parameters	</p>
+        <p class="BodyIndent">A JSON object literal with the following properties:</p>
+        <p class="BodyIndentHanging"><b>baseAddress</b>  A string containing the full URI to the EMS API host.  Typically, this will be https://api.enviance.com.  Default is null.</p>
+        <p class="BodyIndentHanging"><b>variablesManager</b>  Either "simple" or "cookies".  This setting specifies which VariablesManager (i.e. local state manager) will be used by the SDK.  Default is "simple".</p>
+        <p class="BodyIndentHanging"><b>sessionId</b> The session id string of the current authenticated User. Typically the session id is set upon calling authenticate, so it should not be specified. Default is null.</p>
+        <p class="BodyIndentHanging"><b>systemId</b>  The current system id string in which APIs should operate.  Typically the system id is set upon calling authenticate, so it should not be specified.  Default is null.</p>
+        <p class="BodyIndentHanging"><b>crossDomainWorkaround</b>  Specifies whether or not the SDK will use alternative functions for making cross domain calls.  Options are "ifneeded", "always", "off".  When set to "ifneeded", the SDK will detect if the browser make and version requires it.  Default is "ifneeded".</p>
+        <p class="BodyIndentHanging"><b>resubmitConfirmationOnError</b>  This Boolean setting controls whether or not the SDK will automatically prompt the User to retry an API call if it has timed out.  Default is true.</p>
+        <p class="bold">Return Value	</p>
+        <p class="BodyIndent">None</p>
+        <p class="bold">Notes	</p>
+        <p class="BodyIndent">If you are writing an EMS App, calling the <b>init </b>function of the EMS Apps library will in turn call this function with the typical and appropriate configuration values, so you should not have to call this function yourself.</p>
+        <p class="example">Example</p>
+        <p class="Code1">envianceSdk.configure({</p>
+        <p class="Code2">baseAddress: "https://api.enviance.com",</p>
+        <p class="Code2">variablesManager: "simple",</p>
+        <p class="Code2">crossDomainWorkAround: "ifneeded",</p>
+        <p class="Code2">resubmitConfirmationOnError: false</p>
+        <p class="Code1">});</p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js" data-aspx-savednextwhitespace="%0A%20%20%20%20">
+        </script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

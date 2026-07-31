@@ -1,0 +1,382 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/systemservice"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>System Service</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='System Service';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><p>
+	</p><nav>
+  
+    <a href="/" target="_top">Home</a>
+  
+    <a href="/apis_list.html" target="_top">APIs</a>
+  
+</nav>
+
+    <section>
+    <h1 id="admin-system-apis-and-data-types" data-has-heading-anchor="true">Admin System APIs and Data Types<a href="/articles/fordevelopers/systemservice/a/admin-system-apis-and-data-types" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/admin-system-apis-and-data-types&#39;,this);"></a></h1>
+<p>The Enviance Admin Tool API is used by Administrators of the Platform project to deploy/undeploy Environment and System databases with admin scripts. Also this API allow manage impersonate tokens</p>
+
+<h2 id="version-10" data-has-heading-anchor="true">Version: 1.0<a href="/articles/fordevelopers/systemservice/a/version-10" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/version-10&#39;,this);"></a></h2>
+
+<p></p><p><strong>License:</strong> <a href="http://www.enviance.com" target="_top">Enviance, Inc.</a></p>
+
+<h3 id="environmentidorname"><br/></h3><h3 id="environmentidorname" data-has-heading-anchor="true">/{environmentIdOrName}<a href="/articles/fordevelopers/systemservice/a/environmentidorname" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/environmentidorname&#39;,this);"></a></h3>
+
+<h4 id="post" data-has-heading-anchor="true">POST<a href="/articles/fordevelopers/systemservice/a/post" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/post&#39;,this);"></a></h4>
+<h5 id="summary" data-has-heading-anchor="true">Summary:<a href="/articles/fordevelopers/systemservice/a/summary" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/summary&#39;,this);"></a></h5>
+
+<p>Create System.</p>
+
+<h5 id="description" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/systemservice/a/description" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/description&#39;,this);"></a></h5>
+
+<p>** Example:** ‘POST /Admin/api/SystemService.svc/Platform%20v50.1 HTTP/1.1’</p>
+
+<h5 id="parameters" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/systemservice/a/parameters" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/parameters&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">environmentIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An Environment ID (Guid) or urlEncoded name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/systemservice/a/responses" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/responses&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">201</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">500</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Not OK result. Something goes wrong on server side.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="environmentidornamesystemidorname"><br/></h3><h3 id="environmentidornamesystemidorname" data-has-heading-anchor="true">/{environmentIdOrName}/{systemIdOrName}<a href="/articles/fordevelopers/systemservice/a/environmentidornamesystemidorname" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/environmentidornamesystemidorname&#39;,this);"></a></h3>
+
+<h4 id="get" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/systemservice/a/get" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/get&#39;,this);"></a></h4>
+<h5 id="summary-1" data-has-heading-anchor="true">Summary:<a href="/articles/fordevelopers/systemservice/a/summary-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/summary-1&#39;,this);"></a></h5>
+
+<p>Get System full info and settings.</p>
+
+<h5 id="description-1" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/systemservice/a/description-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/description-1&#39;,this);"></a></h5>
+
+<p>** Example:** ‘GET /Admin/api/SystemService.svc/Platform%20v50.1/System%20Name HTTP/1.1’</p>
+
+<h5 id="parameters-1" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/systemservice/a/parameters-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/parameters-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">environmentIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An Environment ID (Guid) or urlEncoded name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">systemIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An System ID (Guid) or urlEncoded name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-1" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/systemservice/a/responses-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/responses-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="patch" data-has-heading-anchor="true">PATCH<a href="/articles/fordevelopers/systemservice/a/patch" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/patch&#39;,this);"></a></h4>
+<h5 id="summary-2" data-has-heading-anchor="true">Summary:<a href="/articles/fordevelopers/systemservice/a/summary-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/summary-2&#39;,this);"></a></h5>
+
+<p>Update System info.</p>
+
+<h5 id="description-2" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/systemservice/a/description-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/description-2&#39;,this);"></a></h5>
+
+<p>** Example:** ‘PATCH /Admin/api/SystemService.svc/Platform%20v50.1/System%20Name HTTP/1.1’</p>
+
+<h5 id="parameters-2" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/systemservice/a/parameters-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/parameters-2&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">environmentIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An Environment ID (Guid) or urlEncoded name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">systemIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An System ID (Guid) or urlEncoded name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-2" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/systemservice/a/responses-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/responses-2&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="delete" data-has-heading-anchor="true">DELETE<a href="/articles/fordevelopers/systemservice/a/delete" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/delete&#39;,this);"></a></h4>
+<h5 id="summary-3" data-has-heading-anchor="true">Summary:<a href="/articles/fordevelopers/systemservice/a/summary-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/summary-3&#39;,this);"></a></h5>
+
+<p>Delete System</p>
+
+<h5 id="description-3" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/systemservice/a/description-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/description-3&#39;,this);"></a></h5>
+
+<p>** Example:** ‘DELETE /Admin/api/SystemService.svc/Platform%20v50.1/System%20Name HTTP/1.1’</p>
+
+<h5 id="parameters-3" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/systemservice/a/parameters-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/parameters-3&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">environmentIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An Environment ID (Guid) or urlEncoded name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">systemIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An System ID (Guid) or urlEncoded name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-3" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/systemservice/a/responses-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/responses-3&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="post-1" data-has-heading-anchor="true">POST<a href="/articles/fordevelopers/systemservice/a/post-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/post-1&#39;,this);"></a></h4>
+<h5 id="summary-4" data-has-heading-anchor="true">Summary:<a href="/articles/fordevelopers/systemservice/a/summary-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/summary-4&#39;,this);"></a></h5>
+
+<p>Clone System.</p>
+
+<h5 id="description-4" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/systemservice/a/description-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/description-4&#39;,this);"></a></h5>
+
+<p>** Example:** ‘POST /Admin/api/SystemService.svc/Platform%20v50.1/System%20Name HTTP/1.1’</p>
+
+<h5 id="parameters-4" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/systemservice/a/parameters-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/parameters-4&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">environmentIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An Environment ID (Guid) or urlEncoded name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">systemIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An System ID (Guid) or urlEncoded name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-4" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/systemservice/a/responses-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/responses-4&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">201</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="environmentidornamesystemidornamefillbyxmls"><br/></h3><h3 id="environmentidornamesystemidornamefillbyxmls" data-has-heading-anchor="true">/{environmentIdOrName}/{systemIdOrName}/FillByXmls<a href="/articles/fordevelopers/systemservice/a/environmentidornamesystemidornamefillbyxmls" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/environmentidornamesystemidornamefillbyxmls&#39;,this);"></a></h3>
+
+<h4 id="patch-1" data-has-heading-anchor="true">PATCH<a href="/articles/fordevelopers/systemservice/a/patch-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/patch-1&#39;,this);"></a></h4>
+<h5 id="summary-5" data-has-heading-anchor="true">Summary:<a href="/articles/fordevelopers/systemservice/a/summary-5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/summary-5&#39;,this);"></a></h5>
+
+<p>Fill System Data with Xmls via DDF Data Generator.</p>
+
+<h5 id="description-5" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/systemservice/a/description-5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/description-5&#39;,this);"></a></h5>
+
+<p>** Example:** ‘PATCH /Admin/api/SystemService.svc/Platform%20v50.1/System%20Name/FillByXmls HTTP/1.1’</p>
+
+<h5 id="parameters-5" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/systemservice/a/parameters-5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/parameters-5&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">environmentIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An Environment ID (Guid) or urlEncoded name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">systemIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An System ID (Guid) or urlEncoded name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-5" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/systemservice/a/responses-5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/systemservice/a/responses-5&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+    </section>
+    <br/><p><br/></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

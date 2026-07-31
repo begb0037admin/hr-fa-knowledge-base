@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/errorhandling"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Error Handling</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Error Handling';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1__135274013" data-has-heading-anchor="true">Error Handling<a href="/articles/fordevelopers/errorhandling/a/h1__135274013" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/errorhandling/a/h1__135274013&#39;,this);"></a></h1>
+        <p class="BodyText">After sending a command to the EMS Web Services, you need to monitor and handle any errors that may occur. Error handling in web services depends on whether calls are synchronous or asynchronous. </p>
+        <p class="BodyText">Most EMS APIs are synchronous, unless  "async" is indicated in the name. You often have an option to use the synch or "async" version, according to your purposes.</p>
+        <p class="BodyText"><b>Synchronous calls</b>: Once a command is sent, other processing stops until the transaction is complete or fails. An error is generated and the process stops. You must then capture the response and handle the error before continuing.</p>
+        <p class="BodyText"><b>Asynchronous calls</b>:&nbsp;Calls are made asynchronously, which means that the command is queued and the client can continue with other processing in the meantime rather than wait for the response. For asynchronous calls, you will need to get the command ID and poll the command status until it is complete or errors.</p>
+        <p class="BodyText">To get the command status with the <b>REST&nbsp;APIs</b>, use <a href="/articles/fordevelopers/command" onclick="return n(&#39;!fordevelopers/command&#39;,this);">GET/Command/{commandId}</a></p>
+        <p><i>Example:</i>
+        </p>
+        <p class="CodeLast">GET /ver2/CommandService.svc/commands/08fc5438-a0d8-4bf9-9141-12dd98e7ce80/ HTTP/1.1</p>
+        <p><i>Response:</i>
+        </p>
+        <p class="Code1">{</p>
+        <p class="Code2">"id": "08fc5438-a0d8-4bf9-9141-12dd98e7ce80",
+</p>
+        <p class="Code2">  "description": "Data batch processed.",
+</p>
+        <p class="Code2">  "issued": "2012-12-01T08:00:00",
+  </p>
+        <p class="Code2">"startedProcessing": "2012-12-01T08:01:00",
+</p>
+        <p class="Code2">  "finishedProcessing": "2012-12-01T08:02:00",
+  </p>
+        <p class="Code2">"status": "Succeeded",
+  </p>
+        <p class="Code2">"objects": ["/Facility A/Unit X/Parameter Z"],
+</p>
+        <p class="Code2">  "user": "JSmith",
+</p>
+        <p class="Code2">  "errorInfo": {
+</p>
+        <p class="Code3">    "error": "Requirement with Tag 'GZB_AVG_SORTED' could not be found in the system.",
+    </p>
+        <p class="Code3">"details": [
+</p>
+        <p class="Code4">      { "key": "Tag", "value": "GZB_AVG_SORTED" },
+</p>
+        <p class="Code4">      { "key": "Complete Date", "value": "2012-02-08T09:50:00" },
+</p>
+        <p class="Code4">      { "key": "Value", "value": "18.00803565979" }
+</p>
+        <p class="Code3">    ]
+  </p>
+        <p class="Code2">}</p>
+        <p class="CodeLast">}</p>
+        <p>If you are using <b>SOAP</b> web services, you can use the function:</p>
+        <p class="CodeLast">CommandStatusCode GetBatchStatus(GUID batchID)</p>
+        <p class="BodyText">located in DataService.asmx. See <a href="/articles/fordevelopers/ws-dataservice" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!fordevelopers/ws-dataservice&#39;,this);">DataService</a>.</p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js" data-aspx-savednextwhitespace="%0A%20%20%20%20">
+        </script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/integrationflow"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Integration Flow</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Integration Flow';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 class="Heading1" id="h1_53232924" data-has-heading-anchor="true">Integration Flow<a href="/articles/fordevelopers/integrationflow/a/h1_53232924" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/integrationflow/a/h1_53232924&#39;,this);"></a></h1>
+        <p class="BodyText">Before attempting to execute any action in the Management System, the client needs to authenticate. If not, an "Invalid Session ID" exception will be thrown. </p>
+        <p class="BodyText">The appropriate sequence of steps is:</p>
+        <ol>
+            <li value="1"><a href="/articles/fordevelopers/integrationflow/a/Login" onclick="return n(&#39;!fordevelopers/integrationflow/a/Login&#39;,this);">Log in</a>
+            </li>
+            <li value="2"><a href="/articles/fordevelopers/integrationflow/a/SessionID" onclick="return n(&#39;!fordevelopers/integrationflow/a/SessionID&#39;,this);">Obtain Session ID</a>
+            </li>
+            <li value="3"><a href="/articles/fordevelopers/integrationflow/a/CheckTags" onclick="return n(&#39;!fordevelopers/integrationflow/a/CheckTags&#39;,this);">Check Tags for Existence</a>
+            </li>
+            <li value="4"><a href="/articles/fordevelopers/integrationflow/a/SendData" onclick="return n(&#39;!fordevelopers/integrationflow/a/SendData&#39;,this);">Send data</a>
+            </li>
+            <li value="5"><a href="/articles/fordevelopers/integrationflow/a/BatchID" onclick="return n(&#39;!fordevelopers/integrationflow/a/BatchID&#39;,this);">Obtain Batch ID</a>
+            </li>
+            <li value="6"><a href="/articles/fordevelopers/integrationflow/a/CheckStatus" onclick="return n(&#39;!fordevelopers/integrationflow/a/CheckStatus&#39;,this);">Check Status of Transaction</a>
+            </li>
+            <li value="7"><a href="/articles/fordevelopers/integrationflow/a/Logout" onclick="return n(&#39;!fordevelopers/integrationflow/a/Logout&#39;,this);">Log out</a>
+            </li>
+        </ol>
+        <p class="bold"><a name="ProcessDiagram"></a>Process Diagram</p>
+        <p>
+            <img src="images/WebServicesProcess.png" loading="lazy"/>
+        </p>
+        <h2 id="h2_1730291155" data-has-heading-anchor="true"><a name="Login"></a>1- Login<a href="/articles/fordevelopers/integrationflow/a/h2_1730291155" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/integrationflow/a/h2_1730291155&#39;,this);"></a></h2>
+        <p class="BodyText">In order to authenticate the client must call the function</p>
+        <p class="CodeLast">GUID Authenticate(string userName, string password)</p>
+        <p class="BodyText">providing the username and password. If successful, the function will return the Session ID, which must be preserved by the client for future reference. If the username or password is invalid, an "Authentication exception" will be thrown.</p>
+        <p class="BodyText">Some restrictions apply to users who use EMS Web Services:</p>
+        <ul>
+            <li value="1">	User cannot change current system. This means that user can operate only on the Home System.</li>
+            <li value="2">The login used for Web Services operations should ideally be in the Administrators user group in order to be able to perform data operations on any object.</li>
+        </ul>
+        <h2 class="Heading2" id="h2_874713128" data-has-heading-anchor="true"><a name="SessionID"></a>2- Session ID<a href="/articles/fordevelopers/integrationflow/a/h2_874713128" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/integrationflow/a/h2_874713128&#39;,this);"></a></h2>
+        <p class="BodyText">The username and password must be provided only once, at the very beginning of the session. Successful login will issue the Session ID to the client, which must then be provided as a special SOAP header with any call to the Web Service. The Server internally maps the Session ID to User.</p>
+        <p class="BodyText">The Session has an expiration time (as set within the client system). If the user has been idle for the specified period of time, the Session becomes invalid and the client needs to re-login and obtain a new Session ID.</p>
+        <h2 class="Heading2" id="h2_831484413" data-has-heading-anchor="true"><a name="CheckTags"></a>3- Check Tags<a href="/articles/fordevelopers/integrationflow/a/h2_831484413" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/integrationflow/a/h2_831484413&#39;,this);"></a></h2>
+        <p class="BodyText">Internally all objects in the Management System are identified by a unique ID. However clients have no way to control these IDs. This means that the client cannot write software that uses the Object IDs because the ID cannot be known before the object is created. Also, in the case of object re-creation, the object ID is changed.</p>
+        <p class="BodyText">To address those problems, Object Tags are used. The client can assign a string Tag to any Compliance Object. The Tag must be unique within the system. Usually Tags are named so that it is easy to find the object in the system if the system has some kind of regular structure. For example "GR_1_OP" might be decoded as "Greg River/Location 1/Opacity Data".</p>
+        <p class="BodyText">When data is uploaded it must be associated with the specific requirement to which it belongs. This mapping is done by Tag ID.</p>
+        <p class="BodyText">Before doing a data upload, it is recommended that all Tags in the batch to be submitted be validated with the validation function in TreeService.asmx (see <a href="/articles/fordevelopers/ws-treeservice" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!fordevelopers/ws-treeservice&#39;,this);">Tree Service</a>):</p>
+        <p class="CodeLast">string[] CheckTagsExist(string[] objectTags)</p>
+        <p class="BodyText">"objectTags" is a list of tags to be checked for existence. The function will return a list of invalid tags, if any. If this function returns a non-empty result, appropriate action must be taken by the client.</p>
+        <h2 class="Heading2" id="h2_558128425" data-has-heading-anchor="true"><a name="SendData"></a>4- Send Data<a href="/articles/fordevelopers/integrationflow/a/h2_558128425" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/integrationflow/a/h2_558128425&#39;,this);"></a></h2>
+        <p class="BodyText">To submit a data batch to EMS, call the function:</p>
+        <p class="CodeLast">GUID SubmitNumericDataBatchByTag(XmlElement batch)</p>
+        <p class="BodyText">from DataService.asmx web service (see <a href="/articles/fordevelopers/ws-dataservice" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!fordevelopers/ws-dataservice&#39;,this);">DataService</a>). This function is asynchronous and returns a BatchID for this data batch. The parameter "batch" is specially formatted xml. For example:</p>
+        <p class="Code1">&lt;SubmitNumericDataBatch xmlns="http://enviance.com/2012/DataService"&gt;</p>
+        <p class="Code2">&lt;batch&gt;</p>
+        <p class="Code3">&lt;DataPoint&gt;</p>
+        <p class="Code4">&lt;RequirementId xsi:type="TagID"&gt;</p>
+        <p class="Code4">&lt;Tag&gt;sample_tag_id&lt;/Tag&gt;</p>
+        <p class="Code4">&lt;/RequirementId&gt;</p>
+        <p class="Code4">&lt;Collector&gt;sample_col&lt;/Collector&gt;</p>
+        <p class="Code4">&lt;Value&gt;10.99&lt;/Value&gt;</p>
+        <p class="Code4">&lt;Complete&gt;2013-04-30T11:01:24.0832839-07:00&lt;/Complete&gt;</p>
+        <p class="Code3">&lt;/DataPoint&gt;</p>
+        <p class="Code2">&lt;/batch&gt;</p>
+        <p class="Code2">&lt;partialProcess&gt;false&lt;/partialProcess&gt;</p>
+        <p class="Code2">&lt;autoResubmit&gt;false&lt;/autoResubmit&gt;</p>
+        <p class="Code1">&lt;/SubmitNumericDataBatch&gt;</p>
+        <p class="Code1">&nbsp;</p>
+        <p class="BodyText">As noted above, Tag is the unique identifier of the object in the system and is set up by the system user. Other attributes, Collector, Collected, Type, Value are the same fields used to enter data manually using the Web interface.</p>
+        <p class="BodyText">The formal xml schema definition for this parameter can be obtained at the DataService.wsdl. See <a href="/articles/fordevelopers/ws-dataservice" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!fordevelopers/ws-dataservice&#39;,this);">DataService</a>.</p>
+        <h2 class="Heading2" id="h2__705259787" data-has-heading-anchor="true"><a name="BatchID"></a>5- BatchID<a href="/articles/fordevelopers/integrationflow/a/h2__705259787" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/integrationflow/a/h2__705259787&#39;,this);"></a></h2>
+        <p class="BodyText">Data upload function is asynchronous. This means that after successful data upload and de-serializing, the server puts the data and information concerning the action that needs to be executed into a queue. The server executes the action to insert the data into the system at a later time. This makes it impossible for the client to wait for the result of the data upload, because the wait time is indeterminate. In order to give the client the ability to know the result of data upload, the data upload function returns a unique ID for the batch process. The client can then periodically query the system asking for the status of the batch process.</p>
+        <h2 class="Heading2" id="h2__1572364171" data-has-heading-anchor="true"><a name="CheckStatus"></a>6- Check Status<a href="/articles/fordevelopers/integrationflow/a/h2__1572364171" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/integrationflow/a/h2__1572364171&#39;,this);"></a></h2>
+        <p class="BodyText">A query for the Batch Process can return terminal (Failed or Succeeded) or non-terminal (Waiting or Processing) status. If there was manual intervention into the Command Log, another terminal status is possible, "Resubmitted". For more info on error handling see <a href="/articles/fordevelopers/errorhandling" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!fordevelopers/errorhandling&#39;,this);">Error Handling</a>.</p>
+        <p class="BodyText">The function signature is:</p>
+        <p class="CodeLast">CommandStatusCode GetBatchStatus(GUID batchID)</p>
+        <p class="BodyText">It is located in DataService.asmx. See <a href="/articles/fordevelopers/ws-dataservice" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!fordevelopers/ws-dataservice&#39;,this);">DataService</a>.</p>
+        <h2 class="Heading2" id="h2_967058868" data-has-heading-anchor="true"><a name="Logout"></a>7- Logout<a href="/articles/fordevelopers/integrationflow/a/h2_967058868" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/integrationflow/a/h2_967058868&#39;,this);"></a></h2>
+        <p class="BodyText">For security reasons, the client should log out as soon as the task is complete.</p>
+        <p class="BodyText">The logout function signature is:</p>
+        <p class="CodeLast">void CloseSession()</p>
+        <p class="BodyText">It is located in AuthService.asmx. See <a href="/articles/fordevelopers/ws-authenticate" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!fordevelopers/ws-authenticate&#39;,this);">Authenticate</a>.</p>
+        <p class="BodyText">The client must provide the Session ID in the SOAP header like any other function.</p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js" data-aspx-savednextwhitespace="%0A%20%20%20%20">
+        </script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

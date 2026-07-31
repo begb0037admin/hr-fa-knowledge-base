@@ -1,0 +1,153 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/impersonation"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Impersonation</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Impersonation';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1__551740994" data-has-heading-anchor="true">
+  Impersonation<br/>
+<p class="Note" style="color: #555555; font-size: 13.3333px; text-decoration-color: initial; border-color: #555555;">Note: Impersonation is only available for the Management System EQL.</p><a href="/articles/fordevelopers/impersonation/a/h1__551740994" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/impersonation/a/h1__551740994&#39;,this);"></a></h1><span style="font-size: 10pt;">Impersonation can be used for executing a query in other user&#39;s context. Impersonation can only be executed by Administrators.</span><p>
+  Impersonation supports the following syntax:
+</p>
+<p>
+  IMPERSONATE userid WITH [Rights]
+</p>
+<p class="BodyIndent2">
+  &lt;userid&gt; user&#39;s ID as string.
+</p>
+<p class="BodyIndent2">
+  WITH [Rights]  (Optional) one or more rights that will be granted to user for query.
+</p>
+<p>
+  Possible options for rights:
+</p>
+<p class="BodyIndent2">
+  ManageUsers
+</p>
+<p class="BodyIndent2">
+  ManageGroups
+</p>
+<p class="BodyIndent2">
+  ManageAccess
+</p>
+<p class="BodyIndent2">
+  ManageMessages
+</p>
+<p class="BodyIndent2">
+  ManageRequirementTemplates
+</p>
+<p class="BodyIndent2">
+  ManageDocuments
+</p>
+<p class="BodyIndent2">
+  ManageSecurityPolicy
+</p>
+<p class="BodyIndent2">
+  ManagePackages
+</p>
+<p class="BodyIndent2">
+  ManageMainMenu
+</p>
+<p class="BodyIndent2">
+  ManageReports
+</p>
+<p class="BodyIndent2">
+  ManageMaterials
+</p>
+<p class="BodyIndent2">
+  ManageCommandLog
+</p>
+<p class="BodyIndent2">
+  ManageCitations
+</p>
+<p class="BodyIndent2">
+  ManageSystemDashboards
+</p>
+<p class="BodyIndent2">
+  ManageQualityTemplate
+</p>
+<p class="BodyIndent2">
+  ManageCalcTemplate
+</p>
+<p class="BodyIndent2">
+  ManageMaterialTemplate
+</p>
+<p class="BodyIndent2">
+  ManageTaskTemplates
+</p>
+<p class="BodyIndent2">
+  ManageTags
+</p>
+<p class="BodyIndent2">
+  ManageUdf
+</p>
+<p class="BodyIndent2">
+  ManageEvents
+</p>
+<p class="BodyIndent2">
+  ManageWorkflows
+</p>
+<p class="BodyIndent2">
+  ManageQuickLinks
+</p>
+<p class="BodyIndent2">
+  ManageAnyTemplate
+</p>
+<p class="BodyIndent2">
+  SetupRights
+</p>
+<p class="BodyIndent2">
+  AllRights
+</p>
+<p class="BodyIndent2">
+  ManagePortal
+  <br/>
+</p>
+<p class="BodyIndent2">
+  </p><p class="BodyIndent2">ViewLocationsAndPrograms: EQL specific right. It allows users to see all locations<span style="font-size: 10pt;">.</span></p><p>&nbsp;<span style="font-size: 10pt; font-weight: bold;">Example:</span></p>
+<p class="Code2">
+  IMPERSONATE &#39;56de46d4-8db2-4952-b732-4b9360d49023&#39; WITH [&#39; ManageUsers&#39;,&#39;ManageGroups&#39;]
+</p>
+<p class="Code2">
+  select
+</p>
+<p class="Code3">
+  f.FirstName
+</p>
+<p class="Code2">
+  from user f
+</p>
+<p class="Code2">
+  &nbsp;
+</p>
+<p class="Code2">
+  IMPERSONATE &#39;56de46d4-8db2-4952-b732-4b9360d49023&#39;
+</p>
+<p class="Code2">
+  select
+</p>
+<p class="Code3">
+  f.FirstName
+</p>
+<p class="Code2">
+  from user f</p><p class="Code2"><br/></p><p class="Code2">IMPERSONATE &#39;0c88e45b-bc53-4b17-a86b-c32317d603f9&#39; &nbsp;WITH [&#39;ViewLocationsAndPrograms&#39;]</p><p class="Code2">&nbsp;select</p><p class="Code3"> wf.ID, wf.Name, wf.UniqueID, wf.IsParticipant</p><p class="Code2">&nbsp;from WorkflowInstance wf</p><p class="Code2">&nbsp;join ComplianceObject co ON wf.Object</p><p class="Code2">&nbsp;where co.Name Like &#39;EQLTest&#39;</p>
+<script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+</script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

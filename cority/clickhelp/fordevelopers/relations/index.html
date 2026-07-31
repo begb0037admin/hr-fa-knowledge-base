@@ -1,0 +1,1116 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/relations"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Relations</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Relations';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1_776182897" data-has-heading-anchor="true">
+  Relations
+<a href="/articles/fordevelopers/relations/a/h1_776182897" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/relations/a/h1_776182897&#39;,this);"></a></h1>
+<p class="bold">
+  Explicit Joins
+</p>
+<p>
+  “Explicit joins” are used to combine rows from two or more tables, based on a common field between them.
+</p>
+<p class="example">
+  Example:
+</p>
+<p class="Code1">
+  Select
+</p>
+<p class="Code1">
+  g.name as GroupName,
+</p>
+<p class="Code1">
+  u.FirstName,
+</p>
+<p class="Code1">
+  u.LastName
+</p>
+<p class="Code1">
+  from Group g
+</p>
+<p class="CodeLast">
+  join User u on u.ID = g.UserID
+</p>
+<p>
+  Explicit joins may have 3 types:
+</p>
+<p>
+  INNER JOIN: Returns all rows when there is at least one match in BOTH tables
+</p>
+<p>
+  LEFT JOIN: Return all rows from the left table, and the matched rows from the right table
+</p>
+<p>
+  RIGHT JOIN: Return all rows from the right table, and the matched rows from the left table
+</p>
+<p class="example">
+  Example:
+</p>
+<p class="Code1">
+  Select
+</p>
+<p class="Code1">
+  g.name as GroupName,
+</p>
+<p class="Code1">
+  u.FirstName,
+</p>
+<p class="Code1">
+  u.LastName
+</p>
+<p class="Code1">
+  from Group g
+</p>
+<p class="CodeLast">
+  left join User u on u.ID = g.UserID
+</p>
+<p>
+  <img src="images/Joins_440x266.jpg" style="width: 440;height: 266;" loading="lazy"/>
+</p>
+<p class="bold">
+  Natural Joins
+</p>
+<p class="BodyText">
+  The &quot;natural joins&quot; function takes advantage of in-built table
+  relationships without having to be concerned with the actual data organization.
+  For example:
+</p>
+<p class="Code1">
+  select
+</p>
+<p class="Code2">
+  r.Name,
+</p>
+<p class="Code3">
+  dp.Value,
+</p>
+<p class="Code3">
+  dp.Collected
+</p>
+<p class="Code2">
+  from
+</p>
+<p class="Code3">
+  Requirement r
+</p>
+<p class="CodeLast">
+  &nbsp; join DataPoint dp on r
+</p>
+<p>
+  This statement selects all requirements with datapoints and shows Requirement
+  Name, Datapoint Value and date of Collection. You will not see any join
+  condition, just &quot;on r&quot;. This works because EQL knows how some tables
+  may be joined. In this case EQL replaces &quot;on r&quot; to &quot;on r.ID =
+  dp.ParentID&quot;.
+</p>
+<p>
+  Click the arrow to see the natural joins available for each table below.
+</p>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_0" onclick="FMCDropDown( this ); return false;"><u><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/></u><u><b>Activity</b></u></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_0" style="display: none;">
+    <p style="margin-left: 40px">
+      MaterialDataLineGroup
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>CalculationTemplate</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_1" style="display: none;">
+    <p style="margin-left: 40px">
+      ComplianceObject
+    </p>
+    <p style="margin-left: 40px">
+      Facility
+    </p>
+    <p style="margin-left: 40px">
+      POI
+    </p>
+    <p style="margin-left: 40px">
+      Unit
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>Citation</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_2" style="display: none;">
+    <p style="margin-left: 40px">
+      CitationAssociationHistory
+    </p>
+    <p style="margin-left: 40px">
+      CitationGroupPermission
+    </p>
+    <p style="margin-left: 40px">
+      CitationUserPermission
+    </p>
+    <p style="margin-left: 40px">
+      CitationPermission
+    </p>
+    <p style="margin-left: 40px">
+      EventLog
+    </p>
+    <p style="margin-left: 40px">
+      Requirement
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>CitationAssociationHistory</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_3" style="display: none;">
+    <p style="margin-left: 40px">
+      Citation
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>CitationGroupPermission</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_4" style="display: none;">
+    <p style="margin-left: 40px">
+      Citation
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>CitationPermission</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_5" style="display: none;">
+    <p style="margin-left: 40px">
+      Citation
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_6" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>CitationUserPermission</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_6" style="display: none;">
+    <p style="margin-left: 40px">
+      Citation
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_7" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>ComplianceObject</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_7" style="display: none;">
+    <p style="margin-left: 40px">
+      ComplianceObjectPermission
+    </p>
+    <p style="margin-left: 40px">
+      CalculationTemplate
+    </p>
+    <p style="margin-left: 40px">
+      CustomFieldTemplate
+    </p>
+    <p style="margin-left: 40px">
+      DataPoint
+    </p>
+    <p style="margin-left: 40px">
+      Document
+    </p>
+    <p style="margin-left: 40px">
+      MaterialLocationValue
+    </p>
+    <p style="margin-left: 40px">
+      TimeZone
+    </p>
+    <p style="margin-left: 40px">
+      TaskInstance
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_8" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>ComplianceObjectPermission</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_8" style="display: none;">
+    <p style="margin-left: 40px">
+      ComplianceObject
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_9" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>CustomField</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_9" style="display: none;">
+    <p style="margin-left: 40px">
+      WorkflowTypeRoleFieldPermission
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_10" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>CustomFieldTemplate</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_10" style="display: none;">
+    <p style="margin-left: 40px">
+      ComplianceObject
+    </p>
+    <p style="margin-left: 40px">
+      Division
+    </p>
+    <p style="margin-left: 40px">
+      EventLog
+    </p>
+    <p style="margin-left: 40px">
+      Facility
+    </p>
+    <p style="margin-left: 40px">
+      POI
+    </p>
+    <p style="margin-left: 40px">
+      Requirement
+    </p>
+    <p style="margin-left: 40px">
+      Unit
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_11" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>DashboardPermission</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_11" style="display: none;">
+    <p style="margin-left: 40px">
+      User
+    </p>
+    <p style="margin-left: 40px">
+      Group
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_12" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>DataPoint</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_12" style="display: none;">
+    <p style="margin-left: 40px">
+      ComplianceObject
+    </p>
+    <p style="margin-left: 40px">
+      MaterialDataLineGroup
+    </p>
+    <p style="margin-left: 40px">
+      Requirement
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_13" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>DataQualityTemplate</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_13" style="display: none;">
+    <p style="margin-left: 40px">
+      Requirement
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_14" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>Division</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_14" style="display: none;">
+    <p style="margin-left: 40px">
+      CustomFieldTemplate
+    </p>
+    <p style="margin-left: 40px">
+      Document
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_15" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>Document</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_15" style="display: none;">
+    <p style="margin-left: 40px">
+      ComplianceObject
+    </p>
+    <p style="margin-left: 40px">
+      Division
+    </p>
+    <p style="margin-left: 40px">
+      DocumentPermission
+    </p>
+    <p style="margin-left: 40px">
+      DocumentVersion
+    </p>
+    <p style="margin-left: 40px">
+      EventInstance
+    </p>
+    <p style="margin-left: 40px">
+      EventLog
+    </p>
+    <p style="margin-left: 40px">
+      Facility
+    </p>
+    <p style="margin-left: 40px">
+      POI
+    </p>
+    <p style="margin-left: 40px">
+      Unit
+    </p>
+    <p style="margin-left: 40px">
+      WorkflowInstance
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_16" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>DocumentPermission</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_16" style="display: none;">
+    <p style="margin-left: 40px">
+      Document
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_17" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>DocumentVersion</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_17" style="display: none;">
+    <p style="margin-left: 40px">
+      Document
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_18" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>EventInstance</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_18" style="display: none;">
+    <p style="margin-left: 40px">
+      Document
+    </p>
+    <p style="margin-left: 40px">
+      EventLog
+    </p>
+    <p style="margin-left: 40px">
+      Requirement
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_19" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>EventLog</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_19" style="display: none;">
+    <p style="margin-left: 40px">
+      Citation
+    </p>
+    <p style="margin-left: 40px">
+      CustomFieldTemplate
+    </p>
+    <p style="margin-left: 40px">
+      Document
+    </p>
+    <p style="margin-left: 40px">
+      EventInstance
+    </p>
+    <p style="margin-left: 40px">
+      EventTemplate
+    </p>
+    <p style="margin-left: 40px">
+      TimeZone
+    </p>
+    <p style="margin-left: 40px">
+      TaskTemplate
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_20" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>EventTemplate</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_20" style="display: none;">
+    <p style="margin-left: 40px">
+      EventLog
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_21" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>Facility</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_21" style="display: none;">
+    <p style="margin-left: 40px">
+      CalculationTemplate
+    </p>
+    <p style="margin-left: 40px">
+      CustomFieldTemplate
+    </p>
+    <p style="margin-left: 40px">
+      Document
+    </p>
+    <p style="margin-left: 40px">
+      TimeZone
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_22" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>Group</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_22" style="display: none;">
+    <p style="margin-left: 40px">
+      User
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_23" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>Material</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_23" style="display: none;">
+    <p style="margin-left: 40px">
+      MaterialPropertyValue
+    </p>
+    <p style="margin-left: 40px">
+      MaterialLocationValue
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_24" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>MaterialDataLine</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_24" style="display: none;">
+    <p style="margin-left: 40px">
+      MaterialDataValue
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_25" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>MaterialDataLineGroup</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_25" style="display: none;">
+    <p style="margin-left: 40px">
+      Activity
+    </p>
+    <p style="margin-left: 40px">
+      DataPoint
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_26" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>MaterialDataLineValue</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_26" style="display: none;">
+    <p style="margin-left: 40px">
+      MaterialDataLine
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_27" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>MaterialPropertyValue</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_27" style="display: none;">
+    <p style="margin-left: 40px">
+      Material
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_28" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>MaterialLocationValue</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_28" style="display: none;">
+    <p style="margin-left: 40px">
+      Compliance Object
+    </p>
+    <p style="margin-left: 40px">
+      Material
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_29" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>MeteorologicalField</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_29" style="display: none;">
+    <p style="margin-left: 40px">
+      MeteorlogicalData
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_30" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>Limit</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_30" style="display: none;">
+    <p style="margin-left: 40px">
+      Requirement
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_31" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>NonNumericPoint</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_31" style="display: none;">
+    <p style="margin-left: 40px">
+      ComplianceObject
+    </p>
+    <p style="margin-left: 40px">
+      Task
+    </p>
+    <p style="margin-left: 40px">
+      Requirement
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_32" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>POI</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_32" style="display: none;">
+    <p style="margin-left: 40px">
+      CalculationTemplate
+    </p>
+    <p style="margin-left: 40px">
+      CustomFieldTemplate
+    </p>
+    <p style="margin-left: 40px">
+      Document
+    </p>
+    <p style="margin-left: 40px">
+      TimeZone
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_33" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>Report</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_33" style="display: none;">
+    <p style="margin-left: 40px">
+      ReportVersion
+    </p>
+    <p style="margin-left: 40px">
+      ReportPermission
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_34" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>ReportPermission</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_34" style="display: none;">
+    <p style="margin-left: 40px">
+      Report
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_35" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>ReportVersion</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_35" style="display: none;">
+    <p style="margin-left: 40px">
+      Report
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_36" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>Requirement</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_36" style="display: none;">
+    <p style="margin-left: 40px">
+      Citation
+    </p>
+    <p style="margin-left: 40px">
+      CustomFieldTemplate
+    </p>
+    <p style="margin-left: 40px">
+      DataPoint
+    </p>
+    <p style="margin-left: 40px">
+      DataQualityTemplate
+    </p>
+    <p style="margin-left: 40px">
+      EventInstance
+    </p>
+    <p style="margin-left: 40px">
+      Limit
+    </p>
+    <p style="margin-left: 40px">
+      RequirementScript
+    </p>
+    <p style="margin-left: 40px">
+      RequirementTemplate
+    </p>
+    <p style="margin-left: 40px">
+      TimeZone
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_37" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>RequirementScript</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_37" style="display: none;">
+    <p style="margin-left: 40px">
+      Requirement
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_38" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>RequirementTemplate</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_38" style="display: none;">
+    <p style="margin-left: 40px">
+      Requirement
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_39" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>Task</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_39" style="display: none;">
+    <p style="margin-left: 40px">
+      TaskNotification
+    </p>
+    <p style="margin-left: 40px">
+      TaskSchedule
+    </p>
+    <p style="margin-left: 40px">
+      TaskInstance
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_40" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>TaskInstance</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_40" style="display: none;">
+    <p style="margin-left: 40px">
+      Task
+    </p>
+    <p style="margin-left: 40px">
+      ComplianceObject
+    </p>
+    <p style="margin-left: 40px">
+      WorkflowInstance
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_41" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>TaskNotification</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_41" style="display: none;">
+    <p style="margin-left: 40px">
+      Task
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_42" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>TaskSchedule</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_42" style="display: none;">
+    <p style="margin-left: 40px">
+      Task
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_43" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>TaskTemplate</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_43" style="display: none;">
+    <p style="margin-left: 40px">
+      TaskTemplateNotification
+    </p>
+    <p style="margin-left: 40px">
+      EventLog
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_44" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>TaskTemplateNotification</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_44" style="display: none;">
+    <p style="margin-left: 40px">
+      TaskTemplate
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_45" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>TimeZone</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_45" style="display: none;">
+    <p style="margin-left: 40px">
+      ComplianceObject
+    </p>
+    <p style="margin-left: 40px">
+      EventLog
+    </p>
+    <p style="margin-left: 40px">
+      Facility
+    </p>
+    <p style="margin-left: 40px">
+      POI
+    </p>
+    <p style="margin-left: 40px">
+      Requirement
+    </p>
+    <p style="margin-left: 40px">
+      Unit
+    </p>
+    <p style="margin-left: 40px">
+      User
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_46" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>Unit</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_46" style="display: none;">
+    <p style="margin-left: 40px">
+      CalculationTemplate
+    </p>
+    <p style="margin-left: 40px">
+      CustomFieldTemplate
+    </p>
+    <p style="margin-left: 40px">
+      Document
+    </p>
+    <p style="margin-left: 40px">
+      TimeZone
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_47" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>User</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_47" style="display: none;">
+    <p style="margin-left: 40px">
+      Group
+    </p>
+    <p style="margin-left: 40px">
+      TimeZone
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_48" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>WorkflowHistory</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_48" style="display: none;">
+    <p style="margin-left: 40px">
+      WorkflowHistoryItem
+    </p>
+    <p style="margin-left: 40px">
+      WorkflowInstance
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_49" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>WorkflowHistoryItem</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_49" style="display: none;">
+    <p style="margin-left: 40px">
+      WorkflowHistory
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_50" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>WorkflowInstance</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_50" style="display: none;">
+    <p style="margin-left: 40px">
+      WorkflowHistory
+    </p>
+    <p style="margin-left: 40px">
+      WorkflowStep
+    </p>
+    <p style="margin-left: 40px">
+      WorkflowType
+    </p>
+    <p style="margin-left: 40px">
+      TaskInstance
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_51" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>WorkflowInstance.Document</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_51" style="display: none;">
+    <p style="margin-left: 40px">
+      Document
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_52" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>WorkflowInstance.Object</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_52" style="display: none;">
+    <p style="margin-left: 40px">
+      ComplianceObject
+    </p>
+    <p style="margin-left: 40px">
+      Facility
+    </p>
+    <p style="margin-left: 40px">
+      POI
+    </p>
+    <p style="margin-left: 40px">
+      Unit
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_53" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>WorkflowPolicy.OverridePolicy</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_53" style="display: none;">
+    <p style="margin-left: 40px">
+      ComplianceObject
+    </p>
+    <p style="margin-left: 40px">
+      Division
+    </p>
+    <p style="margin-left: 40px">
+      EventLog
+    </p>
+    <p style="margin-left: 40px">
+      Facility
+    </p>
+    <p style="margin-left: 40px">
+      POI
+    </p>
+    <p style="margin-left: 40px">
+      Requirement
+    </p>
+    <p style="margin-left: 40px">
+      Unit
+    </p>
+    <p style="margin-left: 40px">
+      WorkflowType
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_54" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>WorkflowRole</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_54" style="display: none;">
+    <p style="margin-left: 40px">
+      WorkflowTypeVersionRole
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_55" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>WorkflowRole.OverrideGroup</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_55" style="display: none;">
+    <p style="margin-left: 40px">
+      ComplianceObject
+    </p>
+    <p style="margin-left: 40px">
+      Division
+    </p>
+    <p style="margin-left: 40px">
+      EventLog
+    </p>
+    <p style="margin-left: 40px">
+      Facility
+    </p>
+    <p style="margin-left: 40px">
+      POI
+    </p>
+    <p style="margin-left: 40px">
+      Requirement
+    </p>
+    <p style="margin-left: 40px">
+      Unit
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_56" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>WorkflowRole</b><b>.OverrideUser</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_56" style="display: none;">
+    <p style="margin-left: 40px">
+      ComplianceObject
+    </p>
+    <p style="margin-left: 40px">
+      Division
+    </p>
+    <p style="margin-left: 40px">
+      EventLog
+    </p>
+    <p style="margin-left: 40px">
+      Facility
+    </p>
+    <p style="margin-left: 40px">
+      POI
+    </p>
+    <p style="margin-left: 40px">
+      Requirement
+    </p>
+    <p style="margin-left: 40px">
+      Unit
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_57" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>WorkflowStep</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_57" style="display: none;">
+    <p style="margin-left: 40px">
+      WorkflowInstance
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_58" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>WorkflowType</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_58" style="display: none;">
+    <p style="margin-left: 40px">
+      WorkflowInstance
+		</p>
+    <p style="margin-left: 40px">
+      WorkflowTypeVersionRole
+		</p>
+    <p style="margin-left: 40px">
+      WorkflowTypeVersionStep
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_59" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>WorkflowTypeRoleFieldPermission</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_59" style="display: none;">
+    <p style="margin-left: 40px">
+      CustomField
+		</p>
+    <p style="margin-left: 40px">
+      WorkflowTypeVersionRole
+    </p>
+    <p style="margin-left: 40px">
+      WorkflowTypeVersionStep
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_60" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>WorkflowTypeVersionInitiator</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_60" style="display: none;">
+    <p style="margin-left: 40px">
+      WorkflowTypeVersionStep
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_61" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><b>WorkflowTypeVersionRole</b></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_61" style="display: none;">
+    <p style="margin-left: 40px">
+      WorkflowRole
+		</p>
+    <p style="margin-left: 40px">
+      WorkflowType
+		</p>
+    <p style="margin-left: 40px">
+      WorkflowTypeVersionStep
+		</p>
+    <p style="margin-left: 40px">
+      WorkflowTypeRoleFieldPermission
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_62" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><span id="sbm"></span><b>WorkflowTypeVersionStep</b><span id="ebm"></span></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_62" style="display: none;">
+    <p style="margin-left: 40px">
+      WorkflowType
+    </p>
+    <p style="margin-left: 40px">
+      WorkflowTypeRoleFieldPermission
+    </p>
+    <p style="margin-left: 40px">
+      WorkflowTypeVersionInitiator
+    </p>
+    <p style="margin-left: 40px">
+      WorkflowTypeVersionStepAction
+    </p>
+    <p style="margin-left: 40px">
+      WorkflowTypeVersionRole
+    </p>
+  </div>
+</div>
+<div class="MCDropDown_0">
+  <div class="MCDropDownHead_0">
+    <a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_4024524675_63" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/><span id="sbm"></span><b>WorkflowTypeVersionStepAction</b><span id="ebm"></span></a>
+  </div>
+  <div class="MCDropDownBody_0" id="MCDropDownBody_4024524675_63" style="display: none;">
+    <p style="margin-left: 40px">
+      WorkflowTypeVersionStep
+    </p>
+  </div>
+</div>
+<p>
+  &nbsp;
+</p>
+<script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+</script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

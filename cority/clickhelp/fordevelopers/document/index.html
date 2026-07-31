@@ -1,0 +1,476 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/document"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Document Functions and Classes</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Document Functions and Classes';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>        <h1 class="Heading1" id="h1_1642591889" data-has-heading-anchor="true">Document Functions and Classes<a href="/articles/fordevelopers/document/a/h1_1642591889" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document/a/h1_1642591889&#39;,this);"></a></h1>
+        <div class="toc">
+            <p class="bold">JavaScript Functions</p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/document/a/createDocument" onclick="return n(&#39;!fordevelopers/document/a/createDocument&#39;,this);">createDocument</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/document/a/copyDocument" onclick="return n(&#39;!fordevelopers/document/a/copyDocument&#39;,this);">copyDocument</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/document/a/updateDocument" onclick="return n(&#39;!fordevelopers/document/a/updateDocument&#39;,this);">updateDocument</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/document/a/getDocument" onclick="return n(&#39;!fordevelopers/document/a/getDocument&#39;,this);">getDocument</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/document/a/deleteDocument" onclick="return n(&#39;!fordevelopers/document/a/deleteDocument&#39;,this);">deleteDocument</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/document/a/createDocumentBinary" onclick="return n(&#39;!fordevelopers/document/a/createDocumentBinary&#39;,this);">createDocumentBinary</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/document/a/updateDocumentBinary" onclick="return n(&#39;!fordevelopers/document/a/updateDocumentBinary&#39;,this);">updateDocumentBinary</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/document/a/getDocumentBinary" onclick="return n(&#39;!fordevelopers/document/a/getDocumentBinary&#39;,this);">getDocumentBinary</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/document/a/createDocumentFolder" onclick="return n(&#39;!fordevelopers/document/a/createDocumentFolder&#39;,this);">createDocumentFolder</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/document/a/copyDocumentFolder" onclick="return n(&#39;!fordevelopers/document/a/copyDocumentFolder&#39;,this);">copyDocumentFolder</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/document/a/updateDocumentFolder" onclick="return n(&#39;!fordevelopers/document/a/updateDocumentFolder&#39;,this);">updateDocumentFolder</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/document/a/getDocumentFolder" onclick="return n(&#39;!fordevelopers/document/a/getDocumentFolder&#39;,this);">getDocumentFolder</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/document/a/deleteDocumentFolder" onclick="return n(&#39;!fordevelopers/document/a/deleteDocumentFolder&#39;,this);">deleteDocumentFolder</a>
+            </p>
+            <p class="bold">Classes</p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/document/a/documentInfo" onclick="return n(&#39;!fordevelopers/document/a/documentInfo&#39;,this);">documentInfo</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/document/a/documentFolderInfo" onclick="return n(&#39;!fordevelopers/document/a/documentFolderInfo&#39;,this);">documentFolderInfo</a>
+            </p>
+        </div>
+        <div class="methods">
+            <h2 class="jsmethod" id="h2__518302570" data-has-heading-anchor="true">envianceSdk.documents.<a name="createDocument"></a>createDocument<a href="/articles/fordevelopers/document/a/h2__518302570" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document/a/h2__518302570&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1793248930_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1793248930_0" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Creates a new Document in Document Manager.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>documentInfo </b> An instance of the <a href="/articles/fordevelopers/document/a/documentInfo" onclick="return n(&#39;!fordevelopers/document/a/documentInfo&#39;,this);">documentInfo</a> object.  Some properties of this object are ignored by this function; see details of this object for more info.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">The id string (GUID) of the new Document will be passed to the onsuccess callback in the result property.</p>
+            <p class="bold">Notes</p>
+            <p class="BodyIndent">You can use the <a href="/articles/fordevelopers/common/a/configureFileInput" onclick="return n(&#39;!fordevelopers/common/a/configureFileInput&#39;,this);">configureFileInput</a> function to create a file input control and retrieve the Base64 encoded content of a chosen file.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.documents.createDocument(documentInfo,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert(&quot;Created new document with id: &quot; + response.result);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2__1967954797" data-has-heading-anchor="true"><a name="copyDocument"></a>envianceSdk.documents.copyDocument<a href="/articles/fordevelopers/document/a/h2__1967954797" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document/a/h2__1967954797&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1793248930_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1793248930_1" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Creates a new Document as a copy of an existing Document in Document Manager.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndent"><b>documentInfo </b> An instance of the <a href="/articles/fordevelopers/document/a/documentInfo" onclick="return n(&#39;!fordevelopers/document/a/documentInfo&#39;,this);">documentInfo</a> object.  Any properties specified for this object will be used instead of the existing properties on the Document being copied.  Some properties of this object are ignored by this function; see details of this object for more info.
+
+</p>
+            <p class="BodyIndent"><b>copyFrom </b> The full path to an existing Document whose content will be copied and used as the content of the newly created Document.
+</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">The id string (GUID) of the new Document will be passed to the onsuccess callback in the result property.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.documents.copyDocument(</p>
+            <p class="Code2">documentInfo,</p>
+            <p class="Code2">&quot;/Checklists/Checklist1.xls&quot;,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert(&quot;Created new document with id: &quot; + response.result);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2_668790615" data-has-heading-anchor="true"><a name="updateDocument"></a>envianceSdk.documents.updateDocument<a href="/articles/fordevelopers/document/a/h2_668790615" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document/a/h2_668790615&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1793248930_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1793248930_2" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Updates (and potentially moves) an existing Document in Document Manager. Specifying a new Folder path moves the Document underneath that Folder.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>documentIdOrPath </b> The id string (GUID) or full path to the Document in Document Manager.  Any string that matches the pattern of a GUID is interpreted as the id string, and not the path of the Document.
+
+</p>
+            <p class="BodyIndentHanging"><b>documentInfo </b> An instance of the <a href="/articles/fordevelopers/document/a/documentInfo" onclick="return n(&#39;!fordevelopers/document/a/documentInfo&#39;,this);">documentInfo</a> object.  Some properties of this object are ignored by this function; see details of this object for more info.
+User can pass null value or empty object and document name will not be updated.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="bold">Notes</p>
+            <p class="BodyIndent">You can use the <a href="/articles/fordevelopers/common/a/configureFileInput" onclick="return n(&#39;!fordevelopers/common/a/configureFileInput&#39;,this);">configureFileInput</a> function to create a file input control and retrieve the Base64 encoded content of a chosen file.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.documents.updateDocument(</p>
+            <p class="Code2">&quot;/Checklists/Checklist1.xls&quot;,</p>
+            <p class="Code2">documentInfo,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert(&quot;Document updated.&quot;);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2__705992154" data-has-heading-anchor="true"><a name="getDocument"></a>envianceSdk.documents.getDocument<a href="/articles/fordevelopers/document/a/h2__705992154" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document/a/h2__705992154&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1793248930_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1793248930_3" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Gets information about the specified Document.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>documentIdOrPath</b>  The id string (GUID) or full path to the Document in Document Manager. Any string that matches the pattern of a GUID is interpreted as the id string, and not the path of the Document.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">The <a href="/articles/fordevelopers/document/a/documentInfo" onclick="return n(&#39;!fordevelopers/document/a/documentInfo&#39;,this);">documentInfo</a> object will be passed to the onsuccess callback in the result property.</p>
+            <p class="BodyIndent">To download the contents of a Document, see <a href="/articles/fordevelopers/utility/a/uri.toDocumentDownload" onclick="return n(&#39;!fordevelopers/utility/a/uri.toDocumentDownload&#39;,this);">envianceSdk.utilities.uri.toDocumentDownload</a>.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.documents.getDocument(&quot;/Checklists/Checklist1.xls&quot;,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">var document = response.result;</p>
+            <p class="Code3">alert(&quot;Retrieved document with name: &quot; + document.name);</p>
+            <p class="Code2">});</p>
+            <p class="Code2">&nbsp;</p>
+            <h2 class="jsmethod" id="h2_189219915" data-has-heading-anchor="true"><a name="deleteDocument"></a>envianceSdk.documents.deleteDocument<a href="/articles/fordevelopers/document/a/h2_189219915" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document/a/h2_189219915&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1793248930_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1793248930_4" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Deletes an existing Document.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>documentIdOrPath</b>  The id string (GUID) or full path to the Document in Document Manager. Any string that matches the pattern of a GUID is interpreted as the id string, and not the path of the Document.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="bold">Notes</p>
+            <p class="BodyIndent">Deletions are permanent.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.documents.deleteDocument(&quot;/Checklists/Checklist1.xls&quot;,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert(&quot;Document deleted.&quot;);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2__326233275" data-has-heading-anchor="true"><a name="createDocumentBinary"></a>envianceSdk.documents.createDocumentBinary<a href="/articles/fordevelopers/document/a/h2__326233275" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document/a/h2__326233275&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1793248930_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1793248930_5" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Creates a new Document in Document Manager using doc content binary. </p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>fileInput</b> </p>
+            <p class="BodyIndentHanging"><b>documentInfo </b> An instance of the <a href="/articles/fordevelopers/document/a/documentInfo" onclick="return n(&#39;!fordevelopers/document/a/documentInfo&#39;,this);">documentInfo</a> object .  Some properties of this object are ignored by this function; see details of this object for more info. User can pass null value or empty object and new document will be created in root folder with name of posted file.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">The id string (GUID) of the new Document will be passed to the onsuccess callback in the result property.</p>
+            <p class="bold">Notes</p>
+            <p class="BodyIndent">You can use the <a href="/articles/fordevelopers/common/a/configureFileInput" onclick="return n(&#39;!fordevelopers/common/a/configureFileInput&#39;,this);">configureFileInput</a> function  to create a file input control and retrieve the Base64 encoded content of a chosen file.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.documents.createDocumentBinary(fileInput, null,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert(&quot;Created new document with id: &quot; + response.result);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2_1105412268" data-has-heading-anchor="true"><a name="updateDocumentBinary"></a>envianceSdk.documents.updateDocumentBinary<a href="/articles/fordevelopers/document/a/h2_1105412268" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document/a/h2_1105412268&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1793248930_6" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1793248930_6" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Updates (and potentially moves) an existing Document in Document Manager  using doc content binary. Specifying a new Folder path moves the Document underneath that Folder.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>fileInput</b> </p>
+            <p class="BodyIndentHanging"><b>documentIdOrPath </b> The id string (GUID) or full path to the Document in Document Manager.  Any string that matches the pattern of a GUID is interpreted as the id string, and not the path of the Document.
+
+</p>
+            <p class="BodyIndentHanging"><b>documentInfo </b> An instance of the <a href="/articles/fordevelopers/document/a/documentInfo" onclick="return n(&#39;!fordevelopers/document/a/documentInfo&#39;,this);">documentInfo</a> object.   Some properties of this object are ignored by this function; see details of this object for more info.
+User can pass null value or empty object and document name will not be updated.</p>
+            <p class="BodyIndentHanging"><b>isUpdateExistingVersion</b> Updates document content without creating new version.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="bold">Notes</p>
+            <p class="BodyIndent">You can use the <a href="/articles/fordevelopers/common/a/configureFileInput" onclick="return n(&#39;!fordevelopers/common/a/configureFileInput&#39;,this);">configureFileInput</a> function to create a file input control and retrieve the Base64 encoded content of a chosen file.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.documents.updateDocumentBinary(</p>
+            <p class="Code2">fileInput, &quot;/Checklists/Checklist1.xls&quot;,  null, isUpdateExistingVersion</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert(&quot;Document updated.&quot;);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2_2012750799" data-has-heading-anchor="true"><a name="getDocumentBinary"></a>envianceSdk.documents.getDocumentBinary<a href="/articles/fordevelopers/document/a/h2_2012750799" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document/a/h2_2012750799&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1793248930_7" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1793248930_7" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Gets information about the specified Document  using doc content binary.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>documentIdOrPath</b>  The id string (GUID) or full path to the Document in Document Manager. Any string that matches the pattern of a GUID is interpreted as the id string, and not the path of the Document.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent"> A <a href="/articles/fordevelopers/document/a/documentInfo" onclick="return n(&#39;!fordevelopers/document/a/documentInfo&#39;,this);">documentInfo</a> object will be passed to the onsuccess callback in the result property.</p>
+            <p class="BodyIndent">To download the contents of a Document, see <a href="/articles/fordevelopers/utility/a/uri.toDocumentDownload" onclick="return n(&#39;!fordevelopers/utility/a/uri.toDocumentDownload&#39;,this);">envianceSdk.utilities.uri.toDocumentDownload</a></p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.documents.getDocumentBinary(&quot;/Checklists/Checklist1.xls&quot;,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">var document = response.result;</p>
+            <p class="Code3">alert(&quot;Retrieved document with name: &quot; + document.name);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2_1010449132" data-has-heading-anchor="true"><a name="createDocumentFolder"></a>envianceSdk.documents.createDocumentFolder<a href="/articles/fordevelopers/document/a/h2_1010449132" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document/a/h2_1010449132&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1793248930_8" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1793248930_8" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Creates a new Document Folder in Document Manager.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>documentFolderInfo </b> An instance of the <a href="/articles/fordevelopers/document/a/documentFolderInfo" onclick="return n(&#39;!fordevelopers/document/a/documentFolderInfo&#39;,this);">documentFolderInfo</a> object.  Some properties of this object are ignored by this function; see details of this object for more info.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">The id string (GUID) of the new Document Folder will be passed to the onsuccess callback in the result property.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.documents.createDocumentFolder(documentFolderInfo,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert(&quot;Created new document folder with id: &quot; + response.result);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2__603616275" data-has-heading-anchor="true"><a name="copyDocumentFolder"></a>envianceSdk.documents.copyDocumentFolder<a href="/articles/fordevelopers/document/a/h2__603616275" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document/a/h2__603616275&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1793248930_9" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1793248930_9" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Creates a new Document Folder as a copy of an existing Folder in Document Manager.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>documentFolderInfo </b> An instance of the <a href="/articles/fordevelopers/document/a/documentFolderInfo" onclick="return n(&#39;!fordevelopers/document/a/documentFolderInfo&#39;,this);">documentFolderInfo</a> object.  Any properties specified for this object will be used instead of the existing properties on the Folder being copied.  Some properties of this object are ignored by this function; see details of this object for more info.
+
+</p>
+            <p class="BodyIndentHanging"><b>copyFrom </b> The full path to an existing Document Folder whose content will be copied and used as the content of the newly created Folder.
+</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">The id string (GUID) of the new Document Folder will be passed to the onsuccess callback in the result property.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.documents.copyDocumentFolder(</p>
+            <p class="Code2">documentFolderInfo,</p>
+            <p class="Code2">&quot;/Checklists&quot;,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert(&quot;Created new document folder with id: &quot; + response.result);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2_1926315253" data-has-heading-anchor="true"><a name="updateDocumentFolder"></a>envianceSdk.documents.updateDocumentFolder<a href="/articles/fordevelopers/document/a/h2_1926315253" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document/a/h2_1926315253&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1793248930_10" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1793248930_10" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Updates (and potentially moves) an existing Document Folder in Document Manager. Specifying a new Folder path moves the Document Folder underneath that Folder.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>documentFolderIdOrPath </b> The id string (GUID) or full path to the Document Folder in Document Manager.  Any string that matches the pattern of a GUID is interpreted as the id string, and not the path of the Folder.
+
+</p>
+            <p class="BodyIndentHanging"><b>documentFolderInfo</b> An instance of the <a href="/articles/fordevelopers/document/a/documentFolderInfo" onclick="return n(&#39;!fordevelopers/document/a/documentFolderInfo&#39;,this);">documentFolderInfo</a> object.  Some properties of this object are ignored by this function; see details of this object for more info.
+</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.documents.updateDocument(</p>
+            <p class="Code2">&quot;ddef6b59-6289-41c9-ac7a-ee87a773ce0e&quot;,</p>
+            <p class="Code2">documentFolderInfo,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert(&quot;Document folder updated.&quot;);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2__1174921470" data-has-heading-anchor="true"><a name="getDocumentFolder"></a>envianceSdk.documents.getDocumentFolder<a href="/articles/fordevelopers/document/a/h2__1174921470" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document/a/h2__1174921470&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1793248930_11" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1793248930_11" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Gets information about the specified Document Folder.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>documentFolderIdOrPath</b>  The id string (GUID) or full path to the Document Folder in Document Manager. Any string that matches the pattern of a GUID is interpreted as the id string, and not the path of the Folder.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">A <a href="/articles/fordevelopers/document/a/documentFolderInfo" onclick="return n(&#39;!fordevelopers/document/a/documentFolderInfo&#39;,this);">documentFolderInfo</a> object will be passed to the onsuccess callback in the result property.</p>
+            <p class="bold">Notes</p>
+            <p class="BodyIndent">None</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.documents.getDocumentFolder(&quot;/Checklists&quot;,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">var folder = response.result;</p>
+            <p class="Code3">alert(&quot;Retrieved document folder with name: &quot; + folder.name);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2__627881055" data-has-heading-anchor="true"><a name="deleteDocumentFolder"></a>envianceSdk.documents.deleteDocumentFolder<a href="/articles/fordevelopers/document/a/h2__627881055" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document/a/h2__627881055&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1793248930_12" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1793248930_12" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Deletes an existing Document Folder.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>documentFolderIdOrPath</b>  The id string (GUID) or full path to the Document Folder in Document Manager. Any string that matches the pattern of a GUID is interpreted as the id string, and not the path of the Folder.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="bold">Notes</p>
+            <p class="BodyIndent">Deletions are <i>permanent</i>.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.documents.deleteDocumentFolder(&quot;/Checklists&quot;,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert(&quot;Document folder deleted.&quot;);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsclass" id="h2__1595969780" data-has-heading-anchor="true"><a name="documentInfo"></a>envianceSdk.documents.documentInfo<a href="/articles/fordevelopers/document/a/h2__1595969780" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document/a/h2__1595969780&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1793248930_13" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1793248930_13" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Constructs a documentInfo object instance in JavaScript.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>name </b> The name of the Document.
+May be empty or null for Update Document and field will not be modified.
+
+</p>
+            <p class="BodyIndentHanging"><b>description</b>  The description of the Document. </p>
+            <p class="BodyIndentHanging"><b>folderIdOrPath </b> The id string (GUID) or full path of the Document Folder in which this Document is placed. Must include a trailing slash (&quot;/&quot;). Any string that matches the pattern of a GUID is interpreted as the id string, and not the path of the Folder.
+
+</p>
+            <p class="BodyIndentHanging"><b>content </b> The content of the Document, Base64 encoded.  You can use <a href="/articles/fordevelopers/common/a/configureFileInput" onclick="return n(&#39;!fordevelopers/common/a/configureFileInput&#39;,this);">configureFileInput</a> to enable file upload and content retrieval in JavaScript for later browsers.
+</p>
+            <p class="BodyIndentHanging"><b>fileName </b>The original file name of the Document. This is only required when the content property is used – it allows the system to detect the mime type and use it for the Download Document API.
+May be empty or null for Update Document and field will not be modified.
+
+
+</p>
+            <p class="BodyIndentHanging"><b>mimeType </b> The mime type of the Document.  If left unspecified when creating or updating a Document the application will assign a mime-type according to the file extension.
+</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An instance of the documentInfo class.</p>
+            <p class="bold">Instance Methods</p>
+            <p class="BodyIndentHanging"><b>addPathAssociatedObject(objectPath)</b>  This method adds an associated System Model object by path to the Document.
+
+</p>
+            <p class="BodyIndentHanging"><b>addIdAssociatedObject(objectId)</b>  This method adds an associated System Model object by id to the Document.
+
+</p>
+            <p class="BodyIndentHanging"><b>addAssociatedTask(taskId)</b>  This method adds an associated Task by id to the Document.
+
+</p>
+            <p class="BodyIndentHanging"><b>addAssociatedWorkflow(workflowIdOrUniqueId)</b>  This method adds an associated Workflow by id or unique id to the Document.  Any string that matches the pattern of a GUID is interpreted as the id string, and not the unique id of the Workflow.
+
+</p>
+            <p class="BodyIndentHanging"><b>setContentUrl(contentUrl)</b>  This method sets the URL to which this Document will be linked, instead of having its own content.
+</p>
+            <p class="bold">Notes</p>
+            <p class="BodyIndent">None</p>
+            <p class="example">Example</p>
+            <p class="Code1">var doc = new envianceSdk.documents.DocumentInfo(</p>
+            <p class="Code2">&quot;Checklist1&quot;,</p>
+            <p class="Code2">&quot;A Facility checklist.&quot;,</p>
+            <p class="Code2">&quot;/Checklists/&quot;,</p>
+            <p class="Code2">content, // base64 encoded bytes</p>
+            <p class="Code1">&quot;Checklist1.xls&quot;);</p>
+            <p class="Code1">doc.addPathAssociatedObject(&quot;/Division A/Facility X&quot;);</p>
+            <h2 class="jsclass" id="h2__1717874168" data-has-heading-anchor="true"><a name="documentFolderInfo"></a>envianceSdk.documents.documentFolderInfo<a href="/articles/fordevelopers/document/a/h2__1717874168" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/document/a/h2__1717874168&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1793248930_14" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1793248930_14" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Constructs a documentFolderInfo object instance in JavaScript.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>name </b> The name of the Folder.
+
+</p>
+            <p class="BodyIndentHanging"><b>description </b> A description of the Folder.
+
+</p>
+            <p class="BodyIndentHanging"><b>parentFolderIdOrPath </b> The id string (GUID) or full path of the Document Folder in which this Folder is placed. Any string that matches the pattern of a GUID is interpreted as the id string, and not the path of the parent Folder. </p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An instance of the documentFolderInfo class.</p>
+            <p class="bold">Instance Methods</p>
+            <p class="BodyIndent">None</p>
+            <p class="example">Example</p>
+            <p class="Code1">var folder = new envianceSdk.documents.DocumentFolderInfo(</p>
+            <p class="Code2">&quot;New Checklists&quot;,</p>
+            <p class="Code2">&quot;All version 2 checklists should be placed in this folder.&quot;,</p>
+            <p class="Code2">&quot;/&quot;</p>
+            <p class="Code1">);</p>
+        </div>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

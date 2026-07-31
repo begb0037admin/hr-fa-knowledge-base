@@ -1,0 +1,266 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/command"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Command Log APIs and Data Types</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Command Log APIs and Data Types';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><p>
+	</p><p><span class="Note">For the most up to date API documentation, please see the&nbsp;</span><a href="https://api.enviance.com/swagger.svc/index.html?url=/Swagger.svc/swagger.json#/Command" target="_blank" class="Note">Command API Documentation on Swagger</a><span class="Note">.</span><br class="Note"/></p><nav class="Note">
+  
+    
+  
+    
+  
+</nav><section>
+    <h1 id="command-log-apis-and-data-types" data-has-heading-anchor="true">Command Log APIs and Data Types<a href="/articles/fordevelopers/command/a/command-log-apis-and-data-types" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/command/a/command-log-apis-and-data-types&#39;,this);"></a></h1>
+<h2 id="version" data-has-heading-anchor="true">Version:<a href="/articles/fordevelopers/command/a/version" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/command/a/version&#39;,this);"></a></h2>
+
+<p><strong>License:</strong> <a href="http://www.enviance.com" target="_top">Enviance, Inc.</a></p>
+
+<h3 id="commandcommandid"><br/></h3><h3 id="commandcommandid" data-has-heading-anchor="true">/command/{commandId}<a href="/articles/fordevelopers/command/a/commandcommandid" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/command/a/commandcommandid&#39;,this);"></a></h3>
+
+<h4 id="get" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/command/a/get" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/command/a/get&#39;,this);"></a></h4>
+<h5 id="description" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/command/a/description" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/command/a/description&#39;,this);"></a></h5>
+
+<p>Returns information about a previously submitted command (any API which is asynchronous).</p>
+
+<p><strong>Security:</strong> All users.</p>
+
+<p><strong>SDK API (create):</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.commands.getCommand (commandId, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/command/a/parameters" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/command/a/parameters&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">commandId</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) for a previously submitted command.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/command/a/responses" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/command/a/responses&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An instance of the commandInfo structure.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/command/a/commandinfo" onclick="return n(&#39;!fordevelopers/command/a/commandinfo&#39;,this);">commandInfo</a></td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">GET</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">CommandService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">commands</span><span class="cm-operator">/</span><span class="cm-number">08</span><span class="cm-variable">fc5438</span><span class="cm-operator">-</span><span class="cm-variable">a0d8</span><span class="cm-operator">-</span><span class="cm-number">4</span><span class="cm-variable">bf9</span><span class="cm-operator">-</span><span class="cm-number">9141</span><span class="cm-operator">-</span><span class="cm-number">12</span><span class="cm-variable">dd98e7ce80</span><span class="cm-operator">/</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//RESPONSE</span>
+
+{
+  <span class="cm-string property">&quot;id&quot;</span>: <span class="cm-string">&quot;08fc5438-a0d8-4bf9-9141-12dd98e7ce80&quot;</span>,
+  <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;Data batch processed.&quot;</span>,
+  <span class="cm-string property">&quot;issued&quot;</span>: <span class="cm-string">&quot;2012-12-01T08:00:00&quot;</span>,
+  <span class="cm-string property">&quot;startedProcessing&quot;</span>: <span class="cm-string">&quot;2012-12-01T08:01:00&quot;</span>,
+  <span class="cm-string property">&quot;finishedProcessing&quot;</span>: <span class="cm-string">&quot;2012-12-01T08:02:00&quot;</span>,
+  <span class="cm-string property">&quot;status&quot;</span>: <span class="cm-string">&quot;Succeeded&quot;</span>,
+  <span class="cm-string property">&quot;objects&quot;</span>: [<span class="cm-string">&quot;/Facility A/Unit X/Parameter Z&quot;</span>],
+  <span class="cm-string property">&quot;user&quot;</span>: <span class="cm-string">&quot;JSmith&quot;</span>,
+  <span class="cm-string property">&quot;errorInfo&quot;</span>: {
+    <span class="cm-string property">&quot;error&quot;</span>: <span class="cm-string">&quot;Requirement with Tag &#39;GZB_AVG_SORTED&#39; could not be found in the system.&quot;</span>,
+    <span class="cm-string property">&quot;details&quot;</span>: [
+      { <span class="cm-string property">&quot;key&quot;</span>: <span class="cm-string">&quot;Tag&quot;</span>, <span class="cm-string property">&quot;value&quot;</span>: <span class="cm-string">&quot;GZB_AVG_SORTED&quot;</span> },
+      { <span class="cm-string property">&quot;key&quot;</span>: <span class="cm-string">&quot;Complete Date&quot;</span>, <span class="cm-string property">&quot;value&quot;</span>: <span class="cm-string">&quot;2012-02-08T09:50:00&quot;</span> },
+      { <span class="cm-string property">&quot;key&quot;</span>: <span class="cm-string">&quot;Value&quot;</span>, <span class="cm-string property">&quot;value&quot;</span>: <span class="cm-string">&quot;18.00803565979&quot;</span> }
+    ]
+  }
+}</pre></pre></td></tr></table></section><section>
+
+<h4 id="delete" data-has-heading-anchor="true">DELETE<a href="/articles/fordevelopers/command/a/delete" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/command/a/delete&#39;,this);"></a></h4>
+<h5 id="description-1" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/command/a/description-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/command/a/description-1&#39;,this);"></a></h5>
+
+<p>Deletes information about a previously submitted command. <em>Deletions are permanent</em>.</p>
+
+<p><strong>Security:</strong> All users.</p>
+
+<p><strong>SDK API (create):</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.commands.deleteCommand(commandId, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-1" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/command/a/parameters-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/command/a/parameters-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">commandId</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) for a previously submitted command.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-1" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/command/a/responses-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/command/a/responses-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">204</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Command deleted.</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">DELETE</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">CommandService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">commands</span><span class="cm-operator">/</span><span class="cm-number">08</span><span class="cm-variable">fc5438</span><span class="cm-operator">-</span><span class="cm-variable">a0d8</span><span class="cm-operator">-</span><span class="cm-number">4</span><span class="cm-variable">bf9</span><span class="cm-operator">-</span><span class="cm-number">9141</span><span class="cm-operator">-</span><span class="cm-number">12</span><span class="cm-variable">dd98e7ce80</span><span class="cm-operator">/</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table>
+
+<p id="models"><br/></p><h3 id="models" data-has-heading-anchor="true">Models<a href="/articles/fordevelopers/command/a/models" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/command/a/models&#39;,this);"></a></h3>
+
+<h4 id="commandinfo" data-has-heading-anchor="true">commandInfo<span id="commandInfo"></span>&nbsp;<a href="/articles/fordevelopers/command/a/commandinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/command/a/commandinfo&#39;,this);"></a></h4>
+
+<p>Information about a User-requested asynchronous operation.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) of the command.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">description</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The system description of the command.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">issued</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The date and time the command was issued. The value is in the User’s time zone.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">startedProcessing</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The date and time the command begin processing. The value is in the User’s time zone. The value is null if processing has not yet begun.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">finishedProcessing</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The date and time the command finished processing. The value is in the User’s time zone. The value is null if processing has not yet finished.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">status</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The status of the command; which will be one of: Waiting, Processing, Succeeded, Failed, Resubmitted.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">objects</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of object paths</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">reports</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of Report paths</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">user</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The user name of the User who submitted the command.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">result</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An optional URI pointing to the result of the command.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">errorInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of JSON object literals with the following properties:error The text of the error description.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">details</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of JSON object literals describing the error details for each error. The format depends upon the type of data submitted.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default">{
+  <span class="cm-string property">&quot;id&quot;</span>: <span class="cm-string">&quot;92b32d0e-8b6f-45a6-9e7c-ab3957dfd38d&quot;</span>,
+  <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;Data batch processed.&quot;</span>,
+  <span class="cm-string property">&quot;issued&quot;</span>: <span class="cm-string">&quot;2012-12-01T08:00:00&quot;</span>,
+  <span class="cm-string property">&quot;startedProcessing&quot;</span>: <span class="cm-string">&quot;2012-12-01T08:01:00:00&quot;</span>,
+  <span class="cm-string property">&quot;finishedProcessing&quot;</span>: <span class="cm-string">&quot;2012-12-01T08:02:00:00&quot;</span>,
+  <span class="cm-string property">&quot;status&quot;</span>: <span class="cm-string">&quot;Succeeded&quot;</span>,
+  <span class="cm-string property">&quot;objects&quot;</span>: [<span class="cm-string">&quot;/Facility A/Unit X/Parameter Z&quot;</span>],
+  <span class="cm-string property">&quot;user&quot;</span>: <span class="cm-string">&quot;JSmith&quot;</span>,
+  <span class="cm-string property">&quot;errorInfo&quot;</span>: {
+    <span class="cm-string property">&quot;error&quot;</span>: <span class="cm-string">&quot;Requirement with Tag &#39;GZB_AVG_SORTED&#39; could not be found in the system.&quot;</span>,
+    <span class="cm-string property">&quot;details&quot;</span>: [
+      { <span class="cm-string property">&quot;key&quot;</span>: <span class="cm-string">&quot;Tag&quot;</span>, <span class="cm-string property">&quot;value&quot;</span>: <span class="cm-string">&quot;GZB_AVG_SORTED&quot;</span> },
+      { <span class="cm-string property">&quot;key&quot;</span>: <span class="cm-string">&quot;Complete Date&quot;</span>, <span class="cm-string property">&quot;value&quot;</span>: <span class="cm-string">&quot;2012-02-08T09:50:00&quot;</span> },
+      { <span class="cm-string property">&quot;key&quot;</span>: <span class="cm-string">&quot;Value&quot;</span>, <span class="cm-string property">&quot;value&quot;</span>: <span class="cm-string">&quot;18.00803565979&quot;</span> }
+    ]
+  }
+}</pre></pre></td></tr></table><br/></section>
+    <br/><p><br/></p><p><br/></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

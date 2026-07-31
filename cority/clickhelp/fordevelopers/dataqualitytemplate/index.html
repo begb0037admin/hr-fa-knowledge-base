@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/dataqualitytemplate"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>DataQualityTemplate</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='DataQualityTemplate';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h2 class="method" id="h2_2075111633" data-has-heading-anchor="true">DataQualityTemplate<a href="/articles/fordevelopers/dataqualitytemplate/a/h2_2075111633" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/dataqualitytemplate/a/h2_2075111633&#39;,this);"></a></h2>
+        <p>Used to retrieve values from Data Quality Template attached to a Parameter.</p>
+        <p class="bold">Columns</p>
+        <p class="BodyIndentHanging"><b>ID</b> DataQuality Template ID</p>
+        <p class="BodyIndentHanging"><b>Name</b> DataQuality Template Name</p>
+        <p class="BodyIndentHanging"><b>Description</b> DataQuality Template Description</p>
+        <p class="BodyIndentHanging"><b>CustomField.ID, CustomField.Name, ...</b> Composite column to <a href="/articles/fordevelopers/customfield-1" onclick="return n(&#39;!fordevelopers/customfield-1&#39;,this);">CustomField</a> table (includes all fields from CustomField)</p>
+        <p class="BodyIndentHanging"><b>CustomField.[Order]</b> Order of the custom field in the template</p>
+        <p class="BodyIndentHanging"><b>ExistingCalculatedField.FieldName</b> Calculated Numeric Name</p>
+        <p class="BodyIndentHanging"><b>ExistingCalculatedField.FieldID</b> Calculated Numeric ID</p>
+        <p class="BodyIndentHanging"><b>ExistingCalculatedField.BeginDate</b> Calculation Definition Begin Date</p>
+        <p class="BodyIndentHanging"><b>ExistingCalculatedField.EndDate</b> Calculation Definition Begin Date</p>
+        <p class="BodyIndentHanging"><b>ExistingCalculatedField.DivideByZero</b> Calculation Error Handling Divide By Zero</p>
+        <p class="BodyIndentHanging"><b>ExistingCalculatedField.Overflow</b> = Calculation Error Handling Overflow</p>
+        <p class="BodyIndentHanging"><b>ExistingCalculatedField.Other</b> Calculation Error Handling Other</p>
+        <p class="BodyIndentHanging"><b>Created</b> Date created</p>
+        <p class="BodyIndentHanging"><b>Updated</b> Date updated</p>
+        <p class="bold">Natural Joins</p>
+        <p class="BodyIndent2"><a href="/articles/fordevelopers/requirement-1" onclick="return n(&#39;!fordevelopers/requirement-1&#39;,this);">Requirement</a>
+        </p>
+        <p class="example">Example: Get Data Quality Templates and their field names.</p>
+        <p class="Code1">select</p>
+        <p class="Code2">q.Name as QualityTemplate,</p>
+        <p class="Code2">q.CustomField.Name,</p>
+        <p class="Code2">q.ExistingCalculatedField.FieldName</p>
+        <p class="Code1">from DataQualityTemplate q</p>
+        <p class="example" MadCap:conditions="">Example: Get requirements with DQTs and the DQT fields.</p>
+        <p MadCap:conditions="" class="Code1">select</p>
+        <p MadCap:conditions="" class="Code2">r.Name as Requirement,</p>
+        <p MadCap:conditions="" class="Code2">q.Name as QualityTemplate,</p>
+        <p MadCap:conditions="" class="Code2">q.CustomField.Name,</p>
+        <p MadCap:conditions="" class="Code2">q.ExistingCalculatedField.FieldName</p>
+        <p MadCap:conditions="" class="Code1">from Requirement r</p>
+        <p MadCap:conditions="" class="Code1">join DataQualityTemplate q on r</p>
+        <p class="example" MadCap:conditions="">Example: Get requirement data points with raw value and value of a DQT field.</p>
+        <p MadCap:conditions="" class="Code1">select</p>
+        <p MadCap:conditions="" class="Code2">r.Name as Requirement,</p>
+        <p MadCap:conditions="" class="Code2">d.Value,</p>
+        <p MadCap:conditions="" class="Code2">d.RawValue,</p>
+        <p MadCap:conditions="" class="Code2">d."DQBelowLimit"</p>
+        <p MadCap:conditions="" class="Code1">from Requirement r</p>
+        <p MadCap:conditions="" class="Code1">join DataPoint d on r</p>
+        <p MadCap:conditions="" class="Code1">where r.DataQualityTemplate.name like 'DQWater' </p>
+        <p MadCap:conditions="" class="Code1">and d."DQBelowLimit" like 'true'</p>
+        <p class="Permissions" MadCap:autonum="Permissions: &#160;"><span class="autonumber"><span class="note_et_al">Permissions: &#160;</span></span>Manage
+			Data Quality Templates right is required to query this table. Manage Custom Fields right is also required to query CustomField
+		composite fields.</p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

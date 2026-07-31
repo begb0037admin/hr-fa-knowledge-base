@@ -1,0 +1,272 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/nonnumericdata-1"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Non-Numeric Data APIs and Data Types</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Non-Numeric Data APIs and Data Types';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><p>
+	</p><nav>
+  
+    <a href="/" target="_top">Home</a>
+  
+    <a href="/apis_list.html" target="_top">APIs</a>
+  
+</nav>
+
+    <section>
+    <h1 id="non-numeric-data-apis-and-data-types" data-has-heading-anchor="true">Non-Numeric Data APIs and Data Types<a href="/articles/fordevelopers/nonnumericdata-1/a/non-numeric-data-apis-and-data-types" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/nonnumericdata-1/a/non-numeric-data-apis-and-data-types&#39;,this);"></a></h1>
+<h2 id="version" data-has-heading-anchor="true">Version:<a href="/articles/fordevelopers/nonnumericdata-1/a/version" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/nonnumericdata-1/a/version&#39;,this);"></a></h2>
+
+<p><strong>License:</strong> <a href="http://www.enviance.com" target="_top">Enviance, Inc.</a></p>
+
+<h3 id="numericdataenterdatacommands"><br/></h3><h3 id="numericdataenterdatacommands" data-has-heading-anchor="true">/numericdata/enterdatacommands<a href="/articles/fordevelopers/nonnumericdata-1/a/numericdataenterdatacommands" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/nonnumericdata-1/a/numericdataenterdatacommands&#39;,this);"></a></h3>
+
+<h4 id="post" data-has-heading-anchor="true">POST<a href="/articles/fordevelopers/nonnumericdata-1/a/post" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/nonnumericdata-1/a/post&#39;,this);"></a></h4>
+<h5 id="description" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/nonnumericdata-1/a/description" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/nonnumericdata-1/a/description&#39;,this);"></a></h5>
+
+<p>Processes a set of one or more non-numeric Data Points. Entering Data
+Points is an asynchronous process. Upon successfully receiving and
+queueing the data, a command id is returned. With this command id, the
+Get Command API can be used to track completion or failure of the data
+entry command.</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.data.enterNonNumericData(nonNumericDataPoints, collector, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/nonnumericdata-1/a/parameters" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/nonnumericdata-1/a/parameters&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">enterNonNumericDataPoints</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">enterNonNumericDataPointInfo structure.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/nonnumericdata-1/a/enternonnumericdatapointinfo" onclick="return n(&#39;!fordevelopers/nonnumericdata-1/a/enternonnumericdatapointinfo&#39;,this);">enterNonNumericDataPointInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/nonnumericdata-1/a/responses" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/nonnumericdata-1/a/responses&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id for the queued command.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="numericdatadeletedatacommands"><br/></h3><h3 id="numericdatadeletedatacommands" data-has-heading-anchor="true">/numericdata/deletedatacommands<a href="/articles/fordevelopers/nonnumericdata-1/a/numericdatadeletedatacommands" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/nonnumericdata-1/a/numericdatadeletedatacommands&#39;,this);"></a></h3>
+
+<h4 id="post-1" data-has-heading-anchor="true">POST<a href="/articles/fordevelopers/nonnumericdata-1/a/post-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/nonnumericdata-1/a/post-1&#39;,this);"></a></h4>
+<h5 id="description-1" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/nonnumericdata-1/a/description-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/nonnumericdata-1/a/description-1&#39;,this);"></a></h5>
+
+<p>Deletes Non-Numeric Data Points for one Non-Numeric Requirement. Deleting Non-Numeric Data Points is an synchronous process. Deletions  of non-numeric datapoints in the Management System are <em>permanent</em>.</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.data.deleteNonNumericData(requirementIdOrPath, nonNumericDataPoints, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-1" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/nonnumericdata-1/a/parameters-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/nonnumericdata-1/a/parameters-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">DeleteNonNumericDataInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A deleteNonNumericDataInfo structure.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/nonnumericdata-1/a/deletenonnumericdatainfo" onclick="return n(&#39;!fordevelopers/nonnumericdata-1/a/deletenonnumericdatainfo&#39;,this);">deleteNonNumericDataInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-1" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/nonnumericdata-1/a/responses-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/nonnumericdata-1/a/responses-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Non-numeric datapoints deleted.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="models"><br/></h3><h3 id="models" data-has-heading-anchor="true">Models<a href="/articles/fordevelopers/nonnumericdata-1/a/models" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/nonnumericdata-1/a/models&#39;,this);"></a></h3>
+
+<h4 id="enternonnumericdatapointinfo" data-has-heading-anchor="true">enterNonNumericDataPointInfo<span id="enterNonNumericDataPointInfo"></span>&nbsp;<a href="/articles/fordevelopers/nonnumericdata-1/a/enternonnumericdatapointinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/nonnumericdata-1/a/enternonnumericdatapointinfo&#39;,this);"></a></h4>
+
+<p>Structure for entering NonNumericDataPointInfo datapoint array with optional collector field.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">nonNumericDataPoints</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/nonnumericdata-1/a/nonnumericdatapointinfo" onclick="return n(&#39;!fordevelopers/nonnumericdata-1/a/nonnumericdatapointinfo&#39;,this);">nonNumericDataPointInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of NonNumericDataPointInfo instances.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">collector</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Optional parameter. When collector is specified, then all empty NonNumericDataPointInfo.collector fields will be populated with this default value.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="nonnumericdatapointinfo" data-has-heading-anchor="true">nonNumericDataPointInfo<span id="nonNumericDataPointInfo"></span>&nbsp;<a href="/articles/fordevelopers/nonnumericdata-1/a/nonnumericdatapointinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/nonnumericdata-1/a/nonnumericdatapointinfo&#39;,this);"></a></h4>
+
+<p>A non-numeric datapoint description for a single Non-Numeric Requirement, tied to a single date and time.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">requirementIdOrPath</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id or path of the Non-Numeric Requirement. Any string that matches the pattern of a GUID is interpreted as the id string, and not the path.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">completeDate</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A date and time value.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">beginDate</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Begin date and time value.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">endDate</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">End date and time value.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">collector</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Id or name of Collector</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">comments</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Comment string.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">comply</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Comply string. Valid values: “Yes”, “YesWithComments”, “NA”, “NotDetermined”</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="deletenonnumericdatainfo" data-has-heading-anchor="true">deleteNonNumericDataInfo<span id="deleteNonNumericDataInfo"></span>&nbsp;<a href="/articles/fordevelopers/nonnumericdata-1/a/deletenonnumericdatainfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/nonnumericdata-1/a/deletenonnumericdatainfo&#39;,this);"></a></h4>
+
+<p>A non-numeric datapoint delete info</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">requirementIdOrPath</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id or path of the Non-Numeric Requirement. Any string that matches the pattern of a GUID is interpreted as the id string, and not the path.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">nonNumericDataPoints</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of Non-Numeric Datapoint Ids.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+    </section>
+    <br/><p><br/></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

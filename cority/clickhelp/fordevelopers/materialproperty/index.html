@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/materialproperty"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Material Property Functions and Classes</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Material Property Functions and Classes';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>        <h1 class="Heading1" id="h1__552208564" data-has-heading-anchor="true">Material Property Functions and Classes<a href="/articles/fordevelopers/materialproperty/a/h1__552208564" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialproperty/a/h1__552208564&#39;,this);"></a></h1>
+        <div class="toc">
+            <p class="bold">JavaScript Functions:</p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/materialproperty/a/createMaterialProperty" onclick="return n(&#39;!fordevelopers/materialproperty/a/createMaterialProperty&#39;,this);">createMaterialProperty</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/materialproperty/a/copyMaterialProperty" onclick="return n(&#39;!fordevelopers/materialproperty/a/copyMaterialProperty&#39;,this);">copyMaterialProperty</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/materialproperty/a/updateMaterialProperty" onclick="return n(&#39;!fordevelopers/materialproperty/a/updateMaterialProperty&#39;,this);">updateMaterialProperty</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/materialproperty/a/getMaterialProperty" onclick="return n(&#39;!fordevelopers/materialproperty/a/getMaterialProperty&#39;,this);">getMaterialProperty</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/materialproperty/a/deleteMaterialProperty" onclick="return n(&#39;!fordevelopers/materialproperty/a/deleteMaterialProperty&#39;,this);">deleteMaterialProperty</a>
+            </p>
+            <p class="bold">Classes:</p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/materialproperty/a/materialPropertyInfo" onclick="return n(&#39;!fordevelopers/materialproperty/a/materialPropertyInfo&#39;,this);">materialPropertyInfo</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/materialproperty/a/formulaHistory" onclick="return n(&#39;!fordevelopers/materialproperty/a/formulaHistory&#39;,this);">formulaHistory</a>
+            </p>
+        </div>
+        <div class="methods">
+            <h2 class="jsmethod" id="h2_410969267" data-has-heading-anchor="true"><a name="createMaterialProperty"></a>enviancesdk.materialProperties.createMaterialProperty<a href="/articles/fordevelopers/materialproperty/a/h2_410969267" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialproperty/a/h2_410969267&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1520974307_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1520974307_0" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Creates a new Material Property.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>materialPropertyInfo</b>  An instance of the <a href="/articles/fordevelopers/materialproperty/a/materialPropertyInfo" onclick="return n(&#39;!fordevelopers/materialproperty/a/materialPropertyInfo&#39;,this);">materialPropertyInfo</a> object. Some properties of this object are ignored by this function; see details of this object for more info.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">The id for the new Material Property.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.materialProperties.createMaterialProperty (materialPropertyInfo, onsuccess, onerror)</p>
+            <h2 class="jsmethod" id="h2__1270883272" data-has-heading-anchor="true"><a name="copyMaterialProperty"></a>enviancesdk.materialProperties.copyMaterialProperty<a href="/articles/fordevelopers/materialproperty/a/h2__1270883272" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialproperty/a/h2__1270883272&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1520974307_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1520974307_1" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Creates a new Material Property by copying an existing Material Property.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>materialPropertyInfo</b>  An instance of the <a href="/articles/fordevelopers/materialproperty/a/materialPropertyInfo" onclick="return n(&#39;!fordevelopers/materialproperty/a/materialPropertyInfo&#39;,this);">materialPropertyInfo</a> object. Some properties of this object are ignored by this function; see details of this object for more info.</p>
+            <p class="BodyIndentHanging"><b>copyFrom</b> The id string (GUID) of an existing Material Property whose properties will be copied and used as the properties of the newly created Material Property. Specifying this property allows you to copy an existing Material Property to another Material Property.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">The id for the new Material Property.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.materialProperties.copyMaterialProperty (materialPropertyInfo, copyFrom, onsuccess, onerror)</p>
+            <h2 class="jsmethod" id="h2_1211495756" data-has-heading-anchor="true"><a name="updateMaterialProperty"></a>enviancesdk.materialProperties.updateMaterialProperty<a href="/articles/fordevelopers/materialproperty/a/h2_1211495756" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialproperty/a/h2_1211495756&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1520974307_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1520974307_2" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Updates a Material Property.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>materialPropertyIdOrName</b> Either an id string (GUID) or a name uniquely identifying the property.  Any string that matches the pattern of a GUID is interpreted as an id string, and not a name.</p>
+            <p class="BodyIndentHanging"><b>materialPropertyInfo</b>  An instance of the <a href="/articles/fordevelopers/materialproperty/a/materialPropertyInfo" onclick="return n(&#39;!fordevelopers/materialproperty/a/materialPropertyInfo&#39;,this);">materialPropertyInfo</a> object. Some properties of this object are ignored by this function; see details of this object for more info.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.materialProperties.updateMaterialProperty (materialPropertyIdOrName, materialPropertyInfo, onsuccess, onerror)</p>
+            <h2 class="jsmethod" id="h2__773693631" data-has-heading-anchor="true"><a name="getMaterialProperty"></a>enviancesdk.materialProperties.getMaterialProperty<a href="/articles/fordevelopers/materialproperty/a/h2__773693631" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialproperty/a/h2__773693631&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1520974307_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1520974307_3" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Gets information about a Material Property.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>materialPropertyIdOrName</b> Either an id string (GUID) or a name uniquely identifying the property.  Any string that matches the pattern of a GUID is interpreted as an id string, and not a name.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An instance of the <a href="/articles/fordevelopers/materialproperty/a/materialPropertyInfo" onclick="return n(&#39;!fordevelopers/materialproperty/a/materialPropertyInfo&#39;,this);">materialPropertyInfo</a> object.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.materialProperties.getMaterialProperty (materialPropertyIdOrName, onsuccess, onerror)</p>
+            <h2 class="jsmethod" id="h2_638577214" data-has-heading-anchor="true"><a name="deleteMaterialProperty"></a>enviancesdk.materialProperties.deleteMaterialProperty<a href="/articles/fordevelopers/materialproperty/a/h2_638577214" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialproperty/a/h2_638577214&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1520974307_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_1520974307_4" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Deletes a Material Property.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>materialPropertyIdOrName</b> Either an id string (GUID) or a name uniquely identifying the property.  Any string that matches the pattern of a GUID is interpreted as an id string, and not a name.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.materialProperties.deleteMaterialProperty (materialPropertyIdOrName, onsuccess, onerror)</p>
+            <h2 class="jsclass" id="h2_5892665" data-has-heading-anchor="true"><a name="materialPropertyInfo"></a>enviancesdk.materialProperties.materialPropertyInfo<a href="/articles/fordevelopers/materialproperty/a/h2_5892665" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialproperty/a/h2_5892665&#39;,this);"></a></h2>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Represents a Material Property definition.</p>
+            <p class="bold">Properties</p>
+            <p class="BodyIndentHanging"><b>id</b> The id string (GUID) for the Field.<br/><i>Ignored for</i>:&nbsp;Create Field, Update Field</p>
+            <p class="BodyIndentHanging"><b>name</b> The name of the field.<br/><i>Required for</i>:&nbsp;&nbsp;Create Field</p>
+            <p class="BodyIndentHanging"><b>description</b> The description of the Field.</p>
+            <p class="BodyIndentHanging"><b>propertyType</b> The type of the Field. Valid values: MaterialVBP | ActivityVBP | SUV | PrimaryFBP | SecondaryFBP | TertiaryFBP<br/><i>Ignored for</i>:&nbsp;Update<br/><i>Required for</i>:&nbsp;&nbsp;Create Field  <br/></p>
+            <p class="BodyIndentHanging"><b>dataType</b> If specified, must be one of &quot;Numeric&quot; or &quot;Boolean&quot;.  This property is only valid for VBPs, and cannot be modified on an existing field.<br/><i>Ignored for</i>:&nbsp;Update Field</p>
+            <p class="BodyIndentHanging"><b>uniqueTag</b> If specified, this must be a string that is unique among all SUVs in the system.  This property is only valid for SUVs.</p>
+            <p class="BodyIndentHanging"><b>isChemLogical</b> <i>Boolean</i>. True/false value indicating whether  this field is a Chemical Logical field.  The default is false.  A value of true is only valid for FBPs.  This value cannot be modified on an existing field.<br/><i>Ignored for</i>:&nbsp;Update Material Field</p>
+            <p class="BodyIndentHanging"><b>valueHistory</b> <i>Array</i>. An array of <a href="/articles/fordevelopers/materialproperty/a/formulaHistory" onclick="return n(&#39;!fordevelopers/materialproperty/a/formulaHistory&#39;,this);">formulaHistory</a> structures.<br/><i>Required for</i>: Create Material Property   if propertyType set  to &quot;Formula Based Primary&quot;, &quot;Formula Based Secondary&quot;, &quot;Formula Based Tertiary&quot;<br/><i>Ignored for</i>:  PropertyType set  to &quot;Value Based Material&quot;, &quot;Value Based Activity&quot;, &quot;Specific Use Variable&quot;</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.materialProperties.MaterialPropertyInfo (name, propertyType, description, dataType, uniqueTag, formulaHistory)</p>
+            <p class="Code1">&nbsp;</p>
+            <p class="Code1">{</p>
+            <p class="Code2">&quot;name&quot;: &quot;Material Template Name&quot;,</p>
+            <p class="Code2">&quot;description&quot;: &quot; Material Template Description&quot;,</p>
+            <p class="Code2">&quot;propertyType&quot;: &quot;Formula Based Primary&quot;,</p>
+            <p class="Code2">&quot;dataType&quot;: &quot;Numeric&quot;,</p>
+            <p class="Code2">&quot;formulaHistory&quot;: [{</p>
+            <p class="Code3">&quot;beginDate&quot;: &quot;2012-01-01T20:00:00&quot;,</p>
+            <p class="Code3">&quot;Script&quot;: &quot;1 + SUM([Chem_MW])&quot;</p>
+            <p class="Code2">}]</p>
+            <p class="Code1">}</p>
+            <h2 class="jsclass" id="h2__890656733" data-has-heading-anchor="true"><a name="formulaHistory"></a>envianceSdk.materialProperties.formulaHistory<a href="/articles/fordevelopers/materialproperty/a/h2__890656733" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialproperty/a/h2__890656733&#39;,this);"></a></h2>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Represents a Material Property Formula History Item definition.</p>
+            <p class="bold">Properties</p>
+            <p class="BodyIndentHanging"><b>beginDate</b> <i>Date</i>. A DateTime value, representing begin date for the Item.</p>
+            <p class="BodyIndentHanging"><b>script</b> Formula text of Material Property Formula History Item.</p>
+            <p class="bold">Notes</p>
+            <p class="BodyIndent">None</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.materialProperties.FormulaHistory (id, beginDate, script)</p>
+            <p class="example">&nbsp;</p>
+            <p class="Code1">{</p>
+            <p class="Code2">&quot;beginDate&quot;: &quot;2012-01-01T20:00:00&quot;,</p>
+            <p class="Code2">&quot;Script&quot;: &quot;1 + [Prop_PFBP1]&quot;</p>
+            <p class="Code1">}</p>
+        </div>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

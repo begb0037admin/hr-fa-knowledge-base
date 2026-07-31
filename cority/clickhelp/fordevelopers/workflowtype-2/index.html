@@ -1,0 +1,1186 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/workflowtype-2"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Workflow Type APIs and Data Types</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Workflow Type APIs and Data Types';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><p>
+	</p><nav>
+  
+    <a href="/" target="_top">Home</a>
+  
+    <a href="/apis_list.html" target="_top">APIs</a>
+  
+</nav>
+
+    <section>
+    <h1 id="workflow-type-apis-and-data-types" data-has-heading-anchor="true">Workflow Type APIs and Data Types<a href="/articles/fordevelopers/workflowtype-2/a/workflow-type-apis-and-data-types" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflow-type-apis-and-data-types&#39;,this);"></a></h1>
+<p><strong>License:</strong> <a href="http://www.enviance.com" target="_top">Enviance, Inc.</a></p>
+
+<h3 id="workflowtypetypeidorname"><br/></h3><h3 id="workflowtypetypeidorname" data-has-heading-anchor="true">/workflowtype/{typeIdOrName}<a href="/articles/fordevelopers/workflowtype-2/a/workflowtypetypeidorname" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypetypeidorname&#39;,this);"></a></h3>
+
+<h4 id="get" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/workflowtype-2/a/get" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/get&#39;,this);"></a></h4>
+<h5 id="description" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/workflowtype-2/a/description" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/description&#39;,this);"></a></h5>
+
+<p>Gets information about workflow type.</p>
+
+<p><strong>Security:</strong> Allowed for Users with Manage Workflows right or User in Workflow Managers role of WF, or User with Manage Workflows on any objects associated with the workflow.</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.workflows.getWorkflowType (typeIdOrName, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/workflowtype-2/a/parameters" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/parameters&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">typeIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Either an id string (GUID) or a name uniquely identifying the Workflow Type. Any string that matches the pattern of a GUID is interpreted as the id string and not the name of the Workflow Type. A name must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/workflowtype-2/a/responses" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/responses&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An instance of the workflowTypeInfo structure.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/workflowtypeinfo" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypeinfo&#39;,this);">workflowTypeInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="put" data-has-heading-anchor="true">PUT<a href="/articles/fordevelopers/workflowtype-2/a/put" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/put&#39;,this);"></a></h4>
+<h5 id="description-1" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/workflowtype-2/a/description-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/description-1&#39;,this);"></a></h5>
+
+<p>Updates Workflow Type.</p>
+
+<p><strong>Security:</strong> Allowed for Users with Manage Workflows right or User in Workflow Managers role of WF, or User with Manage Workflows on any objects associated with the workflow.</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.workflows.updateWorkflowType (workflowTypeIdOrName, workflowTypeInfo, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-1" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/workflowtype-2/a/parameters-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/parameters-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">typeIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Either an id string (GUID) or a name uniquely identifying the Workflow Type. Any string that matches the pattern of a GUID is interpreted as the id string and not the name of the Workflow Type. A name must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">workflowTypeInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A workflowTypeInfo structure.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/workflowtypeinfo" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypeinfo&#39;,this);">workflowTypeInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-1" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/workflowtype-2/a/responses-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/responses-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">workflowTypeIdNameInfo structure.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/workflowtypeidnameinfo" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypeidnameinfo&#39;,this);">workflowTypeIdNameInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="patch" data-has-heading-anchor="true">PATCH<a href="/articles/fordevelopers/workflowtype-2/a/patch" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/patch&#39;,this);"></a></h4>
+<h5 id="description-2" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/workflowtype-2/a/description-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/description-2&#39;,this);"></a></h5>
+
+<p>Partial Update of the Workflow Type.</p>
+
+<p><strong>Security:</strong> Allowed for Users with Manage Workflows right or User in Workflow Managers role of WF, or User with Manage Workflows on any objects associated with the workflow.</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.workflows.partialUpdateWorkflowType (workflowTypeIdOrName, workflowTypeInfo, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-2" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/workflowtype-2/a/parameters-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/parameters-2&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">typeIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Either an id string (GUID) or a name uniquely identifying the Workflow Type. Any string that matches the pattern of a GUID is interpreted as the id string and not the name of the Workflow Type. A name must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">workflowTypeInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A workflowTypeInfo structure</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/workflowtypeinfo" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypeinfo&#39;,this);">workflowTypeInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-2" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/workflowtype-2/a/responses-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/responses-2&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">workflowTypeIdNameInfo structure.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/workflowtypeidnameinfo" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypeidnameinfo&#39;,this);">workflowTypeIdNameInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="delete" data-has-heading-anchor="true">DELETE<a href="/articles/fordevelopers/workflowtype-2/a/delete" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/delete&#39;,this);"></a></h4>
+<h5 id="description-3" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/workflowtype-2/a/description-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/description-3&#39;,this);"></a></h5>
+
+<p>Deletes an existing Workflow Type.</p>
+
+<p><strong>Security:</strong> Allowed for Users with Manage Workflows right or User in Workflow Managers role of WF, or User with Manage Workflows on any objects associated with the workflow.</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.workflows.deleteWorkflowType(typeIdOrName, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-3" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/workflowtype-2/a/parameters-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/parameters-3&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">typeIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Either an id string (GUID) or a name uniquely identifying the Workflow Type. Any string that matches the pattern of a GUID is interpreted as the id string and not the name of the Workflow Type. A name must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-3" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/workflowtype-2/a/responses-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/responses-3&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Workflow Type deleted</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="workflowtypetypeidornameversionversionnumber"><br/></h3><h3 id="workflowtypetypeidornameversionversionnumber" data-has-heading-anchor="true">/workflowtype/{typeIdOrName}/version/{versionNumber}<a href="/articles/fordevelopers/workflowtype-2/a/workflowtypetypeidornameversionversionnumber" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypetypeidornameversionversionnumber&#39;,this);"></a></h3>
+
+<h4 id="get-1" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/workflowtype-2/a/get-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/get-1&#39;,this);"></a></h4>
+<h5 id="description-4" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/workflowtype-2/a/description-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/description-4&#39;,this);"></a></h5>
+
+<p>Gets information about workflow type.</p>
+
+<p><strong>Security:</strong> Allowed for Users with Manage Workflows right or User in Workflow Managers role of WF, or User with Manage Workflows on any objects associated with the workflow.</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.workflows.getWorkflowTypeVersion (typeIdOrName, versionNumber, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-4" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/workflowtype-2/a/parameters-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/parameters-4&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">typeIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Either an id string (GUID) or a name uniquely identifying the Workflow Type. Any string that matches the pattern of a GUID is interpreted as the id string and not the name of the Workflow Type. A name must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">versionNumber</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">version number of the Workflow Type. 0 means the last version.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">number</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-4" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/workflowtype-2/a/responses-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/responses-4&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An instance of the workflowTypeInfo structure.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/workflowtypeinfo" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypeinfo&#39;,this);">workflowTypeInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="workflowtype"><br/></h3><h3 id="workflowtype" data-has-heading-anchor="true">/workflowtype<a href="/articles/fordevelopers/workflowtype-2/a/workflowtype" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtype&#39;,this);"></a></h3>
+
+<h4 id="post" data-has-heading-anchor="true">POST<a href="/articles/fordevelopers/workflowtype-2/a/post" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/post&#39;,this);"></a></h4>
+<h5 id="description-5" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/workflowtype-2/a/description-5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/description-5&#39;,this);"></a></h5>
+
+<p>Create a new Workflow Type</p>
+
+<p><strong>Security:</strong> User with permission to Manage Workflows.</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.workflows.createWorkflowType (workflowTypeInfo, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-5" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/workflowtype-2/a/parameters-5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/parameters-5&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">workflowTypeInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A WorkflowTypeInfo structure.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/workflowtypeinfo" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypeinfo&#39;,this);">workflowTypeInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-5" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/workflowtype-2/a/responses-5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/responses-5&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">workflowTypeIdNameInfo structure.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/workflowtypeidnameinfo" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypeidnameinfo&#39;,this);">workflowTypeIdNameInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="delete-1" data-has-heading-anchor="true">DELETE<a href="/articles/fordevelopers/workflowtype-2/a/delete-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/delete-1&#39;,this);"></a></h4>
+<h5 id="description-6" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/workflowtype-2/a/description-6" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/description-6&#39;,this);"></a></h5>
+
+<p>Deletes all existing Workflow Types for a set of one or more parameters</p>
+
+<p><strong>Security:</strong> Allowed for Users with Manage Workflows right or User in Workflow Managers role of WF, or User with Manage Workflows on any objects associated with the workflow.</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.workflows.deleteWorkflowTypeBulk(typeIdOrNames, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-6" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/workflowtype-2/a/parameters-6" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/parameters-6&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">typeIdOrNames</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Array of either an id string (GUID) or a name uniquely identifying the Workflow Type. Any string that matches the pattern of a GUID is interpreted as the id string and not the name of the Workflow Type.  A name must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/workflowtypesdeletebody" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypesdeletebody&#39;,this);">workflowTypesDeleteBody</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-6" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/workflowtype-2/a/responses-6" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/responses-6&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">All specified types was found and deleted</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/workflowtypedeleteresultinfo" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypedeleteresultinfo&#39;,this);">workflowTypeDeleteResultInfo</a></td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">202</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">workflowTypeDeleteResultInfo structure whith info about Workflow Type deleted</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/workflowtypedeleteresultinfo" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypedeleteresultinfo&#39;,this);">workflowTypeDeleteResultInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="workflowtypetypeidornameinfo"><br/></h3><h3 id="workflowtypetypeidornameinfo" data-has-heading-anchor="true">/workflowtype/{typeIdOrName}/info<a href="/articles/fordevelopers/workflowtype-2/a/workflowtypetypeidornameinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypetypeidornameinfo&#39;,this);"></a></h3>
+
+<h4 id="patch-1" data-has-heading-anchor="true">PATCH<a href="/articles/fordevelopers/workflowtype-2/a/patch-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/patch-1&#39;,this);"></a></h4>
+<h5 id="description-7" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/workflowtype-2/a/description-7" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/description-7&#39;,this);"></a></h5>
+
+<p>Update general properties of the Workflow Type: name, idGenScheme, description, isUsedForConfig</p>
+
+<p><strong>Security:</strong> Allowed for Users with Manage Workflows right or User in Workflow Managers role of WF, or User with Manage Workflows on any objects associated with the workflow.</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.workflows.updateWorkflowTypeInfo (typeIdOrName, newName, idGenScheme, description, forAppConfiguration, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-7" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/workflowtype-2/a/parameters-7" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/parameters-7&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">typeIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Either an id string (GUID) or a name uniquely identifying the Workflow Type. Any string that matches the pattern of a GUID is interpreted as the id string and not the name of the Workflow Type. A name must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">workflowTypeGeneralInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Use ‘null’ values to skip property</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/workflowtypegeneralbody" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypegeneralbody&#39;,this);">workflowTypeGeneralBody</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-7" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/workflowtype-2/a/responses-7" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/responses-7&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Ok.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="workflowtypetypeidornamecopy"><br/></h3><h3 id="workflowtypetypeidornamecopy" data-has-heading-anchor="true">/workflowtype/{typeIdOrName}/copy<a href="/articles/fordevelopers/workflowtype-2/a/workflowtypetypeidornamecopy" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypetypeidornamecopy&#39;,this);"></a></h3>
+
+<h4 id="post-1" data-has-heading-anchor="true">POST<a href="/articles/fordevelopers/workflowtype-2/a/post-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/post-1&#39;,this);"></a></h4>
+<h5 id="description-8" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/workflowtype-2/a/description-8" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/description-8&#39;,this);"></a></h5>
+
+<p>Copy specified Workflow Type.</p>
+
+<p><strong>Security:</strong> Allowed for Users with Manage Workflows right or User in Workflow Managers role of WF, or User with Manage Workflows on any objects associated with the workflow.</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.workflows.copyWorkflowType (workflowTypeIdOrName, name, idGenScheme, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-8" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/workflowtype-2/a/parameters-8" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/parameters-8&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">typeIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Either an id string (GUID) or a name uniquely identifying the Workflow Type. Any string that matches the pattern of a GUID is interpreted as the id string and not the name of the Workflow Type. A name must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">workflowTypeCopyInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Anonymous wrapper for body parameters</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/workflowtypecopybody" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypecopybody&#39;,this);">workflowTypeCopyBody</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-8" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/workflowtype-2/a/responses-8" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/responses-8&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">workflowTypeIdNameInfo structure.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/workflowtypeidnameinfo" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypeidnameinfo&#39;,this);">workflowTypeIdNameInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="models"><br/></h3><h3 id="models" data-has-heading-anchor="true">Models<a href="/articles/fordevelopers/workflowtype-2/a/models" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/models&#39;,this);"></a></h3>
+
+<h4 id="workflowtypeidnameinfo" data-has-heading-anchor="true">workflowTypeIdNameInfo<span id="workflowTypeIdNameInfo"></span>&nbsp;<a href="/articles/fordevelopers/workflowtype-2/a/workflowtypeidnameinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypeidnameinfo&#39;,this);"></a></h4>
+
+<p>Workflow Type Result Structure</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) for the Workflow Type</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Name of the Workflow Type</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">version</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">integer</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Version number of the Workflow Type</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="workflowtypeinfo" data-has-heading-anchor="true">workflowTypeInfo<span id="workflowTypeInfo"></span>&nbsp;<a href="/articles/fordevelopers/workflowtype-2/a/workflowtypeinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypeinfo&#39;,this);"></a></h4>
+
+<p>Workflow Type Object definition for POST requests</p></section><table cellspacing="0" cellpadding="4" style="border: 1px none #000000; width: 616px;"><thead><tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;"><th style="border: 1px solid #000000;"><font color="#ffffff">Name</font></th><th style="border: 1px solid #000000;"><font color="#ffffff">Type</font></th><th style="border: 1px solid #000000;"><font color="#ffffff">Description</font></th><th style="border: 1px solid #000000;"><font color="#ffffff">Required</font></th></tr></thead><tbody><tr><td style="border: 1px solid #000000;">id</td><td style="border: 1px solid #000000;">string</td><td style="border: 1px solid #000000;"><span style="text-align: left;">The id string (GUID) of the workflow type. Returned by GET operations.</span>&nbsp;</td><td style="border: 1px solid #000000;">No</td></tr><tr><td style="border: 1px solid #000000;">name</td><td style="border: 1px solid #000000;">string</td><td style="border: 1px solid #000000;"><span style="text-align: left;">Name of the workflow type. Used for re-name. Optional for&nbsp;</span><em style="text-align: left;">Partial Update operation</em><span style="text-align: left;">&nbsp;(PATCH)</span>&nbsp;</td><td style="border: 1px solid #000000;"><span style="text-align: left;">Yes</span></td></tr><tr><td style="border: 1px solid #000000;"><span style="text-align: left;">description</span></td><td style="border: 1px solid #000000;"><span style="text-align: left;">string</span></td><td style="border: 1px solid #000000;"><span style="text-align: left;">The description of workflow type. Optional.</span>&nbsp;</td><td style="border: 1px solid #000000;">No</td></tr><tr><td style="border: 1px solid #000000;"><span style="text-align: left;">shouldCreateNewVersion</span><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">boolean</span><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">True for create new version of Workflow Type, False or unspecified for update the old version. Optional.&nbsp;</span><em style="text-align: left;">Update operations</em><span style="text-align: left;">&nbsp;only</span><br/></td><td style="border: 1px solid #000000;">No<br/></td></tr><tr><td style="border: 1px solid #000000;"><span style="text-align: left;">versionComments</span><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">string</span><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">The comments to workflow type version. Optional.</span><br/></td><td style="border: 1px solid #000000;">No<br/></td></tr><tr><td style="border: 1px solid #000000;"><span style="text-align: left;">idGenScheme</span><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">string</span><br/></td><td style="border: 1px solid #000000;"><p><span style="text-align: left;">The id string (GUID) for the generating scheme. Optional.</span></p><p><span style="text-align: left;">If not specified or empty it uses default value.</span></p><p><span style="text-align: left;"><br/></span><em style="text-align: left;">{Workflow Type}</em><span style="text-align: left;">&nbsp;- The name of the Workflow Type</span></p><p><em style="text-align: left;">{Version}</em><span style="text-align: left;">&nbsp;- The three digit (000-999) version number of the Workflow Type</span></p><p><em style="text-align: left;">{Year}</em><span style="text-align: left;">&nbsp;- The four digit numeric designation for the current year</span></p><p><em style="text-align: left;">{Month}</em><span style="text-align: left;">&nbsp;- The two digit numeric designation for the current month</span></p><p><em style="text-align: left;">{Day}</em><span style="text-align: left;">&nbsp;- The two digit numeric designation for the current day</span></p><p><em style="text-align: left;">{Hour}</em><span style="text-align: left;">&nbsp;- The two digit (24-hour format) numeric designation for the current hour</span></p><p><em style="text-align: left;">{Minute}</em><span style="text-align: left;">&nbsp;- The two digit (00-59) numeric designation for the current minute within the hour</span></p><p><em style="text-align: left;">{AlphaID}</em><span style="text-align: left;">&nbsp;- The first 12 hexadecimal characters obtained from a Uniqueidentifier value</span></p><p><em style="text-align: left;">{NumericID}</em><span style="text-align: left;">&nbsp;- The 9 digits composed of the next available integer value in a sequence starting at 000000001 and ending at 999999999</span><br/></p></td><td style="border: 1px solid #000000;">No<br/></td></tr><tr><td style="border: 1px solid #000000;"><span style="text-align: left;">isUsedForConfig</span><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">boolean</span><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">Represent a Workflow Type Used for Configuration. Optional.</span><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">No</span><br/></td></tr><tr><td style="border: 1px solid #000000;"><span style="text-align: left;">workflowSteps</span><br/></td><td style="border: 1px solid #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/workflowstepinfo" style="text-align: left;" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowstepinfo&#39;,this);">workflowStepInfo</a><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">Workflow Step structure. Optional for&nbsp;</span><em style="text-align: left;">Partial Update operation</em><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">Yes</span><br/></td></tr><tr><td style="border: 1px solid #000000;"><span style="text-align: left;">stepRoles</span><br/></td><td style="border: 1px solid #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/roleinfo" style="text-align: left;" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/roleinfo&#39;,this);">roleInfo</a><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">Roles are used in Steps and predefined role “Workflow Manager”. Optional</span><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">No</span><br/></td></tr><tr><td style="border: 1px solid #000000;"><span style="text-align: left;">otherRoles</span><br/></td><td style="border: 1px solid #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/roleinfo" style="text-align: left;" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/roleinfo&#39;,this);">roleInfo</a><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">Any roles are not used in Steps or not any predefined Role. Optional</span><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">No</span><br/></td></tr><tr><td style="border: 1px solid #000000;"><span style="text-align: left;">localFields</span><br/></td><td style="border: 1px solid #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/idnamepair" style="text-align: left;" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/idnamepair&#39;,this);">idNamePair</a><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">Array of IdName pair of local UDFields from Form Templates. Optional.&nbsp;</span><em style="text-align: left;">All fields are Global by default.</em><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">No</span><br/></td></tr><tr><td style="border: 1px solid #000000;"><span style="text-align: left;">globalFields</span><br/></td><td style="border: 1px solid #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/idnamepair" style="text-align: left;" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/idnamepair&#39;,this);">idNamePair</a><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">Array of IdName pair of UDFields are changed to global. Optional.&nbsp;</span><em style="text-align: left;">Partial Update operation</em><span style="text-align: left;">&nbsp;only</span><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">No</span><br/></td></tr><tr><td style="border: 1px solid #000000;"><span style="text-align: left;">workflowPermissions</span><br/></td><td style="border: 1px solid #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/workflowpermissioninfo" style="text-align: left;" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowpermissioninfo&#39;,this);">workflowPermissionInfo</a><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">Array of Workflow Permissions. Optional</span><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">No</span><br/></td></tr><tr><td style="border: 1px solid #000000;"><span style="text-align: left;">stepPermissions</span><br/></td><td style="border: 1px solid #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/steppermissionsinfo" style="text-align: left;" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/steppermissionsinfo&#39;,this);">stepPermissionsInfo</a><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">Array of Workflow Step Permissions. Not required</span><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">No</span><br/></td></tr><tr><td style="border: 1px solid #000000;"><span style="text-align: left;">policies</span><br/></td><td style="border: 1px solid #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/idnamepair" style="text-align: left;" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/idnamepair&#39;,this);">idNamePair</a><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">Array of IdName pair of policies. Not required.</span><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">No</span><br/></td></tr><tr><td style="border: 1px solid #000000;"><span style="text-align: left;">predefinedRoles</span><br/></td><td style="border: 1px solid #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/idnamepair" style="text-align: left;" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/idnamepair&#39;,this);">idNamePair</a><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">Array of IdName pair of predefined roles (Assignee, Creator, “Previous Assignee”) used in step permissions. Returned by GET operations.</span><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">No</span><br/></td></tr><tr><td style="border: 1px solid #000000;">jsonData</td><td style="border: 1px solid #000000;">object (JSON)</td><td style="border: 1px solid #000000;">JSON meta data related to type<br/></td><td style="border: 1px solid #000000;">No</td></tr><tr><td style="border: 1px solid #000000;"><span style="text-align: left;">poorUsers</span><br/></td><td style="border: 1px solid #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/poorusersinfo" style="text-align: left;" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/poorusersinfo&#39;,this);">poorUsersInfo</a><br/></td><td style="border: 1px solid #000000;"><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">No</span><br/></td></tr></tbody></table><section>
+
+<h4 id="workflowstepinfo" data-has-heading-anchor="true">workflowStepInfo<span id="workflowStepInfo"></span>&nbsp;<a href="/articles/fordevelopers/workflowtype-2/a/workflowstepinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowstepinfo&#39;,this);"></a></h4>
+
+<p>Workflow Step Object definition</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) for the Workflow Step. Required if name parameter is empty for Update. Required for rename of step.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The Name of the Workflow Step. Required for <em>Create operation</em> and for rename.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">status</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Status name of the Workflow Step. Unique. Can be used as identifier for <em>Update operations</em></td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">formTemplate</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/idnameversion" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/idnameversion&#39;,this);">idNameVersion</a></td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">assignedRole</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The Name of Assigned Role to Workflow Step.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">flags</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Workflow Step flags. Optional.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">isDeleted</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">boolean</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Sign for delete current Workfloww Step. Optional. <em>Partial Update operations</em> only.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">stepActions</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/workflowtype-2/a/workflowstepactioninfo" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowstepactioninfo&#39;,this);">workflowStepActionInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Array of Workflow Step Action structure. Optional.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">workflowInitiators</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/workflowtype-2/a/workflowinitiatorinfo" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowinitiatorinfo&#39;,this);">workflowInitiatorInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Array of Workflow Step Initiator structure. Optional.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">order</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">number</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Sorting order number.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="workflowstepactioninfo" data-has-heading-anchor="true">workflowStepActionInfo<span id="workflowStepActionInfo"></span>&nbsp;<a href="/articles/fordevelopers/workflowtype-2/a/workflowstepactioninfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowstepactioninfo&#39;,this);"></a></h4>
+
+<p>Workflow Step Action Object definition</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) for the Workflow Step Action. Required for <em>Update operations</em> if name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">parameter is empty. <em>Create operation</em> ignores this property.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The Name of the Workflow Step Action. Required for <em>Create operation</em>, rename or <em>Update operations</em> if id property is empty.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">destinationStep</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/idnamepair" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/idnamepair&#39;,this);">idNamePair</a></td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">allowedRoles</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ string ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Array of id string (GUID) or name of allowed Workflow Roles to Workflow Step. Optional for <em>Partial Update operation</em>.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">GET operations returns array of id string (GUID).</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">flags</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Workflow Step Action flags. Optional.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">isDeleted</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">boolean</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Sign for delete current Workflow Step Action. Optional. <em>Partial Update operations</em> only.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">order</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">number</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Sorting order number. Returned by GET operations</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="workflowinitiatorinfo" data-has-heading-anchor="true">workflowInitiatorInfo<span id="workflowInitiatorInfo"></span>&nbsp;<a href="/articles/fordevelopers/workflowtype-2/a/workflowinitiatorinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowinitiatorinfo&#39;,this);"></a></h4>
+
+<p>Workflow Initiator Object definition</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) for the Workflow Initiator. Required for <em>Update operations</em> if name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">parameter is empty. <em>Create operation</em> ignores this property.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The Name of the Workflow Initiator. Required for <em>Create operation</em>, rename or <em>Update operations</em> if id property is empty.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">workflowType</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/idnameversion" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/idnameversion&#39;,this);">idNameVersion</a></td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">allowedRoles</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ string ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Array of id string (GUID) or name of allowed Workflow Roles to Workflow Step.Optional for <em>Partial Update operations</em></td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">order</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">number</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Sorting order number. Returned by GET operations</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">isDeleted</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">boolean</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Sign for delete current Workflow Initiator. Optional. <em>Partial Update operations</em> only.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="roleinfo" data-has-heading-anchor="true">roleInfo<span id="roleInfo"></span>&nbsp;<a href="/articles/fordevelopers/workflowtype-2/a/roleinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/roleinfo&#39;,this);"></a></h4>
+
+<p>Role Info Object definition</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) of Role. Required if Name is empty</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The Name of Role. Required if Id is empty</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">users</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/workflowtype-2/a/userinfo" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/userinfo&#39;,this);">userInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Array of users.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">groups</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/workflowtype-2/a/groupinfo" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/groupinfo&#39;,this);">groupInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Array of groups.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">isDeleted</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">boolean</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Sign for deleted record. Optional. <em>Partial Update operation</em> only.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="workflowpermissioninfo" data-has-heading-anchor="true">workflowPermissionInfo<span id="workflowPermissionInfo"></span>&nbsp;<a href="/articles/fordevelopers/workflowtype-2/a/workflowpermissioninfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowpermissioninfo&#39;,this);"></a></h4>
+
+<p>Workflow Permission Info Object definition</p><p><br/></p></section><table cellspacing="0" cellpadding="4" style="border: 1px none #000000; width: 616px;"><thead><tr style="border-color: #000000; background-color: #999999;"><th style="border: 1px solid #000000;"><font color="#ffffff">Name</font></th><th style="border: 1px solid #000000;"><font color="#ffffff">Type</font></th><th style="border: 1px solid #000000;"><font color="#ffffff">Description</font></th><th style="border: 1px solid #000000;"><font color="#ffffff">Required</font></th></tr></thead><tbody><tr><td style="border: 1px solid #000000;">role</td><td style="border: 1px solid #000000;">string</td><td style="border: 1px solid #000000;"><span style="text-align: left;">The id string (GUID) or Name of Workflow permission. GET operation returns id string (GUID).</span>&nbsp;</td><td style="border: 1px solid #000000;">&nbsp;<span style="text-align: left;">Yes</span>&nbsp;</td></tr><tr><td style="border: 1px solid #000000;"><span style="text-align: left;">flags</span><br/></td><td style="border: 1px solid #000000;">string<br/></td><td style="border: 1px solid #000000;"><p><span style="text-align: left;">Array of Workflow Instance Permissions</span></p><p><em style="text-align: left;">AllFormFieldAccess</em><span style="text-align: left;">&nbsp;= ViewAllFormFields, EditAllFormFields, OverrideAllFormFields</span></p><p><em style="text-align: left;">FullAccess</em><span style="text-align: left;">&nbsp;= all permissions</span><br/></p></td><td style="border: 1px solid #000000;">No<br/></td></tr></tbody></table><section>
+
+<h4 id="steppermissionsinfo" data-has-heading-anchor="true">stepPermissionsInfo<span id="stepPermissionsInfo"></span>&nbsp;<a href="/articles/fordevelopers/workflowtype-2/a/steppermissionsinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/steppermissionsinfo&#39;,this);"></a></h4>
+
+<p>Step Permissions Info Object definition</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-color: #000000; background-color: #999999;">
+      <th style="border-color: #000000; background-color: #999999; border-width: 1px; border-style: solid;"><font color="#ffffff">Name</font></th>
+      <th style="border-color: #000000; background-color: #999999; border-width: 1px; border-style: solid;"><font color="#ffffff">Type</font></th>
+      <th style="border-color: #000000; background-color: #999999; border-width: 1px; border-style: solid;"><font color="#ffffff">Description</font></th>
+      <th style="border-color: #000000; background-color: #999999; border-width: 1px; border-style: solid;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-color: #000000; border-width: 1px; border-style: solid;">role</td>
+      <td style="border-color: #000000; border-width: 1px; border-style: solid;">string</td>
+      <td style="border-color: #000000; border-width: 1px; border-style: solid;">The id string (GUID) or Name of any Step role, Other role or predefined (Assignee, Creator, “Previous Assignee”) role but “Workflow Manager”.</td>
+      <td style="border-color: #000000; border-width: 1px; border-style: solid;">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="border-color: #000000; border-width: 1px; border-style: solid;">GET operations returns id string (GUID).</td>
+      <td style="border-color: #000000; border-width: 1px; border-style: solid;">Yes</td>
+      <td style="border-color: #000000; border-width: 1px; border-style: solid;">&nbsp;</td>
+      <td style="border-color: #000000; border-width: 1px; border-style: solid;">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="border-color: #000000; border-width: 1px; border-style: solid;">isDeleted</td>
+      <td style="border-color: #000000; border-width: 1px; border-style: solid;">boolean</td>
+      <td style="border-color: #000000; border-width: 1px; border-style: solid;">Sign for delete this step permission info. Optional. <em>Partial Update operation</em> only.</td>
+      <td style="border-color: #000000; border-width: 1px; border-style: solid;">No</td>
+    </tr>
+    <tr>
+      <td style="border-color: #000000; border-width: 1px; border-style: solid;">steps</td>
+      <td style="border-color: #000000; border-width: 1px; border-style: solid;">[ <a href="/articles/fordevelopers/workflowtype-2/a/steppermission" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/steppermission&#39;,this);">stepPermission</a> ]</td>
+      <td style="border-color: #000000; border-width: 1px; border-style: solid;">Array of Workflow Step Permissions. Required if not isDeleted</td>
+      <td style="border-color: #000000; border-width: 1px; border-style: solid;">Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="steppermission" data-has-heading-anchor="true">stepPermission<span id="stepPermission"></span>&nbsp;<a href="/articles/fordevelopers/workflowtype-2/a/steppermission" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/steppermission&#39;,this);"></a></h4>
+
+<p>Step Permission definition</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">step</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The workflow step id string (GUID) or Name.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">allGlobal</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">All Global Form Fields. Optional. Override includes View &amp; Edit, Edit includes View</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">allLocal</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">All Local Form Fields. Optional. Override includes View &amp; Edit, Edit includes View</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">formFields</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/workflowtype-2/a/udfIdOrNameMapToWorkflowStepPermission" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/udfIdOrNameMapToWorkflowStepPermission&#39;,this);">udfIdOrNameMapToWorkflowStepPermission</a></td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="poorusersinfo" data-has-heading-anchor="true">poorUsersInfo<span id="poorUsersInfo"></span>&nbsp;<a href="/articles/fordevelopers/workflowtype-2/a/poorusersinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/poorusersinfo&#39;,this);"></a></h4>
+
+<p>Role Users with restrictions. Not required. Returned by <em>Get operations</em> only if that users are found.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">notFound</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ string ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Array of id string (GUID) of Users with not founded login.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">deleted</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/workflowtype-2/a/idnamepair" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/idnamepair&#39;,this);">idNamePair</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">‘Array of id string (GUID) and name of Users marked as deleted.’</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">expired</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/workflowtype-2/a/idnamepair" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/idnamepair&#39;,this);">idNamePair</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">‘Array of id string (GUID) and name of Users are expired.’</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="idnamepair" data-has-heading-anchor="true">idNamePair<span id="idNamePair"></span>&nbsp;<a href="/articles/fordevelopers/workflowtype-2/a/idnamepair" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/idnamepair&#39;,this);"></a></h4>
+
+<p>id and Name Pair.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Id string (GUID)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="idnameversion" data-has-heading-anchor="true">idNameVersion<span id="idNameVersion"></span>&nbsp;<a href="/articles/fordevelopers/workflowtype-2/a/idnameversion" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/idnameversion&#39;,this);"></a></h4>
+
+<p>id, name and version of object.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Id string (GUID)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">version</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">number</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">version</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="userinfo" data-has-heading-anchor="true">userInfo<span id="userInfo"></span>&nbsp;<a href="/articles/fordevelopers/workflowtype-2/a/userinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/userinfo&#39;,this);"></a></h4>
+
+<p>id, name and login of User.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Id string (GUID) of the User</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">login of the User</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">firstName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">First name of the User</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">lastName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Last name of the User</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="groupinfo" data-has-heading-anchor="true">groupInfo<span id="groupInfo"></span>&nbsp;<a href="/articles/fordevelopers/workflowtype-2/a/groupinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/groupinfo&#39;,this);"></a></h4>
+
+<p>id, name and users of Group.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Id string (GUID) of the User</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">login of the User</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">users</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/workflowtype-2/a/userinfo" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/userinfo&#39;,this);">userInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Array of users</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="workflowtypegeneralbody" data-has-heading-anchor="true">workflowTypeGeneralBody<span id="workflowTypeGeneralBody"></span>&nbsp;<a href="/articles/fordevelopers/workflowtype-2/a/workflowtypegeneralbody" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypegeneralbody&#39;,this);"></a></h4>
+
+<p>Workflow Type General properties</p></section><table cellspacing="0" cellpadding="4" style="border: 1px none #000000; width: 616px;"><thead><tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;"><th style="border: 1px solid #000000;"><font color="#ffffff">Name</font></th><th style="border: 1px solid #000000;"><font color="#ffffff">Type</font></th><th style="border: 1px solid #000000;"><font color="#ffffff">Description</font></th><th style="border: 1px solid #000000;"><font color="#ffffff">Required</font></th></tr></thead><tbody><tr><td style="border: 1px solid #000000;"><span style="text-align: left;">name</span>&nbsp;</td><td style="border: 1px solid #000000;">string</td><td style="border: 1px solid #000000;">&nbsp;<span style="text-align: left;">The new name of workflow type.</span>&nbsp;</td><td style="border: 1px solid #000000;">No</td></tr><tr><td style="border: 1px solid #000000;"><span style="text-align: left;">idGenScheme</span><br/></td><td style="border: 1px solid #000000;">string<br/></td><td style="border: 1px solid #000000;"><p><span style="text-align: left;">The id string (GUID) for the generating scheme.</span></p><p><span style="text-align: left;">Optional. If not specified or empty it uses default value.</span></p><p style="text-align: left;"><em>{Workflow Type}</em>&nbsp;- The name of the Workflow Type</p><p style="text-align: left;"><em>{Version}</em>&nbsp;- The three digit (000-999) version number of the Workflow Type</p><p style="text-align: left;"><em>{Year}</em>&nbsp;- The four digit numeric designation for the current year</p><p style="text-align: left;"><em>{Month}</em>&nbsp;- The two digit numeric designation for the current month</p><p style="text-align: left;"><em>{Day}</em>&nbsp;- The two digit numeric designation for the current day</p><p style="text-align: left;"><em>{Hour}</em>&nbsp;- The two digit (24-hour format) numeric designation for the current hour</p><p style="text-align: left;"><em>{Minute}</em>&nbsp;- The two digit (00-59) numeric designation for the current minute within the hour</p><p style="text-align: left;"><em>{AlphaID}</em>&nbsp;- The first 12 hexadecimal characters obtained from a Uniqueidentifier value</p><p style="text-align: left;"><em>{NumericID}</em>&nbsp;- The 9 digits composed of the next available integer value in a sequence starting at 000000001 and ending at 999999999</p></td><td style="border: 1px solid #000000;"><span style="text-align: left;">No</span><br/></td></tr><tr><td style="border: 1px solid #000000;"><span style="text-align: left;">description&nbsp;</span><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">string</span><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">The description of workflow type.</span><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">No</span><br/></td></tr><tr><td style="border: 1px solid #000000;"><span style="text-align: left;">forAppConfiguration</span><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">boolean</span><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">Represent a Workflow Type Used for Configuration.</span><br/></td><td style="border: 1px solid #000000;"><span style="text-align: left;">No</span><br/></td></tr></tbody></table><section>
+
+
+
+<h4 id="workflowtypecopybody" data-has-heading-anchor="true">workflowTypeCopyBody<span id="workflowTypeCopyBody"></span>&nbsp;<a href="/articles/fordevelopers/workflowtype-2/a/workflowtypecopybody" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypecopybody&#39;,this);"></a></h4>
+
+<p>Workflow Type Copy parameters</p></section><table cellspacing="0" cellpadding="4" style="border: 1px none #000000; width: 616px;"><thead><tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;"><th style="border: 1px solid #000000;"><font color="#ffffff">Name</font></th><th style="border: 1px solid #000000;"><font color="#ffffff">Type</font></th><th style="border: 1px solid #000000;"><font color="#ffffff">Description</font></th><th style="border: 1px solid #000000;"><font color="#ffffff">Required</font></th></tr></thead><tbody><tr><td style="border: 1px solid #000000;"><span style="text-align: left;">name</span>&nbsp;</td><td style="border: 1px solid #000000;">string</td><td style="border: 1px solid #000000;">&nbsp;<span style="text-align: left;">The new name of workflow type.</span>&nbsp;</td><td style="border: 1px solid #000000;">No</td></tr><tr><td style="border: 1px solid #000000;"><span style="text-align: left;">idGenScheme</span><br/></td><td style="border: 1px solid #000000;">string<br/></td><td style="border: 1px solid #000000;"><p><span style="text-align: left;">The id string (GUID) for the generating scheme.</span></p><p><span style="text-align: left;">Optional. If not specified or empty it uses default value.</span></p><p style="text-align: left;"><em>{Workflow Type}</em>&nbsp;- The name of the Workflow Type</p><p style="text-align: left;"><em>{Version}</em>&nbsp;- The three digit (000-999) version number of the Workflow Type</p><p style="text-align: left;"><em>{Year}</em>&nbsp;- The four digit numeric designation for the current year</p><p style="text-align: left;"><em>{Month}</em>&nbsp;- The two digit numeric designation for the current month</p><p style="text-align: left;"><em>{Day}</em>&nbsp;- The two digit numeric designation for the current day</p><p style="text-align: left;"><em>{Hour}</em>&nbsp;- The two digit (24-hour format) numeric designation for the current hour</p><p style="text-align: left;"><em>{Minute}</em>&nbsp;- The two digit (00-59) numeric designation for the current minute within the hour</p><p style="text-align: left;"><em>{AlphaID}</em>&nbsp;- The first 12 hexadecimal characters obtained from a Uniqueidentifier value</p><p style="text-align: left;"><em>{NumericID}</em>&nbsp;- The 9 digits composed of the next available integer value in a sequence starting at 000000001 and ending at 999999999</p></td><td style="border: 1px solid #000000;"><span style="text-align: left;">No</span><br/></td></tr></tbody></table><section>
+
+<h4 id="udfidornamemaptoworkflowsteppermission" data-has-heading-anchor="true">udfIdOrNameMapToWorkflowStepPermission<span id="udfIdOrNameMapToWorkflowStepPermission"></span>&nbsp;<a href="/articles/fordevelopers/workflowtype-2/a/udfidornamemaptoworkflowsteppermission" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/udfidornamemaptoworkflowsteppermission&#39;,this);"></a></h4>
+
+<p>Dictionary of Form Field permissions. Optional. Dictionary of “udfIdOrName”:”workflowStepPermission”.\
+GET operations return id string (GUID) as key “udfIdOrName”.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">udfIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="workflowtypedeleteresultinfo" data-has-heading-anchor="true">workflowTypeDeleteResultInfo<span id="workflowTypeDeleteResultInfo"></span>&nbsp;<a href="/articles/fordevelopers/workflowtype-2/a/workflowtypedeleteresultinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypedeleteresultinfo&#39;,this);"></a></h4>
+
+<p>Workflow Type Result Structure</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">notfound</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ string ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Array of id string (GUID) of the workflow type not founded while deleting</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">deleted</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ string ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Array of id string (GUID) of the succesfully deleted workflow types</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="workflowtypesdeletebody" data-has-heading-anchor="true">workflowTypesDeleteBody<span id="workflowTypesDeleteBody"></span>&nbsp;<a href="/articles/fordevelopers/workflowtype-2/a/workflowtypesdeletebody" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype-2/a/workflowtypesdeletebody&#39;,this);"></a></h4>
+
+<p>Workflow Types parameter Structure</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">typeIdOrNames</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ string ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Array of id string (GUID) or names of the workflow types</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+    </section>
+    <br/><p><br/></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

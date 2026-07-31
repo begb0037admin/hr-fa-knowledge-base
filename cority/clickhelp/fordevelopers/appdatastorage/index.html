@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/appdatastorage"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>App Data Storage</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='App Data Storage';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h2 class="Heading2" id="h2__513809594" data-has-heading-anchor="true">App Data Storage<a href="/articles/fordevelopers/appdatastorage/a/h2__513809594" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/appdatastorage/a/h2__513809594&#39;,this);"></a></h2>
+        <p class="BodyText">In cases where data needs to be persisted for the User across multiple executions of an EMS App, and cookies are not an option for various reasons (security, being tied to a browser, data size), the EMS App Data Store may be a better option.</p>
+        <p class="BodyText">The EMS App Data Store allows setting arbitrary key-value pairs of data (the data should be JSON encoded), for the current User, or for all Users of the EMS App.</p>
+        <p class="BodyText">There are methods in the EMS Apps JavaScript SDK that simplify using the EMS App Data store from EMS App pages.</p>
+        <p class="Note" madcap:autonum="Note: &nbsp;"><span class="autonumber"><span class="note_et_al">Note: &nbsp;</span></span>If an application is run outside of the EMS App runtime environment (i.e. non-hosted), the EMS App Data Store cannot be used.  JavaScript shims can be used to simulate this storage locally however.</p>
+        <h3 class="Heading3" id="h3_1871893849" data-has-heading-anchor="true"><a name="User"></a>User Data<a href="/articles/fordevelopers/appdatastorage/a/h3_1871893849" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/appdatastorage/a/h3_1871893849&#39;,this);"></a></h3>
+        <p class="BodyText">User data is always private to the current User, so two Users will never see the same data, even if the same key is used to identify that data.  To save, get and delete User data, use the user data functions in the EMS App SDK.</p>
+        <p class="BodyText">User data can also be automatically deleted (but not created or updated) when updating an EMS App using the EMS App <a href="/articles/fordevelopers/packagemanifest" onclick="return n(&#39;!fordevelopers/packagemanifest&#39;,this);">package manifest</a>.</p>
+        <h3 class="Heading3" id="h3_975430861" data-has-heading-anchor="true"><a name="App"></a>App Data<a href="/articles/fordevelopers/appdatastorage/a/h3_975430861" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/appdatastorage/a/h3_975430861&#39;,this);"></a></h3>
+        <p class="BodyText">App data is potentially available to any User of the EMS App, depending upon their permissions.</p>
+        <p class="BodyText">App Data keys are unique for each EMS App, and saving data with a given key will overwrite any existing data for the same EMS App and the same key.</p>
+        <p class="BodyText">To save, get and delete App data, use the app data functions in the EMS App SDK.</p>
+        <p class="BodyText">Keys can have their access restricted by <a href="/articles/fordevelopers/approles" onclick="return n(&#39;!fordevelopers/approles&#39;,this);">Role</a> for <a href="/articles/fordevelopers/appdatapermissions" onclick="return n(&#39;!fordevelopers/appdatapermissions&#39;,this);">permissions management</a> in the&nbsp;<a href="/articles/fordevelopers/packagemanifest" onclick="return n(&#39;!fordevelopers/packagemanifest&#39;,this);">package manifest</a>.</p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js" data-aspx-savednextwhitespace="%0A%20%20%20%20">
+        </script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

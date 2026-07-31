@@ -1,0 +1,497 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/workflow"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Workflow Functions and Classes</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Workflow Functions and Classes';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>        <h1 class="Heading1" id="h1__625373731" data-has-heading-anchor="true">Workflow Functions and Classes<a href="/articles/fordevelopers/workflow/a/h1__625373731" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflow/a/h1__625373731&#39;,this);"></a></h1>
+        <div class="toc">
+            <p class="bold">JavaScript Functions</p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflow/a/createWorkflow" onclick="return n(&#39;!fordevelopers/workflow/a/createWorkflow&#39;,this);">createWorkflow</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflow/a/updateWorkflow" onclick="return n(&#39;!fordevelopers/workflow/a/updateWorkflow&#39;,this);">updateWorkflow</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflow/a/getWorkflow" onclick="return n(&#39;!fordevelopers/workflow/a/getWorkflow&#39;,this);">getWorkflow</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflow/a/deleteWorkflow" onclick="return n(&#39;!fordevelopers/workflow/a/deleteWorkflow&#39;,this);">deleteWorkflow</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflow/a/endWorkflow" onclick="return n(&#39;!fordevelopers/workflow/a/endWorkflow&#39;,this);">endWorkflow</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflow/a/updateWorkflowStep" onclick="return n(&#39;!fordevelopers/workflow/a/updateWorkflowStep&#39;,this);">updateWorkflowStep</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflow/a/updateWorkflowCurrentStep" onclick="return n(&#39;!fordevelopers/workflow/a/updateWorkflowCurrentStep&#39;,this);">updateWorkflowCurrentStep</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflow/a/initiateChildWorkflow" onclick="return n(&#39;!fordevelopers/workflow/a/initiateChildWorkflow&#39;,this);">initiateChildWorkflow</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflow/a/generateUniqueIds" onclick="return n(&#39;!fordevelopers/workflow/a/generateUniqueIds&#39;,this);">generateUniqueIds</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflow/a/guessPermissions" onclick="return n(&#39;!fordevelopers/workflow/a/guessPermissions&#39;,this);">guessPermissions</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflow/a/guessPermissionsByUser" onclick="return n(&#39;!fordevelopers/workflow/a/guessPermissionsByUser&#39;,this);">guessPermissionsByUser</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflow/a/resolvePermissions" onclick="return n(&#39;!fordevelopers/workflow/a/resolvePermissions&#39;,this);">resolvePermissions</a>
+            </p>
+            <p class="bold">Classes</p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflow/a/workflowInfo" onclick="return n(&#39;!fordevelopers/workflow/a/workflowInfo&#39;,this);">workflowInfo</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflow/a/workflowStepInfo" onclick="return n(&#39;!fordevelopers/workflow/a/workflowStepInfo&#39;,this);">workflowStepInfo</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflow/a/workflowTransitionInfo" onclick="return n(&#39;!fordevelopers/workflow/a/workflowTransitionInfo&#39;,this);">workflowTransitionInfo</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflow/a/ChildWorkflowInitiationInfo" onclick="return n(&#39;!fordevelopers/workflow/a/ChildWorkflowInitiationInfo&#39;,this);">ChildWorkflowInitiationInfo</a>
+            </p>
+        </div>
+        <div class="methods">
+            <h2 class="jsmethod" id="h2_407661236" data-has-heading-anchor="true"><a name="createWorkflow"></a>envianceSdk.workflows.createWorkflow<a href="/articles/fordevelopers/workflow/a/h2_407661236" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflow/a/h2_407661236&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_2983899046_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_2983899046_0" style="display: none;">
+                    <p><a href="/articles/fordevelopers/version1/a/createWorkflow" onclick="return n(&#39;!fordevelopers/version1/a/createWorkflow&#39;,this);">Version 1.0</a>
+                    </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Creates a new instance of the specified Workflow Type, and places it on the "Init" Step. Information about Form Field values and Step Actions (aka Transitions) may optionally be specified in order to update or take action on the Init Step.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowInfo</b>  An instance of the <a href="/articles/fordevelopers/workflow/a/workflowInfo" onclick="return n(&#39;!fordevelopers/workflow/a/workflowInfo&#39;,this);">WorkflowInfo</a>  object.</p>
+            <p class="BodyIndentHanging"><b>initStepInfo</b>  An instance of the <a href="/articles/fordevelopers/workflow/a/workflowStepInfo" onclick="return n(&#39;!fordevelopers/workflow/a/workflowStepInfo&#39;,this);">WorkflowStepInfo</a> object.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">The id string (GUID) of the new Workflow will be passed to the onsuccess callback in the result property.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.createWorkflow(workflowInfo, initStepInfo,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert("Created new workflow with id: " + response.result);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2_1922209989" data-has-heading-anchor="true"><a name="createWorkflow"></a>envianceSdk.workflows.createWorkflows<a href="/articles/fordevelopers/workflow/a/h2_1922209989" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflow/a/h2_1922209989&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_2983899046_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_2983899046_1" style="display: none;">
+                    <p>None</p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Creates a new instance for each of the specified Workflow Types.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowInfos</b>  An instance of the <a href="/articles/fordevelopers/workflow/a/workflowInfo" onclick="return n(&#39;!fordevelopers/workflow/a/workflowInfo&#39;,this);">WorkflowInfo</a>  object.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">The id strings (GUIDs) of the new Workflow will be passed to the onsuccess callback in the result property.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.createWorkflows(workflowInfos, function(response) {</p>
+            <p class="Code3">alert("Created new workflows with ids: " + response.result);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2__1632826834" data-has-heading-anchor="true"><a name="updateWorkflow"></a>envianceSdk.workflow.updateWorkflow<a href="/articles/fordevelopers/workflow/a/h2__1632826834" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflow/a/h2__1632826834&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_2983899046_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_2983899046_2" style="display: none;">
+                    <p>None</p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Updates an existing Workflow.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowIdOrUniqueId</b>  The id string (GUID) of the Workflow, or the unique id of the Workflow. Any string that matches the pattern of a GUID is interpreted as the id string, and not the unique id of the Workflow.</p>
+            <p class="BodyIndentHanging"><b>workflowInfo</b>  An instance of the WorkflowInfo object. Some properties of this object are ignored by this function; see details of this object for more info.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.updateWorkflow(</p>
+            <p class="Code2">"2012.08.02.11.11B885AE98DE",workflowInfo,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert("Updated workflow.");</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2_1763091942" data-has-heading-anchor="true"><a name="getWorkflow"></a>envianceSdk.workflows.getWorkflow<a href="/articles/fordevelopers/workflow/a/h2_1763091942" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflow/a/h2_1763091942&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_2983899046_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_2983899046_3" style="display: none;">
+                    <p class="BodyIndent">None</p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Gets information about the specified Workflow.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowIdOrUniqueId</b>  The id string (GUID) of the Workflow, or the unique id of the Workflow. Any string that matches the pattern of a GUID is interpreted as the id string, and not the unique id of the Workflow.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">A WorkflowInfo object will be passed to the onsuccess callback in the result property.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.getWorkflow("ddef6b59-6289-41c9-ac7a-ee87a773ce0e",</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">var workflow = response.result;</p>
+            <p class="Code3">alert("Workflow has unique id: " + workflow.uniqueId);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2_1424353419" data-has-heading-anchor="true"><a name="deleteWorkflow"></a>envianceSdk.workflows.deleteWorkflow<a href="/articles/fordevelopers/workflow/a/h2_1424353419" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflow/a/h2_1424353419&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_2983899046_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_2983899046_4" style="display: none;">
+                    <p><a href="/articles/fordevelopers/version1/a/deleteWorkflow" onclick="return n(&#39;!fordevelopers/version1/a/deleteWorkflow&#39;,this);">Version 1.0</a>
+                    </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Deletes an existing Workflow.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowIdOrUniqueId</b>  The id string (GUID) of the Workflow, or the unique id of the Workflow. Any string that matches the pattern of a GUID is interpreted as the id string, and not the unique id of the Workflow.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="bold">Notes</p>
+            <p class="BodyIndent">Deletions are <i>permanent</i>.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.deleteWorkflow(</p>
+            <p class="Code2">"2012.08.02.11.11B885AE98DE",</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert("Workflow deleted.");</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2__881762499" data-has-heading-anchor="true"><a name="endWorkflow"></a>envianceSdk.workflows.endWorkflow<a href="/articles/fordevelopers/workflow/a/h2__881762499" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflow/a/h2__881762499&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_2983899046_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_2983899046_5" style="display: none;">
+                    <p class="BodyIndent">None</p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Ends a Workflow.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowIdOrUniqueId</b>  The id string (GUID) of the Workflow, or the unique id of the Workflow. Any string that matches the pattern of a GUID is interpreted as the id string, and not the unique id of the Workflow.</p>
+            <p class="BodyIndentHanging"><b>comment</b>  An optional comment to be made when ending the Workflow.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="bold">Notes</p>
+            <p class="BodyIndent">This is just a convenience function that wraps the updateWorkflowCurrentStep function and uses the special "End Workflow" transition.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.endWorkflow(</p>
+            <p class="Code2">"2012.08.02.11.11B885AE98DE", "Done with this workflow.",</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert("Workflow ended.");</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2_1264206493" data-has-heading-anchor="true"><a name="updateWorkflowStep"></a>envianceSdk.workflows.updateWorkflowStep<a href="/articles/fordevelopers/workflow/a/h2_1264206493" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflow/a/h2_1264206493&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_2983899046_6" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_2983899046_6" style="display: none;">
+                    <p><a href="/articles/fordevelopers/version1/a/updateWorkflowStep" onclick="return n(&#39;!fordevelopers/version1/a/updateWorkflowStep&#39;,this);">Version 1.0</a>
+                    </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Updates one or more values in the Form Fields of an existing Workflow's Step. A Step Action (aka Transition) to invoke may also be specified, which will move the Workflow from the Step to the destination Step of the Step Action.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowIdOrUniqueId</b> The id string (GUID) of the Workflow, or the unique id of the Workflow. Any string that matches the pattern of a GUID is interpreted as the id string, and not the unique id of the Workflow.</p>
+            <p class="BodyIndentHanging"><b>stepIdOrName</b> The id string (GUID) or name of the Step to update. Any string that matches the pattern of a GUID is interpreted as the id string, and not the name of the Step.</p>
+            <p class="BodyIndentHanging"><b>stepInfo</b> An instance of the <a href="/articles/fordevelopers/workflow/a/workflowStepInfo" onclick="return n(&#39;!fordevelopers/workflow/a/workflowStepInfo&#39;,this);">WorkflowStepInfo</a> object with which to update the Step. Some properties of this object are ignored by this function; see details of this object for more info.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.updateWorkflowStep(</p>
+            <p class="Code2">"2012.08.02.11.11B885AE98DE",</p>
+            <p class="Code2">"Record Incident",</p>
+            <p class="Code2">stepInfo,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert("Updated workflow step 'Record Incident'.");</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2_434023292" data-has-heading-anchor="true"><a name="updateWorkflowCurrentStep"></a>envianceSdk.workflows.updateWorkflowCurrentStep<a href="/articles/fordevelopers/workflow/a/h2_434023292" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflow/a/h2_434023292&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_2983899046_7" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_2983899046_7" style="display: none;">
+                    <p class="BodyIndent">None</p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Updates one or more values in the Form Fields of an existing Workflow's current Step. A Step Action (aka Transition) to invoke may also be specified, which will move the Workflow from the current Step to the destination Step of the Step Action.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowIdOrUniqueId</b> The id string (GUID) of the Workflow, or the unique id of the Workflow. Any string that matches the pattern of a GUID is interpreted as the id string, and not the unique id of the Workflow.</p>
+            <p class="BodyIndentHanging"><b>stepInfo</b> An instance of the workflowStepInfo object with which to update the Step.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="bold">Notes</p>
+            <p class="BodyIndent">This is just a convenience function that wraps the updateWorkflowStep function and always updates the current Step of the Workflow.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.updateWorkflowCurrentStep(</p>
+            <p class="Code2">"2012.08.02.11.11B885AE98DE",</p>
+            <p class="Code2">stepInfo,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert("Updated the current workflow step.");</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2__1100050989" data-has-heading-anchor="true"><a name="initiateChildWorkflow"></a>envianceSdk.workflows.initiateChildWorkflow<a href="/articles/fordevelopers/workflow/a/h2__1100050989" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflow/a/h2__1100050989&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_2983899046_8" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_2983899046_8" style="display: none;">
+                    <p class="BodyIndent">None</p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Executes a Workflow Initiator action on the active Step of an existing Workflow, thereby creating a new "child" Workflow, and places the child on its "Init" Step. Information about Form Field values and Step Actions (aka Transitions) may optionally be specified in order to update or take action on the Init Step of the child Workflow.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowIdOrUniqueId</b>  The id string (GUID) of the Workflow, or the unique id of the Workflow. Any string that matches the pattern of a GUID is interpreted as the id string, and not the unique id of the Workflow.</p>
+            <p class="BodyIndentHanging"><b>childWorkflowInitiationInfo</b>  An instance of the childWorkflowInitiationInfo object with which to update the child Workflow.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">The id string (GUID) of the new child Workflow will be passed to the onsuccess callback in the result property.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.initiateChildWorkflow(</p>
+            <p class="Code2">"2012.08.02.11.11B885AE98DE",</p>
+            <p class="Code2">childWorkflowInitiationInfo,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert("Created new child workflow with id: " + response.result);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2_395975703" data-has-heading-anchor="true"><a name="generateUniqueIds"></a>envianceSdk.workflows.generateUniqueIds<a href="/articles/fordevelopers/workflow/a/h2_395975703" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflow/a/h2_395975703&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_2983899046_9" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_2983899046_9" style="display: none;">
+                    <p><a href="/articles/fordevelopers/version1/a/generateUniqueIds" onclick="return n(&#39;!fordevelopers/version1/a/generateUniqueIds&#39;,this);">Version 1.0</a>
+                    </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Gets a requested number of unused Workflow unique ids, using the unique id generation scheme that has been configured for the specified Workflow Type. For generation schemes that use numeric counters, the counter will be incremented for each generated unique id, whether or not the unique id is subsequently used.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowTypeIdOrName</b> The id string (GUID) or name of the Workflow Type. Any string that matches the pattern of a GUID is interpreted as the id string, and not the name of the Workflow Type.</p>
+            <p class="BodyIndentHanging"><b>count</b> <i>Number</i>. The number of unique ids to generate.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An array of unique id strings will be passed to the onsuccess callback in the result property.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.generateUniqueIds("Spill Incident",1,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">var uniqueIds = response.result;</p>
+            <p class="Code3">alert("First Workflow unique id generated: " + uniqueIds[0]);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2_658884718" data-has-heading-anchor="true"><a name="guessPermissions"></a>envianceSdk.workflows.guessPermissions<a href="/articles/fordevelopers/workflow/a/h2_658884718" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflow/a/h2_658884718&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_2983899046_10" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_2983899046_10" style="display: none;">
+                    <p class="BodyIndent">None</p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">For  given Workflow Type and optional set of compliance objects, this method returns the permissions for all Roles and their resolved members (users and groups), taking into account Role Overrides. (Answers the question:&nbsp;"When a workflow of this type is created, what users and groups are associated and what are their permissions?")</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowTypeIdOrName</b>  The id string (GUID) of the Workflow type, or the unique id of the Workflow type. Any string that matches the pattern of a GUID is interpreted as the id string, and not the unique id of the Workflow.</p>
+            <p class="BodyIndent"><b>options</b>:</p>
+            <p class="BodyIndent2Hanging"><b>objects </b> <i>Array</i>. An array of Compliance Model object id strings (GUIDs) or paths, specifying one or more Compliance Model objects to which the Workflow is associated.  Any string that matches the pattern of a GUID is interpreted as an id string, and not a path. </p>
+            <p class="BodyIndent2Hanging"><b>version</b> <i>Number</i>. Workflow type version number (optional).
+</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">Set of read/write fields; set of read only fields; available step actions; available workflow initiators; available workflow actions (i.e. assign, schedule, add comment, etc.); Assignee Role</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.guessPermissions("ddef6b59-6289-41c9-ac7a-ee87a773ce0e",</p>
+            <p class="Code2">&nbsp;</p>
+            <p class="Code1">"workflowTypeIdOrName",</p>
+            <p class="Code2">{</p>
+            <p class="Code3">"objects": ["objectIdOrPath1", "objectIdOrPath2", ...]</p>
+            <p class="Code3">,"version":6</p>
+            <p class="Code2">},</p>
+            <h2 class="jsmethod" id="h2__1364419980" data-has-heading-anchor="true"><a name="guessPermissionsByUser"></a>envianceSdk.workflows.guessPermissionsByUser<a href="/articles/fordevelopers/workflow/a/h2__1364419980" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflow/a/h2__1364419980&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_2983899046_11" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_2983899046_11" style="display: none;">
+                    <p class="BodyIndent">None</p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">For  given Workflow Type and user and optional set of compliance objects, this method returns the permissions for the user, taking into account all Roles with which the user would be associated. (Answers the question:&nbsp;"When a workflow instance of this type is created for this object, what permissions does this user have?")</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowTypeIdOrName</b>  The id string (GUID) of the Workflow type, or the unique id of the Workflow type. Any string that matches the pattern of a GUID is interpreted as the id string, and not the unique id of the Workflow.</p>
+            <p class="BodyIndent"><b>userId</b> The id string (GUID) or username of the User. Any string that matches the pattern of a GUID is interpreted as the id string, and not the username of a User.</p>
+            <p class="BodyIndent"><b>options</b>:</p>
+            <p class="BodyIndent2Hanging"><b>objects </b> <i>Array</i>. An array of Compliance Model object id strings (GUIDs) or paths, specifying one or more Compliance Model objects to which the Workflow is associated.  Any string that matches the pattern of a GUID is interpreted as an id string, and not a path. </p>
+            <p class="BodyIndent2Hanging"><b>version</b> <i>Number</i>. Workflow type version number.
+</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">Set of read/write fields; set of read only fields; available step actions; available workflow initiators; available workflow actions (i.e. assign, schedule, add comment, etc.); Assignee Role</p>
+            <p class="example">Example</p>
+            <p class="Code1">"workflowTypeIdOrName",</p>
+            <p class="Code1">"userId"</p>
+            <p class="Code2">{</p>
+            <p class="Code3">"objects": ["objectIdOrPath1", "objectIdOrPath2", ...]</p>
+            <p class="Code3">,"version":6</p>
+            <p class="Code2">}, </p>
+            <h2 class="jsmethod" id="h2_745379673" data-has-heading-anchor="true"><a name="resolvePermissions"></a>envianceSdk.workflows.resolvePermissions<a href="/articles/fordevelopers/workflow/a/h2_745379673" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflow/a/h2_745379673&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_2983899046_12" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_2983899046_12" style="display: none;">
+                    <p class="BodyIndent">None</p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Gets permissions for user on a given workflow instance and step, taking into account Role memberships, as well as Manage Workflows right or permission.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowIdOrUniqueId</b>  The id string (GUID) of the Workflow instance, or the unique id of the Workflow instance. Any string that matches the pattern of a GUID is interpreted as the id string, and not the unique id of the Workflow.</p>
+            <p class="BodyIndentHanging"><b>stepIdOrName</b> The id string (GUID) or name of the Step. Any string that matches the pattern of a GUID is interpreted as the id string, and not the name of the Step.</p>
+            <p class="BodyIndentHanging"><b>userId</b> The id string (GUID) or username of the User. Any string that matches the pattern of a GUID is interpreted as the id string, and not the username of a User.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">Set of read/write fields; set of read only fields; available step actions; available workflow initiators; available workflow actions (i.e. assign, schedule, add comment, etc.); Assignee Role</p>
+            <p class="example">Example</p>
+            <p class="Code1">"Corrective Action_2015.10.19_000000023",</p>
+            <p class="Code1">"Enter Corrective Action Response",</p>
+            <p class="Code1">"eb518b86-9519-4807-b028-130053a6c880"</p>
+            <h2 class="jsclass" id="h2_2030827116" data-has-heading-anchor="true"><a name="workflowInfo"></a>envianceSdk.workflows.WorkflowInfo<a href="/articles/fordevelopers/workflow/a/h2_2030827116" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflow/a/h2_2030827116&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_2983899046_13" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_2983899046_13" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Constructs a WorkflowInfo object instance in JavaScript.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowTypeName</b>  The name of the Workflow Type.</p>
+            <p class="BodyIndentHanging"><b>name</b>  The name of the Workflow.</p>
+            <p class="BodyIndentHanging"><b>uniqueId</b>  The unique id string of the Workflow.</p>
+            <p class="BodyIndentHanging"><b>dueDate</b> <i>Date</i>. The due date of the Workflow.</p>
+            <p class="BodyIndentHanging"><b>objects</b> <i>Array</i>. An array of Compliance Model object id strings (GUIDs) or paths, specifying zero or more Compliance Model objects to which the Workflow is associated. Any string that matches the pattern of a GUID is interpreted as an id string, and not a path.</p>
+            <p class="BodyIndentHanging"><b>documents</b> <i>Array</i>. An array of Document id strings (GUIDs) or paths, specifying zero or more Documents attached to the Workflow. Any string that matches the pattern of a GUID is interpreted as an id string, and not a path.</p>
+            <p class="BodyIndentHanging"><b>comment</b>  A comment. When retrieving information on an existing Workflow, this value is the current latest comment on the Workflow.</p>
+            <p class="BodyIndentHanging"><b>calendars</b> <i>Array</i>. An array of strings listing the types of EMS calendars on which this Workflow is shown. Valid values are "My", "Object", "System".</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An instance of the WorkflowInfo class.</p>
+            <p class="bold">Instance Methods</p>
+            <p class="BodyIndentHanging"><b>addPathAssociatedObject(objectPath)</b> Convenience method to add an object path to the objects array property.</p>
+            <p class="BodyIndentHanging"><b>addIdAssociatedObject(objectId)</b> Convenience method to add an object id to the objects Array property.</p>
+            <p class="BodyIndentHanging"><b>addUserAssignee(userIdOrName)</b> Convenience method to add a UserAssignee to the assignedTo Array property.</p>
+            <p class="BodyIndentHanging"><b>addGroupAssignee(groupIdOrName)</b> Convenience method to add a GroupAssignee to the assignedTo Array property.</p>
+            <p class="BodyIndentHanging"><b>addDocument(path)</b> Convenience method to add a Document by path to the documents property.</p>
+            <p class="example">Example</p>
+            <p class="Code1">var workflow = new envianceSdk.workflows.WorkflowInfo(</p>
+            <p class="Code2">"Incidents",</p>
+            <p class="Code2">"Incident One",</p>
+            <p class="Code2">"ABC123",</p>
+            <p class="Code2">"2013-09-30T00:00:00",</p>
+            <p class="Code2">["/Division A/Facility X", "/Division A/Facility B"],</p>
+            <p class="Code2">["/Folder 1/File.xls"],</p>
+            <p class="Code2">"A new incident has occurred on the tank.",</p>
+            <p class="Code2">["My", "Object"]</p>
+            <p class="Code1">);</p>
+            <p class="Code1">workflow.addUserAssignee("jsmith").addGroupAssignee("Administrators");</p>
+            <h2 class="jsclass" id="h2__1484119410" data-has-heading-anchor="true"><a name="workflowStepInfo"></a>envianceSdk.workflows.WorkflowStepInfo<a href="/articles/fordevelopers/workflow/a/h2__1484119410" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflow/a/h2__1484119410&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_2983899046_14" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_2983899046_14" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Constructs a WorkflowStepInfo object instance in JavaScript.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>comment</b>  A comment. When retrieving information on an existing Workflow, this value is the current latest comment on the Workflow.</p>
+            <p class="BodyIndentHanging"><b>fields</b>  An array of CustomField value objects for the Form Fields of the Step.</p>
+            <p class="BodyIndentHanging"><b>transition</b>  An instance of the WorkflowTransitionInfo object.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An instance of the WorkflowStepInfo class.</p>
+            <p class="bold">Instance Methods</p>
+            <p class="BodyIndentHanging"><b>setTransition(stepActionName, dueDate, assignTo)</b> This is a convenience method to create a WorkflowTransitionInfo object and set the transition property to this object.</p>
+            <p class="BodyIndentHanging"><b>addScalarFieldValue(fieldName, value)</b> This is a convenience method to add a ScalarFieldValue value to the fields array property.</p>
+            <p class="BodyIndentHanging"><b>addDateFieldValue(fieldName, value)</b> This is a convenience method to add a DateFieldValue to the fields array property.</p>
+            <p class="BodyIndentHanging"><b>addTimeFieldValue(fieldName, value)</b> This is a convenience method to add a TimeFieldValue to the fields array property.</p>
+            <p class="BodyIndentHanging"><b>addUrlFieldValue(fieldName, label, url)</b> This is a convenience method to add a UrlFieldValue to the fields array property.</p>
+            <p class="BodyIndentHanging"><b>addLinkedFieldValues(fieldName, values)</b> This is a convenience method to add a LinkedFieldValues instance to the fields array property.</p>
+            <p class="BodyIndentHanging"><b>addMultiFieldValues(fieldName, values)</b> This is a convenience method to add a MultiFieldValues instance to the fields array property.</p>
+            <p class="example">Example</p>
+            <p class="Code1">var workflowStep = new envianceSdk.workflows.WorkflowStepInfo(</p>
+            <p class="Code2">"ready for review",</p>
+            <p class="Code2">null, // no fields here</p>
+            <p class="Code2">new envianceSdk.workflows.WorkflowTransitionInfo("Submit For Review")</p>
+            <p class="Code1">);</p>
+            <p class="Code1">workflowStep.addScalarFieldValue("Field A", 1);</p>
+            <p class="Code1">workflowStep.addMultiFieldValues("Field B", ["Option1", "Option2"]);</p>
+            <h2 class="jsclass" id="h2_1697258339" data-has-heading-anchor="true"><a name="workflowTransitionInfo"></a>envianceSdk.workflows.WorkflowTransitionInfo<a href="/articles/fordevelopers/workflow/a/h2_1697258339" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflow/a/h2_1697258339&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_2983899046_15" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_2983899046_15" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description	</p>
+            <p class="BodyIndent">Constructs a WorkflowTransitionInfo object instance in JavaScript.</p>
+            <p class="bold">Parameters	</p>
+            <p class="BodyIndentHanging"><b>stepActionName</b>  The name of the Workflow Step Action.</p>
+            <p class="BodyIndentHanging"><b>dueDate</b> <i>Date</i>. An optional new due date for the Workflow.</p>
+            <p class="BodyIndentHanging"><b>assignTo</b>  An optional array of of <a href="/articles/fordevelopers/common/a/UserAssignee" onclick="return n(&#39;!fordevelopers/common/a/UserAssignee&#39;,this);">UserAssignee</a> and/or <a href="/articles/fordevelopers/common/a/GroupAssignee" onclick="return n(&#39;!fordevelopers/common/a/GroupAssignee&#39;,this);">GroupAssignee</a> instances to which the Workflow should be assigned.</p>
+            <p class="bold">Return Value	</p>
+            <p class="BodyIndent">An instance of the WorkflowTransitionInfo class.</p>
+            <p class="bold">Instance Methods	</p>
+            <p class="BodyIndentHanging"><b>addUserAssignee(userIdOrName)</b> This is a convenience method to add a user to the assignTo array property.</p>
+            <p class="BodyIndentHanging"><b>addGroupAssignee(groupIdOrName)</b> This is a convenience method to add a group to the assignTo array property.</p>
+            <p class="example">Example</p>
+            <p class="Code1">var transition = new envianceSdk.workflows.WorkflowTransitionInfo(</p>
+            <p class="Code2">"Submit for Review",</p>
+            <p class="Code2">"2013-10-01T12:00:00",</p>
+            <p class="Code2">["jsmith", "Administrators"]</p>
+            <p class="Code1">);</p>
+            <h2 class="jsclass" id="h2__1903233246" data-has-heading-anchor="true"><a name="ChildWorkflowInitiationInfo"></a>envianceSdk.workflows.ChildWorkflowInitiationInfo<a href="/articles/fordevelopers/workflow/a/h2__1903233246" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflow/a/h2__1903233246&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_2983899046_16" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_2983899046_16" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description	</p>
+            <p class="BodyIndent">Constructs a ChildWorkflowInitiationInfo object instance in JavaScript.</p>
+            <p class="bold">Parameters	</p>
+            <p class="BodyIndentHanging"><b>parentStepIdOrName</b>  The id string (GUID) or name of the Workflow Step that has the initiator available. Any string that matches the pattern of a GUID is interpreted as the id string, and not the name of the Step.</p>
+            <p class="BodyIndentHanging"><b>initiatorIdOrName</b>  The id string (GUID) or name of the initiator. Any string that matches the pattern of a GUID is interpreted as the id string, and not the name of the initiator.</p>
+            <p class="BodyIndentHanging"><b>childWorkflowInfo</b> A workflowInfo object instance for the child Workflow.</p>
+            <p class="BodyIndentHanging"><b>childInitStepInfo</b>  A workflowStepInfo object for the child Workflow's init (first) step.</p>
+            <p class="bold">Return Value	</p>
+            <p class="BodyIndent">An instance of the ChildWorkflowInitiationInfo class.</p>
+            <p class="example">Example</p>
+            <p class="Code1">var childInitInfo = new envianceSdk.workflows.ChildWorkflowInitiationInfo(</p>
+            <p class="Code2">"Review Incident",</p>
+            <p class="Code2">"Create Finding",</p>
+            <p class="Code2">childInfo,</p>
+            <p class="Code2">childStepInfo</p>
+            <p class="Code1">);</p>
+        </div>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js" data-aspx-savednextwhitespace="%0A%20%20%20%20">
+        </script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

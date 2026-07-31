@@ -1,0 +1,665 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/chemicals"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Chemical APIs and Data Types</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Chemical APIs and Data Types';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><p>
+	</p><p class="Note">For the most up to date API documentation, please see the&nbsp;<a href="https://api.enviance.com/swagger.svc/index.html?url=/Swagger.svc/swagger.json#/ChemicalGrouphttps://api.enviance.com/swagger.svc/index.html?url=/Swagger.svc/swagger.json#/Chemical" target="_blank">Chemicals API Documentation on Swagger</a>.<br/></p><p><span style="color: #244545; font-size: 16pt; font-weight: bold;">Chemical APIs and Data Types</span></p><p></p><section><h2 id="version" data-has-heading-anchor="true">Version:<a href="/articles/fordevelopers/chemicals/a/version" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicals/a/version&#39;,this);"></a></h2>
+
+<p><strong>License:</strong> <a href="http://www.enviance.com" target="_top">Enviance, Inc.</a></p>
+
+<p id="chemicals"><br/></p><h3 id="chemicals" data-has-heading-anchor="true">/chemicals<a href="/articles/fordevelopers/chemicals/a/chemicals" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicals/a/chemicals&#39;,this);"></a></h3>
+
+<h4 id="post" data-has-heading-anchor="true">POST<a href="/articles/fordevelopers/chemicals/a/post" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicals/a/post&#39;,this);"></a></h4>
+<h5 id="description" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/chemicals/a/description" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicals/a/description&#39;,this);"></a></h5>
+
+<p>Creates a new Chemical, alternately by copying an existing Chemical.</p>
+
+<p><strong>Security:</strong> Requires Manage Materials and Activities system right.</p>
+
+<p><strong>SDK API (create):</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.chemicals.createChemical (chemicalInfo, onsuccess, onerror)</font></code></p>
+
+<p><strong>SDK API (copy):</strong> <span class="Code2" style="font-family: monospace; background-color: #f9f2f4;"><font color="#ff0000">envianceSdk.chemicals.copyChemical&nbsp;(chemicalInfo, copyFrom, onsuccess, onerror)</font>&nbsp;</span></p>
+
+<h5 id="parameters" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/chemicals/a/parameters" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicals/a/parameters&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">chemicalCreate</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Chemical Create body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/chemicals/a/chemicalcreate" onclick="return n(&#39;!fordevelopers/chemicals/a/chemicalcreate&#39;,this);">chemicalCreate</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/chemicals/a/responses" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicals/a/responses&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) for the new Chemical.</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//EXAMPLE (Create)</span>
+<span class="cm-variable">POST</span><span class="cm-operator">/</span><span class="cm-variable">ChemicalService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">chemicals</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">UTF</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+ 
+{
+  <span class="cm-string property">&quot;chemicalInfo&quot;</span>: {
+  <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Chemical Name&quot;</span>,
+  <span class="cm-string property">&quot;casNum&quot;</span>: <span class="cm-string">&quot;71-43-2&quot;</span>,
+  <span class="cm-string property">&quot;alias&quot;</span>: <span class="cm-string">&quot;ChemAlias&quot;</span>,
+  <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;Chemical Description&quot;</span>,
+  <span class="cm-string property">&quot;historyItem&quot;</span>: [
+    {
+      {
+      <span class="cm-string">&quot;beginDate&quot;</span>: <span class="cm-string">&quot;2012-01-01T20:00:00&quot;</span>,
+      <span class="cm-string">&quot;Mw&quot;</span>: <span class="cm-string">&quot;78.11&quot;</span>, <span class="cm-string">&quot;antA&quot;</span>: <span class="cm-string">&quot;6.905&quot;</span>, <span class="cm-string">&quot;antB&quot;</span>: <span class="cm-string">&quot;1211.033&quot;</span>,
+      <span class="cm-string">&quot;antC&quot;</span>: <span class="cm-string">&quot;220.79&quot;</span>, <span class="cm-string">&quot;antAk&quot;</span>: <span class="cm-string">&quot;34172&quot;</span>, <span class="cm-string">&quot;antBk&quot;</span>: <span class="cm-string">&quot;7.9622&quot;</span>,
+      <span class="cm-string">&quot;vp60&quot;</span>: <span class="cm-string">&quot;1.16&quot;</span>, <span class="cm-string">&quot;density&quot;</span>: <span class="cm-string">&quot;7.365&quot;</span>, <span class="cm-string">&quot;dipprA&quot;</span>: <span class="cm-string">&quot;0&quot;</span>,
+      <span class="cm-string">&quot;dipprB&quot;</span>: <span class="cm-string">&quot;0&quot;</span>, <span class="cm-string">&quot;dipprC&quot;</span>: <span class="cm-string">&quot;0&quot;</span>, <span class="cm-string">&quot;dipprD&quot;</span>: <span class="cm-string">&quot;0&quot;</span>,
+      <span class="cm-string">&quot;dipprE&quot;</span>: <span class="cm-string">&quot;0&quot;</span>, <span class="cm-string">&quot;dipprF&quot;</span>: <span class="cm-string">&quot;0&quot;</span>, <span class="cm-string">&quot;dipprG&quot;</span>: <span class="cm-string">&quot;0&quot;</span>,
+      <span class="cm-string">&quot;rcraHaz&quot;</span>: <span class="cm-string">&quot;true&quot;</span>, <span class="cm-string">&quot;hap&quot;</span>: <span class="cm-string">&quot;true&quot;</span>, <span class="cm-string">&quot;tri&quot;</span>: <span class="cm-string">&quot;true&quot;</span>,
+      <span class="cm-string">&quot;ehs&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string">&quot;pbt&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string">&quot;dioxin&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+      <span class="cm-string">&quot;caa112R&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string">&quot;pac&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string">&quot;diisocyan&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+      <span class="cm-string">&quot;cerclaHaz&quot;</span>: <span class="cm-string">&quot;true&quot;</span>, <span class="cm-string">&quot;airToxicEmissionInventory&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+      <span class="cm-string">&quot;solid&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string">&quot;nonEvaporative&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+      <span class="cm-string">&quot;rcraVoc&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string">&quot;rcraSvoc&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string">&quot;caaVoc&quot;</span>: <span class="cm-string">&quot;false&quot;</span>
+      }
+    }
+  ]
+  }
+}</pre></pre></td></tr></table>
+
+</section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//EXAMPLE (Copy)</span>
+<span class="cm-variable">POST</span> <span class="cm-operator">/</span> <span class="cm-variable">ChemicalService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">chemical</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">UTF</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+ 
+{
+  <span class="cm-string property">&quot;chemicalCreationInformation&quot;</span>: {
+  <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Chemical Name&quot;</span>,
+  <span class="cm-string property">&quot;casNum&quot;</span>: <span class="cm-string">&quot;71-43-2&quot;</span>,
+  <span class="cm-string property">&quot;alias&quot;</span>: <span class="cm-string">&quot;ChemAlias&quot;</span>
+  <span class="cm-string">&quot;copyFrom&quot;</span>: <span class="cm-string">&quot;Bz&quot;</span>
+}</pre></pre></td></tr></table><p id="chemicalschemicalidoralias"><br/></p><h3 id="chemicalschemicalidoralias" data-has-heading-anchor="true">/chemicals/{chemicalIdOrAlias}<a href="/articles/fordevelopers/chemicals/a/chemicalschemicalidoralias" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicals/a/chemicalschemicalidoralias&#39;,this);"></a></h3>
+
+<h4 id="patch" data-has-heading-anchor="true">PATCH<a href="/articles/fordevelopers/chemicals/a/patch" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicals/a/patch&#39;,this);"></a></h4>
+<h5 id="description-1" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/chemicals/a/description-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicals/a/description-1&#39;,this);"></a></h5>
+
+<p>Updates an existing Chemical.</p>
+
+<p><strong>Security:</strong> Requires Manage Materials and Activities system right.</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.chemicals.updateChemical (chemicalIdOrAlias, chemicalInfo, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-1" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/chemicals/a/parameters-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicals/a/parameters-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">chemicalIdOrAlias</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Either an id string (GUID) or the alias for the Chemical. Any string that matches the pattern of a GUID is interpreted as an id string, and not the alias. An alias string must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ChemicalInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A ChemicalInfo structure. Some properties of this structure are ignored during this operation; see the details of this structure for more info.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/chemicals/a/chemicalinfo" onclick="return n(&#39;!fordevelopers/chemicals/a/chemicalinfo&#39;,this);">chemicalInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-1" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/chemicals/a/responses-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicals/a/responses-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) for the updated Chemical.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">PATCH</span><span class="cm-operator">/</span><span class="cm-variable">ChemicalService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">chemicals</span><span class="cm-operator">/</span><span class="cm-number">7</span><span class="cm-variable">ef9655e</span><span class="cm-operator">-</span><span class="cm-number">916</span><span class="cm-variable">b</span><span class="cm-operator">-</span><span class="cm-number">414</span><span class="cm-variable">f</span><span class="cm-operator">-</span><span class="cm-number">8</span><span class="cm-variable">c88</span><span class="cm-operator">-</span><span class="cm-number">5753</span><span class="cm-variable">fa731558</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">UTF</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+ 
+{
+  <span class="cm-string property">&quot;chemicalUpdateInformation&quot;</span>: {
+    <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Chemical Name&quot;</span>,
+    <span class="cm-string property">&quot;casNum&quot;</span>: <span class="cm-string">&quot;71-43-2&quot;</span>,
+    <span class="cm-string property">&quot;alias&quot;</span>: <span class="cm-string">&quot;alias&quot;</span>,
+    <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;Chemical Description&quot;</span>,
+    <span class="cm-string property">&quot;historyItem&quot;</span>: [
+      {
+      <span class="cm-string property">&quot;beginDate&quot;</span>: <span class="cm-string">&quot;2012-01-01T20:00:00&quot;</span>,
+      <span class="cm-string property">&quot;Mw&quot;</span>: <span class="cm-string">&quot;78.11&quot;</span>, <span class="cm-string property">&quot;antA&quot;</span>: <span class="cm-string">&quot;6.905&quot;</span>, <span class="cm-string property">&quot;antB&quot;</span>: <span class="cm-string">&quot;1211.033&quot;</span>,
+      <span class="cm-string property">&quot;antC&quot;</span>: <span class="cm-string">&quot;220.79&quot;</span>, <span class="cm-string property">&quot;antAk&quot;</span>: <span class="cm-string">&quot;34172&quot;</span>, <span class="cm-string property">&quot;antBk&quot;</span>: <span class="cm-string">&quot;7.9622&quot;</span>,
+      <span class="cm-string property">&quot;vp60&quot;</span>: <span class="cm-string">&quot;1.16&quot;</span>, <span class="cm-string property">&quot;density&quot;</span>: <span class="cm-string">&quot;7.365&quot;</span>, <span class="cm-string property">&quot;dipprA&quot;</span>: <span class="cm-string">&quot;0&quot;</span>,
+      <span class="cm-string property">&quot;dipprB&quot;</span>: <span class="cm-string">&quot;0&quot;</span>, <span class="cm-string property">&quot;dipprC&quot;</span>: <span class="cm-string">&quot;0&quot;</span>, <span class="cm-string property">&quot;dipprD&quot;</span>: <span class="cm-string">&quot;0&quot;</span>,
+      <span class="cm-string property">&quot;dipprE&quot;</span>: <span class="cm-string">&quot;0&quot;</span>, <span class="cm-string property">&quot;dipprF&quot;</span>: <span class="cm-string">&quot;0&quot;</span>, <span class="cm-string property">&quot;dipprG&quot;</span>: <span class="cm-string">&quot;0&quot;</span>,
+      <span class="cm-string property">&quot;rcraHaz&quot;</span>: <span class="cm-string">&quot;true&quot;</span>, <span class="cm-string property">&quot;hap&quot;</span>: <span class="cm-string">&quot;true&quot;</span>, <span class="cm-string property">&quot;tri&quot;</span>: <span class="cm-string">&quot;true&quot;</span>,
+      <span class="cm-string property">&quot;ehs&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string property">&quot;pbt&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string property">&quot;dioxin&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+      <span class="cm-string property">&quot;caa112R&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string property">&quot;pac&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string property">&quot;diisocyan&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+      <span class="cm-string property">&quot;cerclaHaz&quot;</span>: <span class="cm-string">&quot;true&quot;</span>, <span class="cm-string property">&quot;airToxicEmissionInventory&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+      <span class="cm-string property">&quot;solid&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string property">&quot;nonEvaporative&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+      <span class="cm-string property">&quot;rcraVoc&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string property">&quot;rcraSvoc&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string property">&quot;caaVoc&quot;</span>: <span class="cm-string">&quot;false&quot;</span>
+      }
+    ]
+  }
+}</pre></pre></td></tr></table></section><section>
+
+<h4 id="get" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/chemicals/a/get" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicals/a/get&#39;,this);"></a></h4>
+<h5 id="description-2" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/chemicals/a/description-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicals/a/description-2&#39;,this);"></a></h5>
+
+<p>Gets information about Chemical.</p>
+
+<p><strong>Security:</strong> Requires Manage Materials and Activities system right.</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.chemicals.getChemical (chemicalIdOrAlias, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-2" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/chemicals/a/parameters-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicals/a/parameters-2&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">chemicalIdOrAlias</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Either an id string (GUID) or the alias for the Chemical. Any string that matches the pattern of a GUID is interpreted as an id string, and not the alias. An alias string must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-2" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/chemicals/a/responses-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicals/a/responses-2&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An instance of ChemicalInfo structure</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/chemicals/a/chemicalinfo" onclick="return n(&#39;!fordevelopers/chemicals/a/chemicalinfo&#39;,this);">chemicalInfo</a></td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">GET</span> <span class="cm-operator">/</span><span class="cm-variable">ChemicalService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">chemicals</span><span class="cm-operator">/</span><span class="cm-number">9</span><span class="cm-variable">ca22677</span><span class="cm-operator">-</span><span class="cm-number">2670</span><span class="cm-operator">-</span><span class="cm-number">41</span><span class="cm-variable">a9</span><span class="cm-operator">-</span><span class="cm-variable">bafd</span><span class="cm-operator">-</span><span class="cm-number">3</span><span class="cm-variable">b2825592863</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//RESPONSE</span>
+
+{
+  <span class="cm-string property">&quot;id&quot;</span>: <span class="cm-string">&quot;9ca22677-2670-41a9-bafd-3b2825592863&quot;</span>,
+  <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Chemical Name&quot;</span>,
+  <span class="cm-string property">&quot;casNum&quot;</span>: <span class="cm-string">&quot;71-43-2&quot;</span>
+  <span class="cm-string">&quot;alias&quot;</span>: <span class="cm-string">&quot;alias&quot;</span>,
+  <span class="cm-string">&quot;description&quot;</span>: <span class="cm-string">&quot;Chemical Description&quot;</span>,
+  <span class="cm-string">&quot;historyItem&quot;</span>: [
+    {
+      <span class="cm-string">&quot;beginDate&quot;</span>: <span class="cm-string">&quot;2012-01-01T20:00:00&quot;</span>,
+      <span class="cm-string">&quot;Mw&quot;</span>: <span class="cm-string">&quot;78.11&quot;</span>, <span class="cm-string">&quot;antA&quot;</span>: <span class="cm-string">&quot;6.905&quot;</span>, <span class="cm-string">&quot;antB&quot;</span>: <span class="cm-string">&quot;1211.033&quot;</span>,
+      <span class="cm-string">&quot;antC&quot;</span>: <span class="cm-string">&quot;220.79&quot;</span>, <span class="cm-string">&quot;antAk&quot;</span>: <span class="cm-string">&quot;34172&quot;</span>, <span class="cm-string">&quot;antBk&quot;</span>: <span class="cm-string">&quot;7.9622&quot;</span>,
+      <span class="cm-string">&quot;vp60&quot;</span>: <span class="cm-string">&quot;1.16&quot;</span>, <span class="cm-string">&quot;density&quot;</span>: <span class="cm-string">&quot;7.365&quot;</span>, <span class="cm-string">&quot;dipprA&quot;</span>: <span class="cm-string">&quot;0&quot;</span>,
+      <span class="cm-string">&quot;dipprB&quot;</span>: <span class="cm-string">&quot;0&quot;</span>, <span class="cm-string">&quot;dipprC&quot;</span>: <span class="cm-string">&quot;0&quot;</span>, <span class="cm-string">&quot;dipprD&quot;</span>: <span class="cm-string">&quot;0&quot;</span>,
+      <span class="cm-string">&quot;dipprE&quot;</span>: <span class="cm-string">&quot;0&quot;</span>, <span class="cm-string">&quot;dipprF&quot;</span>: <span class="cm-string">&quot;0&quot;</span>, <span class="cm-string">&quot;dipprG&quot;</span>: <span class="cm-string">&quot;0&quot;</span>,
+      <span class="cm-string">&quot;rcraHaz&quot;</span>: <span class="cm-string">&quot;true&quot;</span>, <span class="cm-string">&quot;hap&quot;</span>: <span class="cm-string">&quot;true&quot;</span>, <span class="cm-string">&quot;tri&quot;</span>: <span class="cm-string">&quot;true&quot;</span>,
+      <span class="cm-string">&quot;ehs&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string">&quot;pbt&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string">&quot;dioxin&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+      <span class="cm-string">&quot;caa112R&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string">&quot;pac&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string">&quot;diisocyan&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+      <span class="cm-string">&quot;cerclaHaz&quot;</span>: <span class="cm-string">&quot;true&quot;</span>, <span class="cm-string">&quot;airToxicEmissionInventory&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+      <span class="cm-string">&quot;solid&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string">&quot;nonEvaporative&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+      <span class="cm-string">&quot;rcraVoc&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string">&quot;rcraSvoc&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string">&quot;caaVoc&quot;</span>: <span class="cm-string">&quot;false&quot;</span>
+    }
+  ]
+}</pre></pre></td></tr></table></section><section>
+
+<h4 id="delete" data-has-heading-anchor="true">DELETE<a href="/articles/fordevelopers/chemicals/a/delete" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicals/a/delete&#39;,this);"></a></h4>
+<h5 id="description-3" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/chemicals/a/description-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicals/a/description-3&#39;,this);"></a></h5>
+
+<p>Deletes an existing Chemical. <em>Deletions are permanent</em>.</p>
+
+<p><strong>Security:</strong> Requires Manage Materials and Activities system right.</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.chemicals.deleteChemical (chemicalIdOrAlias, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-3" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/chemicals/a/parameters-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicals/a/parameters-3&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">chemicalIdOrAlias</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Either an id string (GUID) or the alias for the Chemical. Any string that matches the pattern of a GUID is interpreted as the id string, and not the alias.  An alias string must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-3" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/chemicals/a/responses-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicals/a/responses-3&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">204</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Chemical deleted</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">DELETE</span><span class="cm-operator">/</span><span class="cm-variable">ChemicalService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">chemicals</span><span class="cm-operator">/</span><span class="cm-number">7</span><span class="cm-variable">ef9655e</span><span class="cm-operator">-</span><span class="cm-number">916</span><span class="cm-variable">b</span><span class="cm-operator">-</span><span class="cm-number">414</span><span class="cm-variable">f</span><span class="cm-operator">-</span><span class="cm-number">8</span><span class="cm-variable">c88</span><span class="cm-operator">-</span><span class="cm-number">5753</span><span class="cm-variable">fa731558</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table>
+
+<p id="models"><br/></p><h3 id="models" data-has-heading-anchor="true">Models<a href="/articles/fordevelopers/chemicals/a/models" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicals/a/models&#39;,this);"></a></h3>
+
+<h4 id="chemicalcreate" data-has-heading-anchor="true">chemicalCreate<span id="chemicalCreate"></span>&nbsp;<a href="/articles/fordevelopers/chemicals/a/chemicalcreate" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicals/a/chemicalcreate&#39;,this);"></a></h4>
+
+<p>Creation info for Chemical</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">chemicalInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/chemicals/a/chemicalinfo" onclick="return n(&#39;!fordevelopers/chemicals/a/chemicalinfo&#39;,this);">chemicalInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A chemicalInfo structure</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">copyFrom</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) or alias of an existing Chemical to be copied.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="chemicalinfo" data-has-heading-anchor="true">chemicalInfo<span id="chemicalInfo"></span>&nbsp;<a href="/articles/fordevelopers/chemicals/a/chemicalinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicals/a/chemicalinfo&#39;,this);"></a></h4>
+
+<p>Represents a Chemical definition.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) for the Chemical. Ignored for: Create Chemical, Update Chemical</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Name of the Chemical. Required for: Create Chemical</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">casNumber</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The CAS number for the Chemical. Required for: Create Chemical</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">alias</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An alias for the Chemical to be used in scripts. Required for: Create Chemical</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">description</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Description of the Chemical.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">historyItems</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/chemicals/a/chemicalhistoryinfo" onclick="return n(&#39;!fordevelopers/chemicals/a/chemicalhistoryinfo&#39;,this);">chemicalHistoryInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of ChemicalHistoryInfo structures,specifying records which should be part of the Chemical property history.  A new Chemical must have at least one Chemical history record. Required for: Create Chemical</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default">{
+  <span class="cm-string property">&quot;id&quot;</span>: <span class="cm-string">&quot;9ca22677-2670-41a9-bafd-3b2825592863&quot;</span>,
+  <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Chemical Name&quot;</span>,
+  <span class="cm-string property">&quot;casNum&quot;</span>: <span class="cm-string">&quot;71-43-2&quot;</span>
+  <span class="cm-string">&quot;alias&quot;</span>: <span class="cm-string">&quot;alias&quot;</span>,
+  <span class="cm-string">&quot;description&quot;</span>: <span class="cm-string">&quot;Chemical Description&quot;</span>,
+  <span class="cm-string">&quot;historyItem&quot;</span>: [
+    {
+      <span class="cm-string">&quot;beginDate&quot;</span>: <span class="cm-string">&quot;2012-01-01T20:00:00&quot;</span>,
+      <span class="cm-string">&quot;Mw&quot;</span>: <span class="cm-string">&quot;78.11&quot;</span>, <span class="cm-string">&quot;antA&quot;</span>: <span class="cm-string">&quot;6.905&quot;</span>, <span class="cm-string">&quot;antB&quot;</span>: <span class="cm-string">&quot;1211.033&quot;</span>,
+      <span class="cm-string">&quot;antC&quot;</span>: <span class="cm-string">&quot;220.79&quot;</span>, <span class="cm-string">&quot;antAk&quot;</span>: <span class="cm-string">&quot;34172&quot;</span>, <span class="cm-string">&quot;antBk&quot;</span>: <span class="cm-string">&quot;7.9622&quot;</span>,
+      <span class="cm-string">&quot;vp60&quot;</span>: <span class="cm-string">&quot;1.16&quot;</span>, <span class="cm-string">&quot;density&quot;</span>: <span class="cm-string">&quot;7.365&quot;</span>, <span class="cm-string">&quot;dipprA&quot;</span>: <span class="cm-string">&quot;0&quot;</span>,
+      <span class="cm-string">&quot;dipprB&quot;</span>: <span class="cm-string">&quot;0&quot;</span>, <span class="cm-string">&quot;dipprC&quot;</span>: <span class="cm-string">&quot;0&quot;</span>, <span class="cm-string">&quot;dipprD&quot;</span>: <span class="cm-string">&quot;0&quot;</span>,
+      <span class="cm-string">&quot;dipprE&quot;</span>: <span class="cm-string">&quot;0&quot;</span>, <span class="cm-string">&quot;dipprF&quot;</span>: <span class="cm-string">&quot;0&quot;</span>, <span class="cm-string">&quot;dipprG&quot;</span>: <span class="cm-string">&quot;0&quot;</span>,
+      <span class="cm-string">&quot;rcraHaz&quot;</span>: <span class="cm-string">&quot;true&quot;</span>, <span class="cm-string">&quot;hap&quot;</span>: <span class="cm-string">&quot;true&quot;</span>, <span class="cm-string">&quot;tri&quot;</span>: <span class="cm-string">&quot;true&quot;</span>,
+      <span class="cm-string">&quot;ehs&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string">&quot;pbt&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string">&quot;dioxin&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+      <span class="cm-string">&quot;caa112R&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string">&quot;pac&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string">&quot;diisocyan&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+      <span class="cm-string">&quot;cerclaHaz&quot;</span>: <span class="cm-string">&quot;true&quot;</span>, <span class="cm-string">&quot;airToxicEmissionInventory&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+      <span class="cm-string">&quot;solid&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string">&quot;nonEvaporative&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+      <span class="cm-string">&quot;rcraVoc&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string">&quot;rcraSvoc&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string">&quot;caaVoc&quot;</span>: <span class="cm-string">&quot;false&quot;</span>
+    }
+  ]
+}</pre></pre></td></tr></table></section><section>
+
+<h4 id="chemicalhistoryinfo" data-has-heading-anchor="true">chemicalHistoryInfo<span id="chemicalHistoryInfo"></span>&nbsp;<a href="/articles/fordevelopers/chemicals/a/chemicalhistoryinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicals/a/chemicalhistoryinfo&#39;,this);"></a></h4>
+
+<p>Represents a Chemical History Item definition</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">beginDate</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Begin date for the chemical history.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">mW</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Molecular weight of the chemical. A non-negative decimal value. If unspecified, the default is 0.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">antA</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Value of the Antoine A constant for calculating vapor pressure with temperature in Centigrade. A non-negative decimal value. If unspecified, the default is 0</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">antB</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Value of the Antoine B constant for calculating vapor pressure with temperature in Centigrade. A non-negative decimal value. If unspecified, the default is 0.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">antC</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Value of the Antoine C constant for calculating vapor pressure with temperature in Centigrade. A non-negative decimal value. If unspecified, the default is 0.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">antAk</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Value of the Antoine A constant for calculating vapor pressure with temperature in Kelvin. A non-negative decimal value. If unspecified, the default is 0.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">antBk</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Value of the Antoine B constant for calculating vapor pressure with temperature in Kelvin. A non-negative decimal value. If unspecified, the default is 0.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">antCk</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Value of the Antoine C constant for calculating vapor pressure with temperature in Kelvin. A non-negative decimal value. If unspecified, the default is 0.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">vp60</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Vapor pressure at 60 deg Fahrenheit. A non-negative decimal value. If unspecified, the default is 0.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">density</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Density at 60 deg Fahrenheit. A non-negative decimal value. If unspecified, the default is 0.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dipprA</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Value of the A constant for calculating vapor pressure by the DIPPR method. A non-negative decimal value. If unspecified, the default is 0.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dipprB</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Value of the B constant for calculating vapor pressure by the DIPPR method. A non-negative decimal value. If unspecified, the default is 0.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dipprC</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Value of the C constant for calculating vapor pressure by the DIPPR method. A non-negative decimal value. If unspecified, the default is 0.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dipprD</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Value of the D constant for calculating vapor pressure by the DIPPR method. A non-negative decimal value. If unspecified, the default is 0.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dipprE</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Value of the E constant for calculating vapor pressure by the DIPPR method. A non-negative decimal value. If unspecified, the default is 0.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dipprF</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Value of the F constant for calculating vapor pressure by the DIPPR method. A non-negative decimal value. If unspecified, the default is 0.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dipprG</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (number)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Value of the G constant for calculating vapor pressure by the DIPPR method. A non-negative decimal value. If unspecified, the default is 0.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">rcraHax</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (boolean)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Is on Resource Conservation and Recovery Act (RCRA) Hazardous list. A true or false flag. If unspecified, the default is false.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">hap</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (boolean)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Is listed as  Hazardous Air Pollutant (HAP). A true or false flag. If unspecified, the default is false.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">tri</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (boolean)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Is on the Toxic Release Inventory reporting list. A true or false flag. If unspecified, the default is false.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ehs</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (boolean)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Is listed as an Extremely Hazardous Substance. A true or false flag. If unspecified, the default is false.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pbt</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (boolean)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Is listed as a Persistent Bioaccumulative Toxic (PBT) chemical. A true or false flag. If unspecified, the default is false.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dioxin</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (boolean)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Is a dioxin or dioxin-like chemical. A true or false flag. If unspecified, the default is false.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">caa112r</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (boolean)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Is on the Clean Air Act Section 112(r) list of regulated substances. A true or false flag. If unspecified, the default is false.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pac</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (boolean)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Is on the Protective Action Criteria (PAC) list. A true or false flag. If unspecified, the default is false.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">diisocyan</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (boolean)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Is a diisocyanate chemical. A true or false flag.  If unspecified, the default is false.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">cerclaHaz</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (boolean)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Is on the Comprehensive Environmental Response, Compensation, and Liability Act (CERCLA) hazardous chemical list (commonly known as Superfund). A true or false flag. If unspecified, the default is false.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">airToxicEmissionInventory</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (boolean)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Is listed on the Air Toxic Emission Inventory. A true or false flag. If unspecified, the default is false.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">solid</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (boolean)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Is a solid. A true or false flag. If unspecified, the default is false.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">nonEvaporative</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (boolean)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Is non-evaporative. A true or false flag. If unspecified, the default is false.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">rcraVoc</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (boolean)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Is an RCRA VOC. A true or false flag. If unspecified, the default is false.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">rcraSvoc</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (boolean)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Is an RCRA SVOC. A true or false flag. If unspecified, the default is false.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">caaVoc</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (boolean)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Is a Clean Air Act VOC. A true or false flag. If unspecified, the default is false.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default">{
+  <span class="cm-string property">&quot;beginDate&quot;</span>: <span class="cm-string">&quot;2012-01-01T20:00:00&quot;</span>,
+  <span class="cm-string property">&quot;Mw&quot;</span>: <span class="cm-string">&quot;78.11&quot;</span>, <span class="cm-string property">&quot;antA&quot;</span>: <span class="cm-string">&quot;6.905&quot;</span>, <span class="cm-string property">&quot;antB&quot;</span>: <span class="cm-string">&quot;1211.033&quot;</span>,
+  <span class="cm-string property">&quot;antC&quot;</span>: <span class="cm-string">&quot;220.79&quot;</span>, <span class="cm-string property">&quot;antAk&quot;</span>: <span class="cm-string">&quot;34172&quot;</span>, <span class="cm-string property">&quot;antBk&quot;</span>: <span class="cm-string">&quot;7.9622&quot;</span>,
+  <span class="cm-string property">&quot;vp60&quot;</span>: <span class="cm-string">&quot;1.16&quot;</span>, <span class="cm-string property">&quot;density&quot;</span>: <span class="cm-string">&quot;7.365&quot;</span>, <span class="cm-string property">&quot;dipprA&quot;</span>: <span class="cm-string">&quot;0&quot;</span>,
+  <span class="cm-string property">&quot;dipprB&quot;</span>: <span class="cm-string">&quot;0&quot;</span>, <span class="cm-string property">&quot;dipprC&quot;</span>: <span class="cm-string">&quot;0&quot;</span>, <span class="cm-string property">&quot;dipprD&quot;</span>: <span class="cm-string">&quot;0&quot;</span>,
+  <span class="cm-string property">&quot;dipprE&quot;</span>: <span class="cm-string">&quot;0&quot;</span>, <span class="cm-string property">&quot;dipprF&quot;</span>: <span class="cm-string">&quot;0&quot;</span>, <span class="cm-string property">&quot;dipprG&quot;</span>: <span class="cm-string">&quot;0&quot;</span>,
+  <span class="cm-string property">&quot;rcraHaz&quot;</span>: <span class="cm-string">&quot;true&quot;</span>, <span class="cm-string property">&quot;hap&quot;</span>: <span class="cm-string">&quot;true&quot;</span>, <span class="cm-string property">&quot;tri&quot;</span>: <span class="cm-string">&quot;true&quot;</span>,
+  <span class="cm-string property">&quot;ehs&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string property">&quot;pbt&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string property">&quot;dioxin&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+  <span class="cm-string property">&quot;caa112R&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string property">&quot;pac&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string property">&quot;diisocyan&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+  <span class="cm-string property">&quot;cerclaHaz&quot;</span>: <span class="cm-string">&quot;true&quot;</span>, <span class="cm-string property">&quot;airToxicEmissionInventory&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+  <span class="cm-string property">&quot;solid&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string property">&quot;nonEvaporative&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+  <span class="cm-string property">&quot;rcraVoc&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string property">&quot;rcraSvoc&quot;</span>: <span class="cm-string">&quot;false&quot;</span>, <span class="cm-string property">&quot;caaVoc&quot;</span>: <span class="cm-string">&quot;false&quot;</span>
+}</pre></pre></td></tr></table></section><p></p><p><br/></p><p>
+    <br/></p><p><br/></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

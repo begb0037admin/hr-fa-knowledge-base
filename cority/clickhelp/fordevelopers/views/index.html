@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/views"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Views</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Views';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>        <h1 id="h1_1769858508" data-has-heading-anchor="true">Views<a href="/articles/fordevelopers/views/a/h1_1769858508" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/views/a/h1_1769858508&#39;,this);"></a></h1><p class="Note"><span style="text-indent: -1.33333px; background-color: #d3d3d3;">Note: Views are only available for the Management System EQL.</span></p>
+        <p>EQL allows the use of Inline Table-Valued Function (ITVF). An ITVF must be previously created in the database with the prefix &quot;eql_view_user_&quot;.</p>
+        <p>An ITVF can also contain parameters (order does not matter). Parameters in the database must start with prefix &quot;@__&quot;.</p>
+        <p>Round brackets are optional in case of parameter-less view.</p>
+        <p>In EQL all views and parameters must be used without the database prefix.</p>
+        <p>All parameters named &quot;USER&quot;, &quot;APP&quot;, &quot;SYSTEM&quot; are optional.</p>
+        <p>A parameter can be used as condition in &quot;where&quot;/ &quot;on&quot; clause if there is no conflict with the column name.</p>
+        <p class="example">Example: Simple ITVF</p>
+        <p class="Code1">select</p>
+        <p class="Code2">irv.&quot;FirstName&quot;,</p>
+        <p class="Code2">irv.&quot;LastName&quot;,</p>
+        <p class="Code2">irv.&quot;Incident_ID&quot;,</p>
+        <p class="Code2">irv.&quot;IncidentName&quot;,</p>
+        <p class="Code2">irv.&quot;FacilityID&quot;</p>
+        <p class="Code1">from IncidentReportView irv</p>
+        <p class="example">Example: ITVF with parameters</p>
+        <p class="Code1">select</p>
+        <p class="Code2">irv.&quot;FirstName&quot;,</p>
+        <p class="Code2">irv.&quot;LastName&quot;,</p>
+        <p class="Code2">irv.&quot;Incident_ID&quot;,</p>
+        <p class="Code2">irv.&quot;IncidentName&quot;,</p>
+        <p class="Code2">irv.&quot;FacilityID&quot;</p>
+        <p class="Code1">from IncidentReportView(User=&#39;e9e52190-459b-47c3-a4ec-8368a7d876b2&#39; , ObjectsPaths = [&#39;\apath\obj1&#39;,&#39;\bpath\obj2&#39;]) irv</p>
+        <p class="example">Example: ITVF with parameter in &quot;where&quot; clause and skipped optional parameter &quot;User&quot;</p>
+        <p class="Code1">select</p>
+        <p class="Code2">irv.&quot;FirstName&quot;</p>
+        <p class="Code1">from IncidentReportView irv</p>
+        <p class="Code1">where</p>
+        <p class="Code1">irv.ObjectsPaths = [&#39;\apath\obj1&#39;,&#39;\bpath\obj2&#39;]</p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

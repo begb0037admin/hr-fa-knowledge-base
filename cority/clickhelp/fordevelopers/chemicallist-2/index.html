@@ -1,0 +1,837 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/chemicallist-2"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Chemical List APIs and Data Types</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Chemical List APIs and Data Types';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><p>
+</p>
+<p>
+  </p>
+<nav>
+  
+  
+  
+  
+  
+</nav>
+
+<section>
+  <p id="chemical-list-apis-and-data-types" class="Note">For the most up to date API documentation, please see the&nbsp;<a href="https://api.enviance.com/swagger.svc/index.html?url=/Swagger.svc/swagger.json#/ChemicalGrouphttps://api.enviance.com/swagger.svc/index.html?url=/Swagger.svc/swagger.json#/ChemicalList" target="_blank">Chemical List API Documentation on Swagger</a>.<br/></p>
+  
+  <h1 id="chemical-list-apis-and-data-types" data-has-heading-anchor="true">Chemical List APIs and Data Types
+  <a href="/articles/fordevelopers/chemicallist-2/a/chemical-list-apis-and-data-types" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/chemical-list-apis-and-data-types&#39;,this);"></a></h1>
+  <h2 id="version" data-has-heading-anchor="true">
+    Version:
+  <a href="/articles/fordevelopers/chemicallist-2/a/version" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/version&#39;,this);"></a></h2>
+  
+  <p>
+    <strong>License:</strong> <a href="http://www.enviance.com" target="_top">Enviance, Inc.</a>
+  </p>
+  
+  <p id="chemicallists">
+    <br/>
+  </p>
+  <h3 id="chemicallists" data-has-heading-anchor="true">
+    /chemicallists
+  <a href="/articles/fordevelopers/chemicallist-2/a/chemicallists" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/chemicallists&#39;,this);"></a></h3>
+  
+  <h4 id="post" data-has-heading-anchor="true">
+    POST
+  <a href="/articles/fordevelopers/chemicallist-2/a/post" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/post&#39;,this);"></a></h4>
+  <h5 id="description" data-has-heading-anchor="true">
+    Description:
+  <a href="/articles/fordevelopers/chemicallist-2/a/description" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/description&#39;,this);"></a></h5>
+  
+  <p>
+    Creates a new Chemical List, alternately by copying an existing Chemical.
+  </p>
+  
+  <p>
+    <strong>Security:</strong> Requires Manage Materials and Activities system right.
+  </p>
+  
+  <p>
+    <strong>SDK API (create):</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.chemicallists.createChemicalList (chemicalListInfo, onsuccess, onerror)</font></code>
+  </p>
+  
+  <p>
+    <strong>SDK API (copy):</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.chemicallists.copyChemicalList (chemicalListInfo, copyFrom, onsuccess, onerror)</font></code>
+  </p>
+  
+  <h5 id="parameters" data-has-heading-anchor="true">
+    Parameters
+  <a href="/articles/fordevelopers/chemicallist-2/a/parameters" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/parameters&#39;,this);"></a></h5>
+  
+  <table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+    <thead>
+      <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Name</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Located in</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Description</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Required</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Schema</font>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          chemicalListCreate
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          body
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Create Chemical List body info.
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Yes
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          <a href="/articles/fordevelopers/chemicallist-2/a/chemicallistcreate" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/chemicallistcreate&#39;,this);">chemicalListCreate</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="responses" data-has-heading-anchor="true">
+    Responses
+  <a href="/articles/fordevelopers/chemicallist-2/a/responses" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/responses&#39;,this);"></a></h5>
+  
+  <table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+    <thead>
+      <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Code</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Description</font>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          200
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          The id string (GUID) for the newly created Chemical List.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">POST</span><span class="cm-operator">/</span><span class="cm-variable">ChemicalListService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">chemicalLists</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">UTF</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+{
+  <span class="cm-string property">&quot;chemicalListInfo&quot;</span>: {
+    <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Chemical List Name&quot;</span>,
+    <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;Chemical List Description&quot;</span>,
+    <span class="cm-string property">&quot;chemicalListHistoryItems&quot;</span>: [
+    {<span class="cm-string property">&quot;beginDate&quot;</span>: <span class="cm-string">&quot;2012-01-01T20:00:00&quot;</span>,
+      <span class="cm-string property">&quot;limits&quot;</span>: [
+        {<span class="cm-string property">&quot;chemicalIdOrAlias&quot;</span>: <span class="cm-string">&quot;FF710D9F-4367-4C0C-A5CB-497CB18FA842&quot;</span>,
+        <span class="cm-string property">&quot;limit&quot;</span>: <span class="cm-string">&quot;1&quot;</span> },
+        {<span class="cm-string property">&quot;chemicalIdOrAlias&quot;</span>: <span class="cm-string">&quot;5376DF01-45B5-4153-ACCF-8E208DB69979&quot;</span>,
+        <span class="cm-string property">&quot;limit&quot;</span>: <span class="cm-string">&quot;2&quot;</span> }]
+    },
+    {<span class="cm-string property">&quot;beginDate&quot;</span>: <span class="cm-string">&quot;2013-01-01T20:00:00&quot;</span>,
+      <span class="cm-string property">&quot;limits&quot;</span>: [
+        { <span class="cm-string property">&quot;chemicalIdOrAlias&quot;</span>: <span class="cm-string">&quot;ChemAlias1&quot;</span>,
+        <span class="cm-string property">&quot;limit&quot;</span>: <span class="cm-string">&quot;3&quot;</span> }]
+    }]
+  }
+}</pre></pre></td></tr></table>
+  
+  <p id="chemicallistschemicallistidorname">
+    <br/>
+  </p>
+  <h3 id="chemicallistschemicallistidorname" data-has-heading-anchor="true">
+    /chemicallists/{chemicalListIdOrName}
+  <a href="/articles/fordevelopers/chemicallist-2/a/chemicallistschemicallistidorname" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/chemicallistschemicallistidorname&#39;,this);"></a></h3>
+  
+  <h4 id="patch" data-has-heading-anchor="true">
+    PATCH
+  <a href="/articles/fordevelopers/chemicallist-2/a/patch" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/patch&#39;,this);"></a></h4>
+  <h5 id="description-1" data-has-heading-anchor="true">
+    Description:
+  <a href="/articles/fordevelopers/chemicallist-2/a/description-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/description-1&#39;,this);"></a></h5>
+  
+  <p>
+    Updates an existing Chemical List.
+  </p>
+  
+  <p>
+    <strong>Security:</strong> Requires Manage Materials and Activities system right.
+  </p>
+  
+  <p>
+    <strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.chemicallists.updateChemicalList (chemicalListIdOrName, chemicalListInfo, onsuccess, onerror)</font></code>
+  </p>
+  
+  <h5 id="parameters-1" data-has-heading-anchor="true">
+    Parameters
+  <a href="/articles/fordevelopers/chemicallist-2/a/parameters-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/parameters-1&#39;,this);"></a></h5>
+  
+  <table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+    <thead>
+      <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Name</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Located in</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Description</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Required</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Schema</font>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          chemicalListIdOrName
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          path
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Either an id string (GUID) or a name uniquely identifying the Chemical List.  Any string that matches the pattern of a GUID is interpreted as an id string, and not a name. A name string must be URL encoded.
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Yes
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          string
+        </td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          ChemicalListInfo
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          body
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          A ChemicalListInfo structure. Some properties of this structure are ignored during this operation; see the details of this structure for more info.
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Yes
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          <a href="/articles/fordevelopers/chemicallist-2/a/chemicallistinfo" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/chemicallistinfo&#39;,this);">chemicalListInfo</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="responses-1" data-has-heading-anchor="true">
+    Responses
+  <a href="/articles/fordevelopers/chemicallist-2/a/responses-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/responses-1&#39;,this);"></a></h5>
+  
+  <table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+    <thead>
+      <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Code</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Description</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Schema</font>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          200
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          The id string (GUID) for the updated Chemical List.
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          string
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">PATCH</span><span class="cm-operator">/</span><span class="cm-variable">ChemicalListService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">chemicallists</span><span class="cm-operator">/</span><span class="cm-number">7</span><span class="cm-variable">ef9655e</span><span class="cm-operator">-</span><span class="cm-number">916</span><span class="cm-variable">b</span><span class="cm-operator">-</span><span class="cm-number">414</span><span class="cm-variable">f</span><span class="cm-operator">-</span><span class="cm-number">8</span><span class="cm-variable">c88</span><span class="cm-operator">-</span><span class="cm-number">5753</span><span class="cm-variable">fa731558</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">UTF</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+ 
+{
+  <span class="cm-string property">&quot;chemicalListInfo&quot;</span>: {
+    <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Chemical List Update Name&quot;</span>,
+    <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;Chemical List Update Description&quot;</span>,
+    <span class="cm-string property">&quot;chemicalListHistoryItems&quot;</span>: [
+      {<span class="cm-string property">&quot;beginDate&quot;</span>: <span class="cm-string">&quot;2013-01-01T20:00:00&quot;</span>,
+      <span class="cm-string property">&quot;limits&quot;</span>: [
+      {<span class="cm-string property">&quot;chemicalIdOrAlias&quot;</span>: <span class="cm-string">&quot;ChAlias1&quot;</span>,
+      <span class="cm-string property">&quot;limit&quot;</span>: <span class="cm-string">&quot;3.5&quot;</span> }]
+    }]
+  }</pre></pre></td></tr></table>
+</section>
+<section>
+  
+  <h4 id="get" data-has-heading-anchor="true">
+    GET
+  <a href="/articles/fordevelopers/chemicallist-2/a/get" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/get&#39;,this);"></a></h4>
+  <h5 id="description-2" data-has-heading-anchor="true">
+    Description:
+  <a href="/articles/fordevelopers/chemicallist-2/a/description-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/description-2&#39;,this);"></a></h5>
+  
+  <p>
+    Gets information about a Chemical List.
+  </p>
+  
+  <p>
+    <strong>Security:</strong> Requires Manage Materials and Activities system right.
+  </p>
+  
+  <p>
+    <strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.chemicallists.getChemicalList (chemicalListIdOrName, onsuccess, onerror)</font></code>
+  </p>
+  
+  <h5 id="parameters-2" data-has-heading-anchor="true">
+    Parameters
+  <a href="/articles/fordevelopers/chemicallist-2/a/parameters-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/parameters-2&#39;,this);"></a></h5>
+  
+  <table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+    <thead>
+      <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Name</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Located in</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Description</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Required</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Schema</font>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          chemicalListIdOrName
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          path
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Either an id string (GUID) or a name uniquely identifying the Chemical List. Any string that matches the pattern of a GUID is interpreted as an id string, and not a name.
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Yes
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          string
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="responses-2" data-has-heading-anchor="true">
+    Responses
+  <a href="/articles/fordevelopers/chemicallist-2/a/responses-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/responses-2&#39;,this);"></a></h5>
+  
+  <table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+    <thead>
+      <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Code</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Description</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Schema</font>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          200
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          An instance of ChemicalListInfo structure
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          <a href="/articles/fordevelopers/chemicallist-2/a/chemicallistinfo" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/chemicallistinfo&#39;,this);">chemicalListInfo</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">GET</span> <span class="cm-operator">/</span><span class="cm-variable">ChemicalListService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">chemicallists</span><span class="cm-operator">/</span><span class="cm-number">9</span><span class="cm-variable">ca22677</span><span class="cm-operator">-</span><span class="cm-number">2670</span><span class="cm-operator">-</span><span class="cm-number">41</span><span class="cm-variable">a9</span><span class="cm-operator">-</span><span class="cm-variable">bafd</span><span class="cm-operator">-</span><span class="cm-number">3</span><span class="cm-variable">b2825592863</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table>
+</section>
+<section>
+  <table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//RESPONSE</span>
+
+{
+  <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Chemical List Name&quot;</span>,
+  <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;Chemical List Description&quot;</span>,
+  <span class="cm-string property">&quot;chemicalListHistoryItems&quot;</span>: [
+    {<span class="cm-string property">&quot;beginDate&quot;</span>: <span class="cm-string">&quot;2012-01-01T20:00:00&quot;</span>,
+    <span class="cm-string property">&quot;limits&quot;</span>: [
+      {<span class="cm-string property">&quot;chemicalIdOrAlias&quot;</span>: <span class="cm-string">&quot;FF710D9F-4367-4C0C-A5CB-497CB18FA842&quot;</span>,
+      <span class="cm-string property">&quot;limit&quot;</span>: <span class="cm-string">&quot;1&quot;</span> },
+      {<span class="cm-string property">&quot;chemicalIdOrAlias&quot;</span>: <span class="cm-string">&quot;5376DF01-45B5-4153-ACCF-8E208DB69979&quot;</span>,
+      <span class="cm-string property">&quot;limit&quot;</span>: <span class="cm-string">&quot;2&quot;</span> }]
+    },
+    {<span class="cm-string property">&quot;beginDate&quot;</span>: <span class="cm-string">&quot;2013-01-01T20:00:00&quot;</span>,
+    <span class="cm-string property">&quot;limits&quot;</span>: [
+      {<span class="cm-string property">&quot;chemicalIdOrAlias&quot;</span>: <span class="cm-string">&quot;ChAlias1&quot;</span>,
+      <span class="cm-string property">&quot;limit&quot;</span>: <span class="cm-string">&quot;3&quot;</span> }]
+    }]
+}</pre></pre></td></tr></table>
+</section>
+<section>
+  
+  <h4 id="delete" data-has-heading-anchor="true">
+    DELETE
+  <a href="/articles/fordevelopers/chemicallist-2/a/delete" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/delete&#39;,this);"></a></h4>
+  <h5 id="description-3" data-has-heading-anchor="true">
+    Description:
+  <a href="/articles/fordevelopers/chemicallist-2/a/description-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/description-3&#39;,this);"></a></h5>
+  
+  <p>
+    Deletes an existing Chemical List. <em>Deletions are permanent</em>.
+  </p>
+  
+  <p>
+    <strong>Security:</strong> Requires Manage Materials and Activities system right.
+  </p>
+  
+  <p>
+    <strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.chemicallists.deleteChemicalList (chemicalListIdOrName, onsuccess, onerror)</font></code>
+  </p>
+  
+  <h5 id="parameters-3" data-has-heading-anchor="true">
+    Parameters
+  <a href="/articles/fordevelopers/chemicallist-2/a/parameters-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/parameters-3&#39;,this);"></a></h5>
+  
+  <table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+    <thead>
+      <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Name</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Located in</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Description</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Required</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Schema</font>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          chemicalListIdOrName
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          path
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Either an id string (GUID) or a name uniquely identifying the Chemical List. Any string that matches the pattern of a GUID is interpreted as an id string, and not a name. A name string must be URL encoded.
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Yes
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          string
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="responses-3" data-has-heading-anchor="true">
+    Responses
+  <a href="/articles/fordevelopers/chemicallist-2/a/responses-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/responses-3&#39;,this);"></a></h5>
+  
+  <table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+    <thead>
+      <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Code</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Description</font>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          204
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Chemical List deleted
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">DELETE</span><span class="cm-operator">/</span><span class="cm-variable">ChemicalListService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">chemicallists</span><span class="cm-operator">/</span><span class="cm-number">7</span><span class="cm-variable">ef9655e</span><span class="cm-operator">-</span><span class="cm-number">916</span><span class="cm-variable">b</span><span class="cm-operator">-</span><span class="cm-number">414</span><span class="cm-variable">f</span><span class="cm-operator">-</span><span class="cm-number">8</span><span class="cm-variable">c88</span><span class="cm-operator">-</span><span class="cm-number">5753</span><span class="cm-variable">fa731558</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table>
+  
+  <p id="models">
+    <br/>
+  </p>
+  <h3 id="models" data-has-heading-anchor="true">
+    Models
+  <a href="/articles/fordevelopers/chemicallist-2/a/models" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/models&#39;,this);"></a></h3>
+  
+  <h4 id="chemicallistcreate" data-has-heading-anchor="true">
+    chemicalListCreate<span id="chemicalListCreate"></span>&nbsp;
+  <a href="/articles/fordevelopers/chemicallist-2/a/chemicallistcreate" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/chemicallistcreate&#39;,this);"></a></h4>
+  
+  <p>
+    Creation info for Chemical List
+  </p>
+  
+  <table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+    <thead>
+      <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Name</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Type</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Description</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Required</font>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          chemicalListInfo
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          [ <a href="/articles/fordevelopers/chemicallist-2/a/chemicallistinfo" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/chemicallistinfo&#39;,this);">chemicalListInfo</a> ]
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          A chemicalListInfo structure
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          No
+        </td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          copyFrom
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          string
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          The id string (GUID) of an existing Chemical List whose properties will be copied and used as the properties of the newly created Chemical List.
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          No
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h4 id="chemicallistinfo" data-has-heading-anchor="true">
+    chemicalListInfo<span id="chemicalListInfo"></span>&nbsp;
+  <a href="/articles/fordevelopers/chemicallist-2/a/chemicallistinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/chemicallistinfo&#39;,this);"></a></h4>
+  
+  <p>
+    Represents a Chemical List definition.
+  </p>
+  
+  <table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+    <thead>
+      <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Name</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Type</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Description</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Required</font>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          id
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          string
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          The id string (GUID) for the Chemical List. Ignored for: Create Chemical List, Update Chemical List
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          No
+        </td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          name
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          string
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          The name of the Chemical List. Required for: Create Chemical List
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          No
+        </td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          description
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          string
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Description of the Chemical List.
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          No
+        </td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          chemicalListHistoryItem
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          [ <a href="/articles/fordevelopers/chemicallist-2/a/chemicallisthistoryitem" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/chemicallisthistoryitem&#39;,this);">chemicalListHistoryItem</a> ]
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          An array of ChemicalListHistoryItem structures, specifying records which should be part of the Chemical List Limits history. Required for: Create Chemical List
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          No
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default">{
+  <span class="cm-string property">&quot;id&quot;</span>: <span class="cm-string">&quot;080AD86D-1FEF-4D77-A528-C8E03594751F&quot;</span>,
+  <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Chemical List Name&quot;</span>,
+  <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;Chemical List Description&quot;</span>,
+  <span class="cm-string property">&quot;chemicalListHistoryItems&quot;</span>: [
+    {<span class="cm-string property">&quot;beginDate&quot;</span>: <span class="cm-string">&quot;2012-01-01T20:00:00&quot;</span>,
+    <span class="cm-string property">&quot;limits&quot;</span>: [
+      {<span class="cm-string property">&quot;chemicalIdOrAlias&quot;</span>: <span class="cm-string">&quot;ChAlias1&quot;</span>,
+      <span class="cm-string property">&quot;limit&quot;</span>: <span class="cm-string">&quot;1&quot;</span>},
+      {<span class="cm-string property">&quot;chemicalIdOrAlias&quot;</span>: <span class="cm-string">&quot;5376DF01-45B5-4153-ACCF-8E208DB69979&quot;</span>,
+      <span class="cm-string property">&quot;limit&quot;</span>: <span class="cm-string">&quot;2&quot;</span>}]
+    }
+  ]
+}</pre></pre></td></tr></table>
+</section>
+<section>
+  
+  <h4 id="chemicallisthistoryitem" data-has-heading-anchor="true">
+    chemicalListHistoryItem<span id="chemicalListHistoryItem"></span>&nbsp;
+  <a href="/articles/fordevelopers/chemicallist-2/a/chemicallisthistoryitem" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/chemicallisthistoryitem&#39;,this);"></a></h4>
+  
+  <p>
+    Represents a Chemical List History Item definition
+  </p>
+  
+  <table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+    <thead>
+      <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Name</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Type</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Description</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Required</font>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          beginDate
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          dateTime
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Begin date for the history item.
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          No
+        </td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          limits
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          [ <a href="/articles/fordevelopers/chemicallist-2/a/chemicalListHistoryItemLimit" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/chemicalListHistoryItemLimit&#39;,this);">chemicalListHistoryItemLimit</a> ]
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          An array of ChemicalListHistoryItemLimit structures.
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          No
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default">{
+  <span class="cm-string property">&quot;beginDate&quot;</span>: <span class="cm-string">&quot;2012-01-01T20:00:00&quot;</span>,
+  <span class="cm-string property">&quot;limits&quot;</span>: [
+    {<span class="cm-string property">&quot;chemicalIdOrAlias&quot;</span>: <span class="cm-string">&quot;FF710D9F-4367-4C0C-A5CB-497CB18FA842&quot;</span>,
+    <span class="cm-string property">&quot;limit&quot;</span>: <span class="cm-string">&quot;1.1&quot;</span>},
+    {<span class="cm-string property">&quot;chemicalIdOrAlias&quot;</span>: <span class="cm-string">&quot;5376DF01-45B5-4153-ACCF-8E208DB69979&quot;</span>,
+    <span class="cm-string property">&quot;limit&quot;</span>: <span class="cm-string">&quot;2&quot;</span>}]
+}</pre></pre></td></tr></table>
+</section>
+<section>
+  
+  <h4 id="chemicallisthistoryitemlimit" data-has-heading-anchor="true">
+    chemicalListHistoryItemLimit<span id="chemicalListHistoryItemLimit"></span>&nbsp;
+  <a href="/articles/fordevelopers/chemicallist-2/a/chemicallisthistoryitemlimit" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicallist-2/a/chemicallisthistoryitemlimit&#39;,this);"></a></h4>
+  
+  <p>
+    Represents a Chemical List History Item definition
+  </p>
+  
+  <table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+    <thead>
+      <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Name</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Type</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Description</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Required</font>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          chemicalIdOrAlias
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          string
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Either an id string (GUID), or the alias for the Chemical. Any string that matches the pattern of a GUID is interpreted as an id string, and not the alias. An alias string must be URL encoded.
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          No
+        </td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          limit
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          number
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          A floating point numeric value. Limit data of Chemical history item.
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          No
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default">{
+  <span class="cm-string property">&quot;chemicalIdOrAlias&quot;</span>: <span class="cm-string">&quot;FF710D9F-4367-4C0C-A5CB-497CB18FA842&quot;</span>,
+  <span class="cm-string property">&quot;limit&quot;</span>: <span class="cm-string">&quot;1.1&quot;</span>}
+}</pre></pre></td></tr></table>
+  <br/>
+</section>
+<br/>
+<p>
+  <br/>
+</p>
+<p>
+  <br/>
+</p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

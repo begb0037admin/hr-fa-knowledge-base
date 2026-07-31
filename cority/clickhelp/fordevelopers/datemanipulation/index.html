@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/datemanipulation"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Date Manipulation</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Date Manipulation';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h2 id="h2__241809689" data-has-heading-anchor="true">Date Manipulation<a href="/articles/fordevelopers/datemanipulation/a/h2__241809689" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/datemanipulation/a/h2__241809689&#39;,this);"></a></h2>
+        <h3 id="h3_462871145" data-has-heading-anchor="true"><a name="DATEADD"></a>DATEADD<a href="/articles/fordevelopers/datemanipulation/a/h3_462871145" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/datemanipulation/a/h3_462871145&#39;,this);"></a></h3>
+        <p>Add specific &lt;number&gt; of &lt;type&gt; to &lt;date&gt;</p>
+        <p>&lt;type&gt; can be: &quot;yyyy&quot;, &quot;quarter&quot;, &quot;qq&quot;, &quot;q&quot;, &quot;mm&quot;, &quot;m&quot;, &quot;dayofyear&quot;, &quot;dy&quot;, &quot;y&quot;, &quot;dd&quot;, &quot;d&quot;, &quot;week&quot;, &quot;wk&quot;, &quot;ww&quot;, &quot;weekday&quot;, &quot;dw&quot;, &quot;hour&quot;, &quot;hh&quot;, &quot;minute&quot;, &quot;mi&quot;, &quot;n&quot;, &quot;second&quot;, &quot;ss&quot;, &quot;s&quot;, &quot;millisecond&quot;, &quot;ms&quot;</p>
+        <p class="bold">Syntax</p>
+        <p class="BodyIndent">DATEADD(type, integer, date expression)</p>
+        <p class="example">Example: Add 365 days to createdOn of facility</p>
+        <p class="Code1">Select</p>
+        <p class="Code2">DATEADD(dd, 365, CreatedOn)</p>
+        <p class="CodeLast">from Facility</p>
+        <h3 id="h3__1093019910" data-has-heading-anchor="true"><a name="ROUND"></a>ROUND<a href="/articles/fordevelopers/datemanipulation/a/h3__1093019910" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/datemanipulation/a/h3__1093019910&#39;,this);"></a></h3>
+        <p>Returns numeric expession truncated to specific positions right of the decimal point</p>
+        <p class="bold">Syntax</p>
+        <p class="BodyIndent">ROUND(expression, integer)</p>
+        <p class="example">Example:</p>
+        <p class="Code1">Select</p>
+        <p class="Code2">ROUND(COUNT(name)/6, 1)</p>
+        <p class="CodeLast">from Facility</p>
+        <h3 id="h3__698582269" data-has-heading-anchor="true"><a name="TIMESTAMPADD"></a>TIMESTAMPADD<a href="/articles/fordevelopers/datemanipulation/a/h3__698582269" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/datemanipulation/a/h3__698582269&#39;,this);"></a></h3>
+        <p>Add specific &lt;number&gt; of &lt;type&gt; to &lt;date&gt;</p>
+        <p class="BodyText">&lt;type&gt; can be: &quot;yyyy&quot;, &quot;quarter&quot;, &quot;qq&quot;, &quot;q&quot;, &quot;mm&quot;, &quot;m&quot;, &quot;dayofyear&quot;, &quot;dy&quot;, &quot;y&quot;, &quot;dd&quot;, &quot;d&quot;, &quot;week&quot;, &quot;wk&quot;, &quot;ww&quot;, &quot;weekday&quot;, &quot;dw&quot;, &quot;hour&quot;, &quot;hh&quot;, &quot;minute&quot;, &quot;mi&quot;, &quot;n&quot;, &quot;second&quot;, &quot;ss&quot;, &quot;s&quot;, &quot;millisecond&quot;, &quot;ms&quot;</p>
+        <p class="bold">Syntax</p>
+        <p class="BodyIndent">{fn TIMESTAMPADD(type, integer, date expression)}</p>
+        <p class="example">Example: add 365 days to createdOn of facility</p>
+        <p class="Code1">Select</p>
+        <p class="Code2">{fn TIMESTAMPADD(dd, 365, CreatedOn)}</p>
+        <p class="CodeLast">from Facility</p>
+        <h3 id="h3__13118268" data-has-heading-anchor="true"><a name="TRUNCATE"></a>TRUNCATE<a href="/articles/fordevelopers/datemanipulation/a/h3__13118268" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/datemanipulation/a/h3__13118268&#39;,this);"></a></h3>
+        <p>Returns numeric expession truncated to specific positions right of the decimal point</p>
+        <p class="bold">Syntax</p>
+        <p class="BodyIndent">{fn TRUNCATE(expression, integer)}</p>
+        <p class="example">Example:</p>
+        <p class="Code1">select</p>
+        <p class="Code2">{fn TRUNCATE(COUNT(name)/6, 1)}</p>
+        <p class="CodeLast">from Facility</p>
+        <h3 id="h3_542465238" data-has-heading-anchor="true"><a name="QUARTER"></a>QUARTER<a href="/articles/fordevelopers/datemanipulation/a/h3_542465238" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/datemanipulation/a/h3_542465238&#39;,this);"></a></h3>
+        <p>Returns quarter of date</p>
+        <p class="bold">Syntax</p>
+        <p class="BodyIndent">QUARTER(expression)</p>
+        <p class="example">Example:</p>
+        <p class="Code1">select</p>
+        <p class="Code2">QUARTER(CreatedOn)</p>
+        <p class="CodeLast">from Facility</p>
+        <h3 id="h3_1757601640" data-has-heading-anchor="true"><a name="DAYOFYEAR"></a>DAYOFYEAR<a href="/articles/fordevelopers/datemanipulation/a/h3_1757601640" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/datemanipulation/a/h3_1757601640&#39;,this);"></a></h3>
+        <p>Returns day of year of date</p>
+        <p class="bold">Syntax</p>
+        <p class="BodyIndent">DAYOFYEAR(expression)</p>
+        <p class="example">Example:</p>
+        <p class="Code1">Select</p>
+        <p class="Code2">DAYOFYEAR(CreatedOn)</p>
+        <p class="CodeLast">from Facility</p>
+        <h3 id="h3__433904146" data-has-heading-anchor="true"><a name="WEEK"></a>WEEK<a href="/articles/fordevelopers/datemanipulation/a/h3__433904146" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/datemanipulation/a/h3__433904146&#39;,this);"></a></h3>
+        <p>Returns week of date</p>
+        <p>Syntax</p>
+        <p>WEEK(expression)</p>
+        <p class="example">Example:</p>
+        <p class="Code1">select</p>
+        <p class="Code2">WEEK(CreatedOn)</p>
+        <p class="CodeLast">from Facility</p>
+        <h3 id="h3_340955996" data-has-heading-anchor="true"><a name="WEEKDAY"></a>WEEKDAY<a href="/articles/fordevelopers/datemanipulation/a/h3_340955996" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/datemanipulation/a/h3_340955996&#39;,this);"></a></h3>
+        <p>Returns day of week of date</p>
+        <p class="bold">Syntax</p>
+        <p class="BodyIndent">WEEKDAY(expression)</p>
+        <p class="example">Example:</p>
+        <p class="Code1">select</p>
+        <p class="Code2">WEEKDAY(CreatedOn)</p>
+        <p class="CodeLast">from Facility</p>
+        <h3 id="h3__1690390643" data-has-heading-anchor="true"><a name="DAYOFWEEK"></a>DAYOFWEEK<a href="/articles/fordevelopers/datemanipulation/a/h3__1690390643" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/datemanipulation/a/h3__1690390643&#39;,this);"></a></h3>
+        <p>Returns day of week of date</p>
+        <p class="bold">Syntax</p>
+        <p class="BodyIndent">DAYOFWEEK(expression)</p>
+        <p class="example">Example:</p>
+        <p class="Code1">select</p>
+        <p class="Code2">DAYOFWEEK(CreatedOn)</p>
+        <p class="CodeLast">from Facility</p>
+        <h3 id="h3__23713232" data-has-heading-anchor="true"><a name="HOUR"></a>HOUR<a href="/articles/fordevelopers/datemanipulation/a/h3__23713232" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/datemanipulation/a/h3__23713232&#39;,this);"></a></h3>
+        <p>Returns hour of date</p>
+        <p class="bold">Syntax</p>
+        <p class="BodyIndent">HOUR(expression)</p>
+        <p class="example">Example:</p>
+        <p class="Code1">select</p>
+        <p class="Code2">HOUR(CreatedOn)</p>
+        <p class="CodeLast">from Facility</p>
+        <h2 id="h2__2127689666" data-has-heading-anchor="true"><a name="MINUTE"></a>MINUTE<a href="/articles/fordevelopers/datemanipulation/a/h2__2127689666" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/datemanipulation/a/h2__2127689666&#39;,this);"></a></h2>
+        <p>Returns minute of date</p>
+        <p class="bold">Syntax</p>
+        <p class="BodyIndent">MINUTE(expression)</p>
+        <p class="example">Example:</p>
+        <p class="Code1">select</p>
+        <p class="Code2">MINUTE(CreatedOn)</p>
+        <p class="CodeLast">from Facility</p>
+        <h2 id="h2__1393524750" data-has-heading-anchor="true"><a name="SECOND"></a>SECOND<a href="/articles/fordevelopers/datemanipulation/a/h2__1393524750" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/datemanipulation/a/h2__1393524750&#39;,this);"></a></h2>
+        <p>Returns second of date</p>
+        <p class="bold">Syntax</p>
+        <p class="BodyIndent">SECOND(expression)</p>
+        <p class="example">Example:</p>
+        <p class="Code1">select</p>
+        <p class="Code2">SECOND(CreatedOn)</p>
+        <p class="CodeLast">from Facility</p>
+        <h2 id="h2__1233194183" data-has-heading-anchor="true"><a name="MILLISECOND"></a>MILLISECOND<a href="/articles/fordevelopers/datemanipulation/a/h2__1233194183" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/datemanipulation/a/h2__1233194183&#39;,this);"></a></h2>
+        <p>Returns millisecond of date</p>
+        <p class="bold">Syntax</p>
+        <p class="BodyIndent">MILLISECOND(expression)</p>
+        <p class="example">Example:</p>
+        <p class="Code1">select</p>
+        <p class="Code2">MILLISECOND(CreatedOn)</p>
+        <p class="CodeLast">from Facility</p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

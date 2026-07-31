@@ -1,0 +1,1441 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/scimidentity"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Scim Identity APIs and Data Types</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Scim Identity APIs and Data Types';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><span class="Note">For the most up to date API documentation, please see the&nbsp;</span><a href="https://api.enviance.com/swagger.svc/index.html?url=/Swagger.svc/swagger.json#/ScimIdentity" target="_blank" class="Note">SCIM Identity API Documentation on Swagger</a><span class="Note">.</span><p>
+	</p><nav>
+  
+    
+  
+    
+  
+</nav>
+
+    <section>
+    <h1 id="scim-identity-apis-and-data-types" data-has-heading-anchor="true">Scim Identity APIs and Data Types<a href="/articles/fordevelopers/scimidentity/a/scim-identity-apis-and-data-types" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/scim-identity-apis-and-data-types&#39;,this);"></a></h1>
+<p>The EMS SCIM API is used by SSO partners to help provision and manage users and groups within EMS system. The SCIM API is based on the open standard Simple Cloud Identity Management: Protocol 1.1.</p>
+
+<h2 id="version-2" data-has-heading-anchor="true">Version: 2<a href="/articles/fordevelopers/scimidentity/a/version-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/version-2&#39;,this);"></a></h2>
+
+<p><strong>License:</strong> <a href="http://www.enviance.com" target="_top">Enviance, Inc.</a></p>
+
+<h3 id="scimv1serviceproviderconfigs"><br/></h3><h3 id="scimv1serviceproviderconfigs" data-has-heading-anchor="true">/scim/v1/ServiceProviderConfigs<a href="/articles/fordevelopers/scimidentity/a/scimv1serviceproviderconfigs" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/scimv1serviceproviderconfigs&#39;,this);"></a></h3>
+
+<h4 id="get" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/scimidentity/a/get" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/get&#39;,this);"></a></h4>
+<h5 id="summary" data-has-heading-anchor="true">Summary:<a href="/articles/fordevelopers/scimidentity/a/summary" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/summary&#39;,this);"></a></h5>
+
+<p>Retrieve the Service Provider’s configuration.</p>
+
+<h5 id="description" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/scimidentity/a/description" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/description&#39;,this);"></a></h5>
+
+<p>Retrieve the Service Provider’s configuration.</p>
+
+<h5 id="responses" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/scimidentity/a/responses" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/responses&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Returns&nbsp;EMS&nbsp;configuration details for SCIM API, including which operations are supported.</td>
+    </tr>
+  </tbody>
+</table></section><p><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">GET</span> <span class="cm-operator">/</span><span class="cm-variable">ScimIdentityService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">scim</span><span class="cm-operator">/</span><span class="cm-variable">v1</span><span class="cm-operator">/</span><span class="cm-variable">ServiceProviderConfigs</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table><br/></p><section>
+
+<h3 id="scimv1schemas"><br/></h3><h3 id="scimv1schemas" data-has-heading-anchor="true">/scim/v1/schemas<a href="/articles/fordevelopers/scimidentity/a/scimv1schemas" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/scimv1schemas&#39;,this);"></a></h3>
+
+<h4 id="get-1" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/scimidentity/a/get-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/get-1&#39;,this);"></a></h4>
+<h5 id="summary-1" data-has-heading-anchor="true">Summary:<a href="/articles/fordevelopers/scimidentity/a/summary-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/summary-1&#39;,this);"></a></h5>
+
+<p>Retrieve a resource’s schema</p>
+
+<h5 id="description-1" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/scimidentity/a/description-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/description-1&#39;,this);"></a></h5>
+
+<p>Retrieve a resource’s schema.</p>
+
+
+
+<h5 id="responses-1" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/scimidentity/a/responses-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/responses-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Returns EMS&nbsp;configuration details for how resources (User and Group) are formatted.</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//** Example:**</span>
+<span class="cm-variable">GET</span> <span class="cm-operator">/</span><span class="cm-variable">ScimIdentityService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">scim</span><span class="cm-operator">/</span><span class="cm-variable">v1</span><span class="cm-operator">/</span><span class="cm-variable">schemas</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table>
+
+<h3 id="scimv1schemasusers"><br/></h3><h3 id="scimv1schemasusers" data-has-heading-anchor="true">/scim/v1/schemas/users<a href="/articles/fordevelopers/scimidentity/a/scimv1schemasusers" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/scimv1schemasusers&#39;,this);"></a></h3>
+
+<h4 id="get-2" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/scimidentity/a/get-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/get-2&#39;,this);"></a></h4>
+<h5 id="summary-2" data-has-heading-anchor="true">Summary:<a href="/articles/fordevelopers/scimidentity/a/summary-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/summary-2&#39;,this);"></a></h5>
+
+<p>Retrieve a user’s schema</p>
+
+<h5 id="description-2" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/scimidentity/a/description-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/description-2&#39;,this);"></a></h5>
+
+<p>Retrieve a user’s schema.</p>
+
+<h5 id="responses-2" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/scimidentity/a/responses-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/responses-2&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Returns EMS configuration details for how resources users are formatted.</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//** Example:**</span>
+<span class="cm-variable">GET</span> <span class="cm-operator">/</span><span class="cm-variable">ScimIdentityService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">scim</span><span class="cm-operator">/</span><span class="cm-variable">v1</span><span class="cm-operator">/</span><span class="cm-variable">schemas</span><span class="cm-operator">/</span><span class="cm-variable">users</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table>
+
+<h3 id="scimv1schemasgroups"><br/></h3><h3 id="scimv1schemasgroups" data-has-heading-anchor="true">/scim/v1/schemas/groups<a href="/articles/fordevelopers/scimidentity/a/scimv1schemasgroups" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/scimv1schemasgroups&#39;,this);"></a></h3>
+
+<h4 id="get-3" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/scimidentity/a/get-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/get-3&#39;,this);"></a></h4>
+<h5 id="summary-3" data-has-heading-anchor="true">Summary:<a href="/articles/fordevelopers/scimidentity/a/summary-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/summary-3&#39;,this);"></a></h5>
+
+<p>Retrieve a group’s schema</p>
+
+<h5 id="description-3" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/scimidentity/a/description-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/description-3&#39;,this);"></a></h5>
+
+<p>Retrieve a group’s schema</p>
+
+<h5 id="responses-3" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/scimidentity/a/responses-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/responses-3&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" class=""><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" class=""><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Returns EMS&nbsp;configuration details for how groups are formatted.</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//** Example:**</span>
+<span class="cm-variable">GET</span> <span class="cm-operator">/</span><span class="cm-variable">ScimIdentityService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">scim</span><span class="cm-operator">/</span><span class="cm-variable">v1</span><span class="cm-operator">/</span><span class="cm-variable">schemas</span><span class="cm-operator">/</span><span class="cm-variable">groups</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table>
+
+<h3 id="scimv1users"><br/></h3><h3 id="scimv1users" data-has-heading-anchor="true">/scim/v1/Users<a href="/articles/fordevelopers/scimidentity/a/scimv1users" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/scimv1users&#39;,this);"></a></h3>
+
+<h4 id="post" data-has-heading-anchor="true">POST<a href="/articles/fordevelopers/scimidentity/a/post" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/post&#39;,this);"></a></h4>
+<h5 id="summary-4" data-has-heading-anchor="true">Summary:<a href="/articles/fordevelopers/scimidentity/a/summary-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/summary-4&#39;,this);"></a></h5>
+
+<p>Create a new user.</p>
+
+<h5 id="description-4" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/scimidentity/a/description-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/description-4&#39;,this);"></a></h5>
+
+<p>Create a new user in EMS system.</p>
+
+<p><strong>SDK API:</strong>  <code><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.scim.createUser(user, onsuccess, onerror)</font></code></p>
+
+
+
+<h5 id="parameters" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/scimidentity/a/parameters" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/parameters&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">user</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A user structure</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/scimidentity/a/user" onclick="return n(&#39;!fordevelopers/scimidentity/a/user&#39;,this);">user</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-4" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/scimidentity/a/responses-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/responses-4&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">201</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An instance of the user structure with metadata.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/scimidentity/a/user" onclick="return n(&#39;!fordevelopers/scimidentity/a/user&#39;,this);">user</a></td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">POST</span> <span class="cm-operator">/</span><span class="cm-variable">ScimIde</span><span class="cm-operator">&lt;</span><span class="cm-variable">span</span> <span class="cm-keyword">class</span><span class="cm-operator">=</span><span class="cm-string">&quot;dxhe-searchHI&quot;</span><span class="cm-operator">&gt;</span><span class="cm-variable">e</span><span class="cm-operator">&lt;</span><span class="cm-string-2">/span&gt;r&quot;</span>
+  }
+}</pre></pre></td></tr></table><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//RtAddress&quot;:&quot;&quot;,</span>
+          <span class="cm-string">&quot;type&quot;</span>:<span class="cm-string">&quot;work&quot;</span>
+        }
+      ],
+  <span class="cm-string">&quot;displayName&quot;</span>:<span class="cm-string">&quot;Scim User&quot;</span>,
+  <span class="cm-string">&quot;emails&quot;</span>:[  
+        {  
+          <span class="cm-string property">&quot;primary&quot;</span>:<span class="cm-atom">true</span>,
+          <span class="cm-string property">&quot;type&quot;</span>:<span class="cm-string">&quot;work&quot;</span>,
+          <span class="cm-string property">&quot;value&quot;</span>:<span class="cm-string">&quot;scimuser@enviance.com&quot;</span>
+        }
+      ],
+  <span class="cm-string">&quot;name&quot;</span>:{  
+        <span class="cm-string property">&quot;formatted&quot;</span>:<span class="cm-string">&quot;Scim User&quot;</span>,
+        <span class="cm-string property">&quot;familyName&quot;</span>:<span class="cm-string">&quot;User&quot;</span>,
+        <span class="cm-string property">&quot;givenName&quot;</span>:<span class="cm-string">&quot;Scim&quot;</span>
+      },
+  <span class="cm-string">&quot;phoneNumbers&quot;</span>:[  
+        {  
+           <span class="cm-string property">&quot;type&quot;</span>:<span class="cm-string">&quot;work&quot;</span>,
+           <span class="cm-string property">&quot;value&quot;</span>:<span class="cm-string">&quot;&quot;</span>
+        },
+        {  
+          <span class="cm-string property">&quot;type&quot;</span>:<span class="cm-string">&quot;fax&quot;</span>,
+          <span class="cm-string property">&quot;value&quot;</span>:<span class="cm-string">&quot;&quot;</span>
+        },
+        {  
+          <span class="cm-string property">&quot;type&quot;</span>:<span class="cm-string">&quot;mobile&quot;</span>,
+          <span class="cm-string property">&quot;value&quot;</span>:<span class="cm-string">&quot;&quot;</span>
+        }
+      ],
+  <span class="cm-string">&quot;preferredLanguage&quot;</span>:<span class="cm-string">&quot;en_US&quot;</span>,
+  <span class="cm-string">&quot;title&quot;</span>:<span class="cm-string">&quot;&quot;</span>,
+  <span class="cm-string">&quot;urn:scim:schemas:enviance:user&quot;</span>:{  
+      <span class="cm-string property">&quot;userRights&quot;</span>:[  
+        {  
+          <span class="cm-string property">&quot;name&quot;</span>:<span class="cm-string">&quot;Manage Groups&quot;</span>,
+          <span class="cm-string property">&quot;granted&quot;</span>:<span class="cm-atom">true</span>
+        }
+        ],
+      <span class="cm-string property">&quot;properties&quot;</span> : [
+          {
+            <span class="cm-string property">&quot;propertyName&quot;</span> : <span class="cm-string">&quot;name1&quot;</span>, 
+            <span class="cm-string property">&quot;type&quot;</span>: <span class="cm-string">&quot;name1&quot;</span>, 
+            <span class="cm-string property">&quot;propertyValue&quot;</span> : <span class="cm-string">&quot;val1&quot;</span>
+          },
+          {
+            <span class="cm-string property">&quot;propertyName&quot;</span> : <span class="cm-string">&quot;name2&quot;</span>, 
+            <span class="cm-string property">&quot;type&quot;</span>: <span class="cm-string">&quot;name2&quot;</span>, 
+            <span class="cm-string property">&quot;propertyValue&quot;</span> : <span class="cm-string">&quot;val2&quot;</span>
+          }
+        ],                  
+        <span class="cm-string property">&quot;expires&quot;</span>:<span class="cm-string">&quot;12/31/9999 12:00:00 AM&quot;</span>,
+                  <span class="cm-string property">&quot;emailDelivery&quot;</span>:<span class="cm-string">&quot;HTML Email&quot;</span>,
+        <span class="cm-string property">&quot;receiveInformation&quot;</span>:<span class="cm-atom">true</span>,
+                  <span class="cm-string property">&quot;commandFailureNotification&quot;</span>:<span class="cm-string">&quot;Inbox&quot;</span>,
+        <span class="cm-string property">&quot;reportCompletionNotification&quot;</span>:<span class="cm-string">&quot;Inbox&quot;</span>,
+        <span class="cm-string property">&quot;companyName&quot;</span>:<span class="cm-string">&quot;Enviance, Inc&quot;</span>,
+        <span class="cm-string property">&quot;mustChangePasswordAtNextLogin&quot;</span>:<span class="cm-atom">false</span>,
+        <span class="cm-string property">&quot;canNotChangePassword&quot;</span>:<span class="cm-atom">true</span>,
+        <span class="cm-string property">&quot;notExpirePassword&quot;</span>:<span class="cm-atom">false</span>,
+        <span class="cm-string property">&quot;comments&quot;</span>:<span class="cm-string">&quot;This is a full Scim User&quot;</span>
+      },
+      <span class="cm-string">&quot;id&quot;</span>:<span class="cm-string">&quot;0af39038-50b6-44a8-8660-be7249c190cc&quot;</span>,
+      <span class="cm-string">&quot;externalId&quot;</span>:<span class="cm-string">&quot;&quot;</span>,
+      <span class="cm-string">&quot;meta&quot;</span>:{  
+      <span class="cm-string property">&quot;created&quot;</span>:<span class="cm-string">&quot;1/6/2017 9:39:22 PM&quot;</span>,
+      <span class="cm-string property">&quot;version&quot;</span>:<span class="cm-string">&quot;-1670530483&quot;</span>,
+      <span class="cm-string property">&quot;location&quot;</span>:<span class="cm-string">&quot;https://api.enviance.com/ver2/ScimIdentityService.svc/scim/v1/Users/0af39038-50b6-44a8-8660-be7249c190cc&quot;</span>
+      },
+      <span class="cm-string">&quot;schemas&quot;</span>:[  
+        <span class="cm-string">&quot;urn:scim:schemas:core:1.0&quot;</span>,
+        <span class="cm-string">&quot;urn:scim:schemas:enviance:user&quot;</span>
+      ]
+
+}</pre></pre></td></tr></table>
+
+<h3 id="scimv1usersid"><br/></h3><h3 id="scimv1usersid" data-has-heading-anchor="true">/scim/v1/Users/{id}<a href="/articles/fordevelopers/scimidentity/a/scimv1usersid" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/scimv1usersid&#39;,this);"></a></h3>
+
+<h4 id="get-4" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/scimidentity/a/get-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/get-4&#39;,this);"></a></h4>
+<h5 id="summary-5" data-has-heading-anchor="true">Summary:<a href="/articles/fordevelopers/scimidentity/a/summary-5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/summary-5&#39;,this);"></a></h5>
+
+<p>Gets information about user.</p>
+
+<h5 id="description-5" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/scimidentity/a/description-5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/description-5&#39;,this);"></a></h5>
+
+<p>Gets information about user.</p>
+
+<p><br/></p><p><strong>SDK API:</strong>  <code><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.scim.getUser(id, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-1" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/scimidentity/a/parameters-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/parameters-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An id string (GUID), uniquely identifying the User. Any string that matches the pattern of a GUID is interpreted as the id string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-5" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/scimidentity/a/responses-5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/responses-5&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An instance of the user structure.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/scimidentity/a/user" onclick="return n(&#39;!fordevelopers/scimidentity/a/user&#39;,this);">user</a></td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">GET</span> <span class="cm-operator">/</span><span class="cm-variable">ScimIdentityService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">scim</span><span class="cm-operator">/</span><span class="cm-variable">v1</span><span class="cm-operator">/</span><span class="cm-variable">Users</span><span class="cm-operator">/</span><span class="cm-number">9</span><span class="cm-variable">ca22677</span><span class="cm-operator">-</span><span class="cm-number">2670</span><span class="cm-operator">-</span><span class="cm-number">41</span><span class="cm-variable">a9</span><span class="cm-operator">-</span><span class="cm-variable">bafd</span><span class="cm-operator">-</span><span class="cm-number">3</span><span class="cm-variable">b2825592863</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//RESPONSE</span>
+{  
+  <span class="cm-string property">&quot;userName&quot;</span>:<span class="cm-string">&quot;scimuser&quot;</span>,
+  <span class="cm-string property">&quot;timezone&quot;</span>:<span class="cm-string">&quot;America/New_York&quot;</span>,
+  <span class="cm-string property">&quot;userType&quot;</span>:<span class="cm-string">&quot;HomeUser&quot;</span>,
+  <span class="cm-string property">&quot;active&quot;</span>:<span class="cm-atom">true</span>,
+  <span class="cm-string property">&quot;addresses&quot;</span>:[  
+    {  
+       <span class="cm-string property">&quot;country&quot;</span>:<span class="cm-atom">null</span>,
+       <span class="cm-string property">&quot;formatted&quot;</span>:<span class="cm-string">&quot;&quot;</span>,
+       <span class="cm-string property">&quot;locality&quot;</span>:<span class="cm-string">&quot;&quot;</span>,
+       <span class="cm-string property">&quot;postalCode&quot;</span>:<span class="cm-string">&quot;&quot;</span>,
+       <span class="cm-string property">&quot;primary&quot;</span>:<span class="cm-atom">true</span>,
+       <span class="cm-string property">&quot;region&quot;</span>:<span class="cm-atom">null</span>,
+       <span class="cm-string property">&quot;streetAddress&quot;</span>:<span class="cm-string">&quot;&quot;</span>,
+       <span class="cm-string property">&quot;type&quot;</span>:<span class="cm-string">&quot;work&quot;</span>
+    }
+  ],
+  <span class="cm-string property">&quot;displayName&quot;</span>:<span class="cm-string">&quot;Scim User&quot;</span>,
+  <span class="cm-string property">&quot;emails&quot;</span>:[  
+    {  
+       <span class="cm-string property">&quot;primary&quot;</span>:<span class="cm-atom">true</span>,
+       <span class="cm-string property">&quot;type&quot;</span>:<span class="cm-string">&quot;work&quot;</span>,
+       <span class="cm-string property">&quot;value&quot;</span>:<span class="cm-string">&quot;scimuser@enviance.com&quot;</span>
+    }
+  ],
+  <span class="cm-string property">&quot;name&quot;</span>:{  
+    <span class="cm-string property">&quot;formatted&quot;</span>:<span class="cm-string">&quot;Scim User&quot;</span>,
+    <span class="cm-string property">&quot;familyName&quot;</span>:<span class="cm-string">&quot;User&quot;</span>,
+    <span class="cm-string property">&quot;givenName&quot;</span>:<span class="cm-string">&quot;Scim&quot;</span>
+  },
+  <span class="cm-string property">&quot;phoneNumbers&quot;</span>:[  
+    {  
+       <span class="cm-string property">&quot;type&quot;</span>:<span class="cm-string">&quot;work&quot;</span>,
+       <span class="cm-string property">&quot;value&quot;</span>:<span class="cm-string">&quot;&quot;</span>
+    },
+    {  
+      <span class="cm-string property">&quot;type&quot;</span>:<span class="cm-string">&quot;fax&quot;</span>,
+      <span class="cm-string property">&quot;value&quot;</span>:<span class="cm-string">&quot;&quot;</span>
+    },
+    {  
+      <span class="cm-string property">&quot;type&quot;</span>:<span class="cm-string">&quot;mobile&quot;</span>,
+      <span class="cm-string property">&quot;value&quot;</span>:<span class="cm-string">&quot;&quot;</span>
+    }
+  ],
+  <span class="cm-string property">&quot;preferredLanguage&quot;</span>:<span class="cm-string">&quot;en_US&quot;</span>,
+  <span class="cm-string property">&quot;title&quot;</span>:<span class="cm-string">&quot;&quot;</span>,
+  <span class="cm-string property">&quot;urn:scim:schemas:enviance:user&quot;</span>:{  
+    <span class="cm-string property">&quot;userRights&quot;</span>:[  
+    {  
+      <span class="cm-string property">&quot;name&quot;</span>:<span class="cm-string">&quot;Manage Groups&quot;</span>,
+      <span class="cm-string property">&quot;granted&quot;</span>:<span class="cm-atom">true</span>
+    }
+    ],
+    <span class="cm-string property">&quot;expires&quot;</span>:<span class="cm-string">&quot;12/31/9999 12:00:00 AM&quot;</span>,
+    <span class="cm-string property">&quot;emailDelivery&quot;</span>:<span class="cm-string">&quot;HTML Email&quot;</span>,
+    <span class="cm-string property">&quot;receiveInformation&quot;</span>:<span class="cm-atom">true</span>,
+    <span class="cm-string property">&quot;commandFailureNotification&quot;</span>:<span class="cm-string">&quot;Inbox&quot;</span>,
+    <span class="cm-string property">&quot;reportCompletionNotification&quot;</span>:<span class="cm-string">&quot;Inbox&quot;</span>,
+    <span class="cm-string property">&quot;companyName&quot;</span>:<span class="cm-string">&quot;Enviance, Inc&quot;</span>,
+    <span class="cm-string property">&quot;mustChangePasswordAtNextLogin&quot;</span>:<span class="cm-atom">false</span>,
+    <span class="cm-string property">&quot;canNotChangePassword&quot;</span>:<span class="cm-atom">true</span>,
+    <span class="cm-string property">&quot;notExpirePassword&quot;</span>:<span class="cm-atom">false</span>,
+    <span class="cm-string property">&quot;comments&quot;</span>:<span class="cm-string">&quot;This is a full Scim User&quot;</span>,
+    <span class="cm-string property">&quot;properties&quot;</span> : [
+      {<span class="cm-string property">&quot;propertyName&quot;</span> : <span class="cm-string">&quot;supervisorusername&quot;</span>, <span class="cm-string property">&quot;type&quot;</span>: <span class="cm-string">&quot;supervisorusername&quot;</span>, <span class="cm-string property">&quot;propertyValue&quot;</span> : <span class="cm-string">&quot;someUsername&quot;</span>},
+      {<span class="cm-string property">&quot;propertyName&quot;</span> : <span class="cm-string">&quot;name2&quot;</span>, <span class="cm-string property">&quot;type&quot;</span>: <span class="cm-string">&quot;name2&quot;</span>, <span class="cm-string property">&quot;propertyValue&quot;</span> : <span class="cm-string">&quot;val2&quot;</span>}
+    ]
+  },
+  <span class="cm-string property">&quot;id&quot;</span>:<span class="cm-string">&quot;0af39038-50b6-44a8-8660-be7249c190cc&quot;</span>,
+  <span class="cm-string property">&quot;externalId&quot;</span>:<span class="cm-string">&quot;&quot;</span>,
+  <span class="cm-string property">&quot;meta&quot;</span>:{  
+  <span class="cm-string property">&quot;created&quot;</span>:<span class="cm-string">&quot;1/6/2017 9:39:22 PM&quot;</span>,
+  <span class="cm-string property">&quot;version&quot;</span>:<span class="cm-string">&quot;-1670530483&quot;</span>,
+  <span class="cm-string property">&quot;location&quot;</span>:<span class="cm-string">&quot;https://api.enviance.com/ver2/ScimIdentityService.svc/scim/v1/Users/0af39038-50b6-44a8-8660-be7249c190cc&quot;</span>
+  },
+  <span class="cm-string property">&quot;schemas&quot;</span>:[  
+    <span class="cm-string">&quot;urn:scim:schemas:core:1.0&quot;</span>,
+    <span class="cm-string">&quot;urn:scim:schemas:enviance:user&quot;</span>
+  ]
+}</pre></pre></td></tr></table>
+
+<h4 id="patch" data-has-heading-anchor="true">PATCH<a href="/articles/fordevelopers/scimidentity/a/patch" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/patch&#39;,this);"></a></h4>
+<h5 id="summary-6" data-has-heading-anchor="true">Summary:<a href="/articles/fordevelopers/scimidentity/a/summary-6" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/summary-6&#39;,this);"></a></h5>
+
+<p>Updates an existing user.</p>
+
+<h5 id="description-6" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/scimidentity/a/description-6" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/description-6&#39;,this);"></a></h5>
+
+<p>Partially updates an existing user. This operation allows sending only those attributes requiring modification, reducing network and processing overhead. Attributes may be deleted, replaced, merged, or added in a single request.</p>
+
+<p><br/></p><p><strong>SDK API:</strong>  <code><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.scim.partialUpdateUser (user, id, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-2" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/scimidentity/a/parameters-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/parameters-2&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An id string (GUID), uniquely identifying the User. Any string that matches the pattern of a GUID is interpreted as the id string.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">user</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A user structure</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/scimidentity/a/user" onclick="return n(&#39;!fordevelopers/scimidentity/a/user&#39;,this);">user</a></td>
+    </tr>
+  </tbody>
+</table><a href="/articles/fordevelopers/scimidentity/a/user" onclick="return n(&#39;!fordevelopers/scimidentity/a/user&#39;,this);">Scim Identity APIs and Data Types</a>
+
+<h5 id="responses-6" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/scimidentity/a/responses-6" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/responses-6&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An instance of the user structure</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/scimidentity/a/user" onclick="return n(&#39;!fordevelopers/scimidentity/a/user&#39;,this);">user</a></td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">PATCH</span>  <span class="cm-operator">/</span><span class="cm-variable">ScimIdentityService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">scim</span><span class="cm-operator">/</span><span class="cm-variable">v1</span><span class="cm-operator">/</span><span class="cm-variable">Users</span><span class="cm-operator">/</span><span class="cm-number">7</span><span class="cm-variable">ef9655e</span><span class="cm-operator">-</span><span class="cm-number">916</span><span class="cm-variable">b</span><span class="cm-operator">-</span><span class="cm-number">414</span><span class="cm-variable">f</span><span class="cm-operator">-</span><span class="cm-number">8</span><span class="cm-variable">c88</span><span class="cm-operator">-</span><span class="cm-number">5753</span><span class="cm-variable">fa731558</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">UTF</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+
+{
+  <span class="cm-string property">&quot;schemas&quot;</span>: [<span class="cm-string">&quot;urn:scim:schemas:core:1.0&quot;</span>],
+  <span class="cm-string property">&quot;timezone&quot;</span> : <span class="cm-string">&quot;America/Los_Angeles&quot;</span>,
+  <span class="cm-string property">&quot;externalId&quot;</span> : <span class="cm-string">&quot;apple&quot;</span>
+}</pre></pre></td></tr></table><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//RESPONSE</span>
+{
+  <span class="cm-string property">&quot;userName&quot;</span>:<span class="cm-string">&quot;scimuser&quot;</span>,
+  <span class="cm-string property">&quot;timezone&quot;</span>:<span class="cm-string">&quot;America/Los_Angeles&quot;</span>,
+  <span class="cm-string property">&quot;userType&quot;</span>:<span class="cm-string">&quot;HomeUser&quot;</span>,
+  <span class="cm-string property">&quot;active&quot;</span>:<span class="cm-atom">true</span>,
+  <span class="cm-string property">&quot;addresses&quot;</span>:[  
+    {  
+       <span class="cm-string property">&quot;country&quot;</span>:<span class="cm-atom">null</span>,
+       <span class="cm-string property">&quot;formatted&quot;</span>:<span class="cm-string">&quot;&quot;</span>,
+       <span class="cm-string property">&quot;locality&quot;</span>:<span class="cm-string">&quot;&quot;</span>,
+       <span class="cm-string property">&quot;postalCode&quot;</span>:<span class="cm-string">&quot;&quot;</span>,
+       <span class="cm-string property">&quot;primary&quot;</span>:<span class="cm-atom">true</span>,
+       <span class="cm-string property">&quot;region&quot;</span>:<span class="cm-atom">null</span>,
+       <span class="cm-string property">&quot;streetAddress&quot;</span>:<span class="cm-string">&quot;&quot;</span>,
+       <span class="cm-string property">&quot;type&quot;</span>:<span class="cm-string">&quot;work&quot;</span>
+    }
+  ],
+  <span class="cm-string property">&quot;displayName&quot;</span>:<span class="cm-string">&quot;Scim User&quot;</span>,
+  <span class="cm-string property">&quot;emails&quot;</span>:[  
+    {  
+       <span class="cm-string property">&quot;primary&quot;</span>:<span class="cm-atom">true</span>,
+       <span class="cm-string property">&quot;type&quot;</span>:<span class="cm-string">&quot;work&quot;</span>,
+       <span class="cm-string property">&quot;value&quot;</span>:<span class="cm-string">&quot;scimuser@enviance.com&quot;</span>
+    }
+  ],
+  <span class="cm-string property">&quot;name&quot;</span>:{  
+    <span class="cm-string property">&quot;formatted&quot;</span>:<span class="cm-string">&quot;Scim User&quot;</span>,
+    <span class="cm-string property">&quot;familyName&quot;</span>:<span class="cm-string">&quot;User&quot;</span>,
+    <span class="cm-string property">&quot;givenName&quot;</span>:<span class="cm-string">&quot;Scim&quot;</span>
+  },
+  <span class="cm-string property">&quot;phoneNumbers&quot;</span>:[  
+    {  
+       <span class="cm-string property">&quot;type&quot;</span>:<span class="cm-string">&quot;work&quot;</span>,
+       <span class="cm-string property">&quot;value&quot;</span>:<span class="cm-string">&quot;&quot;</span>
+    },
+    {  
+      <span class="cm-string property">&quot;type&quot;</span>:<span class="cm-string">&quot;fax&quot;</span>,
+      <span class="cm-string property">&quot;value&quot;</span>:<span class="cm-string">&quot;&quot;</span>
+    },
+    {  
+      <span class="cm-string property">&quot;type&quot;</span>:<span class="cm-string">&quot;mobile&quot;</span>,
+      <span class="cm-string property">&quot;value&quot;</span>:<span class="cm-string">&quot;&quot;</span>
+    }
+  ],
+  <span class="cm-string property">&quot;preferredLanguage&quot;</span>:<span class="cm-string">&quot;en_US&quot;</span>,
+  <span class="cm-string property">&quot;title&quot;</span>:<span class="cm-string">&quot;&quot;</span>,
+  <span class="cm-string property">&quot;urn:scim:schemas:enviance:user&quot;</span>:{  
+    <span class="cm-string property">&quot;userRights&quot;</span>:[  
+    {  
+      <span class="cm-string property">&quot;name&quot;</span>:<span class="cm-string">&quot;Manage Groups&quot;</span>,
+      <span class="cm-string property">&quot;granted&quot;</span>:<span class="cm-atom">true</span>
+    }
+    ],
+    <span class="cm-string property">&quot;expires&quot;</span>:<span class="cm-string">&quot;12/31/9999 12:00:00 AM&quot;</span>,
+    <span class="cm-string property">&quot;emailDelivery&quot;</span>:<span class="cm-string">&quot;HTML Email&quot;</span>,
+    <span class="cm-string property">&quot;receiveInformation&quot;</span>:<span class="cm-atom">true</span>,
+    <span class="cm-string property">&quot;commandFailureNotification&quot;</span>:<span class="cm-string">&quot;Inbox&quot;</span>,
+    <span class="cm-string property">&quot;reportCompletionNotification&quot;</span>:<span class="cm-string">&quot;Inbox&quot;</span>,
+    <span class="cm-string property">&quot;companyName&quot;</span>:<span class="cm-string">&quot;Enviance, Inc&quot;</span>,
+    <span class="cm-string property">&quot;mustChangePasswordAtNextLogin&quot;</span>:<span class="cm-atom">false</span>,
+    <span class="cm-string property">&quot;canNotChangePassword&quot;</span>:<span class="cm-atom">true</span>,
+    <span class="cm-string property">&quot;notExpirePassword&quot;</span>:<span class="cm-atom">false</span>,
+    <span class="cm-string property">&quot;comments&quot;</span>:<span class="cm-string">&quot;This is a full Scim User&quot;</span>,
+    <span class="cm-string property">&quot;properties&quot;</span> : [
+      {<span class="cm-string property">&quot;propertyName&quot;</span> : <span class="cm-string">&quot;supervisorusername&quot;</span>, <span class="cm-string property">&quot;type&quot;</span>: <span class="cm-string">&quot;supervisorusername&quot;</span>, <span class="cm-string property">&quot;propertyValue&quot;</span> : <span class="cm-string">&quot;someUsername&quot;</span>},
+      {<span class="cm-string property">&quot;propertyName&quot;</span> : <span class="cm-string">&quot;name2&quot;</span>, <span class="cm-string property">&quot;type&quot;</span>: <span class="cm-string">&quot;name2&quot;</span>, <span class="cm-string property">&quot;propertyValue&quot;</span> : <span class="cm-string">&quot;val2&quot;</span>}
+    ]
+  },
+  <span class="cm-string property">&quot;id&quot;</span>:<span class="cm-string">&quot;0af39038-50b6-44a8-8660-be7249c190cc&quot;</span>,
+  <span class="cm-string property">&quot;externalId&quot;</span>:<span class="cm-string">&quot;apple&quot;</span>,
+  <span class="cm-string property">&quot;meta&quot;</span>:{  
+  <span class="cm-string property">&quot;created&quot;</span>:<span class="cm-string">&quot;1/6/2017 9:39:22 PM&quot;</span>,
+  <span class="cm-string property">&quot;version&quot;</span>:<span class="cm-string">&quot;-1670530483&quot;</span>,
+  <span class="cm-string property">&quot;location&quot;</span>:<span class="cm-string">&quot;https://api.enviance.com/ver2/ScimIdentityService.svc/scim/v1/Users/0af39038-50b6-44a8-8660-be7249c190cc&quot;</span>
+  },
+  <span class="cm-string property">&quot;schemas&quot;</span>:[  
+    <span class="cm-string">&quot;urn:scim:schemas:core:1.0&quot;</span>,
+    <span class="cm-string">&quot;urn:scim:schemas:enviance:user&quot;</span>
+  ]
+}</pre></pre></td></tr></table>
+
+<h4 id="put" data-has-heading-anchor="true">PUT<a href="/articles/fordevelopers/scimidentity/a/put" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/put&#39;,this);"></a></h4>
+<h5 id="summary-7" data-has-heading-anchor="true">Summary:<a href="/articles/fordevelopers/scimidentity/a/summary-7" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/summary-7&#39;,this);"></a></h5>
+
+<p>Updates an existing user.</p>
+
+<h5 id="description-7" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/scimidentity/a/description-7" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/description-7&#39;,this);"></a></h5>
+
+<p>Updates an existing user. PUT performs a full update.</p>
+
+<p><br/></p><p><strong>SDK API:</strong>  <code><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.scim.fullUpdateUser (user, id, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-3" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/scimidentity/a/parameters-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/parameters-3&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An id string (GUID), uniquely identifying the User. Any string that matches the pattern of a GUID is interpreted as the id string.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">user</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A user structure</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/scimidentity/a/user" onclick="return n(&#39;!fordevelopers/scimidentity/a/user&#39;,this);">user</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-7" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/scimidentity/a/responses-7" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/responses-7&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An instance of the user structure with metadata.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/scimidentity/a/user" onclick="return n(&#39;!fordevelopers/scimidentity/a/user&#39;,this);">user</a></td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">PUT</span> <span class="cm-operator">/</span><span class="cm-variable">ScimIdentityService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">scim</span><span class="cm-operator">/</span><span class="cm-variable">v1</span><span class="cm-operator">/</span><span class="cm-variable">Users</span><span class="cm-operator">/</span><span class="cm-number">7</span><span class="cm-variable">ef9655e</span><span class="cm-operator">-</span><span class="cm-number">916</span><span class="cm-variable">b</span><span class="cm-operator">-</span><span class="cm-number">414</span><span class="cm-variable">f</span><span class="cm-operator">-</span><span class="cm-number">8</span><span class="cm-variable">c88</span><span class="cm-operator">-</span><span class="cm-number">5753</span><span class="cm-variable">fa731558</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">UTF</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+
+{
+  <span class="cm-string property">&quot;schemas&quot;</span>: [<span class="cm-string">&quot;urn:scim:schemas:core:1.0&quot;</span>, <span class="cm-string">&quot;urn:scim:schemas:enviance:user&quot;</span>],
+  <span class="cm-string property">&quot;userName&quot;</span>: <span class="cm-string">&quot;scimuser&quot;</span>,
+  <span class="cm-string property">&quot;password&quot;</span>:<span class="cm-string">&quot;1111&quot;</span>,
+  <span class="cm-string property">&quot;name&quot;</span>: {
+    <span class="cm-string property">&quot;givenName&quot;</span>: <span class="cm-string">&quot;Scim&quot;</span>,
+    <span class="cm-string property">&quot;familyName&quot;</span>: <span class="cm-string">&quot;User&quot;</span>
+  },
+  <span class="cm-string property">&quot;emails&quot;</span>: [
+    {<span class="cm-string property">&quot;type&quot;</span>: <span class="cm-string">&quot;work&quot;</span>, <span class="cm-string property">&quot;primary&quot;</span>: <span class="cm-string">&quot;true&quot;</span>, <span class="cm-string property">&quot;value&quot;</span>: <span class="cm-string">&quot;scimuser@enviance.com&quot;</span>}
+  ],
+  <span class="cm-string property">&quot;timezone&quot;</span>: <span class="cm-string">&quot;America/New_York&quot;</span>,
+  <span class="cm-string property">&quot;preferredLanguage&quot;</span>: <span class="cm-string">&quot;en_US&quot;</span>,
+  <span class="cm-string property">&quot;active&quot;</span> : <span class="cm-atom">true</span>,
+  <span class="cm-string property">&quot;urn:scim:schemas:enviance:user&quot;</span>: {
+    <span class="cm-string property">&quot;emailDelivery&quot;</span>: <span class="cm-string">&quot;HTML Email&quot;</span>,
+    <span class="cm-string property">&quot;receiveInformation&quot;</span>: <span class="cm-atom">true</span>,
+    <span class="cm-string property">&quot;commandFailureNotification&quot;</span>: <span class="cm-string">&quot;Inbox&quot;</span>,
+    <span class="cm-string property">&quot;companyName&quot;</span>: <span class="cm-string">&quot;Enviance, Inc&quot;</span>,
+    <span class="cm-string property">&quot;mustChangePasswordAtNextLogin&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+    <span class="cm-string property">&quot;canNotChangePassword&quot;</span>: <span class="cm-string">&quot;true&quot;</span>,
+    <span class="cm-string property">&quot;NotExpirePassword&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+    <span class="cm-string property">&quot;userRights&quot;</span>: [
+      {<span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Manage Groups&quot;</span>, <span class="cm-string property">&quot;granted&quot;</span>: <span class="cm-atom">true</span>}
+    ],
+    <span class="cm-string property">&quot;properties&quot;</span> : [
+      {<span class="cm-string property">&quot;propertyName&quot;</span> : <span class="cm-string">&quot;supervisorusername&quot;</span>, <span class="cm-string property">&quot;type&quot;</span>: <span class="cm-string">&quot;supervisorusername&quot;</span>, <span class="cm-string property">&quot;propertyValue&quot;</span> : <span class="cm-string">&quot;someUsername&quot;</span>},
+      {<span class="cm-string property">&quot;propertyName&quot;</span> : <span class="cm-string">&quot;name2&quot;</span>, <span class="cm-string property">&quot;type&quot;</span>: <span class="cm-string">&quot;name2&quot;</span>, <span class="cm-string property">&quot;propertyValue&quot;</span> : <span class="cm-string">&quot;val2&quot;</span>}
+    ],    
+    <span class="cm-string property">&quot;comments&quot;</span>: <span class="cm-string">&quot;This is a full Scim User&quot;</span>
+  }
+}</pre></pre></td></tr></table><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//RESPONSE</span>
+{
+ <span class="cm-string property">&quot;userName&quot;</span>:<span class="cm-string">&quot;scimuser&quot;</span>,
+ <span class="cm-string property">&quot;timezone&quot;</span>:<span class="cm-string">&quot;America/New_York&quot;</span>,
+ <span class="cm-string property">&quot;userType&quot;</span>:<span class="cm-string">&quot;HomeUser&quot;</span>,
+ <span class="cm-string property">&quot;active&quot;</span>:<span class="cm-atom">true</span>,
+ <span class="cm-string property">&quot;addresses&quot;</span>:[  
+   {  
+      <span class="cm-string property">&quot;country&quot;</span>:<span class="cm-atom">null</span>,
+      <span class="cm-string property">&quot;formatted&quot;</span>:<span class="cm-string">&quot;&quot;</span>,
+      <span class="cm-string property">&quot;locality&quot;</span>:<span class="cm-string">&quot;&quot;</span>,
+      <span class="cm-string property">&quot;postalCode&quot;</span>:<span class="cm-string">&quot;&quot;</span>,
+      <span class="cm-string property">&quot;primary&quot;</span>:<span class="cm-atom">true</span>,
+      <span class="cm-string property">&quot;region&quot;</span>:<span class="cm-atom">null</span>,
+      <span class="cm-string property">&quot;streetAddress&quot;</span>:<span class="cm-string">&quot;&quot;</span>,
+      <span class="cm-string property">&quot;type&quot;</span>:<span class="cm-string">&quot;work&quot;</span>
+   }
+ ],
+ <span class="cm-string property">&quot;displayName&quot;</span>:<span class="cm-string">&quot;Scim User&quot;</span>,
+ <span class="cm-string property">&quot;emails&quot;</span>:[  
+   {  
+      <span class="cm-string property">&quot;primary&quot;</span>:<span class="cm-atom">true</span>,
+      <span class="cm-string property">&quot;type&quot;</span>:<span class="cm-string">&quot;work&quot;</span>,
+      <span class="cm-string property">&quot;value&quot;</span>:<span class="cm-string">&quot;scimuser@enviance.com&quot;</span>
+   }
+ ],
+ <span class="cm-string property">&quot;name&quot;</span>:{  
+   <span class="cm-string property">&quot;formatted&quot;</span>:<span class="cm-string">&quot;Scim User&quot;</span>,
+   <span class="cm-string property">&quot;familyName&quot;</span>:<span class="cm-string">&quot;User&quot;</span>,
+   <span class="cm-string property">&quot;givenName&quot;</span>:<span class="cm-string">&quot;Scim&quot;</span>
+ },
+ <span class="cm-string property">&quot;phoneNumbers&quot;</span>:[  
+   {  
+      <span class="cm-string property">&quot;type&quot;</span>:<span class="cm-string">&quot;work&quot;</span>,
+      <span class="cm-string property">&quot;value&quot;</span>:<span class="cm-string">&quot;&quot;</span>
+   },
+   {  
+     <span class="cm-string property">&quot;type&quot;</span>:<span class="cm-string">&quot;fax&quot;</span>,
+     <span class="cm-string property">&quot;value&quot;</span>:<span class="cm-string">&quot;&quot;</span>
+   },
+   {  
+     <span class="cm-string property">&quot;type&quot;</span>:<span class="cm-string">&quot;mobile&quot;</span>,
+     <span class="cm-string property">&quot;value&quot;</span>:<span class="cm-string">&quot;&quot;</span>
+   }
+ ],
+ <span class="cm-string property">&quot;preferredLanguage&quot;</span>:<span class="cm-string">&quot;en_US&quot;</span>,
+ <span class="cm-string property">&quot;title&quot;</span>:<span class="cm-string">&quot;&quot;</span>,
+ <span class="cm-string property">&quot;urn:scim:schemas:enviance:user&quot;</span>:{  
+   <span class="cm-string property">&quot;userRights&quot;</span>:[  
+   {  
+     <span class="cm-string property">&quot;name&quot;</span>:<span class="cm-string">&quot;Manage Groups&quot;</span>,
+     <span class="cm-string property">&quot;granted&quot;</span>:<span class="cm-atom">true</span>
+   }
+   ],
+   <span class="cm-string property">&quot;properties&quot;</span> : [
+     {
+       <span class="cm-string property">&quot;propertyName&quot;</span> : <span class="cm-string">&quot;name1&quot;</span>, 
+       <span class="cm-string property">&quot;type&quot;</span>: <span class="cm-string">&quot;name1&quot;</span>, 
+       <span class="cm-string property">&quot;propertyValue&quot;</span> : <span class="cm-string">&quot;val1&quot;</span>
+     },
+     {
+       <span class="cm-string property">&quot;propertyName&quot;</span> : <span class="cm-string">&quot;name2&quot;</span>, 
+       <span class="cm-string property">&quot;type&quot;</span>: <span class="cm-string">&quot;name2&quot;</span>, 
+       <span class="cm-string property">&quot;propertyValue&quot;</span> : <span class="cm-string">&quot;val2&quot;</span>
+     }
+   ],
+   <span class="cm-string property">&quot;expires&quot;</span>:<span class="cm-string">&quot;12/31/9999 12:00:00 AM&quot;</span>,
+   <span class="cm-string property">&quot;emailDelivery&quot;</span>:<span class="cm-string">&quot;HTML Email&quot;</span>,
+   <span class="cm-string property">&quot;receiveInformation&quot;</span>:<span class="cm-atom">true</span>,
+   <span class="cm-string property">&quot;commandFailureNotification&quot;</span>:<span class="cm-string">&quot;Inbox&quot;</span>,
+   <span class="cm-string property">&quot;reportCompletionNotification&quot;</span>:<span class="cm-string">&quot;Inbox&quot;</span>,
+   <span class="cm-string property">&quot;companyName&quot;</span>:<span class="cm-string">&quot;Enviance, Inc&quot;</span>,
+   <span class="cm-string property">&quot;mustChangePasswordAtNextLogin&quot;</span>:<span class="cm-atom">false</span>,
+   <span class="cm-string property">&quot;canNotChangePassword&quot;</span>:<span class="cm-atom">true</span>,
+   <span class="cm-string property">&quot;notExpirePassword&quot;</span>:<span class="cm-atom">false</span>,
+   <span class="cm-string property">&quot;comments&quot;</span>:<span class="cm-string">&quot;This is a full Scim User&quot;</span>
+ },
+ <span class="cm-string property">&quot;id&quot;</span>:<span class="cm-string">&quot;0af39038-50b6-44a8-8660-be7249c190cc&quot;</span>,
+ <span class="cm-string property">&quot;externalId&quot;</span>:<span class="cm-string">&quot;&quot;</span>,
+ <span class="cm-string property">&quot;meta&quot;</span>:{  
+ <span class="cm-string property">&quot;created&quot;</span>:<span class="cm-string">&quot;1/6/2017 9:39:22 PM&quot;</span>,
+ <span class="cm-string property">&quot;version&quot;</span>:<span class="cm-string">&quot;-1670530483&quot;</span>,
+ <span class="cm-string property">&quot;location&quot;</span>:<span class="cm-string">&quot;https://api.enviance.com/ver2/ScimIdentityService.svc/scim/v1/Users/0af39038-50b6-44a8-8660-be7249c190cc&quot;</span>
+ },
+ <span class="cm-string property">&quot;schemas&quot;</span>:[  
+   <span class="cm-string">&quot;urn:scim:schemas:core:1.0&quot;</span>,
+   <span class="cm-string">&quot;urn:scim:schemas:enviance:user&quot;</span>
+ ]
+}</pre></pre></td></tr></table>
+
+<h4 id="delete" data-has-heading-anchor="true">DELETE<a href="/articles/fordevelopers/scimidentity/a/delete" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/delete&#39;,this);"></a></h4>
+<h5 id="summary-8" data-has-heading-anchor="true">Summary:<a href="/articles/fordevelopers/scimidentity/a/summary-8" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/summary-8&#39;,this);"></a></h5>
+
+<p>Deletes an existing user.</p>
+
+<h5 id="description-8" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/scimidentity/a/description-8" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/description-8&#39;,this);"></a></h5>
+
+<p>Deletes an existing user. User deletions are <em>not</em> <em>permanent</em>.</p>
+
+<p><strong style="font-size: 10pt;">SDK API:</strong><span style="font-size: 10pt;">  </span><code style="font-size: 10pt;"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.scim.deleteUser (id, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-4" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/scimidentity/a/parameters-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/parameters-4&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An id string (GUID), uniquely identifying the User. Any string that matches the pattern of a GUID is interpreted as the id string.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-8" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/scimidentity/a/responses-8" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/responses-8&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">User is deleted.</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//** Example:**</span>
+<span class="cm-variable">DELETE</span> <span class="cm-operator">/</span><span class="cm-variable">ScimIdentityService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">scim</span><span class="cm-operator">/</span><span class="cm-variable">v1</span><span class="cm-operator">/</span><span class="cm-variable">Users</span><span class="cm-operator">/</span><span class="cm-number">7</span><span class="cm-variable">ef9655e</span><span class="cm-operator">-</span><span class="cm-number">916</span><span class="cm-variable">b</span><span class="cm-operator">-</span><span class="cm-number">414</span><span class="cm-variable">f</span><span class="cm-operator">-</span><span class="cm-number">8</span><span class="cm-variable">c88</span><span class="cm-operator">-</span><span class="cm-number">5753</span><span class="cm-variable">fa731558</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table>
+
+<h3 id="scimv1groups"><br/></h3><h3 id="scimv1groups" data-has-heading-anchor="true">/scim/v1/Groups<a href="/articles/fordevelopers/scimidentity/a/scimv1groups" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/scimv1groups&#39;,this);"></a></h3>
+
+<h4 id="post-1" data-has-heading-anchor="true">POST<a href="/articles/fordevelopers/scimidentity/a/post-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/post-1&#39;,this);"></a></h4>
+<h5 id="summary-9" data-has-heading-anchor="true">Summary:<a href="/articles/fordevelopers/scimidentity/a/summary-9" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/summary-9&#39;,this);"></a></h5>
+
+<p>Create a new group.</p>
+
+<h5 id="description-9" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/scimidentity/a/description-9" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/description-9&#39;,this);"></a></h5>
+
+<p>Create a new group in EMS system.</p>
+
+<p><br/></p><p><strong>SDK API:</strong>  <code><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.scim.createGroup(group, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-5" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/scimidentity/a/parameters-5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/parameters-5&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">group</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Create a new group</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/scimidentity/a/group" onclick="return n(&#39;!fordevelopers/scimidentity/a/group&#39;,this);">group</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-9" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/scimidentity/a/responses-9" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/responses-9&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">201</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An instance of the group structure with metadata.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/scimidentity/a/group" onclick="return n(&#39;!fordevelopers/scimidentity/a/group&#39;,this);">group</a></td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">POST</span> <span class="cm-operator">/</span><span class="cm-variable">ScimIdentityService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">scim</span><span class="cm-operator">/</span><span class="cm-variable">v1</span><span class="cm-operator">/</span><span class="cm-variable">Groups</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">UTF</span><span class="cm-operator">-</span><span class="cm-number">8</span></pre></pre></td></tr></table><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//RESPONSE</span>
+{
+  <span class="cm-string property">&quot;urn:scim:schemas:enviance:group&quot;</span>: {
+  <span class="cm-string property">&quot;rights&quot;</span>: [
+      <span class="cm-string">&quot;Manage Users&quot;</span>
+      ]
+  },
+  <span class="cm-string property">&quot;id&quot;</span>: <span class="cm-string">&quot;809d56ad-77ef-47a6-9f3c-f8853b118744&quot;</span>,
+  <span class="cm-string property">&quot;externalId&quot;</span>: <span class="cm-string">&quot;Enviance SCIM Group&quot;</span>,
+  <span class="cm-string property">&quot;meta&quot;</span>: {
+    <span class="cm-string property">&quot;version&quot;</span>: <span class="cm-string">&quot;-349702305&quot;</span>,
+    <span class="cm-string property">&quot;location&quot;</span>: <span class="cm-string">&quot;http://api.enviance.com/ver2/ScimIdentityService.svc/scim/v1/Groups/809d56ad-77ef-47a6-9f3c-f8853b118744&quot;</span>
+  },
+  <span class="cm-string property">&quot;schemas&quot;</span>: [
+      <span class="cm-string">&quot;urn:scim:schemas:core:1.0&quot;</span>,
+      <span class="cm-string">&quot;urn:scim:schemas:enviance:group&quot;</span>
+  ],
+  <span class="cm-string property">&quot;displayName&quot;</span>: <span class="cm-string">&quot;Enviance SCIM Group&quot;</span>,
+  <span class="cm-string property">&quot;members&quot;</span>: [
+      {
+          <span class="cm-string property">&quot;value&quot;</span>: <span class="cm-string">&quot;19ycb0g2-df4b-42c5-8s48-04457723cf76&quot;</span>
+      }
+  ]                                                       
+}</pre></pre></td></tr></table>
+
+<h3 id="scimv1groupsid"><br/></h3><h3 id="scimv1groupsid" data-has-heading-anchor="true">/scim/v1/Groups/{id}<a href="/articles/fordevelopers/scimidentity/a/scimv1groupsid" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/scimv1groupsid&#39;,this);"></a></h3>
+
+<h4 id="get-5" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/scimidentity/a/get-5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/get-5&#39;,this);"></a></h4>
+<h5 id="summary-10" data-has-heading-anchor="true">Summary:<a href="/articles/fordevelopers/scimidentity/a/summary-10" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/summary-10&#39;,this);"></a></h5>
+
+<p>Gets information about group.</p>
+
+<h5 id="description-10" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/scimidentity/a/description-10" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/description-10&#39;,this);"></a></h5>
+
+<p>Gets information about group.</p>
+
+<p><strong style="font-size: 10pt;">SDK API:</strong><span style="font-size: 10pt;">  </span><code style="font-size: 10pt;"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.scim.getGroup(id, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-6" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/scimidentity/a/parameters-6" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/parameters-6&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An id string (GUID), uniquely identifying the Group. Any string that matches the pattern of a GUID is interpreted as the id string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-10" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/scimidentity/a/responses-10" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/responses-10&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An instance of the group structure.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/scimidentity/a/group" onclick="return n(&#39;!fordevelopers/scimidentity/a/group&#39;,this);">group</a></td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">GET</span> <span class="cm-operator">/</span><span class="cm-variable">ScimIdentityService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">scim</span><span class="cm-operator">/</span><span class="cm-variable">v1</span><span class="cm-operator">/</span><span class="cm-variable">Groups</span><span class="cm-operator">/</span><span class="cm-number">809</span><span class="cm-variable">d56ad</span><span class="cm-operator">-</span><span class="cm-number">77</span><span class="cm-variable">ef</span><span class="cm-operator">-</span><span class="cm-number">47</span><span class="cm-variable">a6</span><span class="cm-operator">-</span><span class="cm-number">9</span><span class="cm-variable">f3c</span><span class="cm-operator">-</span><span class="cm-variable">f8853b118744</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//RESPONSE</span>
+{
+  <span class="cm-string property">&quot;urn:scim:schemas:enviance:group&quot;</span>: {
+  <span class="cm-string property">&quot;rights&quot;</span>: [
+      <span class="cm-string">&quot;Manage Users&quot;</span>
+      ]
+  },
+  <span class="cm-string property">&quot;id&quot;</span>: <span class="cm-string">&quot;809d56ad-77ef-47a6-9f3c-f8853b118744&quot;</span>,
+  <span class="cm-string property">&quot;externalId&quot;</span>: <span class="cm-string">&quot;Enviance SCIM Group&quot;</span>,
+  <span class="cm-string property">&quot;meta&quot;</span>: {
+      <span class="cm-string property">&quot;version&quot;</span>: <span class="cm-string">&quot;-349702305&quot;</span>,
+      <span class="cm-string property">&quot;location&quot;</span>: <span class="cm-string">&quot;http://api.enviance.com/ver2/ScimIdentityService.svc/scim/v1/Groups/809d56ad-77ef-47a6-9f3c-f8853b118744&quot;</span>
+  },
+  <span class="cm-string property">&quot;schemas&quot;</span>: [
+      <span class="cm-string">&quot;urn:scim:schemas:core:1.0&quot;</span>,
+      <span class="cm-string">&quot;urn:scim:schemas:enviance:group&quot;</span>
+  ],
+  <span class="cm-string property">&quot;displayName&quot;</span>: <span class="cm-string">&quot;Enviance SCIM Group&quot;</span>,
+  <span class="cm-string property">&quot;members&quot;</span>: [
+      {
+          <span class="cm-string property">&quot;value&quot;</span>: <span class="cm-string">&quot;19ycb0g2-df4b-42c5-8s48-04457723cf76&quot;</span>
+      }
+  ]
+}</pre></pre></td></tr></table>
+
+<h4 id="patch-1" data-has-heading-anchor="true">PATCH<a href="/articles/fordevelopers/scimidentity/a/patch-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/patch-1&#39;,this);"></a></h4>
+<h5 id="summary-11" data-has-heading-anchor="true">Summary:<a href="/articles/fordevelopers/scimidentity/a/summary-11" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/summary-11&#39;,this);"></a></h5>
+
+<p>Updates an existing group.</p>
+
+<h5 id="description-11" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/scimidentity/a/description-11" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/description-11&#39;,this);"></a></h5>
+
+<p>This operation allows sending only those attributes requiring modification, reducing network and processing overhead. Attributes may be deleted, replaced, merged, or added in a single request</p>
+
+<p><br/></p><p><strong>SDK API:</strong>  <code><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.scim.partialUpdateGroup (group, id, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-7" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/scimidentity/a/parameters-7" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/parameters-7&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An id string (GUID), uniquely identifying the Group. Any string that matches the pattern of a GUID is interpreted as the id string.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">group</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A group structure</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/scimidentity/a/group" onclick="return n(&#39;!fordevelopers/scimidentity/a/group&#39;,this);">group</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-11" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/scimidentity/a/responses-11" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/responses-11&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An instance of the group structure</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/scimidentity/a/group" onclick="return n(&#39;!fordevelopers/scimidentity/a/group&#39;,this);">group</a></td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">PATCH</span>  <span class="cm-operator">/</span><span class="cm-variable">ScimIdentityService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">scim</span><span class="cm-operator">/</span><span class="cm-variable">v1</span><span class="cm-operator">/</span><span class="cm-variable">Groups</span><span class="cm-operator">/</span><span class="cm-number">809</span><span class="cm-variable">d56ad</span><span class="cm-operator">-</span><span class="cm-number">77</span><span class="cm-variable">ef</span><span class="cm-operator">-</span><span class="cm-number">47</span><span class="cm-variable">a6</span><span class="cm-operator">-</span><span class="cm-number">9</span><span class="cm-variable">f3c</span><span class="cm-operator">-</span><span class="cm-variable">f8853b118744</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">UTF</span><span class="cm-operator">-</span><span class="cm-number">8</span></pre></pre></td></tr></table><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//RESPONSE</span>
+{
+  <span class="cm-string property">&quot;urn:scim:schemas:enviance:group&quot;</span>: {
+  <span class="cm-string property">&quot;rights&quot;</span>: [
+      <span class="cm-string">&quot;Manage Groups&quot;</span>
+      ]
+  },
+  <span class="cm-string property">&quot;id&quot;</span>: <span class="cm-string">&quot;809d56ad-77ef-47a6-9f3c-f8853b118744&quot;</span>,
+  <span class="cm-string property">&quot;externalId&quot;</span>: <span class="cm-string">&quot;Enviance SCIM Group&quot;</span>,
+  <span class="cm-string property">&quot;meta&quot;</span>: {
+      <span class="cm-string property">&quot;version&quot;</span>: <span class="cm-string">&quot;-349702305&quot;</span>,
+      <span class="cm-string property">&quot;location&quot;</span>: <span class="cm-string">&quot;http://api.enviance.com/ver2/ScimIdentityService.svc/scim/v1/Groups/809d56ad-77ef-47a6-9f3c-f8853b118744&quot;</span>
+  },
+  <span class="cm-string property">&quot;schemas&quot;</span>: [
+      <span class="cm-string">&quot;urn:scim:schemas:core:1.0&quot;</span>,
+      <span class="cm-string">&quot;urn:scim:schemas:enviance:group&quot;</span>
+  ],
+  <span class="cm-string property">&quot;displayName&quot;</span>: <span class="cm-string">&quot;Enviance SCIM Group&quot;</span>,
+  <span class="cm-string property">&quot;members&quot;</span>: [
+      {
+          <span class="cm-string property">&quot;value&quot;</span>: <span class="cm-string">&quot;19ycb0g2-df4b-42c5-8s48-04457723cf76&quot;</span>
+      }
+  ]
+
+}</pre></pre></td></tr></table>
+
+<h4 id="put-1" data-has-heading-anchor="true">PUT<a href="/articles/fordevelopers/scimidentity/a/put-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/put-1&#39;,this);"></a></h4>
+<h5 id="summary-12" data-has-heading-anchor="true">Summary:<a href="/articles/fordevelopers/scimidentity/a/summary-12" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/summary-12&#39;,this);"></a></h5>
+
+<p>Updates an existing group.</p>
+
+<h5 id="description-12" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/scimidentity/a/description-12" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/description-12&#39;,this);"></a></h5>
+
+<p>Updates an existing group. PUT performs a full update.</p>
+
+<p><br/></p><p><strong>SDK API:</strong>  <code><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.scim.fullUpdateGroup (group, id, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-8" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/scimidentity/a/parameters-8" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/parameters-8&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An id string (GUID), uniquely identifying the Group. Any string that matches the pattern of a GUID is interpreted as the id string.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">group</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A group structure</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/scimidentity/a/group" onclick="return n(&#39;!fordevelopers/scimidentity/a/group&#39;,this);">group</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-12" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/scimidentity/a/responses-12" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/responses-12&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An instance of the group structure with metadata.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/scimidentity/a/group" onclick="return n(&#39;!fordevelopers/scimidentity/a/group&#39;,this);">group</a></td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">PUT</span> <span class="cm-operator">/</span><span class="cm-variable">ScimIdentityService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">scim</span><span class="cm-operator">/</span><span class="cm-variable">v1</span><span class="cm-operator">/</span><span class="cm-variable">Groups</span><span class="cm-operator">/</span><span class="cm-number">809</span><span class="cm-variable">d56ad</span><span class="cm-operator">-</span><span class="cm-number">77</span><span class="cm-variable">ef</span><span class="cm-operator">-</span><span class="cm-number">47</span><span class="cm-variable">a6</span><span class="cm-operator">-</span><span class="cm-number">9</span><span class="cm-variable">f3c</span><span class="cm-operator">-</span><span class="cm-variable">f8853b118744</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">UTF</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+
+{
+  <span class="cm-string property">&quot;schemas&quot;</span>: [<span class="cm-string">&quot;urn:scim:schemas:core:1.0&quot;</span>, <span class="cm-string">&quot;urn:scim:schemas:enviance:group&quot;</span>],
+  <span class="cm-string property">&quot;displayName&quot;</span>: <span class="cm-string">&quot;Enviance SCIM 123 Group&quot;</span>,
+  <span class="cm-string property">&quot;externalid&quot;</span> : <span class="cm-string">&quot;Enviance SCIM 123 Group&quot;</span>,
+  <span class="cm-string property">&quot;urn:scim:schemas:enviance:group&quot;</span>: {
+            <span class="cm-string property">&quot;rights&quot;</span>: [
+              <span class="cm-string">&quot;Manage Users&quot;</span>  
+            ]
+  },
+  <span class="cm-string property">&quot;members&quot;</span>: 
+  [
+      { <span class="cm-string property">&quot;value&quot;</span>: <span class="cm-string">&quot;19ycb0g2-df4b-42c5-8s48-04457723cf76&quot;</span> }
+  ]
+}</pre></pre></td></tr></table><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//RESPONSE</span>
+{
+  <span class="cm-string property">&quot;urn:scim:schemas:enviance:group&quot;</span>: {
+     <span class="cm-string property">&quot;rights&quot;</span>: [
+        <span class="cm-string">&quot;Manage Users&quot;</span>
+        ]
+  },
+  <span class="cm-string property">&quot;id&quot;</span>: <span class="cm-string">&quot;809d56ad-77ef-47a6-9f3c-f8853b118744&quot;</span>,
+  <span class="cm-string property">&quot;externalId&quot;</span>: <span class="cm-string">&quot;Enviance SCIM 123 Group&quot;</span>,
+  <span class="cm-string property">&quot;meta&quot;</span>: {
+      <span class="cm-string property">&quot;version&quot;</span>: <span class="cm-string">&quot;-349702305&quot;</span>,
+      <span class="cm-string property">&quot;location&quot;</span>: <span class="cm-string">&quot;http://api.enviance.com/ver2/ScimIdentityService.svc/scim/v1/Groups/809d56ad-77ef-47a6-9f3c-f8853b118744&quot;</span>
+  },
+  <span class="cm-string property">&quot;schemas&quot;</span>: [
+      <span class="cm-string">&quot;urn:scim:schemas:core:1.0&quot;</span>,
+      <span class="cm-string">&quot;urn:scim:schemas:enviance:group&quot;</span>
+  ],
+  <span class="cm-string property">&quot;displayName&quot;</span>: <span class="cm-string">&quot;Enviance SCIM 123 Group&quot;</span>,
+  <span class="cm-string property">&quot;members&quot;</span>: [
+      {
+          <span class="cm-string property">&quot;value&quot;</span>: <span class="cm-string">&quot;19ycb0g2-df4b-42c5-8s48-04457723cf76&quot;</span>
+      }
+  ]
+}</pre></pre></td></tr></table>
+
+<h4 id="delete-1" data-has-heading-anchor="true">DELETE<a href="/articles/fordevelopers/scimidentity/a/delete-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/delete-1&#39;,this);"></a></h4>
+<h5 id="summary-13" data-has-heading-anchor="true">Summary:<a href="/articles/fordevelopers/scimidentity/a/summary-13" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/summary-13&#39;,this);"></a></h5>
+
+<p>Deletes an existing group.</p>
+
+<h5 id="description-13" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/scimidentity/a/description-13" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/description-13&#39;,this);"></a></h5>
+
+<p>Deletes an existing group. Group Deletions are <em>permanent</em>.</p>
+
+<p><strong style="font-size: 10pt;">SDK API:</strong><span style="font-size: 10pt;">  </span><code style="font-size: 10pt;"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.scim.deleteGroup (id, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-9" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/scimidentity/a/parameters-9" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/parameters-9&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An id string (GUID), uniquely identifying the User. Any string that matches the pattern of a GUID is interpreted as the id string.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-13" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/scimidentity/a/responses-13" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/responses-13&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Group is deleted.</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//** Example:**</span>
+<span class="cm-variable">DELETE</span> <span class="cm-operator">/</span><span class="cm-variable">ScimIdentityService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">scim</span><span class="cm-operator">/</span><span class="cm-variable">v1</span><span class="cm-operator">/</span><span class="cm-variable">Groups</span><span class="cm-operator">/</span><span class="cm-number">809</span><span class="cm-variable">d56ad</span><span class="cm-operator">-</span><span class="cm-number">77</span><span class="cm-variable">ef</span><span class="cm-operator">-</span><span class="cm-number">47</span><span class="cm-variable">a6</span><span class="cm-operator">-</span><span class="cm-number">9</span><span class="cm-variable">f3c</span><span class="cm-operator">-</span><span class="cm-variable">f8853b118744</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table>
+
+<h3 id="models"><br/></h3><h3 id="models" data-has-heading-anchor="true">Models<a href="/articles/fordevelopers/scimidentity/a/models" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/models&#39;,this);"></a></h3>
+
+<h4 id="user" data-has-heading-anchor="true">user<span id="user"></span>&nbsp;<a href="/articles/fordevelopers/scimidentity/a/user" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/user&#39;,this);"></a></h4>
+
+<p>Represents a User definition. Used for all SCIM user operations.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" class=""><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" class=""><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" class=""><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;" class=""><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">schemas</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ string ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">SCIM version specific schema as well as any schema extensions. EMS currently supports SCIM 1.1 (i.e. urn:scim:schemas:core:1.0) and schema extension urn:scim:schemas:enviance:user</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Identifier (Guid) of a user.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">externalId</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">External identifier that is usually similar to username.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">meta</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">object</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Metadata for a user</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">userName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Unique name of the user, typically used by the user to directly authenticate to EMS system</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">password</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The User’s clear text password. This attribute is intended to be used as a means to specify an initial password when creating a new User or to reset an existing User’s password</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">object</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The components of the user’s real name.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">title</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Title for the User.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">displayname</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Display name of a user in EMS system.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">emails</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">object</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An active date of the Requirement.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">timezone</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (Olson Time zone)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The User’s time zone in the “Olson” timezone database format.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">preferredLanguage</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Indicates the User’s preferred written or spoken language. Generally used for selecting a localized User interface. e.g., ‘en_US’</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">active</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">boolean</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A boolean value indicating status of user.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">groups</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">object</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A list of groups that the user belongs to.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">usertype</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Type of the User. Possible values are Homeuser and Accessuser.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">address</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">object</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A physical mailing address for the user.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">phoneNumbers</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">object</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Phone number(s) for the User.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">urn:scim:schemas:enviance:user</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">object</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Extended schema attribute.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default">{
+  <span class="cm-string property">&quot;schemas&quot;</span>: [<span class="cm-string">&quot;urn:scim:schemas:core:1.0&quot;</span>, <span class="cm-string">&quot;urn:scim:schemas:enviance:user&quot;</span>],
+  <span class="cm-string property">&quot;userName&quot;</span>: <span class="cm-string">&quot;scimupdatetest998990444&quot;</span>,
+  <span class="cm-string property">&quot;password&quot;</span>:<span class="cm-string">&quot;1111&quot;</span>,
+  <span class="cm-string property">&quot;name&quot;</span>: {
+    <span class="cm-string property">&quot;givenName&quot;</span>: <span class="cm-string">&quot;Updated&quot;</span>,
+    <span class="cm-string property">&quot;familyName&quot;</span>: <span class="cm-string">&quot;Scim&quot;</span>
+  },
+  <span class="cm-string property">&quot;emails&quot;</span>: [
+    {<span class="cm-string property">&quot;type&quot;</span>: <span class="cm-string">&quot;work&quot;</span>, <span class="cm-string property">&quot;primary&quot;</span>: <span class="cm-string">&quot;true&quot;</span>, <span class="cm-string property">&quot;value&quot;</span>: <span class="cm-string">&quot;scimuser1@enviance.com&quot;</span>}
+  ],
+  <span class="cm-string property">&quot;timezone&quot;</span>: <span class="cm-string">&quot;America/New_York&quot;</span>,
+  <span class="cm-string property">&quot;preferredLanguage&quot;</span>: <span class="cm-string">&quot;en_US&quot;</span>,
+  <span class="cm-string property">&quot;active&quot;</span> : <span class="cm-atom">true</span>,
+  <span class="cm-string property">&quot;urn:scim:schemas:enviance:user&quot;</span>: {
+    <span class="cm-string property">&quot;emailDelivery&quot;</span>: <span class="cm-string">&quot;HTML Email&quot;</span>,
+    <span class="cm-string property">&quot;receiveInformation&quot;</span>: <span class="cm-atom">true</span>,
+    <span class="cm-string property">&quot;commandFailureNotification&quot;</span>: <span class="cm-string">&quot;Inbox&quot;</span>,
+    <span class="cm-string property">&quot;companyName&quot;</span>: <span class="cm-string">&quot;Enviance, Inc&quot;</span>,
+    <span class="cm-string property">&quot;mustChangePasswordAtNextLogin&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+    <span class="cm-string property">&quot;canNotChangePassword&quot;</span>: <span class="cm-string">&quot;true&quot;</span>,
+    <span class="cm-string property">&quot;NotExpirePassword&quot;</span>: <span class="cm-string">&quot;false&quot;</span>,
+    <span class="cm-string property">&quot;userRights&quot;</span>: [
+      {<span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Manage Groups&quot;</span>, <span class="cm-string property">&quot;granted&quot;</span>: <span class="cm-atom">true</span>}
+    ],
+    <span class="cm-string property">&quot;properties&quot;</span> : [
+      {<span class="cm-string property">&quot;propertyName&quot;</span> : <span class="cm-string">&quot;supervisorusername&quot;</span>, <span class="cm-string property">&quot;type&quot;</span>: <span class="cm-string">&quot;supervisorusername&quot;</span>, <span class="cm-string property">&quot;propertyValue&quot;</span> : <span class="cm-string">&quot;someUsername&quot;</span>},
+      {<span class="cm-string property">&quot;propertyName&quot;</span> : <span class="cm-string">&quot;name2&quot;</span>, <span class="cm-string property">&quot;type&quot;</span>: <span class="cm-string">&quot;name2&quot;</span>, <span class="cm-string property">&quot;propertyValue&quot;</span> : <span class="cm-string">&quot;val2&quot;</span>, <span class="cm-string property">&quot;isSensitiveData&quot;</span>: <span class="cm-atom">true</span>}
+    ],
+    <span class="cm-string property">&quot;expires&quot;</span>: <span class="cm-string">&quot;12/21/2017&quot;</span>,
+    <span class="cm-string property">&quot;comments&quot;</span>: <span class="cm-string">&quot;This is a full Scim User&quot;</span>
+  }
+}</pre></pre></td></tr></table>
+
+<h4 id="group" data-has-heading-anchor="true">group<span id="group"></span>&nbsp;<a href="/articles/fordevelopers/scimidentity/a/group" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/scimidentity/a/group&#39;,this);"></a></h4>
+
+<p>Represents a Group definition. Used for all SCIM Group operations.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">schemas</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ string ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">SCIM version specific schema as well as any schema extensions. EMS currently supports SCIM 1.1 (i.e. urn:scim:schemas:core:1.0) and schema extention urn:scim:schemas:enviance:group</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Identifier (Guid) of a group.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">externalId</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">External identifier that is usually similar to groupname.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">meta</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">object</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Metadata for a group</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr style="height: 27px;">
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">displayName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Unique name of the group in EMS system.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr style="height: 27px;">
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">members</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">object</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A list of members (user) of the Group.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">urn:scim:schemas:enviance:group</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">object</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Extended schema attribute.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default">{
+  <span class="cm-string property">&quot;urn:scim:schemas:enviance:group&quot;</span>: {
+  <span class="cm-string property">&quot;rights&quot;</span>: [
+      <span class="cm-string">&quot;Manage Users&quot;</span>
+      ]
+  },
+  <span class="cm-string property">&quot;id&quot;</span>: <span class="cm-string">&quot;809d56ad-77ef-47a6-9f3c-f8853b118744&quot;</span>,
+  <span class="cm-string property">&quot;externalId&quot;</span>: <span class="cm-string">&quot;Enviance SCIM 123 Group&quot;</span>,
+  <span class="cm-string property">&quot;meta&quot;</span>: {
+      <span class="cm-string property">&quot;version&quot;</span>: <span class="cm-string">&quot;-349702305&quot;</span>,
+      <span class="cm-string property">&quot;location&quot;</span>: <span class="cm-string">&quot;http://api.enviance.com/ver2/ScimIdentityService.svc/scim/v1/Groups/809d56ad-77ef-47a6-9f3c-f8853b118744&quot;</span>
+  },
+  <span class="cm-string property">&quot;schemas&quot;</span>: [
+      <span class="cm-string">&quot;urn:scim:schemas:core:1.0&quot;</span>,
+      <span class="cm-string">&quot;urn:scim:schemas:enviance:group&quot;</span>
+  ],
+  <span class="cm-string property">&quot;displayName&quot;</span>: <span class="cm-string">&quot;Enviance SCIM 123 Group&quot;</span>,
+  <span class="cm-string property">&quot;members&quot;</span>: [
+      {
+        <span class="cm-string property">&quot;value&quot;</span>: <span class="cm-string">&quot;19ycb0g2-df4b-42c5-8s48-04457723cf76&quot;</span>
+      }
+  ]
+}</pre></pre></td></tr></table><br/></section>
+    <br/><p><br/></p><p><br/></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

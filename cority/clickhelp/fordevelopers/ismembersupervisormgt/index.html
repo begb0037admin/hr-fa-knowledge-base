@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/ismembersupervisormgt"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>New Topic</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='New Topic';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>        
+        <h3 id="h3__2045774696" data-has-heading-anchor="true">IsMember<a href="/articles/fordevelopers/ismembersupervisormgt/a/h3__2045774696" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/ismembersupervisormgt/a/h3__2045774696&#39;,this);"></a></h3>
+        <p>This function will return TRUE for any given workflow instance if the calling user resolves to any of the supplied roles for the workflow instance.</p>
+        <p class="bold">Syntax</p>
+        <p class="CodeLast">IsMember(WorkflowInstanceID, text_expression [,text_expression])</p>
+        <p><i>WorkflowInstanceID</i> is the WorkflowInstance to be checked.</p>
+        <p><i>text_expression</i> Name of workflow role</p>
+        <p class="example">Example:</p>
+        <p class="Code1">select</p>
+        <p class="Code2">wi.ID, wi.Name</p>
+        <p class="Code1">from WorkflowInstance wi</p>
+        <p class="Code1">where</p>
+        <p class="Code2">IsMember(wi.ID, &#39;Creator&#39;, &#39;Assignee&#39;) = &#39;true&#39;</p>
+        <h3 id="h3__851667536" data-has-heading-anchor="true">IsSupervisor<a href="/articles/fordevelopers/ismembersupervisormgt/a/h3__851667536" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/ismembersupervisormgt/a/h3__851667536&#39;,this);"></a></h3><p class="Note">Note: The &#39;IsSupervisor&#39; function is only available for the Management System EQL.</p>
+        <p>This function will return TRUE for any given workflow instance if the calling user is listed as the direct Supervisor on the user profile of any user that resolves to any of the supplied roles for the workflow instance.</p>
+        <p class="bold">Syntax</p>
+        <p class="CodeLast">IsSupervisor(WorkflowInstanceID, text_expression [,text_expression])</p>
+        <p><i>WorkflowInstanceID</i> is the WorkflowInstance to be checked.</p>
+        <p><i>text_expression</i> Name of workflow role</p>
+        <p class="example">Example:</p>
+        <p class="Code1">select</p>
+        <p class="Code2">wi.ID, wi.Name</p>
+        <p class="Code1">from WorkflowInstance wi</p>
+        <p class="Code1">where</p>
+        <p class="Code2">IsSupervisor(wi.ID, &#39;Creator&#39;, &#39;Assignee&#39;) = &#39;true&#39;</p>
+        <h3 id="h3_593105589" data-has-heading-anchor="true">IsManagement<a href="/articles/fordevelopers/ismembersupervisormgt/a/h3_593105589" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/ismembersupervisormgt/a/h3_593105589&#39;,this);"></a></h3><p class="Note">Note: The &#39;IsManagement&#39; function is only available for the Management System EQL.</p>
+        <p>This function will return TRUE for any given workflow instance if the calling user is UP the &quot;chain of command&quot; based on the user profile of any user that resolves to any of the supplied roles for the workflow instance.</p>
+        <p class="bold">Syntax</p>
+        <p class="CodeLast">IsManagement(WorkflowInstanceID, text_expression [,text_expression])</p>
+        <p><i>WorkflowInstanceID</i> is the WorkflowInstance to be checked.</p>
+        <p><i>text_expression</i> Name of workflow role</p>
+        <p class="example">Example:</p>
+        <p class="Code1">select</p>
+        <p class="Code2">wi.ID, wi.Name</p>
+        <p class="Code1">from WorkflowInstance wi</p>
+        <p class="Code1">where</p>
+        <p class="Code2">IsManagement(wi.ID, &#39;Creator&#39;, &#39;Assignee&#39;) = &#39;true&#39;</p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

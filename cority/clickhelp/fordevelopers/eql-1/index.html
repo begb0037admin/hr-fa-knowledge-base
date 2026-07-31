@@ -1,0 +1,650 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/eql-1"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>EQL APIs and Data Types</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='EQL APIs and Data Types';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><p>
+	</p><p></p><nav><span class="Note">For the most up to date API documentation, please see the&nbsp;</span><a href="https://api.enviance.com/swagger.svc/index.html?url=/Swagger.svc/swagger.json#/Eql" target="_blank" class="Note">EQL API Documentation on Swagger</a><span class="Note">.</span></nav>
+
+    <p></p><p></p><section>
+    <h1 id="eql-apis-and-data-types" data-has-heading-anchor="true">EQL APIs and Data Types<a href="/articles/fordevelopers/eql-1/a/eql-apis-and-data-types" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/eql-apis-and-data-types&#39;,this);"></a></h1>
+<h2 id="version" data-has-heading-anchor="true">Version:<a href="/articles/fordevelopers/eql-1/a/version" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/version&#39;,this);"></a></h2>
+
+<p><strong>License:</strong> <a href="http://www.enviance.com" target="_top">Enviance, Inc.</a></p>
+
+<h3 id="dataview"><br/></h3><h3 id="dataview" data-has-heading-anchor="true">/dataview<a href="/articles/fordevelopers/eql-1/a/dataview" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/dataview&#39;,this);"></a></h3>
+
+<h4 id="post" data-has-heading-anchor="true">POST<a href="/articles/fordevelopers/eql-1/a/post" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/post&#39;,this);"></a></h4>
+<h5 id="description" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/eql-1/a/description" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/description&#39;,this);"></a></h5>
+
+<p>Save EQL query as a data view.</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.eql.createDataView(info, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/eql-1/a/parameters" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/parameters&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">info</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">data view saving info</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/eql-1/a/eqldataviewinfo" onclick="return n(&#39;!fordevelopers/eql-1/a/eqldataviewinfo&#39;,this);">eqlDataViewInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/eql-1/a/responses" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/responses&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) for the created DataView.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dataviewidorname"><br/></h3><h3 id="dataviewidorname" data-has-heading-anchor="true">/dataview/{idOrName}<a href="/articles/fordevelopers/eql-1/a/dataviewidorname" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/dataviewidorname&#39;,this);"></a></h3>
+
+<h4 id="patch" data-has-heading-anchor="true">PATCH<a href="/articles/fordevelopers/eql-1/a/patch" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/patch&#39;,this);"></a></h4>
+<h5 id="description-1" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/eql-1/a/description-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/description-1&#39;,this);"></a></h5>
+
+<p>Update a data view info</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.eql.updateDataView(idOrName, info, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-1" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/eql-1/a/parameters-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/parameters-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">idOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) or name of the DataView. Any string that matches the pattern of a GUID is interpreted as the id string, and not the name. A name string must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">info</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">data view update info</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/eql-1/a/eqldataviewinfo" onclick="return n(&#39;!fordevelopers/eql-1/a/eqldataviewinfo&#39;,this);">eqlDataViewInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-1" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/eql-1/a/responses-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/responses-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No data in result.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="delete" data-has-heading-anchor="true">DELETE<a href="/articles/fordevelopers/eql-1/a/delete" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/delete&#39;,this);"></a></h4>
+<h5 id="description-2" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/eql-1/a/description-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/description-2&#39;,this);"></a></h5>
+
+<p>Delete existing data view.</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.eql.deleteDataView(idOrName, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-2" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/eql-1/a/parameters-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/parameters-2&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">idOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) or name of the DataView. Any string that matches the pattern of a GUID is interpreted as the id string, and not the name. A name string must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-2" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/eql-1/a/responses-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/responses-2&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No data in result.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="get" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/eql-1/a/get" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/get&#39;,this);"></a></h4>
+<h5 id="description-3" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/eql-1/a/description-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/description-3&#39;,this);"></a></h5>
+
+<p>Get information about existing data view.</p>
+
+<p><strong>SDK API:</strong> <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.eql.getDataView(idOrName, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-3" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/eql-1/a/parameters-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/parameters-3&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">idOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) or name of the DataView. Any string that matches the pattern of a GUID is interpreted as the id string, and not the name. A name string must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-3" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/eql-1/a/responses-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/responses-3&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">data view info.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/eql-1/a/eqldataviewfullinfo" onclick="return n(&#39;!fordevelopers/eql-1/a/eqldataviewfullinfo&#39;,this);">eqlDataViewFullInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="query"><br/></h3><h3 id="query" data-has-heading-anchor="true">/query<a href="/articles/fordevelopers/eql-1/a/query" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/query&#39;,this);"></a></h3>
+
+<h4 id="post-1" data-has-heading-anchor="true">POST<a href="/articles/fordevelopers/eql-1/a/post-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/post-1&#39;,this);"></a></h4>
+<h5 id="description-4" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/eql-1/a/description-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/description-4&#39;,this);"></a></h5>
+
+<p>Executes an EQL query batch, returning the results in one or more tables of row/column format. Maximum page size is 1000. If either page or page size are unspecified the entire result set will be streamed in one response.</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.eql.execute(eql, page, pageSize, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-4" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/eql-1/a/parameters-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/parameters-4&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">eql</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">query</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The EQL batch (string) to execute. The EQL batch must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">page</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">query</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The page number within the entire result set to return. Optional.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">number</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageSize</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">query</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The number of records for each page. Maximum page size is 1000. Optional.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-4" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/eql-1/a/responses-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/responses-4&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An instance of eqlTable structure</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/eql-1/a/eqltable" onclick="return n(&#39;!fordevelopers/eql-1/a/eqltable&#39;,this);">eqlTable</a></td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//EXAMPLE USING POST and CSV</span>
+
+<span class="cm-variable">POST</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">EqlService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">query</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">UTF</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+ 
+{
+  <span class="cm-string property">&quot;eql&quot;</span>: <span class="cm-string">&quot;SELECT d.Name, d.CreatedOn FROM Division d WHERE d.Name LIKE &#39;Generation%&#39;&quot;</span>,
+  <span class="cm-string property">&quot;page&quot;</span>: <span class="cm-number">1</span>,
+  <span class="cm-string property">&quot;pageSize&quot;</span>: <span class="cm-number">50</span>,
+  <span class="cm-string property">&quot;format&quot;</span>: <span class="cm-string">&quot;csv&quot;</span>
+}
+
+<span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span> <span class="cm-number">200</span> <span class="cm-variable">OK</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">text</span><span class="cm-operator">/</span><span class="cm-variable">plain</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">utf</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+<span class="cm-variable">EnvApi</span><span class="cm-operator">-</span><span class="cm-variable">Remaining</span><span class="cm-operator">-</span><span class="cm-variable">Calls</span>: <span class="cm-number">200</span>
+<span class="cm-variable">EnvApi</span><span class="cm-operator">-</span><span class="cm-variable">Remaining</span><span class="cm-operator">-</span><span class="cm-variable">Interval</span>: <span class="cm-number">3600</span>
+<span class="cm-variable">EnvApi</span><span class="cm-operator">-</span><span class="cm-variable">Version</span>: <span class="cm-number">2.0</span>
+ 
+<span class="cm-string">&quot;Name&quot;</span>,<span class="cm-string">&quot;CreatedOn&quot;</span>
+<span class="cm-string">&quot;Generation - 1&quot;</span>,<span class="cm-string">&quot;2011-09-29T11:00:00&quot;</span>
+<span class="cm-string">&quot;Generation - 2&quot;</span>,<span class="cm-string">&quot;2011-09-29T11:15:00&quot;</span>
+<span class="cm-string">&quot;Generation - 3&quot;</span>,<span class="cm-string">&quot;2011-09-29T11:20:00&quot;</span>
+<span class="cm-string">&quot;Generation - 4&quot;</span>,<span class="cm-string">&quot;2011-09-29T11:22:00&quot;</span></pre></pre></td></tr></table></section><section>
+
+<h3 id="queryeql"><br/></h3><h3 id="queryeql" data-has-heading-anchor="true">/query/eql<a href="/articles/fordevelopers/eql-1/a/queryeql" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/queryeql&#39;,this);"></a></h3>
+
+<h4 id="get-1" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/eql-1/a/get-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/get-1&#39;,this);"></a></h4>
+<h5 id="description-5" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/eql-1/a/description-5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/description-5&#39;,this);"></a></h5>
+
+<p>Executes an EQL query batch, returning the results in one or more tables of row/column format.</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.eql.executeWithFormat(eql, page, pageSize, format, onsuccess, onerror)</font></code></p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.eql.executeWithFormatBinary  (eql, page, pageSize, format, filename, cachecontrol, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-5" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/eql-1/a/parameters-5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/parameters-5&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">eql</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">query</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The EQL batch (string) to execute. The EQL batch must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">page</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">query</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The page number within the entire result set to return. Optional.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">number</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">pageSize</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">query</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The number of records for each page. Optional.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">number</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">format</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">query</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">One of csv, json, xml or xlsx. If unspecified, JSON is used. Optional.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">filename</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">query</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The name of the file containing the results of the query. Optional.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">cachecontrol</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">query</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Cache size (Mb). Optional.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">number</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-5" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/eql-1/a/responses-5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/responses-5&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An instance of eqlTable structure</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/eql-1/a/eqltable" onclick="return n(&#39;!fordevelopers/eql-1/a/eqltable&#39;,this);">eqlTable</a></td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//EXAMPLE USING GET and JSON</span>
+
+<span class="cm-variable">GET</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">EqlService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">query</span><span class="cm-operator">/</span><span class="cm-operator">?</span><span class="cm-variable">eql</span><span class="cm-operator">=</span> <span class="cm-variable">SELECT</span><span class="cm-operator">%</span><span class="cm-number">20</span><span class="cm-variable">d</span>.<span class="cm-property">Name</span><span class="cm-operator">%</span><span class="cm-number">2</span><span class="cm-variable">C</span><span class="cm-operator">%</span><span class="cm-number">20</span><span class="cm-variable">d</span>.<span class="cm-property">CreatedOn</span><span class="cm-operator">%</span><span class="cm-number">20</span><span class="cm-variable">FROM</span><span class="cm-operator">%</span><span class="cm-number">20</span><span class="cm-variable">Division</span><span class="cm-operator">%</span><span class="cm-number">20</span><span class="cm-variable">d</span><span class="cm-operator">%</span><span class="cm-number">20</span><span class="cm-variable">WHERE</span><span class="cm-operator">%</span><span class="cm-number">20</span><span class="cm-variable">d</span>.<span class="cm-property">Name</span><span class="cm-operator">%</span><span class="cm-number">20</span><span class="cm-variable">LIKE</span><span class="cm-operator">%</span><span class="cm-number">20</span><span class="cm-operator">%</span><span class="cm-number">27</span><span class="cm-variable">Generation</span><span class="cm-operator">%</span><span class="cm-number">25</span><span class="cm-operator">%</span><span class="cm-number">27</span><span class="cm-operator">&amp;</span><span class="cm-variable">page</span><span class="cm-operator">=</span><span class="cm-number">1</span><span class="cm-operator">&amp;</span><span class="cm-variable">pagesize</span><span class="cm-operator">=</span><span class="cm-number">50</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+
+<span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span> <span class="cm-number">200</span> <span class="cm-variable">OK</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">utf</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+<span class="cm-variable">EnvApi</span><span class="cm-operator">-</span><span class="cm-variable">Remaining</span><span class="cm-operator">-</span><span class="cm-variable">Calls</span>: <span class="cm-number">200</span>
+<span class="cm-variable">EnvApi</span><span class="cm-operator">-</span><span class="cm-variable">Remaining</span><span class="cm-operator">-</span><span class="cm-variable">Interval</span>: <span class="cm-number">3600</span>
+<span class="cm-variable">EnvApi</span><span class="cm-operator">-</span><span class="cm-variable">Version</span>: <span class="cm-number">2.0</span>
+
+[
+  {
+    <span class="cm-string property">&quot;columns&quot;</span>:[
+      {<span class="cm-string property">&quot;dataType&quot;</span>:<span class="cm-string">&quot;String&quot;</span>,<span class="cm-string property">&quot;name&quot;</span>:<span class="cm-string">&quot;Name&quot;</span>,<span class="cm-string property">&quot;size&quot;</span>:<span class="cm-number">255</span>},
+      {<span class="cm-string property">&quot;dataType&quot;</span>:<span class="cm-string">&quot;DateTime&quot;</span>,<span class="cm-string property">&quot;name&quot;</span>:<span class="cm-string">&quot;CreatedOn&quot;</span>,<span class="cm-string property">&quot;size&quot;</span>:<span class="cm-operator">-</span><span class="cm-number">1</span>}
+    ],
+    <span class="cm-string property">&quot;rows&quot;</span>:[
+      {<span class="cm-string property">&quot;values&quot;</span>:[<span class="cm-string">&quot;Generation - 1&quot;</span>, <span class="cm-string">&quot;2011-09-29T11:00:00&quot;</span>]},
+      {<span class="cm-string property">&quot;values&quot;</span>:[<span class="cm-string">&quot;Generation - 2&quot;</span>, <span class="cm-string">&quot;2011-09-29T11:15:00&quot;</span>]},
+      {<span class="cm-string property">&quot;values&quot;</span>:[<span class="cm-string">&quot;Generation - 3&quot;</span>, <span class="cm-string">&quot;2011-09-29T11:20:00&quot;</span>]},
+      {<span class="cm-string property">&quot;values&quot;</span>:[<span class="cm-string">&quot;Generation - 4&quot;</span>, <span class="cm-string">&quot;2011-09-29T11:22:00&quot;</span>]}
+    ]
+  }
+]</pre></pre></td></tr></table></section><section>
+
+<h3 id="models"><br/></h3><h3 id="models" data-has-heading-anchor="true">Models<a href="/articles/fordevelopers/eql-1/a/models" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/models&#39;,this);"></a></h3>
+
+<h4 id="eqltable" data-has-heading-anchor="true">eqlTable<span id="eqlTable"></span>&nbsp;<a href="/articles/fordevelopers/eql-1/a/eqltable" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/eqltable&#39;,this);"></a></h4>
+
+<p>EQL result table</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">columns</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ string ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of column descriptions, including name, data type, and maximum size.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">rows</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ string ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of value arrays, in which the ordinal entries in the array correspond with the columns in the columns array.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default">{
+  <span class="cm-string property">&quot;columns&quot;</span>:[
+    {<span class="cm-string property">&quot;dataType&quot;</span>:<span class="cm-string">&quot;String&quot;</span>,<span class="cm-string property">&quot;name&quot;</span>:<span class="cm-string">&quot;Name&quot;</span>,<span class="cm-string property">&quot;size&quot;</span>:<span class="cm-number">255</span>},
+    {<span class="cm-string property">&quot;dataType&quot;</span>:<span class="cm-string">&quot;DateTime&quot;</span>,<span class="cm-string property">&quot;name&quot;</span>:<span class="cm-string">&quot;CreatedOn&quot;</span>,<span class="cm-string property">&quot;size&quot;</span>:<span class="cm-operator">-</span><span class="cm-number">1</span>}
+  ],
+  <span class="cm-string property">&quot;rows&quot;</span>:[
+    {<span class="cm-string property">&quot;values&quot;</span>:[<span class="cm-string">&quot;Generation - 1&quot;</span>, <span class="cm-string">&quot;2011-09-29T11:00:00&quot;</span>]},
+    {<span class="cm-string property">&quot;values&quot;</span>:[<span class="cm-string">&quot;Generation - 2&quot;</span>, <span class="cm-string">&quot;2011-09-29T11:15:00&quot;</span>]},
+    {<span class="cm-string property">&quot;values&quot;</span>:[<span class="cm-string">&quot;Generation - 3&quot;</span>, <span class="cm-string">&quot;2011-09-29T11:20:00&quot;</span>]},
+    {<span class="cm-string property">&quot;values&quot;</span>:[<span class="cm-string">&quot;Generation - 4&quot;</span>, <span class="cm-string">&quot;2011-09-29T11:22:00&quot;</span>]}
+  ]
+}</pre></pre></td></tr></table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//Example (CSV)</span>
+  <span class="cm-string">&quot;Name&quot;</span>,<span class="cm-string">&quot;CreatedOn&quot;</span>
+  <span class="cm-string">&quot;Generation - 1&quot;</span>,<span class="cm-string">&quot;2011-09-29T11:00:00&quot;</span>
+  <span class="cm-string">&quot;Generation - 2&quot;</span>,<span class="cm-string">&quot;2011-09-29T11:15:00&quot;</span>
+  <span class="cm-string">&quot;Generation - 3&quot;</span>,<span class="cm-string">&quot;2011-09-29T11:20:00&quot;</span>
+  <span class="cm-string">&quot;Generation - 4&quot;</span>,<span class="cm-string">&quot;2011-09-29T11:22:00&quot;</span></pre></pre></td></tr></table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">XML</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-meta">&lt;?xml</span> <span class="cm-meta">version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span>
+<span class="cm-tag bracket">&lt;</span><span class="cm-tag">tables</span><span class="cm-tag bracket">&gt;</span>
+  <span class="cm-tag bracket">&lt;</span><span class="cm-tag">table</span><span class="cm-tag bracket">&gt;</span>
+    <span class="cm-tag bracket">&lt;</span><span class="cm-tag">columns</span><span class="cm-tag bracket">&gt;</span>
+      <span class="cm-tag bracket">&lt;</span><span class="cm-tag">column</span> <span class="cm-attribute">dataType</span>=<span class="cm-string">&quot;String&quot;</span> <span class="cm-attribute">name</span>=<span class="cm-string">&quot;Name&quot;</span> <span class="cm-attribute">size</span>=<span class="cm-attribute">255</span> <span class="cm-tag bracket error">/&gt;</span>
+      <span class="cm-tag bracket">&lt;</span><span class="cm-tag">column</span> <span class="cm-attribute">dataType</span>=<span class="cm-string">&quot;DateTime&quot;</span> <span class="cm-attribute">name</span>=<span class="cm-string">&quot;CreatedOn&quot;</span> <span class="cm-attribute">size</span>=<span class="cm-attribute">-1</span> <span class="cm-tag bracket error">/&gt;</span>
+    <span class="cm-tag bracket">&lt;/</span><span class="cm-tag">columns</span><span class="cm-tag bracket">&gt;</span>
+    <span class="cm-tag bracket">&lt;</span><span class="cm-tag">rows</span><span class="cm-tag bracket">&gt;</span>
+      <span class="cm-tag bracket">&lt;</span><span class="cm-tag">row</span><span class="cm-tag bracket">&gt;</span>
+        <span class="cm-tag bracket">&lt;</span><span class="cm-tag">cell</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;Generation - 1&quot;</span> <span class="cm-tag bracket">/&gt;</span>
+        <span class="cm-tag bracket">&lt;</span><span class="cm-tag">cell</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;2011-09-29T11:00:00&quot;</span> <span class="cm-tag bracket">/&gt;</span>
+      <span class="cm-tag bracket">&lt;/</span><span class="cm-tag">row</span><span class="cm-tag bracket">&gt;</span>
+      <span class="cm-tag bracket">&lt;</span><span class="cm-tag">row</span><span class="cm-tag bracket">&gt;</span>
+        <span class="cm-tag bracket">&lt;</span><span class="cm-tag">cell</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;Generation - 2&quot;</span> <span class="cm-tag bracket">/&gt;</span>
+        <span class="cm-tag bracket">&lt;</span><span class="cm-tag">cell</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;2011-09-29T11:15:00&quot;</span> <span class="cm-tag bracket">/&gt;</span>
+      <span class="cm-tag bracket">&lt;/</span><span class="cm-tag">row</span><span class="cm-tag bracket">&gt;</span>
+      <span class="cm-tag bracket">&lt;</span><span class="cm-tag">row</span><span class="cm-tag bracket">&gt;</span>
+        <span class="cm-tag bracket">&lt;</span><span class="cm-tag">cell</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;Generation - 3&quot;</span> <span class="cm-tag bracket">/&gt;</span>
+        <span class="cm-tag bracket">&lt;</span><span class="cm-tag">cell</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;2011-09-29T11:20:00&quot;</span> <span class="cm-tag bracket">/&gt;</span>
+      <span class="cm-tag bracket">&lt;/</span><span class="cm-tag">row</span><span class="cm-tag bracket">&gt;</span>
+      <span class="cm-tag bracket">&lt;</span><span class="cm-tag">row</span><span class="cm-tag bracket">&gt;</span>
+        <span class="cm-tag bracket">&lt;</span><span class="cm-tag">cell</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;Generation - 4&quot;</span> <span class="cm-tag bracket">/&gt;</span>
+        <span class="cm-tag bracket">&lt;</span><span class="cm-tag">cell</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;2011-09-29T11:22:00&quot;</span> <span class="cm-tag bracket">/&gt;</span>
+      <span class="cm-tag bracket">&lt;/</span><span class="cm-tag">row</span><span class="cm-tag bracket">&gt;</span>
+    <span class="cm-tag bracket">&lt;/</span><span class="cm-tag">rows</span><span class="cm-tag bracket">&gt;</span>
+  <span class="cm-tag bracket">&lt;/</span><span class="cm-tag">table</span><span class="cm-tag bracket">&gt;</span>
+<span class="cm-tag bracket">&lt;/</span><span class="cm-tag">tables</span><span class="cm-tag bracket">&gt;</span></pre></pre></td></tr></table></section><section>
+
+<h4 id="eqldataviewinfo" data-has-heading-anchor="true">eqlDataViewInfo<span id="eqlDataViewInfo"></span>&nbsp;<a href="/articles/fordevelopers/eql-1/a/eqldataviewinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/eqldataviewinfo&#39;,this);"></a></h4>
+
+<p>Data view info</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">title</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Title of data view</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">eqlname</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Name of data view</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">eql</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The EQL (string) to save. The EQL must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">description</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">description</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">metadata</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">metadata info</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="eqldataviewfullinfo" data-has-heading-anchor="true">eqlDataViewFullInfo<span id="eqlDataViewFullInfo"></span>&nbsp;<a href="/articles/fordevelopers/eql-1/a/eqldataviewfullinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/eqldataviewfullinfo&#39;,this);"></a></h4>
+
+<p>Data view info.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) for the DataView.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">title</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Title of data view</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">eqlname</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Name of data view</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">eql</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The EQL (string) to save. The EQL must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">description</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Description</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">metadata</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Metadata info</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">columns</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/eql-1/a/columninfo" onclick="return n(&#39;!fordevelopers/eql-1/a/columninfo&#39;,this);">columnInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">List of saved columns</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="columninfo" data-has-heading-anchor="true">columnInfo<span id="columnInfo"></span>&nbsp;<a href="/articles/fordevelopers/eql-1/a/columninfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql-1/a/columninfo&#39;,this);"></a></h4>
+
+<p>Column info</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Name of column</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">size</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">integer</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Column size</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">type</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Column type</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+    </section>
+    <br/><p></p><p><br/></p><p><br/></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/taskrecurrence"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Add Recurrence/Edit Recurrence</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Add Recurrence/Edit Recurrence';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h2 class="Heading2" id="h2__1559137664" data-has-heading-anchor="true">Add Recurrence/Edit Recurrence<a href="/articles/fordevelopers/taskrecurrence/a/h2__1559137664" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/taskrecurrence/a/h2__1559137664&#39;,this);"></a></h2>
+        <p class="BodyText">The fields on the Add Recurrence and Edit Recurrence worksheets correspond to the fields in the Recurrence  tab of the Task properties in the main application.&nbsp;</p>
+        <p class="BodyText">To add recurrence schedules, use one row for each task recurrence schedule to add. The following fields are required on the Add Recurrence sheet:</p>
+        <ul>
+            <li value="1">Task Name</li>
+            <li value="2">Associated Object(s)</li>
+            <li value="3">Task Due Date:&nbsp;Date</li>
+            <li value="4">Task Due Date:&nbsp;Time</li>
+            <li value="5">Task Assignee(s):&nbsp;Users or Task Assignee(s): Groups</li>
+            <li value="6">Task Time Zone</li>
+            <li value="7">Task Start Date</li>
+            <li value="8">Task Time (except for hourly task)</li>
+        </ul>
+        <p class="BodyText">To edit an existing task recurrence on the Edit Recurrence sheet, you must identify the recurrence schedule to edit, as well. These three fields are used to identify the recurrence schedule to edit:</p>
+        <ul>
+            <li value="1">Period Start Date:&nbsp;The Start Date for the recurrence Schedule.</li>
+            <li value="2">Task Due Date: Date:&nbsp;You can use the due date of any task instance.</li>
+            <li value="3">Task Due Date:&nbsp;Time: The corresponding time for the task instance due date.&nbsp;<i>The task due date/time are must be in the Task Time Zone.</i> </li>
+        </ul>
+        <p class="Note" madcap:autonum="Note: &nbsp;"><span class="autonumber"><span class="note_et_al">Note: &nbsp;</span></span>When you view tasks in Task Manager, the due date/time are shown in the time zone of your own profile. If the Task Time Zone is different, you may use the wrong date/time for identification, which will cause an error when attempting the bulk tools upload. To avoid confusion, you can temporarily set your own time zone to the same time zone as the tasks you are editing.</p>
+        <p class="BodyText">To delete a recurrence schedule, on the Edit Recurrence sheet enter the identifying fields A-H, then enter <b>&lt;clear&gt;</b> in existing schedule fields.</p>
+        <p class="BodyText">The following properties (columns AR-AU or AQ-AT depending on the worksheet), apply to ALL recurrence types:</p>
+        <p class="BodyText"><b>Task Time Zone</b>: Required. Note that Task Time Zone may be different than Assignee User Time Zone. Field may not be edited if there are existing completed task instances. All recurrences must use the same Task Time Zone; the time zone on the last recurrence will overwrite any previous values, if different. For time zone formats, see <a href="/articles/fordevelopers/time-zones" class="MCXref_Heading_0" onclick="return n(&#39;!fordevelopers/time-zones&#39;,this);">Time Zones</a>.</p>
+        <p class="BodyText"><b>Task Start Date</b>: Required on Add Recurrence sheet. On the Edit Recurrence sheet, use this field to edit the Period Start Date as indicated in column G, or leave blank for unchanged.</p>
+        <p class="BodyText"><b>Finish: End Date After</b>:  Set end date, or leave blank for none; use <b>&lt;clear&gt;</b> to clear an existing end date. End date  must be later than current date. If you are trying to end date a task recurrence schedule that has completed tasks, be sure to clear all fields other than the required fields (columns A-G, and AT).</p>
+        <p class="BodyText"><b>Task Time</b>: Required except for Hourly recurrence type, where task time is determined by daily Start and End times. Time is in Task Time Zone.</p>
+        <p class="Note" madcap:autonum="Note: &nbsp;"><span class="autonumber"><span class="note_et_al">Note: &nbsp;</span></span> The Due Date and Time fields in cols C and D (ID fields) are specified in the existing Task&#39;s Time Zone. This may be different than the User&#39;s Time Zone (specified in the user profile). User will see due date as UTC ± Task Due DateTime. When editing a task, you can change the Task Time Zone to match User Time Zone, if desired, as long as there are no completed tasks.</p>
+        <p class="BodyText">The recurrence detail fields  depend on the Recurrence Type, as identified in column&nbsp;G on the Add Recurrence sheet or column H on the Edit Recurrence sheet.</p>
+        <p class="BodyText">Use one row for each task recurrence schedule. So, for example, if a task has two recurrence schedules and you want to edit both of them, you will have two rows.  (Note: The task must have different Period Start Dates for each recurrence schedule in order to uniquely identify them.) Recurrence type is directly related to the editable fields on the main app UI. Screenshots are provided below as a guide.</p>
+        <p class="bold">Hourly</p>
+        <p class="BodyIndent2">Start Time: Beginning of daily task schedule (first instance each day)</p>
+        <p class="BodyIndent2">End Time: End of daily task schedule</p>
+        <p class="BodyIndent2">Weekdays: Sun | Mon | Tues | Wed | Thu | Fri | Sat: Yes/No – indicates whether task schedule is to occur on that day</p>
+        <div style="margin-left: 80px;"><img src="images/TaskRecurrenceHourly.png" alt="" style="width: 698px; height: 424px;" loading="lazy"/></div>
+        <p class="bold">Daily</p>
+        <p class="BodyText">Only one of these two properties may be valid:</p>
+        <p class="BodyIndent2">Every (N) Days: Number of days (recurrence interval)</p>
+        <p class="BodyIndent2">Every weekday: Yes/No  (Must be No if Every (N) Days has value)</p>
+        <p class="BodyText" style="margin-left: 80px;">
+            <img src="images/TaskRecurrenceDaily.png" style="width: 579;height: 187;" alt="" loading="lazy"/>
+        </p>
+        <p class="bold">Weekly</p>
+        <p class="BodyIndent2">Every (N) Weeks: Number of weeks (recurrence interval)</p>
+        <p class="BodyIndent2">Weekdays: Sun | Mon | Tues | Wed | Thu | Fri | Sat: Yes/No– indicates whether task schedule is to occur on that day</p>
+        <p class="BodyText">
+            </p><div style="margin-left: 80px;"><img src="images/TaskRecurrenceWeekly.png" alt="" style="width: 782px; height: 371px;" loading="lazy"/></div>
+        <p><br/></p>
+        <p class="bold">Monthly</p>
+        <p class="BodyText">There are two options, each with its own set of related fields. Only one set of fields can be valid.</p>
+        <p class="BodyText">Option 1:  Task occurs every (n) months on specific calendar day.</p>
+        <p class="BodyIndent2">Day (N): Calendar day (1-31)</p>
+        <p class="BodyIndent2">Every (N) Months: Number of months (recurrence interval)</p>
+        <p class="BodyText">Option 2: Task occurs every (n) months on first, second, third, fourth or last weekday in month.</p>
+        <p class="BodyIndent2">The (1st-4th or Last): First | Second | Third | Fourth | Last</p>
+        <p class="BodyIndent2">Day:  day | weekday | weekend day | Sunday | Monday | Tuesday | Thursday | Friday | Saturday</p>
+        <p class="BodyIndent2">Of Every (N) Month(s): Number of months (recurrence interval</p>
+        <p class="BodyText">
+            </p><div style="margin-left: 80px;"><img src="images/TaskRecurrenceMonthly.png" alt="" style="width: 776px; height: 369px;" loading="lazy"/></div>
+        <p><br/></p>
+        <p class="bold">Yearly</p>
+        <p class="BodyText">There are two options, each with its own set of related fields. Only one set of fields can be valid.</p>
+        <p class="BodyText">Option 1: Task occurs every (n) years on specific calendar day.</p>
+        <p class="BodyIndent2">Name of month:</p>
+        <p class="BodyIndent2">Day of month:</p>
+        <p class="BodyIndent2">Every (N) Years:</p>
+        <p class="BodyText">Option 2: Task occurs every (n) years on the first, second, third, fourth or last weekday in specific month.</p>
+        <p class="BodyIndent2">The (1st-4th or Last):</p>
+        <p class="BodyIndent2">Weekday:</p>
+        <p class="BodyIndent2">Month:</p>
+        <p class="BodyIndent2">Every (N) Years:</p>
+        <p class="BodyText">&nbsp;</p>
+        <p class="BodyText">
+            </p><div style="margin-left: 80px;"><img src="images/TaskRecurrenceYearly.png" alt="" style="width: 783px; height: 358px;" loading="lazy"/></div>
+        <p><br/></p>
+        <p class="bold">Time After Last Completion</p>
+        <p class="BodyText">Specify recurrence interval after the last task completion, in the format:</p>
+        <p class="BodyIndent2">Recurs every N month(s) N week(s) N day(s) N hour(s) after last completion</p>
+        <p class="BodyText">A number (0 or positive whole number) is required for each field.</p>
+        <p class="BodyIndent2">Months: N month(s)</p>
+        <p class="BodyIndent2">Weeks: N week(s)</p>
+        <p class="BodyIndent2">Days: N days(s)</p>
+        <p class="BodyIndent2">Hours: N hour(s)</p>
+        <p class="BodyText">
+            </p><div style="margin-left: 80px;"><img src="images/TaskRecurrenceTimeAfter.png" alt="" style="width: 714px; height: 399px;" loading="lazy"/></div>
+        <p><br/></p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

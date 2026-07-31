@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/permissionsediting"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Permissions Editing Tool</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Permissions Editing Tool';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1__83652308" data-has-heading-anchor="true">Permissions Editing Tool<a href="/articles/fordevelopers/permissionsediting/a/h1__83652308" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/permissionsediting/a/h1__83652308&#39;,this);"></a></h1>
+        <p class="BodyText">The Permissions Editing Tool allows a system architect to add and edit users and user groups, as well as user permissions. The following functions are available with this bulk tool:</p>
+        <ul class="brackets">
+            <li value="1">Add users</li>
+            <li value="2">Add user access (for users from other Systems)</li>
+            <li value="3">Edit users</li>
+            <li value="4">Delete users</li>
+            <li value="5">Add/edit user groups</li>
+            <li value="6">Edit user group memberships</li>
+            <li value="7">Edit permissions for System Model objects</li>
+            <li value="8">Edit permissions for Citations</li>
+            <li value="9">Edit permissions for Documents</li>
+            <li value="10">Edit permissions for Reports</li>
+        <li>Generate Time Sensitive link email (time sensitive link is sent in the form of an email to user whose password has been reset)</li>
+        </ul>
+        <p class="BodyText">The following function is NOT available:</p>
+        <ul class="brackets">
+            <li value="1">Restore user access for deleted or expired users</li>
+        </ul>
+        <p class="BodyText">The Permissions Editing Template file contains 10 worksheets. Each worksheet can be processed independently.</p>
+        <p class="BodyText">Download the Excel template file:</p>
+        <p class="BodyIndent2"><a href="/resources/Storage/fordevelopers/Bulk%20Tools/Templates/Permissions_Editing_Template-1.xlsx" target="_top">Permissions Editing Tool</a>
+        </p>
+        <p class="BodyText"> Users and groups must be created first, then permissions may be assigned. Pay attention to the order of the worksheets when processing.</p>
+        <h2 class="Heading2" id="h2_1253141124" data-has-heading-anchor="true">New Users<a href="/articles/fordevelopers/permissionsediting/a/h2_1253141124" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/permissionsediting/a/h2_1253141124&#39;,this);"></a></h2>
+        <p class="BodyText">When creating new users, a random password will be generated and an email notification may optionally be sent to each user with the password for logging in. If Reset Password is Yes, users will be required to reset their password on first login.</p>
+        <p class="Note"><span class="autonumber"><span class="note_et_al">Note: &nbsp;</span></span> If the system is not yet ready for users, you can supply a dummy email address to prevent any notifications from being accidentally sent from the system. Also, you can suppress any premature login information by selecting No for the Email Password option. When the system is ready to go live, use the Edit Users tool to edit the user emails, enable the Reset Password option, and select Yes for the Email Password column to send an email notification with the default password.</p>
+        <p class="BodyText">Security and password options for new users include:</p>
+        <p class="BodyIndent2">User password does not expire column (column Z):&nbsp;Enter "yes" to keep password from expiring. (This overrides the optional security setting for maximum password age,  which expires system passwords after a specific time period.) </p>
+        <p class="BodyIndent2">User's account is locked column (column AA):&nbsp;To lock the user account so login is disabled, enter  "yes". You can use this setting to prevent login during setup, then clear the setting when you edit user accounts to go live.</p>
+        <p class="BodyIndent2">Email Password (column BA): Enter "no" to suppress automatic emails to users when accounts are created to prevent premature logins. Default behavior is to automatically email new users when an account is created but it may be desirable to suppress emails until users have been trained and/or system is ready to go live. Use the Edit Users worksheet to change emails and reset passwords to activate logins later. (See security and password options for Edit Users.)</p>
+        <p style="margin-left: 40px;" class="Note"><b>Note:</b> This is not the most secure approach. It is recommended to use the "Generate time sensitive link email" column.</p><p style="margin-left: 40px;">During system setup, you may want to set false emails for users to prevent notifications (task  and workflow notifications, data warnings, etc.) while the system is being tested. You can also disable login temporarily.</p>
+        <p style="margin-left: 40px;">Generate time sensitive link email column (column BC):&nbsp;To reset the user password, enter "yes". The system will send an email to the user with a time sensitive password reset link. When the user clicks the link, the user will be taken to a log in page with two fields to fill, one to put in a new password the other to confirm the new password. If the field has "no" or is blank, no password reset link is sent to the user.</p><p class="BodyText">Optional information fields are also available. </p>
+        <p class="BodyText">To assign user rights (blue column labels, AB-AY), enter "yes" or "no" (or leave blank). Note that user rights are best assigned through user groups.</p>
+        <p class="BodyText">Required fields for new user accounts are shown below (non-required columns are hidden).</p>
+        <table style="margin-left: 0;margin-right: auto;">
+            <colgroup><col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            </colgroup><tbody>
+                <tr><td class="td_HeadGray">&nbsp;</td><td style="text-align: center;" class="td_HeadGray">A</td><td style="text-align: center;" class="td_HeadGray">B</td><td style="text-align: center;" class="td_HeadGray">C</td><td style="text-align: center;" class="td_HeadGray">D</td><td style="text-align: center;" class="td_HeadGray">E</td><td class="td_HeadGray">H</td><td class="td_HeadGray">I</td></tr>
+                <tr><td class="td_HeadGray">1</td><td class="td_HeadRed">New Username<br/>(login id)<br/></td><td style="text-align: center;" class="td_HeadRed">First Name</td><td style="text-align: center;" class="td_HeadRed">Last Name</td><td style="text-align: center;" class="td_HeadRed">User Time Zone</td><td class="td_HeadRed">Culture
+</td><td class="td_HeadRed">User Email</td><td class="td_HeadRed">Email Delivery</td></tr>
+                <tr><td class="td_HeadGray">2</td><td class="td_1">jjsmith</td><td class="td_1">John</td><td class="td_1">Smith</td><td class="td_1">Eastern Time (US &amp; Canada) (UTC-05:00) (With DST)</td><td class="td_1">en-US</td><td class="td_1">jsmith@usa.com9</td><td class="td_1">html</td></tr>
+            </tbody>
+        </table>
+        <p style="margin-top: 8px;">The Culture fields support both the name ("en-US", "en-GB") and display values ("English (United States)", "English (Great Britain)").&nbsp;For  international values, please check with your EMS service representative or Customer Service.</p><p>Currently supported cultures are: </p><p class="nospacing" style="margin-left: 40px;">       English (United States) en-US     </p>     <p class="nospacing" style="margin-left: 40px;">       Chinese (Simplified, PRC) zh-CN     </p>     <p class="nospacing" style="margin-left: 40px;">       English (United Kingdom) en-GB     </p>     <p class="nospacing" style="margin-left: 40px;">       Spanish&nbsp;es-MX     </p>     <p class="nospacing" style="margin-left: 40px;">       Spanish (El Salvador) es-SV     </p>     <p class="nospacing" style="margin-left: 40px;">       Spanish (Guatemala) es-GT     </p>     <p class="nospacing" style="margin-left: 40px;">       Spanish (Honduras) es-HN     </p>     <p class="nospacing" style="margin-left: 40px;">       Spanish (Nicaragua) es-NI     </p>                <p class="nospacing" style="margin-left: 40px;">       Russian (Russia) ru-RU     </p>     <p class="nospacing" style="margin-left: 40px;">       Spanish (Costa Rica) es-CR     </p>     <p class="nospacing" style="margin-left: 40px;">       Spanish (Chile) es-CL     </p><p class="Note"><b>Note</b>: Spanish refers to Spanish (Mexico).&nbsp;        <br/></p>
+        <h2 class="Heading2" id="h2_1441967785" data-has-heading-anchor="true">New User Access<a href="/articles/fordevelopers/permissionsediting/a/h2_1441967785" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/permissionsediting/a/h2_1441967785&#39;,this);"></a></h2>
+        <p class="BodyText">Enter the username (user login) as set up in the home system. This is the only required field.</p>
+        <p class="BodyText">After new user access has been created, the user may be added to groups on the User Group Memberships worksheet and/or granted permissions on the permissions worksheets.</p>
+        <h2 class="Heading2" id="h2_1622594006" data-has-heading-anchor="true">Edit Users<a href="/articles/fordevelopers/permissionsediting/a/h2_1622594006" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/permissionsediting/a/h2_1622594006&#39;,this);"></a></h2>
+        <p class="BodyText">You can edit user login name, email, personal information and user rights from this worksheet. The current username is the id. All other fields are editable.</p>
+        <p class="BodyText">Security and password options also allow you to edit "go live" information for users once the system is completely setup. If  user accounts have been given with invalid email addresses for configuration purposes, you will need to edit the emails first. Then activate user logins by selecting the Reset Password option to send an email notification with the default password. (Two passes with the upload are required so that the email goes out to the new email address.)</p>
+        <p class="BodyText">Security and password options for editing users include:</p>
+        <p class="BodyIndent2">Reset Password column (column C):&nbsp;To reset the user password, enter "yes". The system will generate a random password and send email notification to the user with the new password. If "no" or blank, no change is made to the existing password.</p>
+        <p class="BodyIndent2"><span style="font-size: 10pt;">Reset password with time Sensitive Link Email column (column BF):&nbsp;To reset the user password, enter "yes". The system will send an email to the user with a time sensitive password reset link. When the user clicks the link, the user will be taken to a log in page with two fields to fill, one to put in a new password the other to input the new password again to confirm the new password. If the field has "no" or is blank, no password reset link is sent to the user.</span></p>
+        <p class="BodyIndent2">Expire user account column (column H):&nbsp;To expire the user access, enter an expiration date.</p>
+        <p class="BodyIndent2">Lock/unlock user account column (column AE):&nbsp;If user account is locked, enter &lt;clear&gt; to unlock. To lock account, enter "yes".</p>
+        <p class="BodyIndent2">Require user to change password column (column AB):&nbsp;To require that the user change the password at next login, enter "yes" . Enter &lt;clear&gt; to remove this requirement.</p>
+        <p class="BodyIndent2">User password does not expire column (column AD):&nbsp;Enter "yes" to keep password from expiring. (This overrides the optional security setting for maximum password age,  which expires system passwords after a specific time period.) Enter &lt;clear&gt; to remove this option.</p>
+        <h2 class="Heading2" id="h2__320025401" data-has-heading-anchor="true">Delete Users<a href="/articles/fordevelopers/permissionsediting/a/h2__320025401" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/permissionsediting/a/h2__320025401&#39;,this);"></a></h2>
+        <p class="BodyText">To delete users, the only required field is the Username (user login).</p>
+        <p class="BodyText">Deleting a user will mark the user as deleted in the system and remove all permissions. Past user history in the system will not be deleted.</p>
+        <h2 class="Heading2" id="h2_1291161308" data-has-heading-anchor="true">User Groups to Add or Edit<a href="/articles/fordevelopers/permissionsediting/a/h2_1291161308" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/permissionsediting/a/h2_1291161308&#39;,this);"></a></h2>
+        <p class="BodyText">To create a new user group, enter user group name. Use the next worksheet (User Group Memberships) to add users to the group.</p>
+        <p class="BodyText">To edit the name of an existing user group, enter current name in column A and new name in column B.</p>
+        <p class="BodyText">To assign rights (blue column labels C-X), enter "yes". Use <b>&lt;clear&gt;</b> to remove an existing right from the group.</p>
+        <h2 class="Heading2" id="h2_189674863" data-has-heading-anchor="true">User Group Memberships<a href="/articles/fordevelopers/permissionsediting/a/h2_189674863" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/permissionsediting/a/h2_189674863&#39;,this);"></a></h2>
+        <p class="BodyText">One user or group per row. Multiple users/groups per cell are not allowed.</p>
+        <p class="BodyText">In Action column enter Add to add user to group, or Remove to remove user from group.</p>
+        <p class="BodyText">Users are identified by username (user login).</p>
+        <h2 class="Heading2" id="h2__263612775" data-has-heading-anchor="true">Object Permissions<a href="/articles/fordevelopers/permissionsediting/a/h2__263612775" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/permissionsediting/a/h2__263612775&#39;,this);"></a></h2>
+        <p class="BodyText">One user or group per row. Multiple users or groups per cell are not allowed.</p>
+        <p class="BodyText">To grant a permission enter "yes". Use <b>&lt;clear&gt;</b> to remove an existing permission.</p>
+        <p class="BodyText">To add a user or group to the permissions on the object, at least one Permission column must be "yes".</p>
+        <p class="BodyText">If user has an existing permission on an object, and the column is left blank, the existing permission will not be changed. To remove an existing permission for a user, enter <b>&lt;clear&gt;</b>.</p>
+        <h2 class="Heading2" id="h2__440643668" data-has-heading-anchor="true">Citations Permissions<a href="/articles/fordevelopers/permissionsediting/a/h2__440643668" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/permissionsediting/a/h2__440643668&#39;,this);"></a></h2>
+        <p class="BodyText">Enter the path to a Citation folder or Citation in the format: </p>
+        <p class="BodyIndent2">\FolderName or \FolderName\Citation</p>
+        <p class="BodyText">Enter one user or group per row. Multiple users or groups per cell are not allowed.</p>
+        <p class="BodyText">To grant permission to a Citation, enter "yes" in the appropriate permission column (in blue). Enter "no" or use <b>&lt;clear&gt;</b> to revoke an existing permission.</p>
+        <p class="BodyText">When path is to a folder, to apply the same permission to all child folders and citations, enter "yes" in column F.</p>
+        <h2 class="Heading2" id="h2_1973913296" data-has-heading-anchor="true">Documents Permissions<a href="/articles/fordevelopers/permissionsediting/a/h2_1973913296" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/permissionsediting/a/h2_1973913296&#39;,this);"></a></h2>
+        <p class="BodyText">Enter the path to a Document folder or a Document, in the format: </p>
+        <p class="BodyIndent2">\FolderName or \FolderName\Document.ext (include file-type extension).</p>
+        <p class="BodyText">Enter one user or group per row. Multiple users or groups per cell are not allowed.</p>
+        <p class="BodyText">To grant permission to a Document, enter "yes" in the appropriate permission column (in blue). Enter "no" or use <b>&lt;clear&gt;</b> to revoke an existing permission.</p>
+        <p class="BodyText">When path is to a folder, to apply the same permission to all child folders and documents, enter "yes" in column F.</p>
+        <h2 class="Heading2" id="h2_1980940645" data-has-heading-anchor="true">Reports Permissions<a href="/articles/fordevelopers/permissionsediting/a/h2_1980940645" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/permissionsediting/a/h2_1980940645&#39;,this);"></a></h2>
+        <p class="BodyText">Enter the path to a Report folder or Report in the format: </p>
+        <p class="BodyIndent2">\FolderName or \FolderName\ReportName</p>
+        <p class="BodyText">Enter one user or group per row. Multiple users or groups per cell are not allowed.</p>
+        <p class="BodyText">To grant permission to a Report, enter "yes" in the appropriate permission column (in blue). Enter "no" or use <b>&lt;clear&gt;</b> to revoke an existing permission.</p>
+        <p class="BodyText">When path is to a folder, to apply the same permission to all child folders and reports, enter "yes" in column F.</p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+        </script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

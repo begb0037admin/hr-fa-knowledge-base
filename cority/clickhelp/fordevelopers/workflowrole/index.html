@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/workflowrole"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Workflow Role Functions and Classes</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Workflow Role Functions and Classes';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>        <div class="toc">
+            <h1 class="Heading1" id="h1_62676809" data-has-heading-anchor="true">Workflow Role Functions and Classes<a href="/articles/fordevelopers/workflowrole/a/h1_62676809" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowrole/a/h1_62676809&#39;,this);"></a></h1>
+            <p class="bold">JavaScript Functions:</p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflowrole/a/createWorkflowRole" onclick="return n(&#39;!fordevelopers/workflowrole/a/createWorkflowRole&#39;,this);">createWorkflowRole</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflowrole/a/copyWorkflowRole" onclick="return n(&#39;!fordevelopers/workflowrole/a/copyWorkflowRole&#39;,this);">copyWorkflowRole</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflowrole/a/updateWorkflowRole" onclick="return n(&#39;!fordevelopers/workflowrole/a/updateWorkflowRole&#39;,this);">updateWorkflowRole</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflowrole/a/getWorkflowRole" onclick="return n(&#39;!fordevelopers/workflowrole/a/getWorkflowRole&#39;,this);">getWorkflowRole</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflowrole/a/deleteWorkflowRole" onclick="return n(&#39;!fordevelopers/workflowrole/a/deleteWorkflowRole&#39;,this);">deleteWorkflowRole</a>
+            </p>
+            <p class="bold">Classes:</p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflowrole/a/workflowRoleInfo" onclick="return n(&#39;!fordevelopers/workflowrole/a/workflowRoleInfo&#39;,this);">workflowRoleInfo</a>
+            </p>
+        </div>
+        <div class="method">
+            <h2 class="jsmethod" id="h2__1267763608" data-has-heading-anchor="true"><a name="createWorkflowRole"></a>enviancesdk.workflows.createWorkflowRole<a href="/articles/fordevelopers/workflowrole/a/h2__1267763608" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowrole/a/h2__1267763608&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_3271357286_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_3271357286_0" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Creates a new Workflow Role.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowRoleInfo</b> An instance of the <a href="/articles/fordevelopers/workflowrole/a/workflowRoleInfo" onclick="return n(&#39;!fordevelopers/workflowrole/a/workflowRoleInfo&#39;,this);">workflowRoleInfo</a> object. </p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">The id for the new Workflow Role.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.createWorkflowRole (workflowRoleInfo, onsuccess, onerror)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsmethod" id="h2__1127189113" data-has-heading-anchor="true"><a name="copyWorkflowRole"></a>enviancesdk.workflows.copyWorkflowRole<a href="/articles/fordevelopers/workflowrole/a/h2__1127189113" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowrole/a/h2__1127189113&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_3271357286_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_3271357286_1" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Creates a new Workflow Role by copying an existing Workflow Role.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowRoleInfo</b> Optional information to set properties of new Workflow Role. An instance of the <a href="/articles/fordevelopers/workflowrole/a/workflowRoleInfo" onclick="return n(&#39;!fordevelopers/workflowrole/a/workflowRoleInfo&#39;,this);">workflowRoleInfo</a> object. </p>
+            <p class="BodyIndentHanging"><b>copyFrom</b> The id string (GUID) of an existing Workflow Role whose properties will be copied and used as the properties of the newly created Workflow Role. </p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">The id for the new Workflow Role.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.copyWorkflowRole (workflowRoleInfo, copyFrom, onsuccess, onerror)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsmethod" id="h2_1085676419" data-has-heading-anchor="true"><a name="updateWorkflowRole"></a>enviancesdk.workflows.updateWorkflowRole<a href="/articles/fordevelopers/workflowrole/a/h2_1085676419" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowrole/a/h2_1085676419&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_3271357286_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_3271357286_2" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Updates a Workflow Role.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowRoleIdOrName</b> Either an id string (GUID), or a name string uniquely identifying the Workflow Role.  Any string that matches the pattern of a GUID is interpreted as the id string, and not the name.  A name string must be URL encoded.</p>
+            <p class="BodyIndentHanging"><b>workflowRoleInfo</b> An instance of the <a href="/articles/fordevelopers/workflowrole/a/workflowRoleInfo" onclick="return n(&#39;!fordevelopers/workflowrole/a/workflowRoleInfo&#39;,this);">workflowRoleInfo</a> object. </p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.updateWorkflowRole (workflowRoleIdOrName, workflowRoleInfo, onsuccess, onerror)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsmethod" id="h2_1963181582" data-has-heading-anchor="true"><a name="getWorkflowRole"></a>enviancesdk.workflows.getWorkflowRole<a href="/articles/fordevelopers/workflowrole/a/h2_1963181582" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowrole/a/h2_1963181582&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_3271357286_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_3271357286_3" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Gets Workflow Role information.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowRoleIdOrName</b> Either an id string (GUID) or a name string uniquely identifying the Workflow Role.  Any string that matches the pattern of a GUID is interpreted as the id string, and not the name.  A name string must be URL encoded.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An instance of the <a href="/articles/fordevelopers/workflowrole/a/workflowRoleInfo" onclick="return n(&#39;!fordevelopers/workflowrole/a/workflowRoleInfo&#39;,this);">workflowRoleInfo</a> structure.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.getWorkflowRole (workflowRoleIdOrName, onsuccess, onerror)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsmethod" id="h2_1549930599" data-has-heading-anchor="true"><a name="deleteWorkflowRole"></a>enviancesdk.workflows.deleteWorkflowRole<a href="/articles/fordevelopers/workflowrole/a/h2_1549930599" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowrole/a/h2_1549930599&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_3271357286_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_3271357286_4" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Deletes a Workflow Role. Deletions are <i>permanent</i>.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowRoleIdOrName</b> Either an id string (GUID) or a name string uniquely identifying the Workflow Role.  Any string that matches the pattern of a GUID is interpreted as the id string, and not the name.  A name string must be URL encoded.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.deleteWorkflowRole (workflowRoleIdOrName, onsuccess, onerror)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsclass" id="h2_131571404" data-has-heading-anchor="true"><a name="workflowRoleInfo"></a>envianceSdk.workflows.WorkflowRoleInfo<a href="/articles/fordevelopers/workflowrole/a/h2_131571404" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowrole/a/h2_131571404&#39;,this);"></a></h2>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Represents a Workflow Role definition.</p>
+            <p class="bold">Properties</p>
+            <p class="BodyIndentHanging"><b>name</b> The name of the Workflow Role.</p>
+            <p class="BodyIndentHanging"><b>description</b> Description of the Workflow Role.</p>
+            <p class="bold">Instance Methods</p>
+            <p class="BodyIndentHanging"><b>setDefaultMembers ()</b> Convenience method to initialize the default members edit.</p>
+            <p class="BodyIndentHanging"><b>addDefaultUser (userIdOrName)</b> Convenience method to add a user to the defaultUsers array.</p>
+            <p class="BodyIndentHanging"><b>addDefaultGroup (groupIdOrName)</b> Convenience method to add a group to the defaultGroups array.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.WorkflowRoleInfo (name, description)</p>
+        </div>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

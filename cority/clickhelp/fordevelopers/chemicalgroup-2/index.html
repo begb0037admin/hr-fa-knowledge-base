@@ -1,0 +1,681 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/chemicalgroup-2"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Chemical Group APIs and Data Types</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Chemical Group APIs and Data Types';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><p>
+</p>
+<p class="Note">For the most up to date API documentation, please see the&nbsp;<a href="https://api.enviance.com/swagger.svc/index.html?url=/Swagger.svc/swagger.json#/ChemicalGrouphttps://api.enviance.com/swagger.svc/index.html?url=/Swagger.svc/swagger.json#/ChemicalGroup" target="_blank">Chemical Group API Documentation on Swagger</a>.<br/></p><p><span style="color: #244545; font-size: 16pt; font-weight: bold;">Chemical Group APIs and Data Types</span></p><section><h2 id="version" data-has-heading-anchor="true">
+    Version:
+  <a href="/articles/fordevelopers/chemicalgroup-2/a/version" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/version&#39;,this);"></a></h2>
+  
+  <p>
+    <strong>License:</strong> <a href="http://www.enviance.com" target="_top">Enviance, Inc.</a>
+  </p>
+  
+  <p id="chemicalgroups">
+    <br/>
+  </p>
+  <h3 id="chemicalgroups" data-has-heading-anchor="true">
+    /chemicalGroups
+  <a href="/articles/fordevelopers/chemicalgroup-2/a/chemicalgroups" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/chemicalgroups&#39;,this);"></a></h3>
+  
+  <h4 id="post" data-has-heading-anchor="true">
+    POST
+  <a href="/articles/fordevelopers/chemicalgroup-2/a/post" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/post&#39;,this);"></a></h4>
+  <h5 id="description" data-has-heading-anchor="true">
+    Description:
+  <a href="/articles/fordevelopers/chemicalgroup-2/a/description" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/description&#39;,this);"></a></h5>
+  
+  <p>
+    Creates a new Chemical Group, alternately by copying an existing Chemical Group.
+  </p>
+  
+  <p>
+    <strong>Security:</strong> Requires Manage Materials and Activities system right.
+  </p>
+  
+  <p>
+    <strong>SDK API (create):</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.chemicalgroups.createChemicalGroup (chemicalGroupInfo, onsuccess, onerror)</font></code>
+  </p>
+  
+  <p>
+    <strong>SDK API (copy):</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.chemicalgroups.copyChemicalGroup (chemicalGroupInfo, copyFrom, onsuccess, onerror)</font></code>
+  </p>
+  
+  <h5 id="parameters" data-has-heading-anchor="true">
+    Parameters
+  <a href="/articles/fordevelopers/chemicalgroup-2/a/parameters" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/parameters&#39;,this);"></a></h5>
+  
+  <table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+    <thead>
+      <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Name</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Located in</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Description</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Required</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Schema</font>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          chemicalGroupCreate
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          body
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Create Chemical Group body info.
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Yes
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          <a href="/articles/fordevelopers/chemicalgroup-2/a/chemicalGroupCreate" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/chemicalGroupCreate&#39;,this);">chemicalGroupCreate</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="responses" data-has-heading-anchor="true">
+    Responses
+  <a href="/articles/fordevelopers/chemicalgroup-2/a/responses" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/responses&#39;,this);"></a></h5>
+  
+  <table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse; height: 55px;">
+    <thead>
+      <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Code</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Description</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Schema</font>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          200
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          The id string (GUID) for the new Chemical Group.
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          string
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//EXAMPLE (Create)</span>
+<span class="cm-variable">POST</span> <span class="cm-operator">/</span><span class="cm-variable">ChemicalGroupService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">chemicalGroups</span><span class="cm-operator">/</span> <span class="cm-variable">HTTP</span> <span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">utf</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+ 
+{
+  <span class="cm-string property">&quot;chemicalGroupInfo&quot;</span>: {
+    <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Chemical Group Name&quot;</span>,
+    <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;New Chemical Group Description&quot;</span>,
+    <span class="cm-string property">&quot;chemicals&quot;</span>: [[<span class="cm-string">&quot;chemAlias1&quot;</span>, <span class="cm-string">&quot;chemAlias2&quot;</span>, <span class="cm-string">&quot;chemAlias3&quot;</span>]
+  }
+}</pre></pre></td></tr></table>
+  
+</section>
+<section>
+  <table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//EXAMPLE (Copy)</span>
+
+<span class="cm-variable">POST</span> <span class="cm-operator">/</span><span class="cm-variable">ChemicalGroupService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">chemicalGroups</span><span class="cm-operator">/</span> <span class="cm-variable">HTTP</span> <span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">utf</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+ 
+{
+  <span class="cm-string property">&quot;chemicalGroupInfo&quot;</span>: {
+    <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Chemical Group Name&quot;</span>,
+    <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;New Chemical Group Description&quot;</span>,
+    <span class="cm-string property">&quot;chemicals&quot;</span>: [[<span class="cm-string">&quot;chemAlias1&quot;</span>, <span class="cm-string">&quot;chemAlias2&quot;</span>, <span class="cm-string">&quot;chemAlias3&quot;</span>]
+  }
+  <span class="cm-string">&quot;ChemicalGroupName&quot;</span>
+}</pre></pre></td></tr></table>
+  <p id="chemicalgroupschemicalgroupidorname">
+    <br/>
+  </p>
+  <h3 id="chemicalgroupschemicalgroupidorname" data-has-heading-anchor="true">
+    /chemicalGroups/{chemicalGroupIdOrName}
+  <a href="/articles/fordevelopers/chemicalgroup-2/a/chemicalgroupschemicalgroupidorname" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/chemicalgroupschemicalgroupidorname&#39;,this);"></a></h3>
+  
+  <h4 id="patch" data-has-heading-anchor="true">
+    PATCH
+  <a href="/articles/fordevelopers/chemicalgroup-2/a/patch" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/patch&#39;,this);"></a></h4>
+  <h5 id="description-1" data-has-heading-anchor="true">
+    Description:
+  <a href="/articles/fordevelopers/chemicalgroup-2/a/description-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/description-1&#39;,this);"></a></h5>
+  
+  <p>
+    Updates an existing Chemical Group.
+  </p>
+  
+  <p>
+    <strong>Security:</strong> Requires Manage Materials and Activities system right.
+  </p>
+  
+  <p>
+    <strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.chemicalgroups.updateChemicalGroup (chemicalGroupIdOrName, chemicalGroupInfo, onsuccess, onerror)</font></code>
+  </p>
+  
+  <h5 id="parameters-1" data-has-heading-anchor="true">
+    Parameters
+  <a href="/articles/fordevelopers/chemicalgroup-2/a/parameters-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/parameters-1&#39;,this);"></a></h5>
+  
+  <table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+    <thead>
+      <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Name</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Located in</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Description</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Required</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Schema</font>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          chemicalGroupIdOrName
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          path
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Either an id string (GUID), or a name string uniquely identifying the Chemical Group. Any string that matches the pattern of a GUID is interpreted as an id string, and not a name. A name string must be URL encoded.
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Yes
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          string
+        </td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          chemicalGroupInfo
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          body
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          A chemicalGroupInfo structure.
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Yes
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          <a href="/articles/fordevelopers/chemicalgroup-2/a/chemicalgroupinfo" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/chemicalgroupinfo&#39;,this);">chemicalGroupInfo</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">PATCH</span> <span class="cm-operator">/</span><span class="cm-variable">ChemicalGroupService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">chemicalgroups</span><span class="cm-operator">/</span><span class="cm-variable">b41ee413</span><span class="cm-operator">-</span><span class="cm-variable">ccc3</span><span class="cm-operator">-</span><span class="cm-number">4565</span><span class="cm-operator">-</span><span class="cm-variable">a5db</span><span class="cm-operator">-</span><span class="cm-variable">bf4295832c4c</span> <span class="cm-variable">HTTP</span> <span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">utf</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+ 
+{
+  <span class="cm-string property">&quot;chemicalGroupInfo&quot;</span>: {
+    <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Chemical Group Name&quot;</span>,
+    <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;Chemical Group Description&quot;</span>,
+    <span class="cm-string property">&quot;chemicals&quot;</span>: [<span class="cm-string">&quot;ChemAlias1&quot;</span>, <span class="cm-string">&quot;ChemAlias2&quot;</span>, <span class="cm-string">&quot;14aa2f40-5fg3-40b5-9a8b-329a8c3e4659&quot;</span>, <span class="cm-string">&quot;896197B8-E007-4169-8C03-D9D0E8411150&quot;</span>] 
+  }
+}</pre></pre></td></tr></table>
+  <br/>
+</section>
+<section>
+  
+  <h5 id="responses-1" data-has-heading-anchor="true">
+    Responses
+  <a href="/articles/fordevelopers/chemicalgroup-2/a/responses-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/responses-1&#39;,this);"></a></h5>
+  
+  <table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+    <thead>
+      <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Code</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Description</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Schema</font>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          200
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          The id string (GUID) for the updated Chemical  Group.
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          string
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h4 id="get" data-has-heading-anchor="true">
+    GET
+  <a href="/articles/fordevelopers/chemicalgroup-2/a/get" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/get&#39;,this);"></a></h4>
+  <h5 id="description-2" data-has-heading-anchor="true">
+    Description:
+  <a href="/articles/fordevelopers/chemicalgroup-2/a/description-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/description-2&#39;,this);"></a></h5>
+  
+  <p>
+    Gets information about the specified Chemical Group.
+  </p>
+  
+  <p>
+    <strong>Security:</strong> Requires Manage Materials and Activities system right.
+  </p>
+  
+  <p>
+    <strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.chemicalgroups.getChemicalGroup (chemicalGroupIdOrName, onsuccess, onerror)</font></code>
+  </p>
+  
+  <h5 id="parameters-2" data-has-heading-anchor="true">
+    Parameters
+  <a href="/articles/fordevelopers/chemicalgroup-2/a/parameters-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/parameters-2&#39;,this);"></a></h5>
+  
+  <table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+    <thead>
+      <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Name</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Located in</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Description</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Required</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Schema</font>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          chemicalGroupIdOrName
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          path
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Either an id string (GUID), or a name string uniquely identifying the Chemical Group. Any string that matches the pattern of a GUID is interpreted as an id string, and not a name. A name string must be URL encoded.
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Yes
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          string
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="responses-2" data-has-heading-anchor="true">
+    Responses
+  <a href="/articles/fordevelopers/chemicalgroup-2/a/responses-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/responses-2&#39;,this);"></a></h5>
+  
+  <table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+    <thead>
+      <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Code</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Description</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Schema</font>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          200
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          An instance of chemicalGroupInfo structure.
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          <a href="/articles/fordevelopers/chemicalgroup-2/a/chemicalgroupinfo" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/chemicalgroupinfo&#39;,this);">chemicalGroupInfo</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">GET</span> <span class="cm-operator">/</span><span class="cm-variable">ChemicalGroupService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">chemicalgroups</span><span class="cm-operator">/</span><span class="cm-variable">b41ee413</span><span class="cm-operator">-</span><span class="cm-variable">ccc3</span><span class="cm-operator">-</span><span class="cm-number">4565</span><span class="cm-operator">-</span><span class="cm-variable">a5db</span><span class="cm-operator">-</span><span class="cm-variable">bf4295832c4c</span> <span class="cm-variable">HTTP</span> <span class="cm-number">1.1</span></pre></pre></td></tr></table>
+</section>
+<section>
+  <table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//RESPONSE</span>
+
+{
+  <span class="cm-string property">&quot;id&quot;</span>: <span class="cm-string">&quot;b41ee413-ccc3-4565-a5db-bf4295832c4c&quot;</span>,
+  <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Chemical Group Name&quot;</span>,
+  <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;Chemical Group Description&quot;</span>,
+  <span class="cm-string property">&quot;chemicals&quot;</span>: [<span class="cm-string">&quot;f59460fe-018f-4daf-b935-0b09cd547a59&quot;</span>, <span class="cm-string">&quot;20cb4d26-314c-4d3a-9b7d-2ce1d2df7391&quot;</span>, <span class="cm-string">&quot;d656acc5-e206-47ad-a8bd-a7bc79c1cff3&quot;</span>]
+}</pre></pre></td></tr></table>
+</section>
+<section>
+  
+  <h4 id="delete" data-has-heading-anchor="true">
+    DELETE
+  <a href="/articles/fordevelopers/chemicalgroup-2/a/delete" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/delete&#39;,this);"></a></h4>
+  <h5 id="description-3" data-has-heading-anchor="true">
+    Description:
+  <a href="/articles/fordevelopers/chemicalgroup-2/a/description-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/description-3&#39;,this);"></a></h5>
+  
+  <p>
+    Deletes an existing Chemical Group. <em>Deletions are permanent</em>.
+  </p>
+  
+  <p>
+    <strong>Security:</strong> Requires Manage Materials and Activities system right.
+  </p>
+  
+  <p>
+    <strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.chemicalgroups.deleteChemicalGroup (chemicalGroupIdOrName, onsuccess, onerror)</font></code>
+  </p>
+  
+  <h5 id="parameters-3" data-has-heading-anchor="true">
+    Parameters
+  <a href="/articles/fordevelopers/chemicalgroup-2/a/parameters-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/parameters-3&#39;,this);"></a></h5>
+  
+  <table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+    <thead>
+      <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Name</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Located in</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Description</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Required</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Schema</font>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          chemicalGroupIdOrName
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          path
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Either an id string (GUID), or a name string uniquely identifying the Chemical Group. Any string that matches the pattern of a GUID is interpreted as an id string, and not a name. A name string must be URL encoded.
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Yes
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          string
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="responses-3" data-has-heading-anchor="true">
+    Responses
+  <a href="/articles/fordevelopers/chemicalgroup-2/a/responses-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/responses-3&#39;,this);"></a></h5>
+  
+  <table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+    <thead>
+      <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Code</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Description</font>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          204
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Chemical Group deleted
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">DELETE</span> <span class="cm-operator">/</span><span class="cm-variable">ChemicalGroupService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">chemicalgroups</span><span class="cm-operator">/</span><span class="cm-variable">b41ee413</span><span class="cm-operator">-</span><span class="cm-variable">ccc3</span><span class="cm-operator">-</span><span class="cm-number">4565</span><span class="cm-operator">-</span><span class="cm-variable">a5db</span><span class="cm-operator">-</span><span class="cm-variable">bf4295832c4c</span> <span class="cm-variable">HTTP</span> <span class="cm-number">1.1</span></pre></pre></td></tr></table>
+  
+  <p id="models">
+    <br/>
+  </p>
+  <h3 id="models" data-has-heading-anchor="true">
+    Models
+  <a href="/articles/fordevelopers/chemicalgroup-2/a/models" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/models&#39;,this);"></a></h3>
+  
+  <h4 id="chemicalgroupcreate" data-has-heading-anchor="true">
+    chemicalGroupCreate<span id="chemicalGroupCreate"></span>&nbsp;
+  <a href="/articles/fordevelopers/chemicalgroup-2/a/chemicalgroupcreate" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/chemicalgroupcreate&#39;,this);"></a></h4>
+  
+  <p>
+    Creation info for Chemical Group
+  </p>
+  
+  <table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+    <thead>
+      <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Name</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Type</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Description</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Required</font>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          chemicalGroupInfo
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          [ <a href="/articles/fordevelopers/chemicalgroup-2/a/chemicalgroupinfo" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/chemicalgroupinfo&#39;,this);">chemicalGroupInfo</a> ]
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          A chemicalGroupInfo structure
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          No
+        </td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          copyFrom
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          string
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          The id string (GUID) of an existing Chemical Group to copy.
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          No
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h4 id="chemicalgroupinfo" data-has-heading-anchor="true">
+    chemicalGroupInfo<span id="chemicalGroupInfo"></span>&nbsp;
+  <a href="/articles/fordevelopers/chemicalgroup-2/a/chemicalgroupinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/chemicalgroup-2/a/chemicalgroupinfo&#39;,this);"></a></h4>
+  
+  <p>
+    Represents a Chemical Group definition.
+  </p>
+  
+  <table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+    <thead>
+      <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Name</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Type</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Description</font>
+        </th>
+        <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+          <font color="#ffffff">Required</font>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          id
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          string
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          The id string (GUID) for the Chemical Group. Ignored for: Create Chemical Group, Update Chemical Group
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          No
+        </td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          name
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          string
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Name of the Chemical Group. Required for: Create Chemical Group
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          No
+        </td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          description
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          string
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          Description of the Chemical Group.
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          No
+        </td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          chemicals
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          string
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          An array of Chemical id strings (GUIDs) or aliases. Required for: Create Chemical Group
+        </td>
+        <td style="border-width: 1px; border-style: solid; border-color: #000000;">
+          No
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">PATCH</span> <span class="cm-operator">/</span><span class="cm-variable">ChemicalGroupService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">chemicalgroups</span><span class="cm-operator">/</span><span class="cm-variable">b41ee413</span><span class="cm-operator">-</span><span class="cm-variable">ccc3</span><span class="cm-operator">-</span><span class="cm-number">4565</span><span class="cm-operator">-</span><span class="cm-variable">a5db</span><span class="cm-operator">-</span><span class="cm-variable">bf4295832c4c</span> <span class="cm-variable">HTTP</span> <span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">utf</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+ 
+{
+  <span class="cm-string property">&quot;chemicalGroupInfo&quot;</span>: {
+    <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Chemical Group Name&quot;</span>,
+    <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;Chemical Group Description&quot;</span>,
+    <span class="cm-string property">&quot;chemicals&quot;</span>: [<span class="cm-string">&quot;ChemAlias1&quot;</span>, <span class="cm-string">&quot;ChemAlias2&quot;</span>, <span class="cm-string">&quot;14aa2f40-5fg3-40b5-9a8b-329a8c3e4659&quot;</span>, <span class="cm-string">&quot;896197B8-E007-4169-8C03-D9D0E8411150&quot;</span>] 
+  }
+}</pre></pre></td></tr></table>
+  <br/>
+</section>
+<br/>
+<p>
+  <br/>
+</p>
+<p>
+  <br/>
+</p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

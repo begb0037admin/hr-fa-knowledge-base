@@ -1,0 +1,882 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/calculatedreq"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Calculated Requirements APIs and Data Types</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Calculated Requirements APIs and Data Types';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><p><br/></p><p><br/></p><p>
+	</p><p><br/></p><p></p><nav>
+  
+    <a href="/" target="_top">Home</a>
+  
+    <a href="/apis_list.html" target="_top">APIs</a>
+  
+</nav>
+
+    <section>
+    <h1 id="calculated-requirements-apis-and-data-types" data-has-heading-anchor="true">Calculated Requirements APIs and Data Types<a href="/articles/fordevelopers/calculatedreq/a/calculated-requirements-apis-and-data-types" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/calculated-requirements-apis-and-data-types&#39;,this);"></a></h1>
+<h2 id="version" data-has-heading-anchor="true">Version:<a href="/articles/fordevelopers/calculatedreq/a/version" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/version&#39;,this);"></a></h2>
+
+<p><strong>License:</strong> <a href="http://www.enviance.com" target="_top">Enviance, Inc.</a></p>
+
+<p id="requirements"><br/></p><h3 id="requirements" data-has-heading-anchor="true">/requirements<a href="/articles/fordevelopers/calculatedreq/a/requirements" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/requirements&#39;,this);"></a></h3>
+
+<h4 id="post" data-has-heading-anchor="true">POST<a href="/articles/fordevelopers/calculatedreq/a/post" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/post&#39;,this);"></a></h4>
+<h5 id="description" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/calculatedreq/a/description" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/description&#39;,this);"></a></h5>
+
+<p>Create a new Calculated Requirement or copy existing Calculated Requirement.</p>
+
+<p><b>SDK API (create):</b>&nbsp;<code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.requirements.createRequirement(reqInfo, onsuccess, onerror)</font></code></p>
+
+<p><b>SDK API (create async):</b>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.requirements.createRequirementAsync(reqInfo, onsuccess, onerror)</font></code></p>
+
+<p><b>SDK API (copy):</b>&nbsp;<code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.requirements.copyRequirement(reqInfo, copyFrom, onsuccess, onerror)</font></code></p>
+
+<p><b>SDK API (copy async):</b>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.requirements.copyRequirementAsync(reqInfo, copyFrom, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/calculatedreq/a/parameters" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/parameters&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">reqCreateInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Create/Copy Calculated Requirement body info</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/calculatedreq/a/reqcreateinfo" onclick="return n(&#39;!fordevelopers/calculatedreq/a/reqcreateinfo&#39;,this);">reqCreateInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/calculatedreq/a/responses" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/responses&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) for the newly created Calculated Requirement.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">// EXAMPLE (CREATE)</span>
+
+<span class="cm-variable">POST</span><span class="cm-operator">/</span><span class="cm-variable">RequirementService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">requirements</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">UTF</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+
+{
+  <span class="cm-string property">&quot;reqInfo&quot;</span>: {
+    <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Requirement Name&quot;</span>,
+    <span class="cm-string property">&quot;requirementType&quot;</span>: <span class="cm-string">&quot;CalcRequirement&quot;</span>,
+    <span class="cm-string property">&quot;parentIdOrPath&quot;</span>: <span class="cm-string">&quot;Manufacturing Division/Toys&quot;</span>,
+    <span class="cm-string property">&quot;requirementTemplateIdOrName&quot;</span>: <span class="cm-string">&quot;Requirement Template 1&quot;</span>,
+    <span class="cm-string property">&quot;periodFrequency&quot;</span>: <span class="cm-string">&quot;3&quot;</span>,
+    <span class="cm-string property">&quot;periodTime&quot;</span>: <span class="cm-string">&quot;Hour&quot;</span>,
+    <span class="cm-string property">&quot;tagAggregationSettings&quot;</span>: {
+      <span class="cm-string property">&quot;entireSystemModel&quot;</span>: <span class="cm-atom">true</span>,
+      <span class="cm-string property">&quot;specificParentObjectLevel&quot;</span>: <span class="cm-string">&quot;Division&quot;</span>,
+      <span class="cm-string property">&quot;specificObjects&quot;</span>: [
+        <span class="cm-string">&quot;Manufacturing Division&quot;</span>
+      ]
+    },
+    <span class="cm-string property">&quot;formulaHistory&quot;</span>: [
+      { <span class="cm-string property">&quot;beginDate&quot;</span>:<span class="cm-string">&quot;2011-02-22T00:00:00&quot;</span>, <span class="cm-string property">&quot;endDate&quot;</span>:<span class="cm-string">&quot;2012-03-22T00:00:00&quot;</span>,
+        <span class="cm-string property">&quot;script&quot;</span>: <span class="cm-string">&quot;[DAYS IN YEAR]+[ParamRequirement1]&quot;</span>, 
+        <span class="cm-string property">&quot;exceptionDivideByZero&quot;</span>: <span class="cm-string">&quot;12&quot;</span>, <span class="cm-string property">&quot;exceptionOverflow&quot;</span>: <span class="cm-string">&quot;34&quot;</span>, <span class="cm-string property">&quot;exceptionOther&quot;</span>: <span class="cm-string">&quot;56&quot;</span>},
+      { <span class="cm-string property">&quot;beginDate&quot;</span>:<span class="cm-string">&quot;2014-02-22T00:00:00&quot;</span>, <span class="cm-string property">&quot;endDate&quot;</span>:<span class="cm-string">&quot;2014-03-22T00:00:00&quot;</span>,
+        <span class="cm-string property">&quot;script&quot;</span>: <span class="cm-string">&quot;1+[MACRequirement1]&quot;</span>, 
+        <span class="cm-string property">&quot;exceptionDivideByZero&quot;</span>: <span class="cm-string">&quot;12&quot;</span>, <span class="cm-string property">&quot;exceptionOverflow&quot;</span>: <span class="cm-string">&quot;34&quot;</span>, <span class="cm-string property">&quot;exceptionOther&quot;</span>: <span class="cm-string">&quot;56&quot;</span>}
+    ],
+    <span class="cm-string property">&quot;calcRequirements&quot;</span>: [
+      {<span class="cm-string property">&quot;alias&quot;</span>: <span class="cm-string">&quot;[ParamRequirement1]&quot;</span>, <span class="cm-string property">&quot;requirementPath&quot;</span>: <span class="cm-string">&quot;Division Name/Facility Name/ParamRequirement1&quot;</span> },
+      {<span class="cm-string property">&quot;alias&quot;</span>: <span class="cm-string">&quot;[MACRequirement1]&quot;</span>, <span class="cm-string property">&quot;requirementPath&quot;</span>: <span class="cm-string">&quot;Division Name/Facility Name/MACRequirement1&quot;</span> }
+    ],
+    <span class="cm-string property">&quot;uom&quot;</span>: <span class="cm-string">&quot;lbs&quot;</span>,
+    <span class="cm-string property">&quot;precision&quot;</span>: <span class="cm-string">&quot;2&quot;</span>,
+    <span class="cm-string property">&quot;calcDescription&quot;</span>: <span class="cm-string">&quot;Description of the purpose of the calculation&quot;</span>,
+    <span class="cm-string property">&quot;limitHistory&quot;</span>: [
+      {<span class="cm-string property">&quot;beginDate&quot;</span>:<span class="cm-string">&quot;2011-02-22T00:00:00&quot;</span>, <span class="cm-string property">&quot;endDate&quot;</span>:<span class="cm-string">&quot;2012-03-22T00:00:00&quot;</span>, 
+       <span class="cm-string property">&quot;comparisonOperation&quot;</span>: <span class="cm-string">&quot;&gt; LOW&quot;</span>, <span class="cm-string property">&quot;regLowLimit&quot;</span>: <span class="cm-string">&quot;1&quot;</span>, <span class="cm-string property">&quot;regHighLimit&quot;</span>: <span class="cm-string">&quot;4&quot;</span>}
+    ],
+    <span class="cm-string property">&quot;regulatoryLimit&quot;</span>: {
+      <span class="cm-string property">&quot;templateIdOrName&quot;</span>: <span class="cm-string">&quot;task-template-1&quot;</span>,
+      <span class="cm-string property">&quot;assignor&quot;</span>: <span class="cm-string">&quot;JSmith&quot;</span>,
+      <span class="cm-string property">&quot;assignees&quot;</span>: [ {<span class="cm-string property">&quot;userIdOrName&quot;</span>:<span class="cm-string">&quot;JSmith&quot;</span>}, {<span class="cm-string property">&quot;groupIdOrName&quot;</span> : <span class="cm-string">&quot;Administrators&quot;</span>} ] 
+    },
+    <span class="cm-string property">&quot;notifyRecipients&quot;</span>: {
+      <span class="cm-string property">&quot;recipients&quot;</span>: [{<span class="cm-string property">&quot;userIdOrName&quot;</span>:<span class="cm-string">&quot;BTaylor&quot;</span>}, {<span class="cm-string property">&quot;groupIdOrName&quot;</span> : <span class="cm-string">&quot;Users&quot;</span>}],
+      <span class="cm-string property">&quot;inbox&quot;</span>: <span class="cm-string">&quot;true&quot;</span>,
+      <span class="cm-string property">&quot;email&quot;</span>: <span class="cm-string">&quot;false&quot;</span>
+    }   
+  },
+}</pre></pre></td></tr></table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">// EXAMPLE (COPY)</span>
+
+<span class="cm-variable">POST</span><span class="cm-operator">/</span><span class="cm-variable">RequirementService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">requirements</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">UTF</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+
+{
+  <span class="cm-string property">&quot;reqInfo&quot;</span>: {
+    <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Requirement COPY Name&quot;</span>,     
+    <span class="cm-string property">&quot;requirementType&quot;</span>: <span class="cm-string">&quot;CalcRequirement&quot;</span>,
+    <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;Calc Requirement Copied&quot;</span>,
+    <span class="cm-string property">&quot;parentIdOrPath&quot;</span>: <span class="cm-string">&quot;_Division/Facility/Unit/Point of Interest&quot;</span>, 
+    <span class="cm-string property">&quot;copyFrom&quot;</span>: <span class="cm-string">&quot;Manufacturing Division/Toys/Param Requirement Name&quot;</span>
+  }
+}</pre></pre></td></tr></table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//RESPONSE</span>
+
+<span class="cm-number">5</span><span class="cm-variable">f8e1695</span><span class="cm-operator">-</span><span class="cm-number">8</span><span class="cm-variable">f8a</span><span class="cm-operator">-</span><span class="cm-number">465</span><span class="cm-variable">c</span><span class="cm-operator">-</span><span class="cm-variable">bca1</span><span class="cm-operator">-</span><span class="cm-number">2e67</span><span class="cm-variable">fc467d79</span></pre></pre></td></tr></table><p id="requirementsrequirementidorpath"><br/></p><h3 id="requirementsrequirementidorpath" data-has-heading-anchor="true">/requirements/{requirementIdOrPath}<a href="/articles/fordevelopers/calculatedreq/a/requirementsrequirementidorpath" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/requirementsrequirementidorpath&#39;,this);"></a></h3>
+
+<h4 id="get" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/calculatedreq/a/get" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/get&#39;,this);"></a></h4>
+<h5 id="description-1" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/calculatedreq/a/description-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/description-1&#39;,this);"></a></h5>
+
+<p>Gets information about Calculated Requirement.</p>
+
+<p><b>SDK API:</b>&nbsp;<code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.requirements.getRequirement(requirementIdOrPath, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-1" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/calculatedreq/a/parameters-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/parameters-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">requirementIdOrPath</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Either an id string (GUID), or a name string uniquely identifying the Calculated Requirement.  Any string that matches the pattern of a GUID is interpreted as the id string, and not the name of the requirement. A name string must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-1" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/calculatedreq/a/responses-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/responses-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An instance of the reqInfo structure.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/calculatedreq/a/reqInfo" onclick="return n(&#39;!fordevelopers/calculatedreq/a/reqInfo&#39;,this);">reqInfo</a></td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">GET</span><span class="cm-operator">/</span><span class="cm-variable">RequirementService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">requirements</span><span class="cm-operator">/</span><span class="cm-number">9</span><span class="cm-variable">ca22677</span><span class="cm-operator">-</span><span class="cm-number">2670</span><span class="cm-operator">-</span><span class="cm-number">41</span><span class="cm-variable">a9</span><span class="cm-operator">-</span><span class="cm-variable">bafd</span><span class="cm-operator">-</span><span class="cm-number">3</span><span class="cm-variable">b2825592863</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+
+{
+  <span class="cm-string property">&quot;id&quot;</span>: <span class="cm-string">&quot;9ca22677-2670-41a9-bafd-3b2825592863&quot;</span>,
+  <span class="cm-string property">&quot;requirementType&quot;</span>: <span class="cm-string">&quot;CalcRequirement&quot;</span>,
+  <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Calc Requirement Name&quot;</span>,
+  <span class="cm-string property">&quot;parentIdOrPath&quot;</span>: <span class="cm-string">&quot;Manufacturing Division/Toys/&quot;</span>,
+  <span class="cm-string property">&quot;activeDate&quot;</span>: <span class="cm-string">&quot;2010-02-22T00:00:00&quot;</span>,
+  <span class="cm-string property">&quot;inactiveDate&quot;</span>: <span class="cm-string">&quot;2016-02-22T00:00:00&quot;</span>,
+  <span class="cm-string property">&quot;responsibleUser&quot;</span>: <span class="cm-string">&quot;JSmith&quot;</span>,
+  <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;Requirement description&quot;</span>,
+  <span class="cm-string property">&quot;requirementTemplateIdOrName&quot;</span>: <span class="cm-string">&quot;Requirement Template 1&quot;</span>,
+  <span class="cm-string property">&quot;specificCitation&quot;</span>: <span class="cm-string">&quot;cit1&quot;</span>,
+  <span class="cm-string property">&quot;fieldValues&quot;</span>: [
+    {<span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Aspect&quot;</span>, <span class="cm-string property">&quot;values&quot;</span>: [<span class="cm-string">&quot;Air&quot;</span>]},
+    {<span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Start Date&quot;</span>, <span class="cm-string property">&quot;values&quot;</span>: [<span class="cm-string">&quot;2012-09-19T20:00&quot;</span>]}
+  ],
+  <span class="cm-string property">&quot;periodFrequency&quot;</span>: <span class="cm-string">&quot;3&quot;</span>,
+  <span class="cm-string property">&quot;periodTime&quot;</span>: <span class="cm-string">&quot;Hour&quot;</span>,
+  <span class="cm-string property">&quot;tagAggregationSettings&quot;</span>: {
+    <span class="cm-string property">&quot;entireSystemModel&quot;</span>: <span class="cm-atom">true</span>,
+    <span class="cm-string property">&quot;specificParentObjectLevel&quot;</span>: <span class="cm-string">&quot;Division&quot;</span>,
+    <span class="cm-string property">&quot;specificObjects&quot;</span>: [
+      <span class="cm-string">&quot;Manufacturing Division&quot;</span>
+    ]
+  },
+  <span class="cm-string property">&quot;uom&quot;</span>: <span class="cm-string">&quot;lbs&quot;</span>,
+  <span class="cm-string property">&quot;precision&quot;</span>: <span class="cm-string">&quot;2&quot;</span>,
+  <span class="cm-string property">&quot;frequencies&quot;</span>:  [
+    {<span class="cm-string property">&quot;beginDate&quot;</span>:<span class="cm-string">&quot;2011-02-22T00:00:00&quot;</span>, <span class="cm-string property">&quot;endDate&quot;</span>:<span class="cm-string">&quot;2012-03-22T00:00:00&quot;</span>,<span class="cm-string property">&quot;occurences&quot;</span>: <span class="cm-string">&quot;1&quot;</span>},
+    {<span class="cm-string property">&quot;beginDate&quot;</span>:<span class="cm-string">&quot;2014-02-22T00:00:00&quot;</span>, <span class="cm-string property">&quot;endDate&quot;</span>:<span class="cm-string">&quot;2014-03-22T00:00:00&quot;</span>,<span class="cm-string property">&quot;occurences&quot;</span>: <span class="cm-string">&quot;2&quot;</span>}
+  ],
+  <span class="cm-string property">&quot;limitHistory&quot;</span>: [
+    {<span class="cm-string property">&quot;beginDate&quot;</span>:<span class="cm-string">&quot;2011-02-22T00:00:00&quot;</span>, <span class="cm-string property">&quot;endDate&quot;</span>:<span class="cm-string">&quot;2012-03-22T00:00:00&quot;</span>, 
+     <span class="cm-string property">&quot;comparisonOperation&quot;</span>: <span class="cm-string">&quot;&gt; LOW&quot;</span>, <span class="cm-string property">&quot;regLowLimit&quot;</span>: <span class="cm-string">&quot;1&quot;</span>, <span class="cm-string property">&quot;regHighLimit&quot;</span>: <span class="cm-string">&quot;4&quot;</span>}
+  ],
+  <span class="cm-string property">&quot;regulatoryLimit&quot;</span>: {
+    <span class="cm-string property">&quot;templateIdOrName&quot;</span>: <span class="cm-string">&quot;task-template-1&quot;</span>,
+    <span class="cm-string property">&quot;assignor&quot;</span>: <span class="cm-string">&quot;JSmith&quot;</span>,
+    <span class="cm-string property">&quot;assignees&quot;</span>: [ {<span class="cm-string property">&quot;userIdOrName&quot;</span>:<span class="cm-string">&quot;JSmith&quot;</span>}, {<span class="cm-string property">&quot;groupIdOrName&quot;</span> : <span class="cm-string">&quot;Administrators&quot;</span>} ] 
+  },
+  <span class="cm-string property">&quot;notifyRecipients&quot;</span>: {
+     <span class="cm-string property">&quot;recipients&quot;</span>: [{<span class="cm-string property">&quot;userIdOrName&quot;</span>:<span class="cm-string">&quot;BTaylor&quot;</span>}, {<span class="cm-string property">&quot;groupIdOrName&quot;</span> : <span class="cm-string">&quot;Users&quot;</span>}],
+     <span class="cm-string property">&quot;inbox&quot;</span>: <span class="cm-string">&quot;true&quot;</span>,
+     <span class="cm-string property">&quot;email&quot;</span>: <span class="cm-string">&quot;false&quot;</span>
+  }
+  <span class="cm-string">&quot;documents&quot;</span>: [<span class="cm-string">&quot;/Folder A/Document.doc&quot;</span>]
+}</pre></pre></td></tr></table>
+
+<h4 id="patch" data-has-heading-anchor="true">PATCH<a href="/articles/fordevelopers/calculatedreq/a/patch" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/patch&#39;,this);"></a></h4>
+<h5 id="description-2" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/calculatedreq/a/description-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/description-2&#39;,this);"></a></h5>
+
+<p>Updates an existing Calculated Requirement. Updating the collection of history data (Calculation Definition, Expected Frequency History or Limits History) causes merge of old and new collections. Records with the same begin date are updated. Records with different begin dates are inserted. If period is set without any other data, any record that exists with the same period is deleted.</p>
+
+<p>Updating the Custom Field Template of a Requirement object, if that object currently has no Template, adds the Template to the object. When switching from one Template to another Template, those values that belong to fields which are common to both Templates are kept, any values for Fields not in the new Template are removed permanently. Setting the Template to null permanently removes all Custom Field values.</p>
+
+<p><b>SDK API:</b>&nbsp;<code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.requirements.updateRequirement(requirementIdOrPath, reqInfo, onsuccess, onerror)</font></code></p>
+
+<p><b>SDK API:</b>&nbsp;<code class="highlighter-rouge"><font color="#ff0000"><span style="background-color: #f9f2f4;">envianceSdk.requirements.updateRequirementAsync(requirementIdOrPath, reqInfo, onsuccess, onerror)</span></font></code></p>
+
+<h5 id="parameters-2" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/calculatedreq/a/parameters-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/parameters-2&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">requirementIdOrPath</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Either an id string (GUID), or a name string uniquely identifying the Calculated Requirement. Any string that matches the pattern of a GUID is interpreted as the id string, and not the name of the requirement. A name string must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">reqInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A reqInfo structure</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/calculatedreq/a/reqInfo" onclick="return n(&#39;!fordevelopers/calculatedreq/a/reqInfo&#39;,this);">reqInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-2" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/calculatedreq/a/responses-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/responses-2&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">204</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) for the queued command.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">PATCH</span><span class="cm-operator">/</span><span class="cm-variable">RequirementService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">requirements</span><span class="cm-operator">/</span><span class="cm-number">9</span><span class="cm-variable">ca22677</span><span class="cm-operator">-</span><span class="cm-number">2670</span><span class="cm-operator">-</span><span class="cm-number">41</span><span class="cm-variable">a9</span><span class="cm-operator">-</span><span class="cm-variable">bafd</span><span class="cm-operator">-</span><span class="cm-number">3</span><span class="cm-variable">b2825592863</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">UTF</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+
+{
+  <span class="cm-string property">&quot;reqInfo&quot;</span>: {
+    <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Calculated Requirement name&quot;</span>,
+    <span class="cm-string property">&quot;requirementType&quot;</span>: <span class="cm-string">&quot;CalcRequirement&quot;</span>,
+    <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;Requirement description&quot;</span>,
+    <span class="cm-string property">&quot;formulaHistory&quot;</span>: [
+      { <span class="cm-string property">&quot;beginDate&quot;</span>:<span class="cm-string">&quot;2011-02-22T00:00:00&quot;</span>, <span class="cm-string property">&quot;endDate&quot;</span>:<span class="cm-string">&quot;2012-03-22T00:00:00&quot;</span>,
+        <span class="cm-string property">&quot;script&quot;</span>: <span class="cm-string">&quot;[DAYS IN YEAR]+[ParamRequirement1]&quot;</span>, 
+        <span class="cm-string property">&quot;exceptionDivideByZero&quot;</span>: <span class="cm-string">&quot;22&quot;</span>, <span class="cm-string property">&quot;exceptionOverflow&quot;</span>: <span class="cm-string">&quot;54&quot;</span>, <span class="cm-string property">&quot;exceptionOther&quot;</span>: <span class="cm-string">&quot;36&quot;</span>}
+    ],
+    <span class="cm-string property">&quot;calcRequirements&quot;</span>: [     
+       {<span class="cm-string property">&quot;alias&quot;</span>: <span class="cm-string">&quot;[ParamRequirement1]&quot;</span>, <span class="cm-string property">&quot;requirementPath&quot;</span>: <span class="cm-string">&quot;Division Name/Facility Name/ParamRequirement1&quot;</span> }
+    ],
+    <span class="cm-string property">&quot;tagAggregationSettings&quot;</span>: {
+    <span class="cm-string property">&quot;entireSystemModel&quot;</span>: <span class="cm-atom">true</span>,
+    <span class="cm-string property">&quot;specificParentObjectLevel&quot;</span>: <span class="cm-string">&quot;Division&quot;</span>,
+    <span class="cm-string property">&quot;specificObjects&quot;</span>: [
+      <span class="cm-string">&quot;Division Name&quot;</span>
+    ]
+  },
+    <span class="cm-string property">&quot;uom&quot;</span>: <span class="cm-string">&quot;lbs&quot;</span>,
+    <span class="cm-string property">&quot;precision&quot;</span>: <span class="cm-string">&quot;3&quot;</span>,
+    <span class="cm-string property">&quot;calcDescription&quot;</span>: <span class="cm-string">&quot;Description of the purpose of the calculation&quot;</span>,
+    <span class="cm-string property">&quot;limitHistory&quot;</span>: [
+      {<span class="cm-string property">&quot;beginDate&quot;</span>:<span class="cm-string">&quot;2011-02-22T00:00:00&quot;</span>, <span class="cm-string property">&quot;endDate&quot;</span>:<span class="cm-string">&quot;2012-03-22T00:00:00&quot;</span>, 
+       <span class="cm-string property">&quot;comparisonOperation&quot;</span>: <span class="cm-string">&quot;&gt; LOW&quot;</span>, <span class="cm-string property">&quot;regregLowLimit&quot;</span>: <span class="cm-string">&quot;1&quot;</span>, <span class="cm-string property">&quot;regHighLimit&quot;</span>: <span class="cm-string">&quot;4&quot;</span>}
+    ],
+    <span class="cm-string property">&quot;regulatoryLimit&quot;</span>: {
+      <span class="cm-string property">&quot;templateIdOrName&quot;</span>: <span class="cm-string">&quot;task-template-1&quot;</span>,
+      <span class="cm-string property">&quot;assignor&quot;</span>: <span class="cm-string">&quot;JSmith&quot;</span>,
+      <span class="cm-string property">&quot;assignees&quot;</span>: [ {<span class="cm-string property">&quot;userIdOrName&quot;</span>:<span class="cm-string">&quot;JSmith&quot;</span>}, {<span class="cm-string property">&quot;groupIdOrName&quot;</span> : <span class="cm-string">&quot;Administrators&quot;</span>} ] 
+    },
+   <span class="cm-string property">&quot;notifyRecipients&quot;</span>: {
+      <span class="cm-string property">&quot;recipients&quot;</span>: [{<span class="cm-string property">&quot;userIdOrName&quot;</span>:<span class="cm-string">&quot;BTaylor&quot;</span>}, {<span class="cm-string property">&quot;groupIdOrName&quot;</span> : <span class="cm-string">&quot;Users&quot;</span>}],
+      <span class="cm-string property">&quot;inbox&quot;</span>: <span class="cm-string">&quot;true&quot;</span>,
+      <span class="cm-string property">&quot;email&quot;</span>: <span class="cm-string">&quot;false&quot;</span>
+    }
+  }
+}</pre></pre></td></tr></table>
+
+<h4 id="delete" data-has-heading-anchor="true">DELETE<a href="/articles/fordevelopers/calculatedreq/a/delete" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/delete&#39;,this);"></a></h4>
+<h5 id="description-3" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/calculatedreq/a/description-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/description-3&#39;,this);"></a></h5>
+
+<p>Delete Calculated Requirement. <em>Deletions are permanent</em>. If ‘waitForCompletion’ flag is included, transaction will wait until operation is complete; ‘waitForCompletion’ flag is ignored for Async method.</p>
+
+<p><b>SDK API:</b>&nbsp;<code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.requirements.deleteRequirement(requirementIdOrPath, waitForCompletion, onsuccess, onerror)</font></code></p>
+
+<p><b>SDK API:</b>&nbsp;<code class="highlighter-rouge" style="background-color: #f9f2f4;"><font color="#ff0000">envianceSdk.requirements.deleteRequirementAsync(requirementIdOrPath, waitForCompletion, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-3" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/calculatedreq/a/parameters-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/parameters-3&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">requirementIdOrPath</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Either an id string (GUID), or a name string uniquely identifying the Requirement.  Any string that matches the pattern of a GUID is interpreted as the id string, and not the name of the Requirement.  A name string must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-3" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/calculatedreq/a/responses-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/responses-3&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">204</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Calculated Requirement is deleted.</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">DELETE</span><span class="cm-operator">/</span><span class="cm-variable">RequirementService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">requirements</span><span class="cm-operator">/</span><span class="cm-number">7</span><span class="cm-variable">ef9655e</span><span class="cm-operator">-</span><span class="cm-number">916</span><span class="cm-variable">b</span><span class="cm-operator">-</span><span class="cm-number">414</span><span class="cm-variable">f</span><span class="cm-operator">-</span><span class="cm-number">8</span><span class="cm-variable">c88</span><span class="cm-operator">-</span><span class="cm-number">5753</span><span class="cm-variable">fa731558</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table></section><section>
+
+<p id="models"><br/></p><h3 id="models" data-has-heading-anchor="true">Models<a href="/articles/fordevelopers/calculatedreq/a/models" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/models&#39;,this);"></a></h3>
+
+<h4 id="reqcreateinfo" data-has-heading-anchor="true">reqCreateInfo<span id="reqCreateInfo"></span>&nbsp;<a href="/articles/fordevelopers/calculatedreq/a/reqcreateinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/reqcreateinfo&#39;,this);"></a></h4>
+
+<p>Create/Copy Calculated Requirement body</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">reqInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/calculatedreq/a/reqInfo" onclick="return n(&#39;!fordevelopers/calculatedreq/a/reqInfo&#39;,this);">reqInfo</a></td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">copyFrom</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) of an existing Calculated Requirement whose properties will be copied and used as the properties of the newly created Calculated Requirement. Specifying this property allows you to copy an existing Calculated Requirement to another Calculated Requirement. Not required for: Create Calculated Requirement. Ignored for: Copy Calculated Requirement.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="reqinfo" data-has-heading-anchor="true">reqInfo<span id="reqInfo"></span>&nbsp;<a href="/articles/fordevelopers/calculatedreq/a/reqinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/reqinfo&#39;,this);"></a></h4>
+
+<p>Represents a Requirement definition. Used for all numeric requirement types, distinguished by “requirementType” property value: Parameter (ParameterRequirement), Calculated Requirement (CalcRequirement), System Variable (SystemVariable), Time-Based Calculated Requirement (TBRequirement), Count-Based Calculated Requirement (CBCRequirement), Time-Based Aggregation (TBARequirement), Time-Based Subtraction (TBSRequirement), Material Activity Calculated Requirement (MACRequirement). Some properties of this structure are ignored during this operation.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;"><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th><th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th></tr>
+  </thead>
+  <tbody>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) of the Requirement. Ignored for Create Requirement, Update Requirement.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">requirementType</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The type of the Requirement. Value must be “CalcRequirement”. Required for: Create or Copy Requirement. Ignored for: Update Requirement</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The name of the Requirement. Required for: Create Requirement</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">parentIdOrPath</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) or full path for the parent object. Updating the parent path serves to move an existing object to another parent. Required for: Create Requirement</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">activeDate</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">An active date of the Requirement.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">inactiveDate</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">An inactive date of the Requirement.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">description</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">The description of the Requirement.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">responsibleUser</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">A User name.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">templateIdOrName</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">An id string (GUID) or name of a Custom Field Template. Any string that matches the pattern of a GUID is interpreted as an id string, and not a name.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">fieldValues</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/calculatedreq/a/customFieldValue" onclick="return n(&#39;!fordevelopers/calculatedreq/a/customFieldValue&#39;,this);">customFieldValue</a> ]</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of Custom Field values.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">specificCitation</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">A string value of Specific Citation.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">periodFrequency</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">number</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">A numeric value of periodicity.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">periodTime</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">A periodicity times value.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">tagAggregationSettings</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">[tagAggregationSettings]</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">Data for TagAggregation settings used for resolving Tag Aggregation functions in requirement formulas.<br/></td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr><tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">formulaHistory</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/calculatedreq/a/calcDefinition" onclick="return n(&#39;!fordevelopers/calculatedreq/a/calcDefinition&#39;,this);">calcDefinition</a> ]</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">An Array of Calc Definition. Required for: Required for: Create Requirement type Calculated Requirement</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">calcRequirements</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/calculatedreq/a/calcReqMap" onclick="return n(&#39;!fordevelopers/calculatedreq/a/calcReqMap&#39;,this);">calcReqMap</a> ]</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">An Array of Calculated Requirement Map. Required for: Create Requirement type Calculated Requirement</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">uom</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">A string value of UOM.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">precision</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">integer</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">A numeric value from 0 to 15.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">calcDescription</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">Description of the purpose of the calculation</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">frequencies</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/calculatedreq/a/expectedFrequencyHistoryData" onclick="return n(&#39;!fordevelopers/calculatedreq/a/expectedFrequencyHistoryData&#39;,this);">expectedFrequencyHistoryData</a> ]</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">An Array of Expected Frequency History Data.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">limitHistory</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/calculatedreq/a/limitHistoryData" onclick="return n(&#39;!fordevelopers/calculatedreq/a/limitHistoryData&#39;,this);">limitHistoryData</a> ]</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">An Array of Limit History Data.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">regulatoryLimit</td><td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/calculatedreq/a/limitTaskData" onclick="return n(&#39;!fordevelopers/calculatedreq/a/limitTaskData&#39;,this);">limitTaskData</a></td><td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">internalLimit</td><td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/calculatedreq/a/limitTaskData" onclick="return n(&#39;!fordevelopers/calculatedreq/a/limitTaskData&#39;,this);">limitTaskData</a></td><td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">notifyRecipients</td><td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/calculatedreq/a/notifyRecipientsData" onclick="return n(&#39;!fordevelopers/calculatedreq/a/notifyRecipientsData&#39;,this);">notifyRecipientsData</a></td><td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+    <tr><td style="border-width: 1px; border-style: solid; border-color: #000000;">documents</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/calculatedreq/a/docPath" onclick="return n(&#39;!fordevelopers/calculatedreq/a/docPath&#39;,this);">docPath</a> ]</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">An Array of Document paths, specifying zero or more Documents which are or should be attached to the object.</td><td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td></tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default">{  
+  <span class="cm-string property">&quot;id&quot;</span>: <span class="cm-string">&quot;9ca22677-2670-41a9-bafd-3b2825592863&quot;</span>,
+  <span class="cm-string property">&quot;requirementType&quot;</span>: <span class="cm-string">&quot;CalcRequirement&quot;</span>,
+  <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Calc Requirement Name&quot;</span>,
+  <span class="cm-string property">&quot;parentIdOrPath&quot;</span>: <span class="cm-string">&quot;Manufacturing Division/Toys/&quot;</span>,
+  <span class="cm-string property">&quot;activeDate&quot;</span>: <span class="cm-string">&quot;2010-02-22T00:00:00&quot;</span>,
+  <span class="cm-string property">&quot;inactiveDate&quot;</span>: <span class="cm-string">&quot;2016-02-22T00:00:00&quot;</span>,
+  <span class="cm-string property">&quot;responsibleUser&quot;</span>: <span class="cm-string">&quot;JSmith&quot;</span>,
+  <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;Requirement Description&quot;</span>,
+  <span class="cm-string property">&quot;requirementTemplateIdOrName&quot;</span>: <span class="cm-string">&quot;Requirement Template 1&quot;</span>,
+  <span class="cm-string property">&quot;fieldValues&quot;</span>: [
+    {<span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Aspect&quot;</span>,
+     <span class="cm-string property">&quot;values&quot;</span>: [<span class="cm-string">&quot;Air&quot;</span>]},
+    {<span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Start Date&quot;</span>,
+     <span class="cm-string property">&quot;values&quot;</span>: [<span class="cm-string">&quot;2012-09-19T20:00&quot;</span>]}],
+  <span class="cm-string property">&quot;specificCitation&quot;</span>: <span class="cm-string">&quot;cit1&quot;</span>,
+  <span class="cm-string property">&quot;periodFrequency&quot;</span>: <span class="cm-string">&quot;3&quot;</span>,
+  <span class="cm-string property">&quot;periodTime&quot;</span>: <span class="cm-string">&quot;Hour&quot;</span>,
+  <span class="cm-string property">&quot;tagAggregationSettings&quot;</span>: {
+      <span class="cm-string property">&quot;entireSystemModel&quot;</span>: <span class="cm-atom">true</span>,
+      <span class="cm-string property">&quot;specificParentObjectLevel&quot;</span>: <span class="cm-string">&quot;Division&quot;</span>,
+      <span class="cm-string property">&quot;specificObjects&quot;</span>: [
+        <span class="cm-string">&quot;Manufacturing Division&quot;</span>
+      ]
+    },
+  <span class="cm-string property">&quot;formulaHistory&quot;</span>: [
+   { <span class="cm-string property">&quot;beginDate&quot;</span>:<span class="cm-string">&quot;2011-02-22T00:00:00&quot;</span>, <span class="cm-string property">&quot;endDate&quot;</span>:<span class="cm-string">&quot;2012-03-22T00:00:00&quot;</span>,
+     <span class="cm-string property">&quot;script&quot;</span>: <span class="cm-string">&quot;[DAYS IN YEAR]+[ParamRequirement1]&quot;</span>, 
+     <span class="cm-string property">&quot;exceptionDivideByZero&quot;</span>: <span class="cm-string">&quot;12&quot;</span>, <span class="cm-string property">&quot;exceptionOverflow&quot;</span>: <span class="cm-string">&quot;34&quot;</span>, <span class="cm-string property">&quot;exceptionOther&quot;</span>: <span class="cm-string">&quot;56&quot;</span>},
+   { <span class="cm-string property">&quot;beginDate&quot;</span>:<span class="cm-string">&quot;2014-02-22T00:00:00&quot;</span>, <span class="cm-string property">&quot;endDate&quot;</span>:<span class="cm-string">&quot;2014-03-22T00:00:00&quot;</span>,
+     <span class="cm-string property">&quot;script&quot;</span>: <span class="cm-string">&quot;1+[MACRequirement1]&quot;</span>, 
+     <span class="cm-string property">&quot;exceptionDivideByZero&quot;</span>: <span class="cm-string">&quot;12&quot;</span>, <span class="cm-string property">&quot;exceptionOverflow&quot;</span>: <span class="cm-string">&quot;34&quot;</span>, <span class="cm-string property">&quot;exceptionOther&quot;</span>: <span class="cm-string">&quot;56&quot;</span>}
+  ],
+  <span class="cm-string property">&quot;calcRequirements&quot;</span>: [
+    {<span class="cm-string property">&quot;alias&quot;</span>: <span class="cm-string">&quot;[ParamRequirement1]&quot;</span>, <span class="cm-string property">&quot;requirementPath&quot;</span>: <span class="cm-string">&quot;Division Name/Facility Name/ParamRequirement1&quot;</span> },
+    {<span class="cm-string property">&quot;alias&quot;</span>: <span class="cm-string">&quot;[MACRequirement1]&quot;</span>, <span class="cm-string property">&quot;requirementPath&quot;</span>: <span class="cm-string">&quot;Division Name/Facility Name/MACRequirement1&quot;</span> }
+  ],
+  <span class="cm-string property">&quot;uom&quot;</span>: <span class="cm-string">&quot;lbs&quot;</span>,
+  <span class="cm-string property">&quot;precision&quot;</span>: <span class="cm-string">&quot;2&quot;</span>,
+  <span class="cm-string property">&quot;calcDescription&quot;</span>: <span class="cm-string">&quot;Description of the purpose of the calculation&quot;</span>,
+  <span class="cm-string property">&quot;frequencies&quot;</span>:  [
+    { <span class="cm-string property">&quot;beginDate&quot;</span>:<span class="cm-string">&quot;2011-02-22T00:00:00&quot;</span>, <span class="cm-string property">&quot;endDate&quot;</span>:<span class="cm-string">&quot;2012-03-22T00:00:00&quot;</span>,<span class="cm-string property">&quot;occurences&quot;</span>: <span class="cm-string">&quot;1&quot;</span>},
+    { <span class="cm-string property">&quot;beginDate&quot;</span>:<span class="cm-string">&quot;2014-02-22T00:00:00&quot;</span>, <span class="cm-string property">&quot;endDate&quot;</span>:<span class="cm-string">&quot;2014-03-22T00:00:00&quot;</span>,<span class="cm-string property">&quot;occurences&quot;</span>: <span class="cm-string">&quot;2&quot;</span>}
+  ],
+  <span class="cm-string property">&quot;limitHistory&quot;</span>: [
+    {<span class="cm-string property">&quot;beginDate&quot;</span>:<span class="cm-string">&quot;2011-02-22T00:00:00&quot;</span>, <span class="cm-string property">&quot;endDate&quot;</span>:<span class="cm-string">&quot;2012-03-22T00:00:00&quot;</span>, 
+     <span class="cm-string property">&quot;comparisonOperation&quot;</span>: <span class="cm-string">&quot;&gt; LOW&quot;</span>, <span class="cm-string property">&quot;regregLowLimit&quot;</span>: <span class="cm-string">&quot;1&quot;</span>, <span class="cm-string property">&quot;regHighLimit&quot;</span>: <span class="cm-string">&quot;4&quot;</span>}
+  ],
+  <span class="cm-string property">&quot;regulatoryLimit&quot;</span>: {
+    <span class="cm-string property">&quot;templateIdOrName&quot;</span>: <span class="cm-string">&quot;task-template-1&quot;</span>,
+    <span class="cm-string property">&quot;assignor&quot;</span>: <span class="cm-string">&quot;JSmith&quot;</span>,
+    <span class="cm-string property">&quot;assignees&quot;</span>: [ {<span class="cm-string property">&quot;userIdOrName&quot;</span>:<span class="cm-string">&quot;JSmith&quot;</span>}, {<span class="cm-string property">&quot;groupIdOrName&quot;</span> : <span class="cm-string">&quot;Administrators&quot;</span>}] 
+  },
+  <span class="cm-string property">&quot;notifyRecipients&quot;</span>: {
+       <span class="cm-string property">&quot;recipients&quot;</span>: [{<span class="cm-string property">&quot;userIdOrName&quot;</span>:<span class="cm-string">&quot;BTaylor&quot;</span>}, {<span class="cm-string property">&quot;groupIdOrName&quot;</span> : <span class="cm-string">&quot;Users&quot;</span>}],
+       <span class="cm-string property">&quot;inbox&quot;</span>: <span class="cm-string">&quot;true&quot;</span>,
+       <span class="cm-string property">&quot;email&quot;</span>: <span class="cm-string">&quot;false&quot;</span>
+   },
+  <span class="cm-string property">&quot;documents&quot;</span>: [<span class="cm-string">&quot;/Folder A/Document.doc&quot;</span>]
+}</pre></pre></td></tr></table>
+
+<h4 id="calcdefinition" data-has-heading-anchor="true">calcDefinition<span id="calcDefinition"></span>&nbsp;<a href="/articles/fordevelopers/calculatedreq/a/calcdefinition" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/calcdefinition&#39;,this);"></a></h4>
+
+<p>Represents a Calculation definition.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">beginDate</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A DateTime value representing begin date for the Item.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">endDate</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A DateTime value representing end date for the Item.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Script</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Calculation Definition formula text for Calculated Requirement.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ExceptionDivideByZero</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">float</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Float value of Calculation Error Handling for Divide by Zero exception.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ExceptionOverflow</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">float</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Float value of Calculation Error Handling for Overflow exception.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ExceptionOther</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">float</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Float value of Calculation Error Handling for Other exception.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default">{  
+  <span class="cm-string property">&quot;beginDate&quot;</span>: <span class="cm-string">&quot;2012-01-01T23:35&quot;</span>,
+  <span class="cm-string property">&quot;endDate&quot;</span>: <span class="cm-string">&quot;2013-01-01T23:35&quot;</span>,
+  <span class="cm-string property">&quot;Script&quot;</span>: <span class="cm-string">&quot;[DAYS IN YEAR]+10&quot;</span>,
+  <span class="cm-string property">&quot;exceptionDivideByZero&quot;</span>: <span class="cm-string">&quot;1&quot;</span>, 
+  <span class="cm-string property">&quot;exceptionOverflow&quot;</span>: <span class="cm-string">&quot;2&quot;</span>, 
+  <span class="cm-string property">&quot;exceptionOther&quot;</span>: <span class="cm-string">&quot;3&quot;</span>
+}</pre></pre></td></tr></table></section><section><h4 id="calcreqmap" data-has-heading-anchor="true">calcReqMap<span id="calcReqMap"></span>&nbsp;<a href="/articles/fordevelopers/calculatedreq/a/calcreqmap" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/calcreqmap&#39;,this);"></a></h4>
+
+<p>Represents a Calculation requirement Map. Describes a requirement that is used in Calculation Definition Script.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">alias</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A string value, representing requirement alias used in Calculation Definition Script.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">requirementPath</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The full path for the requirement object used in Calculation Definition Script.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default">{
+   <span class="cm-string property">&quot;alias&quot;</span>: <span class="cm-string">&quot;Requirement1&quot;</span>,
+   <span class="cm-string property">&quot;requirementPath&quot;</span>: <span class="cm-string">&quot;Division Name/Facility Name/Requirement1&quot;</span>
+}</pre></pre></td></tr></table>
+
+<h4 id="customfieldvalue" data-has-heading-anchor="true">customFieldValue<span id="customFieldValue"></span>&nbsp;<a href="/articles/fordevelopers/calculatedreq/a/customfieldvalue" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/customfieldvalue&#39;,this);"></a></h4>
+
+<p>A set of one or more values for a Custom Field, identified by name.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The name (NOT caption) of the Custom Field.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">values</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ string ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An Array with one or more string values, representing the values (one or more) for the Custom Field.  Note that even non-string simple values are encoded as strings for custom fields, and are parsed and validated on the server according to the Custom Field type.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">// Scalar value</span>
+{<span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Aspect&quot;</span>, <span class="cm-string property">&quot;values&quot;</span>: [<span class="cm-string">&quot;Air pollution control&quot;</span>]}
+
+<span class="cm-comment">// Scalar date/time value</span>
+{<span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Start Date&quot;</span>, <span class="cm-string property">&quot;values&quot;</span>: [<span class="cm-string">&quot;2012-09-19T20:00&quot;</span>]}
+
+<span class="cm-comment">// Multi-select values</span>
+{<span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Type&quot;</span>, <span class="cm-string property">&quot;values&quot;</span>: [<span class="cm-string">&quot;Spill&quot;</span>, <span class="cm-string">&quot;Near Miss&quot;</span>]}
+
+<span class="cm-comment">// Linked-list values</span>
+{<span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Category&quot;</span>, <span class="cm-string property">&quot;values&quot;</span>: [<span class="cm-string">&quot;Cat1&quot;</span>, <span class="cm-string">&quot;Cat1.1&quot;</span>, <span class="cm-string">&quot;Cat1.1.1&quot;</span>]}
+
+<span class="cm-comment">// Hyperlink values</span>
+{<span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Google&quot;</span>, <span class="cm-string property">&quot;values&quot;</span>: [{ <span class="cm-string property">&quot;label&quot;</span>: <span class="cm-string">&quot;Google&quot;</span>: <span class="cm-string">&quot;url&quot;</span>: <span class="cm-string">&quot;http://www.google.com&quot;</span>]} }</pre></pre></td></tr></table>
+
+<h4 id="expectedfrequencyhistorydata" data-has-heading-anchor="true">expectedFrequencyHistoryData<span id="expectedFrequencyHistoryData"></span>&nbsp;<a href="/articles/fordevelopers/calculatedreq/a/expectedfrequencyhistorydata" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/expectedfrequencyhistorydata&#39;,this);"></a></h4>
+
+<p>Represents the definition for an expected data frequency.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">beginDate</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A DateTime value representing begin date for the Item.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">endDate</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A DateTime value representing end date for the Item.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">occurences</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">integer</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A numeric value from 1 to 1440</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default">{  
+  <span class="cm-string property">&quot;beginDate&quot;</span>: <span class="cm-string">&quot;2012-01-01T23:35&quot;</span>,
+  <span class="cm-string property">&quot;endDate&quot;</span>: <span class="cm-string">&quot;2013-01-01T23:35&quot;</span>,
+  <span class="cm-string property">&quot;occurences&quot;</span>: <span class="cm-string">&quot;1&quot;</span>
+}</pre></pre></td></tr></table><br/></section><section><h4 id="limithistorydata" data-has-heading-anchor="true">limitHistoryData<span id="limitHistoryData"></span>&nbsp;<a href="/articles/fordevelopers/calculatedreq/a/limithistorydata" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/limithistorydata&#39;,this);"></a></h4>
+
+<p>Represents a Limits History Data definition.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">beginDate</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A DateTime value representing begin date for the Item.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">endDate</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A DateTime value representing end date for the Item.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">comparisonOperation</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A Comparison value of Limits.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">lowLimit</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">number</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A low value for Regulatory Limit.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">highLimit</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">number</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A high value for Regulatory Limit.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">intLowLimit</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">number</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A low value for Internal Limit.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">intHighLimit</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">number</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A high value for Internal Limit.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default">{  
+  <span class="cm-string property">&quot;beginDate&quot;</span>: <span class="cm-string">&quot;2012-01-01T23:35&quot;</span>,
+  <span class="cm-string property">&quot;endDate&quot;</span>: <span class="cm-string">&quot;2013-01-01T23:35&quot;</span>,
+  <span class="cm-string property">&quot;comparisonOperation&quot;</span>: <span class="cm-string">&quot;&gt; LOW&quot;</span>,
+  <span class="cm-string property">&quot;regregLowLimit&quot;</span>: <span class="cm-string">&quot;1&quot;</span>, 
+  <span class="cm-string property">&quot;reghighLimit&quot;</span>: <span class="cm-string">&quot;4&quot;</span>,
+  <span class="cm-string property">&quot;intregLowLimit&quot;</span>: <span class="cm-string">&quot;2&quot;</span>, 
+  <span class="cm-string property">&quot;intHighLimit&quot;</span>: <span class="cm-string">&quot;5&quot;</span>
+}</pre></pre></td></tr></table>
+
+<h4 id="limittaskdata" data-has-heading-anchor="true">limitTaskData<span id="limitTaskData"></span>&nbsp;<a href="/articles/fordevelopers/calculatedreq/a/limittaskdata" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/limittaskdata&#39;,this);"></a></h4>
+
+<p>Represents the definition for a task associated with a Limit.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">templateIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An id string (GUID) or name of a Task Template. Any string that matches the pattern of a GUID is interpreted as an id string, and not a name.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">assignor</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A string value for User id or Name of Task assignor.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">assignees</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ object ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A list of assignees (User name and/or Group id or name) to which the Task should be assigned.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default">{
+  <span class="cm-string property">&quot;templateIdOrName&quot;</span>: <span class="cm-string">&quot;task-template-m-1&quot;</span>,
+  <span class="cm-string property">&quot;assignor&quot;</span>: <span class="cm-string">&quot;BTaylor&quot;</span>,
+  <span class="cm-string property">&quot;assignees&quot;</span>: [ 
+    {<span class="cm-string property">&quot;userIdOrName&quot;</span>:<span class="cm-string">&quot;JSmith&quot;</span>, <span class="cm-string property">&quot;userIdOrName&quot;</span>:<span class="cm-string">&quot;9ca22677-2670-41a9-bafd-3b2825592863&quot;</span>}, 
+    {<span class="cm-string property">&quot;groupIdOrName&quot;</span>: <span class="cm-string">&quot;Administrators&quot;</span>} 
+    ]
+}</pre></pre></td></tr></table><br/></section><section><h4 id="notifyrecipientsdata" data-has-heading-anchor="true">notifyRecipientsData<span id="notifyRecipientsData"></span>&nbsp;<a href="/articles/fordevelopers/calculatedreq/a/notifyrecipientsdata" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/notifyrecipientsdata&#39;,this);"></a></h4>
+
+<p>Data for recipients of notifications</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">recipients</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ object ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A list of recipients (User name and/or Group id or name) to whom the notification should be sent.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">inbox</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">boolean</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A Boolean value. “True” if notification should be sent to Enviance Inbox. Default value is “False”.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">email</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">boolean</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A Boolean value. “True” if notification should be sent by Email. Default value is “False”.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default">{  
+   <span class="cm-string property">&quot;recipients&quot;</span>: [{<span class="cm-string property">&quot;userIdOrName&quot;</span>:<span class="cm-string">&quot;JSmith&quot;</span>}, {<span class="cm-string property">&quot;groupIdOrName&quot;</span> : <span class="cm-string">&quot;Administrators&quot;</span>}],
+   <span class="cm-string property">&quot;inbox&quot;</span>: <span class="cm-atom">true</span>,
+   <span class="cm-string property">&quot;email&quot;</span>: <span class="cm-atom">true</span>
+}</pre></pre></td></tr></table>
+
+<h4 id="docpath" data-has-heading-anchor="true">tagAggregationSettings<a href="/articles/fordevelopers/calculatedreq/a/docpath" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/docpath&#39;,this);"></a></h4><p>Data for TagAggregation settings used for resolving Tag Aggregation functions in requirement formulas.</p><p></p></section><table cellspacing="0" cellpadding="4" style="border: 1px none #000000; width: 616px;"><thead><tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;"><th style="border: 1px solid #000000;"><font color="#ffffff">Name</font></th><th style="border: 1px solid #000000;"><font color="#ffffff">Type</font></th><th style="border: 1px solid #000000;"><font color="#ffffff">Description</font></th><th style="border: 1px solid #000000;"><font color="#ffffff">Required</font></th></tr></thead><tbody><tr><td style="border: 1px solid #000000;">entireSystemModel</td><td style="border: 1px solid #000000;">boolean</td><td style="border: 1px solid #000000;">A Boolean value. "True" if used entire system for resolving Tag Aggregation functions in requirement formulas.&nbsp;</td><td style="border: 1px solid #000000;">No</td></tr><tr><td style="border: 1px solid #000000;">specificParentObjectLevel&nbsp;</td><td style="border: 1px solid #000000;">string</td><td style="border: 1px solid #000000;">Settings for filtering resolving tag aggregation with by location level of current requirement.&nbsp;</td><td style="border: 1px solid #000000;">No</td></tr><tr><td style="border: 1px solid #000000;">specificObjects&nbsp;</td><td style="border: 1px solid #000000;">[string]</td><td style="border: 1px solid #000000;">An array of Compliance Model object (locations) id strings (GUIDs) or paths, specifying zero or more objects to which filtering resolving tag aggregation with by specific location.&nbsp;</td><td style="border: 1px solid #000000;">No</td></tr></tbody></table><p><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-string">&quot;tagAggregationSettings&quot;</span>: {
+    <span class="cm-string property">&quot;entireSystemModel&quot;</span>: <span class="cm-atom">true</span>,
+    <span class="cm-string property">&quot;specificParentObjectLevel&quot;</span>: <span class="cm-string">&quot;Unit&quot;</span>,
+    <span class="cm-string property">&quot;specificObjects&quot;</span>: [
+        <span class="cm-string">&quot;DivisionA/Facility B/Unit 1&quot;</span>,
+		<span class="cm-string">&quot;2F24A2A7-6EDE-4628-8B6A-0A01E49C590C&quot;</span>
+      ]
+    }</pre></pre></td></tr></table><br/></p><p></p><section><h4 id="docpath" data-has-heading-anchor="true"><br/>docPath<span id="docPath"></span>&nbsp;<a href="/articles/fordevelopers/calculatedreq/a/docpath" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/calculatedreq/a/docpath&#39;,this);"></a></h4>
+
+<p>The hierarchical path to an object as represented by the folder structure in the UI, beginning with a single forward slash and with elements separated by a single forward slash “/”. Does not include the System name or the container object (Locations &amp; Programs, Documents, etc).</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">docPath</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The hierarchical path to an object as represented by the folder structure in the UI, beginning with a single forward slash and with elements separated by a single forward slash “/”. Does not include the System name or the container object (Locations &amp; Programs, Documents, etc).</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-string">&quot;/DivisionA/Facility B/Unit 1/POI Z/Requirement 23&quot;</span>
+
+<span class="cm-string">&quot;/Folder 1/Folder 2/Document.doc&quot;</span>
+
+<span class="cm-string">&quot;/&quot;</span></pre></pre></td></tr></table><br/></section>
+    <br/><p></p><p></p><p><br/></p><p><br/></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

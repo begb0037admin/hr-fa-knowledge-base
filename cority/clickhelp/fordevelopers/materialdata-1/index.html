@@ -1,0 +1,617 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/materialdata-1"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Material Data Entry APIs and Data Types</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Material Data Entry APIs and Data Types';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><p>
+	</p><p><span class="Note">For the most up to date API documentation, please see the&nbsp;</span><a href="https://api.enviance.com/swagger.svc/index.html?url=/Swagger.svc/swagger.json#/MaterialData" target="_blank" class="Note">Material Data API Documentation on Swagger</a><span class="Note">.</span><br/></p><nav>
+  
+    
+  
+</nav>
+
+    <section>
+    <h1 id="material-data-entry-apis-and-data-types" data-has-heading-anchor="true">Material Data Entry APIs and Data Types<a href="/articles/fordevelopers/materialdata-1/a/material-data-entry-apis-and-data-types" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/material-data-entry-apis-and-data-types&#39;,this);"></a></h1>
+<h2 id="version-2" data-has-heading-anchor="true">Version: 2<a href="/articles/fordevelopers/materialdata-1/a/version-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/version-2&#39;,this);"></a></h2>
+
+<p><br/></p><p><strong>License:</strong> <a href="http://www.enviance.com" target="_top">Enviance, Inc.</a></p>
+
+<h3 id="materialdataenterdatacommands"><br/></h3><h3 id="materialdataenterdatacommands" data-has-heading-anchor="true">/materialdata/enterdatacommands/<a href="/articles/fordevelopers/materialdata-1/a/materialdataenterdatacommands" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/materialdataenterdatacommands&#39;,this);"></a></h3>
+
+<h4 id="post" data-has-heading-anchor="true">POST<a href="/articles/fordevelopers/materialdata-1/a/post" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/post&#39;,this);"></a></h4>
+<h5 id="description" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/materialdata-1/a/description" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/description&#39;,this);"></a></h5>
+
+<p>Processes a set of one or more Material Data Line Groups.</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.materialData.enterMaterialData (mdlGroupsInfo, partialProcess, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/materialdata-1/a/parameters" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/parameters&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">enterMdlData</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Wrapper for body parameters for entering mdl data.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/materialdata-1/a/entermdldata" onclick="return n(&#39;!fordevelopers/materialdata-1/a/entermdldata&#39;,this);">enterMdlData</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/materialdata-1/a/responses" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/responses&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id for the queued command</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">POST</span> <span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">UTF</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+{
+  <span class="cm-string property">&quot;parentIdOrPathOrUniqueTag&quot;</span>: <span class="cm-string">&quot;/Division for MDLG/FAC for MDLG&quot;</span>,
+  <span class="cm-string property">&quot;activityIdOrNameOrUniqueTag&quot;</span>: <span class="cm-string">&quot;Activity for MDLG&quot;</span>,
+  <span class="cm-string property">&quot;complete&quot;</span>: <span class="cm-string">&quot;2015-05-29T00:00:00&quot;</span>,
+  <span class="cm-string property">&quot;collector&quot;</span>: <span class="cm-string">&quot;Create MdlG-Happy path&quot;</span>,
+  <span class="cm-string property">&quot;dataLines&quot;</span>: [{
+    <span class="cm-string property">&quot;materialIdOrNameOrUniqueTag&quot;</span>: <span class="cm-string">&quot;Material 1 for MDLG&quot;</span>,
+    <span class="cm-string property">&quot;startTime&quot;</span>: <span class="cm-string">&quot;2015-05-27T00:00:00&quot;</span>,
+    <span class="cm-string property">&quot;endTime&quot;</span>: <span class="cm-string">&quot;2015-05-28T00:00:00&quot;</span>,
+    <span class="cm-string property">&quot;data&quot;</span>: [
+      {<span class="cm-string property">&quot;propertyIdOrNameOrUniqueTag&quot;</span>: <span class="cm-string">&quot;SUV10&quot;</span>, <span class="cm-string property">&quot;value&quot;</span>: <span class="cm-string">&quot;1&quot;</span> },
+      {<span class="cm-string property">&quot;propertyIdOrNameOrUniqueTag&quot;</span>: <span class="cm-string">&quot;SUV11&quot;</span>, <span class="cm-string property">&quot;value&quot;</span>: <span class="cm-string">&quot;2&quot;</span> }]
+   }]
+}</pre></pre></td></tr></table></section><section>
+
+<h3 id="materialdataactivityidornameoruniquetagbegincompletebeginendcompleteendlocationidorpathoruniquetag"><br/></h3><h3 id="materialdataactivityidornameoruniquetagbegincompletebeginendcompleteendlocationidorpathoruniquetag" data-has-heading-anchor="true">/materialdata/{activityIdOrNameOrUniqueTag}/begin/{completeBegin}/end/{completeEnd}/{locationIdOrPathOrUniqueTag}<a href="/articles/fordevelopers/materialdata-1/a/materialdataactivityidornameoruniquetagbegincompletebeginendcompleteendlocationidorpathoruniquetag" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/materialdataactivityidornameoruniquetagbegincompletebeginendcompleteendlocationidorpathoruniquetag&#39;,this);"></a></h3>
+
+<h4 id="get" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/materialdata-1/a/get" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/get&#39;,this);"></a></h4>
+<h5 id="description-1" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/materialdata-1/a/description-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/description-1&#39;,this);"></a></h5>
+
+<p>Gets information about Material Data Line Groups.</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.materialData.getMaterialData (activityIdOrNameOrUniqueTag, completeBegin, completeEnd, locationIdOrPathOrUniqueTag, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-1" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/materialdata-1/a/parameters-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/parameters-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">activityIdOrNameOrUniqueTag</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Either an id string (GUID) or name or unique tag of the Activity. A name string must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">completeBegin</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Begin range date and time value for MDLGroup.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">completeEnd</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">End range date and time value for MDLGroup. Parameter completeDate uniquely identifies an MDLGroup in a MAC.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">locationIdOrPathOrUniqueTag</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Either an id string (GUID) or path string or unique tag for the object. A path string must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-1" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/materialdata-1/a/responses-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/responses-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of mdlGroupInfo structure.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/materialdata-1/a/mdlgroupinfo" onclick="return n(&#39;!fordevelopers/materialdata-1/a/mdlgroupinfo&#39;,this);">mdlGroupInfo</a></td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">GET</span>
+{ <span class="cm-string property">&quot;activityIdOrNameOrUniqueTag&quot;</span>:<span class="cm-string">&quot;Activity for MDLG&quot;</span>,
+ <span class="cm-string property">&quot;completeBegin&quot;</span>: <span class="cm-string">&quot;2015-05-29T00:00:00&quot;</span>,
+ <span class="cm-string property">&quot;completeEnd&quot;</span>: <span class="cm-string">&quot;2015-05-29T00:00:00&quot;</span>,
+}</pre></pre></td></tr></table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//RESPONSE</span>
+{
+ <span class="cm-string property">&quot;id&quot;</span>:<span class="cm-string">&quot;5fa61746-e98c-4510-83d1-b999107bff73&quot;</span>,
+ <span class="cm-string property">&quot;parentIdOrPathOrUniqueTag&quot;</span>:<span class="cm-string">&quot;/Division for MDLG/FAC for MDLG&quot;</span>,
+ <span class="cm-string property">&quot;activityIdOrNameOrUniqueTag&quot;</span>:<span class="cm-string">&quot;Activity for MDLG&quot;</span>,
+ <span class="cm-string property">&quot;complete&quot;</span>:<span class="cm-string">&quot;2015-05-29T00:00:00&quot;</span>,
+ <span class="cm-string property">&quot;collector&quot;</span>:<span class="cm-string">&quot;Create MdlG-Happy path&quot;</span>, 
+ <span class="cm-string property">&quot;dataLines&quot;</span>:[{
+   <span class="cm-string property">&quot;materialIdOrNameOrUniqueTag&quot;</span>:<span class="cm-string">&quot;Material 1 for MDLG&quot;</span>,
+   <span class="cm-string property">&quot;mdlGroupId&quot;</span>:<span class="cm-string">&quot;5fa61746-e98c-4510-83d1-b999107bff73&quot;</span>,
+   <span class="cm-string property">&quot;startTime&quot;</span>:<span class="cm-string">&quot;2015-05-27T00:00:00&quot;</span>,
+   <span class="cm-string property">&quot;endTime&quot;</span>:<span class="cm-string">&quot;2015-05-28T00:00:00&quot;</span>,
+   <span class="cm-string property">&quot;data&quot;</span>:[{
+     <span class="cm-string property">&quot;dataLineId&quot;</span>:<span class="cm-string">&quot;f749ffc1-d41c-4d17-9f0a-0a1514466cf5&quot;</span>,
+       <span class="cm-string property">&quot;propertyIdOrNameOrUniqueTag&quot;</span>:<span class="cm-string">&quot;SUV11&quot;</span>,<span class="cm-string property">&quot;value&quot;</span>:<span class="cm-number">2.0</span>
+     },
+     {
+      <span class="cm-string property">&quot;dataLineId&quot;</span>:<span class="cm-string">&quot;f749ffc1-d41c-4d17-9f0a-0a1514466cf5&quot;</span>,
+      <span class="cm-string property">&quot;propertyIdOrNameOrUniqueTag&quot;</span>:<span class="cm-string">&quot;SUV10&quot;</span>,<span class="cm-string property">&quot;value&quot;</span>:<span class="cm-number">1.0</span>
+     }
+   ]}
+ ]
+}</pre></pre></td></tr></table></section><section>
+
+<h3 id="materialdatadeletedatacommandslocationidorpathoruniquetag"><br/></h3><h3 id="materialdatadeletedatacommandslocationidorpathoruniquetag" data-has-heading-anchor="true">/materialdata/deletedatacommands/{locationIdOrPathOrUniqueTag}<a href="/articles/fordevelopers/materialdata-1/a/materialdatadeletedatacommandslocationidorpathoruniquetag" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/materialdatadeletedatacommandslocationidorpathoruniquetag&#39;,this);"></a></h3>
+
+<h4 id="delete" data-has-heading-anchor="true">POST<a href="/articles/fordevelopers/materialdata-1/a/delete" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/delete&#39;,this);"></a></h4>
+<h5 id="description-2" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/materialdata-1/a/description-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/description-2&#39;,this);"></a></h5>
+
+<p>Deletes all MDLGroups for a set of one or more Ids. Deleting MDLGroups is an asynchronous process. Upon successfully receiving and queueing the data, a command id is returned. With this command id, the Get Command API can be used to track completion or failure of the data entry command. Deletions are <em>permanent</em>.</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.materialData.deleteMaterialData (locationIdOrPathOrUniqueTag, mdlGroupIds, waitForCompletion, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-2" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/materialdata-1/a/parameters-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/parameters-2&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">locationIdOrPathOrUniqueTag</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Either an id string (GUID) or the path or unique tag string for the object. A path string must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">deleteMdlData</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Wrapper for body parameters for deleting mdl data.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/materialdata-1/a/deletemdldata" onclick="return n(&#39;!fordevelopers/materialdata-1/a/deletemdldata&#39;,this);">deleteMdlData</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-2" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/materialdata-1/a/responses-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/responses-2&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Ok</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">POST</span> <span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">UTF</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+{
+ <span class="cm-string property">&quot;6B6BB16B-C207-416C-B818-1DB075AA453C&quot;</span>,
+ <span class="cm-string property">&quot;004D8F0D-C03A-4A65-BFD1-3CFFDDF99569&quot;</span>]
+}</pre></pre></td></tr></table></section><section>
+
+<h3 id="materialdataupload"><br/></h3><h3 id="materialdataupload" data-has-heading-anchor="true">/materialdata/upload<a href="/articles/fordevelopers/materialdata-1/a/materialdataupload" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/materialdataupload&#39;,this);"></a></h3>
+
+<h4 id="post-1" data-has-heading-anchor="true">POST<a href="/articles/fordevelopers/materialdata-1/a/post-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/post-1&#39;,this);"></a></h4>
+<h5 id="description-3" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/materialdata-1/a/description-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/description-3&#39;,this);"></a></h5>
+
+<p>Upload Excel template in binary format for creating new MDLGroup. First parameter pass HttpFileInput html control. Use first input control on Rest API Test Tool to specify .xls-file to upload file and specify its id in parameter: ‘fileinput1’.</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.materialData.uploadMaterialData (fileinput, objectIdOrPathOrUniqueTag, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-3" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/materialdata-1/a/parameters-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/parameters-3&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">objectIdOrPathOrUniqueTag</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Id or path or unique tag an object in the Compliance Model to which the MAC is associated.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/materialdata-1/a/mdlgroupuploadinfo" onclick="return n(&#39;!fordevelopers/materialdata-1/a/mdlgroupuploadinfo&#39;,this);">mdlGroupUploadInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-3" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/materialdata-1/a/responses-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/responses-3&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id for the queued command.</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">POST</span> <span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">UTF</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+{
+ <span class="cm-string property">&quot;activityIdOrNameOrUniqueTag&quot;</span>:<span class="cm-string">&quot;Activity for MDLG&quot;</span>,
+ <span class="cm-string property">&quot;completeBegin&quot;</span>: <span class="cm-string">&quot;2015-05-29T00:00:00&quot;</span>,
+ <span class="cm-string property">&quot;completeEnd&quot;</span>: <span class="cm-string">&quot;2015-05-29T00:00:00&quot;</span>,
+ <span class="cm-string property">&quot;ObjectIdOrPathOrUniqueTag&quot;</span>:<span class="cm-string">&quot;/Division for MDLG/FAC for MDLG&quot;</span>
+}</pre></pre></td></tr></table></section><section>
+
+<h3 id="materialdatagettemplatecontentactivityidorname"><br/></h3><h3 id="materialdatagettemplatecontentactivityidorname" data-has-heading-anchor="true">/materialdata/gettemplate/content/{activityIdOrName}<a href="/articles/fordevelopers/materialdata-1/a/materialdatagettemplatecontentactivityidorname" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/materialdatagettemplatecontentactivityidorname&#39;,this);"></a></h3>
+
+<h4 id="get-1" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/materialdata-1/a/get-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/get-1&#39;,this);"></a></h4>
+<h5 id="description-4" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/materialdata-1/a/description-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/description-4&#39;,this);"></a></h5>
+
+<p>Gets Excel Template with information about a set of one or more MDLGroups in MAC.</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.materialData.downloadMaterialData (options, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-4" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/materialdata-1/a/parameters-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/parameters-4&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">activityIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Either an id string (GUID) or name of the Activity. A name string must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">completeBegin</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">query</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Begin range date and time value for MDLGroup.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">completeEnd</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">query</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">End range date and time value for MDLGroup. Parameter completeDate uniquely identifies an MDLGroup in a MAC.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">objectIdOrPath</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">query</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Either an id string (GUID) or path string for the object. A path string must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-4" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/materialdata-1/a/responses-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/responses-4&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">204</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">ok</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="models"><br/></h3><h3 id="models" data-has-heading-anchor="true">Models<a href="/articles/fordevelopers/materialdata-1/a/models" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/models&#39;,this);"></a></h3>
+
+<h4 id="entermdldata" data-has-heading-anchor="true">enterMdlData<span id="enterMdlData"></span>&nbsp;<a href="/articles/fordevelopers/materialdata-1/a/entermdldata" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/entermdldata&#39;,this);"></a></h4>
+
+<p>Wrapper for enter mdl data body parameters</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">mdlGroupsInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/materialdata-1/a/mdlgroupinfo" onclick="return n(&#39;!fordevelopers/materialdata-1/a/mdlgroupinfo&#39;,this);">mdlGroupInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of mdlGroupsInfo instances.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">partialProcess</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">boolean</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Parameter for setting the validation mode (true=partial, false=full]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="deletemdldata" data-has-heading-anchor="true">deleteMdlData<span id="deleteMdlData"></span>&nbsp;<a href="/articles/fordevelopers/materialdata-1/a/deletemdldata" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/deletemdldata&#39;,this);"></a></h4>
+
+<p>Delete mdl data body parameters</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">mdlGroupIds</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ string ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of MDLGroup ids (GUIDs)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">waitForCompletion</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">boolean</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">True/false indicator, whether system should wait for processing to complete before returning response.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="mdlgroupinfo" data-has-heading-anchor="true">mdlGroupInfo<span id="mdlGroupInfo"></span>&nbsp;<a href="/articles/fordevelopers/materialdata-1/a/mdlgroupinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/mdlgroupinfo&#39;,this);"></a></h4>
+
+<p>A numeric measurement for a single MDLGroup with set of Data Lines. MDLGroup tied to the location, activity and a single date and time.</p>
+
+<table cellspacing="0" cellpadding="5" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">parentIdOrPathOrUniqueTag</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Either an id string (GUID) or path string for the object or Unique Tag. A path string must be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">activityIdOrNameOrUniqueTag</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An id string (GUID) or name of the Activity or Unique Tag.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">complete</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A date and time value, complete is uniquely identifying an MDLGroup in the MAC.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">collector</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Name of user entering data.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dataLines</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/materialdata-1/a/materialdatalinesinfo" onclick="return n(&#39;!fordevelopers/materialdata-1/a/materialdatalinesinfo&#39;,this);">materialDataLinesInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of materialDataLines.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="materialdatalinesinfo" data-has-heading-anchor="true">materialDataLinesInfo<span id="materialDataLinesInfo"></span>&nbsp;<a href="/articles/fordevelopers/materialdata-1/a/materialdatalinesinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/materialdatalinesinfo&#39;,this);"></a></h4>
+
+<p>A set of one or more values for a MDLGroup tied to the material.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">startTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A DateTime value, represent begin date for the Data Line.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">endTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A DateTime value, represent end date for the Data Line.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">data</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/materialdata-1/a/materialdatalinevalueinfo" onclick="return n(&#39;!fordevelopers/materialdata-1/a/materialdatalinevalueinfo&#39;,this);">materialDataLineValueInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of Data Line Values</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="materialdatalinevalueinfo" data-has-heading-anchor="true">materialDataLineValueInfo<span id="materialDataLineValueInfo"></span>&nbsp;<a href="/articles/fordevelopers/materialdata-1/a/materialdatalinevalueinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/materialdatalinevalueinfo&#39;,this);"></a></h4>
+
+<p>A set of one or more values for a Specific Use Variables, identified by name. SUV’s tied to the one of Activities from MAC.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">propertyIdOrNameOrUniqueTag</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The name (not caption) of the SUV or Unique Tag</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">value</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">number</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A floating point numeric value. Both standard and scientific notation are valid formats.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="mdlgroupuploadinfo" data-has-heading-anchor="true">mdlGroupUploadInfo<span id="mdlGroupUploadInfo"></span>&nbsp;<a href="/articles/fordevelopers/materialdata-1/a/mdlgroupuploadinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/materialdata-1/a/mdlgroupuploadinfo&#39;,this);"></a></h4>
+
+<p>Information about a set of one or more MDLGroups in MAC Requirement.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">activityIdOrNameOrUniqueTag</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Either an id string (GUID), or a name string uniquely identifying the material Activity.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The name of ?.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">description</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">File description</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">content</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The content of the Excel Template, Base64 encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">filename</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The name of the Excel Template file.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">mimeType</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Mime type of the file</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">objectIdOrPath</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An id string (GUID) or a path string uniquely identifying an object in the Compliance Model to which the MAC is associated.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+    </section>
+    <br/><p><br/></p><p><br/></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/reports"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Report APIs and Data Types</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Report APIs and Data Types';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><span class="Note">For the most up to date API documentation, please see the&nbsp;</span><a href="https://api.enviance.com/swagger.svc/index.html?url=/Swagger.svc/swagger.json#/Report" target="_blank" class="Note">Report API Documentation on Swagger</a><span class="Note">.</span><p>
+	</p><nav>
+  
+    
+  
+    
+  
+</nav>
+
+    <section>
+    <h1 id="report-apis-and-data-types" data-has-heading-anchor="true">Report APIs and Data Types<a href="/articles/fordevelopers/reports/a/report-apis-and-data-types" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/reports/a/report-apis-and-data-types&#39;,this);"></a></h1>
+<h2 id="version" data-has-heading-anchor="true">Version:<a href="/articles/fordevelopers/reports/a/version" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/reports/a/version&#39;,this);"></a></h2>
+
+<p><strong>License:</strong> <a href="http://www.enviance.com" target="_top">Enviance, Inc.</a></p>
+
+<h3 id="executereportcommands"><br/></h3><h3 id="executereportcommands" data-has-heading-anchor="true">/executereportcommands<a href="/articles/fordevelopers/reports/a/executereportcommands" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/reports/a/executereportcommands&#39;,this);"></a></h3>
+
+<h4 id="post" data-has-heading-anchor="true">POST<a href="/articles/fordevelopers/reports/a/post" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/reports/a/post&#39;,this);"></a></h4>
+<h5 id="description" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/reports/a/description" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/reports/a/description&#39;,this);"></a></h5>
+
+<p>Executes an AdHoc Report configured in the System. Custom Reports are not supported (use EQL instead). Executing Reports is an asynchronous process. Upon successfully receiving and queueing the data, a command id is returned. With this command id, the Get Command API can be used to track completion or failure of the data entry command. To download the result of the Report execution, execute a GET request with the URI value in the result property of the CommandInfo structure that is returned.</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.reports.execute (reportExecutionInfo, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/reports/a/parameters" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/reports/a/parameters&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">reportExecutionInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An instance of the ReportExecutionInfo structure.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/reports/a/reportexecutioninfo" onclick="return n(&#39;!fordevelopers/reports/a/reportexecutioninfo&#39;,this);">reportExecutionInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/reports/a/responses" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/reports/a/responses&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) for the queued command.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">POST</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">ReportService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">reports</span><span class="cm-operator">/</span><span class="cm-variable">executereportcommands</span><span class="cm-operator">/</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">UTF</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+ 
+{
+  <span class="cm-string property">&quot;reportExecutionInfo&quot;</span>: {
+    <span class="cm-string property">&quot;report&quot;</span>: <span class="cm-string">&quot;/A Folder/A SubFolder/A Report&quot;</span>,
+    <span class="cm-string property">&quot;from&quot;</span>: <span class="cm-string">&quot;2012-02-01T00:00:00&quot;</span>,
+    <span class="cm-string property">&quot;to&quot;</span>: <span class="cm-string">&quot;2012-02-10T00:00:00&quot;</span>,
+    <span class="cm-string property">&quot;format&quot;</span>: <span class="cm-string">&quot;html&quot;</span>,
+    <span class="cm-string property">&quot;parameters&quot;</span>: {
+      <span class="cm-string property">&quot;objects&quot;</span>: [<span class="cm-string">&quot;/Division X/Facility 1&quot;</span>, <span class="cm-string">&quot;52fbb610-0fa5-4873-9f2b-53cdb0bb00f2&quot;</span>]
+    }
+  }
+}</pre></pre></td></tr></table>
+
+<h3 id="models"><br/></h3><h3 id="models" data-has-heading-anchor="true">Models<a href="/articles/fordevelopers/reports/a/models" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/reports/a/models&#39;,this);"></a></h3>
+
+<h4 id="reportexecutioninfo" data-has-heading-anchor="true">reportExecutionInfo<span id="reportExecutionInfo"></span>&nbsp;<a href="/articles/fordevelopers/reports/a/reportexecutioninfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/reports/a/reportexecutioninfo&#39;,this);"></a></h4>
+
+<p>If no filter criteria are specified (values for “from”, “to”, or “parameters”), the Report will be executed with its default filter criteria (as it has been configured in the Management System), as opposed to without any filter criteria at all. However, if any filter value is specified, then the default criteria will not be used. All parameters are ignored for Reports that do not support them.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">reportIdOrPath</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) or path of the Report. Any string that matches the pattern of a GUID is interpreted as the id string, and not the path. A path string should be URL encoded.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">from</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The optional date and time that will be used as the start of the report date range filtering. The Time Zone used for this value, and the field to which it applies, depends upon the Report being executed.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">to</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The optional date and time that will be used as the end of the report date range filtering. The Time Zone used for this value, and the field to which it applies, depends upon the Report being executed.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">format</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Report output format.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">parameters</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/reports/a/reportruntimeparameters" onclick="return n(&#39;!fordevelopers/reports/a/reportruntimeparameters&#39;,this);">reportRuntimeParameters</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A dictionary of arbitrary JSON values that will be matched to available runtime Report parameters, if any.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default">{
+  <span class="cm-string property">&quot;report&quot;</span>: <span class="cm-string">&quot;/A Folder/A SubFolder/A Report&quot;</span>,
+  <span class="cm-string property">&quot;from&quot;</span>: <span class="cm-string">&quot;2012-02-01T00:00:00&quot;</span>,
+  <span class="cm-string property">&quot;to&quot;</span>: <span class="cm-string">&quot;2012-02-10T00:00:00&quot;</span>,
+  <span class="cm-string property">&quot;format&quot;</span>: <span class="cm-string">&quot;html&quot;</span>,
+  <span class="cm-string property">&quot;parameters&quot;</span>: {
+    <span class="cm-string property">&quot;objects&quot;</span>: [<span class="cm-string">&quot;/Division X/Facility 1&quot;</span>, <span class="cm-string">&quot;52fbb610-0fa5-4873-9f2b-53cdb0bb00f2&quot;</span>]
+  }
+}
+</pre></pre></td></tr></table>
+
+<h4 id="reportruntimeparameters" data-has-heading-anchor="true">reportRuntimeParameters<span id="reportRuntimeParameters"></span>&nbsp;<a href="/articles/fordevelopers/reports/a/reportruntimeparameters" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/reports/a/reportruntimeparameters&#39;,this);"></a></h4>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">objects</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An optional array of Compliance Model object id strings (GUIDs) or paths, specifying zero or more Objects to use for Location filtering during Report execution. Any string that matches the pattern of a GUID is interpreted as an id string, and not a path. Values specified here are used even if the Report does not have the option to “Include Object selector on Run Report page” enabled.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">filterBy</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Used for Workflow Reports only. The valid values are “due date” and “creation date”.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+    </section>
+    <br/><p><br/></p><p><br/></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

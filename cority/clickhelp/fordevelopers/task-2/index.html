@@ -1,0 +1,1357 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/task-2"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Task APIs and Data Types</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Task APIs and Data Types';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><span class="Note">For the most up to date API documentation, please see the&nbsp;</span><a href="https://api.enviance.com/swagger.svc/index.html?url=/Swagger.svc/swagger.json#/Task" target="_blank" class="Note">Task API Documentation on Swagger</a><span class="Note">.</span><p>
+	</p><nav>
+  
+    
+  
+    
+  
+</nav>
+
+    <section>
+    <h1 id="task-apis-and-data-types" data-has-heading-anchor="true">Task APIs and Data Types<a href="/articles/fordevelopers/task-2/a/task-apis-and-data-types" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/task-apis-and-data-types&#39;,this);"></a></h1>
+<h2 id="version-2" data-has-heading-anchor="true">Version: 2<a href="/articles/fordevelopers/task-2/a/version-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/version-2&#39;,this);"></a></h2>
+
+<p><strong>License:</strong> <a href="http://www.enviance.com" target="_top">Enviance, Inc.</a></p>
+
+<h3 id="tasks" data-has-heading-anchor="true">/tasks<a href="/articles/fordevelopers/task-2/a/tasks" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/tasks&#39;,this);"></a></h3>
+
+<h4 id="post" data-has-heading-anchor="true">POST<a href="/articles/fordevelopers/task-2/a/post" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/post&#39;,this);"></a></h4>
+<h5 id="description" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/task-2/a/description" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/description&#39;,this);"></a></h5>
+
+<p>Creates a new simple (single occurrence) Task definition, optionally copying the definition from another Task to the new Task.</p>
+
+<p><strong>Security:</strong> Requires Manage Tasks right.</p>
+
+<p><strong>SDK API (create):</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.tasks.createTask(taskInfo, onsuccess, onerror)</font></code></p>
+
+<p><strong>SDK API (copy):</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.tasks.copyTask(taskInfo, copyFrom, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/task-2/a/parameters" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/parameters&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">taskCreateInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Task Create body parameters</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/task-2/a/taskcreateinfo" onclick="return n(&#39;!fordevelopers/task-2/a/taskcreateinfo&#39;,this);">taskCreateInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/task-2/a/responses" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/responses&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) for the newly created Task.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">POST</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">TaskService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">tasks</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">UTF</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+ 
+{
+  <span class="cm-string property">&quot;taskInfo&quot;</span>: {
+    <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Check Valves Monthly&quot;</span>,
+    <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;Perform a spot check every month on the steam valves.&quot;</span>,
+    <span class="cm-string property">&quot;dueDate&quot;</span>: <span class="cm-string">&quot;2012-12-08T09:00:00&quot;</span>,
+    <span class="cm-string property">&quot;timeZone&quot;</span>: <span class="cm-string">&quot;USA Pacific&quot;</span>,
+    <span class="cm-string property">&quot;assignor&quot;</span>: <span class="cm-string">&quot;CGauss&quot;</span>,
+    <span class="cm-string property">&quot;assignees&quot;</span>: [{<span class="cm-string property">&quot;userName&quot;</span>: <span class="cm-string">&quot;LEuler&quot;</span>}, {<span class="cm-string property">&quot;groupName&quot;</span>: <span class="cm-string">&quot;Group A&quot;</span>}],
+    <span class="cm-string property">&quot;calendars&quot;</span>: [<span class="cm-string">&quot;System&quot;</span>, <span class="cm-string">&quot;My&quot;</span>],
+    <span class="cm-string property">&quot;objects&quot;</span>: [
+      <span class="cm-string">&quot;/A Facility/A Unit/A POI/Check Valves&quot;</span>,
+      <span class="cm-string">&quot;/A Facility/A Unit/B POI/Check Valves&quot;</span>
+    ],
+    <span class="cm-string property">&quot;documents&quot;</span>: [<span class="cm-string">&quot;/A folder/A subfolder/A document.doc&quot;</span>]
+  }
+}</pre></pre></td></tr></table>
+
+<h3 id="taskstaskid"><br/></h3><h3 id="taskstaskid" data-has-heading-anchor="true">/tasks/{taskId}<a href="/articles/fordevelopers/task-2/a/taskstaskid" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/taskstaskid&#39;,this);"></a></h3>
+
+<h4 id="patch" data-has-heading-anchor="true">PATCH<a href="/articles/fordevelopers/task-2/a/patch" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/patch&#39;,this);"></a></h4>
+<h5 id="description-1" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/task-2/a/description-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/description-1&#39;,this);"></a></h5>
+
+<p>Updates the properties of a simple (single occurrence) Task definition, potentially moving it to a new Location. Updating the object Location(s) of a Task effectively moves that Task to the new Location(s).</p>
+
+<p><strong>Security:</strong> Requires Manage Tasks right.</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.tasks.updateTask(taskId, taskInfo, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-1" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/task-2/a/parameters-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/parameters-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">taskId</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) for an existing Task.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">taskInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A taskInfo structure.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/task-2/a/taskinfo" onclick="return n(&#39;!fordevelopers/task-2/a/taskinfo&#39;,this);">taskInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-1" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/task-2/a/responses-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/responses-1&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Task updated.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">PATCH</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">TaskService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">tasks</span><span class="cm-operator">/</span><span class="cm-number">9</span><span class="cm-variable">ca22677</span><span class="cm-operator">-</span><span class="cm-number">2670</span><span class="cm-operator">-</span><span class="cm-number">41</span><span class="cm-variable">a9</span><span class="cm-operator">-</span><span class="cm-variable">bafd</span><span class="cm-operator">-</span><span class="cm-number">3</span><span class="cm-variable">b2825592863</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span>
+<span class="cm-variable">Content</span><span class="cm-operator">-</span><span class="cm-variable">Type</span>: <span class="cm-variable">application</span><span class="cm-operator">/</span><span class="cm-variable">json</span>; <span class="cm-variable">charset</span><span class="cm-operator">=</span><span class="cm-variable">UTF</span><span class="cm-operator">-</span><span class="cm-number">8</span>
+ 
+{
+  <span class="cm-string property">&quot;taskInfo&quot;</span>: {
+    <span class="cm-string property">&quot;name&quot;</span>: <span class="cm-string">&quot;Check Valves Monthly&quot;</span>,
+    <span class="cm-string property">&quot;description&quot;</span>: <span class="cm-string">&quot;Perform a spot check every month on the steam valves.&quot;</span>,
+    <span class="cm-string property">&quot;dueDate&quot;</span>: <span class="cm-string">&quot;2012-12-08T09:00:00&quot;</span>,
+    <span class="cm-string property">&quot;timeZone&quot;</span>: <span class="cm-string">&quot;USA Pacific&quot;</span>,
+    <span class="cm-string property">&quot;objects&quot;</span>: [
+      <span class="cm-string">&quot;/A Facility/A Unit/A POI/Check Valves&quot;</span>,
+      <span class="cm-string">&quot;/A Facility/A Unit/B POI/Check Valves&quot;</span>,
+      <span class="cm-string">&quot;/A Facility/A Unit/C POI/Check Valves&quot;</span>
+    ]
+  }
+}</pre></pre></td></tr></table>
+
+<h4 id="get" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/task-2/a/get" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/get&#39;,this);"></a></h4>
+<h5 id="description-2" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/task-2/a/description-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/description-2&#39;,this);"></a></h5>
+
+<p>Gets information about an existing Task definition. Though it can be used to retrieve information about single occurrence or recurring Tasks, this API currently does not provide information about the notification or scheduling setup of the Task. For details of a particular Task occurrence on a given date and time, use getTaskOccurrence.</p>
+
+<p><strong>Security:</strong> Requires Manage Tasks right.</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.tasks.getTask(taskId, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-2" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/task-2/a/parameters-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/parameters-2&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">taskId</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) for an existing Task.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-2" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/task-2/a/responses-2" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/responses-2&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An instance of the taskInfo structure.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/task-2/a/taskinfo" onclick="return n(&#39;!fordevelopers/task-2/a/taskinfo&#39;,this);">taskInfo</a></td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">GET</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">TaskService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">tasks</span><span class="cm-operator">/</span><span class="cm-number">9</span><span class="cm-variable">ca22677</span><span class="cm-operator">-</span><span class="cm-number">2670</span><span class="cm-operator">-</span><span class="cm-number">41</span><span class="cm-variable">a9</span><span class="cm-operator">-</span><span class="cm-variable">bafd</span><span class="cm-operator">-</span><span class="cm-number">3</span><span class="cm-variable">b2825592863</span><span class="cm-operator">/</span><span class="cm-variable">occurrences</span><span class="cm-operator">/</span><span class="cm-number">2012</span><span class="cm-operator">-</span><span class="cm-number">12</span><span class="cm-operator">-</span><span class="cm-number">08</span><span class="cm-variable">T11</span><span class="cm-operator">%</span><span class="cm-number">3</span><span class="cm-variable">A00</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//RESPONSE</span>
+[
+  {
+    <span class="cm-string property">&quot;statusChangeDate&quot;</span>: <span class="cm-string">&quot;2012-12-10T08:00:00&quot;</span>,
+    <span class="cm-string property">&quot;object&quot;</span>: <span class="cm-string">&quot;/A Facility/A Unit/A POI/Check Valves&quot;</span>,
+    <span class="cm-string property">&quot;dismissed&quot;</span>: <span class="cm-atom">false</span>,
+    <span class="cm-string property">&quot;percentComplete&quot;</span>: <span class="cm-number">90</span>,
+    <span class="cm-string property">&quot;hoursToComplete&quot;</span>: <span class="cm-number">5.5</span>,
+    <span class="cm-string property">&quot;costToComplete&quot;</span>: <span class="cm-number">0.0</span>,
+    <span class="cm-string property">&quot;comment&quot;</span>: <span class="cm-string">&quot;Done!&quot;</span>
+  },
+  {
+    <span class="cm-string property">&quot;statusChangeDate&quot;</span>: <span class="cm-string">&quot;2012-12-10T08:00:00&quot;</span>,
+    <span class="cm-string property">&quot;object&quot;</span>: <span class="cm-string">&quot;/A Facility/A Unit/B POI/Check Valves&quot;</span>,
+    <span class="cm-string property">&quot;dismissed&quot;</span>: <span class="cm-atom">false</span>,
+    <span class="cm-string property">&quot;percentComplete&quot;</span>: <span class="cm-number">80</span>,
+    <span class="cm-string property">&quot;hoursToComplete&quot;</span>: <span class="cm-number">0.0</span>,
+    <span class="cm-string property">&quot;costToComplete&quot;</span>: <span class="cm-number">0.0</span>,
+    <span class="cm-string property">&quot;comment&quot;</span>: <span class="cm-string">&quot;Done!&quot;</span>
+  }
+]</pre></pre></td></tr></table><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//Example (Object Specific)</span>
+<span class="cm-variable">GET</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">TaskService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">tasks</span><span class="cm-operator">/</span><span class="cm-number">9</span><span class="cm-variable">ca22677</span><span class="cm-operator">-</span><span class="cm-number">2670</span><span class="cm-operator">-</span><span class="cm-number">41</span><span class="cm-variable">a9</span><span class="cm-operator">-</span><span class="cm-variable">bafd</span><span class="cm-operator">-</span><span class="cm-number">3</span><span class="cm-variable">b2825592863</span><span class="cm-operator">/</span><span class="cm-variable">occurrences</span><span class="cm-operator">/</span><span class="cm-number">2012</span><span class="cm-operator">-</span><span class="cm-number">12</span><span class="cm-operator">-</span><span class="cm-number">08</span><span class="cm-variable">T11</span><span class="cm-operator">%</span><span class="cm-number">3</span><span class="cm-variable">A00</span><span class="cm-operator">/</span><span class="cm-operator">%</span><span class="cm-number">2</span><span class="cm-variable">FA</span><span class="cm-operator">%</span><span class="cm-number">20</span><span class="cm-variable">Facility</span><span class="cm-operator">%</span><span class="cm-number">2</span><span class="cm-variable">FA</span><span class="cm-operator">%</span><span class="cm-number">20</span><span class="cm-variable">Unit</span><span class="cm-operator">%</span><span class="cm-number">2</span><span class="cm-variable">FA</span><span class="cm-operator">%</span><span class="cm-number">20</span><span class="cm-variable">POI</span><span class="cm-operator">%</span><span class="cm-number">2</span><span class="cm-variable">FCheck</span><span class="cm-operator">%</span><span class="cm-number">20</span><span class="cm-variable">Valves</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//RESPONSE</span>
+[
+  {
+    <span class="cm-string property">&quot;statusChangeDate&quot;</span>: <span class="cm-string">&quot;2012-12-10T08:00:00&quot;</span>,
+    <span class="cm-string property">&quot;object&quot;</span>: <span class="cm-string">&quot;/A Facility/A Unit/A POI/Check Valves&quot;</span>,
+    <span class="cm-string property">&quot;dismissed&quot;</span>: <span class="cm-atom">false</span>,
+    <span class="cm-string property">&quot;percentComplete&quot;</span>: <span class="cm-number">90</span>,
+    <span class="cm-string property">&quot;hoursToComplete&quot;</span>: <span class="cm-number">5.5</span>,
+    <span class="cm-string property">&quot;costToComplete&quot;</span>: <span class="cm-number">0.0</span>,
+    <span class="cm-string property">&quot;comment&quot;</span>: <span class="cm-string">&quot;Done!&quot;</span>
+  }
+]</pre></pre></td></tr></table>
+
+<h4 id="delete" data-has-heading-anchor="true">DELETE<a href="/articles/fordevelopers/task-2/a/delete" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/delete&#39;,this);"></a></h4>
+<h5 id="description-3" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/task-2/a/description-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/description-3&#39;,this);"></a></h5>
+
+<p>Deletes an existing Task definition.</p>
+
+<p><strong>Security:</strong> Requires Manage Tasks right.</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.tasks.deleteTask(taskId, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-3" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/task-2/a/parameters-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/parameters-3&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">taskId</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) for an existing Task.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-3" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/task-2/a/responses-3" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/responses-3&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">204</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Task deleted</td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">DELETE</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">TaskService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">tasks</span><span class="cm-operator">/</span><span class="cm-number">8</span><span class="cm-variable">b1c7e91</span><span class="cm-operator">-</span><span class="cm-number">330e-4208</span><span class="cm-operator">-</span><span class="cm-variable">a38c</span><span class="cm-operator">-</span><span class="cm-number">96872</span><span class="cm-variable">ebe53ba</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table>
+
+<h3 id="taskstaskidoccurrencesduedateobjectidorpath"><br/></h3><h3 id="taskstaskidoccurrencesduedateobjectidorpath" data-has-heading-anchor="true">/tasks/{taskId}/occurrences/{dueDate}/{objectIdOrPath}<a href="/articles/fordevelopers/task-2/a/taskstaskidoccurrencesduedateobjectidorpath" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/taskstaskidoccurrencesduedateobjectidorpath&#39;,this);"></a></h3>
+
+<h4 id="get-1" data-has-heading-anchor="true">GET<a href="/articles/fordevelopers/task-2/a/get-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/get-1&#39;,this);"></a></h4>
+<h5 id="description-4" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/task-2/a/description-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/description-4&#39;,this);"></a></h5>
+
+<p>Gets information about a Task occurrence.</p>
+
+<p><strong>Security:</strong> Requires Manage Tasks right.</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.tasks.getTaskOccurrence(taskId, dueDate, objectIdOrPath, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-4" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/task-2/a/parameters-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/parameters-4&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">taskId</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) for an existing Task.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dueDate</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The date and time when the Task occurrence is due, in Task time zone.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">objectIdOrPath</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An optional object specifier, as an id string (GUID), or a path string uniquely identifying an object in the Compliance Model to which the Task is associated.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-4" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/task-2/a/responses-4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/responses-4&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of taskOccurrenceInfo structures, one for each object to which the Task is associated. When an object id or path is specified, the array contains a single taskOccurrenceInfo for the specified object. Otherwise one taskOccurrenceInfo for each associated object is returned.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/task-2/a/taskoccurrenceinfo" onclick="return n(&#39;!fordevelopers/task-2/a/taskoccurrenceinfo&#39;,this);">taskOccurrenceInfo</a></td>
+    </tr>
+  </tbody>
+</table></section><section><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-variable">GET</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">TaskService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">tasks</span><span class="cm-operator">/</span><span class="cm-number">9</span><span class="cm-variable">ca22677</span><span class="cm-operator">-</span><span class="cm-number">2670</span><span class="cm-operator">-</span><span class="cm-number">41</span><span class="cm-variable">a9</span><span class="cm-operator">-</span><span class="cm-variable">bafd</span><span class="cm-operator">-</span><span class="cm-number">3</span><span class="cm-variable">b2825592863</span><span class="cm-operator">/</span><span class="cm-variable">occurrences</span><span class="cm-operator">/</span><span class="cm-number">2012</span><span class="cm-operator">-</span><span class="cm-number">12</span><span class="cm-operator">-</span><span class="cm-number">08</span><span class="cm-variable">T11</span><span class="cm-operator">%</span><span class="cm-number">3</span><span class="cm-variable">A00</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//RESPONSE</span>
+[
+  {
+    <span class="cm-string property">&quot;statusChangeDate&quot;</span>: <span class="cm-string">&quot;2012-12-10T08:00:00&quot;</span>,
+    <span class="cm-string property">&quot;object&quot;</span>: <span class="cm-string">&quot;/A Facility/A Unit/A POI/Check Valves&quot;</span>,
+    <span class="cm-string property">&quot;dismissed&quot;</span>: <span class="cm-atom">false</span>,
+    <span class="cm-string property">&quot;percentComplete&quot;</span>: <span class="cm-number">90</span>,
+    <span class="cm-string property">&quot;hoursToComplete&quot;</span>: <span class="cm-number">5.5</span>,
+    <span class="cm-string property">&quot;costToComplete&quot;</span>: <span class="cm-number">0.0</span>,
+    <span class="cm-string property">&quot;comment&quot;</span>: <span class="cm-string">&quot;Done!&quot;</span>
+  },
+  {
+    <span class="cm-string property">&quot;statusChangeDate&quot;</span>: <span class="cm-string">&quot;2012-12-10T08:00:00&quot;</span>,
+    <span class="cm-string property">&quot;object&quot;</span>: <span class="cm-string">&quot;/A Facility/A Unit/B POI/Check Valves&quot;</span>,
+    <span class="cm-string property">&quot;dismissed&quot;</span>: <span class="cm-atom">false</span>,
+    <span class="cm-string property">&quot;percentComplete&quot;</span>: <span class="cm-number">80</span>,
+    <span class="cm-string property">&quot;hoursToComplete&quot;</span>: <span class="cm-number">0.0</span>,
+    <span class="cm-string property">&quot;costToComplete&quot;</span>: <span class="cm-number">0.0</span>,
+    <span class="cm-string property">&quot;comment&quot;</span>: <span class="cm-string">&quot;Done!&quot;</span>
+  }
+]</pre></pre></td></tr></table><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//Example (Object Specific)</span>
+<span class="cm-variable">GET</span> <span class="cm-operator">/</span><span class="cm-variable">ver2</span><span class="cm-operator">/</span><span class="cm-variable">TaskService</span>.<span class="cm-property">svc</span><span class="cm-operator">/</span><span class="cm-variable">tasks</span><span class="cm-operator">/</span><span class="cm-number">9</span><span class="cm-variable">ca22677</span><span class="cm-operator">-</span><span class="cm-number">2670</span><span class="cm-operator">-</span><span class="cm-number">41</span><span class="cm-variable">a9</span><span class="cm-operator">-</span><span class="cm-variable">bafd</span><span class="cm-operator">-</span><span class="cm-number">3</span><span class="cm-variable">b2825592863</span><span class="cm-operator">/</span><span class="cm-variable">occurrences</span><span class="cm-operator">/</span><span class="cm-number">2012</span><span class="cm-operator">-</span><span class="cm-number">12</span><span class="cm-operator">-</span><span class="cm-number">08</span><span class="cm-variable">T11</span><span class="cm-operator">%</span><span class="cm-number">3</span><span class="cm-variable">A00</span><span class="cm-operator">/</span><span class="cm-operator">%</span><span class="cm-number">2</span><span class="cm-variable">FA</span><span class="cm-operator">%</span><span class="cm-number">20</span><span class="cm-variable">Facility</span><span class="cm-operator">%</span><span class="cm-number">2</span><span class="cm-variable">FA</span><span class="cm-operator">%</span><span class="cm-number">20</span><span class="cm-variable">Unit</span><span class="cm-operator">%</span><span class="cm-number">2</span><span class="cm-variable">FA</span><span class="cm-operator">%</span><span class="cm-number">20</span><span class="cm-variable">POI</span><span class="cm-operator">%</span><span class="cm-number">2</span><span class="cm-variable">FCheck</span><span class="cm-operator">%</span><span class="cm-number">20</span><span class="cm-variable">Valves</span> <span class="cm-variable">HTTP</span><span class="cm-operator">/</span><span class="cm-number">1.1</span></pre></pre></td></tr></table><table class="CHCodeSample_container notranslate" cellspacing="0" cellpadding="0"><tr class="CHCodeSample_tr1"><td class="CHCodeSample_header"><div class="CHCodeSample_copyCode nonPrintable"><a onclick="copyCodeSample(this)" href="javascript:void(0)">Copy Code</a></div><div class="CHCodeSample_langName notranslate">JSON</div></td></tr><tr class="CHCodeSample_tr2"><td class="CHCodeSample_code notranslate cm-s-default"><pre><pre class="cm-s-default"><span class="cm-comment">//RESPONSE</span>
+[
+  {
+    <span class="cm-string property">&quot;statusChangeDate&quot;</span>: <span class="cm-string">&quot;2012-12-10T08:00:00&quot;</span>,
+    <span class="cm-string property">&quot;object&quot;</span>: <span class="cm-string">&quot;/A Facility/A Unit/A POI/Check Valves&quot;</span>,
+    <span class="cm-string property">&quot;dismissed&quot;</span>: <span class="cm-atom">false</span>,
+    <span class="cm-string property">&quot;percentComplete&quot;</span>: <span class="cm-number">90</span>,
+    <span class="cm-string property">&quot;hoursToComplete&quot;</span>: <span class="cm-number">5.5</span>,
+    <span class="cm-string property">&quot;costToComplete&quot;</span>: <span class="cm-number">0.0</span>,
+    <span class="cm-string property">&quot;comment&quot;</span>: <span class="cm-string">&quot;Done!&quot;</span>
+  }
+]</pre></pre></td></tr></table>
+
+<h4 id="patch-1" data-has-heading-anchor="true">PATCH<a href="/articles/fordevelopers/task-2/a/patch-1" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/patch-1&#39;,this);"></a></h4>
+<h5 id="description-5" data-has-heading-anchor="true">Description:<a href="/articles/fordevelopers/task-2/a/description-5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/description-5&#39;,this);"></a></h5>
+
+<p>Updates the status of a Task occurrence (on a given date and time). The Task occurrence may also be dismissed.</p>
+
+<p><strong>Security:</strong> Requires Manage Tasks right.</p>
+
+<p><strong>SDK API:</strong>  <code class="highlighter-rouge"><font color="#ff0000" style="background-color: #f9f2f4;">envianceSdk.tasks.completeTaskOccurrence(taskId, dueDate, objectIdOrPath, taskOccurrenceInfos, onsuccess, onerror)</font></code></p>
+
+<h5 id="parameters-5" data-has-heading-anchor="true">Parameters<a href="/articles/fordevelopers/task-2/a/parameters-5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/parameters-5&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Located in</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">taskId</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) for an existing Task.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dueDate</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The date and time when the Task occurrence is due, in Task time zone.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">objectIdOrPath</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">path</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An optional object specifier, as an id string (GUID), or a path string uniquely identifying an object in the Compliance Model to which the Task is associated.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">taskOccurrenceInfos</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">body</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of taskOccurenceInfo structures.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/task-2/a/taskoccurrenceinfo" onclick="return n(&#39;!fordevelopers/task-2/a/taskoccurrenceinfo&#39;,this);">taskOccurrenceInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="responses-5" data-has-heading-anchor="true">Responses<a href="/articles/fordevelopers/task-2/a/responses-5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/responses-5&#39;,this);"></a></h5>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Code</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Schema</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">200</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/task-2/a/taskoccurrenceinfo" onclick="return n(&#39;!fordevelopers/task-2/a/taskoccurrenceinfo&#39;,this);">taskOccurrenceInfo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="models"><br/></h3><h3 id="models" data-has-heading-anchor="true">Models<a href="/articles/fordevelopers/task-2/a/models" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/models&#39;,this);"></a></h3>
+
+<h4 id="taskcreateinfo" data-has-heading-anchor="true">taskCreateInfo<span id="taskCreateInfo"></span>&nbsp;<a href="/articles/fordevelopers/task-2/a/taskcreateinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/taskcreateinfo&#39;,this);"></a></h4>
+
+<p>CreateCopy Task info</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">taskInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/task-2/a/taskinfo" onclick="return n(&#39;!fordevelopers/task-2/a/taskinfo&#39;,this);">taskInfo</a></td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">copyFrom</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) of an existing Task whose properties will be copied and used as the properties of the newly created Task.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="taskinfo" data-has-heading-anchor="true">taskInfo<span id="taskInfo"></span>&nbsp;<a href="/articles/fordevelopers/task-2/a/taskinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/taskinfo&#39;,this);"></a></h4>
+
+<p>Task info</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">id</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The id string (GUID) of the Task. Ignored for: Create Task, Update Task</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Name of the Task. Required for: Create Task</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">description</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The description of the Task.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">createdBy</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The User name of the Task creator. Ignored for: Create Task, Update Task</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">createdOn</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The date and time the Task was created. Ignored for: Create Task, Update Task</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dueDate</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The date and time the Task is due. Required for: Create Task</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">timeZone</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;"><a href="/articles/fordevelopers/task-2/a/timezoneinfo" onclick="return n(&#39;!fordevelopers/task-2/a/timezoneinfo&#39;,this);">timeZoneInfo</a></td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The Task time zone. Required for: Create Task</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">assignor</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The User name of the Task assignor. Default is the current User.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">assignees</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of User names and/or Group names to which the Task is assigned. Required for: Create Task</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">calendars</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of strings listing the types of Enviance calendars on which this Task is shown.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">objects</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of Compliance Model object id strings (GUIDs) or paths, specifying one or more Compliance Model objects to which the Task is associated. Any string that matches the pattern of a GUID is interpreted as an id string, and not a path.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">documents</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/task-2/a/docpath" onclick="return n(&#39;!fordevelopers/task-2/a/docpath&#39;,this);">docPath</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of Document paths, specifying zero or more Documents which are or should be attached to the object.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">schedules</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/task-2/a/taskscheduleinfo" onclick="return n(&#39;!fordevelopers/task-2/a/taskscheduleinfo&#39;,this);">taskScheduleInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of the taskScheduleInfo data type, which defines the task schedules.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">notifications</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/task-2/a/tasknotificationinfo" onclick="return n(&#39;!fordevelopers/task-2/a/tasknotificationinfo&#39;,this);">taskNotificationInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A array of the taskNotificationInfo data type, which defines the task notifications.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">workflowtrigger</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/task-2/a/taskworkflowinfo" onclick="return n(&#39;!fordevelopers/task-2/a/taskworkflowinfo&#39;,this);">taskWorkflowInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The taskWorkflowInfo data type, which defines the workflow trigger options.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">suppressNotificationsBefore</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The date and time the Task Notification is not fired before.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="taskoccurrenceinfo" data-has-heading-anchor="true">taskOccurrenceInfo<span id="taskOccurrenceInfo"></span>&nbsp;<a href="/articles/fordevelopers/task-2/a/taskoccurrenceinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/taskoccurrenceinfo&#39;,this);"></a></h4>
+
+<p>Represents a Task occurrence, on a single date and time, for a single object related to the Task.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">statusChangeDate</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An optional date and time at which the Task occurrence status was last updated. Default is the current date and time, in the Task time zone. Ignored for: Complete/Dismiss Task Occurrence</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">objectIdOrPath</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An id string (GUID) or path of a Compliance Model object, related to the Task, for which this Task occurrence information applies. Any string that matches the pattern of a GUID is interpreted as an id string, and not a path. If no object property is specified, the Task occurrence information relates to all objects associated with the Task. Ignored for: Complete/Dismiss Task Occurrence</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dismissed</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">boolean</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An optional Boolean flag indicating whether or not this task occurrence should be dismissed (and not completed). If this value is True, no update will be made for percentComplete and statusChangeDate. Default is False.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">percentComplete</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">number</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An optional integer between 0 and 100 specifying the percent completion of the Task occurrence. Default is 0 percent.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">hoursToComplete</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">number</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An optional decimal value indicating a whole or partial number of hours required to complete the Task occurrence. Default is 0.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">costToComplete</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An optional decimal value indicating the cost to complete the task occurrence. Currently, this value is in US dollars. Default is 0.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">comment</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An optional comment about the completion of the Task occurrence.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">eventInstanceId</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An id string (GUID) of an associated event instance.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="taskscheduleinfo" data-has-heading-anchor="true">taskScheduleInfo<span id="taskScheduleInfo"></span>&nbsp;<a href="/articles/fordevelopers/task-2/a/taskscheduleinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/taskscheduleinfo&#39;,this);"></a></h4>
+
+<p>Represents a simple (one time) Task definition. Properties startDate, endDate, startTime, endTime are specified in the timezone of the containing task (see timeZone property of taskInfo structure).</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">recurrenceType</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A string that defines the recurrence pattern of the Schedule. Required for any TaskScheduleInfo.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">startDate</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The date when the schedule becomes active (time portion of the date is ignored). Required for any TaskScheduleInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">endDate</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The date when the schedule becomes inactive (time portion of the date is ignored). If not specified then the schedule does not have an end date.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">startTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The time of a day at which the scheduled event should occur (in Hourly recurrence pattern, the time of a day when the schedule becomes active). Note that hours must be specified in the 24h format. For minutes only four values are allowed: 0, 15, 30, 45. Seconds are ignored.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">endTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dateTime</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The time of a day when the schedule becomes inactive (used only by Hourly recurrence pattern). Note that hours must be specified in the 24h format. For minutes only four values are allowed: 0, 15, 30, 45. Seconds are ignored.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">recurrenceInterval</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Either an integer value or recurrenceInterval structure which defines the frequency of the recurring event. The structure is used for AfterLastCompletion recurrence pattern and integer value is used for all other patterns. Depending on the pattern the integer value could mean days, weeks, months, or years.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">daysOfWeek</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of strings which defines the days of a week to use in certain recurrence patterns. Recognized day names are: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday. Shortcut names that can also be used are: All, Weekdays, Weekends.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dayOfMonth</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Either an integer value or DayOfMonth structure which defines the day of a specific month. Integer value specifies the number of the day within a month (possible values are 1 to 31). The structure is used for more advanced specification of the day of a month. This property is used only for Monthly and Yearly recurrence patterns.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">monthOfYear</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">integer</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An integer value which defines the month of a year. Possible values are: 1 to 12.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">TalLogicVersion</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">integer</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Time After Last Completion Schedule logic version. Ignored for: Create Task, Update Task.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="recurrenceinterval" data-has-heading-anchor="true">recurrenceInterval<span id="recurrenceInterval"></span>&nbsp;<a href="/articles/fordevelopers/task-2/a/recurrenceinterval" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/recurrenceinterval&#39;,this);"></a></h4>
+
+<p>Represents the advanced specification of a recurring interval. Used by <em>AfterLastCompletion</em> recurrence pattern only. The purpose of this structure is to simplify specification of long intervals. The resulting value of the structure can be expressed as a single integer value specifying the number of hours of the interval.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">hours</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (integer)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An integer value which defines the number of hours of the recurrence interval.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">days</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (integer)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An integer value which defines the number of days of the recurrence interval.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">weeks</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (integer)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An integer value which defines the number of weeks of the recurrence interval.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">month</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string (integer)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An integer value which defines the number of months of the recurrence interval.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="dayofmonth" data-has-heading-anchor="true">dayOfMonth<span id="dayOfMonth"></span>&nbsp;<a href="/articles/fordevelopers/task-2/a/dayofmonth" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/dayofmonth&#39;,this);"></a></h4>
+
+<p>Represents the advanced specification of the day of a month. The actual day of a month is uniquely identified by a combination of two properties. Using this structure the day of a month can be identified using the following rules: first day, last Friday, second weekday etc.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dayOccurrence</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A string that specifies the occurrence of the day within a month.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dayOfWeek</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A string that specifies the day of a week.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="tasknotificationinfo" data-has-heading-anchor="true">taskNotificationInfo<span id="taskNotificationInfo"></span>&nbsp;<a href="/articles/fordevelopers/task-2/a/tasknotificationinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/tasknotificationinfo&#39;,this);"></a></h4>
+
+<p>Represents a single instance of a task notification.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">conditions</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/task-2/a/notificationconditions" onclick="return n(&#39;!fordevelopers/task-2/a/notificationconditions&#39;,this);">notificationConditions</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A notificationConditions structure which defines a set of conditions that would trigger the notification.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">recipients</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/task-2/a/notificationrecipients" onclick="return n(&#39;!fordevelopers/task-2/a/notificationrecipients&#39;,this);">notificationRecipients</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A NotificationRecipients structure which defines the recipients of the notification.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">deliveryMethod</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A string that defines the delivery method of the notification.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">comments</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Task comments</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">templateIdOrName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Notification Template ID or Name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="notificationrecipients" data-has-heading-anchor="true">notificationRecipients<span id="notificationRecipients"></span>&nbsp;<a href="/articles/fordevelopers/task-2/a/notificationrecipients" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/notificationrecipients&#39;,this);"></a></h4>
+
+<p>Represents recipients of the notification. All properties are optional but at least one of them must be specified.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">toAssignees</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">boolean</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A boolean value which indicates whether the notification should be delivered to the task assignee(s).</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">toAssignor</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">boolean</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A boolean value which indicates whether the notification should be delivered to the task assignor.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">users</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of id strings (GUIDs) which defines specific users to receive the notification.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">groups</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of id strings (GUIDs) which defines specific groups to receive the notification.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="notificationconditions" data-has-heading-anchor="true">notificationConditions<span id="notificationConditions"></span>&nbsp;<a href="/articles/fordevelopers/task-2/a/notificationconditions" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/notificationconditions&#39;,this);"></a></h4>
+
+<p>Defines a set of conditions that will trigger the notification. It corresponds to the “Time To Notify” section on the task notification UI. All properties are optional, but at least one of them must be specified. Additional limitation is that “byDueDate” condition cannot be specified if “CompletionStatusCondition.onlyWhenPastDue = true”.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">immediately</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">boolean</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A boolean value which indicates whether the notification should be triggered immediately upon the creation.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">whenDismissed</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">boolean</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A boolean value which indicates whether the notification should be triggered when the task is dismissed.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">byDueDate</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A dueDateCondition structure which defines whether the notification should be triggered when certain conditions for the task Due Date are met.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">byCompletionStatus</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A completionStatusCondition structure which defines whether the notification should be triggered when certain conditions for the task completion status are met.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="duedatecondition" data-has-heading-anchor="true">dueDateCondition<span id="dueDateCondition"></span>&nbsp;<a href="/articles/fordevelopers/task-2/a/duedatecondition" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/duedatecondition&#39;,this);"></a></h4>
+
+<p>Represents a condition related to the task Due Date.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">conditionType</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A string that specifies the type of the condition.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">intervalValue</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">integer</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An integer value which defines the interval (ignored for conditionType=PastDue)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">intervalType</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A string that defines the type of the interval (ignored for conditionType=PastDue).</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="completionstatuscondition" data-has-heading-anchor="true">completionStatusCondition<span id="completionStatusCondition"></span>&nbsp;<a href="/articles/fordevelopers/task-2/a/completionstatuscondition" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/completionstatuscondition&#39;,this);"></a></h4>
+
+<p>Represents a condition related to the task completion status</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">completionPercent</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">integer</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An integer value which defines the percentage of the task completion that should trigger the notification. Possible values are from 0 to 100, with increments of 10 percent.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">comparisonLogic</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A string that defines how the task completion status should be compared to the completionPercent property to trigger the notification.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">onlyWhenPastDue</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">boolean</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A boolean value which indicates that the notification must be triggered only if the task is past due. Optional.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="taskworkflowinfo" data-has-heading-anchor="true">taskWorkflowInfo<span id="taskWorkflowInfo"></span>&nbsp;<a href="/articles/fordevelopers/task-2/a/taskworkflowinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/taskworkflowinfo&#39;,this);"></a></h4>
+
+<p>Represents a single instance of a task workflow triggering.</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">isautoclosetask</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">boolean</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Determine if task should be closed when the workflow is closed.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">taskcompletionfields</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/task-2/a/completiontaskinfo" onclick="return n(&#39;!fordevelopers/task-2/a/completiontaskinfo&#39;,this);">completionTaskInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Determine influence on task status by workflow.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">workflows</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ <a href="/articles/fordevelopers/task-2/a/workflowtriggerinfo" onclick="return n(&#39;!fordevelopers/task-2/a/workflowtriggerinfo&#39;,this);">workflowTriggerInfo</a> ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Array of workflowTriggerInfo which defines a structure for trigger options</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="completiontaskinfo" data-has-heading-anchor="true">completionTaskInfo<span id="completionTaskInfo"></span>&nbsp;<a href="/articles/fordevelopers/task-2/a/completiontaskinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/completiontaskinfo&#39;,this);"></a></h4>
+
+<p>An integer value which defines Task Completion Fields mask</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">completionTaskInfo</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">array</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An integer value which defines Task Completion Fields mask</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="workflowtriggerinfo" data-has-heading-anchor="true">workflowTriggerInfo<span id="workflowTriggerInfo"></span>&nbsp;<a href="/articles/fordevelopers/task-2/a/workflowtriggerinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/workflowtriggerinfo&#39;,this);"></a></h4>
+
+<p>A structure that defines the workflow trigger options</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">workflowtypeidorname</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Workflow definition Id or Name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">workflowname</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Workflow Name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">isusetaskname</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">boolean</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Flag to determine if Task Name should be used as Workflow Name when workflow is created.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">calendars</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[  ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">An array of strings listing the types of Enviance calendars on which the workflow is shown.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">duedateflags</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[  ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Array of possible duedate options (only one is possible in time)</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">duedateamount</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Value for duedate options</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">timetocreateoptions</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Value for duedate options</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">assignee</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">[ object ]</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">A set of assignees (User name or id and/or Group name or id) for the Workflow</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="duedateinfo" data-has-heading-anchor="true">dueDateInfo<span id="dueDateInfo"></span>&nbsp;<a href="/articles/fordevelopers/task-2/a/duedateinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/duedateinfo&#39;,this);"></a></h4>
+
+<p>A structure that defines the duedate options for a triggered workflow</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">value</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">integer</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Integer value for period</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">hours</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Period type</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">period</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Specifies whether due date is before or after period</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="timetocreateinfo" data-has-heading-anchor="true">timeToCreateInfo<span id="timeToCreateInfo"></span>&nbsp;<a href="/articles/fordevelopers/task-2/a/timetocreateinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/timetocreateinfo&#39;,this);"></a></h4>
+
+<p>A structure that defines the time to create info for a triggered workflow</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">value</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">object</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Value for create info</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">category</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Option for creating immediately or by due date or status</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="timetocreatevalue" data-has-heading-anchor="true">timeToCreateValue<span id="timeToCreateValue"></span>&nbsp;<a href="/articles/fordevelopers/task-2/a/timetocreatevalue" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/timetocreatevalue&#39;,this);"></a></h4>
+
+<p>A structure that defines the time to create value for a triggered workflow</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">value</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">integer</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Integer value for period</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">past</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">boolean</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Boolean flag indicating if value is in future or in past</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">operation</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">And/Or operator value</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">hours</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Period type</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">period</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Specifies whether create period is before or after</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">percent</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">integer</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Integer designating percent value</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">compare</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Comparison operator</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="timezoneinfo" data-has-heading-anchor="true">timeZoneInfo<span id="timeZoneInfo"></span>&nbsp;<a href="/articles/fordevelopers/task-2/a/timezoneinfo" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/timezoneinfo&#39;,this);"></a></h4>
+
+<p>Describes a time zone, including its offset from UTC</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Timezone name</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">Yes</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">stdOffset</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">integer</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The offset in minutes from UTC during standard time.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">dstOffset</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">integer</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The offset in minutes from UTC during daylight savings time (DST). This property will be identical to “stdOffset” for time zones that do not observe DST.</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">currentOffset</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">integer</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The current offset in minutes from UTC (which can change upon whether the time zone is currently observing DST or not).</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="docpath" data-has-heading-anchor="true">docPath<span id="docPath"></span>&nbsp;<a href="/articles/fordevelopers/task-2/a/docpath" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/task-2/a/docpath&#39;,this);"></a></h4>
+
+<p>The hierarchical path to a document as represented by the system model folder structure, beginning with a single forward slash and with elements separated by a single forward slash "/". Does not include the container object (Documents) Example: /Folder1/Subfolder1/Sub-subfolder/DocumentName</p>
+
+<table cellspacing="0" cellpadding="4" style="width: 616px; border-width: 1px; border-color: #000000; border-collapse: collapse;">
+  <thead>
+    <tr style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Name</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Type</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Description</font></th>
+      <th style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;"><font color="#ffffff">Required</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">docPath</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">string</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">The hierarchical path to a document as represented by the system model folder structure, beginning with a single forward slash and with elements separated by a single forward slash "/". Does not include the container object (Documents) Example: /Folder1/Subfolder1/Sub-subfolder/DocumentName</td>
+      <td style="border-width: 1px; border-style: solid; border-color: #000000;">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+    </section>
+    <br/><p><br/></p><p><br/></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

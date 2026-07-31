@@ -1,0 +1,229 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/event"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Event Functions and Classes</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Event Functions and Classes';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>        <h1 class="Heading1" id="h1__1377050066" data-has-heading-anchor="true">Event Functions and Classes<a href="/articles/fordevelopers/event/a/h1__1377050066" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/event/a/h1__1377050066&#39;,this);"></a></h1>
+        <div class="toc">
+            <p class="bold">JavaScript Functions</p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/event/a/createEvent" onclick="return n(&#39;!fordevelopers/event/a/createEvent&#39;,this);">createEvent</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/event/a/updateEvent" onclick="return n(&#39;!fordevelopers/event/a/updateEvent&#39;,this);">updateEvent</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/event/a/getEvent" onclick="return n(&#39;!fordevelopers/event/a/getEvent&#39;,this);">getEvent</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/event/a/deleteEvent" onclick="return n(&#39;!fordevelopers/event/a/deleteEvent&#39;,this);">deleteEvent</a>
+            </p>
+            <p class="bold">Classes</p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/event/a/eventInfo" onclick="return n(&#39;!fordevelopers/event/a/eventInfo&#39;,this);">eventInfo</a>
+            </p>
+        </div>
+        <div class="methods">
+            <h2 class="jsmethod" id="h2_391661470" data-has-heading-anchor="true"><a name="createEvent"></a>envianceSdk.events.createEvent<a href="/articles/fordevelopers/event/a/h2_391661470" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/event/a/h2_391661470&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_469590071_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_469590071_0" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Creates a new Event in the specified Event Log.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>eventLogIdOrTag </b> The id string (GUID) or tag of the Event Log.  Any string that matches the pattern of a GUID is interpreted as the id, and not the tag of the Event Log.
+
+</p>
+            <p class="BodyIndentHanging"><b>eventInfo </b>  An instance of the <a href="/articles/fordevelopers/event/a/eventInfo" onclick="return n(&#39;!fordevelopers/event/a/eventInfo&#39;,this);">eventInfo</a> object.  Some properties of this object are ignored by this function; see details of this object for more info.
+</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">The id string (GUID) of the new Event will be passed to the onsuccess callback in the result property.</p>
+            <p class="bold">Notes</p>
+            <p class="BodyIndent">Events can only be created for manual Event Logs.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.events.createEvent(</p>
+            <p class="Code2">&quot;Spill Events&quot;,</p>
+            <p class="Code2">eventInfo,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert(&quot;Event generated with id: &quot; + response.result);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2_1245426423" data-has-heading-anchor="true"><a name="updateEvent"></a>envianceSdk.events.updateEvent<a href="/articles/fordevelopers/event/a/h2_1245426423" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/event/a/h2_1245426423&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_469590071_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_469590071_1" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Updates an existing Event.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>eventLogIdOrTag </b> The id string (GUID) or tag of the Event Log.  Any string that matches the pattern of a GUID is interpreted as the id, and not tag of the Event Log.
+</p>
+            <p class="BodyIndentHanging"><b>eventIdOrTag </b> The id string (GUID) or tag of the Event.  Any string that matches the pattern of a GUID is interpreted as the id, and not the tag of the Event.
+
+</p>
+            <p class="BodyIndentHanging"><b>eventInfo </b>  An instance of  the <a href="/articles/fordevelopers/event/a/eventInfo" onclick="return n(&#39;!fordevelopers/event/a/eventInfo&#39;,this);">eventInfo</a> object.  Some properties of this object are ignored by this function; see details of this object for more info.
+</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.events.updateEvent(</p>
+            <p class="Code2">&quot;Spill Events&quot;,</p>
+            <p class="Code2">&quot;ddef6b59-6289-41c9-ac7a-ee87a773ce0e&quot;,</p>
+            <p class="Code2">eventInfo,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert(&quot;Event updated.&quot;);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2__457527722" data-has-heading-anchor="true"><a name="getEvent"></a>envianceSdk.events.getEvent<a href="/articles/fordevelopers/event/a/h2__457527722" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/event/a/h2__457527722&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_469590071_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_469590071_2" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Gets information about the specified Event.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>eventLogIdOrTag </b> The id string (GUID) or tag of the Event Log.  Any string that matches the pattern of a GUID is interpreted as the id, and not tag of the Event Log.
+
+</p>
+            <p class="BodyIndentHanging"><b>eventIdOrTag </b>  The id string (GUID) or tag of the Event.  Any string that matches the pattern of a GUID is interpreted as the id, and not the tag of the Event.
+</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An <a href="/articles/fordevelopers/event/a/eventInfo" onclick="return n(&#39;!fordevelopers/event/a/eventInfo&#39;,this);">eventInfo</a> object will be passed to the onsuccess callback in the result property.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.events.updateEvent(</p>
+            <p class="Code2">&quot;Spill Events&quot;,</p>
+            <p class="Code2">&quot;ddef6b59-6289-41c9-ac7a-ee87a773ce0e&quot;,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">var event = response.result;</p>
+            <p class="Code3">alert(&quot;Retrieved event with name: &quot; + event.name);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2_847129835" data-has-heading-anchor="true"><a name="deleteEvent"></a>envianceSdk.events.deleteEvent<a href="/articles/fordevelopers/event/a/h2_847129835" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/event/a/h2_847129835&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_469590071_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_469590071_3" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Deletes an existing Event.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>eventLogIdOrTag </b> The id string (GUID) or tag of the Event Log.  Any string that matches the pattern of a GUID is interpreted as the id, and not tag of the Event Log.
+
+</p>
+            <p class="BodyIndentHanging"><b>eventIdOrTag </b> The id string (GUID) or tag of the Event.  Any string that matches the pattern of a GUID is interpreted as the id, and not the tag of the Event.
+</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="bold">Notes</p>
+            <p class="BodyIndent">Deletions are <i>permanent</i>.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.events.deleteEvent(</p>
+            <p class="Code2">&quot;Spill Events&quot;,</p>
+            <p class="Code2">&quot;ddef6b59-6289-41c9-ac7a-ee87a773ce0e&quot;,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert(&quot;Event deleted.&quot;);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsclass" id="h2__719169518" data-has-heading-anchor="true"><a name="eventInfo"></a>envianceSdk.events.eventInfo<a href="/articles/fordevelopers/event/a/h2__719169518" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/event/a/h2__719169518&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_469590071_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_469590071_4" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Constructs an EventInfo object instance in JavaScript.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>name </b> The name of the Event.
+
+</p>
+            <p class="BodyIndentHanging"><b>beginDate </b> <i>Date</i>. The begin date for the Event.
+</p>
+            <p class="BodyIndentHanging"><b>endDate </b> <i>Date</i>. The end date for the Event.
+
+state  One of either &quot;Open&quot; or &quot;Closed&quot;.
+
+</p>
+            <p class="BodyIndentHanging"><b>complianceType </b> One of either &quot;Internal&quot; or &quot;Regulatory&quot;.
+
+</p>
+            <p class="BodyIndentHanging"><b>acceptAsDeviation </b> Boolean. True/false value indicating whether the Event should be accepted as a compliance deviation.
+</p>
+            <p class="BodyIndentHanging"><b>requirementIdOrPath </b> A Compliance Model object id string (GUID) or path, specifying a Requirement to which the Event is associated. Any string that matches the pattern of a GUID is interpreted as an id string, and not a path.
+</p>
+            <p class="BodyIndentHanging"><b>fields </b> <i>Array</i>. An array of CustomField value objects for the Event Fields of the Event.
+
+</p>
+            <p class="BodyIndentHanging"><b>documents </b> <i>Array</i>. Optional array of Document id strings (GUIDs) or paths, specifying zero or more Documents attached to the Event. Any string that matches the pattern of a GUID is interpreted as an id string, and not a path.
+</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An instance of the EventInfo class.</p>
+            <p class="bold">Instance Methods</p>
+            <p class="BodyIndentHanging"><b>addScalarFieldValue(fieldName, value)</b>  This is a convenience method to add a <a href="/articles/fordevelopers/customfield/a/addScalarFieldValue" onclick="return n(&#39;!fordevelopers/customfield/a/addScalarFieldValue&#39;,this);">ScalarFieldValue</a> value to the fields Array property.
+
+</p>
+            <p class="BodyIndentHanging"><b>addDateFieldValue(fieldName, value)</b>  This is a convenience method to add a <a href="/articles/fordevelopers/customfield/a/addDateFieldValue" onclick="return n(&#39;!fordevelopers/customfield/a/addDateFieldValue&#39;,this);">DateFieldValue</a> to the fields Array property.
+
+</p>
+            <p class="BodyIndentHanging"><b>addTimeFieldValue(fieldName, value)</b>  This is a convenience method to add a <a href="/articles/fordevelopers/customfield/a/addTimeFieldValue" onclick="return n(&#39;!fordevelopers/customfield/a/addTimeFieldValue&#39;,this);">TimeFieldValue</a> to the fields Array property.
+
+</p>
+            <p class="BodyIndentHanging"><b>addUrlFieldValue(fieldName, label, url)</b>  This is a convenience method to add a <a href="/articles/fordevelopers/customfield/a/addUrlFieldValue" onclick="return n(&#39;!fordevelopers/customfield/a/addUrlFieldValue&#39;,this);">UrlFieldValue</a> to the fields Array property.
+
+</p>
+            <p class="BodyIndentHanging"><b>addLinkedFieldValues(fieldName, values)</b>  This is a convenience method to add a <a href="/articles/fordevelopers/customfield/a/addLinkedFieldValues" onclick="return n(&#39;!fordevelopers/customfield/a/addLinkedFieldValues&#39;,this);">LinkedFieldValues</a> instance to the fields Array property.
+
+</p>
+            <p class="BodyIndentHanging"><b>addMultiFieldValues(fieldName, values)</b>  This is a convenience method to add a <a href="/articles/fordevelopers/customfield/a/addMultiFieldValues" onclick="return n(&#39;!fordevelopers/customfield/a/addMultiFieldValues&#39;,this);">MultiFieldValues</a> instance to the fields Array property.
+</p>
+            <p class="example">Example</p>
+            <p class="Code1">var event = new envianceSdk.events.EventInfo(</p>
+            <p class="Code2">&quot;Uh oh&quot;,</p>
+            <p class="Code2">&quot;2013-09-30T00:00:00&quot;,</p>
+            <p class="Code2">&quot;2013-09-31T00:00:00&quot;,</p>
+            <p class="Code2">&quot;Open&quot;,</p>
+            <p class="Code2">&quot;Internal&quot;,</p>
+            <p class="Code2">false,</p>
+            <p class="Code2">&quot;/Division A/Facility X/Meter Tracker 1&quot;,</p>
+            <p class="Code2">null, // no fields here</p>
+            <p class="Code2">[&quot;/Folder 1/File.xls&quot;]</p>
+            <p class="Code1">);</p>
+            <p class="Code1">event.addScalarFieldValue(&quot;Field A&quot;, 1);</p>
+            <p class="Code1">event.addMultiFieldValues(&quot;Field B&quot;, [&quot;Option1&quot;, &quot;Option2&quot;]);</p>
+        </div>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

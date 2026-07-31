@@ -1,0 +1,296 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/appdata"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>App Data Functions</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='App Data Functions';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>        <h1 class="Heading1" id="h1_1222598014" data-has-heading-anchor="true">App Data Functions<a href="/articles/fordevelopers/appdata/a/h1_1222598014" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/appdata/a/h1_1222598014&#39;,this);"></a></h1>
+        <div class="toc">
+            <p class="bold">JavaScript Functions:</p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/appdata/a/userdata.get" onclick="return n(&#39;!fordevelopers/appdata/a/userdata.get&#39;,this);">userdata.get</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/appdata/a/userdata.set" onclick="return n(&#39;!fordevelopers/appdata/a/userdata.set&#39;,this);">userdata.set</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/appdata/a/userdata.del" onclick="return n(&#39;!fordevelopers/appdata/a/userdata.del&#39;,this);">userdata.del</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/appdata/a/appdata.get" onclick="return n(&#39;!fordevelopers/appdata/a/appdata.get&#39;,this);">appdata.get</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/appdata/a/appdata.set" onclick="return n(&#39;!fordevelopers/appdata/a/appdata.set&#39;,this);">appdata.set</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/appdata/a/appdata.del" onclick="return n(&#39;!fordevelopers/appdata/a/appdata.del&#39;,this);">appdata.del</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/appdata/a/userdata.getUpdated" onclick="return n(&#39;!fordevelopers/appdata/a/userdata.getUpdated&#39;,this);">userdata.getUpdated</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/appdata/a/appdata.getUpdated" onclick="return n(&#39;!fordevelopers/appdata/a/appdata.getUpdated&#39;,this);">appdata.getUpdated</a>
+            </p>
+        </div>
+        <div class="methods">
+            <h2 class="jsmethod" id="h2_1355787381" data-has-heading-anchor="true"><a name="userdata.get"></a>envianceSdk.packages.userData.get<a href="/articles/fordevelopers/appdata/a/h2_1355787381" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/appdata/a/h2_1355787381&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_3556739792_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_3556739792_0" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description	</p>
+            <p>This method gets previously saved data which are available only to the current User.</p>
+            <p class="bold">Parameters	</p>
+            <p class="BodyIndent"><b>keys</b> <i>Array</i>. An array of key strings to uniquely identify each value in a set of values. If an empty array is passed, all data will be returned.</p>
+            <p class="bold">Return Value	</p>
+            <p>None</p>
+            <p class="bold">Callbacks	</p>
+            <p class="BodyIndent"><b>onsuccess</b>  A callback function to use upon success. The single parameter will be a dictionary of key to value (JavaScript object) pairs corresponding with the requested keys.</p>
+            <p class="BodyIndent"><b>onfailure</b> An optional callback function to use upon error.</p>
+            <p class="bold">Notes	</p>
+            <p>Use only for user-specific settings that are not required for application functioning.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.packages.userData.get(</p>
+            <p class="Code2">
+  ["firstSearch", "lastSearch"],
+</p>
+            <p class="Code2">  function(values) {
+    </p>
+            <p class="Code3">alert(values["firstSearch"]);
+  </p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2_1355787009" data-has-heading-anchor="true"><a name="userdata.set"></a>envianceSdk.packages.userData.set<a href="/articles/fordevelopers/appdata/a/h2_1355787009" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/appdata/a/h2_1355787009&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_3556739792_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_3556739792_1" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description	</p>
+            <p>This method saves an arbitrary set of key-value pairs which are available only to the current User.</p>
+            <p class="bold">Parameters	</p>
+            <p class="BodyIndent"><b>dataSet</b>  A dictionary of key to value pairs.</p>
+            <p class="bold">Return Value	</p>
+            <p>None</p>
+            <p class="bold">Callbacks	</p>
+            <p class="BodyIndent"><b>onsuccess</b>  An optional callback function to use upon success.</p>
+            <p class="BodyIndent"><b>onfailure</b>  An optional callback function to use upon error.</p>
+            <p class="bold">Notes	</p>
+            <p>Use only to store user-specific settings that are not required for application functioning.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.packages.userData.set(
+</p>
+            <p class="Code2">  {
+</p>
+            <p class="Code3">    "lastSearch": JSON.stringify({
+</p>
+            <p class="Code4">      "fieldList": ["A","B","C"],
+</p>
+            <p class="Code4">      "sortOrder": ["C","B","A"]
+    </p>
+            <p class="Code3">}),
+</p>
+            <p class="Code3">    "firstSearch": JSON.stringify({</p>
+            <p class="Code4">
+      "fieldList": ["A","B","C"],</p>
+            <p class="Code4">
+      "sortOrder": ["C","B","A"]
+</p>
+            <p class="Code3">})
+</p>
+            <p class="Code2">}, function() {
+</p>
+            <p class="Code3">    alert("Saved!);
+  </p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2_1355787242" data-has-heading-anchor="true"><a name="userdata.del"></a>envianceSdk.packages.userData.del<a href="/articles/fordevelopers/appdata/a/h2_1355787242" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/appdata/a/h2_1355787242&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_3556739792_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_3556739792_2" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description	</p>
+            <p>This method deletes previously saved data which is available only to the current User.</p>
+            <p class="bold">Parameters	</p>
+            <p class="BodyIndent"><b>key</b> <i>Array</i>. An array of key strings to uniquely identify each value to delete.</p>
+            <p class="bold">Return Value</p>
+            <p>	None</p>
+            <p class="bold">Callbacks</p>
+            <p class="BodyIndent"><!--CDATA[[]]--><b>onsuccess</b>  An optional callback function to use upon success.</p>
+            <p class="BodyIndent"><b>onfailure</b>  An optional callback function to use upon error.</p>
+            <p class="bold">Notes	</p>
+            <p>Used only for user-specific settings that are not required for application functioning.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.packages.userData.del(</p>
+            <p class="Code2">["firstSearch", "lastSearch"], function() {</p>
+            <p class="Code3">alert("Deleted!");</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2_1498228793" data-has-heading-anchor="true"><a name="appdata.get"></a>envianceSdk.packages.appData.get<a href="/articles/fordevelopers/appdata/a/h2_1498228793" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/appdata/a/h2_1498228793&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_3556739792_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_3556739792_3" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description	</p>
+            <p>This method gets previously saved data which are available to all User of the EMS App, according to their permissions.</p>
+            <p class="bold">Parameters	</p>
+            <p class="BodyIndent"><b>keys</b> <i>Array</i>. An array of key strings to uniquely identify each value in a set of values. If an empty array is passed, all allowed data will be returned.</p>
+            <p class="bold">Return Value	</p>
+            <p>None</p>
+            <p class="bold">Callbacks	</p>
+            <p class="BodyIndent"><b>onsuccess</b>  A callback function to use upon success. The single parameter will be a dictionary of key to value (JavaScript object) pairs corresponding with the requested keys.</p>
+            <p class="BodyIndent"><b>onfailure</b>  An optional callback function to use upon error.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.packages.appData.get(</p>
+            <p class="Code2">["firstSearch", "lastSearch"],</p>
+            <p class="Code2">function(values) {</p>
+            <p class="Code3">alert(values["firstSearch"]);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2_1807663317" data-has-heading-anchor="true"><a name="appdata.set"></a>envianceSdk.packages.appData.set<a href="/articles/fordevelopers/appdata/a/h2_1807663317" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/appdata/a/h2_1807663317&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_3556739792_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_3556739792_4" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description	</p>
+            <p>This method saves an arbitrary set of key-value pairs which are available to all User of the EMS App, according to their permissions.</p>
+            <p class="bold">Parameters	</p>
+            <p class="BodyIndent"><b>dataSet</b>  A dictionary of key to value pairs.</p>
+            <p class="bold">Return Value	</p>
+            <p>None</p>
+            <p class="bold">Callbacks	</p>
+            <p class="BodyIndent"><b>onsuccess</b>  An optional callback function to use upon success.</p>
+            <p class="BodyIndent"><b>onfailure</b>  An optional callback function to use upon error.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.packages.appData.set(</p>
+            <p class="Code2">{</p>
+            <p class="Code3">"lastSearch": JSON.stringify({</p>
+            <p class="Code4">"fieldList": ["A","B","C"],</p>
+            <p class="Code4">"sortOrder": ["C","B","A"]</p>
+            <p class="Code3">},</p>
+            <p class="Code3">"firstSearch": JSON.stringify({</p>
+            <p class="Code4">"fieldList": ["A","B","C"],</p>
+            <p class="Code4">"sortOrder": ["C","B","A"]</p>
+            <p class="Code3">})</p>
+            <p class="Code2">}, function() {</p>
+            <p class="Code3">alert("Saved!);</p>
+            <p class="Code2">});<br/></p>
+            <h2 class="jsmethod" id="h2_698307954" data-has-heading-anchor="true"><a name="appdata.del"></a>envianceSdk.packages.appData.del<a href="/articles/fordevelopers/appdata/a/h2_698307954" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/appdata/a/h2_698307954&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_3556739792_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_3556739792_5" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description	</p>
+            <p>This method deletes previously saved data which are available to all Users of the EMS App, according to their permissions.</p>
+            <p class="bold">Parameters	</p>
+            <p class="BodyIndent"><b>keys</b> <i>Array</i>. An array of key strings to uniquely identify each value to delete.</p>
+            <p class="bold">Return Value	</p>
+            <p>None</p>
+            <p class="bold">Callbacks	</p>
+            <p class="BodyIndent"><b>onsuccess</b>  An optional callback function to use upon success.</p>
+            <p class="BodyIndent"><b>onfailure</b>  An optional callback function to use upon error.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.packages.appData.del(</p>
+            <p class="Code2">["firstSearch", "lastSearch"], function() {</p>
+            <p class="Code3">alert("Deleted!");</p>
+            <p class="Code2">});</p>
+            <p>&nbsp;</p>
+            <h2 class="jsmethod" id="h2_1568419816" data-has-heading-anchor="true"><a name="appdata.getUpdated"></a>&gt;envianceSdk.packages.userData.getUpdated<a href="/articles/fordevelopers/appdata/a/h2_1568419816" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/appdata/a/h2_1568419816&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_3556739792_6" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_3556739792_6" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description	</p>
+            <p>This method gets previously saved data which is available only to the current User since requested date.</p>
+            <p class="bold">Parameters	</p>
+            <p class="BodyIndent"><b>keys</b><i>Array</i>. An array of key strings to uniquely identify each value in a set of values. If an empty array is passed, all allowed data will be returned.</p>
+            <p class="BodyIndent"><b>updatedAfter</b> <i>(string or Date)</i>. Date value or its string presentation of UTC in ISO&nbsp;format.</p>
+            <p class="bold">Return Value	</p>
+            <p>Gets previously saved data and service key "_Updated" that stores latest date of modification or requested keys.</p>
+            <p class="bold">Callbacks	</p>
+            <p class="BodyIndent"><b>onsuccess</b>  A callback function to use upon success. The single parameter will be a dictionary of key to value (JavaScript object) pairs corresponding to the requested keys.</p>
+            <p class="BodyIndent"><b>onfailure</b>  An optional callback function to use upon error.</p>
+            <p class="bold">Notes	</p>
+            <p>Use only for user-specific settings that are not required for application functioning.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.packages.userData.getUpdated(</p>
+            <p class="Code2">["firstSearch", "lastSearch"], "2018-01-01T01:01:01.000Z", function(values) {</p>
+            <p class="Code3">alert(values["firstSearch"]);</p>
+            <p class="Code2">});</p>
+            <p class="Code1">envianceSdk.packages.userData.getUpdated(</p>
+            <p class="Code2">["firstSearch", "lastSearch"], newDate(2018, 1, 1, 1, 1, 1), function(values) {</p>
+            <p class="Code3">alert(values["firstSearch"]);</p>
+            <p class="Code2">});</p>
+            <p>&nbsp;</p>
+            <h2 class="jsmethod" id="h2__1547078474" data-has-heading-anchor="true"><a name="userdata.getUpdated"></a>envianceSdk.packages.appData.getUpdated<a href="/articles/fordevelopers/appdata/a/h2__1547078474" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/appdata/a/h2__1547078474&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_3556739792_7" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_3556739792_7" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description	</p>
+            <p>This method gets previously saved data which is available to all Users of the EMS App, according to their permissions since requested date.</p>
+            <p class="bold">Parameters	</p>
+            <p class="BodyIndent"><b>keys</b><i>Array</i>. An array of key strings to uniquely identify each value in a set of values. If an empty array is passed, all allowed data will be returned.</p>
+            <p class="BodyIndent">updatedAfter (string or Date). Date value or its string presentation of UTC in ISO format.</p>
+            <p class="bold">Return Value	</p>
+            <p>Gets previously saved data and service key "_Updated"&nbsp;that stores the latest date of modification of requested keys.</p>
+            <p class="bold">Callbacks	</p>
+            <p class="BodyIndent"><b>onsuccess</b>  A callback function to use upon success. The single parameter will be a dictionary of key to value (JavaScript object) pairs corresponding to the requested keys.</p>
+            <p class="BodyIndent"><b>onfailure</b>  An optional callback function to use upon error.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.packages.appData.getUpdated(</p>
+            <p class="Code2">["firstSearch", "lastSearch"], "2018-01-01T01:01:01.000Z", function(values) {</p>
+            <p class="Code3">alert(values["firstSearch"]);</p>
+            <p class="Code2">});</p>
+            <p class="Code1">envianceSdk.packages.appData.getUpdated(</p>
+            <p class="Code2">["firstSearch", "lastSearch"], newDate(2018, 1, 1, 1, 1, 1), function(values) {</p>
+            <p class="Code3">alert(values["firstSearch"]);</p>
+            <p class="Code2">});</p>
+        </div>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js" data-aspx-savednextwhitespace="%0A%20%20%20%20">
+        </script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/packagemanifest"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>The Package Manifest</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='The Package Manifest';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h2 class="Heading2" id="h2_731838610" data-has-heading-anchor="true">The Package Manifest<a href="/articles/fordevelopers/packagemanifest/a/h2_731838610" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/packagemanifest/a/h2_731838610&#39;,this);"></a></h2>
+        <p class="BodyText">An EMS App package may optionally contain a single manifest file in its root, by the name of "manifest.xml".</p>
+        <p class="BodyText">The manifest file may be used to control how the server-side EMS App runtime manages the EMS App content.</p>
+        <p class="BodyText">The following EMS App settings are supported:</p>
+        <p class="bold">General Settings:</p>
+        <ul class="brackets">
+            <li value="1">name</li>
+            <li value="2">description</li>
+            <li value="3">iconSrc – the path, relative to the EMS App package root directory, to an icon file.</li>
+            <li value="4">displayPage – the path, relative to the EMS Apps package root directory, to an HTML page which will serve as the default page of the EMS App.</li>
+            <li value="5">encoding – the text encoding to use for all Items content.  By default, UTF-8 is used.</li>
+            <li value="6">id  – optional attribute, used chiefly for updating global apps across system. </li>
+        </ul>
+        <p class="BodyIndent3">1)      Id must be a GUID (<a href="http://en.wikipedia.org/wiki/Globally_unique_identifier" target="_blank">http://en.wikipedia.org/wiki/Globally_unique_identifier</a>)</p>
+        <p class="BodyIndent3">2)      When specified:</p>
+        <p class="BodyIndent4">a.       Id will be used as ID of the App in the system in which it is uploaded.      This allows for predicting the URL to the app as /CustomApp/&lt;id&gt;/…</p>
+        <p class="BodyIndent4">b.      When updating an existing app, the IDs must match, otherwise an error is thrown</p>
+        <p class="BodyIndent3">Example:&nbsp;</p>
+        <p class="BodyIndent3">&lt;package id=” f69ef02b-0951-4f95-893a-4b76115c4ac9” name=”MyApp”… &gt;</p>
+        <p class="BodyIndent3">..</p>
+        <p class="BodyIndent3">&lt;/package&gt;</p>
+        <p class="bold">Security Settings and Directives:</p>
+        <ul class="brackets">
+            <li value="1">roles – one or more directives to create or remove Roles (see <a href="/articles/fordevelopers/roledirectives" onclick="return n(&#39;!fordevelopers/roledirectives&#39;,this);">Role Directives)</a></li>
+            <li value="2">permissions – permission settings for Items or App Data keys (see <a href="/articles/fordevelopers/permissionsettings" onclick="return n(&#39;!fordevelopers/permissionsettings&#39;,this);">Permission Settings)</a></li>
+            <li value="3">contentSecurityPolicy – browser CSP settings</li>
+        </ul>
+        <p class="bold">Data Directives:</p>
+        <ul class="brackets">
+            <li value="1">appData – one or more directives to save or remove App Data (see <a href="/articles/fordevelopers/appdatadirectives" onclick="return n(&#39;!fordevelopers/appdatadirectives&#39;,this);">App Data Directives)</a></li>
+            <li value="2">userData – one or more directives to remove User Data (see <a href="/articles/fordevelopers/userdatadirectives" onclick="return n(&#39;!fordevelopers/userdatadirectives&#39;,this);">User Data Directives)</a></li>
+        </ul>
+        <p class="BodyText">When uploading an EMS App package as part of an update of an existing EMS App, the manifest settings and directives in the package, if provided, will be used as follows:</p>
+        <ul class="brackets">
+            <li value="1">Settings, such as General Settings, CSP Settings, and Permission Settings, will overwrite the existing settings for the EMS App.</li>
+            <li value="2">Directives, such as Role and Data Directives, will be executed in the order in which they are declared in the manifest.</li>
+        </ul>
+        <p class="BodyText">The following is an example of a manifest file, and illustrates the required order of element declaration as well.  In your own manifest file, be sure to follow the same order of elements.</p>
+        <p class="Code1">&lt;?xml version="1.0"?&gt;</p>
+        <p class="Code1">&lt;package displayPage="index.htm" iconSrc="icon.ico" encoding="UTF-8" name="My Package"&gt;</p>
+        <p class="Code2">&lt;description&gt;Package demonstrating the EMS REST APIs.&lt;/description&gt;</p>
+        <p class="Code2">&lt;contentSecurityPolicy</p>
+        <p class="Code3">sandbox=""</p>
+        <p class="Code3">defaultSrc="self"</p>
+        <p class="Code3">connectSrc="https://api.enviance.com"</p>
+        <p class="Code3">fontSrc="*.coolfonts.com"</p>
+        <p class="Code3">frameSrc=""</p>
+        <p class="Code3">scriptSrc="userscripts.example.com" /&gt;</p>
+        <p class="Code2">&lt;roles&gt;</p>
+        <p class="Code3">&lt;add name="Manager" description="Managers for the plant."/&gt;</p>
+        <p class="Code3">&lt;add name="Operator" description="Operators for the plant."/&gt;</p>
+        <p class="Code3">&lt;remove name="Worker" /&gt;</p>
+        <p class="Code2">&lt;/roles&gt;</p>
+        <p class="Code2">&lt;appData&gt;</p>
+        <p class="Code3">&lt;set key="Default Assignee" value="jsmith" /&gt;</p>
+        <p class="Code3">&lt;remove key="New Assignee" /&gt;</p>
+        <p class="Code2">&lt;/appData&gt;</p>
+        <p class="Code2">&lt;userData&gt;</p>
+        <p class="Code3">&lt;remove key="My Default Query" /&gt;</p>
+        <p class="Code2">&lt;/userData&gt;</p>
+        <p class="Code2">&lt;permissions&gt;</p>
+        <p class="Code3">&lt;appData key="Default Options"&gt;</p>
+        <p class="Code4">&lt;allowRead roles="Everyone" /&gt;</p>
+        <p class="Code3">&lt;/appData&gt;</p>
+        <p class="Code3">&lt;appData key="Admin Options"&gt;</p>
+        <p class="Code4">&lt;allowRead roles="Admins" /&gt;</p>
+        <p class="Code4">&lt;allowWrite roles="Admins" /&gt;</p>
+        <p class="Code3">&lt;/appData&gt;</p>
+        <p class="Code3">&lt;item path="/manage/manage_plant.htm"&gt;</p>
+        <p class="Code4">&lt;allow roles="Manager; Auditor" /&gt;</p>
+        <p class="Code4">&lt;deny roles="Operator" /&gt;</p>
+        <p class="Code3">&lt;/item&gt;</p>
+        <p class="Code3">&lt;item path="/operate.html"&gt;</p>
+        <p class="Code4">&lt;allow roles="Everyone" /&gt;</p>
+        <p class="Code3">&lt;/item&gt;</p>
+        <p class="Code3">&lt;item path="/test.html"&gt;</p>
+        <p class="Code4">&lt;deny roles="Everyone" /&gt;</p>
+        <p class="Code3">&lt;/item&gt;</p>
+        <p class="Code2">&lt;/permissions&gt;</p>
+        <p class="Code1">&lt;/package&gt;</p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js" data-aspx-savednextwhitespace="%0A%20%20%20%20">
+        </script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

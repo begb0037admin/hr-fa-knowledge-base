@@ -1,0 +1,267 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/datefunctions"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Date Functions</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Date Functions';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>        <h2 id="h2__795813143" data-has-heading-anchor="true">Date Functions<a href="/articles/fordevelopers/datefunctions/a/h2__795813143" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/datefunctions/a/h2__795813143&#39;,this);"></a></h2>
+        <p>Among other SQL-like functions EQL supports datetime oriented function Day(), Month(), Year(), Datepart()
+		IsNull(). Its syntax is similar to SQL syntax.</p>
+        <h3 id="h3_709177499" data-has-heading-anchor="true"><a name="DayMonthYear"></a>Day, Month, Year<a href="/articles/fordevelopers/datefunctions/a/h3_709177499" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/datefunctions/a/h3_709177499&#39;,this);"></a></h3>
+        <p>Those functions return an integer that represents day, month or year of the
+			specified date.<br/>		For example:</p>
+        <p><span style="font-family: &quot;Courier New&quot;;">&nbsp; &nbsp;Day (u.CreatedOn),</span></p><p><span style="font-family: &quot;Courier New&quot;;">&nbsp; &nbsp;Month(u.CreatedOn),</span></p><p><span style="font-family: &quot;Courier New&quot;;">&nbsp; &nbsp;Year(u.CreatedOn)</span></p><p><span style="font-family: &quot;Courier New&quot;;">&nbsp; &nbsp;from user u</span></p>
+        <h3 id="h3_869217467" data-has-heading-anchor="true"><a name="DatePart"></a>DatePart<a href="/articles/fordevelopers/datefunctions/a/h3_869217467" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/datefunctions/a/h3_869217467&#39;,this);"></a></h3>
+        <p>Returns an integer that represents the specified datepart of the specified
+		date.</p>
+        <p class="bold">Syntax</p>
+        <p class="CodeLast">DatePart(datepart, date)</p>
+        <p>The following table lists all valid datepart arguments.</p>
+        <table style="border-width: 1px; border-color: #000000; border-collapse: collapse;" class="TableStyle-APITable" cellspacing="0" cellpadding="4">
+            <colgroup><col style="width: 92px;" class="TableStyle-APITable-Column-Column1"/>
+            <col class="TableStyle-APITable-Column-Column1"/>
+            </colgroup><thead>
+                <tr class="TableStyle-APITable-HeadE-Column1-Header1" style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+                    <td class="TableStyle-APITable-HeadE-Column1-Header1" style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+                        <b><font color="#ffffff">Datepart</font></b>
+                    </td>
+                    <td class="TableStyle-APITable-HeadD-Column1-Header1" style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+                        <b><font color="#ffffff">Abbreviations</font></b>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-APITable-Body-Body1">
+                    <td class="TableStyle-APITable-BodyE-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>year</p>
+                    </td>
+                    <td class="TableStyle-APITable-BodyD-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>yyyy</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-APITable-Body-Body1">
+                    <td class="TableStyle-APITable-BodyE-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>quarter</p>
+                    </td>
+                    <td class="TableStyle-APITable-BodyD-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>qq, q</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-APITable-Body-Body1">
+                    <td class="TableStyle-APITable-BodyE-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>month</p>
+                    </td>
+                    <td class="TableStyle-APITable-BodyD-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>mm, m</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-APITable-Body-Body1">
+                    <td class="TableStyle-APITable-BodyE-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>dayofyear</p>
+                    </td>
+                    <td class="TableStyle-APITable-BodyD-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>dy, y</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-APITable-Body-Body1">
+                    <td class="TableStyle-APITable-BodyE-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>day</p>
+                    </td>
+                    <td class="TableStyle-APITable-BodyD-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>dd, d</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-APITable-Body-Body1">
+                    <td class="TableStyle-APITable-BodyE-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>week</p>
+                    </td>
+                    <td class="TableStyle-APITable-BodyD-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>wk, ww</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-APITable-Body-Body1">
+                    <td class="TableStyle-APITable-BodyE-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>weekday</p>
+                    </td>
+                    <td class="TableStyle-APITable-BodyD-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>dw</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-APITable-Body-Body1">
+                    <td class="TableStyle-APITable-BodyE-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>hour</p>
+                    </td>
+                    <td class="TableStyle-APITable-BodyD-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>hh</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-APITable-Body-Body1">
+                    <td class="TableStyle-APITable-BodyE-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>minute</p>
+                    </td>
+                    <td class="TableStyle-APITable-BodyD-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>mi, n</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-APITable-Body-Body1">
+                    <td class="TableStyle-APITable-BodyE-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>second</p>
+                    </td>
+                    <td class="TableStyle-APITable-BodyD-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>ss, s</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-APITable-Body-Body1">
+                    <td class="TableStyle-APITable-BodyB-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>millisecond</p>
+                    </td>
+                    <td class="TableStyle-APITable-BodyA-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>ms</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>The following example returns the same value as previous example using the Day, Month, Year functions.</p><p style="color: #555555; font-weight: normal; font-style: normal;"><span style="font-family: Courier;">&nbsp; &nbsp;select</span></p><p style="color: #555555; font-weight: normal; font-style: normal;"><span style="font-family: Courier;">&nbsp; &nbsp;DatePart(dd, u.CreatedOn) as [Day],</span></p><p style="color: #555555; font-weight: normal; font-style: normal;"><span style="font-family: Courier;">&nbsp; &nbsp;DatePart(mm, u.CreatedOn) as [Month],</span></p><p style="color: #555555; font-weight: normal; font-style: normal;"><span style="font-family: Courier;">&nbsp; &nbsp;DatePart(yyyy, u.CreatedOn) as [Year]</span></p><p style="color: #555555; font-weight: normal; font-style: normal;"><span style="font-family: Courier;">&nbsp; &nbsp;from user u</span></p><font color="#555555">
+        
+        </font><h3 id="h3_1548179165" data-has-heading-anchor="true"><a name="DateDiff"></a>DateDiff<a href="/articles/fordevelopers/datefunctions/a/h3_1548179165" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/datefunctions/a/h3_1548179165&#39;,this);"></a></h3>
+        <p>Returns an integer that represents the difference between two specified dates.</p>
+        <p class="bold">Syntax</p>
+        <p class="CodeLast">DateDiff(datetype, date, date)</p>
+        <p>The following table lists all valid datediff arguments.</p>
+        <table style="border-width: 1px; border-color: #000000; border-collapse: collapse;" class="TableStyle-APITable" cellspacing="0" cellpadding="4">
+            <colgroup><col style="width: 92px;" class="TableStyle-APITable-Column-Column1"/>
+            <col class="TableStyle-APITable-Column-Column1"/>
+            </colgroup><thead>
+                <tr class="TableStyle-APITable-HeadE-Column1-Header1" style="border-width: 1px; border-color: #000000; border-style: solid; background-color: #999999;">
+                    <td class="TableStyle-APITable-HeadE-Column1-Header1" style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+                        <b><font color="#ffffff">Datetype</font></b>
+                    </td>
+                    <td class="TableStyle-APITable-HeadD-Column1-Header1" style="border-width: 1px; border-style: solid; border-color: #000000; background-color: #999999;">
+                        <b><font color="#ffffff">Abbreviations</font></b>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-APITable-Body-Body1">
+                    <td class="TableStyle-APITable-BodyE-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>year</p>
+                    </td>
+                    <td class="TableStyle-APITable-BodyD-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>year, yyyy, yy</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-APITable-Body-Body1">
+                    <td class="TableStyle-APITable-BodyE-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>quarter</p>
+                    </td>
+                    <td class="TableStyle-APITable-BodyD-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>quarter, qq, q</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-APITable-Body-Body1">
+                    <td class="TableStyle-APITable-BodyE-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>month</p>
+                    </td>
+                    <td class="TableStyle-APITable-BodyD-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>month, mm, m</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-APITable-Body-Body1">
+                    <td class="TableStyle-APITable-BodyE-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>dayofyear</p>
+                    </td>
+                    <td class="TableStyle-APITable-BodyD-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>dayofyear, dy, y</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-APITable-Body-Body1">
+                    <td class="TableStyle-APITable-BodyE-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>day</p>
+                    </td>
+                    <td class="TableStyle-APITable-BodyD-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>day, dd, d</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-APITable-Body-Body1">
+                    <td class="TableStyle-APITable-BodyE-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>week</p>
+                    </td>
+                    <td class="TableStyle-APITable-BodyD-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>week, wk, ww</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-APITable-Body-Body1">
+                    <td class="TableStyle-APITable-BodyE-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>weekday</p>
+                    </td>
+                    <td class="TableStyle-APITable-BodyD-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>weekday, dw</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-APITable-Body-Body1">
+                    <td class="TableStyle-APITable-BodyE-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>hour</p>
+                    </td>
+                    <td class="TableStyle-APITable-BodyD-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>hour, hh</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-APITable-Body-Body1">
+                    <td class="TableStyle-APITable-BodyE-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>minute</p>
+                    </td>
+                    <td class="TableStyle-APITable-BodyD-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>minute, mi, n</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-APITable-Body-Body1">
+                    <td class="TableStyle-APITable-BodyE-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>second</p>
+                    </td>
+                    <td class="TableStyle-APITable-BodyD-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>second, ss, s</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-APITable-Body-Body1">
+                    <td class="TableStyle-APITable-BodyE-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>millisecond</p>
+                    </td>
+                    <td class="TableStyle-APITable-BodyD-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">
+                        <p>millisecond, ms</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-APITable-Body-Body1">
+                    <td class="TableStyle-APITable-BodyB-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">nanosecond</td>
+                    <td class="TableStyle-APITable-BodyA-Column1-Body1" style="border-width: 1px; border-style: solid; border-color: #000000;">nanosecond, ns</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Example :</p><div><span style="font-family: Courier;"><span style="font-size: 13.3333px;"><font color="#555555">&nbsp; select</font></span></span></div><div><span style="font-family: Courier;"><span style="font-size: 13.3333px;"><font color="#555555">&nbsp; DateDiff(dd,  u.CreatedOn, u.LastVisit) as [Day],</font></span></span></div><div><span style="font-family: Courier;"><span style="font-size: 13.3333px;"><font color="#555555">&nbsp; DateDiff (mm,  u.CreatedOn, u.LastVisit) as [Month],</font></span></span></div><div><span style="font-family: Courier;"><span style="font-size: 13.3333px;"><font color="#555555">&nbsp; DateDiff (yyyy,  u.CreatedOn, &#39;12.12.2017&#39; ) as [Year],</font></span></span></div><div><span style="font-family: Courier;"><span style="font-size: 13.3333px;"><font color="#555555">&nbsp; DateDiff (hh, u.CreatedOn, u.LastVisit ) as [Hour],</font></span></span></div><div><span style="font-family: Courier;"><span style="font-size: 13.3333px;"><font color="#555555">&nbsp; DateDiff (minute, u.CreatedOn, u.LastVisit ) as [Minute],</font></span></span></div><div><span style="font-family: Courier;"><span style="font-size: 13.3333px;"><font color="#555555">&nbsp; DateDiff (mcs, &#39;1:00:00 PM&#39;, &#39;1:00:01 PM&#39; ) as [Microsecond]</font></span></span></div><div><span style="font-family: Courier;"><span style="font-size: 13.3333px;"><font color="#555555">&nbsp; from user u</font></span></span></div>
+        <h3 madcap:conditions="" id="h3_1502599662" data-has-heading-anchor="true"><a name="Now"></a>Now<a href="/articles/fordevelopers/datefunctions/a/h3_1502599662" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/datefunctions/a/h3_1502599662&#39;,this);"></a></h3>
+        <p madcap:conditions="">Function returns the current UTC date and time as a datetime value without  a time zone offset. Syntax:</p>
+        <p class="Code1" madcap:conditions="">Now()</p>
+        <p class="example" madcap:conditions="">Example:</p>
+        <p class="Code1" madcap:conditions="">select f.name, now() as [Now], f.createdOn</p>
+        <p class="Code1" madcap:conditions="">from Facility f</p>
+        <p class="CodeLast" madcap:conditions="">where datepart(mm, now()) = datepart(mm, f.CreatedOn)</p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

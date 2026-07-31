@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/eql"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>EQL Functions</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='EQL Functions';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>        <h1 class="Heading1" id="h1__1691607611" data-has-heading-anchor="true">EQL Functions <a href="/articles/fordevelopers/eql/a/h1__1691607611" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql/a/h1__1691607611&#39;,this);"></a></h1>
+        <div class="toc">
+            <p class="bold">JavaScript Functions</p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/eql/a/eql.execute" onclick="return n(&#39;!fordevelopers/eql/a/eql.execute&#39;,this);">eql.execute</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/eql/a/executeEqlItem" onclick="return n(&#39;!fordevelopers/eql/a/executeEqlItem&#39;,this);">executeEqlItem</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/eql/a/executeEqlItemBinary" onclick="return n(&#39;!fordevelopers/eql/a/executeEqlItemBinary&#39;,this);">executeEqlItemBinary</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/eql/a/executeWithFormat" onclick="return n(&#39;!fordevelopers/eql/a/executeWithFormat&#39;,this);">executeWithFormat</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/eql/a/executeWithFormatBinary" onclick="return n(&#39;!fordevelopers/eql/a/executeWithFormatBinary&#39;,this);">executeWithFormatBinary</a>
+            </p>
+        </div>
+        <div class="methods">
+            <h2 class="jsmethod" id="h2_456325076" data-has-heading-anchor="true"><a name="eql.execute"></a>envianceSdk.eql.execute<a href="/articles/fordevelopers/eql/a/h2_456325076" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql/a/h2_456325076&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_447294615_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_447294615_0" style="display: none;">
+                    <p><a href="/articles/fordevelopers/version1/a/eql.execute" onclick="return n(&#39;!fordevelopers/version1/a/eql.execute&#39;,this);">Version 1.0</a>
+                    </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">This function executes a batch of one or more EQL queries.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>eql	</b> The EQL batch to execute.  For details on EQL syntax, see the documentation on EQL.</p>
+            <p class="BodyIndentHanging"><b>page	</b> <i>Number</i>. The page number within the entire result set to return.</p>
+            <p class="BodyIndentHanging"><b>pageSize	</b> <i>Number</i>. The number of records to assign to each page.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An array of EQL Tables.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.eql.execute(</p>
+            <p class="Code2">&quot;SELECT TOP 1 f.Name FROM Facility f ORDER BY f.Name&quot;,</p>
+            <p class="Code2">1,</p>
+            <p class="Code2">10,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert(&quot;result set 1, row 1, column 1: &quot; + response.result[0].rows[0].values[0]);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2_1331669810" data-has-heading-anchor="true">envianceSdk.packages.eql.executeEqlItem<a href="/articles/fordevelopers/eql/a/h2_1331669810" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql/a/h2_1331669810&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_447294615_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_447294615_1" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description	</p>
+            <p>This method executes an EQL Query Item.</p>
+            <p class="bold">Parameters	</p>
+            <p class="BodyIndent"><b>executeParameters</b>  A JSON object literal with the following properties:</p>
+            <p class="BodyIndent"><b>path</b> The relative path to the EQL Query in the App.</p>
+            <p class="BodyIndent"><b>page</b> <i>Number</i>. The page number within the entire result set to return.</p>
+            <p class="BodyIndent"><b>pageSize</b> <i>Number</i>. The number of records to assign to each page.</p>
+            <p class="BodyIndent"><b>format</b>  One of JSON, CSV, or XML. The default is JSON.</p>
+            <p class="BodyIndent"><b>parameters</b>  A dictionary of parameter names (without any leading @ sign) to string value pairs. Use an empty dictionary if no parameters are to be used.</p>
+            <p class="bold">Return Value	</p>
+            <p class="BodyIndent">An array of EQL Table objects.</p>
+            <p class="bold">Callbacks	</p>
+            <p class="BodyIndent"><b>onsuccess</b>  A callback function to use upon success.</p>
+            <p class="BodyIndent"><b>onfailure</b>  An optional callback function to use upon error.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.packages.eql.executeEqlItem(</p>
+            <p class="Code2">{</p>
+            <p class="Code3">&quot;/path/to/query.eql &quot;,</p>
+            <p class="Code3">&quot;page&quot;: 1,</p>
+            <p class="Code3">&quot;pageSize&quot;: 10,</p>
+            <p class="Code3">&quot;format&quot;: &quot;CSV&quot;</p>
+            <p class="Code2">},</p>
+            <p class="Code2">{</p>
+            <p class="Code3">&quot;param1&quot;: &quot;1,2,3&quot;,</p>
+            <p class="Code3">&quot;param2&quot;: &quot;2011-01-01&quot;</p>
+            <p class="Code2">},</p>
+            <p class="Code2">function(result) {</p>
+            <p class="Code3">console.log(result[0].rows[0].values[0]);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2_1979157825" data-has-heading-anchor="true"><a name="executeEqlItem"></a>envianceSdk.packages.eql.executeEqlItem<a href="/articles/fordevelopers/eql/a/h2_1979157825" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql/a/h2_1979157825&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_447294615_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_447294615_2" style="display: none;">
+                    <p>None</p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">This function executes a batch of one or more EQL queries.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>eql	</b>The EQL batch to execute.  For details on EQL syntax, see the documentation on EQL.</p>
+            <p class="BodyIndentHanging"><b>page	</b>The page number within the entire result set to return.</p>
+            <p class="BodyIndentHanging"><b>pageSize	</b>The number of records to assign to each page.</p>
+            <p class="BodyIndentHanging"><b>format</b> </p>
+            <p class="BodyIndentHanging"><b>filename</b> </p>
+            <p class="BodyIndentHanging"><b>cachecontrol</b> </p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An array of EQL Tables.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.eql.execute(</p>
+            <p class="Code2">&quot;SELECT TOP 1 f.Name FROM Facility f ORDER BY f.Name&quot;,</p>
+            <p class="Code2">1,</p>
+            <p class="Code2">10,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert(&quot;result set 1, row 1, column 1: &quot; + response.result[0].rows[0].values[0]);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2_26310599" data-has-heading-anchor="true"><a name="executeEqlItemBinary"></a>envianceSdk.packages.eql.executeEqlItemBinary<a href="/articles/fordevelopers/eql/a/h2_26310599" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql/a/h2_26310599&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_447294615_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_447294615_3" style="display: none;">
+                    <p>None</p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">This function executes a batch of one or more EQL queries.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>eql	</b>The EQL batch to execute.  For details on EQL syntax, see the documentation on EQL.</p>
+            <p class="BodyIndentHanging"><b>page	</b> <i>Number</i>. The page number within the entire result set to return.</p>
+            <p class="BodyIndentHanging"><b>pageSize	</b> <i>Number</i>. The number of records to assign to each page.</p>
+            <p class="BodyIndentHanging"><b>format</b> </p>
+            <p class="BodyIndentHanging"><b>filename</b> </p>
+            <p class="BodyIndentHanging"><b>cachecontrol</b> </p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An array of EQL Tables.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.eql.execute(</p>
+            <p class="Code2">&quot;SELECT TOP 1 f.Name FROM Facility f ORDER BY f.Name&quot;,</p>
+            <p class="Code2">1,</p>
+            <p class="Code2">10,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert(&quot;result set 1, row 1, column 1: &quot; + response.result[0].rows[0].values[0]);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2_1115030235" data-has-heading-anchor="true"><a name="executeWithFormat"></a>envianceSdk.eql.executeWithFormat<a href="/articles/fordevelopers/eql/a/h2_1115030235" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql/a/h2_1115030235&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_447294615_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_447294615_4" style="display: none;">
+                    <p>None</p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">This function executes a batch of one or more EQL queries.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>eql	</b> The EQL batch to execute.  For details on EQL syntax, see the documentation on EQL.</p>
+            <p class="BodyIndentHanging"><b>page	</b> <i>Number</i>. The page number within the entire result set to return.</p>
+            <p class="BodyIndentHanging"><b>pageSize	</b> <i>Number</i>. The number of records to assign to each page.</p>
+            <p class="BodyIndentHanging"><b>format</b> </p>
+            <p class="BodyIndentHanging"><b>filename</b> </p>
+            <p class="BodyIndentHanging"><b>cachecontrol</b> </p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An array of EQL Tables.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.eql.execute(</p>
+            <p class="Code2">&quot;SELECT TOP 1 f.Name FROM Facility f ORDER BY f.Name&quot;,</p>
+            <p class="Code2">1,</p>
+            <p class="Code2">10,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert(&quot;result set 1, row 1, column 1: &quot; + response.result[0].rows[0].values[0]);</p>
+            <p class="Code2">});</p>
+            <h2 class="jsmethod" id="h2__84994566" data-has-heading-anchor="true"><a name="executeWithFormatBinary"></a>envianceSdk.eql.executeWithFormatBinary<a href="/articles/fordevelopers/eql/a/h2__84994566" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/eql/a/h2__84994566&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_447294615_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_447294615_5" style="display: none;">
+                    <p>None</p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">This function executes a batch of one or more EQL queries.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>eql	</b>The EQL batch to execute.  For details on EQL syntax, see the documentation on EQL.</p>
+            <p class="BodyIndentHanging"><b>page	</b> <i>Number</i>. The page number within the entire result set to return.</p>
+            <p class="BodyIndentHanging"><b>pageSize	</b> <i>Number</i>. The number of records to assign to each page.</p>
+            <p class="BodyIndentHanging"><b>format</b> </p>
+            <p class="BodyIndentHanging"><b>filename</b> </p>
+            <p class="BodyIndentHanging"><b>cachecontrol</b> </p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An array of EQL Tables.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.eql.execute(</p>
+            <p class="Code2">&quot;SELECT TOP 1 f.Name FROM Facility f ORDER BY f.Name&quot;,</p>
+            <p class="Code2">1,</p>
+            <p class="Code2">10,</p>
+            <p class="Code2">function(response) {</p>
+            <p class="Code3">alert(&quot;result set 1, row 1, column 1: &quot; + response.result[0].rows[0].values[0]);</p>
+            <p class="Code2">});</p>
+        </div>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

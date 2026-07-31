@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/restapis-using"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Using the REST API</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Using the REST API';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>        <h1 id="h1__437207413" data-has-heading-anchor="true">Using the REST API<a href="/articles/fordevelopers/restapis-using/a/h1__437207413" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/restapis-using/a/h1__437207413&#39;,this);"></a></h1>
+        <p>The EMS REST API allows you to build applications that interact with EMS in more complex ways than the integrations provided out of the box.</p>
+        <p class="bold">Basics</p>
+        <p>The Web API consists of HTTP RPC-style methods, all of the form: </p>
+        <p class="CodeLast">https://api.enviance.com/version/service/method </p>
+        <p>All methods must be called using HTTPS. Arguments can be passed as GET or POST params, or a mix. The response contains a JSON object, which will always contain a response code status, indicating success or failure.</p>
+        <p>Every REST API request must be authenticated by providing a bearer token, which identifies a single user. This token is also referred as session ID.</p>
+        <p>A token can be acquired by first calling the authenticate session API:</p>
+        <div style="background-color:#f5f5f5;">
+            <p class="Code1">
+POST /ver2/AuthenticationService.svc/sessions </p>
+            <p class="Code1">HTTP/1.1
+Content-Type: application/json; charset=UTF-8
+</p>
+            <p class="Code1">{
+</p>
+            <p class="Code2">  userName: "username",
+</p>
+            <p class="Code2">  password: "pass111"
+</p>
+            <p class="CodeLast">}
+</p>
+        </div>
+        <p>Response Content:</p>
+        <div style="background-color:#f5f5f5">
+            <p class="CodeLast">"8d679d4e-32d8-4864-8754-6f3f9bd27235"</p>
+        </div>
+        <p>The session token can then be utilized on all subsequent API calls, as demonstrated below by performing an EQL query :</p>
+        <div style="background-color:#f5f5f5;">
+            <p class="Code1">POST /ver2/EqlService.svc/query HTTP/1.1</p>
+            <p class="Code1">Host: api.enviance.com</p>
+            <p class="Code1">Content-Type: application/json</p>
+            <p class="Code1">Authorization: Enviance 8d679d4e-32d8-4864-8754-6f3f9bd27235</p>
+            <p class="Code1">Cache-Control: no-cache</p>
+            <p class="Code1">Postman-Token: 81434362-7896-2861-3528-bab31f6059fe</p>
+            <p class="Code1">{</p>
+            <p class="Code2">"eql": "SELECT f.name from Facility f",</p>
+            <p class="Code2">"page": 1,</p>
+            <p class="Code2">"pageSize": 10,</p>
+            <p class="Code2">"format": "json"</p>
+            <p class="CodeLast">}</p>
+        </div>
+        <p>Response headers:</p>
+        <div style="background-color:#f5f5f5;">
+            <p class="Code1">cache-control : no-cache</p>
+            <p class="Code1">content-type : application/json; charset=utf-8</p>
+            <p class="Code1">date : Wed, 04 Oct 2017 18:56:19 GMT</p>
+            <p class="Code1">envapi-eql-ecucall : 0.014</p>
+            <p class="Code1">envapi-eql-ecuperiod : 0.445</p>
+            <p class="Code1">envapi-remaining-calls : 995</p>
+            <p class="Code1">envapi-remaining-interval : 103</p>
+            <p class="Code1">envapi-version : 2.0</p>
+            <p class="Code1">expires : -1</p>
+            <p class="Code1">pragma : no-cache</p>
+            <p class="Code1">server : Microsoft-IIS/8.0</p>
+            <p class="Code1">transfer-encoding : chunked</p>
+            <p class="Code1">x-aspnet-version : 4.0.30319</p>
+            <p class="CodeLast">x-powered-by : ASP.NET</p>
+        </div>
+        <p>Note that every REST api call returns specific “envapi-xxx”  response headers. They are informational headers that may include information about api usage and limits :</p>
+        <p class="BodyIndentHanging">envapi-remaining-calls : Indicates how many API calls current session can still execute for the current period of time (interval, below) . </p>
+        <p class="BodyIndentHanging">envapi-remaining-interval : Indicates how many minutes are still left for the current time period, until all counts/limits are reset.</p>
+        <p class="BodyIndentHanging">envapi-version : Indicates the version of EMS API.</p>
+        <p class="BodyIndentHanging">envapi-eql-ecucall : EQL-specific response header. Indicates how “heavy” your EQL call was. It's a count of how many resources ( in aggregate) your query consumed.</p>
+        <p class="BodyIndentHanging">envapi-eql-ecuperiod : Count of how many ECUs have been consumed across the system for the current time period.</p>
+        <p class="bold">About <i>envapi-remaining-calls</i> and <i>envapi-remaining-interval</i></p>
+        <p style="font-style: italic;">How does that work?</p>
+        <p class="BodyIndent">We have a limit on the number of calls (for instance, 5k) for a given period of time (for instance, 60 minutes). As you make API calls, the remaining calls decreases. As the time passes by, the remaining interval period decreases.</p>
+        <p class="BodyIndent">Once remaining calls limit reaches 0, you cannot make more calls.</p>
+        <p class="BodyIndent">Once the remaining interval reaches 0, we reset both limits back to default( 5k for calls, 60 for periods). So you can resume making your calls.</p>
+        <p style="font-style: italic;">Does that work in a way where as long as I have remaining calls, and the interval hasn't reset, I can keep calling?</p>
+        <p class="BodyIndent">Yes.</p>
+        <p style="font-style: italic;">Also, is the count different for each service that we call? For example, can the query response process more requests than say the EventService?</p>
+        <p class="BodyIndent">Yes.</p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

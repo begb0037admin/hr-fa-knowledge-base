@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/workflowstep"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>WorkflowStep</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='WorkflowStep';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h2 class="method" id="h2_1118755861" data-has-heading-anchor="true">WorkflowStep<a href="/articles/fordevelopers/workflowstep/a/h2_1118755861" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowstep/a/h2_1118755861&#39;,this);"></a></h2>
+        <p class="bold">Columns</p>
+        <p class="BodyIndentHanging"><b>ID</b> Workflow ID</p>
+        <p class="BodyIndentHanging"><b>WorkflowInstanceID</b> Owner</p>
+        <p class="BodyIndentHanging"><b>Name</b> Step Name</p>
+        <p class="BodyIndentHanging"><b>CompletedDate</b> Completion Date</p>
+        <p class="BodyIndentHanging"><b>CompletedBy</b> Completed By</p>
+        <p class="BodyIndentHanging"><b>CompletedStepActionID</b> Completed Step Action ID</p>
+        <p class="BodyIndentHanging"><b>Created</b> Date created</p>
+        <p class="BodyIndentHanging"><b>AssigneeGroup.ID, AssigneeGroup.Name, ...</b> Composite column to <a href="/articles/fordevelopers/group" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!fordevelopers/group&#39;,this);">Group</a> table (includes all fields from Group)</p>
+        <p class="BodyIndentHanging"><b>AssigneeUser.ID,  AssigneeUser.FirstName, ...</b> Composite column to <a href="/articles/fordevelopers/user" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!fordevelopers/user&#39;,this);">User</a> table (includes all fields from User)</p>
+        <p class="BodyIndentHanging"><b>AssignedBy.ID,  AssignedBy.FirstName, ...</b> Composite column to <a href="/articles/fordevelopers/user" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!fordevelopers/user&#39;,this);">User</a> table (includes all fields from User)</p>
+        <p class="BodyIndentHanging"><b>FormTemplate.ID, FormTemplate.Name, ...</b> Composite column to <a href="/articles/fordevelopers/formtemplate" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!fordevelopers/formtemplate&#39;,this);">FormTemplate</a> table (include all fields, native and composite, from FormTemplate</p>
+        <p class="bold">Natural Joins</p>
+        <p class="BodyIndent2"><a href="/articles/fordevelopers/workflowinstance" onclick="return n(&#39;!fordevelopers/workflowinstance&#39;,this);">WorkflowInstance</a> – Natural joins only the current workflow step. Consider an explicit join (WorkflowInstanceID)  for querying all workflow steps.
+        </p>
+        <p class="example">Example:&#160;Get the data entered (on specified custom fields) for the current step of a given workflow.</p>
+        <p class="Code1">select top 1 </p>
+        <p class="Code2">ws."Custom Field 1", </p>
+        <p class="Code2">ws."Custom Field 2"</p>
+        <p class="Code1">from WorkflowInstance w</p>
+        <p class="Code1">join WorkflowStep ws on w</p>
+        <p class="Code1">join WorkflowHistory wh on wh. WorkflowStepID = ws.ID</p>
+        <p class="Code1">where </p>
+        <p class="Code2">w.Name = 'My Workflow'</p>
+        <p class="Code1">order by wh.Created desc</p>
+        <p class="example">Example: Natural join returning just the current step for the instance:</p>
+        <p class="Code1">select …</p>
+        <p class="Code1">from workflowinstance wi</p>
+        <p class="CodeLast">join workflowstep ws on wi</p>
+        <p class="example">Example:&#160;Explicit join returning all steps for the instance:</p>
+        <p class="Code1">select …</p>
+        <p class="Code1">from workflowinstance wi</p>
+        <p class="CodeLast">join workflowstep ws on ws.workflowinstanceid = wi.id</p>
+        <p class="Permissions" MadCap:autonum="Permissions: &#160;"><span class="autonumber"><span class="note_et_al">Permissions: &#160;</span></span>Requires
+			Report permission on owner workflow. 			Manage Groups right is also required to query AssigneeGroup fields. 			Manage Users right is also required to query AssignedBy,AssigneeUser
+		fields.</p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

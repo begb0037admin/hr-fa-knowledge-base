@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/workflowinstancevalue"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>WorkflowInstanceValue</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='WorkflowInstanceValue';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h2 class="method" id="h2__160678808" data-has-heading-anchor="true">WorkflowInstanceValue<a href="/articles/fordevelopers/workflowinstancevalue/a/h2__160678808" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowinstancevalue/a/h2__160678808&#39;,this);"></a></h2>
+        <p style="font-weight: bold;">Columns</p><p class="BodyIndent"><b class="BodyIndent">WorkflowInstanceID</b> Workflow ID</p><p class="BodyIndent"><b>CustomFieldID</b> Workflow ID</p><p class="BodyIndent"><b>CustomFieldName</b> Custom field name<span><ins cite="mailto:Mykola Yakubovskyi" datetime="2020-04-13T15:32:00Z"> </ins></span></p><p class="BodyIndent"><b>Value </b>String representation of custom field value</p><p class="BodyIndent"><b>ValueDate</b> Value of DateTime custom field </p><p class="BodyIndent"><b>ValueBoolean</b> Value of Boolean custom field </p><p class="BodyIndent"><span style="font-size: 13.3333px;"><b>ValueNumeric</b> Value of Numeric custom field</span></p><p class="BodyIndent"><b>ListItemNumeric </b>Numeric Item of DropDown/Multiselect </p><p class="BodyIndent"><b>ListItemLabel</b> Label of DropDown/Multiselect&nbsp;<sup>(1)</sup></p><p class="BodyIndent"><b>ListItemLabel.Localized</b> Label of DropDown/Multiselect<sup> </sup><sup>(2)</sup></p><p class="BodyIndent"><b>ListItemLabel.Invariant</b> Label of DropDown/Multiselect<sup> &nbsp;</sup><sup>(3)</sup></p><p class="BodyIndent"><b>ListItemOrder</b> Order of DropDown/Multiselect</p><p class="BodyIndent"><b>HyperlinkValue </b>Hyperlink value</p><p class="BodyIndent"><b>HyperlinkLabel&nbsp;</b>Hyperlink label</p><p>footnotes:</p><p class="BodyIndent">1) returns value in specific culture when command &quot;localized&quot; is specified</p><p class="BodyIndent">2) always returns non localized value</p><p class="BodyIndent">3) always returns value in specific culture (by default current user culture)</p><font color="#555555">
+        
+        </font><p class="bold">Natural Joins</p><p class="BodyIndent">	<a href="/articles/fordevelopers/workflowinstance" onclick="return n(&#39;!fordevelopers/workflowinstance&#39;,this);">WorkflowInstance</a></p><p class="BodyIndent">	<a href="/articles/fordevelopers/customfields" onclick="return n(&#39;!fordevelopers/customfields&#39;,this);">CustomField</a></p><font color="#555555">
+        </font>
+        <p class="example">Example: Get&nbsp;<span style="font-size: 10pt;">all values </span><span style="font-size: 10pt;">of global fields of &nbsp;specified Workflow Instance</span></p>
+        <p class="Code1">
+select</p><p class="Code2">v.WorkflowInstanceID,</p><p class="Code2">v.CustomFieldID,</p><p class="Code2">v.CustomFieldName,</p><p class="Code2">v.Value</p><font color="#555555">
+        </font>
+        <p class="Code1">from WorkflowInstanceValue v</p>
+        <p class="Code1">where v.WorkflowInstanceID = &#39;FAD3BD9A-B6EF-4945-BD25-ACD060CF3765&#39;</p>
+        <div> </div>
+        <p class="Permissions"><span class="autonumber"><span class="note_et_al">Permissions: &nbsp;</span></span>Requires
+			Report permission  on the target object or Workflow Managers&#39; role. 	</p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+        </script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

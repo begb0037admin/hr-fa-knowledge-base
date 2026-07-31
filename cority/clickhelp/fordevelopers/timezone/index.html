@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/timezone"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>TimeZone</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='TimeZone';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h2 class="method" id="h2_1779041463" data-has-heading-anchor="true">TimeZone<a href="/articles/fordevelopers/timezone/a/h2_1779041463" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/timezone/a/h2_1779041463&#39;,this);"></a></h2>
+        <p class="bold">Columns</p>
+        <p class="BodyIndentHanging"><b>ID</b> TimeZone ID</p>
+        <p class="BodyIndentHanging"><b>StdOffset</b> TimeZone StdOffset</p>
+        <p class="BodyIndentHanging"><b>DstOffset</b> TimeZone DstOffset</p>
+        <p class="BodyIndentHanging"><b>Name</b> TimeZone name</p>
+        <p class="BodyIndentHanging"><b>IsOld</b> Boolean, indicating if time zone is old</p>
+        <p class="BodyIndentHanging"><b>SupportsDst</b> Boolean indicating if time zone supports DstOffset</p>
+        <p class="BodyIndentHanging"><b>IsUSA</b> Boolean indicating if time zone for USA</p>
+        <p class="bold">Natural Joins</p>
+        <p class="BodyIndent2"><a href="/articles/fordevelopers/complianceobject" onclick="return n(&#39;!fordevelopers/complianceobject&#39;,this);">ComplianceObject</a>
+        </p>
+        <p class="BodyIndent2"><a href="/articles/fordevelopers/eventlog" onclick="return n(&#39;!fordevelopers/eventlog&#39;,this);">EventLog</a>
+        </p>
+        <p class="BodyIndent2"><a href="/articles/fordevelopers/facility" onclick="return n(&#39;!fordevelopers/facility&#39;,this);">Facility</a>
+        </p>
+        <p class="BodyIndent2"><a href="/articles/fordevelopers/poi" onclick="return n(&#39;!fordevelopers/poi&#39;,this);">POI</a>
+        </p>
+        <p class="BodyIndent2"><a href="/articles/fordevelopers/requirement-1" onclick="return n(&#39;!fordevelopers/requirement-1&#39;,this);">Requirement</a>
+        </p>
+        <p class="BodyIndent2"><a href="/articles/fordevelopers/unit" onclick="return n(&#39;!fordevelopers/unit&#39;,this);">Unit</a>
+        </p>
+        <p class="BodyIndent2"><a href="/articles/fordevelopers/user" onclick="return n(&#39;!fordevelopers/user&#39;,this);">User</a>
+        </p>
+        <p class="example">Example (converts datetime to a time zone):</p>
+        <p class="Code1">
+select top 20
+    </p>
+        <p class="Code2">dp.Collected as dbTime,
+    </p>
+        <p class="Code2">localtime(dp.Collected, tz) as localtimeCollected
+</p>
+        <p class="Code1">from Facility f
+</p>
+        <p class="Code1">join TimeZone tz on f
+</p>
+        <p class="Code1">join Requirement r on r is under f
+</p>
+        <p class="CodeLast">join DataPoint dp on r
+</p>
+        <p class="example">Example: Get task due dates with task time zone.</p>
+        <p class="Code1">select</p>
+        <p class="Code2">t.Name,</p>
+        <p class="Code2">ti.DueDateTime,</p>
+        <p class="Code2">t.TimeZone.Name</p>
+        <p class="Code1">from Task t</p>
+        <p class="Code1">join TaskInstance ti on t</p>
+        <p class="Code1">where ti.DueDateTime between '01/01/2014' and '06/01/2014'</p>
+        <p class="example"/>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/hasuserobjectaccess"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>HasUserObjectAccess</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='HasUserObjectAccess';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>        <h2 id="h2__102916152" data-has-heading-anchor="true">HasUserObjectAccess<a href="/articles/fordevelopers/hasuserobjectaccess/a/h2__102916152" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/hasuserobjectaccess/a/h2__102916152&#39;,this);"></a></h2><p class="Note">Note: The &#39;HasUserObjectAccess&#39; function is only available for the Management System EQL.</p>
+        <p class="BodyText">Returns True if given user has access to respective Compliance object (including Group membership, defaults, and taking into account override inheritance).</p>
+        <p class="bold">Syntax:</p>
+        <p class="CodeLast">HasUserObjectAccess (ObjectID, AccessLevel[, UserID])</p>
+        <p class="BodyText"><i>ObjectID </i>: Compliance Object ID. Identifier of object to be checked. Required.</p>
+        <p class="BodyText"><i>AccessLevel </i>: Access Level, text. One of the following values is accepted:</p>
+        <ul>
+            <li value="1"><i>NoAccess </i>: No access level present</li>
+            <li value="2"><i>ViewData </i>: View Data or Full Control access level present</li>
+            <li value="3"><i>ViewProperties </i>: View Properties or Full Control access level present</li>
+            <li value="4"><i>Report </i>: Report or Full Control access level present</li>
+            <li value="5"><i>EnterData </i>: Enter Data or Full Control access level present</li>
+            <li value="6"><i>ViewEnterEditData </i>: View, Enter, and Edit Data or Full Control access level present</li>
+            <li value="7"><i>CreateCompleteTasks </i>: Create and Complete Tasks or Full Control access level present</li>
+            <li value="8"><i>ViewTasks </i>: View Tasks or Full Control access level present</li>
+            <li value="9"><i>Modify </i>: Modify or Full Control access level present</li>
+            <li value="10"><i>FullControl </i>: Full Control access level present</li>
+        </ul>
+        <p class="BodyText"><i>UserID </i>: User ID to be used on access level check. Optional. If not provided, assume current user&#39;s ID.</p>
+        <p class="example">Examples</p>
+        <p class="Code1">select</p>
+        <p class="Code2">r.id,</p>
+        <p class="Code2">r.name,</p>
+        <p class="Code2">HasUserObjectAccess(r.id, &#39;EnterData&#39;, getCurrentUser())</p>
+        <p class="CodeLast">from requirement r</p>
+        <p class="BodyText">or (shortened version with same result):</p>
+        <p class="Code1">select</p>
+        <p class="Code2">r.id,</p>
+        <p class="Code2">r.name,</p>
+        <p class="Code2">HasUserObjectAccess(r.id, &#39;EnterData&#39;)</p>
+        <p class="CodeLast">from requirement r</p>
+        <p class="BodyText">or (if userId is known ):</p>
+        <p class="Code1">select</p>
+        <p class="Code2">r.id,</p>
+        <p class="Code2">r.name,</p>
+        <p class="Code2">HasUserObjectAccess(r.id, &#39;EnterData&#39;, &#39;AE6E9DA2-2BA6-4AE8-AC50-89C7524237A7&#39;)</p>
+        <p class="CodeLast">from requirement r</p>
+        <p>&nbsp;</p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,717 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/objectpropscomplex"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Object Properties Editing Tool - Complex Properties</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Object Properties Editing Tool - Complex Properties';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h2_964309964" style="" data-has-heading-anchor="true">
+  Object Properties Editing Tool - Complex Properties&nbsp;
+<a href="/articles/fordevelopers/objectpropscomplex/a/h2_964309964" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/objectpropscomplex/a/h2_964309964&#39;,this);"></a></h1>
+<p class="BodyText">
+  For complex properties (those that involve multiple related fields), you must use the extended column format in this upload tool.
+</p>
+<p class="BodyText">
+  Download the Excel template file:
+</p>
+<p class="BodyIndent2">
+  <a href="/resources/Storage/fordevelopers/Bulk%20Tools/Templates/Object_Properties_Editing_-_Complex_Props_Template.xlsx" target="_blank">Object Properties Editing Tool - Complex Properties</a>
+</p>
+<p class="BodyText">
+  Common properties are shown in the Property Name column. Associated fields are color-coded in the template, indicating the related property values for an object that must be entered on the same line. Entries for these fields must use the same column number shown in the template.
+</p>
+<p class="BodyText">
+  For example, the Data Collection/Sampling Frequency fields are in columns AQ and AR in the template. To edit these properties, you need to enter both values in the same line and in the correct columns, as shown (intervening columns are hidden):
+</p>
+<table style="margin-left: 0;margin-right: auto;">
+  <colgroup>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+  </colgroup>
+  <tbody>
+    <tr>
+      <td class="td_HeadGray">
+        &nbsp;
+      </td>
+      <td class="td_HeadGray">
+        A
+      </td>
+      <td class="td_HeadGray">
+        B
+      </td>
+      <td class="td_HeadGray">
+        AQ
+      </td>
+      <td class="td_HeadGray">
+        AR
+      </td>
+    </tr>
+    <tr>
+      <td class="td_HeadGray">
+        1
+      </td>
+      <td class="td_HeadRed">
+        Path and Name
+      </td>
+      <td class="td_HeadRed">
+        Property Name
+      </td>
+      <td class="td_mauve">
+        Data Collection Period Frequency
+      </td>
+      <td class="td_mauve">
+        Data Collection Period Time
+      </td>
+    </tr>
+    <tr>
+      <td class="td_HeadGray">
+        2
+      </td>
+      <td class="td_1">
+        path/parameter A	
+      </td>
+      <td class="td_1">
+        data collection/sampling frequency
+      </td>
+      <td class="td_1">
+        1
+      </td>
+      <td class="td_1">
+        month
+      </td>
+    </tr>
+    <tr>
+      <td class="td_HeadGray">
+        3
+      </td>
+      <td class="td_1">
+        path/parameter B
+      </td>
+      <td class="td_1">
+        data collection/sampling frequency
+      </td>
+      <td class="td_1">
+        2
+      </td>
+      <td class="td_1">
+        week
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="BodyText">
+  &nbsp;
+</p>
+<p class="BodyText">
+  Note that if you were to edit these fields in EMS, you would be required to enter both values in order to save changes. Similarly, in the Excel file, since each line is processed separately, both values must be entered on the same line to avoid an error.
+</p>
+<p class="BodyText">
+  Since there are a large number of columns, to avoid confusion, you can hide any columns  you do not need to edit. However, do not delete the columns. The location address (column number) is used in processing; the column heads are unimportant (the first row in the file which contains the column names is skipped).
+</p>
+<p class="BodyText">
+  Remember: Blank values in a property value field are ignored and will not be edited. To clear an existing value for a field, enter &lt;clear&gt; in the cell.
+</p>
+<p class="bold">
+  Linked Lists and Multi-Select List Fields
+</p>
+<p class="BodyText">
+  For custom fields that are linked lists, use the '|' character to separate values.
+</p>
+<p class="bold">
+  Example: Linked lists
+</p>
+<p class="BodyText">
+  <img src="images/LinkedList.png" loading="lazy"/>
+</p>
+<table style="margin-left: 0;margin-right: auto;">
+  <colgroup>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+  </colgroup>
+  <tbody>
+    <tr>
+      <td class="td_HeadGray">
+        &nbsp;
+      </td>
+      <td class="td_HeadGray">
+        A
+      </td>
+      <td class="td_HeadGray">
+        B
+      </td>
+      <td class="td_HeadGray">
+        C
+      </td>
+    </tr>
+    <tr>
+      <td class="td_HeadGray">
+        1
+      </td>
+      <td class="td_HeadRed">
+        Path and Name
+      </td>
+      <td class="td_HeadRed">
+        Property Name
+      </td>
+      <td class="td_HeadRed">
+        Property Value
+      </td>
+    </tr>
+    <tr>
+      <td class="td_HeadGray">
+        2
+      </td>
+      <td class="td_1">
+        path/object A	
+      </td>
+      <td class="td_1">
+        Assessment Type
+      </td>
+      <td class="td_1">
+        Hazards Management |&nbsp;TRI
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="BodyText">
+  &nbsp;
+</p>
+<p class="BodyText">
+  Use the same format for multi-select list fields.
+</p>
+<p class="bold">
+  Example: Multi-select list field
+</p>
+<p class="BodyText">
+  <img src="images/MultiselectList.png" loading="lazy"/>
+</p>
+<table style="margin-left: 0;margin-right: auto;">
+  <colgroup>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+  </colgroup>
+  <tbody>
+    <tr>
+      <td class="td_HeadGray">
+        &nbsp;
+      </td>
+      <td class="td_HeadGray">
+        A
+      </td>
+      <td class="td_HeadGray">
+        B
+      </td>
+      <td class="td_HeadGray">
+        C
+      </td>
+    </tr>
+    <tr>
+      <td class="td_HeadGray">
+        1
+      </td>
+      <td class="td_HeadRed">
+        Path and Name
+      </td>
+      <td class="td_HeadRed">
+        Property Name
+      </td>
+      <td class="td_HeadRed">
+        Property Value
+      </td>
+    </tr>
+    <tr>
+      <td class="td_HeadGray">
+        2
+      </td>
+      <td class="td_1">
+        path/object A	
+      </td>
+      <td class="td_1">
+        Audit Areas
+      </td>
+      <td class="td_1">
+        Hazard communication | Contractor safety
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="BodyText">
+  &nbsp;
+</p>
+<p class="bold">
+  Fields with Historical Values
+</p>
+<p class="BodyText">
+  For properties with historical values, including System Variable values, enter the Start Date in column D, and End Date in Column E, if appropriate. If there is an existing historical value in the system with no end date, you must edit the existing value and enter the end date for that value history first, just as when editing the field in the system.
+</p>
+<p class="BodyText">
+  Example: End date existing history (2) and add a new value history (3).
+</p>
+<table style="margin-left: 0;margin-right: auto;">
+  <colgroup>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+  </colgroup>
+  <tbody>
+    <tr>
+      <td class="td_HeadGray">
+        &nbsp;
+      </td>
+      <td class="td_HeadGray">
+        A
+      </td>
+      <td class="td_HeadGray">
+        B
+      </td>
+      <td class="td_HeadGray">
+        C
+      </td>
+      <td class="td_HeadGray">
+        D
+      </td>
+      <td class="td_HeadGray">
+        E
+      </td>
+    </tr>
+    <tr>
+      <td class="td_HeadGray">
+        1
+      </td>
+      <td class="td_HeadRed">
+        Path and Name
+      </td>
+      <td class="td_HeadRed">
+        Property Name
+      </td>
+      <td class="td_HeadRed">
+        Property Value
+      </td>
+      <td class="td_HeadRed">
+        Start Date
+      </td>
+      <td class="td_HeadRed">
+        End Date
+      </td>
+    </tr>
+    <tr>
+      <td class="td_HeadGray">
+        2
+      </td>
+      <td class="td_1">
+        path/parameter A	
+      </td>
+      <td class="td_1">
+        data collection/sampling frequency
+      </td>
+      <td class="td_1">
+        1
+      </td>
+      <td class="td_1">
+        1/1/2008
+      </td>
+      <td class="td_1">
+        1/1/2010
+      </td>
+    </tr>
+    <tr>
+      <td class="td_HeadGray">
+        3
+      </td>
+      <td class="td_1">
+        path/parameter B
+      </td>
+      <td class="td_1">
+        data collection/sampling frequency
+      </td>
+      <td class="td_1">
+        2
+      </td>
+      <td class="td_1">
+        1/1/2010
+      </td>
+      <td class="td_1">
+        &nbsp;
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="BodyText">
+  &nbsp;
+</p>
+<p class="BodyText">
+  Historical values are identified according to the Start Date. Existing historical values will not be deleted or changed, as long as there is no conflict with the new value. It is not necessary to list all existing historical values to preserve them.
+</p>
+<p class="BodyText">
+  The <b>History Update Type</b> (column AT) specifies how historical values are to be edited:
+</p>
+<p class="BodyIndent2">
+  Replace:&nbsp;This option deletes all existing value histories and replaces them with the new value history. 
+</p>
+<p class="BodyIndent2">
+  Merge:&nbsp;This option will create a new value history with the specified start date and at the same time end the current history. The End Date for the current history will be the same as the Begin Date for the new history. (This is the default option.)
+</p>
+<p class="BodyIndent2">
+  End:&nbsp;This option will simply end date the current value history. 
+</p>
+<p class="bold">
+  Automated Task Properties
+</p>
+<p class="BodyText">
+  On this worksheet you can edit the properties of automated tasks associated with Numeric Requirements and Event Logs. These fields include the Task Template to apply to the object and the related fields.
+</p>
+<p class="BodyText">
+  You can also edit these fields and the Task Template associations with the Task Template worksheet in the <a href="/articles/fordevelopers/templateupdate" onclick="return n(&#39;!fordevelopers/templateupdate&#39;,this);">Template Update Tool</a>. If you do not want to edit other object properties at the same time, the Template Update Tool will be easier to use, since it only contains the relevant task fields.
+</p>
+<p class="BodyText">
+  To edit single and recurring tasks not associated with a Task Template, use the <a href="/articles/fordevelopers/taskediting" onclick="return n(&#39;!fordevelopers/taskediting&#39;,this);">Task Editing Tool</a>.
+</p>
+<p class="BodyText">
+  For a Numeric Requirement, you may edit the Task for Regulatory Limit and Task for Internal Limit, each of which include the following related fields: Task Template, Assignor, User Assignees, Group Assignees. A limit value must be applied to the Numeric Requirement before the fields can be edited. Limit values cannot be edited with the bulk tool.
+</p>
+<p class="BodyText">
+  The Task Template and related fields for a Numeric Requirement, as seen in EMS, are shown below.
+</p>
+<p class="BodyText" style="text-align: center;"></p><div style="text-align: left;">
+  </div><div style="text-align: left;"><img src="images/TaskTemplate_549x324.png" style="width: 549px; height: 324px;" loading="lazy"/></div>
+<p></p>
+<p class="BodyText">
+  The fields to be edited on the Object Properties template:
+</p>
+<table style="margin-left: 0;margin-right: auto;">
+  <colgroup>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+  </colgroup>
+  <tbody>
+    <tr>
+      <td class="td_HeadGray">
+        &nbsp;
+      </td>
+      <td class="td_HeadGray">
+        A
+      </td>
+      <td class="td_HeadGray">
+        B
+      </td>
+      <td class="td_HeadGray">
+        J
+      </td>
+      <td class="td_HeadGray">
+        K
+      </td>
+      <td class="td_HeadGray">
+        L
+      </td>
+      <td class="td_HeadGray">
+        M
+      </td>
+      <td class="td_HeadGray">
+        N
+      </td>
+    </tr>
+    <tr>
+      <td class="td_HeadGray">
+        1
+      </td>
+      <td class="td_HeadRed">
+        Path and Name
+      </td>
+      <td class="td_HeadRed">
+        Property Name
+      </td>
+      <td class="td_green">
+        Task Template Name
+      </td>
+      <td class="td_green">
+        Assignor
+      </td>
+      <td class="td_green">
+        Assignor From Data Entry
+      </td>
+      <td class="td_green">
+        User Assignees
+      </td>
+      <td class="td_green">
+        Group Assignees
+      </td>
+    </tr>
+    <tr>
+      <td class="td_HeadGray">
+        2
+      </td>
+      <td class="td_1">
+        \path\numeric requirement A	
+      </td>
+      <td class="td_1">
+        task for regulatory limit
+      </td>
+      <td class="td_1">
+        Loading Exceedance
+      </td>
+      <td class="td_1">
+        TaskMailbox
+      </td>
+      <td class="td_1">
+        &nbsp;
+      </td>
+      <td class="td_1">
+        &nbsp;
+      </td>
+      <td class="td_1">
+        Env. Manager
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  &nbsp;
+</p>
+<p class="BodyText">
+  For an Event Log, the same fields apply (columns J thru N).
+</p>
+<p class="BodyText">
+  Assignor From Data Entry field (column L) applies only to Manual Event Logs with an associated Task Template. If the Assignor field is empty, then Assignor From Data Entry must be TRUE. If the Assignor field is completed and Assignor From Data Entry is empty, then it is assumed to be FALSE by default. If Assignor From Data Entry is TRUE, then any value in the Assignor field is ignored.
+</p>
+<p class="BodyText">
+  Example: Task for Manual Event Log
+</p>
+<table style="margin-left: 0;margin-right: auto;">
+  <colgroup>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+  </colgroup>
+  <tbody>
+    <tr>
+      <td class="td_HeadGray">
+        &nbsp;
+      </td>
+      <td class="td_HeadGray">
+        A
+      </td>
+      <td class="td_HeadGray">
+        B
+      </td>
+      <td class="td_HeadGray">
+        J
+      </td>
+      <td class="td_HeadGray">
+        K
+      </td>
+      <td class="td_HeadGray">
+        L
+      </td>
+      <td class="td_HeadGray">
+        M
+      </td>
+      <td class="td_HeadGray">
+        N
+      </td>
+    </tr>
+    <tr>
+      <td class="td_HeadGray">
+        1
+      </td>
+      <td class="td_HeadRed">
+        Path and Name
+      </td>
+      <td class="td_HeadRed">
+        Property Name
+      </td>
+      <td class="td_green">
+        Task Template Name
+      </td>
+      <td class="td_green">
+        Assignor
+      </td>
+      <td class="td_green">
+        Assignor From Data Entry
+      </td>
+      <td class="td_green">
+        User Assignees
+      </td>
+      <td class="td_green">
+        Group Assignees
+      </td>
+    </tr>
+    <tr>
+      <td class="td_HeadGray">
+        2
+      </td>
+      <td class="td_1">
+        \path\event log
+      </td>
+      <td class="td_1">
+        task template
+      </td>
+      <td class="td_1">
+        Document Incident
+      </td>
+      <td class="td_1">
+        &nbsp;
+      </td>
+      <td class="td_1">
+        true
+      </td>
+      <td class="td_1">
+        &nbsp;
+      </td>
+      <td class="td_1">
+        Field Inspectors
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  &nbsp;
+</p>
+<p class="Caution" madcap:autonum="Caution: &nbsp;">
+  <span class="autonumber"><span class="note_red">Caution: &nbsp;</span></span>Edits to these fields will overwrite all existing values. So, for example, if you want to add a new assignee to a task without removing the existing assignees, you must list ALL assignees. When editing existing task properties on Numeric Requirements and Event Logs, you should run a System Properties Report first to obtain current values.
+</p>
+<p class="BodyText">
+  When designating user assignees, use the user login id. Separate multiple assignees with the "|" character.
+</p>
+<p class="BodyText">
+  Example: Task for Automatic Event Log with multiple user assignees.
+</p>
+<table style="margin-left: 0;margin-right: auto;">
+  <colgroup>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+  </colgroup>
+  <tbody>
+    <tr>
+      <td class="td_HeadGray">
+        &nbsp;
+      </td>
+      <td class="td_HeadGray">
+        A
+      </td>
+      <td class="td_HeadGray">
+        B
+      </td>
+      <td class="td_HeadGray">
+        J
+      </td>
+      <td class="td_HeadGray">
+        K
+      </td>
+      <td class="td_HeadGray">
+        L
+      </td>
+      <td class="td_HeadGray">
+        M
+      </td>
+      <td class="td_HeadGray">
+        N
+      </td>
+    </tr>
+    <tr>
+      <td class="td_HeadGray">
+        1
+      </td>
+      <td class="td_HeadRed">
+        Path and Name
+      </td>
+      <td class="td_HeadRed">
+        Property Name
+      </td>
+      <td class="td_green">
+        Task Template Name
+      </td>
+      <td class="td_green">
+        Assignor
+      </td>
+      <td class="td_green">
+        Assignor From Data Entry
+      </td>
+      <td class="td_green">
+        User Assignees
+      </td>
+      <td class="td_green">
+        Group Assignees
+      </td>
+    </tr>
+    <tr>
+      <td class="td_HeadGray">
+        2
+      </td>
+      <td class="td_1">
+        \path\event log
+      </td>
+      <td class="td_1">
+        task template
+      </td>
+      <td class="td_1">
+        Document Incident
+      </td>
+      <td class="td_1">
+        TaskMailbox
+      </td>
+      <td class="td_1">
+        &nbsp;
+      </td>
+      <td class="td_1">
+        <p>
+          &nbsp;
+        </p>
+      </td>
+      <td class="td_1">
+        Plant Engineer |&nbsp;Plant Manager
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  &nbsp;
+</p>
+<p class="BodyText">
+  &nbsp;
+</p>
+<script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+</script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

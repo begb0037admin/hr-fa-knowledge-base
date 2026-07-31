@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/citationmgt"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Citation Management Tool</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Citation Management Tool';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1_2080838444" data-has-heading-anchor="true">Citation Management Tool<a href="/articles/fordevelopers/citationmgt/a/h1_2080838444" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/citationmgt/a/h1_2080838444&#39;,this);"></a></h1>
+        <p class="BodyText">The Citation Management Tool can be used to create citation folders, create and edit Citations, and associate Citations with objects.</p>
+        <p class="BodyText">Download the&#160;Excel template file:</p>
+        <p class="BodyIndent2"><a href="/resources/Storage/fordevelopers/Bulk%20Tools/Templates/Citation_Management_Template.xlsx" target="_blank">Citation Management Tool</a>
+        </p>
+        <p class="bold">Preparation</p>
+        <p class="BodyText">Consult any build documents used to identify and specify all citations and associations to be placed in the system. Identify and mark any assets that are not currently in the system but that have associated citations. Use the Object Copy Tool or manual configuration to add these to the system.</p>
+        <p class="BodyText">Run a Citations Report if you will be using the upload tool to edit properties or object associations of existing Citations. You can then copy identifying information into the upload file.</p>
+        <p class="BodyText">The Citation Management Template file contains four worksheets:</p>
+        <ul class="brackets">
+            <li value="1">Citation Folders to be Added</li>
+            <li value="2">Citations to be Added</li>
+            <li value="3">Citation Properties and Values</li>
+            <li value="4">Associations</li>
+        </ul>
+        <p class="BodyText">Keep in mind that each worksheet may be processed separately. So you may create your folders and citations first, then use the same file to add or edit property values and associations in a subsequent processing job.</p>
+        <h2 class="Heading2" id="h2_2147168314" data-has-heading-anchor="true">Citation Folders to be Added<a href="/articles/fordevelopers/citationmgt/a/h2_2147168314" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/citationmgt/a/h2_2147168314&#39;,this);"></a></h2>
+        <p class="BodyText">Use this worksheet to add new folders to the system.</p>
+        <p class="BodyText"><b>Parent Path and Name:</b> Path to folder from Citations root. Do not include the System Model name or Citations root folder name. Include a backslash (“\") at the beginning but not at the end. To add folders and/or citations directly under the root (Citations), use only the backslash ("\").</p>
+        <p class="BodyText"><b>Folder Name:</b> Name of new Citations folder to create.</p>
+        <table style="margin-left: 0;margin-right: auto;">
+            <col/>
+            <col/>
+            <col/>
+            <tbody>
+                <tr>
+                    <td class="td_HeadGray">&#160;</td>
+                    <td class="td_HeadGray">A</td>
+                    <td class="td_HeadGray">B</td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">1</td>
+                    <td class="td_HeadRed">Parent Path and Name</td>
+                    <td class="td_HeadRed">New Folder Name</td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">2</td>
+                    <td class="td_1">\</td>
+                    <td class="td_1">NPDES</td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">3</td>
+                    <td class="td_1">\NPDES</td>
+                    <td class="td_1">Folder 1</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="bold">&#160;</p>
+        <h2 class="Heading2" id="h2__2092968600" data-has-heading-anchor="true">Citations to be Added<a href="/articles/fordevelopers/citationmgt/a/h2__2092968600" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/citationmgt/a/h2__2092968600&#39;,this);"></a></h2>
+        <p class="BodyText">This worksheet is for new citations only. If you are editing properties of existing citations, you do not need to complete this sheet.</p>
+        <p class="BodyText"><b>Parent Path and Name:</b> Path to parent folder. (See path notes above.) Enter an existing folder or select a folder path from the drop-down list, which is populated with the folders created on the previous worksheet.</p>
+        <p class="BodyText"><b>Citation Name:</b> Display name for citation</p>
+        <p class="BodyText"><b>Citation Identifier:</b> Citation ID (generally citation number)</p>
+        <p class="BodyText"><b>Active Date:</b> Must be valid date format (mm/dd/yy or mm/dd/yyyy)</p>
+        <table style="margin-left: 0;margin-right: auto;">
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <tbody>
+                <tr>
+                    <td class="td_HeadGray">&#160;</td>
+                    <td class="td_HeadGray">A</td>
+                    <td class="td_HeadGray">B</td>
+                    <td class="td_HeadGray">C</td>
+                    <td class="td_HeadGray">D</td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">1</td>
+                    <td class="td_HeadRed">Parent Path and Name</td>
+                    <td class="td_HeadRed">Citation Name</td>
+                    <td class="td_HeadRed">Identifier</td>
+                    <td class="td_HeadRed">Active Date</td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">2</td>
+                    <td class="td_1">\NPDES\Folder 1</td>
+                    <td class="td_1">Citation 1</td>
+                    <td class="td_1">AB 123</td>
+                    <td class="td_1">1/1/2010</td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">3</td>
+                    <td class="td_1">\NPDES\Folder 1</td>
+                    <td class="td_1">Citation 2</td>
+                    <td class="td_1">AB 456</td>
+                    <td class="td_1">1/1/2010</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="bold">&#160;</p>
+        <h2 class="Heading2" id="h2__978438975" data-has-heading-anchor="true">Citation Properties and Values<a href="/articles/fordevelopers/citationmgt/a/h2__978438975" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/citationmgt/a/h2__978438975&#39;,this);"></a></h2>
+        <p class="BodyText">Use this worksheet to enter property values for existing citations, or new citations created with the previous sheet. Use the Identifier (not the name) to identify Citations. You will need one row for each property. (For example, if you are entering values for four properties of the same citation, you will need four lines for that citation.)</p>
+        <p class="BodyText"><b>Identifier: </b>Select the identifier from the drop-down list. The list is populated with the citation identifier values from the previous worksheet. Or enter the citation identifier for an existing citation in the system.</p>
+        <p class="BodyText"><b>New Version:</b> If you are editing an existing citation and want to create a new version with the new property value, select Yes. If you select No, the current version values will be edited. If you are creating new citations, select No.</p>
+        <p class="BodyText"><b>Version Number: </b>Enter the version number to which the value applies. If you are creating new citations, use '1' for the version number. If blank, the New Version? field defaults to 'yes' and the system will automatically increment the version number.</p>
+        <p class="Note" MadCap:autonum="Note: &#160;"><span class="autonumber"><span class="note_et_al">Note: &#160;</span></span>Since each line is processed sequentially, to avoid creating multiple versions, you will need to know the next version number of the citation and use the same version number on all subsequent lines if you are editing multiple property values. Otherwise, each new property line will create a new version.</p>
+        <p class="BodyText"><b>Property Name: </b>Select the property name from the drop-down list. The list contains all standard citation properties.</p>
+        <p class="BodyText"><b>Property Value:</b> Enter the property value. To delete an existing value, enter &lt;clear&gt;.</p>
+        <table style="margin-left: 0;margin-right: auto;">
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <tbody>
+                <tr>
+                    <td class="td_HeadGray">&#160;</td>
+                    <td class="td_HeadGray">A</td>
+                    <td class="td_HeadGray">B</td>
+                    <td class="td_HeadGray">C</td>
+                    <td class="td_HeadGray">D</td>
+                    <td class="td_HeadGray">E</td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">1</td>
+                    <td class="td_HeadRed">Identifier</td>
+                    <td class="td_HeadRed">New Version?</td>
+                    <td class="td_HeadRed">Version Number <br/>(if New Version = no)</td>
+                    <td class="td_HeadRed">Property Name</td>
+                    <td class="td_HeadRed">Property Value</td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">2</td>
+                    <td class="td_1">AB 123</td>
+                    <td class="td_1">no</td>
+                    <td class="td_1">1</td>
+                    <td class="td_1">Description</td>
+                    <td class="td_1">Citation description</td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">3</td>
+                    <td class="td_1">AB 123</td>
+                    <td class="td_1">no</td>
+                    <td class="td_1">1</td>
+                    <td class="td_1">Issue Date</td>
+                    <td class="td_1">8/1/2010</td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">4</td>
+                    <td class="td_1">AB 123</td>
+                    <td class="td_1">no</td>
+                    <td class="td_1">1</td>
+                    <td class="td_1">Issue Agency</td>
+                    <td class="td_1">EPA</td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">5</td>
+                    <td class="td_1">AB 123</td>
+                    <td class="td_1">no</td>
+                    <td class="td_1">1</td>
+                    <td class="td_1">Text</td>
+                    <td class="td_1">Text of citation </td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">6</td>
+                    <td class="td_1">AB 456</td>
+                    <td class="td_1">no</td>
+                    <td class="td_1">1</td>
+                    <td class="td_1">Description</td>
+                    <td class="td_1">Citation description</td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">7</td>
+                    <td class="td_1">AB 456</td>
+                    <td class="td_1">no</td>
+                    <td class="td_1">1</td>
+                    <td class="td_1">Issue Date</td>
+                    <td class="td_1">10/15/2011</td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">8</td>
+                    <td class="td_1">AB 456</td>
+                    <td class="td_1">no</td>
+                    <td class="td_1">1</td>
+                    <td class="td_1">Issue Agency</td>
+                    <td class="td_1">EPA</td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">9</td>
+                    <td class="td_1">AB 456</td>
+                    <td class="td_1">no</td>
+                    <td class="td_1">1</td>
+                    <td class="td_1">Text</td>
+                    <td class="td_1">Text of citation</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="bold">&#160;</p>
+        <h2 class="Heading2" id="h2_475344810" data-has-heading-anchor="true">Associations<a href="/articles/fordevelopers/citationmgt/a/h2_475344810" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/citationmgt/a/h2_475344810&#39;,this);"></a></h2>
+        <p class="BodyText">Use this worksheet to associate citations with objects in the System Model.</p>
+        <p class="BodyText"><b>Path and Name of Object:</b> Path of object to associate, from Locations &amp; Programs root up to and including the object name. Do not include System Model name. Include"\" at beginning, but not at the end.</p>
+        <p class="BodyText"><b>Citation Identifier:</b> Select the identifier from the drop-down list. The list is populated with the citation identifier values from the previous worksheet. Or enter the citation identifier for an existing citation in the system.</p>
+        <p class="BodyText"><b>Associate Current Version? </b>Select Yes to associate object with latest version. Select No if you want to associate the object with a specific version, and enter version number in next column.</p>
+        <p class="BodyText"><b>Version Number to Associate: </b>Enter citation version number to associate. If Associate Current Version?=Yes, leave blank and the system will associate the current version.</p>
+        <p class="BodyText"><b>Action: </b>Enter"add" to add association. Enter "delete" to delete existing association.</p>
+        <table style="margin-left: 0;margin-right: auto;">
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <tbody>
+                <tr>
+                    <td class="td_HeadGray">&#160;</td>
+                    <td class="td_HeadGray">A</td>
+                    <td class="td_HeadGray">B</td>
+                    <td class="td_HeadGray">C</td>
+                    <td class="td_HeadGray">D</td>
+                    <td class="td_HeadGray">E</td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">1</td>
+                    <td class="td_HeadRed">Path and Name of Object</td>
+                    <td class="td_HeadRed">Citation Identifier</td>
+                    <td class="td_HeadRed">Associate Current<br/> Version? <br/></td>
+                    <td class="td_HeadRed">Version Number <br/>to Associate</td>
+                    <td class="td_HeadRed">Action<br/>(add/delete)</td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">2</td>
+                    <td class="td_1">\Division\Facility\Unit\POI\Requirement1</td>
+                    <td class="td_1">AB 123</td>
+                    <td class="td_1">yes</td>
+                    <td class="td_1">&#160;</td>
+                    <td class="td_1">add</td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">3</td>
+                    <td class="td_1">\Division\Facility\Unit\POI\Requirement2</td>
+                    <td class="td_1">AB 456</td>
+                    <td class="td_1">yes</td>
+                    <td class="td_1">&#160;</td>
+                    <td class="td_1">add</td>
+                </tr>
+            </tbody>
+        </table>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

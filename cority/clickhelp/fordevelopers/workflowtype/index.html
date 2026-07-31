@@ -1,0 +1,399 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/workflowtype"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Workflow Type Functions and Classes</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Workflow Type Functions and Classes';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>        <div class="toc">
+            <h1 class="Heading1" id="h1_874479513" data-has-heading-anchor="true">Workflow Type Functions and Classes<a href="/articles/fordevelopers/workflowtype/a/h1_874479513" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype/a/h1_874479513&#39;,this);"></a></h1>
+            <p class="bold">JavaScript Functions:</p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflowtype/a/createWorkflowType" onclick="return n(&#39;!fordevelopers/workflowtype/a/createWorkflowType&#39;,this);">createWorkflowType</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflowtype/a/copyWorkflowType" onclick="return n(&#39;!fordevelopers/workflowtype/a/copyWorkflowType&#39;,this);">copyWorkflowType</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflowtype/a/updateWorkflowType" onclick="return n(&#39;!fordevelopers/workflowtype/a/updateWorkflowType&#39;,this);">updateWorkflowType</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflowtype/a/partialUpdateWorkflowType" onclick="return n(&#39;!fordevelopers/workflowtype/a/partialUpdateWorkflowType&#39;,this);">partialUpdateWorkflowType</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflowtype/a/updateWorkflowTypeInfo" onclick="return n(&#39;!fordevelopers/workflowtype/a/updateWorkflowTypeInfo&#39;,this);">updateWorkflowTypeInfo</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflowtype/a/getWorkflowType" onclick="return n(&#39;!fordevelopers/workflowtype/a/getWorkflowType&#39;,this);">getWorkflowType</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflowtype/a/getWorkflowTypeVersion" onclick="return n(&#39;!fordevelopers/workflowtype/a/getWorkflowTypeVersion&#39;,this);">getWorkflowTypeVersion</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflowtype/a/deleteWorkflowType" onclick="return n(&#39;!fordevelopers/workflowtype/a/deleteWorkflowType&#39;,this);">deleteWorkflowType</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflowtype/a/deleteWorkflowTypeBulk" onclick="return n(&#39;!fordevelopers/workflowtype/a/deleteWorkflowTypeBulk&#39;,this);">deleteWorkflowTypeBulk</a>
+            </p>
+            <p class="bold">Classes:</p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflowtype/a/workflowTypeInfo" onclick="return n(&#39;!fordevelopers/workflowtype/a/workflowTypeInfo&#39;,this);">workflowTypeInfo</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflowtype/a/workflowPermissionInfo" onclick="return n(&#39;!fordevelopers/workflowtype/a/workflowPermissionInfo&#39;,this);">WorkflowPermissionInfo</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflowtype/a/workflowStepPermissionsInfo" onclick="return n(&#39;!fordevelopers/workflowtype/a/workflowStepPermissionsInfo&#39;,this);">StepPermissionsInfo</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflowtype/a/workflowStepPermissionsInfoStepInfo" onclick="return n(&#39;!fordevelopers/workflowtype/a/workflowStepPermissionsInfoStepInfo&#39;,this);">StepPermissionsInfo.StepInfo</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflowtype/a/workflowTypeStepInfo" onclick="return n(&#39;!fordevelopers/workflowtype/a/workflowTypeStepInfo&#39;,this);">WorkflowTypeStepInfo</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflowtype/a/workflowStepRoleInfo" onclick="return n(&#39;!fordevelopers/workflowtype/a/workflowStepRoleInfo&#39;,this);">WorkflowStepRoleInfo</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflowtype/a/workflowStepActionInfo" onclick="return n(&#39;!fordevelopers/workflowtype/a/workflowStepActionInfo&#39;,this);">WorkflowTypeStepInfo.StepActionInfo</a>
+            </p>
+            <p class="BodyIndent"><a href="/articles/fordevelopers/workflowtype/a/workflowInitiatorInfo" onclick="return n(&#39;!fordevelopers/workflowtype/a/workflowInitiatorInfo&#39;,this);">WorkflowTypeStepInfo.WorkflowInitiatorInfo</a>
+            </p>
+        </div>
+        <div class="method">
+            <h2 class="jsmethod" id="h2__1274670228" data-has-heading-anchor="true"><a name="createWorkflowType"></a>enviancesdk.workflows.createWorkflowType<a href="/articles/fordevelopers/workflowtype/a/h2__1274670228" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype/a/h2__1274670228&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_54770742_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_54770742_0" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Creates a new Workflow Type.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowTypeInfo</b> An instance of the <a href="/articles/fordevelopers/workflowtype/a/workflowTypeInfo" onclick="return n(&#39;!fordevelopers/workflowtype/a/workflowTypeInfo&#39;,this);">workflowTypeInfo</a> object. Some properties of this object are ignored by this function; see details of this object for more info.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">The id for the new Workflow Type.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.createWorkflowType (workflowTypeInfo, onsuccess, onerror)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsmethod" id="h2__1134095733" data-has-heading-anchor="true"><a name="copyWorkflowType"></a>enviancesdk.workflows.copyWorkflowType<a href="/articles/fordevelopers/workflowtype/a/h2__1134095733" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype/a/h2__1134095733&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_54770742_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_54770742_1" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Creates a new Workflow Type by copying an existing Workflow Type.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowTypeIdOrName</b>  The id string (GUID) of an existing Workflow Type whose properties will be copied and used as the properties of the newly created Workflow Type. </p>
+            <p class="BodyIndentHanging"><b>name</b> New Workflow Type name.</p>
+            <p class="BodyIndentHanging"><b>idGenScheme</b> The scheme for generating ids for instances of the new Workflow Type. </p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">The id for the new Workflow Type.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.copyWorkflowType (workflowTypeIdOrName, name, idGenScheme, onsuccess, onerror)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsmethod" id="h2_514120215" data-has-heading-anchor="true"><a name="updateWorkflowType"></a>enviancesdk.workflows.updateWorkflowType<a href="/articles/fordevelopers/workflowtype/a/h2_514120215" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype/a/h2_514120215&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_54770742_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_54770742_2" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Updates a Workflow Type.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowTypeInfo</b> An instance of the <a href="/articles/fordevelopers/workflowtype/a/workflowTypeInfo" onclick="return n(&#39;!fordevelopers/workflowtype/a/workflowTypeInfo&#39;,this);">workflowTypeInfo</a> object. Some properties of this object are ignored by this function; see details of this object for more info.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.updateWorkflowType (workflowTypeInfo, onsuccess, onerror)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsmethod" id="h2_1158921306" data-has-heading-anchor="true"><a name="partialUpdateWorkflowType"></a>enviancesdk.workflows.partialUpdateWorkflowType<a href="/articles/fordevelopers/workflowtype/a/h2_1158921306" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype/a/h2_1158921306&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_54770742_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_54770742_3" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Updates a Workflow Type partially.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowTypeInfo</b> An instance of the <a href="/articles/fordevelopers/workflowtype/a/workflowTypeInfo" onclick="return n(&#39;!fordevelopers/workflowtype/a/workflowTypeInfo&#39;,this);">workflowTypeInfo</a> object. Some properties of this object are ignored by this function; see details of this object for more info.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.partialUpdateWorkflowType (workflowTypeInfo, onsuccess, onerror)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsmethod" id="h2__681411611" data-has-heading-anchor="true"><a name="updateWorkflowTypeInfo"></a>enviancesdk.workflows.updateWorkflowTypeInfo<a href="/articles/fordevelopers/workflowtype/a/h2__681411611" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype/a/h2__681411611&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_54770742_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_54770742_4" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Updates Workflow Type general properties.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowTypeIdOrName</b> Either an id string (GUID), or a name string uniquely identifying the Workflow Type.  Any string that matches the pattern of a GUID is interpreted as the id string, and not the name.  A name string must be URL encoded.</p>
+            <p class="BodyIndentHanging"><b>newName</b> New name for Workflow Type.</p>
+            <p class="BodyIndentHanging"><b>idGenScheme</b> The scheme for generating ids for instances of the new Workflow Type. </p>
+            <p class="BodyIndentHanging"><b>forAppConfiguration</b> Is used for App Configuration (true/false).</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.updateWorkflowTypeInfo (workflowTypeIdOrName, newName, idGenScheme, description, forAppConfiguration, onsuccess, onerror)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsmethod" id="h2_1176815038" data-has-heading-anchor="true"><a name="getWorkflowType"></a>enviancesdk.workflows.getWorkflowType<a href="/articles/fordevelopers/workflowtype/a/h2_1176815038" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype/a/h2_1176815038&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_54770742_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_54770742_5" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Gets Workflow Type information.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowTypeIdOrName</b> Either an id string (GUID) or a name string uniquely identifying the Workflow Type.  Any string that matches the pattern of a GUID is interpreted as the id string, and not the name.  A name string must be URL encoded.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An instance of the <a href="/articles/fordevelopers/workflowtype/a/activityInfo" onclick="return n(&#39;!fordevelopers/workflowtype/a/activityInfo&#39;,this);">workflowTypeInfo</a> structure.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.getWorkflowType (workflowTypeIdOrName, onsuccess, onerror)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsmethod" id="h2_593005702" data-has-heading-anchor="true"><a name="getWorkflowTypeVersion"></a>enviancesdk.workflows.getWorkflowTypeVersion<a href="/articles/fordevelopers/workflowtype/a/h2_593005702" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype/a/h2_593005702&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_54770742_6" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_54770742_6" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Gets info for specific version of Workflow Type.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowTypeIdOrName</b> Either an id string (GUID) or a name string uniquely identifying the Workflow Type.  Any string that matches the pattern of a GUID is interpreted as the id string, and not the name.  A name string must be URL encoded.</p>
+            <p class="BodyIndentHanging"><b>versionNumber</b> version number of the Workflow Type. 0 means the last version.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">An instance of the <a href="/articles/fordevelopers/workflowtype/a/workflowTypeInfo" onclick="return n(&#39;!fordevelopers/workflowtype/a/workflowTypeInfo&#39;,this);">WorkflowTypeInfo</a> structure.</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.getWorkflowTypeVersion (workflowTypeIdOrName, versionNumber, onsuccess, onerror)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsmethod" id="h2__284923541" data-has-heading-anchor="true"><a name="deleteWorkflowType"></a>enviancesdk.workflows.deleteWorkflowType<a href="/articles/fordevelopers/workflowtype/a/h2__284923541" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype/a/h2__284923541&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_54770742_7" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_54770742_7" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Deletes a Workflow Type. Deletions are <i>permanent</i>.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowTypeIdOrName</b> Either an id string (GUID) or a name string uniquely identifying the Workflow Type.  Any string that matches the pattern of a GUID is interpreted as the id string, and not the name.  A name string must be URL encoded.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.deleteWorkflowType (workflowTypeIdOrName, onsuccess, onerror)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsmethod" id="h2__1829425797" data-has-heading-anchor="true"><a name="deleteWorkflowTypeBulk"></a>enviancesdk.workflows.deleteWorkflowTypeBulk<a href="/articles/fordevelopers/workflowtype/a/h2__1829425797" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype/a/h2__1829425797&#39;,this);"></a></h2>
+            <p class="bold">Version 2.0</p>
+            <div class="MCDropDown_0">
+                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_54770742_8" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="/resources/Storage/fordevelopers/SkinSupport/DropDownClosed.png" madcap:altsrc="images/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == &#39;function&#39; ) { FMCPreloadImage( &#39;/resources/Storage/tools/SkinSupport/DropDownOpen.png&#39; ); }" alt="Closed" madcap:alt2="Open" class="MCDropDownIcon" loading="lazy"/>Other Versions:</a>
+                </div>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_54770742_8" style="display: none;">
+                    <p>None
+                </p>
+                </div>
+            </div>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Deletes Workflow Types. Deletions are <i>permanent</i>.</p>
+            <p class="bold">Parameters</p>
+            <p class="BodyIndentHanging"><b>workflowTypeIdOrNames</b> Array of id strings (GUIDs) or a names string uniquely identifying the Workflow Types.  Any string that matches the pattern of a GUID is interpreted as the id string, and not the name.  A name string must be URL encoded.</p>
+            <p class="bold">Return Value</p>
+            <p class="BodyIndent">None</p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.deleteWorkflowTypeBulk (workflowTypeIdOrNames, onsuccess, onerror)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsclass" id="h2__911885244" data-has-heading-anchor="true"><a name="workflowTypeInfo"></a>envianceSdk.workflows.WorkflowTypeInfo<a href="/articles/fordevelopers/workflowtype/a/h2__911885244" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype/a/h2__911885244&#39;,this);"></a></h2>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Represents a Workflow Type definition.</p>
+            <p class="bold">Properties</p>
+            <p class="BodyIndentHanging"><b>idOrName</b> The id string (GUID) for the object. Ignored for: Create Workflow Type, Update Workflow Type</p>
+            <p class="BodyIndentHanging"><b>newName</b> New name of the workflow type. Optional. Update operations only, used for re-name.</p>
+            <p class="BodyIndentHanging"><b>description</b> The description of the Workflow Type. Optional.</p>
+            <p class="BodyIndentHanging"><b>shouldCreateNewVersion</b> <i>Boolean.</i> True for create new version of Workflow Type, False for update the old version. Update operations only. Optional. </p>
+            <p class="BodyIndentHanging"><b>versionComments</b> Comments for workflow type version. Optional.</p>
+            <p class="BodyIndentHanging"><b>idGenScheme</b> The id string (GUID) for the generating scheme. Optional. If not specified or empty it uses default value. </p>
+            <p class="BodyIndentHanging"><b>isUsedForConfig</b> <i>Boolean.</i> Is used for App configuration (true/false)</p>
+            <p class="BodyIndentHanging"><b>/*WorkflowStepInfo*/workflowSteps</b> <i>Array</i> of <a href="/articles/fordevelopers/workflowtype/a/workflowTypeStepInfo" onclick="return n(&#39;!fordevelopers/workflowtype/a/workflowTypeStepInfo&#39;,this);">WorkflowStepInfo</a> structure. Optional for Partial Update operation.</p>
+            <p class="BodyIndentHanging"><b>/*StepRoleInfo*/stepRoles</b> <i>Array</i> of Roles used in Steps and predefined role Workflow Manager. Optional. A <a href="/articles/fordevelopers/workflowtype/a/workflowStepRoleInfo" onclick="return n(&#39;!fordevelopers/workflowtype/a/workflowStepRoleInfo&#39;,this);">RoleInfo</a> structure.</p>
+            <p class="BodyIndentHanging"><b>otherRoles</b> Any roles Not used in Steps or not any predefined Role. Optional. A <a href="/articles/fordevelopers/workflowrole/a/workflowRoleInfo" onclick="return n(&#39;!fordevelopers/workflowrole/a/workflowRoleInfo&#39;,this);">RoleInfo</a> structure.</p>
+            <p class="BodyIndentHanging"><b>localFields</b> <i>Array</i> of Id or Name of local UDFields from Form Templates. Optional. All fields are Global by default.</p>
+            <p class="BodyIndentHanging"><b>globalFields</b> <i>Array</i> of Id or Name of UDFields are changed to global. Optional. Partial Update operation only.</p>
+            <p class="BodyIndentHanging"><b>/*WorkflowPermissionInfo*/workflowPermissionss</b> <i>Array</i> of <a href="/articles/fordevelopers/workflowtype/a/workflowPermissionInfo" onclick="return n(&#39;!fordevelopers/workflowtype/a/workflowPermissionInfo&#39;,this);">workflowPermissionsInfo</a>. Optional.</p>
+            <p class="BodyIndentHanging"><b>/*StepPermissionInfo*/stepPermissions</b> <i>Array</i> of <a href="/articles/fordevelopers/workflowtype/a/workflowStepPermissionsInfo" onclick="return n(&#39;!fordevelopers/workflowtype/a/workflowStepPermissionsInfo&#39;,this);">workflowStepPermissionsInfo</a>. Optional.</p>
+            <p class="BodyIndentHanging"><b>policies</b> <i>Array</i> of Id or Name of removed policies. Optional. Partial Update operation only.</p>
+            <p class="bold">Instance Methods</p>
+            <p class="BodyIndentHanging"><b>addWorkflowStep (step)</b> </p>
+            <p class="BodyIndentHanging"><b>addStepRole (role)</b> </p>
+            <p class="BodyIndentHanging"><b>addOtherRole (role)</b> </p>
+            <p class="BodyIndentHanging"><b>addLocalField (field)</b> </p>
+            <p class="BodyIndentHanging"><b>addGlobalField (field)</b> </p>
+            <p class="BodyIndentHanging"><b>addWorkflowPermission (permission)</b> </p>
+            <p class="BodyIndentHanging"><b>addStepPermission (permission)</b><!--CDATA[[]]--></p>
+            <p class="BodyIndentHanging"><b>addPolicies (policy)</b><!--CDATA[[]]--></p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.WorkflowTypeInfo (idOrName, newName, description, shouldCreateNewVersion, versionComments, idGenScheme, isUsedForConfig,/*WorkflowStepInfo*/workflowSteps, /*StepRoleInfo*/stepRoles, /*StepRoleInfo*/otherRoles, localFields, globalFields,/*WorkflowPermissionInfo*/workflowPermissions, /*StepPermissionInfo*/stepPermissions, policies)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsclass" id="h2_566104774" data-has-heading-anchor="true"><a name="workflowTypeStepInfo"></a>envianceSdk.workflows.WorkflowTypeStepInfo<a href="/articles/fordevelopers/workflowtype/a/h2_566104774" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype/a/h2_566104774&#39;,this);"></a></h2>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Represents the definition of a Workflow Step.</p>
+            <p class="bold">Properties</p>
+            <p class="BodyIndentHanging"><b>id</b> The id string (GUID) for the Workflow Step. Required if name parameter is empty for Update. Required for rename of step.</p>
+            <p class="BodyIndentHanging"><b>name</b> The Name of the Workflow Step. Required for Create operation and for rename.</p>
+            <p class="BodyIndentHanging"><b>status</b> Status name of the Workflow Step. Unique. Can be used as identifier for Update operations. Required.</p>
+            <p class="BodyIndentHanging"><b>formTemplateIdOrName</b> Id or name of Form Template used on step. Required.</p>
+            <p class="BodyIndentHanging"><b>assignedRoleIdOrName</b>The id string (GUID) or Name of Assigned Role to Workflow Step. Required.</p>
+            <p class="BodyIndentHanging"><b>flags</b> Workflow Step flags. Optional. Values:&nbsp;<i>None</i> (default), <i>Recurrent</i></p>
+            <p class="BodyIndentHanging"><b>isDeleted</b> <i>Boolean</i>. Sign for delete current Workflow Step. Optional. Partial Update operations only.</p>
+            <p class="BodyIndentHanging"><b>/*StepActionInfo*/stepActions</b> Array of <a href="/articles/fordevelopers/workflowtype/a/workflowStepActionInfo" onclick="return n(&#39;!fordevelopers/workflowtype/a/workflowStepActionInfo&#39;,this);">stepActionInfo</a> structure.</p>
+            <p class="BodyIndentHanging"><b>/*WorkflowInitiatorInfo*/workflowInitiators</b> Array of <a href="/articles/fordevelopers/workflowtype/a/workflowInitiatorInfo" onclick="return n(&#39;!fordevelopers/workflowtype/a/workflowInitiatorInfo&#39;,this);">workflowInitatorInfo</a> structure .</p>
+            <p class="bold">Instance Methods</p>
+            <p class="BodyIndentHanging"><b>addStepAction (action)</b> </p>
+            <p class="BodyIndentHanging"><b>addworkflowInitiator (initiator)</b> </p>
+            <p class="Code1">envianceSdk.workflows.WorkflowTypeStepInfo (id, name, status, formTemplateIdOrName, assignedRoleIdOrName, flags, isDeleted,
+			/*StepActionInfo*/stepActions, /*WorkflowInitiatorInfo*/workflowInitiators)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsclass" id="h2__1879215584" data-has-heading-anchor="true"><a name="workflowStepActionInfo"></a>envianceSdk.workflows.WorkflowTypeStepInfo.StepActionInfo<a href="/articles/fordevelopers/workflowtype/a/h2__1879215584" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype/a/h2__1879215584&#39;,this);"></a></h2>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Represents a possible step action.</p>
+            <p class="bold">Properties</p>
+            <p class="BodyIndentHanging"><b>idOrName</b> The id string (GUID) for the Workflow Step Action. Required for Update operations if name parameter is empty. Create operation ignores this property.</p>
+            <p class="BodyIndentHanging"><b>destinationStepIdOrName</b> The id string (GUID) for the Workflow Step. Required, but Optional for Partial Update operation.</p>
+            <p class="BodyIndentHanging"><b>allowedRoles</b> Array of id string (GUID) or name of allowed Workflow Roles to Workflow Step. Required, but Optional for Partial Update operation. </p>
+            <p class="BodyIndentHanging"><b>flags</b> Workflow Step Action flags. Optional. Values:&nbsp;<i>None</i> (default), <i>AllowFlowInterrupt</i></p>
+            <p class="BodyIndentHanging"><b>isDeleted</b> <i>Boolean</i>. Sign for deleted record. Optional. Partial Update operation only.</p>
+            <p class="bold">Instance Methods</p>
+            <p class="BodyIndentHanging"><b>addAllowedRole (roleIdOrName)</b> </p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.WorkflowTypeStepInfo.StepActionInfo (id, name, destinationStepIdOrName, allowedRoles, flags, isDeleted)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsclass" id="h2__621858346" data-has-heading-anchor="true"><a name="workflowInitiatorInfo"></a>envianceSdk.workflows.WorkflowTypeStepInfo.WorkflowInitiatorInfo<a href="/articles/fordevelopers/workflowtype/a/h2__621858346" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype/a/h2__621858346&#39;,this);"></a></h2>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Represents a child workflow initiator on the step.</p>
+            <p class="bold">Properties</p>
+            <p class="BodyIndentHanging"><b>id</b> The id string (GUID) for the Workflow Initiator. Required for Update operations if name parameter is empty. Create operation ignores this property.</p>
+            <p class="BodyIndentHanging"><b>name</b> The Name of the Workflow Initiator. Required for Create operation, rename or Update operations if id property is empty.</p>
+            <p class="BodyIndentHanging"><b>workflowTypeIdOrName</b> The id string (GUID) or Name of the Workflow Type. Optional for Partial Update operations</p>
+            <p class="BodyIndentHanging"><b>workflowTypeVersion</b> Number of the Workflow Type version. Not required. Returned by Get operations only.</p>
+            <p class="BodyIndentHanging"><b>allowedRoles</b> <i>Array</i> of id string (GUID) or name of allowed Workflow Roles to Workflow Step.. Optional for Partial Update operations</p>
+            <p class="BodyIndentHanging"><b>isDeleted</b> <i>Boolean</i>. Sign for deleted record. Optional. Partial Update operation only.</p>
+            <p class="bold">Instance Methods</p>
+            <p class="BodyIndentHanging"><b>addAllowedRole (roleIdOrName)</b> </p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.WorkflowTypeStepInfo.WorkflowInitiatorInfo (id, name, workflowTypeIdOrName, allowedRoles, isDeleted)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsclass" id="h2_657485186" data-has-heading-anchor="true"><a name="workflowStepRoleInfo"></a>envianceSdk.workflows.WorkflowStepRoleInfo<a href="/articles/fordevelopers/workflowtype/a/h2_657485186" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype/a/h2_657485186&#39;,this);"></a></h2>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Represents the definition of a Workflow Step Role.</p>
+            <p class="bold">Properties</p>
+            <p class="BodyIndentHanging"><b>idOrName</b> The id string (GUID) or Name of Role.</p>
+            <p class="BodyIndentHanging"><b>users</b> <i>Array</i> of user Ids or Login names. Optional.</p>
+            <p class="BodyIndentHanging"><b>groups</b> <i>Array</i> of group Ids or Names. Optional.</p>
+            <p class="BodyIndentHanging"><b>usersRemoved</b><i>Array</i> of removed users Ids or Login names. Optional. Partial Update opertion only.</p>
+            <p class="BodyIndentHanging"><b>groupsRemoved</b> <i>Array</i> of removed group Ids or Names. Optional. Partial Update operation only.</p>
+            <p class="BodyIndentHanging"><b>isDeleted</b> <i>Boolean</i>. Sign for deleted record. Optional. Partial Update operation only.</p>
+            <p class="bold">Instance Methods</p>
+            <p class="BodyIndentHanging"><b>addUser (userIdOrName)</b> </p>
+            <p class="BodyIndentHanging"><b>addGroup (GroupIdOrName)</b> </p>
+            <p class="BodyIndentHanging"><b>addUserRemoved (userIdOrName)</b> </p>
+            <p class="BodyIndentHanging"><b>addGroupRemoved (groupIdOrName)</b> </p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.WorkflowStepRoleInfo (idOrName, users, groups, usersRemoved, groupsRemoved, isDeleted)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsclass" id="h2__521972809" data-has-heading-anchor="true"><a name="workflowPermissionInfo"></a>envianceSdk.workflows.WorkflowPermissionInfo<a href="/articles/fordevelopers/workflowtype/a/h2__521972809" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype/a/h2__521972809&#39;,this);"></a></h2>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Represents the definition of workflow permissions for Workflow Type.</p>
+            <p class="bold">Properties</p>
+            <p class="BodyIndentHanging"><b>roleIdOrName</b> The id string (GUID) or Name of Workflow permission.</p>
+            <p class="BodyIndentHanging"><b>flags</b> <i>Array</i> of Workflow Instance Permissions\ AllFormFieldAccess = ViewAllFormFields, EditAllFormFields, OverrideAllFormFields\ FullAccess = all permissions. <br/>Values:&nbsp;<i>NoAccess, Close, Reopen, Delete, Rename, Assign, Schedule, AssociateObjects, AssociateDocuments, AddComments, ViewComments, ViewHistory, Open, Report, SetWorkflowID, CompleteUnderlying Task, ViewUnderlying Task, ViewAllFormFields, EditAllFormFields, OverrideAllFormFields, AllFormFieldAccess, FullAccess</i></p>
+            <p class="BodyIndentHanging"><b>flagsRemoved</b> <i>Array</i> of Workflow Instance Permissions\ AllFormFieldAccess = ViewAllFormFields, EditAllFormFields, OverrideAllFormFields\ FullAccess = all permissions\ Optional. Partial Update operation only.. <br/>Values:&nbsp;<i>NoAccess, Close, Reopen, Delete, Rename, Assign, Schedule, AssociateObjects, AssociateDocuments, AddComments, ViewComments, ViewHistory, Open, Report, SetWorkflowID, CompleteUnderlying Task, ViewUnderlying Task, ViewAllFormFields, EditAllFormFields, OverrideAllFormFields, AllFormFieldAccess, FullAccess</i></p>
+            <p class="bold">Instance Methods</p>
+            <p class="BodyIndentHanging"><b>addFlag (flag)</b> </p>
+            <p class="BodyIndentHanging"><b>addFlagRemoved (flag)</b> </p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.WorkflowPermissionInfo (roleIdOrName, flags, flagsRemoved)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsclass" id="h2_2142499897" data-has-heading-anchor="true"><a name="workflowStepPermissionsInfo"></a>envianceSdk.workflows.StepPermissionsInfo<a href="/articles/fordevelopers/workflowtype/a/h2_2142499897" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype/a/h2_2142499897&#39;,this);"></a></h2>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Definition of permissions on Workflow Step.</p>
+            <p class="bold">Properties</p>
+            <p class="BodyIndentHanging"><b>roleIdOrName</b> The workflow role id string (GUID) or Name. Required.</p>
+            <p class="BodyIndentHanging"><b>isDeleted</b> <i>Boolean</i>. Sign for deleted record. Optional. Partial Update operation only.</p>
+            <p class="BodyIndentHanging"><b>/*StepInfo*/steps</b> A <a href="/articles/fordevelopers/workflowtype/a/workflowStepPermissionsInfoStepInfo" onclick="return n(&#39;!fordevelopers/workflowtype/a/workflowStepPermissionsInfoStepInfo&#39;,this);">StepPermissionsInfo.StepInfo</a> structure.</p>
+            <p class="bold">Instance Methods</p>
+            <p class="BodyIndentHanging"><b>addStep (step)</b> </p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.StepPermissionsInfo (roleIdOrName, isDeleted, /*StepInfo*/steps)
+			)</p>
+        </div>
+        <div class="method">
+            <h2 class="jsclass" id="h2_544356383" data-has-heading-anchor="true"><a name="workflowStepPermissionsInfoStepInfo"></a>envianceSdk.workflows.StepPermissionsInfo.StepInfo<a href="/articles/fordevelopers/workflowtype/a/h2_544356383" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/workflowtype/a/h2_544356383&#39;,this);"></a></h2>
+            <p class="bold">Description</p>
+            <p class="BodyIndent">Definition of permissions for Workflow Step.</p>
+            <p class="bold">Properties</p>
+            <p class="BodyIndentHanging"><b>stepIdOrName</b> The workflow step id string (GUID) or Name.</p>
+            <p class="BodyIndentHanging"><b>allGlobal</b> All Global Form Fields. Optional. Values:&nbsp;<i>No Access, View, Edit, Override, Full Access</i>. <i>Override</i> includes <i>View &amp; Edit</i>, <i>Edit</i> includes <i>View</i>.</p>
+            <p class="BodyIndentHanging"><b>allLocal</b> Permissions allowed for all Local fields. All Local Form Fields. Optional. Values:&nbsp;<i>No Access, View, Edit, Override, Full Access</i>. <i>Override</i> includes <i>View &amp; Edit</i>, <i>Edit</i> includes <i>View</i>.</p>
+            <p class="BodyIndentHanging"><b>formFields</b> Udf Id or Name.</p>
+            <p class="BodyIndentHanging"><b>formFieldsRemoved</b> Array of id string (GUID) or names of removed udf fields. Optional. Partial Update operation only.</p>
+            <p class="bold">Instance Methods</p>
+            <p class="BodyIndentHanging"><b>addFormField (field)</b> </p>
+            <p class="BodyIndentHanging"><b>addFormFieldRemoved (field)</b> </p>
+            <p class="example">Example</p>
+            <p class="Code1">envianceSdk.workflows.StepPermissionsInfo.StepInfo (stepIdOrName, allGlobal, allLocal, formFields, formFieldsRemoved)
+			)</p>
+        </div>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

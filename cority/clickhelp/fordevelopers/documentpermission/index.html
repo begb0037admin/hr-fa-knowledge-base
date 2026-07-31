@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/documentpermission"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>DocumentPermission</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='DocumentPermission';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h2 class="method" id="h2__1623073136" data-has-heading-anchor="true">DocumentPermission<a href="/articles/fordevelopers/documentpermission/a/h2__1623073136" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/documentpermission/a/h2__1623073136&#39;,this);"></a></h2>
+        <p class="bold">Columns</p>
+        <p class="BodyIndentHanging"><b>DocumentID</b> Document ID</p>
+        <p class="BodyIndentHanging"><b>Permission.View</b> True if View permission present</p>
+        <p class="BodyIndentHanging"><b>Permission.Edit</b> True if Create and Edit permission present</p>
+        <p class="BodyIndentHanging"><b>Permission.Delete</b> True if Delete permission present</p>
+        <p class="BodyIndentHanging"><b>Created</b> Date Created </p>
+        <p class="BodyIndentHanging"><b>Updated</b> Date Updated </p>
+        <p class="BodyIndentHanging"><b>ExplicitUser.ID, ExplicitUser.FirstName...</b> Composite column to <a href="/articles/fordevelopers/user" onclick="return n(&#39;!fordevelopers/user&#39;,this);">User</a> table (includes all fields from User).&#160;Returns only those users granted explicit permission.</p>
+        <p class="BodyIndentHanging"><b>ExplicitGroup.ID, ExplicitGroup.Name...</b> Composite column to <a href="/articles/fordevelopers/group" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!fordevelopers/group&#39;,this);">Group</a> table (includes all fields from Group).</p>
+        <p class="BodyIndentHanging"><b>User.ID, User.FirstName...</b> Composite column to<a href="/articles/fordevelopers/user" onclick="return n(&#39;!fordevelopers/user&#39;,this);"> User</a> table (includes all fields from User). Returns combination of users with explicit permission  and users who are members of permitted groups (no duplicates).</p>
+        <p class="Note" MadCap:autonum="Note: &#160;"><span class="autonumber"><span class="note_et_al">Note: &#160;</span></span>Columns will return null if User is an access user.</p>
+        <p class="bold">Natural Joins</p>
+        <p class="BodyIndent2"><a href="/articles/fordevelopers/document-1" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!fordevelopers/document-1&#39;,this);">Document</a>
+        </p>
+        <p class="example">Example:&#160;Get all users with View or Edit permission on a document (both users with explicit permission and users who are members of permitted groups).</p>
+        <p class="Code1">
+     select
+</p>
+        <p class="Code2">d.name,
+    </p>
+        <p class="Code2">p.Permission.View, </p>
+        <p class="Code2">p.Permission.Edit,</p>
+        <p class="Code2">p.User.FirstName,</p>
+        <p class="Code2">p.User.LastName    </p>
+        <p class="Code1">from Document d
+    </p>
+        <p class="Code1">join DocumentPermission p on d
+    </p>
+        <p class="Permissions" MadCap:autonum="Permissions: &#160;"><span class="autonumber"><span class="note_et_al">Permissions: &#160;</span></span>Requires View or Edit permission on the target object.</p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

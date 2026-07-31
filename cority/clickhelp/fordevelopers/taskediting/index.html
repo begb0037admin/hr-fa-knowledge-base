@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/taskediting"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Task Editing Tool</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Task Editing Tool';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1_598331725" data-has-heading-anchor="true">Task Editing Tool<a href="/articles/fordevelopers/taskediting/a/h1_598331725" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/taskediting/a/h1_598331725&#39;,this);"></a></h1>
+        <p class="BodyText">The Task Editing Tool allows you to edit existing tasks in the system. Note that it is not possible to create new tasks with the tool. To create new tasks, you can:</p>
+        <ul class="brackets">
+            <li value="1">Create a generic requirement with an associated task. </li>
+            <li value="2">Copy the requirement using the Copy Objects Tool.&#160;The copy operation will also copy the associated task.</li>
+            <li value="3">Use the Task Editing tool to edit the properties of the tasks associated with the new objects. You can also  change the associated objects for the task, if necessary.</li>
+        </ul>
+        <p class="BodyText">Download the Excel template file:</p>
+        <p class="BodyIndent2"><a href="/resources/Storage/fordevelopers/Bulk%20Tools/Templates/Task_Editing_Tool_Template.xlsx" target="_top">Task Editing Tool</a>
+        </p>
+        <p>You can:</p>
+        <ul class="brackets">
+            <li value="1">Edit&#160;general task properties (see <a href="/articles/fordevelopers/taskproperties" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!fordevelopers/taskproperties&#39;,this);">Edit Task Properties</a>)</li>
+            <li value="2">Change associated objects (see <a href="/articles/fordevelopers/taskproperties" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!fordevelopers/taskproperties&#39;,this);">Edit Task Properties</a>)</li>
+            <li value="3">Add or edit notifications (see <a href="/articles/fordevelopers/tasknotifications" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!fordevelopers/tasknotifications&#39;,this);">Add/Edit/Delete Notification</a>)</li>
+            <li value="4">Add or edit recurrences (see <a href="/articles/fordevelopers/taskrecurrence" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!fordevelopers/taskrecurrence&#39;,this);">Add Recurrence/Edit Recurrence</a>)</li>
+            <li value="5">Create task exceptions (see <a href="/articles/fordevelopers/taskexception" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!fordevelopers/taskexception&#39;,this);">Add Task Exception</a>)</li>
+        </ul>
+        <p class="BodyText">The Task Editing Tool Template file has seven worksheets. The first six columns in each worksheet are identical. These six fields are used to uniquely identify the task to be edited. When editing task recurrences, additional fields are required to identify the recurrence schedule to edit. The required Task ID fields on all worksheets are:</p>
+        <p class="BodyText"><b>TaskName</b>: Name of task</p>
+        <p class="BodyText"><b>Associated Object(s)</b>: Path to associated object. Include the Requirement name if the associated object is not a tree object. For multi-object tasks, list ALL associated objects. Full path must be specified, with each object separated with a new line (Alt+Enter). Include "\" at beginning, but not at the end. Example:</p>
+        <table style="margin-left: 0;margin-right: auto;">
+            <col/>
+            <col/>
+            <col/>
+            <tbody>
+                <tr>
+                    <td class="td_HeadGray">&#160;</td>
+                    <td style="text-align: center;" class="td_HeadGray">A</td>
+                    <td style="text-align: center;" class="td_HeadGray">B</td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">1</td>
+                    <td class="td_HeadRed">ID<br/>Task Name</td>
+                    <td style="text-align: center;" class="td_HeadRed">ID<br/>Associated Object(s)</td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">2</td>
+                    <td class="td_1">Task1</td>
+                    <td class="td_1">\Division\Facility\Unit\POI\Requirement1<br/>\Division\Facility\Unit\POI\Requirement2</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="BodyText">&#160;</p>
+        <p class="BodyText"><b>Task Due Date: Date</b>: Due date of any task instance. For a recurring task, you may use the due date of any task instance in the recurrence schedule. To create a task exception, specify the due date of the task instance for which the exception is to be created.</p>
+        <p class="BodyIndent2">Format: mm/dd/yyyy</p>
+        <p class="BodyText"><b>Task Due Date: Time</b>: Time of task instance (corresponding to Due Date).</p>
+        <p class="BodyIndent2">Format: hh:mm AM/PM </p>
+        <p class="BodyIndent2">24-hr time format cannot be used in the upload file. However, if the culture of the user (as specified on the user profile) typically uses 24-hr time, the task will be displayed that way for the user in the UI.</p>
+        <table style="margin-left: 0;margin-right: auto;">
+            <col/>
+            <col/>
+            <col/>
+            <tbody>
+                <tr>
+                    <td class="td_HeadGray">&#160;</td>
+                    <td style="text-align: center;" class="td_HeadGray">C</td>
+                    <td style="text-align: center;" class="td_HeadGray">D</td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">1</td>
+                    <td style="text-align: center;" class="td_HeadRed">ID<br/>Task Due Date:&#160;Date<br/>(due date of any task instance)<br/>mm/dd/yyyy</td>
+                    <td style="text-align: center;" class="td_HeadRed">ID<br/>Task Due Date:&#160;Time<br/>(in Task Time Zone)<br/>hh:mm AM/PM</td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">2</td>
+                    <td class="td_1">12/31/2014</td>
+                    <td class="td_1">4:00 PM</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="BodyText">&#160;</p>
+        <p class="Note" MadCap:autonum="Note: &#160;"><span class="autonumber"><span class="note_et_al">Note: &#160;</span></span> Due Date and Time must be specified in the Task Time Zone. This may be different than the Assignee's time zone. The assignee will see the due date as UTC ± the Task Due DateTime. You can edit the Task Time Zone in column AQ on the Edit Recurrence sheet for a recurring task, or in column N on the Edit Properties sheet for a single-instance task. </p>
+        <p class="Tip" MadCap:autonum="Tip: &#160;"><span class="autonumber"><span class="note_et_al">Tip: &#160;</span></span>The task due date is shown in your own time zone. This may be confusing if your time zone is different than the task's facility. You can temporarily change your time zone in your profile to the task time zone to make it easier to check configuration. </p>
+        <p class="BodyText"><b>Task Assignee(s): User (s)</b>: Assignee username(s). In the case of more than one user assignee, ALL assignees must be listed. Separate Usernames with "|" character. Example:</p>
+        <p class="BodyIndent2">Username1 | Username2</p>
+        <p class="BodyText"><b>Task Assignee(s): User Group(s)</b>: Group Name. In the case of more than one assignee group, ALL Groups must be listed. Separate Group Names with "|" character. Example:</p>
+        <p class="BodyIndent2">Group1 | Group2</p>
+        <table style="margin-left: 0;margin-right: auto;">
+            <col/>
+            <col/>
+            <col/>
+            <tbody>
+                <tr>
+                    <td class="td_HeadGray">&#160;</td>
+                    <td style="text-align: center;" class="td_HeadGray">E</td>
+                    <td style="text-align: center;" class="td_HeadGray">F</td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">1</td>
+                    <td class="td_HeadRed">ID<br/>Task Assignee(s):&#160;Users)</td>
+                    <td style="text-align: center;" class="td_HeadRed">ID<br/>Task Assignee(s):&#160;User Group(s)</td>
+                </tr>
+                <tr>
+                    <td class="td_HeadGray">2</td>
+                    <td class="td_1">User1 |&#160;User2</td>
+                    <td class="td_1">Plant Manager | Plant Engineer</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="BodyText">&#160;</p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

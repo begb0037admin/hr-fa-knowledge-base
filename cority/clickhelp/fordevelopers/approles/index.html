@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/approles"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>App Roles</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='App Roles';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h2 class="Heading2" id="h2__981078860" data-has-heading-anchor="true">App Roles<a href="/articles/fordevelopers/approles/a/h2__981078860" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/approles/a/h2__981078860&#39;,this);"></a></h2>
+        <p class="BodyText">App Roles are the method for mapping Users and Groups to a level of access or functionality within an EMS App.  App Roles may be used to represent any category of User functionality such as "Administrator", "Data Entry", "Inspector", "EHS Manager".</p>
+        <p class="BodyText">App Roles offer a layer of abstraction from System-specific Users and Groups, such that conditional behavior of an EMS App can be designed without knowledge of the Users and Groups that will be present in a System.</p>
+        <p class="BodyText">App Roles are maintained separately for each EMS App, such that an "Administrator" Role for one EMS App may not have the same mappings and permissions as an "Administrator" Role in another EMS App.</p>
+        <p class="BodyText">App Roles are not managed directly through the Management System UI.  Instead, the <a href="/articles/fordevelopers/packagemanifest" onclick="return n(&#39;!fordevelopers/packagemanifest&#39;,this);">package manifest</a> of an EMS App must be used to create and remove App Roles during development and upload of the EMS App package.</p>
+        <p class="BodyText">The Administrators of the System are then responsible for mapping concrete Users and Groups to the Roles.</p>
+        <p class="BodyText">App Roles are automatically hosted as unique URLs under the root of the EMS App, within the virtual App folder "/_PkgRoles".</p>
+        <p class="BodyText">For example, a GET request to the URL "/_PkgRoles/Administrator" will return "204 No Content" if the current User has been mapped directly or indirectly to the Administrator App Role, otherwise a "403 Forbidden" will be returned.</p>
+        <p class="BodyText">Additionally, a simple GET request to the URL "/_PkgRoles" will return a list of all Roles, to which the current User has been mapped directly or indirectly.</p>
+        <p class="BodyText">There are methods in the EMS Apps JavaScript SDK that simplify checking for User Role membership from EMS App pages.</p>
+        <h3 class="Heading3" id="h3__401137727" data-has-heading-anchor="true">Everyone Role<a href="/articles/fordevelopers/approles/a/h3__401137727" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/approles/a/h3__401137727&#39;,this);"></a></h3>
+        <p class="BodyText">The App Role "Everyone" is pre-defined for every EMS App, and does not need to be specified in the EMS App manifest.</p>
+        <p class="BodyText">The "Everyone" Role always maps to every User of the App, and cannot be modified.</p>
+        <p class="BodyText">Using the "Everyone" Role, you can easily grant or deny access to all Users, current and future, without worrying about Group and User mappings.</p>
+        <p class="BodyText">Using App Roles</p>
+        <p class="BodyText">App Roles may be used in one or both of the following ways:</p>
+        <ol>
+            <li value="1">Allow or Deny access for a Role to one or more EMS App Items or App Data keys in the EMS App manifest.  This method ensures that any User or Group mapped to the Role, will (or will not) be able to load the Item from the server when using the EMS App.  This approach is a strict approach in the sense that permissions are checked on the server and if a User does not have access to an EMS App Item or Data key, the server will respond with a "403 Forbidden".</li>
+            <li value="2">Use the provided EMS App Javascript Library methods to dynamically determine Role membership at run time and enable or disable functionality appropriately on the client side.</li>
+        </ol>
+        <p class="Note" madcap:autonum="Note: &nbsp;"><span class="autonumber"><span class="note_et_al">Note: &nbsp;</span></span>With either approach, all Permissions and Rights assigned to the User either directly or through Group memberships in the Management System will be strictly enforced when calling the REST APIs.</p>
+        <script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js" data-aspx-savednextwhitespace="%0A%20%20%20%20">
+        </script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

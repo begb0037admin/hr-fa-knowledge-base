@@ -1,0 +1,349 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/fordevelopers/templateupdate"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Template Update Tool</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Template Update Tool';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/fordevelopers/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/fordevelopers/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapHighlighter.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffects.js" type="text/javascript"></script><script src="/resources/Scripts/fordevelopers/MadCapEffectsMenu.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1_1449672677" data-has-heading-anchor="true">
+  Template Update Tool
+<a href="/articles/fordevelopers/templateupdate/a/h1_1449672677" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/templateupdate/a/h1_1449672677&#39;,this);"></a></h1>
+<p class="BodyText">
+  With the Template Update Tool you can add, change or delete object associations for the following template types:
+</p>
+<ul class="brackets">
+  <li value="1">
+    Event Templates
+  </li>
+  <li value="2">
+    Requirement Templates
+  </li>
+  <li value="3">
+    Task Templates
+  </li>
+  <li value="4">
+    Custom Field Templates
+  </li>
+</ul>
+<p class="BodyText">
+  The Template Update Tool has four worksheets, one for each template type with different requirements. All templates must be created first in the main application. After associating a template, you can upload values using the Object Properties Editing Tool.
+</p>
+<p class="BodyText">
+  All templates must already exist in the system. You cannot create new templates with the tool.
+</p>
+<p class="BodyText">
+  Download the Excel template file:
+</p>
+<p class="BodyIndent2">
+  <a href="/resources/Storage/fordevelopers/Bulk%20Tools/Templates/Template_Update_Template.xlsx" target="_top">Template Update Tool</a>
+</p>
+<h2 class="Heading2" id="h2__317551041" data-has-heading-anchor="true">
+  Event Templates
+<a href="/articles/fordevelopers/templateupdate/a/h2__317551041" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/templateupdate/a/h2__317551041&#39;,this);"></a></h2>
+<p class="BodyText">
+  This worksheet can be used to change existing Event Template associations with Event Logs. Two caveats should be noted:
+</p>
+<ul class="brackets">
+  <li value="1">
+    The Event Log cannot be changed if there is existing event data.
+  </li>
+  <li value="2">
+    The <b>&lt;clear&gt;</b> function cannot be used, since every Event Log requires an Event Template.
+  </li>
+</ul>
+<h2 class="Heading2" id="h2_528684498" data-has-heading-anchor="true">
+  Requirement Templates
+<a href="/articles/fordevelopers/templateupdate/a/h2_528684498" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/templateupdate/a/h2_528684498&#39;,this);"></a></h2>
+<p class="BodyText">
+  This worksheet can be used to change existing Requirement Template associations.
+</p>
+<p class="BodyText">
+  The <b>&lt;clear&gt;</b> function cannot be used, since a Requirement Template must be associated with all Requirement types.
+</p>
+<h2 class="Heading2" id="h2_131792740" data-has-heading-anchor="true">
+  Task Templates
+<a href="/articles/fordevelopers/templateupdate/a/h2_131792740" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/templateupdate/a/h2_131792740&#39;,this);"></a></h2>
+<p class="BodyText">
+  This worksheet can be used to add or change Task Template associations with Event Logs or Numeric Requirements. You can also use it to change task assignor and assignees designated on templates already associated with objects.
+</p>
+<p class="BodyText">
+  For <b>Numeric Requirements</b> and <b>Automatic Event Logs</b> associated with Numeric Requirements, the Task Template is related to the limit that triggers an event. You must specify which limit the template is associated with, Regulatory or Internal. A requirement may have two Task Templates, one for each limit type. Use a separate line for each limit type.
+</p>
+<p class="Note" madcap:autonum="Note: &nbsp;">
+  <span class="autonumber"><span class="note_et_al">Note: &nbsp;</span></span>A limit value must already be applied to the Numeric Requirement before the Task Template can be applied and the fields edited. Limit values cannot be edited with the bulk tool.
+</p>
+<table style="margin-left: 0;margin-right: auto;">
+  <colgroup>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+  </colgroup>
+  <tbody>
+    <tr>
+      <td class="td_HeadGray">
+        &nbsp;
+      </td>
+      <td class="td_HeadGray">
+        A
+      </td>
+      <td class="td_HeadGray">
+        B
+      </td>
+      <td class="td_HeadGray">
+        C
+      </td>
+      <td class="td_HeadGray">
+        D
+      </td>
+      <td class="td_HeadGray">
+        E
+      </td>
+      <td class="td_HeadGray">
+        F
+      </td>
+      <td class="td_HeadGray">
+        G
+      </td>
+    </tr>
+    <tr>
+      <td class="td_HeadGray">
+        1
+      </td>
+      <td class="td_HeadRed">
+        Path and Name
+      </td>
+      <td class="td_HeadRed">
+        Task Template
+      </td>
+      <td class="td_HeadRed">
+        Assignor
+      </td>
+      <td class="td_yellow">
+        Assignor From Data Entry (yes/no)
+      </td>
+      <td class="td_yellow">
+        Assignee Users
+      </td>
+      <td class="td_yellow">
+        Assignee User Groups
+      </td>
+      <td class="td_yellow">
+        Template Type
+      </td>
+    </tr>
+    <tr>
+      <td class="td_HeadGray">
+        2
+      </td>
+      <td class="td_1">
+        \Division\Facility\POI\Calc1	
+      </td>
+      <td class="td_1">
+        Template Name
+      </td>
+      <td class="td_1">
+        userid
+      </td>
+      <td class="td_1">
+        &nbsp;
+      </td>
+      <td class="td_1">
+        &nbsp;
+      </td>
+      <td class="td_1">
+        Group 1
+      </td>
+      <td class="td_1">
+        regulatory
+      </td>
+    </tr>
+    <tr>
+      <td class="td_HeadGray">
+        &nbsp;
+      </td>
+      <td class="td_1">
+        \Division\Facility\POI\Calc1	
+      </td>
+      <td class="td_1">
+        Template Name
+      </td>
+      <td class="td_1">
+        userid
+      </td>
+      <td class="td_1">
+        &nbsp;
+      </td>
+      <td class="td_1">
+        userid1 | userid2
+      </td>
+      <td class="td_1">
+        &nbsp;
+      </td>
+      <td class="td_1">
+        internal
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="BodyText">
+  &nbsp;
+</p>
+<p class="BodyText">
+  For <b>Manual Event Logs</b> with an associated Task Template, you may specify that Assignor be taken from the data entry (the user who creates the event in the log). Default, if null, is No.
+</p>
+<table style="margin-left: 0;margin-right: auto;">
+  <colgroup>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+  </colgroup>
+  <tbody>
+    <tr>
+      <td class="td_HeadGray">
+        &nbsp;
+      </td>
+      <td class="td_HeadGray">
+        A
+      </td>
+      <td class="td_HeadGray">
+        B
+      </td>
+      <td class="td_HeadGray">
+        J
+      </td>
+      <td class="td_HeadGray">
+        D
+      </td>
+      <td class="td_HeadGray">
+        E
+      </td>
+      <td class="td_HeadGray">
+        F
+      </td>
+    </tr>
+    <tr>
+      <td class="td_HeadGray">
+        1
+      </td>
+      <td class="td_HeadRed">
+        Path and Name
+      </td>
+      <td class="td_HeadRed">
+        Task Template
+      </td>
+      <td class="td_HeadRed">
+        Assignor
+      </td>
+      <td class="td_yellow">
+        Assignor From Data Entry (yes/no)
+      </td>
+      <td class="td_yellow">
+        Assignee Users
+      </td>
+      <td class="td_yellow">
+        Assignee User Groups
+      </td>
+    </tr>
+    <tr>
+      <td class="td_HeadGray">
+        2
+      </td>
+      <td class="td_1">
+        \Division\Facility\POI\Event LogManual	
+      </td>
+      <td class="td_1">
+        Template Name
+      </td>
+      <td class="td_1">
+        userid
+      </td>
+      <td class="td_1">
+        &nbsp;
+      </td>
+      <td class="td_1">
+        &nbsp;
+      </td>
+      <td class="td_1">
+        Group 1
+      </td>
+    </tr>
+    <tr>
+      <td class="td_HeadGray">
+        &nbsp;
+      </td>
+      <td class="td_1">
+        \Division\Facility\POI\Event LogManual	
+      </td>
+      <td class="td_1">
+        Template Name
+      </td>
+      <td class="td_1">
+        &nbsp;
+      </td>
+      <td class="td_1">
+        yes
+      </td>
+      <td class="td_1">
+        userid1 | userid2
+      </td>
+      <td class="td_1">
+        &nbsp;
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="BodyText">
+  &nbsp;
+</p>
+<p class="BodyText">
+  Task Template associations may be removed with the <b>&lt;clear&gt;</b> function.
+</p>
+<p class="BodyText">
+  The Task Template and related fields for a numeric requirement and an Event Log from the main application UI are shown below for reference.
+</p>
+<p class="BodyText" style="text-align: center;"></p><div style="text-align: left;">
+  </div><div style="text-align: left;"><img src="images/TaskTemplate.png" loading="lazy"/></div>
+<p></p>
+<p style="text-align: center;"></p><div style="text-align: left;">
+  </div><div style="text-align: left;"><img src="images/TaskTemplateEvent.png" loading="lazy"/></div>
+<p></p>
+<h2 class="Heading2" id="h2_1305563834" data-has-heading-anchor="true">
+  Custom Field Templates
+<a href="/articles/fordevelopers/templateupdate/a/h2_1305563834" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!fordevelopers/templateupdate/a/h2_1305563834&#39;,this);"></a></h2>
+<p class="BodyText">
+  This worksheet may be used to add, change or remove Custom Field Templates associations with objects and requirements. The template association may be removed using the &lt;clear&gt; function.
+</p>
+<p class="BodyText">
+  Once a custom field template has been applied, you can edit the property values with the <a href="/articles/fordevelopers/objectprops" onclick="return n(&#39;!fordevelopers/objectprops&#39;,this);">Object Properties Editing</a> tools.
+</p>
+<p class="Caution" madcap:autonum="Caution: &nbsp;">
+  <span class="autonumber"><span class="note_red">Caution: &nbsp;</span></span> If a Custom Field Template is removed, all existing field values will be lost. If a Custom&nbsp;Field Template is changed, field values  for fields not on the new template will be lost. Any fields that are on both old and  new templates will retain current assigned values.
+</p>
+<script type="text/javascript" src="/resources/Scripts/tools/SkinSupport/MadCapBodyEnd.js">
+</script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>
