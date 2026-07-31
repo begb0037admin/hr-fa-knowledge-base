@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/gx2-2023-2-0-new-features-release-notes/ccc-11932-a-user-can-now-self-enroll-in-training-sessions"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-11932: A user can now self-enroll in training sessions</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-11932: A user can now self-enroll in training sessions';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/gx2-2023-2-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h2 id="h2_1724693447" data-has-heading-anchor="true">
+			<font color="#333399">CCC-11932: A user can now self-enroll in training sessions</font><a href="/articles/gx2-2023-2-0-new-features-release-notes/ccc-11932-a-user-can-now-self-enroll-in-training-sessions/a/h2_1724693447" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!gx2-2023-2-0-new-features-release-notes/ccc-11932-a-user-can-now-self-enroll-in-training-sessions/a/h2_1724693447&#39;,this);"></a></h2>
+		<ul>
+			<li>To support this, a new training series 'SelfEnrollSeries' with description 'Training Series' has been added to the 'Online Training Series' look-up table. The series has an ID of -1 and the following characteristics:<ul>
+				<li>Its code cannot be modified.</li><li>Its description can be modified.</li><li>The series cannot be deleted.</li><li>Its start date is set to 01/01/2023 and its end date is not set.</li><li>Its recurrence is set to 'One Time' and cannot be modified.</li><li>Inactive is false and can be modified.</li><li>Days to Complete is not set and can be modified.</li><li>Its sequence cannot be changed.</li></ul>
+			</li><li>The following new fields have been added to the default 'Training Session' layout for in-person training:<ul>
+				<li>Enable Self-Enroll - a check box, which by default is not selected</li><li>Classroom Max Capacity - a number field that's value must be a positive whole number</li></ul>
+			</li><li>The number of attendees allowed for a training session cannot exceed the classroom's maximum capacity.</li><li>In GX2, if the user tries to enroll an attendee when the classroom is already at maximum capacity, a pop-up will indicate that.</li><li>In GX2 <span style="font-weight: bold;">Administrator</span> &gt; <span style="font-weight: bold;">Profiles</span>, in the My Tasks section of the 'myCority Modules' sublist, a new slider button labelled 'Enroll in Online Training' has been added.</li><li>By default, it is disabled.</li><li>When the slider is enabled for a user's profile, that user will have the ability to self-enroll in online training from myCority.</li><li>In myCority, an equivalent slider has been added to the My Tasks section of the 'Personalize myCority by User Profile' screen. By default, the slider is disabled.<ul>
+				<li>If 'Enroll in Online Training' has been selected for the user's profile within GX2 and 'Enroll in Online Training' has been selected on the 'Personalize by User Profile' screen in myCority, the new 'Enroll in Online Training' icon will be added for the user to the 'Create New' section of myCority.</li></ul>
+			</li><li>When a user whose role has the required security configuration clicks the new 'Enroll in Online Training' icon, a dialog box with the following options will be displayed:<ul>
+				<li>Enroll in Online Training</li><li>Enroll in In-Person Training</li></ul>
+			</li><li>If the user clicks 'Enroll in Online Training', a layout for enrolling in a single training session is presented.<ul>
+				<li>When the user selects a course, the values of the other fields on the layout will populate automatically.</li><li>When the user clicks 'Schedule Training', he or she will be enrolled in a single session of the course and redirected to My Tasks, which will be filtered for training to courses for which today is =&gt; the start date and &lt; the end date.</li></ul>
+			</li><li>If the user clicks 'Enroll in In-Person Training', a dialog box will display that has a picklist of all in-person training sessions for which the following are true:<ul>
+				<li>'Enable Self-Enrollment' is selected.</li><li>'Course Max Capacity' has not been reached.</li><li>'Course Date' is not in the past.<ul>
+					<li>When the user selects a course session, he or she will be added to its attendees list, and a confirmation pop-up with the course details will display.</li><li>If no courses are available, a pop-up will indicate that.</li></ul>
+				</li></ul>
+			</li></ul><h1 id="h1_1547723302">
+  </h1>
+<p>
+  <br/>
+</p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>

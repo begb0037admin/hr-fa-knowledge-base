@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/gx2-2023-2-0-new-features-release-notes/ccc-10540-a-user-can-now-now-link-an-action-or-compliance-obligation-to-multiple-individual-assignee"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-10540: A user can now now assign an action or compliance obligation to multiple individual assignees, multiple teams, or a combination of those</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-10540: A user can now now assign an action or compliance obligation to multiple individual assignees, multiple teams, or a combination of those';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/gx2-2023-2-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h2 id="h2_652363719" data-has-heading-anchor="true">
+			<a name="_Toc135997669" style="color: #2e75b5; font-weight: normal;"><b>CCC-10540: A user can now assign an action or compliance obligation to multiple individual assignees, multiple teams, or a combination of those</b></a><a href="/articles/gx2-2023-2-0-new-features-release-notes/ccc-10540-a-user-can-now-now-link-an-action-or-compliance-obligation-to-multiple-individual-assignee/a/h2_652363719" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!gx2-2023-2-0-new-features-release-notes/ccc-10540-a-user-can-now-now-link-an-action-or-compliance-obligation-to-multiple-individual-assignee/a/h2_652363719&#39;,this);"></a></h2>
+		<ul>
+			<li>These assignees will be treated as a team. For example, only one action per due date (if recurring) will be created. You will be unable to deselect the 'Complete as Team' checkbox.</li><li>Then any assignee can complete the action from within myCority or GX2 and receive the configured (through business rules) notifications.</li><li>To support this:<ul>
+				<li>A new global 'Allow Assignment of Actions to Multiple Groups (Teams) and/or Assigned To' system setting has been added to enable the functionality.</li><li>In layout configuration, on applicable GX2 and myCority 'Actions' and 'Compliance&nbsp;Actions' layouts, a new 'Enable Multiple Values' checkbox has been added for both the 'Assigned To' and 'Assigned To Group' fields. The checkbox is only visible if the new system setting mentioned above is selected.<ul>
+					<li>When the checkbox is selected for a field, that field will accommodate multiple values.</li><li><span style="font-weight: bold;">Note:</span> For multiple values to display in the equivalent column on applicable list views, that column will have to be added to a custom version of the list view and multiple values enabled for the column.</li></ul>
+				</li></ul>
+			</li><li>When business rule emails are sent for the assignment(s), all of the following individuals can be included:<ul>
+				<li>AssignedTo - all employees specified</li><li>AssignedToGroup - all current members in all groups specified</li><li>GrouporTeamMembers - all current members in all groups and teams specified</li><li>VerifiedByEmployee - only the first selected</li></ul>
+			</li><li><span style="font-weight: bold;">Note:</span> After configuring this functionality for use, you might have to end some recurring actions (tasks) and then set them up again.</li><li>The following are known limitations:<ul>
+				<li>Because the system setting is global (set for all users), if you configure this functionality in support of your safety or environmental compliance actions, for example, its behavior will apply for all new and existing ‘Findings &amp; Actions’ in the system.</li><li>The new system setting can be selected without ‘Enable Multiple Values’ being configured for a field, which would still allow a user with the appropriate security setup to assign an action to a single person and to a single team, unless a business rule is created to prevent that.</li><li>With this functionality configured, a single action is assigned to each individual added and to each member of each team added. Any of those people can complete the action. Without this functionality configured, it can be determined for each individual 'Finding &amp; Action' or 'Compliance Obligation/Calendar' item whether it will be treated as a Group or Team assignment (that is, the 'Complete as Team' checkbox is editable).</li><li>MAEN cannot be used for sending out the reminders. It will not include the secondary assignees.</li><li>The system emails allow for a maximum length of 1000 characters in each of the 'To' and 'CC' fields. If all recipients' email addresses combined for the given field exceeds that, then no emails will be sent.</li><li>Neither the Import Utility nor Data Integration Utility can be used to create actions and assign to multiple assignees.</li><li>This functionality is not available for use with the assignment of actions for Corrective Plans. For recurring actions for Permits or Legal Requirements, 'Assigned to Group' is used, however 'Findings &amp; Actions' are created for each team member who has the tree combination matching either the Permit or Legal Requirement location.</li><li>This functionality does not apply to the use of 'Groups and Teams' with inspections.</li><li>For 'Verified By Employee', only the first specified (primary) will be able to access and edit the action or obligation.</li></ul></li></ul><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>

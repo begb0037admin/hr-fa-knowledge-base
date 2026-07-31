@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/gx2-2023-2-0-new-features-release-notes/ccc-10401-you-can-now-assign-questionnaires-from-a-record"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-10401: You can now assign questionnaires from a record within any solution (or module) that uses questionnaires</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-10401: You can now assign questionnaires from a record within any solution (or module) that uses questionnaires';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/gx2-2023-2-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2__1693376229" data-has-heading-anchor="true">
+			<a id="_Toc134686026"></a><span style="color: #2E75B5;">CCC-10401: You can now assign questionnaires from a record within any solution (or module) that uses questionnaires</span><a href="/articles/gx2-2023-2-0-new-features-release-notes/ccc-10401-you-can-now-assign-questionnaires-from-a-record/a/h2__1693376229" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!gx2-2023-2-0-new-features-release-notes/ccc-10401-you-can-now-assign-questionnaires-from-a-record/a/h2__1693376229&#39;,this);"></a></h2>
+		<ul>
+			<li><span style="font-weight: normal; font-style: normal;">To support this the following fields can now be added to custom versions of Questionnaire Header layouts.</span><ul>
+				<li>Assigned To [Employee] - a picklist that uses the Employees look-up table picklist field</li><li>Assigned To [Team] - a picklist, filtered by cloud, that uses the &#39;Groups and Teams&#39; look-up table</li><li>Notify on Submit - a picklist that uses the Employees look-up table</li><li>Due By - a date field</li><li>Submitted Date - a read-only date field that populates automatically</li></ul>
+			</li><li>The fields are available in Query Builder and Report Writer.</li><li>They are available for use in business rules, business rule actions, and display rules.</li><li>They can be populated/updated using the Import Utility or the Cority Data Import</li><li>Utility.</li><li>The corresponding columns are available for adding to custom versions of applicable list views.</li><li><span style="font-weight: normal; font-style: normal;">Specifically, the layouts that support this are:</span><ul>
+				<li>Environmental: ML-001444 and ML-001443</li><li>Ergonomics: ML-001446 and ML-001445</li><li>I.H.: ML-001442 and ML-001441</li><li>Quality: ML-003185 and ML-003184</li><li>Safety: ML-001000 and ML-000715</li><li>Training: ML-001934 and ML-001933</li><li>myCority: ML-003605</li></ul>
+			</li><li>The initial rollout does not include Medical (O.H.) questionnaires due to additional security considerations.</li><li>When the &#39;Assigned To [Employee]&#39; or &#39;Assigned to [Team]&#39; fields are completed on a supported Questionnaire record, the record will become accessible in myCority for assignee(s) using the Questionnaires icon in the &#39;Filter by&#39; section.</li><li><span style="font-weight: bold; font-style: normal;">Note:</span><span style="font-weight: normal; font-style: normal;"> Only one of the &#39;Assigned To [Employee]&#39; or &#39;Assigned to [Team]&#39; fields can be populated.</span></li><li>A business rule (BR) can be created to notify assignees, remind them as the Due Date approaches and/or when a questionnaire becomes overdue.</li><li>Another BR could be configured that upon submission of a questionnaire from myCority notifies the appropriate stakeholder(s). That BR could pull from the Questionnaire Header or from the parent record, which would require a distribution list.</li><li><span style="font-weight: normal; font-style: normal;">The general QuestionnaireResponseHeader entity should be used: </span><ul>
+				<li>When triggering the BR/BRA to send an email to &#39;Notify On Submit&#39; from myCority, regardless of the initial parent/source record.</li><li>When triggering assignment emails from solutions within a particular cloud, except for those assigned directly from a particular questionnaire solution within any given cloud.</li></ul>
+			</li><li>The &lt;cloud&gt;QuestionnaireResponseHeader entity should be used for questionnaires assigned directly from the corresponding questionnaire solution.</li><li><span style="font-weight: normal; font-style: normal;">Please note the following limitations:</span><ul>
+				<li>From the Questionnaires sublist, the user cannot inline add a new questionnaire and then assign it to a team or inline edit a questionnaire to alter the &#39;Assign To Team&#39; selection. Those specific changes can only be made from the layout.</li><li>From a particular questionnaire solution list view, the user cannot add a new questionnaire or inline edit to alter the &#39;Assign to Team&#39; selection. Those specific changes can only be made from the layout.</li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">For information on working with questionnaires, business rules, or distribution lists, see the </span><span style="font-weight: normal; font-style: italic;">GX2 User Guide</span><span style="font-weight: normal; font-style: normal;">.</span></li></ul>
+		<p><a id="_Toc134686027"></a>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>
