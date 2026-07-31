@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/gx2-and-mycority-2026-2-0-new-features-release-notes/summary-of-safety-and-environmental-enhancements"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Summary of Safety and Environmental Enhancements</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Summary of Safety and Environmental Enhancements';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/gx2-and-mycority-2026-2-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>		<h1 id="h1__601060191" data-has-heading-anchor="true">
+			<a id="_Toc177126733"></a><a id="_Toc230943299"></a><a id="_Toc58936896"></a><span style="color: #D35F0B;">Summary of Safety and Environmental Enhancements</span><a href="/articles/gx2-and-mycority-2026-2-0-new-features-release-notes/summary-of-safety-and-environmental-enhancements/a/h1__601060191" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!gx2-and-mycority-2026-2-0-new-features-release-notes/summary-of-safety-and-environmental-enhancements/a/h1__601060191&#39;,this);"></a></h1>
+		<p>The table below contains design improvements we have made in the Safety and Environmental clouds. The items are organized by component, and the components are arranged in alphabetical order.</p><table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse;" class="CHTable">
+			<tbody><tr>
+				<td valign="top" nowrap="" style="background-color: #bfbfbf; border-width: 1pt; border-style: solid; border-color: windowtext; vertical-align: top;">Item</td><td valign="top" nowrap="" style="background-color: #bfbfbf; border-width: 1pt; border-style: solid; border-color: windowtext; vertical-align: top;">Component(s)</td><td valign="top" style="background-color: #BFBFBF; border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">Description</td></tr>
+			<tr>
+				<td valign="top" style="border-width: 1pt; border-style: solid; border-color: windowtext; vertical-align: top;">CCC-28048</td><td valign="top" style="border-width: 1pt; border-style: solid; border-color: windowtext; vertical-align: top;">Chemical Management</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;"><p>The following new UDFs can now be added to custom versions of ‘Chemical Inventory’ layouts:</p><ul>
+					<li>UDFText05 - UDFText15</li></ul>
+				<p>The new fields can be used in business rules and display rules, populated or updated through import, and reported on using Query Builder or Report Writer.</p><p>The corresponding columns can be added to custom versions of applicable list views.</p><p>Also, the ‘Tank ID’ column is now available for adding to custom versions of ‘Chemical Inventory’ list views.</p><p>&nbsp;</p></td></tr>
+			<tr>
+				<td valign="top" style="border-width: 1pt; border-style: solid; border-color: windowtext; vertical-align: top;">CCC-27862</td><td valign="top" style="border-width: 1pt; border-style: solid; border-color: windowtext; vertical-align: top;">Chemical Management</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;"><p>The following new fields can now be added to custom versions of any Agent Hazard layout (including in the Chemical Products, Chemicals, and Waste Profiles modules):</p><ul>
+					<li>UDFLU01 - UDFLU25</li><li>UDFDate01 - UDFDate03</li><li>VOC Content - a numeric field</li><li>VOC Content UOM - a picklist to the Units of Measure look-up table</li></ul>
+				<p>The look-up table fields (UDFLU01 - UDFLU25) have new corresponding look-up tables: LU_AgentHazard_UDF01 - LU_AgentHazard_UDF25.</p><p>The fields can be used in business rules and display rules, populated or updated through import, and reported on using Query Builder or Report Writer.</p><p>The corresponding columns can be added to custom versions of applicable list views.</p><p>Also, the character limit for the existing text UDFs in Chemical Handling has been extended.</p><p>&nbsp;</p></td></tr>
+			<tr><td style="border-width: 1pt; border-style: solid; border-color: windowtext; vertical-align: top;">CCC-26302<br/></td><td style="border-width: 1pt; border-style: solid; border-color: windowtext; vertical-align: top;">Environmental Asset Management – Reporting<br/></td><td style="border-width: 1pt; border-style: solid; border-color: windowtext;"><p>The new EquipmentUDF365RollingLeakRate BRA method will calculate the total 356-rolling leak rate for an asset. It is for use in business rules and applies a 365-day roll back even in leap years. If properly configured with an incident leak rate (real number UDF) field and a 365-rolling leak rate (real number UDF) field, the BRA will make the necessary calculation and populate the latter with the result.</p><p>For information on working with business rules, business rule actions (BRAs), and UDFs, see the <span style="font-style: italic;"><a href="/smart/project-cority-web-help/welcome-to-cority" target="_blank">Cority User Guide</a></span>.</p><br/></td></tr>
+			<tr>
+				<td valign="top" style="border-width: 1pt; border-style: solid; border-color: windowtext; vertical-align: top;">CCC-18967</td><td valign="top" style="border-width: 1pt; border-style: solid; border-color: windowtext; vertical-align: top;">Safety – Management of Change</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;"><p>Safety MOC records can now be linked to other, associated records across applicable clouds and modules. For more information on the record linking functionality, see the release note for <a href="/smart/project-gx2-2024-3-0-new-features-release-notes/ccc-15799-associated-records-across-various-clouds-and-modules-can-1" target="_blank">CCC-15799</a> in the <span style="font-style: italic;">GX2 2024.3.0 New Features Release Notes</span>.</p><p>&nbsp;</p></td></tr>
+			<tr>
+				<td valign="top" style="border-width: 1pt; border-style: solid; border-color: windowtext; vertical-align: top;">CCC-27465</td><td valign="top" style="border-width: 1pt; border-style: solid; border-color: windowtext; vertical-align: top;">Waste Management</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;"><p style="background-color: #FFFFFF;">A new business rule BR-100672 that uses new subquery BR_WasteManifest_ManifestNumber_Subquery prevents users from updating the Manifest Number on a Waste Shipment record to an already existing Manifest Number. The business rule is set to inactive (off) by default.</p><p><span style="background-color: #FFFFFF;">For information on working with business rules, see the </span><span style="background-color: #FFFFFF; font-style: italic;"><a href="/smart/project-cority-web-help/welcome-to-cority" target="_blank">Cority User Guide</a></span><span style="background-color: #FFFFFF;">.</span></p><p>&nbsp;</p></td></tr>
+		</tbody></table>
+		<p><a id="_Toc230943300"></a>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>
