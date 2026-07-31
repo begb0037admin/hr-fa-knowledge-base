@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-2022-2-0-new-features-release-notes/ccc-2969-the-restful-api-has-a-new-employeeimport-post-endpoint"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-2969: The RESTful API has a new &#39;employeeimport&#39; POST endpoint</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-2969: The RESTful API has a new \'employeeimport\' POST endpoint';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-2022-2-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2_1134561885" data-has-heading-anchor="true">
+			<a id="_Toc106346999"></a><span style="color: #376092;">CCC-2969: The RESTful API has a new &#39;employeeimport&#39; POST endpoint</span><a href="/articles/cority-2022-2-0-new-features-release-notes/ccc-2969-the-restful-api-has-a-new-employeeimport-post-endpoint/a/h2_1134561885" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2022-2-0-new-features-release-notes/ccc-2969-the-restful-api-has-a-new-employeeimport-post-endpoint/a/h2_1134561885&#39;,this);"></a></h2>
+		<ul>
+			<li><span style="font-weight: normal; font-style: normal;">This new endpoint will accept all Cority HR Integration Utility (formerly MEIP) options and parameters. </span><span style="font-weight: bold; font-style: normal;">Note:</span><span style="font-weight: normal; font-style: normal;"> These are only supported for this POST endpoint (not with GET, PUT, etc.).</span></li><li>The parameters will be provided in an options envelope, and the data returned will be provided in a records envelope.</li><li><span style="font-weight: normal; font-style: normal;">For the following parameters, specifically:</span><ul>
+				<li>updateExistingRecords - This is only applicable in the POST request. If an employee number already exists, the corresponding employee record will be overwritten with the corresponding data returned.</li><li>insertBaseTables - If a look-up table code does not exist, one will be created and then assigned to the specified employee.</li><li>forceLookupTableUpdate - If a look-up table description is specified and it is different from the one in the GX2 database, the one in the database will get updated and then its code will be assigned to the employee.</li><li>disableSegUpdate - This will ensure that exposure groups do not get updated for imported/updated employees.</li><li>autoCreatePortalUser - If a login ID exists for the employee and his or her email address is not null in the body of the POST request, a Portal user will be created for the specified employee. If an employee is terminated, his or her Portal user will be deactivated (either scheduled for the future date of termination or immediate for the current or a past date of termination).</li><li>mergeRecordsWithMatchingSsn - If a historical employee with SSN already exists in the GX2 database for a new employee within the request, this will merge the historical employee (data) with the new employee. If an employee is reinstated, his or her corresponding Portal user will become reactivated.</li></ul>
+			</li><li>The import format will be obtained from the format of the first record imported.</li><li>The standard HR Integration Utility batching will occur when sending the data to GX2.</li><li><span style="font-weight: normal; font-style: normal;">We recommend importing only 100 employee records at a time (per call).</span><ul>
+				<li>To import more than 100, make multiple calls of 100, batching the larger file manually before importing.</li></ul>
+			</li><li><span style="font-weight: bold; font-style: normal;">Note:</span><span style="font-weight: normal; font-style: normal;"> This endpoint will be excluded from the RESTful API &#39;Daily Threshold Limit&#39;.</span></li><li>The response body for the call will match that of standard HR Integration Utility responses.</li><li><span style="font-weight: normal; font-style: normal;">To use this POST call:</span><ul>
+				<li>The user&#39;s User layout must have the &#39;MEIP User&#39; check box selected.</li><li><span style="font-weight: normal; font-style: normal;">The user&#39;s role must be granted the new </span><span style="font-weight: normal; font-style: italic;">employeeimport.apiwrite</span><span style="font-weight: normal; font-style: normal;"> security action.</span></li></ul>
+			</li></ul>
+		<p>&nbsp;</p><p><a id="_Summary_of_Occupational"></a><span style="color: #D35F0B;"> </span><a id="_Toc106347000"></a></p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-2022-2-0-new-features-release-notes/ccc-3917-a-cority-administrator-can-now-update-the-cority"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-3917: A Cority Administrator can now update the Cority private/public key pair</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-3917: A Cority Administrator can now update the Cority private/public key pair';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-2022-2-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2__993571756" data-has-heading-anchor="true">
+			<a id="_Toc106346998"></a><span style="color: #376092;">CCC-3917: A Cority Administrator can now update the Cority private/public key pair</span><a href="/articles/cority-2022-2-0-new-features-release-notes/ccc-3917-a-cority-administrator-can-now-update-the-cority/a/h2__993571756" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2022-2-0-new-features-release-notes/ccc-3917-a-cority-administrator-can-now-update-the-cority/a/h2__993571756&#39;,this);"></a></h2>
+		<ul>
+			<li>This no longer has to be done by Cority Customer Support or DevOps.</li><li><span style="font-weight: normal; font-style: normal;">There is a new DT_CoritySAMLKey data table. </span><span style="font-weight: bold; font-style: normal;">Note:</span><span style="font-weight: normal; font-style: normal;"> The table is not available in Query Builder or Report Writer, nor is it accessible through the RESTful API.</span></li><li><span style="font-weight: normal; font-style: normal;">DT_CoritySAMLKey records have the following parameters:</span><ul>
+				<li>Config File - for storing a config file</li><li>Private - the key</li><li>Passphrase</li><li>Start Date</li><li>End Date</li></ul>
+			</li><li>In System Settings, there is a new &#39;Download Cority Public Key&#39; action.</li><li><span style="font-weight: normal; font-style: normal;">The action will check if there is a record in DT_CoritySAMLKey with a Private value of False and a current date and time between the Start Date and End Date.</span><ul>
+				<li>If so, that key will be downloaded to the client&#39;s system.</li><li>If not, the following message will display: There is no Cority Public Key currently available.</li></ul>
+			</li><li>In System Settings, there is also a new &#39;Update Cority Private Key&#39; action.</li><li><span style="font-weight: normal; font-style: normal;">When selected, the following message will display: Please click &lsquo;Yes&rsquo; to confirm you have installed the updated Cority Public Key. Otherwise, click &lsquo;No&rsquo; and run the &#39;Download Cority Public Key&#39; action first.</span><ul>
+				<li>If the user clicks No, the Cority Private Key will remain the same. It will not be overwritten/updated.</li><li><span style="font-weight: normal; font-style: normal;">If the user clicks Yes, the action will check if there is a record in DT_CoritySAMLKey with a Private value of True, a Passphrase value (not null), and a current date and time between the Start Date and End Date.</span><ul>
+					<li>If not, the following message will display: There is no Cority Private Key currently available.</li><li><span style="font-weight: normal; font-style: normal;">If so (a key is available), that key will be applied automatically to the &#39;SSO SAML 2.0 Private Key&#39; system setting, overwriting the existing key.</span><ul>
+						<li><span style="font-weight: normal; font-style: normal;">The following message will then display: Please test logging in from a different tab or browser while keeping this current tab and dialog box open. Once you do and login is successful, click &lsquo;Yes&rsquo;. If you click &lsquo;No&rsquo;, Cority will revert to the previous Private Key. If you click neither within 60 seconds, Cority will revert to the previous Private Key.</span><a id="_Toc106346999"></a></li></ul>
+					</li></ul>
+				</li></ul>
+			</li></ul>
+	<div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>

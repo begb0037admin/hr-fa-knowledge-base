@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-2022-2-0-new-features-release-notes/summary-of-environmental-waste-management-enhancements"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Summary of Environmental Waste Management Enhancements</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Summary of Environmental Waste Management Enhancements';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-2022-2-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h1 id="h1_831837813" data-has-heading-anchor="true">
+			<a id="_Toc106347005"></a><a id="_Toc58936896"></a><span style="color: #D35F0B;">Summary of Environmental Waste Management Enhancements</span><a href="/articles/cority-2022-2-0-new-features-release-notes/summary-of-environmental-waste-management-enhancements/a/h1_831837813" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2022-2-0-new-features-release-notes/summary-of-environmental-waste-management-enhancements/a/h1_831837813&#39;,this);"></a></h1>
+		<p>The table below lists the smaller design improvements we have made in Waste Management. The items are organized by component and the components are arranged in alphabetical order.</p><table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse;" class="CHTable">
+			<tr>
+				<td valign="top" style="background-color: #BFBFBF; border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">Item</td><td valign="top" style="background-color: #BFBFBF; border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">Description</td></tr>
+			<tr>
+				<td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">CCC-8123 and 2675</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;"><p>In the Waste Container Management module, the &#39;Accumulation Start Date&#39; field (for layout ML-000228 and any of its clones) is now only mandatory (a value must be provided) when the &#39;Disposed Amount&#39; value is greater than 0. This will enable users to inventory empty waste containers in advance, without having to start the count on accumulation days.</p><p>&nbsp;</p></td></tr>
+			<tr>
+				<td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">CCC-3530</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;"><p>To help ensure that waste is transported to the proper treatment, storage and disposal Facility (TSDF), when a user generates a waste manifest (Environmental &gt; Waste Management &gt; Actions &gt; Generate Waste Manifest for Selected Records) from a single Waste Management record or from multiple Waste Management records containing waste streams with matching Generator and TSDF values:</p><ul>
+					<li>The &#39;Generator&#39; field on the &#39;Generate Waste Manifest&#39; dialog box will now auto-populate with the generator that corresponds to the record&#39;s waste stream (waste profile).</li><li>The &#39;Disposal Facility (TSDF)&#39; field on the dialog box will now auto-populate with the TSDF that corresponds to the record&#39;s waste stream.</li></ul>
+				<p>&nbsp;</p><p>When the user generates a waste manifest from multiple Waste Management records containing waste streams that do not have matching Generator and TSDF values: </p><ul>
+					<li>The &#39;Generator&#39; or &#39;Disposal Facility (TSDF)&#39; fields on the &#39;Generate Waste Manifest&#39; dialog box will not auto-populate.</li></ul>
+				<p>&nbsp;</p><p>As well, a new &#39;Date of Disposal&#39; timestamp field is now provided on the &#39;Generate Waste Manifest&#39; dialog box. The &#39;Date of Disposal&#39; value entered in that field will be automatically transferred to the &#39;Date of Disposal&#39; field on the newly created Waste Shipment record.</p><p>Also, the &#39;Disposal Notes&#39;, &#39;Manifest Sent to Regulator&#39; and &#39;Manifest Returned from Regulator&#39; fields on the &#39;Generate Waste Manifest&#39; dialog box have been re-positioned. &nbsp;</p><p>&nbsp;</p></td></tr>
+			<tr>
+				<td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">CCC-2898</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;"><p>In the Waste Profiles look-up table, the following columns can now be added to custom versions of Waste Codes list views:</p><ul>
+					<li>Federal</li><li>State/Province</li><li>Waste Disposition</li><li>Other</li><li>Inactive</li><li>Country</li><li>Form Code</li><li>Management Method Code</li><li>Region</li><li>Source Code</li><li>Waste Minimization Code</li></ul>
+				<p>Each corresponds to the equivalent Waste Code check box field on the Waste Profile layout (ML-003326).</p><p>&nbsp;</p></td></tr>
+		</table>
+		<p><a id="_Toc106347006"></a>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>
