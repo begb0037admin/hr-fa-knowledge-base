@@ -13,11 +13,15 @@ Mirrors the existing access_group_scraper.py conventions (output layout,
 verification-before-trust discipline) but uses plain HTTP throughout —
 no browser automation needed since this endpoint requires no session.
 
-Proven live 31 July 2026 against the full cority-user-guide publication:
-939/939 articles scraped successfully, 559 images (14.2MB) downloaded and
-rehosted. 49 initial network timeouts during a live account-switch window
-all succeeded cleanly on retry with no code changes — confirmed transient,
-not a scraper defect.
+Proven live 31 July 2026:
+- Single-publication test (cority-user-guide): 939/939 articles, 559
+  images (14.2MB), 49 transient network timeouts all succeeded on retry.
+- Full 119-publication run: 4092/4092 articles, 6772 images, 0 scraper
+  failures. The workflow's single end-of-run git push then failed with
+  an HTTP 500 (too large a payload for one push) and the result was lost
+  when the ephemeral runner was destroyed — this is why the workflow now
+  commits after each publication instead of once at the end (see
+  --list-publications below, used to drive that loop from bash).
 """
 import argparse
 import json
@@ -176,7 +180,15 @@ def main() -> int:
     parser.add_argument("--limit-per-publication", type=int, default=0,
                          help="Cap articles per publication, 0 = no limit (useful for a diagnostic run)")
     parser.add_argument("--stats-out", default=None, help="Optional path to write a JSON stats summary")
+    parser.add_argument("--list-publications", action="store_true",
+                         help="Print every publication slug (one per line) and exit — no scraping. "
+                              "Used to drive a per-publication commit loop from the calling shell.")
     args = parser.parse_args()
+
+    if args.list_publications:
+        for sitemap_url in list_publications():
+            print(publication_slug_from_sitemap_url(sitemap_url))
+        return 0
 
     out_root = Path(args.output)
     all_sitemaps = list_publications()
