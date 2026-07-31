@@ -1,0 +1,95 @@
+name: Scrape Cority ClickHelp Documentation
+
+on:
+  workflow_dispatch:
+    inputs:
+      publications:
+        description: "Comma-separated publication slugs to scrape, or 'all'"
+        type: string
+        default: "all"
+      limit_per_publication:
+        description: "Max articles per publication (0 = no limit)"
+        type: string
+        default: "0"
+      diagnostic:
+        description: "Diagnostic run: 2 small publications, 2 articles each — output to cority_diag, skips index build and commit, safe to run any time"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run scraper
+        run: |
+          if [ "${{ inputs.diagnostic }}" = "true" ]; then
+            python scrapers/cority_clickhelp_scraper.py \
+              --publications appsolutions,mycority-it-setup --limit-per-publication 2 \
+              --output cority_diag --stats-out cority_diag_stats.json
+          else
+            python scrapers/cority_clickhelp_scraper.py \
+              --publications "${{ inputs.publications }}" \
+              --limit-per-publication "${{ inputs.limit_per_publication }}" \
+              --output cority/clickhelp --stats-out cority_scrape_stats.json
+          fi
+
+      - name: Commit refreshed data to the repository
+        if: ${{ github.ref == 'refs/heads/main' && !inputs.diagnostic }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cority
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Refresh Cority ClickHelp knowledge base data [skip ci]"
+            git pull --rebase origin main
+            git push origin main
+          fi
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cority-clickhelp-scrape-stats
+              --publications "${{ inputs.publications }}" \
+              --limit-per-publication "${{ inputs.limit_per_publication }}" \
+              --output cority/clickhelp --stats-out cority_scrape_stats.json
+          fi
+
+      - name: Commit refreshed data to the repository
+        if: ${{ github.ref == 'refs/heads/main' && !inputs.diagnostic }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cority
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Refresh Cority ClickHelp knowledge base data [skip ci]"
+            git pull --rebase origin main
+            git push origin main
+          fi
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cority-clickhelp-scrape-stats
+          path: |
+            cority_scrape_stats.json
+            cority_diag_stats.json
+          retention-days: 90
+          if-no-files-found: ignore
