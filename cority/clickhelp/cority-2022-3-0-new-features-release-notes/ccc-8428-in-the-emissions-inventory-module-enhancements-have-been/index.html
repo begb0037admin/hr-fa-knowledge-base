@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-2022-3-0-new-features-release-notes/ccc-8428-in-the-emissions-inventory-module-enhancements-have-been"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-8428: In the Emissions Inventory module, enhancements have been made to the calculation engine</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-8428: In the Emissions Inventory module, enhancements have been made to the calculation engine';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-2022-3-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2_1049819127" data-has-heading-anchor="true">
+			<a id="_Toc115416686"></a><span style="color: #376092;">CCC-8428: In the Emissions Inventory module, enhancements have been made to the calculation engine</span><a href="/articles/cority-2022-3-0-new-features-release-notes/ccc-8428-in-the-emissions-inventory-module-enhancements-have-been/a/h2_1049819127" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2022-3-0-new-features-release-notes/ccc-8428-in-the-emissions-inventory-module-enhancements-have-been/a/h2_1049819127&#39;,this);"></a></h2>
+		<p>Opt-In</p><ul>
+			<li><span style="font-weight: normal; font-style: normal;">For calculating air emissions for ‘source profile’ related assets, you can now:</span><ul>
+				<li><span style="font-weight: normal; font-style: normal;">Execute equations that reference stream information (physical properties, for example) calculated in previous sequences.</span><ul>
+					<li>To support this, new fields have been added to the Equation Builder for the ‘EI Emission Calculation’ entity. The fields are formatted ‘AllRelatedAsset[X].EmissionParameter.Stream.&lt;field&gt;, where X is the sequence number of any Related Asset record for the corresponding Source Profile that has IsSecondarySequence = False, and &lt;field&gt; is the field name.</li><li>When a ‘source profile’ related asset equation contains fields in that format and IsSecondarySequence = True, the calculation will execute for each record in the DT_EIEmissionCalculation table.</li></ul>
+				</li><li><span style="font-weight: normal; font-style: normal;">Execute equations that reference the chemical attributes of streams calculated in previous sequences.</span><ul>
+					<li>To support this, new fields have been added to the Equation Builder for the ‘EI Emission Calculation’ entity. The fields are formatted ‘AllRelatedAsset[X].StreamComposition.Chemical.&lt;field&gt;, where X is the sequence number of any Related Asset record for the corresponding Source Profile that has IsSecondarySequence = False, and &lt;field&gt; is the field name.</li><li><span style="font-weight: normal; font-style: normal;">When a ‘source profile’ related asset equation contains fields in that format and IsSecondarySequence = True, the calculation will execute for each record in the DT_EIEmissionCalculation table.</span><a id="_Toc115416687"></a></li></ul>
+				</li></ul>
+			</li></ul>
+	<div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>
