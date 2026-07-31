@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/gx2-2023-3-0-new-features-release-notes/ccc-8390-for-the-clinical-testing-module-the-restful-api"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-8390: For the Clinical Testing module, HL7 file data can now be acquired from different sources</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-8390: For the Clinical Testing module, HL7 file data can now be acquired from different sources';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/gx2-2023-3-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2__1584968480" data-has-heading-anchor="true">
+			<a id="_Toc146882911"></a><span style="color: #2E75B5;">CCC-8390: For the Clinical Testing module,  HL7 file data can now be acquired from different sources</span><a href="/articles/gx2-2023-3-0-new-features-release-notes/ccc-8390-for-the-clinical-testing-module-the-restful-api/a/h2__1584968480" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!gx2-2023-3-0-new-features-release-notes/ccc-8390-for-the-clinical-testing-module-the-restful-api/a/h2__1584968480&#39;,this);"></a></h2>
+		<ul>
+			<li>To support this there is a new ’HL7 Mapping’ (LU_GLB_HL7Mapper) look-up table, categorized under the Demographics module.</li><li>The default list view for the table has the following columns:<ul>
+				<li>Code</li><li>Description</li><li>Module</li></ul>
+			</li><li>The look-up table layout has the corresponding fields.</li><li>The table contains the following hardcoded, Cority-created Clinical Testing standards: <ul>
+				<li>Gamma Dyna Care</li><li>LabCorp</li><li>Oxford</li><li>Source ASTM88 Lab File</li><li>Source ASTM94 Lab File</li><li>Source HL7v22 Lab File</li><li>Source HL7v23 Lab File</li><li>Source HL7v23_2 Lab File<ul>
+					<li>The out-of-the-box standards cannot be altered through import.</li><li>You can import additional (user-created) standards directly into the 'HL7 Mapping' look-up table by providing a comma-separated CSV import file with four columns. You cannot do this using the Import Utility.</li><li>The standards can be reported on using Query Builder or Report Writer</li></ul>
+				</li></ul>
+			</li><li>The look-up table has two views: Cority-Created and User-Created</li><li>The out-of-the-box standards are listed under the former and imported standards under the latter.</li><li>Either a Cority-created or user-created standard can be selected for the ‘Clinical Testing Import Standard’ system setting value.</li><li>The new look-up table has a Mapping sublist, which accepts a maximum of 100 data rows.<ul>
+				<li>Its default list view has the following columns: Segment (PID, OBR, OBX, NTE, or MSH), Pipe (Numeric), Caret (Numeric), Mapped Field Name (Technical Name of Cority Field in Text)</li><li>The layout for the sublist has the corresponding fields.</li><li>The user can make modifications to the sublist data by inserting, modifying, and/or deleting rows.</li><li>Similar to the look-up table entries, you can import new row values into a look-up table record's Mapping sublist using an import file.</li><li>Your import file can have a maximum of 100 rows. A single CSV file to many rows is a characteristic of this sublist.</li><li>The Mapping sublist rows can be reported on using Query Builder or Report Writer.</li></ul>
+			</li><li>Also, through the existing RESTful API endpoint, users can now import their own custom HL7 mappings to support labs that use HL7 standards other than those GX2 provides out of the box.<ul>
+				<li>The POST endpoint is [https://corityurl/api/ClinicalTestImport/import].</li><li>This functionality requires that the user’s role be granted the ClinicalTestImport.apiwrite security action.</li><li>The endpoint will accept the data, the Standard (previously an enum value, but now a look-up table value that is either Cority- or user-created), the Laboratory (a look-up table value), the Health Center (a look-up table value), and the Practitioner (from the User data table). The data must be an HL7 file that is first converted to base64.</li><li>The import will function similarly to all other RESTful API imports.</li></ul>
+			</li><li>New UDFs are provided as well.<ul>
+				<li>The following new UDFs can be added to custom versions of the ‘Clinical Test Battery’ layout:<ul>
+					<li>UDFText1 through UDFText4</li><li>UDFDate1 and UDFDate2</li></ul>
+				</li><li>The following UDFs can be added to custom versions of the ‘Clinical Test Results’ layout:<ul>
+					<li>UDFText1 through UDFText10</li><li>UDFDate1 through UDFDate3</li><li>UDFFlag1 and UDFFlag2</li></ul>
+				</li><li>The date fields will use the format specified in the Date Format system setting.</li><li>The new UDFs can be used in business rules, business rule actions, and in display rules.</li><li>They can be reported on using Query Builder and Report Writer.</li></ul>
+			</li><li>For information on working with the Clinical Testing module, look-up-tables, the Import Utility, the RESTful API, custom layouts, and/or UDFs, see the <span style="font-style: italic;">GX2 User Guide.</span></li></ul><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>

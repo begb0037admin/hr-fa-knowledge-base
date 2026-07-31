@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/gx2-2023-3-0-new-features-release-notes/ccc-10402-the-safety-audit-functionality-has-been-enhanced"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-10402: The Safety Audit functionality has been enhanced</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-10402: The Safety Audit functionality has been enhanced';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/gx2-2023-3-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2__1330655048" data-has-heading-anchor="true">
+			<a id="_Toc146882919"></a><span style="color: #2E75B5;">CCC-10402: The Safety Audit functionality has been enhanced</span><a href="/articles/gx2-2023-3-0-new-features-release-notes/ccc-10402-the-safety-audit-functionality-has-been-enhanced/a/h2__1330655048" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!gx2-2023-3-0-new-features-release-notes/ccc-10402-the-safety-audit-functionality-has-been-enhanced/a/h2__1330655048&#39;,this);"></a></h2>
+		<ul>
+			<li>In support of audit findings, ‘Why Tree’ and ‘Root Cause Analysis’ sections (sublists) can now be added to custom ‘Findings &amp; Actions’ layouts and used for audit data reporting.</li><li>For consistency, these have been added to all clouds that use findings and actions.</li><li><span style="color: #242424; font-weight: bold; font-style: normal;">Note:</span><span style="color: #242424; font-weight: normal; font-style: normal;"> Respiratory Fit findings are excluded, even if created from within the Safety or IH clouds, because Respiratory Fit findings use Medical Findings instead.</span><ul>
+				<li>The 'Why Tree' is editable only when the parent Finding record is not locked or read-only.&nbsp;</li><li>The 'Why Tree' is exportable as an image or PDF. It can also be populated and updated using the Import Utility.</li><li>The 'Why Tree' is not currently supported for Inspections or Finding/Action assignment using myCority because only the Actions portion is available within myCority.</li><li>There are two new security actions for the 'Why Tree'. The whytree.allowunmarkasrootcause action allows users without delete permissions to deselect a 'Why Tree' entry as a root cause. The whytree.drawedit action, when not granted to the user's role, sets the 'Why Tree' to read-only.</li><li>The 'Root Cause' sublist has a new 'Finding Cause' layout (ML-003806) with applicable fields and actions. It functions like a typical GX2 layout.</li><li>Finding 'Root Cause' can be used in business rules, populated and updated using the Import Utility, and reported on using Query Builder.</li><li>To the Incident Root Cause, Cause Category, Cause Type, and Cause Contribution Level look-up tables, the following cloud checkboxes have been added: Safety Finding, Environmental Finding, Ergonomics Finding, Quality Finding / CAPA Metrics Finding</li></ul>
+			</li><li>Also, the Audit Calendar scheduling features have been enhanced.</li><li><span style="color: #242424; font-weight: normal; font-style: normal;">The new 'Audit Calendar Schedule' sublist can be added to custom version of Audit layouts.</span><ul>
+				<li>The sublist has the following default columns: Date, Start Time, End Time, Time Zone, and Remont/Onsite</li><li>Time Zone populates with the value in the user’s Time Zone system setting.</li><li>This sublist does not require a layout. It can be populated/updated using inline edit. It cannot be populated/updated using the Import Utility.</li><li>'Audit Calendar Schedule' entries inherit the GDDLOFB of the parent Audit record.</li><li>The new sublist allows for calendar schedule invitations over multiple days (for example, for an audit that spans a number of days).</li><li><span style="color: #242424; font-weight: normal; font-style: normal;">BR-100638 (and accompanying BRA-100638) have been created for sending email invitations with an ICS file for the schedule entry.</span><ul>
+					<li>The BA and BRA can be cloned to modify the criteria, text of the email, etc.</li><li>For an invitation that spans multiple days (more than one row/record), an email with ICS file will be sent for each record.</li></ul>
+				</li><li>When an 'Audit Calendar Schedule' entry is deleted, an email with ICS for removing the entry will be sent. That is handled by the new BR-100637 (with accompanying BRA-100637).</li><li>For BR-100639 (and accompanying BRA-100639), additional conditions have been added to ensure that if a user updates and saves an 'Audit Calendar Schedule' entry, an update email is only sent to the invitees if they need to know about the update(s).</li><li>The 'Audit Calendar Schedule sublist and default view have a 'Meeting Details' text field (column) that accommodates a maximum of 2000 characters.&nbsp;</li><li>The 'Audit Calendar Schedule' is available for use in BRs and BRAs, and can be reported on using Query Builder.</li></ul>
+			</li></ul>
+		<p><a id="_Toc146882920"></a>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>

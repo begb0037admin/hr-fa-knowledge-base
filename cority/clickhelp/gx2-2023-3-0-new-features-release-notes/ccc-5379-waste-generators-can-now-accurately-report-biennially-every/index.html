@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/gx2-2023-3-0-new-features-release-notes/ccc-5379-waste-generators-can-now-accurately-report-biennially-every"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-5379: Waste Generators can now accurately report biennially (every other year) on the amount of waste generated onsite, received onsite, managed onsite, and/or shipped offsite</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-5379: Waste Generators can now accurately report biennially (every other year) on the amount of waste generated onsite, received onsite, managed onsite, and/or shipped offsite';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/gx2-2023-3-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2_347528215" data-has-heading-anchor="true">
+			<a id="_Toc146882922"></a><span style="color: #2E75B5;">CCC-5379: Waste Generators can now accurately report biennially (every other year) on the amount of waste generated onsite, received onsite, managed onsite, and/or shipped offsite</span><a href="/articles/gx2-2023-3-0-new-features-release-notes/ccc-5379-waste-generators-can-now-accurately-report-biennially-every/a/h2_347528215" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!gx2-2023-3-0-new-features-release-notes/ccc-5379-waste-generators-can-now-accurately-report-biennially-every/a/h2_347528215&#39;,this);"></a></h2>
+		<ul>
+			<li><span style="font-weight: normal; font-style: normal;">The following files can be generated:</span><ul>
+				<li>Site Identification Information (SI ID)</li><li>Waste Generation and Management (GM)</li><li>Waste Received Offsite (WR)</li><li>Offsite Identification (OI)</li></ul>
+			</li><li><span style="font-weight: bold; font-style: normal;">Note:</span><span style="font-weight: normal; font-style: normal;"> Only manifested waste will be considered for either on-site or off-site treatment. That is, Waste Records must have a relationship to a Waste Manifest whether the waste is shipped off-site or treated on-site.</span></li><li>For data gathering and preparation, to populate, generate, and download biennial waste forms automatically:</li></ul>
+		<ol start="1">
+			<li>Navigate to the Environmental ‘Location Details’ layout (ML-003546).</li><li>Click the ‘Generate Biennial Report’ action.</li><li>On the ‘Generate Biennial Report ‘ modal box, select a Form Type (of the forms listed above) and a Reporting Period.<br/>If you select the ‘Include in National Report’ checkbox, the EPA will include the generated data in the national report.</li><li>Click the ‘Select’ button on the modal box.<br/>Flat files of the forms specified will be generated and downloaded in the appropriate file format (for example, ZIP). The flat files will conform to the specifications outlined by the RCRA.</li></ol>
+		<ul>
+			<li><span style="font-weight: normal; font-style: normal;">File names will be formatted in this manner: SSFFFNNN.FIL</span><ul>
+				<li><span style="font-weight: normal; font-style: normal;">where:</span><ul>
+					<li>SS – is the state postal code</li><li>FFF – is the flat file identifier (for example, SI2 for Site Identification Information Form 2)</li><li>NNN – is the date the file was created</li></ul>
+				</li><li><span style="font-weight: normal; font-style: normal;">Therefore, the correct name for the SI2 file, containing KS data, produced on February 4</span><span style="font-weight: normal; font-style: normal;"><sup>th</sup></span><span style="font-weight: normal; font-style: normal;">, would be KSSI3035.FIL.</span></li></ul>
+			</li><li>A biennial report file can then be submitted to the RCRA.</li><li><span style="font-weight: bold; font-style: normal;">Notes:</span><ul>
+				<li>The SI2 flat file will always contain two lines, one for Owner and one for Operator, even if all questionnaire answers for those sections are null (blank).</li><li>For SI3, if all NAICS codes in the questionnaire are null, an SI3 file will be generated but empty. NAICS codes that do not have values will be ignored.</li><li>When there is no entered data to pull into the file, the file will still be generated but empty.</li><li><span style="font-weight: normal; font-style: normal;">For the GM1 file to be created properly, the following value must first be added to the ‘Units of Measure’ look-up table:</span><ul>
+					<li>Code: "lbs/gal"</li><li>Description: Pounds per Gallon</li><li>That is required to map the ‘Density Unit of Measure’ information for the flat file.</li></ul>
+				</li><li>For the Off-Site Identification (OI) Form, a new line is added when the same site contains a combination of Generator, Receiving Facility, or Transporter flags. Once imported into RCRA, a separate entry will be created for each type.</li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">The generated reports are stored in the following new data tables:</span><ul>
+				<li>DT_BiennialReportHeader – This will store all of the data generated. The appropriate flags (SI, GM, WR, OI) will be applied to the data.</li><li>DT_BiennialReportGM - This will store the generated GM data.</li><li>DT_BiennielReportWR - This will store the generated WR data.</li><li>DT_BiennielReportOI - This will store the generated OI data.</li></ul>
+			</li><li>The tables are available for reporting in both Query Builder and Report Writer.</li><li>The tables cannot be populated or updated using import.</li><li>The tables are not available for use in business rules, business rule actions, display rules, or workflows.</li></ul>
+		<p><a id="_Toc146882923"></a>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>
