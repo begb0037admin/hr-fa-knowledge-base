@@ -12,7 +12,7 @@ on:
         type: string
         default: "0"
       diagnostic:
-        description: "Diagnostic run: 2 small publications, 2 articles each — output to cority_diag, skips index build and commit, safe to run any time"
+        description: "Diagnostic run: 2 small publications, 2 articles each — output to cority_diag, skips commit, safe to run any time"
         type: boolean
         default: false
 
@@ -32,32 +32,88 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run scraper
+      - name: Diagnostic run (no commit)
+        if: ${{ inputs.diagnostic }}
         run: |
-          if [ "${{ inputs.diagnostic }}" = "true" ]; then
-            python scrapers/cority_clickhelp_scraper.py \
-              --publications appsolutions,mycority-it-setup --limit-per-publication 2 \
-              --output cority_diag --stats-out cority_diag_stats.json
-          else
-            python scrapers/cority_clickhelp_scraper.py \
-              --publications "${{ inputs.publications }}" \
-              --limit-per-publication "${{ inputs.limit_per_publication }}" \
-              --output cority/clickhelp --stats-out cority_scrape_stats.json
-          fi
+          python scrapers/cority_clickhelp_scraper.py \
+            --publications appsolutions,mycority-it-setup --limit-per-publication 2 \
+            --output cority_diag --stats-out cority_diag_stats.json
 
-      - name: Commit refreshed data to the repository
-        if: ${{ github.ref == 'refs/heads/main' && !inputs.diagnostic }}
+      # A single end-of-run commit for the full corpus (4092 articles, ~7000
+      # images) failed with an HTTP 500 on git push (31 July 2026) — too
+      # large a payload for one push, and the whole result was lost when the
+      # runner was destroyed. Fixed by committing and pushing after each
+      # publication instead, so any one push failure only costs a retry of
+      # that publication, not the whole run.
+      - name: Scrape and commit per publication
+        if: ${{ !inputs.diagnostic }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add cority
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
+
+          if [ "${{ inputs.publications }}" = "all" ]; then
+            python scrapers/cority_clickhelp_scraper.py --list-publications > /tmp/publications.txt
           else
-            git commit -m "Refresh Cority ClickHelp knowledge base data [skip ci]"
-            git pull --rebase origin main
-            git push origin main
+            echo "${{ inputs.publications }}" | tr ',' '\n' > /tmp/publications.txt
           fi
+
+          total_pubs=$(wc -l < /tmp/publications.txt)
+          echo "Scraping $total_pubs publication(s), committing after each..."
+
+          mkdir -p /tmp/pub_stats
+          i=0
+          while IFS= read -r pub; do
+            i=$((i + 1))
+            echo "[$i/$total_pubs] $pub"
+            python scrapers/cority_clickhelp_scraper.py \
+              --publications "$pub" \
+              --limit-per-publication "${{ inputs.limit_per_publication }}" \
+              --output cority/clickhelp \
+              --stats-out "/tmp/pub_stats/${pub}.json"
+
+            git add cority
+            if git diff --cached --quiet; then
+              echo "  no changes for $pub"
+              continue
+            fi
+            git commit -q -m "Cority ClickHelp: $pub [skip ci]"
+
+            pushed=false
+            for attempt in 1 2 3; do
+              if git push origin main; then
+                pushed=true
+                break
+              fi
+              echo "  push attempt $attempt failed, pulling and retrying..."
+              git pull --rebase origin main
+              sleep 5
+            done
+            if [ "$pushed" != "true" ]; then
+              echo "  ! FAILED to push $pub after 3 attempts — leaving committed locally, will surface as a diff on next checkout"
+            fi
+          done < /tmp/publications.txt
+
+          python3 - <<'PYEOF'
+          import json, glob
+          overall = {"publications": [], "total_articles": 0, "total_succeeded": 0,
+                     "total_failed": 0, "total_images": 0, "failures": []}
+          for f in glob.glob("/tmp/pub_stats/*.json"):
+              with open(f) as fh:
+                  s = json.load(fh)
+              overall["publications"].append(s)
+              overall["total_articles"] += s["total"]
+              overall["total_succeeded"] += s["succeeded"]
+              overall["total_failed"] += s["failed"]
+              overall["total_images"] += s["images"]
+              overall["failures"].extend(s["failures"])
+          with open("cority_scrape_stats.json", "w") as fh:
+              json.dump(overall, fh, indent=2)
+          print("\n=== DONE ===")
+          print(f"Publications: {len(overall['publications'])}")
+          print(f"Articles: {overall['total_succeeded']}/{overall['total_articles']} succeeded")
+          print(f"Images downloaded: {overall['total_images']}")
+          print(f"Failures: {overall['total_failed']}")
+          PYEOF
 
       - name: Upload results
         if: always()
