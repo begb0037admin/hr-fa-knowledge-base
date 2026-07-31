@@ -29,6 +29,18 @@ These guides have drafted content but need to be created as proper Word document
 
 ---
 
+## Parked — Features Not Yet Built
+
+### Linda has no memory across sessions — self-learning/compounding knowledge was never built
+- **What Kevin reported (31 July 2026):** asked Linda directly whether she remembers past conversations. Her own answer: she remembers everything within the current session, but "once a session has ended, that information is completely gone... each new conversation starts completely fresh." Kevin recalls this being discussed as something to build — Linda compounding her knowledge over time, from both the KB content and the pattern of questions she's actually been asked — but it doesn't appear to have been implemented.
+- **What was checked before adding this:** searched this repo's documentation (`HANDOVER.md`, `CLAUDE.md`, `AGENT_MODEL.md`) and the live `index.html`/`worker/worker.js` code for any existing memory mechanism, or any written decision to build one. Found neither. The only `localStorage` use in `index.html` is for UI preferences (Linda panel width) and the AI worker config (URL/token) — not conversation history. The Worker (`worker/worker.js`) has no database or KV binding at all — it forwards only the last 12 messages of the *current* request to Claude, then forgets them entirely. So Linda's own answer to Kevin is accurate, this genuinely doesn't exist yet, it isn't a bug, and no written spec for it survives in this repo — if it was decided somewhere, that decision isn't recorded here.
+- **This is actually two separate pieces of work, worth splitting rather than treating as one task:**
+  1. **Cross-session conversation memory** — so Linda can recall a specific past conversation with a specific person. Needs persistent storage (e.g. Cloudflare KV or D1, bound to the Worker) keyed per user/session, written after each exchange, loaded back in on the next visit.
+  2. **Self-learning / compounding from usage** — a separate, larger capability: Linda getting better over time from the pattern of questions asked (e.g. surfacing frequently-asked things the KB covers poorly, or common phrasing that should map to a specific document). Genuinely different work from #1 — needs its own design before it can be scoped: what "compounding" concretely means (a running FAQ digest? weighting search results by past query success? something else?) hasn't been decided anywhere findable.
+- **Status:** Not started, not yet designed. Needs a decision from Kevin on scope — memory alone, or memory plus the self-learning layer, and if the latter, what that means concretely — before this can be sized as a real task.
+
+---
+
 ## Parked — Technical Debt
 
 ### Access Group / PeopleXD web articles — screenshots are silently dropped
@@ -42,14 +54,6 @@ These guides have drafted content but need to be created as proper Word document
   4. Rewrite the stored article content so image references point at the local copy, not the original Access Group URL.
   5. Before trusting any downloaded image, check it isn't a generic "no access" placeholder — don't rely on `HTTP 200` alone (see `CORITY-FEASIBILITY.md` §3 for exactly what that placeholder trap looks like and how it was confirmed).
 - **Status:** Not started. Explicitly kept separate from the Cority build — this is Access Group/PeopleXD scope, its own task, to be picked up later. Tracked here so it doesn't get forgotten.
-
-### Voice migration (ElevenLabs → Cloudflare Workers AI) — code is live, end-to-end use not yet confirmed
-- **Status as of 31 July 2026:** The Cloudflare Worker (`hr-kb-ai`) was checked directly against Cloudflare (not just the repo) and is running the new code — `/tts` uses Aura-2, `/stt` uses Whisper via the Workers AI `env.AI` binding, no ElevenLabs or Scribe calls remain. So the "done in code, not yet deployed" note from the 11 July handover is now out of date on the deployment question specifically — it is deployed.
-- **What's still NOT confirmed:**
-  1. Whether the Workers AI binding is actually switched on and working at runtime (the code fails gracefully with a 501 if it isn't, but that hasn't been triggered/tested either way this session)
-  2. Whether anyone has actually run the full voice loop live: mic → transcription appears → cited answer renders → Listen → Aura-2 audio plays
-  3. Whether the ElevenLabs subscription has actually been cancelled, and what that does to rollback options if the above doesn't work
-- **What's needed:** one real end-to-end test of the voice loop on the live site, then a decision on the ElevenLabs subscription. Small task, not started.
 
 ---
 
@@ -87,6 +91,7 @@ First flagged in `HANDOVER.md` (10 July 2026) as explicitly outside what an AI s
 - Pay code 121 handover written → `hris-change-requests/HANDOVER.md`
 - HOW TO: Create a Non-Payroll Company & Hierarchy (Colleges & Halls) — Word doc ready, pending library commit
 - `CLAUDE.md` reconciled against live data (31 July 2026) — headline document/chunk counts had drifted to an 18 June snapshot; re-counted `data/kb.json` and `data/kb-index.json` directly and corrected to the real current figures (2,515 docs, 13,472 chunks)
+- **Voice migration (ElevenLabs → Cloudflare Workers AI)** — code confirmed deployed 31 July 2026; **Kevin tested it live the same day and confirmed it works.** Fully closed out — no longer tracked as open work.
 
 ---
 
