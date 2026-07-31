@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/gx2-and-mycority-2025-2-0-new-features-release-notes/summary-of-safety-enhancements"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Summary of Safety Enhancements</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Summary of Safety Enhancements';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/gx2-and-mycority-2025-2-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>		<h1 id="h1_1936114122" data-has-heading-anchor="true">
+			<a id="_Toc177126729"></a><a id="_Toc198901303"></a><a id="_Toc58936896"></a><span style="color: #D35F0B;">Summary of Safety Enhancements</span><a href="/articles/gx2-and-mycority-2025-2-0-new-features-release-notes/summary-of-safety-enhancements/a/h1_1936114122" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!gx2-and-mycority-2025-2-0-new-features-release-notes/summary-of-safety-enhancements/a/h1_1936114122&#39;,this);"></a></h1>
+		<p>The table below contains design improvements we have made in the Safety cloud. The items are organized by component and the components are arranged in alphabetical order. Descriptions of any larger features follow the table.</p><table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse;" class="CHTable">
+			<tbody><tr>
+				<td valign="top" nowrap="" style="background-color: #BFBFBF; border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">Item</td><td valign="top" nowrap="" style="background-color: #BFBFBF; border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">Component(s)</td><td valign="top" style="background-color: #BFBFBF; border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">Description</td></tr>
+			<tr>
+				<td valign="top" nowrap="" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">CCC-10528 and 10524</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">Compliance Management</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;"><p>The following new fields can now be added to custom versions of Actions (Corrective Actions) layouts, in all clouds that support them:</p><ul>
+					<li>4 new alphanumeric (nvarchar, 8000 characters long) UDFs, numbered 4 through 7</li><li>10 new look-up table UDFs, numbered 1 through 10</li></ul>
+				<p>&nbsp;</p><p>Each of the look-up table fields has a corresponding new look-up table. The look-up tables each have a default list view and layout with appropriate columns/fields, and each function as a typical GX2 look-up table.</p><p>&nbsp;</p><p>For each new field, the equivalent column can be added to custom Actions list views.</p><p>&nbsp;</p><p>The fields can be used in business rules, display rules, and workflows, and can be reported on using Query Builder and Report Writer.</p><p>&nbsp;</p><p>Each of the new fields can be prohibited from user roles.</p><p>&nbsp;</p><p>Values for the fields can be added or updated through import (Import Utility or REST API).</p><p>&nbsp;</p></td></tr>
+			<tr>
+				<td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">CCC-21250</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">Event Reporting – myCority</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;"><p>In myCority, when an Event Report with the Accident Jurisdiction field is downloaded and the user is offline, if the user makes changes to the Event Report that trigger a display rule, the Accident Jurisdiction field will no longer be affected if the display rule is not configured to alter it.</p><p>&nbsp;</p></td></tr>
+			<tr>
+				<td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">CCC-19432</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">Event Reporting – myCority</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;"><p>In myCority, an embedded questionnaire can now be completed while offline. This is beneficial because questionnaires are used to obtain additional, critical information not collected through the Event Report layout.</p><p>An automatic or manual download of an Event Report template or in-progress Event Report will now include any associated, embedded questionnaire(s).</p><p>While offline, the embedded questionnaire will now function as if online. It can be completed offline and then uploaded/submitted when back online.</p><p>&nbsp;</p></td></tr>
+			<tr>
+				<td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">CCC-16840</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">Event Reporting – myCority</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;"><p>For the Event Reporting, Sampling, and Waste solutions, for a form or record downloaded in myCority, any filter display rules associated with the corresponding entity will now also download so that they can execute offline.</p><p>When the display rule criteria are met, the rule(s) will execute as expected dynamically (without save).</p><p>&nbsp;</p></td></tr>
+		</tbody></table>
+		<p><a id="_Toc198901304"></a>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2025 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

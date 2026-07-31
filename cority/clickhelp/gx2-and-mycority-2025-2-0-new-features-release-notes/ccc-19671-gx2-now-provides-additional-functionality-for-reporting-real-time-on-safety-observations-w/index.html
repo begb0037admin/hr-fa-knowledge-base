@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/gx2-and-mycority-2025-2-0-new-features-release-notes/ccc-19671-gx2-now-provides-additional-functionality-for-reporting-real-time-on-safety-observations-w"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-19671: GX2 now provides additional functionality for reporting real-time on safety observations within your organization</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-19671: GX2 now provides additional functionality for reporting real-time on safety observations within your organization';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/gx2-and-mycority-2025-2-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2__1617061864" data-has-heading-anchor="true">
+			<a id="_Toc198901305"></a><span style="color: #2E75B5;">CCC-19671: GX2 now provides additional functionality for reporting real-time on safety observations within your organization</span><a href="/articles/gx2-and-mycority-2025-2-0-new-features-release-notes/ccc-19671-gx2-now-provides-additional-functionality-for-reporting-real-time-on-safety-observations-w/a/h2__1617061864" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!gx2-and-mycority-2025-2-0-new-features-release-notes/ccc-19671-gx2-now-provides-additional-functionality-for-reporting-real-time-on-safety-observations-w/a/h2__1617061864&#39;,this);"></a></h2>
+		
+		<p><b>Opt-In</b></p><p>This will help drive a proactive approach to safety and overall organizational compliance by enabling Protex AI to automatically add detected safety observations to the system.</p><p>Updates made to support this functionality include:</p><ul>
+			<li>The following new fields can now be added to custom versions of applicable Safety ‘Event Reporting’ and ‘Incident’ layouts:<ul>
+				<li>Protex ID – A text field with a maximum character limit of 1000</li><li>Protex Rule – A text field with a maximum character limit of 8000</li><li>Protex Camera – A text field with a maximum character limit of 1000</li><li>Protex URL – A text field with a maximum character limit of 1000 </li><li>Protex Tag – A multi-select look-up table (picklist) field, which categorizes events for filtering</li></ul>
+			</li><li>The first four fields can also be added to custom versions of applicable myCority Safety ‘Event Reporting’ and ‘Incident’ layouts.<ul>
+				<li>For the ‘Protex Tag’ field, a corresponding new look-up table with appropriate default entries has also been added. The look-up table is categorized under the Demographics module and has all of the functionality typical of standard GX2 look-up tables.</li><li>Each of the new fields can be used in business rules and display rules, populated and updated using import, and reported on using Query Builder or Report Writer.</li><li>For each field, a corresponding new column can be added to applicable list views.</li><li>When an Event Report using the new fields is posted to an Incident Investigation, the new fields and values will also be posted to the Incident Investigation.</li></ul>
+			</li><li>The REST API has a new ProtexEvent endpoint that supports only POST calls. The Employee and Event Type used are the ones specified beforehand in the new ‘Default Protex Employee Event’ and ‘Default ProtexAI Event Type’ system settings. The former is a picklist to the Employees look-up table and the latter is a picklist to the ‘Safety Event Type’ look-up table.<ul>
+				<li>A ProtexEvent POST call should include values for the following:<ul>
+					<li>eventData.violation_uuid – Protex ID (the Protex primary identifier)</li><li>eventData.event_time – Time and date the event occurred</li><li>eventData.camera.name – Protex Camera</li><li>eventData.rule.name &nbsp;- Protex Rule </li><li>eventData.event_link – Protex Link </li><li>eventData.violations_tags[].tagname - &nbsp;Protex Tags</li><li>eventData.site.site_id – Associates the event with specific sites (populates the record with the associated GDDLOFB in the linked GDDLOFB fields)</li><li>Event Type – A GX2 value</li><li>Person Reporting – A GX2 value</li></ul>
+				</li><li>To support the eventData.site.site_id parameter, a new ‘Site Mapping’ (GDDLOFB) look-up table has been added. The look-up table is categorized under the Demographics module and has all of the functionality typical of standard GX2 look-up tables.<ul>
+					<li>This new look-up table has security actions for create view, edit view, add to favorites, clone view, and delete.</li></ul>
+				</li><li>Each import and import attempt will be logged in the ‘Process Status &amp; Log’ and ‘Event Log’. The former has a new ‘ProtexAI Import View’</li></ul>
+			</li></ul>
+		<p>To use this functionality, a subscription to Protex is required. For more information about that, contact your Cority representative.</p><p>For more information on working with custom layouts or list views or on working with the REST API, see the <i>GX2 User Guide</i>.</p><p>&nbsp;</p><p><a id="_Toc177126733"></a><span style="color: #D35F0B;"> </span><a id="_Toc198901306"></a></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2025 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>
