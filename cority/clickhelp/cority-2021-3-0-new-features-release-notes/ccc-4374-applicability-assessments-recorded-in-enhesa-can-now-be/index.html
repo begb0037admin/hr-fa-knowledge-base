@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-2021-3-0-new-features-release-notes/ccc-4374-applicability-assessments-recorded-in-enhesa-can-now-be"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-4374: Applicability assessments recorded in ENHESA can now be imported into the Cority system</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-4374: Applicability assessments recorded in ENHESA can now be imported into the Cority system';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-2021-3-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2__1078052506" data-has-heading-anchor="true">
+			<a id="_CCC-4374:_Applicability_assessments"></a><a id="_Toc86750432"></a><span style="color: #376092;">CCC-4374: Applicability assessments recorded in ENHESA can now be imported into the Cority system</span><a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-4374-applicability-assessments-recorded-in-enhesa-can-now-be/a/h2__1078052506" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-4374-applicability-assessments-recorded-in-enhesa-can-now-be/a/h2__1078052506&#39;,this);"></a></h2>
+		<ul>
+			<li><span style="font-weight: normal; font-style: normal;">The new ENHESA ID field can be added to custom versions of the ML-000249 and ML-001337 Tree Master look-up table layouts. It is a numeric field that will accommodate up to 100 characters. </span><ul>
+				<li>When added, the field’s value will associate the node with the corresponding ENHESA jurisdiction.</li><li>The field can be populated/updated using the Import Utility, and is available for use in Query Builder / Report Writer and in business rules.</li></ul>
+			</li><li>A new ‘Get Applicable Regulations’ action (call) can be added to custom versions of the Environmental Applicability Assessment (ML-000258) and Safety Applicability Assessment (ML-000257) layouts. </li><li><span style="font-weight: normal; font-style: normal;">For the user to execute the action, the following assumptions are made:</span><ul>
+				<li>The user has created the required facilities (GDDLOFBs) within GX2 using the organizational tree and the facilities in ENHESA.</li><li>The ENHESA system settings configured and valid.</li><li>The ENHESA ID field on ML-000249 and/or ML-001337 is populated, where applicable.</li><li>The ‘Refresh Requirements’ action for regulations has already been run to import all regulations from ENHESA for the user’s organization.</li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">When the ‘Get Applicable Regulations’ action is used, a new business rule will check to see if the assessment’s applicable locations have an ENHESA facility ID.</span><ul>
+				<li>If so, any new regulations will be imported, the necessary audits will be created, and the applicability assessment(s) created in ENHESA will also be imported.</li><li>If the GDDLOFB or Applicable Locations sublist on the Applicability Assessment (ML-000258 or ML-000257) is populated, then only the ENHESA facilities that match the GDDLOFB or Applicable Locations (based on the ENHESA ID value on the ‘Tree Master with Attributes’ layout where the ENHESA ID is not blank) will be used to pull data from the ENHESA API.</li><li>If the GDDLOFB or Applicable Locations sublist on the Applicability Assessment (ML-000258 or ML-000257) are both empty (blank), then all ENHESA facilities (based on the ENHESA ID value on all the GDDLOFB nodes where the ENHESA ID is not blank) will be used to pull data from the ENHESA API.</li></ul>
+			</li><li>For each ENHESA facility, as long as the applicability answer is yes, the content type pulled into GX2 will reflect the value specified for the ‘Regulatory Content Type’ system setting: Environmental Regulations or Safety Legal &amp; Other Requirements.</li></ul>
+		<h4 id="h4_1066401480" data-has-heading-anchor="true">
+			Impact to Existing Users:<a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-4374-applicability-assessments-recorded-in-enhesa-can-now-be/a/h4_1066401480" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-4374-applicability-assessments-recorded-in-enhesa-can-now-be/a/h4_1066401480&#39;,this);"></a></h4>
+		<ul>
+			<li>Compliance Managers can now import the results of their applicability assessments, so that they can relate their facilities to the applicable locations.</li><li>In turn, this will make it easier for Compliance Managers to track regulations that are applicable to their facilities, and therefore maintain regulatory compliance.</li></ul>
+		<h4 id="h4__1658765620" data-has-heading-anchor="true">
+			Additional Configuration Considerations:<a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-4374-applicability-assessments-recorded-in-enhesa-can-now-be/a/h4__1658765620" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-4374-applicability-assessments-recorded-in-enhesa-can-now-be/a/h4__1658765620&#39;,this);"></a></h4>
+		<ul>
+			<li>Beyond what is described above, no additional configuration is required.</li></ul>
+		<p style="font-weight: bold;">Opt-in</p><p><a id="_CCC-2719:_Our_Chemical"></a><a id="_Toc86750433"></a>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>

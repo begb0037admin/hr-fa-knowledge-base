@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-2021-3-0-new-features-release-notes/ccc-2593-an-oh-team-s-assessment-can-now-require"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-2593: An OH Team’s assessment can now require the employee to provide consent</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-2593: An OH Team’s assessment can now require the employee to provide consent';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-2021-3-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2__410051870" data-has-heading-anchor="true">
+			<a id="_CCC-2593:_An_OH_1"></a><a id="_Toc86750426"></a><span style="color: #376092;">CCC-2593: An OH Team’s assessment can now require the employee to provide consent</span><a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-2593-an-oh-team-s-assessment-can-now-require/a/h2__410051870" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-2593-an-oh-team-s-assessment-can-now-require/a/h2__410051870&#39;,this);"></a></h2>
+		<ul>
+			<li><span style="font-weight: normal; font-style: normal;">To support this, the following new fields can be added to custom versions of Questionnaire layouts:</span><ul>
+				<li>Consent Status – a drop-down field with the Awaiting Consent, Consent Declined, and Consent Provided options</li><li>Date Consent Provided – a date field that is populated automatically with today’s date (but can be changed) if the employee provides consent</li><li>Date Consent Declined – a date field that is populated automatically with today’s date (but can be changed) if the employee declines consent</li><li>Declination Reason – a text field in which the employee can provide a reason for declining consent </li><li>Share with Supervisor – a check box that will share the assessment with the employee’s supervisor only when the Consent Status is Consent Provided</li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">This is a typical use case and workflow:</span><ul>
+				<li>A manager or supervisor refers the employee to the Occupational Health team for assessment. </li><li><span style="font-weight: normal; font-style: normal;">The team (or nurse) sets up a Clinic Visit appointment and starts an assessment (using a questionnaire). The assessment will evaluate whether the employee is fit to work with restrictions, for example. </span><span style="font-weight: bold; font-style: normal;">Note:</span><span style="font-weight: normal; font-style: normal;"> This functionality is not intended for use with public questionnaires. It would disrupt their useful workflow.</span></li><li>When the team has completed the assessment, they will mark the questionnaire’s Consent Status field with the Awaiting Consent option.</li><li>The employee (a myCority user) will then be able to see and evaluate the assessment (questionnaire) using myCority. </li><li>The employee will then decide whether he or she is willing to share the information in the assessment with his or her supervisor, so that the supervisor can see the results of the assessment (what has happened with the referral). </li><li><span style="font-weight: normal; font-style: normal;">If the employee is not comfortable sharing or disagrees with some of the information in the assessment, he or she can change the Consent Status to Consent Declined and provide a Declination Reason. The ‘Date Consent Declined’ field will then populate automatically. </span><span style="font-weight: bold; font-style: normal;">Note:</span><span style="font-weight: normal; font-style: normal;"> To the employee, the questionnaire is locked. The employee can only change the Consent Status on the questionnaire.</span></li><li>If the employee declines consent, and it is applicable, the OH Team can make changes to the assessment based on the employee’s declination reason and then change the Consent Status back to Awaiting Consent so that the employee can evaluate the assessment again.</li><li>If the employee is fine with sharing the information in the assessment with his or her supervisor, he or she can change the Consent Status to Consent Provided. The ‘Date Consent Provided’ field will then populate automatically.</li><li>The nurse will see that consent has been provided and can then share the assessment with the employee’s supervisor by clicking the ‘Share with Supervisor’ check box. That will share the assessment with the supervisor who is specified as supervisor on the questionnaire in GX2, or in myCority if the supervisor is configured to be a myCority user.</li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">If one of the three consent statuses is populated, then the new Email action will be available for OH Team members on the questionnaire. </span><ul>
+				<li>If an OH Team member selects the Email action, and consent has not been provided, a confirmation dialog box will open.</li><li>If the OH Team member confirms the use of the Email action or consent has been provided, the Email dialog box will open for sending the assessment.</li></ul>
+			</li></ul>
+		<h4 id="h4_1066401480" data-has-heading-anchor="true">
+			Impact to Existing Users:<a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-2593-an-oh-team-s-assessment-can-now-require/a/h4_1066401480" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-2593-an-oh-team-s-assessment-can-now-require/a/h4_1066401480&#39;,this);"></a></h4>
+		<ul>
+			<li>An employee referred by a supervisor for an OH assessment can now have control over whether or not the information in the assessment is shared with that supervisor.</li></ul>
+		<h4 id="h4__1658765620" data-has-heading-anchor="true">
+			Additional Configuration Considerations:<a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-2593-an-oh-team-s-assessment-can-now-require/a/h4__1658765620" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-2593-an-oh-team-s-assessment-can-now-require/a/h4__1658765620&#39;,this);"></a></h4>
+		<ul>
+			<li>Beyond what is described above, no additional configuration is required.</li></ul>
+		<p style="font-weight: bold;">Opt-in</p><p><a id="_CCC-1699:_An_entity"></a><a id="_CCC-1699:_The_Case"></a><a id="_Toc86750427"></a>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>

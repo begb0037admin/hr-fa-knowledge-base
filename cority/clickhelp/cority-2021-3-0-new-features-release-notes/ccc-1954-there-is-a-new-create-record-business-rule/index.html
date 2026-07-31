@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-2021-3-0-new-features-release-notes/ccc-1954-there-is-a-new-create-record-business-rule"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-1954: There is a new ‘Create Record’ business rule action (BRA)</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-1954: There is a new ‘Create Record’ business rule action (BRA)';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-2021-3-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2_1402118938" data-has-heading-anchor="true">
+			<a id="_CCC-1954:_There_is"></a><a id="_Toc86750418"></a><span style="color: #376092;">CCC-1954: There is a new ‘Create Record’ business rule action (BRA)</span><a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-1954-there-is-a-new-create-record-business-rule/a/h2_1402118938" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-1954-there-is-a-new-create-record-business-rule/a/h2_1402118938&#39;,this);"></a></h2>
+		<ul>
+			<li><span style="font-weight: normal; font-style: normal;">Example use cases for the new ‘Create Record’ BRA are:</span><ul>
+				<li>When a new Clinic Visit record is created, create a new Safety Incident record</li><li>When a new User record is created, create and link a new Employee record</li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">While creating business rule (BR) with this action, when you click ‘Create Record’, on the resulting screen you must provide values for the following fields in order:</span><ul>
+				<li>Code (for example, BRA Code) - a picklist </li><li>Main Record Entity (must match the BR entity) - a picklist</li><li><span style="font-weight: normal; font-style: normal;">Create Record Entity (for example, Clinic Visit) - a picklist</span><ul>
+					<li>The Query Component is then displayed.</li><li>You can now select multiple fields from your ‘Create Record Entity’ (at the left). </li><li><span style="font-weight: normal; font-style: normal;">For each of these fields, you must either use:</span><ul>
+						<li>The Plus Icon - to select a field from your ‘Main Record Entity’. This must include the ‘Today’ merge field in order to use the current date and time.</li><li>The Magnifying Glass Icon - to select a code from the selected table (for example, Clinic Visit Status Code).</li><li>Free text - To enter a hard-coded value to be mapped.</li></ul>
+					</li></ul>
+				</li><li><span style="font-weight: normal; font-style: normal;">Run As Admin - a check box for specifying whether the security verification will run against the Administrator or the user who triggered the business rule</span><ul>
+					<li><span style="font-weight: bold; font-style: normal;">Note:</span><span style="font-weight: normal; font-style: normal;"> Either way, the change will be logged in record history as made by the user who triggered the business rule.</span></li></ul>
+				</li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">If a user triggers a business rule that has a 'Create Record' business rule action (for example, with Main Record Entity = Clinic Visit and Create Record Entity = Questionnaire), Cority will:</span><ul>
+				<li>Verify that the '&lt;module&gt;.save' security action for the Create Record Entity is granted to the user's role, or a security violation will occur</li><li>Create the new record as a main (in our example, Questionnaire) record, if the user triggering the business rule has permission to the Create Record Entity only</li><li>Create the new record as a record (in our example, Questionnaire) on a sublist of the main record (in our example, Clinic Visit), if the user triggering the business rule has permission to both the Main Record Entity and the Create Record Entity.</li><li><span style="font-weight: bold; font-style: normal;">Note:</span><span style="font-weight: normal; font-style: normal;"> Values for the 'Create Record Entity' record are copied over from the 'Main Record Entity' record automatically, if applicable.</span></li></ul>
+			</li></ul>
+		<h4 id="h4_1066401480" data-has-heading-anchor="true">
+			Impact to Existing Users:<a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-1954-there-is-a-new-create-record-business-rule/a/h4_1066401480" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-1954-there-is-a-new-create-record-business-rule/a/h4_1066401480&#39;,this);"></a></h4>
+		<ul>
+			<li>The ability to automate the creation of a new record of one entity type when an insert/update happens in another record will improve the efficiency of workflows and reduce work.</li></ul>
+		<h4 id="h4__1658765620" data-has-heading-anchor="true">
+			Additional Configuration Considerations:<a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-1954-there-is-a-new-create-record-business-rule/a/h4__1658765620" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-1954-there-is-a-new-create-record-business-rule/a/h4__1658765620&#39;,this);"></a></h4>
+		<ul>
+			<li>Beyond what is described above, no additional configuration is required.</li></ul>
+		<p style="font-weight: bold;">Opt-in</p><p><a id="_Toc86750419"></a>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>

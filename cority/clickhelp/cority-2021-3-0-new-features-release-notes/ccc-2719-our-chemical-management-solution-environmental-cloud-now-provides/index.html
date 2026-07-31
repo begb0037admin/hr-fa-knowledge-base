@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-2021-3-0-new-features-release-notes/ccc-2719-our-chemical-management-solution-environmental-cloud-now-provides"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-2719: Our Chemical Management Solution (Environmental cloud) now provides an out-of-the-box product summary sheet for each chemical product</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-2719: Our Chemical Management Solution (Environmental cloud) now provides an out-of-the-box product summary sheet for each chemical product';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-2021-3-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2__614790237" data-has-heading-anchor="true">
+			<a id="_CCC-2719:_Our_Chemical"></a><a id="_Toc86750433"></a><span style="color: #376092;">CCC-2719: Our Chemical Management Solution (Environmental cloud) now provides an out-of-the-box product summary sheet for each chemical product</span><a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-2719-our-chemical-management-solution-environmental-cloud-now-provides/a/h2__614790237" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-2719-our-chemical-management-solution-environmental-cloud-now-provides/a/h2__614790237&#39;,this);"></a></h2>
+		<ul>
+			<li><span style="font-weight: normal; font-style: normal;">There is a new Chemical Handling data table (DT_ChemHandling) that can be added as a section to custom versions of the following Chemical Products layouts:</span><ul>
+				<li>ML-000831</li><li>ML-000706</li><li>ML-003504</li></ul>
+			</li><li>The table is for storing relevant chemical safety and handling information that is not already contained in the Agent Hazards look-up table.</li><li><span style="font-weight: bold; font-style: normal;">Note:</span><span style="font-weight: normal; font-style: normal;"> When the Chemical Handling section is added to one or more of those layouts, it will also be displayed (with appropriate records) in the equivalent location in myCority.</span></li><li>There is also a new accompanying Chemical Handling Information layout with all of the fields and sections required for a Chemical Manager to store chemical safety summary sheet information.</li><li><span style="font-weight: normal; font-style: normal;">The new layout has the New, Delete, Cancel, and Save and Close buttons, and an Actions menu with the Show Record History, Save Layout, and Edit Layout options.</span><ul>
+				<li>The fields on the new layout can be added as columns to custom versions of 'Chemical Products' list views.</li><li>The fields can be used in Query Builder and Report Writer, in business rules (through the ChemicalHandling entity), and can be populated/updated using the Import Utility.</li><li>The following unique key is used by the Import Utility for the new table: ChemProductID.</li></ul>
+			</li><li>Each single-page, short-form summary sheet will be created through the mapping of fields onto the summary sheet template.</li><li><span style="font-weight: normal; font-style: normal;">A new Product Summary Sheet PDF document (form) is created when a Chemical Product record is saved.</span><ul>
+				<li>The document's Source and Source ID values link to the associated Chemical Product record.</li><li><span style="font-weight: normal; font-style: normal;">The following fields are mapped to the new PDF form:</span><ul>
+					<li>ChemProduct.Description - Trade Name</li><li>ChemProduct.Synonyms - Synonyms</li><li>Manufacturer.Description - Manufacturer</li><li>ChemHandling.EmergencyPhone - Emergency Phone</li><li>ChemProduct.HMISHealth - HMIS Health</li><li>ChemProduct.HMISFlammability - HMIS Flammability</li><li>ChemProduct.HMISReactivity - HMIS Reactivity</li><li>ChemProduct.HMISPPE - HMIS PPE</li><li>ChemProduct.NFPAHealth - NFPA Health</li><li>ChemProduct.NFPAFlammability - NFPA Flammability</li><li>ChemProduct.NFPAReactivity - NFPA Reactivity</li><li>ChemProduct.NFPASpecial - NFPA Special</li><li>ChemicalSymbol - PPE (selected by default)</li><li>ChemicalSymbol - GHS (selected by default)</li><li>ChemHandling.EyeContact - Eye Contact</li><li>ChemHandling.SkinContact - Skin Contact</li><li>ChemHandling.Ingestion - Ingestion</li><li>ChemHandling.OtherFirstAid - Other First Aid</li><li>Date - System Generated Printed Date</li></ul>
+				</li><li>When any of the values for those fields are modified, and a new Summary Sheet is generated, the values update accordingly.</li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">The following new check box fields have been added by default to the Chemical Symbols look-up table layout (ML-000147):</span><ul>
+				<li>Personal Protective Equipment (not selected by default)</li><li>GHS (not selected by default)</li></ul>
+			</li><li>The purpose of these check boxes is to ensure differentiation between symbols that belong in the PPE section or the GHS section of the product summary sheet.</li><li>Those two fields can be populated/updated using the Import Utility, but are not available for use in Query Builder and Report Writer, or in business rules.</li><li>The fields can be added as columns to applicable list views.</li><li><span style="font-weight: normal; font-style: normal;">As well, the following new GHS Symbols records have been added to the Chemical Symbols look-up table:</span><ul>
+				<li>GHS01 - Flammable, Self-Reactive, Pyrophoric, Self-Heating or Organic Peroxide</li><li>GHS02 - Acute Toxicity, Skin Irritation/Corrosion, Skin Sensitizer</li><li>GHS03 - Respiratory Sensitizer, Mutagen, Carcinogen, Reproductive Toxin, Aspiration Hazard</li><li>GHS04 - Acute Toxicity</li><li>GHS05 - Explosives, Self-Reactive, Organic Peroxides</li><li>GHS06 - Oxidizer</li><li>GHS07 - Corrosive, Irritation or Serious Eye Damage</li><li>GHS08 - Gas Under Pressure</li><li>GHS09 - Acute or Chronic Hazard to Aquatic Environment</li></ul>
+			</li></ul>
+		<h4 id="h4_1066401480" data-has-heading-anchor="true">
+			Impact to Existing Users:<a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-2719-our-chemical-management-solution-environmental-cloud-now-provides/a/h4_1066401480" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-2719-our-chemical-management-solution-environmental-cloud-now-provides/a/h4_1066401480&#39;,this);"></a></h4>
+		<ul>
+			<li>This will enable Chemical Managers to store chemical safety summary sheet information so that they can communicate a chemical's acute and chronic hazards to fellow employees.</li><li>These Summary Sheets will provide chemical handlers with an overview of the product information, associated hazards, required PPE and First Aid instructions for the chemical products that they handle.</li></ul>
+		<h4 id="h4__1658765620" data-has-heading-anchor="true">
+			Additional Configuration Considerations:<a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-2719-our-chemical-management-solution-environmental-cloud-now-provides/a/h4__1658765620" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-2719-our-chemical-management-solution-environmental-cloud-now-provides/a/h4__1658765620&#39;,this);"></a></h4>
+		<ul>
+			<li>Beyond what is described above, no additional configuration is required.</li></ul>
+		<p style="font-weight: bold;">Opt-in</p><p><a id="_Toc86750434"></a>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>

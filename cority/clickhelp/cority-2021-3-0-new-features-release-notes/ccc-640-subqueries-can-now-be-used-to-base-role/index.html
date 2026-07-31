@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-2021-3-0-new-features-release-notes/ccc-640-subqueries-can-now-be-used-to-base-role"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-640: Subqueries can now be used to base role security on something other than, or in addition to, site/location (GDDLOFB)</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-640: Subqueries can now be used to base role security on something other than, or in addition to, site/location (GDDLOFB)';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-2021-3-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2__841706289" data-has-heading-anchor="true">
+			<a id="_Toc86750417"></a><span style="color: #376092;">CCC-640: Subqueries can now be used to base role security on something other than, or in addition to, site/location (GDDLOFB)</span><a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-640-subqueries-can-now-be-used-to-base-role/a/h2__841706289" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-640-subqueries-can-now-be-used-to-base-role/a/h2__841706289&#39;,this);"></a></h2>
+		<ul>
+			<li>This functionality is referred to as Row Level Security in reference to the rows returned by the added subquery or subqueries.</li><li><span style="font-weight: normal; font-style: normal;">To support this, a ‘Security Query’ check box has been added to Query Builder and a Row Level Security tab (for adding subqueries to a role) has been added to the </span><span style="font-weight: bold; font-style: normal;">Administrator</span><span style="font-weight: normal; font-style: normal;"> &gt; </span><span style="font-weight: bold; font-style: normal;">Role Security</span><span style="font-weight: normal; font-style: normal;"> module.</span></li><li><span style="font-weight: bold; font-style: normal;">Notes:</span><ul>
+				<li>Only users with an Administrator role can see security queries.</li><li>To configure Row Level Security, the user's role must be granted the SecurityModule.Admin. </li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">This is an example use case: </span><ul>
+				<li>The administrator creates a security role named Contractor Manager that is granted the appropriate modules and actions.</li><li><span style="font-weight: normal; font-style: normal;">The administrator next creates a security query named Contractor Manager that restricts to only records accessible by the Contractor Manager’s contractors. For information on using Query Builder to create reusable subqueries, see the </span><span style="font-weight: normal; font-style: italic;">Cority User Guide</span><span style="font-weight: normal; font-style: normal;">.</span></li><li>The administrator then adds the Contractor Manager security query to the Contractor Manager role using the new Row Level Security tab.</li><li><span style="font-weight: bold; font-style: normal;">Notes:</span><ul>
+					<li>If more than one security query is added to a role, the queries will essentially be added together and will be respected together. </li><li>Any added site security will continue to be respected as well.</li></ul>
+				</li><li>The administrator now assigns the Contractor Manager role to the Contractor Manager.</li><li>If configured properly, the Contractor Manager will now only be able to see the records to which his or her contractors have access.</li><li>If the Contractor Manager tries to open or inline-edit a record for which he or she now does not have access, an informative error notification will be displayed.</li><li>If the Contractor Manager wants only to see the records for which he or she has access, custom list views and a dashboard table can be created to accomplish that.</li></ul>
+			</li></ul>
+		<h4 id="h4_1066401480" data-has-heading-anchor="true">
+			Impact to Existing Users:<a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-640-subqueries-can-now-be-used-to-base-role/a/h4_1066401480" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-640-subqueries-can-now-be-used-to-base-role/a/h4_1066401480&#39;,this);"></a></h4>
+		<ul>
+			<li>Security configuration for users is now more powerful and flexible.</li></ul>
+		<h4 id="h4__1658765620" data-has-heading-anchor="true">
+			Additional Configuration Considerations:<a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-640-subqueries-can-now-be-used-to-base-role/a/h4__1658765620" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-640-subqueries-can-now-be-used-to-base-role/a/h4__1658765620&#39;,this);"></a></h4>
+		<ul>
+			<li>Beyond what is described above, no additional configuration is required.</li></ul>
+		<p style="font-weight: bold;">Opt-in</p><p><a id="_CCC-1954:_There_is"></a><a id="_Toc86750418"></a>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-2021-3-0-new-features-release-notes/ccc-919-you-can-now-manage-groups-teams-using-linked-queries"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-919: You can now manage groups/teams using linked queries</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-919: You can now manage groups/teams using linked queries';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-2021-3-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2_2095020251" data-has-heading-anchor="true">
+			<a id="_CCC-919:_You_can"></a><a id="_Toc86750421"></a><span style="color: #376092;">CCC-919: You can now manage groups/teams using linked queries</span><a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-919-you-can-now-manage-groups-teams-using-linked-queries/a/h2_2095020251" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-919-you-can-now-manage-groups-teams-using-linked-queries/a/h2_2095020251&#39;,this);"></a></h2>
+		<ul>
+			<li><span style="font-weight: normal; font-style: normal;">For this functionality, it is important to note the following:</span><ul>
+				<li>We strongly recommend you manage each Group/Team using just one of the manual or the linked queries methods. A Group/Team should be generated either 100% manually or 100% by linked query (or queries).</li><li>Any linked queries must have 'Employee Number' for the first column.</li><li>Records assigned to a Group/Team are not updated retroactively when the employees for the Group/Team change. Only future assignments will reflect the change.</li><li>It is best practice to include a criterion in any linked query that excludes terminated employees, so that those employees are ended in the Group/Team.</li></ul>
+			</li><li>A new 'Linked Queries' tab (sublist) has been added by default to the 'Group And Team' look-up table layout (ML-000619).</li><li><span style="font-weight: normal; font-style: normal;">The sublist has a standard view with two columns:</span><ul>
+				<li>Report Name - a picklist field</li><li>Created By - a calculated field, with calculation based on the Created By field in Query Builder / Report Writer </li></ul>
+			</li><li>The sublist has the New, Save, Edit, Cancel, and Delete buttons, along with the Open Query action.</li><li>It also has inline-add and multi-add capability.</li><li>The user can link two or more queries at once.</li><li>In order to execute the 'Open Query' action, the user must select a query from the sublist.</li></ul>
+		<p> </p><ul>
+			<li>The action takes the user to that query.</li><li><span style="font-weight: normal; font-style: normal;">When the user clicks New on the sublist, a new Query layout opens that has three fields:</span><ul>
+				<li>Group or Team - displays a description for the related Group or Team</li><li><span style="font-weight: normal; font-style: normal;">Report (required) - a picklist of Query Builder / Report Writer queries</span><ul>
+					<li>The picklist displays the Report Name and Created By columns, and is sorted alphabetically by Report Name.</li></ul>
+				</li><li>Report Created By - a read-only field populated with the Created By value from the Query Builder / Report Writer query when it is selected</li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">The Report picklist only displays queries that meet the following criteria:</span><ul>
+				<li>Query Builder or Report Writer queries, and</li><li>Queries created by the current user or published or marked as a subquery, and</li><li>Queries for which Employee Number is the first column</li></ul>
+			</li><li>The 'Group and Team' table is now a dependent object for linked subqueries in Query Builder / Report Writer, and will therefore be specified when applicable within the linked Dependent Objects count on any Group/Team that has one or more linked subqueries.</li><li><span style="font-weight: normal; font-style: normal;">The following new fields can now be added to custom versions of the 'Group And Team Employee' look-up table layout:</span><ul>
+				<li>Started By Type - an enumerated field (User or Subquery)</li><li>Started By User - a picklist to the Users look-up table</li><li>Ended By User - a picklist to the Users table</li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">The standard 'All' list view for Employees in the 'Group and Team' look-up table has been updated to provide the following columns in order:</span><ul>
+				<li>Employee</li><li>Start Date</li><li>Started By (read-only)</li><li>End Date</li><li>Ended By (read-only)</li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">The standard 'Active' list view for Employees in the 'Group and Team' look-up table has been updated to provide the following columns in order:</span><ul>
+				<li>Employee</li><li>Start Date</li><li>Started By (read-only)</li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">The standard view 'Inactive' for Employees in the 'Group and Team' look-up table has been updated to provide the following columns in order:</span><ul>
+				<li>Employee</li><li>End Date</li><li>Ended By (read-only)</li></ul>
+			</li><li>For any records that existed before the new 'Started By' and 'Ended By' columns/fields were added, the values for those fields will be blank (empty).</li><li>When the user updates and saves a 'Group And Team Employee' record on which he or she has changed the 'Start Date' value (not blank), the logged in user will be set as Started By value.</li><li><span style="font-weight: normal; font-style: normal;">When the user updates and saves a 'Group And Team Employee' record on which he or she has changed the 'End Date' value (not blank), the logged in user will be set as Ended By value.</span><ul>
+				<li>If the user clears the End Date value, the Ended By value will be cleared as well.</li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">The way this functionality works, basically, is that if an employee appears in any query linked to the Group/Team, even if the employee had previously been in the Group/Team and end-dated, the employee will then be added to the Group/Team. </span><ul>
+				<li>The employee will be added to the Group/Team's Employees sublist (with his or her GDDLOFB), and the Start Date for the employee will be updated automatically.</li><li>If the employee is already in the Group/Team, no changes are made.</li><li>If the employee had previously been in the Group/Team and end-dated, his or her original record will be updated (End Date value changed to blank, Start Date value added, etc.) . A new record will not be created.</li><li>An Employee becomes end-dated in the Group/Team when the employees no longer appears in any query linked to the Group/Team. The employee is then removed from the Employees sublist on the Group/Team and his or her End Date is updated accordingly.</li><li><span style="font-weight: bold; font-style: normal;">Note:</span><span style="font-weight: normal; font-style: normal;"> Only employees added by linked query will be removed by linked query. Employees added manually that get removed from Group/Team's linked queries will not get removed from the Group/Team or end-dated.</span></li></ul>
+			</li><li>The 'Goup and Team' linked queries update is run by a time-driven business rule (TDBR) nightly, before the TDBR for assigning inspections (if applicable).</li><li><span style="font-weight: bold; font-style: normal;">Note:</span><span style="font-weight: normal; font-style: normal;"> Any changes to the employee constituents in a Group/Team are not retroactive. For example, if an inspection is assigned to an employee, and the employee becomes ended in the group, the inspection will remain assigned to the employee.</span></li></ul>
+		<h4 id="h4_1066401480" data-has-heading-anchor="true">
+			Impact to Existing Users:<a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-919-you-can-now-manage-groups-teams-using-linked-queries/a/h4_1066401480" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-919-you-can-now-manage-groups-teams-using-linked-queries/a/h4_1066401480&#39;,this);"></a></h4>
+		<ul>
+			<li>An administrator can now link queries to Groups/Teams, so that employees will be started/ended in a Group/Team automatically. This will reduce the amount of manual work involved in maintaining Groups/Teams.</li><li>Also, this will make it easier for an administrator to monitor how employees are added to a Group/Team, which will help him or her better understand why an employee was enrolled.</li></ul>
+		<h4 id="h4__1658765620" data-has-heading-anchor="true">
+			Additional Configuration Considerations:<a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-919-you-can-now-manage-groups-teams-using-linked-queries/a/h4__1658765620" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-919-you-can-now-manage-groups-teams-using-linked-queries/a/h4__1658765620&#39;,this);"></a></h4>
+		<ul>
+			<li>Beyond what is described above, no additional configuration is required.</li><li><span style="font-weight: normal; font-style: normal;">For more information on working with Group/Teams, &nbsp;see the </span><span style="font-weight: normal; font-style: italic;">Cority User Guide</span><span style="font-weight: normal; font-style: normal;">.</span></li></ul>
+		<p style="font-weight: bold;">Opt-in</p><p><a id="_Toc86750422"></a>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>

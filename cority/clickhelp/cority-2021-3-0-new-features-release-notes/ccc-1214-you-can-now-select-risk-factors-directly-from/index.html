@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-2021-3-0-new-features-release-notes/ccc-1214-you-can-now-select-risk-factors-directly-from"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-1214: You can now select risk factors directly from the risk matrix itself</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-1214: You can now select risk factors directly from the risk matrix itself';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-2021-3-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2_1241397170" data-has-heading-anchor="true">
+			<a id="_CCC-1214:_You_can"></a><a id="_Toc86750416"></a><span style="color: #376092;">CCC-1214: You can now select risk factors directly from the risk matrix itself</span><a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-1214-you-can-now-select-risk-factors-directly-from/a/h2_1241397170" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-1214-you-can-now-select-risk-factors-directly-from/a/h2_1241397170&#39;,this);"></a></h2>
+		<ul>
+			<li>The user can now either select individual risk factors from a table (as before), or select them by clicking the matrix itself.</li><li><span style="font-weight: normal; font-style: normal;">To support this, three new clickable-matrix fields can now be added to custom versions of any Risk Assessment Entry layout:</span><ul>
+				<li>Risk 1 Selector</li><li>Risk 2 Selector</li><li>Risk 3 Selector</li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">For each:</span><ul>
+				<li>The X and Y axes are appropriately labeled.</li><li>The cell colors are grey by default.</li></ul>
+			</li><li>The selectors react (display risk) for the associated Risk Factor fields only (Risk 1 Selector for Risk Factor 1, etc.)</li><li>If the Risk Factor fields are set and the values are for risk, each corresponding Risk Selector field will display risk in the correct cell with the appropriate text and color.</li><li><span style="font-weight: bold; font-style: normal;">Notes:</span><ul>
+				<li>The three new fields can only be added to layouts for which the Risk Setting is Matrix.</li><li>The Risk Selector field axes will update if the user manually changes a value for any of the Risk Factor fields defined as a matrix axis.</li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">When the user clicks a cell on one of the new fields:</span><ul>
+				<li>The associated RiskDefinition.Description will display in the selected cell.</li><li>The color of the cell will change to the one defined for the Risk Definition.</li><li>The related Risk Factor fields (fields set as X and Y axes in Risk Settings) will populate.</li><li>The Risk Definition field will populate.</li></ul>
+			</li><li>When the user changes a selected cell, the cell color, Risk Definition, and Risk Factor fields will update.</li><li><span style="font-weight: normal; font-style: normal;">Each of the new fields has a Clear button, which will:</span><ul>
+				<li>Remove the values in the Risk Definition and Risk Factor fields.</li><li>Return the matrix to the incomplete state (all cells grey, none selected).</li></ul>
+			</li><li>The three Risk Selectors are not available for use in business rules, cannot be populated/updated using the Import Utility, and cannot be added as columns to list views.</li><li>We recommend that if one or more Risk Selector fields is used, the Risk Factors for the X and Y axes and Risk Definition should be disabled (or not selected) on the layout. That is, clients should use only one method to select risk, either by selecting individual risk factors from the table (as before) or by selecting them directly on the matrix itself.</li><li>Also, the assessment category concept has been expanded to the matrix. You can now filter the matrix view by category (Financial, Environmental, Safety, Health, etc.) and add a tooltip with a description for the selected assessment category.</li><li><span style="font-weight: normal; font-style: normal;">If the system setting 'Enable Risk Factor Qualifier For Risk Factor Picklist in &lt;Module&gt; Risk Assessment Entry' is selected, an Assessment Category drop-down field will be provided on the Matrix sublist in Risk Assessment. The drop-down field will default to null (empty).</span><ul>
+				<li>The drop-down lists all active Assessment Categories flagged for the respective Risk Assessment module.</li></ul>
+			</li><li>When an assessment category is selected, only risk entries with that assessment category will display on the matrix.</li><li>All of the functionality above applies to the Safety, CoSHH, Environmental, Ergonomics, Medical, and IH 'Risk Assessment' modules.</li></ul>
+		<h4 id="h4_1066401480" data-has-heading-anchor="true">
+			Impact to Existing Users:<a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-1214-you-can-now-select-risk-factors-directly-from/a/h4_1066401480" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-1214-you-can-now-select-risk-factors-directly-from/a/h4_1066401480&#39;,this);"></a></h4>
+		<ul>
+			<li><span style="font-weight: normal; font-style: normal;">An operational risk assessor:</span><ul>
+				<li>Can now select risk factors directly on the matrix. He or she no longer has to select them from the table.</li><li>Can now filter tasks on the matrix by Assessment Category, so that he or she understands the business impact of the risks.</li></ul>
+			</li></ul>
+		<ul>
+			<li>The matrix and task list will now display on the risk assessor's screen without any scrolling, so that the task list does not get overlooked.</li></ul>
+		<h4 id="h4__1658765620" data-has-heading-anchor="true">
+			Additional Configuration Considerations:<a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-1214-you-can-now-select-risk-factors-directly-from/a/h4__1658765620" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-1214-you-can-now-select-risk-factors-directly-from/a/h4__1658765620&#39;,this);"></a></h4>
+		<ul>
+			<li>Beyond what is described above, no additional configuration is required.</li></ul>
+		<p style="font-weight: bold;">Opt-in</p><p><a id="_Toc86750417"></a>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>

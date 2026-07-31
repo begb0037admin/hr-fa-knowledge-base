@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/cority-2021-3-0-new-features-release-notes/ccc-227-there-is-a-new-display-rules-module-for"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>CCC-227: There is a new Display Rules module for creating rules that dictate what should happen to a layout or set of layouts as a record moves through a workflow</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='CCC-227: There is a new Display Rules module for creating rules that dictate what should happen to a layout or set of layouts as a record moves through a workflow';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/cority-2021-3-0-new-features-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h2 id="h2__1779217942" data-has-heading-anchor="true">
+			<a id="_Toc86750419"></a><span style="color: #376092;">CCC-227: There is a new Display Rules module for creating rules that dictate what should happen to a layout or set of layouts as a record moves through a workflow</span><a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-227-there-is-a-new-display-rules-module-for/a/h2__1779217942" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-227-there-is-a-new-display-rules-module-for/a/h2__1779217942&#39;,this);"></a></h2>
+		<ul>
+			<li>The new module is included with the Administrator set of tools.</li><li>A display rule is similar to a business rule, except that display rules trigger immediately on values changing as opposed to triggering on Save.</li><li>The new module is accessible to any user with a role that is granted the DisplayRule security module, which is granted by default to the Administrator role.</li><li><span style="font-weight: normal; font-style: normal;">The new module has a default list view named All Display Rules.</span><ul>
+				<li>The list view has the Create/Clone View functionality.</li></ul>
+			</li><li><span style="font-weight: normal; font-style: normal;">When the user clicks New on the list view, the new default Display Rule layout opens.</span><ul>
+				<li>The layout has the following fields, which exist already in the Business Rules module and function in the same way: Code, Description, Entity, Priority, and Inactive</li><li>It also has the new Layout field, which enables the user to select one or more layouts (Cority or user-created) corresponding to the specified entity.</li><li>The display rule will trigger when conditions are true on any of the specified layouts. If no layout is specified, the display rule will trigger on all layouts.</li></ul>
+			</li><li>At present, only first-level fields and only the Equals operator are supported in the Display Rules module.</li><li>Subqueries are not supported in the module.</li><li><span style="font-weight: normal; font-style: normal;">A display rule also has an action list with the following options: </span><ul>
+				<li><span style="font-weight: normal; font-style: normal;">Filter - for filtering a second field's picklist when specific value is entered for a corresponding first field. </span><ul>
+					<li>On the specified layouts, the picklist will be filtered if the Equals operator condition is met and not filtered if the condition is not met.</li><li>For example: If 'Clinic Visit' Status = Open (Display Rule criteria), only the following values will be available for the 'Clinic Visit' Reason: Occ, Non-Occ, Checkup, and Immunization.</li><li>The maximum number of values for filtering to is ten.</li><li>Corresponding smart searches will also be filtered according to the rule.</li></ul>
+				</li></ul>
+			</li></ul>
+		<p> </p><ul>
+			<ul>
+				<li><span style="font-weight: normal; font-style: normal;">Read Only Field - for making a field read-only (locking it from editing) when a specific value is entered for the field</span><ul>
+					<li>When using this action, the field will become read-only if the Equal operator condition is met, and remain editable if the condition is not met.</li></ul>
+				</li></ul>
+		</ul>
+		<li>Only one of each Display Rule Action Type can be used per display rule.</li><ul>
+			<ul>
+				<li>For example, you can't add two Filter actions to one display rule and you can't add two Read Only actions to one display rule.</li></ul>
+		</ul>
+		<li>A field can only be added once to a display rule.</li><h4 id="h4_1066401480" data-has-heading-anchor="true">
+			Impact to Existing Users:<a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-227-there-is-a-new-display-rules-module-for/a/h4_1066401480" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-227-there-is-a-new-display-rules-module-for/a/h4_1066401480&#39;,this);"></a></h4>
+		<ul>
+			<li>These rules will make is easier for an administrator to automate users' workflows.</li></ul>
+		<h4 id="h4__1658765620" data-has-heading-anchor="true">
+			Additional Configuration Considerations:<a href="/articles/cority-2021-3-0-new-features-release-notes/ccc-227-there-is-a-new-display-rules-module-for/a/h4__1658765620" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!cority-2021-3-0-new-features-release-notes/ccc-227-there-is-a-new-display-rules-module-for/a/h4__1658765620&#39;,this);"></a></h4>
+		<ul>
+			<li>Beyond what is described above, no additional configuration is required.</li></ul>
+		<p><a id="_CCC-227:_There_is"></a><span style="font-weight: bold;">Opt-in</span></p><p><a id="_Toc86750420"></a>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>
