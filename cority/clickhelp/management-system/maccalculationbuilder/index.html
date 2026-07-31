@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/maccalculationbuilder"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Using the Calculation Builder for MACs</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Using the Calculation Builder for MACs';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1_1172688584" data-has-heading-anchor="true">Using the Calculation Builder for MACs<a href="/articles/management-system/maccalculationbuilder/a/h1_1172688584" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/maccalculationbuilder/a/h1_1172688584&#39;,this);"></a></h1><p class="Body">The Calculation Builder helps you to create calculation formulas for Material Activity Calculated Requirements. The calculator automatically filters for all the properties that are available for the MAC, using the fields on the associated materials, activity, and calculation template, if any.</p>
+        <p class="Body">The tabs available in the Calculation Builder and their uses are:</p>
+        <ul>
+            <li value="1"><b>Formulas</b>:&nbsp;This tab contains pre-defined formulas from a library which may be copied and edited.</li>
+            <li value="2"><b>Functions</b>: This tab contains the functions that can be used in the formula. It can be used like a calculator to add a function in the correct format.</li>
+            <li value="3">
+                <p><b>Chemicals</b>:&nbsp;Chemicals may be referenced in two ways:</p>
+                <p class="Body">Chemical explicit properties: Properties of the chemicals that make up the material chemical composition. To use a chemical explicit property, select the chemical, then select the property, then click Select.</p>
+                <p class="Body">Chemical logical properties: Aggregate properties of all chemicals that make up the material chemical composition. To use chemical properties as aggregates, select "Chem," then select the property, then click Select.</p>
+            </li>
+            <li value="4"><b>UDFs</b>: numeric custom fields on the Calculation Template applied to the direct parent object</li>
+            <li value="5"><b>Met fields</b>, from a Location specified on a parent object</li>
+            <li value="6"><b>Material Value Based Properties</b>: Constant values specified on the material.</li>
+            <li value="7"><b>Material Formula Based Properties</b>: Intermediate formulas that are calculated as properties of the material.</li>
+            <li value="8"><b>Logical Properties</b>:&nbsp;Chemical Logical formulas which produce values for each chemical used in the material.</li>
+            <li value="9"><b>Activity Value Based Properties</b>: Constant values that are properties of the Activity, whose values are defined on the Activity.</li>
+            <li value="10"><b>Activity Specific Use Variables</b>: The specific use variables used for entering data</li>
+            <li value="11"><b>Requirements (via Tags)</b>:&nbsp;Standard numeric and calculated requirements referenced via tags, which maintain relative reference per location. See <a href="/articles/management-system/tagschemesmaterials" class="MCXref_Heading_0" onclick="return n(&#39;!management-system/tagschemesmaterials&#39;,this);">Referencing Requirements in Material Scripts</a>.</li>
+            <li value="12"><b>Requirements</b>:&nbsp;Standard numeric and calculated requirements referenced absolutely by path.</li>
+        </ul>
+        <p class="Important" madcap:autonum="Important: &nbsp;"><span class="autonumber"></span>In order to maintain relative references to standard requirements used in a MAC formula you must use Tags.&nbsp;This will allow you to maintain calculation integrity when you copy and paste a location from the tree. Requirements referenced from the "Requirements"&nbsp;tab are absolute references by path only and do not adjust accordingly when copied.</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To build the calculation:</p>
+        <ol>
+            <li value="1">Select a property from one of the dropdown lists and click <b class="bold">Select</b> to add it to the formula.</li>
+            <li value="2">Add operators, functions and other factors as needed, using the calculator.</li>
+            <li value="3">
+                <p>When finished building the calculation, click <b class="bold">Save</b>.</p>
+            </li>
+            <li value="4">
+                <p>Select a <b class="bold">Begin Date</b> for the formula. </p>
+                <p>Optionally, you may define Calculation Errors Handling. See <a href="/articles/management-system/fieldscalculatedreqts/a/CalcErrorHandling" onclick="return n(&#39;!management-system/fieldscalculatedreqts/a/CalcErrorHandling&#39;,this);">Calculation Errors Handling</a>.</p>
+            </li>
+            <li value="5">
+                <p>Click <b>Update</b>.</p>
+                <p>
+                    <img src="images/UpdateMacFormulaDef.png" style="margin-left: 1.00008px;margin-top: 1.00008px;margin-right: 0.9993402px;margin-bottom: 1.000088px;" loading="lazy"/>
+                </p>
+                <p>All formulas that are required in the MAC calculation must be valid in order to save the requirement. </p>
+            </li>
+        </ol>
+        <script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

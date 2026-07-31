@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/countbasedcalculated"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Count Based Calculated</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Count Based Calculated';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1_768893506" data-has-heading-anchor="true">Count Based Calculated<a href="/articles/management-system/countbasedcalculated/a/h1_768893506" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/countbasedcalculated/a/h1_768893506&#39;,this);"></a></h1>
+        <p class="Body">Count Based Calculated Requirements produce an aggregated rolling value for a specified Requirement every X data point occurrences on the Requirement, without regard to time period. Whereas Time Based Rolling calcs look back over a specified time period to perform an aggregate calc (e.g., SUM or AVG), Count Based Calculations look back over a specified number of data points and use that number of data points in the aggregate calc.</p>
+        <p class="Body">Each data point starts a new series of data points (like a rolling calc) that may potentially reach X in number.  The saved data point for the count based calculation corresponds in date and time to the last data point in the series of aggregated values. </p>
+        <p class="ExampleBox">The organization needs to track a rolling average of emissions over the last 30 valid operating days. A valid operating day is one in which the equipment ran for 24 hours. Valid operating days may not be consecutive and there will be gaps in the data. A Count Based Calculation with a required data count of 30 will simply look for the last 30 data points, regardless of when they occurred. To calculate the 30-day rolling average, you can first set up a calculated requirement to give emission data points for valid days only. Then use a Count Based Calculation to look for the last 30 data points for that requirement and perform the aggregate calc.</p>
+        <p class="Body">Allowable aggregation types for a Count Based Calculation are: SUM, AVG, VAR, STDEV, MIN, MAX. (See <a class="MCXref_Heading_0" href="/articles/management-system/aggregation-types" onclick="return n(&#39;!management-system/aggregation-types&#39;,this);">Aggregation Types</a>.)</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To create a count based calculated requirement:</p>
+        <ol>
+            <li value="1">Right click the parent object and choose <b class="bold">New &gt; Requirement</b>.</li>
+            <li value="2">Select the <b class="bold">Requirement Template</b>.</li>
+            <li value="3">
+                <p>Select <b class="bold">Count Based Calculated </b>for the type.</p>
+                <p>
+                    <img src="images/CreateCountBasedCalc.png" style="margin: 1.00008px 1.00006px 1.00006px 1.00008px;" alt="" loading="lazy"/>
+                </p>
+                <p class="Body">To apply user-defined custom fields, select a Custom Field Template to apply. See <a class="MCXref_Heading_0" href="/articles/management-system/customfieldtemplates" onclick="return n(&#39;!management-system/customfieldtemplates&#39;,this);">Custom Field Templates</a>.</p>
+            </li>
+            <li value="4">Click <b class="bold">Continue</b>.</li>
+            <li value="5">
+                <p>Enter a <b class="bold">Name</b>.</p>
+                <p>You can add translated values for localization by clicking on the language symbol <img src="images/Loc_icon.png" class="borderless" loading="lazy"/>. </p>
+                <p class="Body">In the Requirement Source section you can further define the requirement driver by selecting the <b class="bold">Specific Citation</b> and specifying a <b class="bold">Periodicity</b>. See <a class="MCXref_Heading_0" href="/articles/management-system/fieldscalculatedreqts/a/Periodicity" onclick="return n(&#39;!management-system/fieldscalculatedreqts/a/Periodicity&#39;,this);">Periodicity in Calculated Requirements</a>.</p>
+                <p class="Body">Other optional fields include:</p>
+                <p class="Body"><b class="bold">Active Date/Inactive Date:&nbsp;</b><span class="_Override">The begin and end dates that a requirement applies (optional)</span>
+                </p>
+                <p class="Body"><b class="bold">Description</b>: General description of requirement</p>
+                <p class="Body"><b class="bold">UOM</b>: Unit of measure</p>
+                <p class="Body"><b class="bold">Precision</b>: Number of places to the right of the decimal point to display</p>
+                <p class="Body"><b class="bold">Calculation purpose</b>: Describe what you want to accomplish in the calculation.</p>
+            </li>
+            <li value="6">
+                <p>Click the plus sign (+) in the <b class="bold">Count-based intervals</b> bar to define the calculation. Then click  <u>New</u>.</p>
+                <p>
+                    <img src="images/NewCBCDef.png" alt="" style="width: 700px; height: 85px;" loading="lazy"/>
+                </p>
+            </li>
+            <li value="7">
+                <p>To select the <b>Base Requirement</b>, click the "select"&nbsp;button next to the box.</p>
+                <p class="Body">
+                    <img src="images/CBCBaseReqt.png" alt="" style="width: 900px; height: 225px;" loading="lazy"/>
+                </p>
+                <p>In the selection window, browse or search to find the requirement to track and click <u>Select</u>.</p>
+                <p><b>Required Data Count</b>:&nbsp;Enter the number of data points required to perform the calculation.</p>
+                <p><b>Aggregation Type</b>:&nbsp;Select the type from the list. Allowable aggregation types of count based calculations are SUM, VAR, STDEV, MIN and MAX. See <a class="MCXref_Heading_0" href="/articles/management-system/aggregation-types" onclick="return n(&#39;!management-system/aggregation-types&#39;,this);">Aggregation Types</a>.</p>
+                <p><b>Begin Date</b>:&nbsp;Enter date from which the calculation is valid. The value can only be used in other calculations from the Begin Date.</p>
+            </li>
+            <li value="8">
+                <p>Click <u>Update</u> to save the formula value.</p>
+                <p class="Body">Other options available are:</p>
+                <p class="Body"><b class="bold">Expected Frequency</b>: Can be used to produce a data warning if expected data is missing (often used in conjunction with a backend integration system, to warn of possible failures). The expected frequency is defined as the number of data points expected per day. A Begin Date must be set.</p>
+                <p class="Body"><b class="bold">Limits</b>: Regulatory and internal limits may be set in order to produce data warning when limits are exceeded. See <a class="MCXref_Heading_0" href="/articles/management-system/settingregulatorylimits" onclick="return n(&#39;!management-system/settingregulatorylimits&#39;,this);">Setting Regulatory Limits</a>. </p>
+            </li>
+            <li value="9">Click <b class="bold">Save</b> to save the requirement.</li>
+        </ol>
+        <script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/documentpermissions"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Document Permissions</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Document Permissions';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1_2062244847" data-has-heading-anchor="true">Document Permissions<a href="/articles/management-system/documentpermissions/a/h1_2062244847" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/documentpermissions/a/h1_2062244847&#39;,this);"></a></h1>
+        <p class="Body">Document permissions control read and write permissions granted to users for the documents stored in the Documents library. Document permissions are in addition to the permissions granted to users for system objects, and should be set up to be compatible with object permissions. In order for users to view documents associated with an object, they must be granted permission to the documents as well as the object.</p>
+        <p class="Body">In addition to Administrators, users with the Manage Documents right may set permissions on documents or document folders. (See <a class="MCXref_Heading_0" href="/articles/management-system/userrights" onclick="return n(&#39;!management-system/userrights&#39;,this);">User Rights</a>.)</p>
+        <p class="Body">Within the Documents library, permissions can be assigned in the most efficient manner by applying them to document folders. </p>
+        <p class="Body">However, you can also assign permissions to individual documents if necessary. </p>
+        <p class="Body">Document permissions include <b>View</b>, <b>Add and Edit</b>, <b>Delete</b>.</p>
+        <p class="Body">Users with <b class="bold">View</b> permissions can:</p>
+        <ul class="brackets">
+            <li value="1">View or download a document.</li>
+            <li value="2">Access a document associated with a task or system object through the Associated Documents link.</li>
+            <li value="3">Associate a document to a system model object. However, to do so they must also have Modify permissions on the object.</li>
+        </ul>
+        <p class="Body">Users with <b class="bold">Add and Edit</b> permissions on a folder or document can:</p>
+        <ul class="brackets">
+            <li value="1">Add a document to the Document folder.</li>
+            <li value="2">Update a document (by adding a new document version).</li>
+            <li value="3">Set the current version of a document. </li>
+            <li value="4">Edit document properties and rename documents. </li>
+            <li value="5">Create and manage subfolders. </li>
+            <li value="6">Copy a document or document folder within permitted folders. </li>
+        </ul>
+        <p class="Body"><b>Delete</b> permission must be explicitly granted to allow a user to delete documents.</p>
+        <p class="Body">Object permissions in the system model work in combination with the document permissions. To associate a document with an object, a user must have the <b>Modify</b> Properties permission on the object and View or Edit permissions on the document.</p>
+        <p class="Body">To associate documents with a task, a user must also have the <b>Create and Complete Tasks</b> permission for the related object.</p>
+        <p class="Body">To access documents associated with an object or a task, users must also have View or Add and Edit permissions on the documents. The View Properties permission on an object does not automatically grant permission to view associated documents.</p>
+        <p class="Body">The <b>Manage Documents</b> user right is required to view or modify document permissions.</p>
+        <p class="Important" madcap:autonum="Important: &nbsp;"><span class="autonumber"></span>The Manage Documents right gives global permissions to the documents and the Documents library. This right is customarily given only to an individual who has librarian responsibilities in the system.</p>
+        <p class="Body">You can add, delete or modify permissions on document folders or on individual documents if permissions are not set to inherit. If permissions are inherited, you must edit the parent folder permissions, or disable inheritance for the subfolder.</p>
+        <h2 id="h2_1470993510" data-has-heading-anchor="true"><span class="autonumber"><span></span></span>View permissions on a document folder or document<a href="/articles/management-system/documentpermissions/a/h2_1470993510" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/documentpermissions/a/h2_1470993510&#39;,this);"></a></h2><p class="Body">When permissions are not inherited and users or groups are added to the permissions, you can apply the same permissions to all subfolders and documents by choosing the option to Apply to Children. </p>
+        <p class="Body">Permissions on documents are best granted through folders, but may be assigned to individual documents if necessary. Inheritance is enabled by default on creation of a folder. Top level folders inherit permissions from the Document object in the tree.&nbsp;</p>
+        <ol><li class="Body">Open the Permissions Editor by one of the following means:<ul><li class="Body">In the Documents library, select a folder, then click <b class="bold" style="font-size: 11pt;">Current Folder Permissions</b><span style="font-size: 11pt;">.<br/><img src="images/CurrentFolderPermissionsDocs.png" alt="" style="margin: 1.00008px 0.999371px 1.00008px 1.00008px; width: 650px; height: 155px;" loading="lazy"/><br/></span></li>
+        <li class="Body"><span style="font-size: 11pt;"></span>Right click a folder or document and choose <b class="bold" style="font-size: 11pt;">Permissions</b><span style="font-size: 11pt;">.<br/><img src="images/DocFolderPermissions.png" alt="" style="margin: 1.00008px 1.00009px 1.00009px 1.00008px;" loading="lazy"/><br/></span>The Permissions Editor shows groups and users with permissions on the folder or document and the permissions granted to each.</li>
+        </ul></li>
+        <li class="Body">If permissions are inherited from a parent folder the "Inherit permissions..." box will be checked at the top and editing will be disabled. To create separate permissions for the folder, or for individual documents within the folder, you must uncheck "inherit permissions...". Otherwise, edit the permissions for the parent object to apply to all folders and documents.</li>
+        </ol><p class="Body"><img src="images/DocFolderPermissions2.png" alt="" style="width: 850px; height: 189px;" loading="lazy"/></p>
+            <h2 id="h2__23139900" data-has-heading-anchor="true">Add users or group permissions to documents<a href="/articles/management-system/documentpermissions/a/h2__23139900" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/documentpermissions/a/h2__23139900&#39;,this);"></a></h2><ol>
+            <li value="1">
+                <p>Click <b>Add User</b> or <b>Add Group.</b></p>
+            </li>
+            
+            <li>
+                <p><span style="font-size: 11pt;">From the selection window, select the users or groups to add by checking the boxes and click </span><b class="bold" style="font-size: 11pt;">Select</b><span style="font-size: 11pt;">.<br/></span><span style="font-size: 11pt;">The users/groups are added to the permissions list.</span></p>
+            </li>
+            
+            <li>
+                <p><span style="font-size: 11pt;">Select the permissions to grant.</span></p>
+            </li>
+            
+            <li>
+                <p><span style="font-size: 11pt;"></span><span style="font-size: 11pt;">With the </span><b class="bold" style="font-size: 11pt;">Select</b><span style="font-size: 11pt;"> box checked for the new users/groups, click </span><b class="bold" style="font-size: 11pt;">Edit</b><span style="font-size: 11pt;">.<br/><img src="images/EditDocPermissions.png" alt="" style="width: 1000px; height: 118px;" loading="lazy"/><br/></span></p>
+            </li>
+            
+            <li>
+                <p><span style="font-size: 11pt;"></span><span style="font-size: 11pt;">From the pop-up, select the permissions you want to grant, then click </span><b style="font-size: 11pt;">OK</b><span style="font-size: 11pt;">.</span></p>
+            <ul>
+            <li>
+                <p><span style="font-size: 11pt;"></span><b class="bold" style="font-size: 11pt;">View</b><span style="font-size: 11pt;">: Allows users to view documents and associate documents in this folder to system model objects to which they also have permissions.</span></p>
+            </li>
+            
+            <li>
+                <p><span style="font-size: 11pt;"></span><b class="bold" style="font-size: 11pt;">Edit</b><span style="font-size: 11pt;">: Allows users to add documents, create and edit subfolders and documents in this folder (including deleting documents and folders), and manage document versions.</span></p>
+            </li>
+            
+            <li>
+                <p><span style="font-size: 11pt;"></span><b style="font-size: 11pt;">Delete</b><span style="font-size: 11pt;">:&nbsp;Allows users to delete documents.<br/><img src="images/SetUserPermDocs.png" alt="" style="width: 650px; height: 157px;" loading="lazy"/><br/></span></p>
+            </li>
+            </ul></li>
+            
+            <li>
+                <p><span style="font-size: 11pt;"></span><span style="font-size: 11pt;">If the document folder is not set to inherit permissions, you can extend the permissions to all child folders and documents by checking </span><b class="bold" style="font-size: 11pt;">Apply to Children</b><span style="font-size: 11pt;">.</span></p>
+            </li>
+            
+            <li>
+                <p><span style="font-size: 11pt;"></span><span style="font-size: 11pt;">Click </span><b style="font-size: 11pt;">OK</b><span style="font-size: 11pt;"> to save permissions for the selected users. </span></p>
+            </li>
+            
+            <li>
+                <p><span style="font-size: 11pt;">Click </span><b class="bold" style="font-size: 11pt;">Save</b><span style="font-size: 11pt;"> to save all changes.</span></p>
+            </li>
+            </ol>
+        <h2 id="h2__139939654" data-has-heading-anchor="true">Delete permissions for a user or group<a href="/articles/management-system/documentpermissions/a/h2__139939654" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/documentpermissions/a/h2__139939654&#39;,this);"></a></h2><ol>
+            <li value="1">Check the <b class="bold">Select</b> box for the user or group.</li>
+            <li value="2">
+                <p>Click <b class="bold">Delete</b>.</p>
+                <p>The Permissions column is now blank for the user. Next you must click save to finalize.</p>
+                <p>If permission on subfolders are not set to inherit permissions and you want to remove the user's permission from those folders, check <b>Apply to Children</b> before saving. If subfolders are not set to inherit permissions, the user’s permissions on all documents in subfolders will be retained unless you check Apply to Children. </p>
+            </li>
+            <li value="3">
+                <p>Select <b class="bold">Save</b>.</p>
+            </li>
+        </ol>
+        <h2 id="h2_1611305482" data-has-heading-anchor="true">Viewing Document Associations in Reports<a href="/articles/management-system/documentpermissions/a/h2_1611305482" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/documentpermissions/a/h2_1611305482&#39;,this);"></a></h2><p class="Body">When a report includes document associations, the user running the report will need to have at least one of the following: </p>
+        <ul class="brackets">
+            <li value="1">View Documents permission</li>
+            <li value="2">Manage Documents right</li>
+            <li value="3">Unrestricted permission for reports. </li>
+        </ul>
+        <p class="Body">If user does not have adequate permissions, a notice of missing data will appear in the report and a "request permissions" link will be available to allow the user to send an email to the Administrator requesting permission.</p>
+        <script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

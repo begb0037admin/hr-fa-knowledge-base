@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/timebasedrolling"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Time-Based Calculated (Rolling Period)</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Time-Based Calculated (Rolling Period)';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1__1359643340" data-has-heading-anchor="true">Time-Based Calculated (Rolling Period)<a href="/articles/management-system/timebasedrolling/a/h1__1359643340" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/timebasedrolling/a/h1__1359643340&#39;,this);"></a></h1>
+        <p class="Body">Time Based Rolling Calculations produce an aggregated value for a specified requirement over a specified rolling time period. Time Based Rolling calcs look back over the specified time period to perform an aggregate calc (e.g., SUM or AVG) over all available data points within the period. </p>
+        <p class="Note" madcap:autonum=" &nbsp;"><span class="autonumber"><span class="note_et_al"> &nbsp;</span></span>A similar type of calculation is available in the Count Based Calculated Requirement, which is dependent not on the specific time period, but a specified number of data points. See <a class="MCXref_Heading_0" href="/articles/management-system/countbasedcalculated" onclick="return n(&#39;!management-system/countbasedcalculated&#39;,this);">Count Based Calculated</a>.</p>
+        <p class="Body">The calculation may include one or more variables, parameters, calculated parameters, or other time-based calculated requirements. After the data for the various variables, parameters, calculated parameters, and time-based calculated requirements are entered and/or processed into the database and the selected period of time has occurred, the resultant value for the calculated parameter is stored in the database. </p>
+        <p class="Body">Allowable aggregate functions include SUM, AVG, VAR, MIN, MAX, STDEV, etc. For a full list of available aggregate functions, see <a class="MCXref_Heading_0" href="/articles/management-system/aggregation-types" onclick="return n(&#39;!management-system/aggregation-types&#39;,this);">Aggregation Types</a>.</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To create a time-based calculation (rolling period):</p>
+        <ol>
+            <li value="1">Right click the parent object and choose <b class="bold">New &gt; Requirement</b>.</li>
+            <li value="2">Select the <b class="bold">Requirement Template</b>.</li>
+            <li value="3">
+                <p>Select <b class="bold">Time-Based Calculated (Rolling period)</b> for the type.</p>
+                <p>
+                    <img src="images/CreateTBRolling.png" style="margin: 1.00008px 1.00006px 1.00007px 1.00008px; width: 600px; height: 498px;" alt="" loading="lazy"/>
+                </p>
+                <p class="Body">To apply user-defined custom fields, select a Custom Field Template to apply. See <a class="MCXref_Heading_0" href="/articles/management-system/customfieldtemplates" onclick="return n(&#39;!management-system/customfieldtemplates&#39;,this);">Custom Field Templates</a>.</p>
+            </li>
+            <li value="4">Click <b class="bold">Continue</b>.</li>
+            <li value="5">
+                <p>Enter a <b class="bold">Name</b>.</p>
+                <p>You can add translated values for localization by clicking on the language symbol <img src="images/Loc_icon.png" class="borderless" loading="lazy"/>. </p>
+                <p class="Body">In the Requirement Source section you can further define the requirement driver by selecting the <b class="bold">Specific Citation</b>.</p>
+                <p class="Body">Other optional fields include:</p>
+                <p class="Body"><b class="bold">Active Date/Inactive Date:&nbsp;</b><span class="_Override">The begin and end dates that a requirement applies (optional)</span>
+                </p>
+                <p class="Body"><b class="bold">Description</b>: General description of requirement</p>
+                <p class="Body"><b class="bold">UOM</b>: Unit of measure</p>
+                <p class="Body"><b class="bold">Precision</b>: Number of places to the right of the decimal point to display</p>
+                <p class="Body"><b class="bold">Required Percentage of Data Points for Calculation</b>: Percentage of data points that must be present for the calculation to be triggered. For more information, see <a class="MCXref_Heading_0" href="/articles/management-system/fieldtbcalcs/a/RequiredPercent" onclick="return n(&#39;!management-system/fieldtbcalcs/a/RequiredPercent&#39;,this);">Required Percentage of Data Points for Calculation</a>.</p>
+                <p class="Body"><b class="bold">Calculation purpose</b>: Describe what you want to accomplish in the formula.</p>
+                <p class="Body">Review the factors available to be used in the calculation, shown in the Calculation Requirements and Calculation UDF Parameters boxes. If necessary, you can add requirements from other locations to make them available to the calculation. All of the Calculation Requirements and Calculation UDF Parameters shown will appear as buttons in the calculator window to use in building the calculation. </p>
+                <p class="Body"><b class="bold">Calculation Requirements</b>: Requirements under the same parent object are listed and will be available in the calculator automatically. To add additional requirements elsewhere in the system model, click <b class="bold">Add</b> and browse or search to find and select the requirements. To remove unnecessary requirements, click <b class="bold">Remove</b> (simplifies the calculator button selections if they are too numerous). See <a class="MCXref_Heading_0" href="/articles/management-system/fieldscalculatedreqts/a/CalcRequirements" onclick="return n(&#39;!management-system/fieldscalculatedreqts/a/CalcRequirements&#39;,this);">Calculation Requirements</a>.</p>
+                <p class="Body"><b class="bold">Calculation UDF Parameters</b>: Shows additional calculation parameters available to be used in the calculation, which are derived from a Calculation Template applied to the parent object. See <a class="MCXref_Heading_0" href="/articles/management-system/calculationtemplate" onclick="return n(&#39;!management-system/calculationtemplate&#39;,this);">Calculation Templates</a>.</p>
+            </li>
+            <li value="6">Click the plus sign (+) in the Calculation Script bar to define the calculation.</li>
+            <li value="7">
+                <p>Click <b class="bold">New</b> to add a calculation definition.</p>
+                <p class="Body">
+                    <img src="images/NewTBCalcScript.png" style="margin: 1.00008px 1.00007px 0.999361px 1.00008px; width: 350px; height: 53px;" alt="" loading="lazy"/>
+                </p>
+            </li>
+            <li value="8">
+                <p>Set the <b class="bold"><a class="MCXref_Heading_0" href="/articles/management-system/fieldtbcalcs/a/RollingPeriod" onclick="return n(&#39;!management-system/fieldtbcalcs/a/RollingPeriod&#39;,this);">Rolling Period</a></b> for the calculation.</p>
+                <p class="Body">This is the period of time in which the data for the requirement are processed. It may be expressed as a number of hours, days, weeks, months, quarters, or years. (See <a class="MCXref_Heading_0" href="/articles/management-system/fieldtbcalcs/a/RollingPeriod" onclick="return n(&#39;!management-system/fieldtbcalcs/a/RollingPeriod&#39;,this);">Rolling Period</a>.)</p>
+                <p class="Body"><b class="bold">Intermediate Period:</b> Optionally, you may select an Intermediate Period to enable intermediate calculations within the rolling period. For example, if the Rolling Period is 1 year, and the Intermediate Period is Quarterly, the calculation will trigger each quarter within the year with a rollup to date.</p>
+                <p class="Body"><b>Begin Date</b>:&nbsp;This date determines the start of the period (calendar year or otherwise).</p>
+                <p class="Body">
+                    <img src="images/TBRollCalcDef1.png" style="margin: 1.00008px 0.999371px 0.999371px 1.00008px;" alt="" loading="lazy"/>
+                </p>
+            </li>
+            <li value="9">
+                <p>Click the calculator button to bring up the calculation builder. </p>
+                <p class="Body">Use the calculation builder to define the calculation. An aggregation type is required.</p>
+                <p class="Body"> You may use the function buttons in the calculator or type directly in the box; you can also paste text. You can select requirement from the "Available requirements" box to add them to the formula.</p>
+                <p class="Body">Example: AVG([Daily Emissions])/1000 </p>
+            </li>
+            <li value="10">Click <b class="bold">Save</b> to save the formula.</li>
+            <li value="11">
+                <p>Enter the <b class="bold">Calculation Begin Date</b>, then click <u>Update</u> to save the formula value.</p>
+                <p class="Body">The calculation value can only be used in other calculations from the Begin Date.  </p>
+                <p class="Body">Other options include:</p>
+                <p class="Body"><b class="bold">Calculation Errors Handling</b>: Can be used to define a value to be returned if the calculation produces an error. To use error handling, check the Use box and enter a value to be used in the case of the error type.</p>
+                <p class="Body"><b class="bold">Expected Frequency</b>: Can be used to produce a data warning if expected data is missing (often used in conjunction with a backend integration system, to warn of possible failures). The expected frequency is defined as the number of data points expected per day. A Begin Date must be set.</p>
+                <p class="Body"><b class="bold">Limits</b>: Regulatory and internal limits may be set in order to produce data warning when limits are exceeded. See <a class="MCXref_Heading_0" href="/articles/management-system/settingregulatorylimits" onclick="return n(&#39;!management-system/settingregulatorylimits&#39;,this);">Setting Regulatory Limits</a>.</p>
+            </li>
+            <li value="12">Click <b class="bold">Save</b> to save the calculated requirement.</li>
+        </ol>
+        <script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/securitypolicies"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Manage Security Policies</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Manage Security Policies';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1__1842485971" data-has-heading-anchor="true">Manage Security Policies<a href="/articles/management-system/securitypolicies/a/h1__1842485971" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/securitypolicies/a/h1__1842485971&#39;,this);"></a></h1>
+        <p class="Body">Administrators may specify security policy criteria for all system users in the Security &gt; Policies page. Password requirements and automatic account lockout features may be customized to suit your business security requirements.</p>
+        <p class="Body">Password options include the ability to specify password complexity, and to set requirements for changing passwords regularly, as well as automatic password expiration.</p>
+        <p class="Body">In addition, account lockout options may be set to automatically lock an account after a specified number of failed login attempts.</p>
+        <p class="Body"><b class="bold">Concurrent Logins Policy</b>: In addition to System-specific security settings, concurrent sessions (interactive user sessions) are disallowed from separate computers. This means that if someone attempts to login with a user name that is already logged on, the person is granted a session and the existing session for the same user is revoked, resulting in the person already logged on being kicked off.</p>
+        <p class="Body">Security policies that may be controlled by a System Administrator include password requirements, account lockout options, and session timeout. Security policies affect all users of the system model. Limited security options for an individual user may also be specified in the user profile.</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To set security policies for the system:</p>
+        <ol>
+            <li value="1">From the menu, select <b class="bold">Setup &gt;  Policies</b> under Security.</li>
+            <li value="2">Check the desired options (see below for description).</li>
+            <li value="3">
+                <p>Select <b class="bold">Save</b> to save the options.</p>
+                <p><b class="bold">Password options:</b>
+                </p>
+                <p class="Body"><b class="bold">Enable password complexity: </b>Complex passwords required for all users. A complex password must include 3 out of 4 of the following: </p>
+                <ul>
+                    <li value="1">At least one upper-case letter</li>
+                    <li value="2">At least one lower-case letter</li>
+                    <li value="3">At least one number</li>
+                    <li value="4">At least one special character</li>
+                </ul>
+                <p class="Body"><b class="bold">Enable minimum password length: </b>Passwords must meet a minimum character length. Specify number of characters (minimum three) in adjacent box.</p>
+                <p class="Body"><b class="bold">Enable maximum password age: </b>Passwords expire a specified number of days after last reset. When a password expires, the user will be redirected to a password change page on login. Specify number of days in adjacent box.</p>
+                <p class="Body">Password "age" is calculated based on the last time a user changed their password. If the user has not changed the password the system uses the time the initial user password was set by the administrator.</p>
+                <p class="Body"><b class="bold">Enable password history:</b> Password history is retained, in order to restrict a user from setting a password that has been recently used. Specify number of password instances remember in the adjacent box.</p>
+                <p class="Body">The system will store passwords and not allow the user to reuse a password if it falls within the specified number of instances. For example, if set to 3 instances, the first password will not be available to be used again until three different passwords have been saved in the profile.</p>
+                <p class="Body">The following option is available:</p>
+                <p class="Body"><b class="bold">Enable minimum password age:</b> This option is only available if "Enable password history" is selected. Requires a minimum period before a password can be changed. Specify number of days until password can be reset in adjacent box. The system will not allow a user to change the password until the specified time has elapsed since the last password change. Check "Except if user has forgotten password" to enable resetting the password regardless of age in the case of forgotten passwords.</p>
+                <p class="Body"><b class="bold">Enable forgotten password request:</b> This option enables users to reset their passwords by clicking on a "forgot password" link on the login page. An email with a temporary password is sent to the email on the user profile. After logging in with the temporary password, the user is required to answer one of the security questions set on the user profile, after which they must reset their password. Optionally, as an additional security measure, you can specify that an administrator be notified when the feature is used and select the user/group to be notified.</p>
+                <p class="Body" style="font-weight: bold;"><b class="bold">Account Lockout</b>
+                </p>
+                <p class="Body">Enabling account lockout allows you to lock an account after a number of failed login attempts. The following criteria may be set:</p>
+                <p class="Body"><b class="bold">Failures before lockout:</b> How many failed login attempts are allowed before account is locked.</p>
+                <p class="Body"><b class="bold">Minutes until lockout ends:</b> Number of minutes after lockout until login with correct password will work.</p>
+                <p class="Body"><b class="bold">Minutes before lockout counter reset:</b> Number of minutes the system retains a log of invalid login attempts. </p>
+                <p class="Body"><b class="bold">Session timeout: </b>Period of inactivity allowed before session times out and user must log in again.</p>
+            </li>
+        </ol>
+        <script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

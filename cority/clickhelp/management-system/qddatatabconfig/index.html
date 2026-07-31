@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/qddatatabconfig"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Data Tab Configuration</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Data Tab Configuration';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1__889274233" data-has-heading-anchor="true">Data Tab Configuration<a href="/articles/management-system/qddatatabconfig/a/h1__889274233" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/qddatatabconfig/a/h1__889274233&#39;,this);"></a></h1>
+        <p class="Body">The Data tab in Quick Data allows users to enter periodic data in an easy-to-use form.  Once the data has been validated, it can be locked so that further editing is disabled, preventing inadvertent changes. (If necessary, data can still be edited by logging into the Management System.)</p>
+        <p class="Body">The following section explains how to set up the Management System for data entry using the Data tab. The setup involves the use of specific custom fields on the system objects you want to expose in the Data tab.</p>
+        <p class="BodyIndent">
+        </p>
+        <h2 id="h2_1850552699" data-has-heading-anchor="true">Data Entry Setup<a href="/articles/management-system/qddatatabconfig/a/h2_1850552699" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/qddatatabconfig/a/h2_1850552699&#39;,this);"></a></h2><p class="Body">To view and enter data on the Data tab in Quick Data, the following elements are required:</p>
+        <ul class="brackets">
+            <li value="1">Custom Field Template with Quick Data fields</li>
+            <li value="2">Properties defined on numeric requirements, to include Quick Data fields, Active Dates and Periodicity.</li>
+        </ul>
+        <p class="Body">Summary of objects and custom fields to apply:</p>
+        <table style="width: 680px; caption-side: top; border-width: 1px; border-collapse: collapse; height: 458px;" cellspacing="0" cellpadding="0">
+            <colgroup><col/>
+            <col/>
+            </colgroup><thead>
+                <tr>
+                    <th class="td_HeadGray" scope="col" style="border-width: 1px; border-style: solid;">
+                        <p class="T1TableHead">Object type</p>
+                    </th>
+                    <th class="td_HeadGray" scope="col" style="border-width: 1px; border-style: solid;">
+                        <p class="T1TableHead">Custom Fields, Notes</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid;">
+                        <p class="T2TableText">POI</p>
+                    </td>
+                    <td class="border" style="border-width: 1px; border-style: solid;">
+                        <p class="T2TableText">Optional:<br/>QuickData Previous Default: Text, dropdown list with two values: Previous Period, Previous Year</p>
+                        <p class="T2TableText">QuickData Data Collection Period:&nbsp;Text, dropdown list, with three values:&nbsp;Monthly, Quarterly, Annually</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="4" class="border" style="border-width: 1px; border-style: solid;">
+                        <p class="T2TableText">Parameter </p>
+                        <p class="T2TableText">&nbsp;</p>
+                        <p class="T2TableText">Calculated Requirements (for display only)</p>
+                    </td>
+                    <td class="border" style="border-width: 1px; border-style: solid;">
+                        <p class="T2TableText">QuickData Source (text, dropdown list, any values)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid;">
+                        <p class="T2TableText">QuickData Sort Order (number, text box)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid;">
+                        <p class="T2TableText">Active Date (filters display of requirements for data entry; if null, displays for all available dates) </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid;">
+                        <p class="T2TableText">Periodicity (values: Monthly, Yearly or Quarterly) Controls when data entry is allowed.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid;">
+                        <p class="T2TableText">Non-numeric requirement</p>
+                    </td>
+                    <td class="border" style="border-width: 1px; border-style: solid;">
+                        <p class="T2TableText">One NNR is required in the same location as the data entry parameters in order to display Data Lock and Comments box.</p>
+                        <p class="T2TableText">Properties are not important.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 id="h2_1569425167" data-has-heading-anchor="true">Quick Data Custom Fields<a href="/articles/management-system/qddatatabconfig/a/h2_1569425167" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/qddatatabconfig/a/h2_1569425167&#39;,this);"></a></h2><ol>
+            <li value="1">
+                <p>Create the following custom fields. The naming convention is important. The Name (id value) must be exactly as specified:</p>
+                <p class="Body"><b class="bold">QuickData Source</b>: Text/Dropdown list. List values may be anything that reflects your monitoring categories.&nbsp;</p>
+                <p class="Body"><b class="bold">QuickData Sort Order</b>: Number/Text box</p>
+                <p class="Body"><b class="bold">QuickData Previous Default</b>: Text/Dropdown list. Two list values: Previous Period and Previous Year.</p>
+                <p class="Body"><b class="bold">QuickData Data Collection Period</b>:&nbsp;Text/Dropdown list. Three list values:&nbsp;Monthly, Quarterly,&nbsp;Annually</p>
+            </li>
+            <li value="2">
+                <p>Create two Custom Field Templates and add these fields. </p>
+                <p class="Body">Template 1 for Numeric Requirements: Add the following fields to be applied to the requirements: <b class="bold">QuickData Source</b> and <b class="bold">QuickData Sort Order</b>.</p>
+                <p class="Body">Template 2 for POI (optional fields): Add the following field to be applied to the POI: <b class="bold">QuickData Previous Default</b> and <b class="bold">QuickData Data Collection Period</b>.</p>
+            </li>
+        </ol>
+        <p class="Body">You may use the same template for both the requirements and POI, but the fields will only be relevant according to the object type to which they are applied. If the objects already have a Custom Field Template, you can add the QuickData fields to that template. The template names are not important. </p>
+        <h2 id="h2_489257890" data-has-heading-anchor="true">Requirements for Quick Data<a href="/articles/management-system/qddatatabconfig/a/h2_489257890" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/qddatatabconfig/a/h2_489257890&#39;,this);"></a></h2><p class="Body">The following requirements can be set up for access through the Data tab in Quick Data:</p>
+        <ul class="brackets">
+            <li value="1">Parameters for which you want to allow users to enter data.</li>
+            <li value="2">Calculated requirements: Calculated data that you want to be visible (not editable)</li>
+            <li value="3">One non-numeric requirement (optional) to enable the data lock feature and allow comments to be added.</li>
+        </ul>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To set up the requirements to be accessed through the Data tab in Quick Data:</p>
+        <ol>
+            <li value="1">Apply a Custom Field Template with the fields <b class="bold">QuickData Source</b> and <b class="bold">QuickData Sort Order</b> to the requirements. </li>
+            <li value="2">
+                <p>Set the following properties on each requirement:</p>
+                <p><b class="bold">Active Date</b>: Earliest date for which you want to allow data entry. The requirement will not be shown for data entry before this date. If no date is entered, data entry will be allowed for any date available in the date dropdown (currently monthly from Jan 2002). (Inactive date can also be used to disable data entry after a set date.)</p>
+                <p class="Body">In addition, the Active and Inactive Dates on the parent object can be set to control data entry access to all child requirements. The active date on the parent is checked first, then the active dates on the child requirements. The active date on the parent object will override any active dates set on the children when deciding whether to display the requirements or not.</p>
+                <p class="Body"><b class="bold">Periodicity</b>: This setting is optional. You may use either the <b class="bold">QuickData Data&nbsp;Collection Period</b> on the POI to set the periodicity for all requirements or the periodicity field on the requirements. If no value is set for that POI&nbsp;custom field, or the field is not present, set periodicity for each requirement individually.</p>
+                <p class="Body">For monthly data, enter 1 Month. For yearly data, enter 1 Year. For quarterly data, enter 1 Quarter.</p>
+                <p class="Body">If the periodicity is 1 yr, the monthly selection will be disabled and by default the last month of the year will be selected (by default,&nbsp;December, but fiscal year end may be configured differently from the Data tab in Quick Data). For period of 1 yr, the data point is stored at  1200AM on the last day of the last month of the year.</p>
+                <p class="Body">For monthly or quarterly periods (or if periodicity is not defined), one data entry field is available for each month;  the data point will be stored at 1200 AM on the last day of the appropriate month. </p>
+                <p class="Note" madcap:autonum=" &nbsp;"><span class="autonumber"><span class="note_et_al"> &nbsp;</span></span>Periodicity setting for all requirements will be ignored if the field <b class="bold">QuickData Data Collection Period</b> is present on the POI in the system and has a value. </p>
+                <p class="Body"><b class="bold">Unit of Measure</b>: A value (any value) must be selected for the requirement to appear on the Enter Data tab.</p>
+                <p class="Body"><b class="bold">QuickData Source</b>: A value in this field (any value) will expose the requirement to the Quick Data page. If there is no value, the requirement will not be displayed in Quick Data.</p>
+                <p class="Body"><b class="bold">Quick Data Sort Order</b>: Numeric value, which determines the order of appearance in the list shown on the Data tab. If none is entered, or there are conflicts, sorting will be alphabetical.</p>
+                <p class="Body">
+                    <img src="images/QDReqtFields_401x619.png" style="width: 401;height: 619;" loading="lazy"/>
+                </p>
+            </li>
+            <li value="3">
+                <p>To add Comments box and Data Lock checkbox, create a Non-Numeric Requirement under the same POI as the requirements. </p>
+                <p class="Body">You can name it QuickData for identification; however the name is unimportant and no properties are required. (A Custom Field Template is also not necessary.) The mere existence of the NNR causes a Comments box and a Data Lock checkbox to appear in the page, below the data entry fields for the requirements. </p>
+                <p class="Body">The Comment and Data Lock features are optional. However, the data lock feature adds extra security, as it ensures that once data has been validated and locked, it cannot be edited further from the Data tab in EMS Quick Data by anyone. (Data can still be edited from the Management System if necessary. This is not to be confused with the data lock feature in the main application.)</p>
+                <p class="Important" madcap:autonum="Important: &nbsp;"><span class="autonumber"></span>For this feature to work properly, there should be only one NNR under the parent object, which is used exclusively for Quick Data. If there is more than one NNR, multiple Comment boxes and data lock checkboxes will be displayed, with the risk of overwriting or corrupting data already stored by existing NNRs.</p>
+            </li>
+            <li value="4">
+                <p>Apply the Custom Field Template that contains the fields <span class="_Override" style="font-weight: bold;">QuickData Previous Default</span> and&nbsp;<b class="bold">QuickData Data Collection Period</b> to the parent POI of the requirements.</p>
+                <p><b class="bold">QuickData Previous Default</b>: Default value to show in the Previous data column. Choice may be toggled from the user data entry screen.</p>
+                <ul>
+                    <li value="1">Previous Period shows the last data entry for the parameter (previous month, quarter or year, depending on the frequency of data entry).</li>
+                    <li value="2">Previous Year's Month shows the data for the same month last year. (In the case of yearly data entry, this is the same as the Previous Period.)</li>
+                </ul>
+                <p class="Body"><b class="bold">QuickData Data Collection Period</b>: Sets the data collection period (annually, monthly, or quarterly) for all requirements under the POI. If a value is present, any Periodicity values on the individual requirements will be ignored.</p>
+                <p class="F1FigAnchor">
+                    <img src="images/QuickDataPOICFT.png" loading="lazy"/>
+                </p>
+            </li>
+        </ol>
+        <h2 id="h2_554149842" data-has-heading-anchor="true">Fiscal Year and Quarter Configuration<a href="/articles/management-system/qddatatabconfig/a/h2_554149842" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/qddatatabconfig/a/h2_554149842&#39;,this);"></a></h2><p class="Body">If the yearly or quarterly data collection period does not conform to the standard calendar periods, you will need to change the designated end month from the Quick Data page.</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To change the end month for annual or quarterly data:</p>
+        <ol>
+            <li value="1">In Quick Data on the Data tab, click Configuration. (You must have admin rights to access this link.)</li>
+            <li value="2">
+                <p>Set the Annual or Quarterly period, depending on your data entry configuration.</p>
+                <p class="Body">For annual data entry, select  the Annual End month.&nbsp;This setting only applies if the collection period is annually. </p>
+                <p class="Body"> For quarterly data entry, select the First Quarter End month. This setting only applies if the collection period is quarterly.</p>
+            </li>
+            <li value="3">Click <b class="bold">Save</b>. Confirm by clicking OK. Click the Back link to return to data entry.</li>
+        </ol>
+        <p class="Note" madcap:autonum=" &nbsp;"><span class="autonumber"><span class="note_et_al"> &nbsp;</span></span>The Annual End and First Quarter End months set via the Configuration link are system settings and will apply to all QuickData pages for the system. It only needs to be set once on a QuickData page to apply to all other pages. (This has no value in the main application, however, which allows for data entry at any date/time.)</p>
+        <h2 id="h2_1727611033" data-has-heading-anchor="true">User Access &amp; Security<a href="/articles/management-system/qddatatabconfig/a/h2_1727611033" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/qddatatabconfig/a/h2_1727611033&#39;,this);"></a></h2><p class="Body">To view or enter data on the Data tab in Quick Data, users must have the following minimum permissions:</p>
+        <p class="BodyIndent"><b class="bold">View Data</b>: Allows users to see but not edit data values.</p>
+        <p class="BodyIndent"><b class="bold">View, Enter and Edit Data</b> on the requirements, including the non-numeric requirement used for data lock and comments. (Permissions may be inherited from the parent object.)</p>
+        <p class="Note" madcap:autonum=" &nbsp;"><span class="autonumber"><span class="note_et_al"> &nbsp;</span></span>Users must be Home users of the system they need to enter data for. There is no method for changing system models from Quick Data.</p>
+        <p class="Body">The Active/Inactive Dates on the facility and requirements also control what users see.</p>
+        <h2 id="h2_216047071" data-has-heading-anchor="true">Locking  Data<a href="/articles/management-system/qddatatabconfig/a/h2_216047071" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/qddatatabconfig/a/h2_216047071&#39;,this);"></a></h2><p class="Body">The lock checkbox on the data entry page may be used to lock data once it has been validated. The lock checkbox is an optional feature which can be set up using a non-numeric requirement, as explained in the setup instructions.</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To lock data:</p>
+        <ol>
+            <li value="1">Select the month and year to display the data for the selected period.</li>
+            <li value="2">Check the "lock" box at the bottom. Then click <b class="bold">Save</b>.</li>
+        </ol>
+        <p class="Body">Once the data set has been locked, the data may not be edited from the Quick Data interface. If necessary, the data may be edited from the main application. You may also reset the lock from the main application so that users may edit the data from Quick Data.</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To reset the lock:</p>
+        <ol>
+            <li value="1">In the main application, find the non-numeric requirement used to configure the Quick Data page.</li>
+            <li value="2">Right click the requirement and choose <b>Data &gt; Enter/Edit</b> . Select the data point whose date corresponds with the data you want to unlock.</li>
+            <li value="3">Click Delete.</li>
+        </ol>
+        <p class="Body">The lock box on the Quick Data page will now be unlocked and users may edit the data from Quick Data.</p>
+        <p class="Note" madcap:autonum=" &nbsp;"><span class="autonumber"><span class="note_et_al"> &nbsp;</span></span>The Quick Data lock box is unrelated to the data lock feature in the main application and applies only to the Quick Data interface.</p>
+        <script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

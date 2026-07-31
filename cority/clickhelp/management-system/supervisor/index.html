@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/supervisor"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Supervisor</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Supervisor';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1__1350356131" data-has-heading-anchor="true">Supervisor and Manager Functions<a href="/articles/management-system/supervisor/a/h1__1350356131" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/supervisor/a/h1__1350356131&#39;,this);"></a></h1><p>Setting the Supervisor for users allows filtering users in workflows by their supervisor.</p>
+        <p>EQL&nbsp;queries can be used to query workflows for a particular set of roles where one of the members lists the querying user as their Supervisor or is “down the Supervisor chain” from the querying user. The Supervisor field is also accessible through the REST&nbsp;APIs.</p>
+        <p>The Supervisor for a user is set through the User Profile. You can edit the user profile manually in the system UI, or use bulk tools to edit multiple user profiles.</p>
+        <p>The following EQL functions can be used:</p>
+        <ul><li>IsMember("RoleName1", "RoleName2") - This function will return TRUE for any given workflow instance IF the calling user resolves to any of the supplied Roles for the workflow instance</li>
+        </ul><ul><li>IsSupervisor("RoleName1", "RoleName2") - This function will return TRUE for any given workflow instance IF the calling user is listed as the direct Supervisor on the user profile of any user that resolves to any of the supplied Roles for the workflow instance.</li>
+        </ul><ul><li>IsManagement("RoleName1", "RoleName2") - This function will return TRUE for any given workflow instance IF the calling user is UP the "chain of command" based on the user profile of any user that resolves to any of the supplied Roles for the workflow instance.</li>
+        </ul><p class="BodyIndent">Chain of command simply means if user 5 is the supervisor of user 4, and user 4 is the supervisor of user 3, and user 3 is the supervisor of user 2, and user 2 is the supervisor of user. If user 4, user 3, user 2, or user 1 is a Role Member of any of the Roles supplied in the arguments for a given workflow instance, then if user 5 uses this function, the results should be true for that workflow instance.</p>
+        <p>See <a href="/smart/tools/eqluserguide" target="_top">EQL&nbsp;Help</a> for more information.</p>
+        <script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

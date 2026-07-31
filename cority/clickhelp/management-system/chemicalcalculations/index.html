@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/chemicalcalculations"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Chemical Calculations</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Chemical Calculations';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1__671271220" data-has-heading-anchor="true">Chemical Calculations<a href="/articles/management-system/chemicalcalculations/a/h1__671271220" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/chemicalcalculations/a/h1__671271220&#39;,this);"></a></h1><p class="Body">Chemical properties have two modes when used in calculations: </p>
+        <ul><li class="BodyIndent"><b>Explicit Property</b>:&nbsp;The property value for a specific chemical. Syntax: ChemExp_<i>Property</i></li>
+        <li class="BodyIndent"><b>Logical Property</b>:&nbsp;The value for the combination of chemicals that are used in a material. Syntax: Chem_<i>Property</i></li>
+        </ul><p class="Body">Property is the chemical property abbreviation (MW, AvgConc, AntA, etc., as seen in the Calculation Editor). </p>
+        <p>There are three ways of using these properties in material calculations, depending on what results you want to achieve:</p><ul><li>ChemExp_Alias_Property: This is a chemical explicit property use.</li><li>Aggregate(Chem_Property): This is a chemical logical aggregation.</li><li>Chem_Property: This a chemical logical linear usage.</li></ul><p>Alias is the chemical alias. Aggregate is an aggregation type (SUM, AVG, etc.)</p><h2 id="h2_1684013605" data-has-heading-anchor="true">Chemical explicit property<a href="/articles/management-system/chemicalcalculations/a/h2_1684013605" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/chemicalcalculations/a/h2_1684013605&#39;,this);"></a></h2><p class="Body">When a chemical explicit property is used in a material calculation, it refers to the explicit value for a specific chemical.</p>
+        <p class="BodyIndent">For example,&nbsp;<span style="font-size: 11pt;">[ChemExp_BZ_MW])&nbsp;</span><span style="font-size: 11pt;">results in the molecular weight of benzene, which is a property of the chemical.</span></p>
+        <h2 id="h2__1899693316" data-has-heading-anchor="true"><b class="bold">Chemical logical aggregations</b><a href="/articles/management-system/chemicalcalculations/a/h2__1899693316" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/chemicalcalculations/a/h2__1899693316&#39;,this);"></a></h2><p class="Body">When a chemical logical property is used in a calculation, surrounded by an aggregation, it refers to the aggregate value for all chemicals in the material. For example, SUM(Chem_MW) results in the sum of the molecular weights for all chemicals in the material.</p>
+        <p class="BodyIndent">For example, for a given material that contains benzene (MW=78.11), toluene (MW=92.13) and cyclohexane (MW=84.16),&nbsp;<span style="font-size: 11pt;">SUM([Chem_MW])&nbsp;</span><span style="font-size: 11pt;">results in the sum of the molecular weights of all three chemicals, or SUM(78.11, 92.13, 84.16) = 254.4.</span></p>
+        <h2 id="h2__507535185" data-has-heading-anchor="true"><b>Chemical logical linear usage</b><a href="/articles/management-system/chemicalcalculations/a/h2__507535185" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/chemicalcalculations/a/h2__507535185&#39;,this);"></a></h2><p class="Body">When a chemical logical property is used without an aggregation in a Chemical Logical Formula Based Property script, it results in a calculation for each chemical component for the material.</p>
+        <p class="BodyIndent">For the above material, a property named Chemical Molecular Wt, having this formula:</p>
+        <p class="Code2Last">[Chem_MW]&nbsp;<span style="font-size: 11pt;">results in three linear calculated values which may each be accessed individually by other calculations, using the property name including a suffix with the chemical alias, in this case:</span></p>
+        <ul><li class="Code2">[PropExp_Chemical&nbsp;Molecular Wt:BZ]</li>
+        <li class="Code2">[PropExp_Chemical&nbsp;Molecular Wt:TOL]</li>
+        <li class="Code2">[PropExp_Chemical&nbsp;Molecular Wt:CYC]</li>
+        </ul><p class="Body">These calculation modes may be combined in a formula to automatically produce values for each chemical in a material (without having to name the specific chemicals).</p>
+        <p class="Body"><b>Example</b>:&nbsp;The following Chemical Formula Based Primary Property is used to get the liquid mole fractions of each chemical in the material:</p>
+        <p class="C3CodeIndent">([Chem_AvgConc]/[Chem_MW])/SUM([Chem_AvgConc]/[Chem_MW])</p>
+        <p class="Note" madcap:autonum=" &nbsp;"><span class="autonumber"><span class="note_et_al"> &nbsp;</span></span>The liquid mole fraction of a component in a mixture is derived by 1) dividing the average concentration of a component by its molecular weight, then 2) dividing the result by the sum of the first calc for all components.  </p>
+        <p class="BodyIndent">For the above material, this results in three calculated values (one for each component), which can be accessed with the following syntax:</p>
+        <p class="Code2">[PropExp_LiqMoleFraction:BZ]</p>
+        <p class="Code2">[PropExp_LiqMoleFraction:TOL]</p>
+        <p class="Code2">[PropExp_LiqMoleFraction:CYC]</p>
+        <p class="Body">The following table shows the calculation  results:</p>
+        <table style="border-left-style: solid;border-left-width: 1px;border-left-color: #808080;border-right-style: solid;border-right-width: 1px;border-right-color: #808080;border-top-style: solid;border-top-width: 1px;border-top-color: #808080;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #808080;margin-left: 0;margin-right: auto;">
+            <colgroup><col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            </colgroup><tbody>
+                <tr>
+                    <th class="colHeadGray">Chemical</th>
+                    <th style="font-weight: bold;" class="colHeadGray">MW</th>
+                    <th style="font-weight: bold;" class="colHeadGray">AvgConc</th>
+                    <th style="font-weight: bold;" class="colHeadGray">AvgConc/MW</th>
+                    <th style="font-weight: bold;" class="colHeadGray">LiqMoleFraction</th>
+                </tr>
+                <tr>
+                    <td class="border">
+                        <p>Benzene</p>
+                    </td>
+                    <td class="border">78.11</td>
+                    <td class="border">89</td>
+                    <td class="border">1.139418768
+
+
+</td>
+                    <td class="border">0.902939766
+</td>
+                </tr>
+                <tr>
+                    <td class="border">Toluene</td>
+                    <td class="border">92.13</td>
+                    <td class="border">8</td>
+                    <td class="border">0.086833822</td>
+                    <td class="border">0.068812023</td>
+                </tr>
+                <tr>
+                    <td class="border">Cyclohexane</td>
+                    <td class="border">84.16</td>
+                    <td class="border">3</td>
+                    <td class="border">0.035646388</td>
+                    <td class="border">
+0.02824821</td>
+                </tr>
+                <tr>
+                    <td class="border">SUM</td>
+                    <td class="border">&nbsp;</td>
+                    <td class="border">100</td>
+                    <td class="border">1.261898978
+</td>
+                    <td class="border">1</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">To get these values in a Material Activity Calculation, you would use AVG for the aggregation (since the calc will produce the same result for each data line and you only want the discrete value). So: </p>
+        <p class="Code1">AVG([[PropExp_LiqMoleFraction:BZ])&nbsp;<span style="font-size: 11pt;">gives the value of the calc for Benzene.</span></p>
+        <p class="Code1">AVG([Prop_LiqMoleFraction]&nbsp;<span style="font-size: 11pt;">gives the value for all components, which  is 1 (a not very useful value in this case, except as a check).</span></p>
+        <p>Further, since this is a Primary formula, you can use it in a Secondary or Tertiary CLFBP and it will produce similar linear results for each component. Each linear calculation for a single chemical will use the value for the same chemical from any other CLFBP referenced in its formula.</p>
+        <p madcap:conditions="Default.Hide"><b>Example</b>:</p>
+        <p madcap:conditions="Default.Hide">A Tertiary CLFBP for total vapor pressure for a material looks like this:</p>
+        <p class="Code1" madcap:conditions="Default.Hide">(10^([AntA]-([AntB]/ ([Tla C]+[AntC])))*0.01933677) * [LiqMoleFraction]</p>
+        <p madcap:conditions="Default.Hide">where:</p>
+        <p class="BodyIndent" madcap:conditions="Default.Hide">AntA, AntB and Ant C are chemical properties</p>
+        <p class="BodyIndent" madcap:conditions="Default.Hide"> Tla C is a calculated value based on temperature</p>
+        <p class="BodyIndent" madcap:conditions="Default.Hide">LiqMoleFraction is the Primary CL&nbsp;FBP given above</p>
+        <p madcap:conditions="Default.Hide">The calculation will give three values for the same material, one for each chemical component. Each linear calculation for a single chemical will use the previous Primary CL&nbsp;FBP value for the same chemical. </p>
+        <table style="margin-left: 0;margin-right: auto;" madcap:conditions="Default.Hide">
+            <colgroup><col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col style="width: 88px;"/>
+            </colgroup><tbody>
+                <tr>
+                    <th style="font-weight: bold;" class="colHeadGray">Chemical</th>
+                    <th style="font-weight: bold;" class="colHeadGray">AntA</th>
+                    <th style="font-weight: bold;" class="colHeadGray">AntB</th>
+                    <th style="font-weight: bold;" class="colHeadGray">AntC</th>
+                    <th style="font-weight: bold;" class="colHeadGray">LiqMoleFraction</th>
+                    <th style="font-weight: bold;" class="colHeadGray">TLA C</th>
+                    <th style="font-weight: bold;" class="colHeadGray">Pva</th>
+                </tr>
+                <tr>
+                    <td class="border">
+                        <p>Benzene</p>
+                    </td>
+                    <td class="border">6.905
+</td>
+                    <td class="border">1211.033</td>
+                    <td class="border">220.79</td>
+                    <td class="border">0.902939766
+</td>
+                    <td class="border">11</td>
+                    <td class="border">0.836264442</td>
+                </tr>
+                <tr>
+                    <td class="border">Toluene</td>
+                    <td class="border">6.954</td>
+                    <td class="border">1344.8</td>
+                    <td class="border">219.48</td>
+                    <td class="border">0.068812023</td>
+                    <td class="border">11</td>
+                    <td class="border">0.017509295</td>
+                </tr>
+                <tr>
+                    <td class="border">Cyclohexane</td>
+                    <td class="border">6.841</td>
+                    <td class="border">1201.53</td>
+                    <td class="border">222.65</td>
+                    <td class="border">
+0.02824821</td>
+                    <td class="border">11</td>
+                    <td class="border">0.027285983</td>
+                </tr>
+                <tr>
+                    <td class="border">SUM</td>
+                    <td class="border">&nbsp;</td>
+                    <td class="border">&nbsp;</td>
+                    <td class="border">&nbsp;</td>
+                    <td class="border">&nbsp;</td>
+                    <td class="border">&nbsp;</td>
+                    <td class="border">0.88105972</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body" madcap:conditions="Default.Hide">The total vapor pressure of the material is the sum of the partial vapor pressures for each component. So we can get the value in a MAC or for use in another calc by asking for the aggregate value, shown in the last row:</p>
+        <p class="Code1" madcap:conditions="Default.Hide">SUM([Pva])</p>
+        <script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

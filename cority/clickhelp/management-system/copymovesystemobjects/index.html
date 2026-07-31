@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/copymovesystemobjects"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Copy/Move System Objects</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Copy/Move System Objects';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1__271432554" data-has-heading-anchor="true">Copy/Move System Objects<a href="/articles/management-system/copymovesystemobjects/a/h1__271432554" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/copymovesystemobjects/a/h1__271432554&#39;,this);"></a></h1>
+        <p class="Body">You can copy an existing system object using the Copy and Paste options, or move an object’s location using the Cut and Paste options. When you copy an object, tasks, documents, and citations associated with the object are also copied. Data is not copied.</p>
+        <p class="Body">When using the Copy and Paste options, you can choose whether to include child objects. When using the Cut and Paste option with an object, all child objects are automatically included. You can also use a Bulk Tools to copy objects for large operations.</p>
+        <p class="Body">Special considerations apply to copying or moving calculated requirements and any associated variables. See <a class="MCXref_Heading_0" href="/articles/management-system/copycalculatedrequirement" xrefformat="{paratext}" onclick="return n(&#39;!management-system/copycalculatedrequirement&#39;,this);">Copying Calculated Requirements</a>.</p>
+        <p class="Body">You can copy an existing system object to create a new object with the same properties. When you copy an object, tasks, documents, and citations associated with the object are also copied. Data is not copied.</p>
+        <p class="Body">When copying a parent object, you may choose whether to include children. A containment rule is applied when copying calculated requirements, as follows:</p>
+        <ul class="brackets">
+            <li value="1">If all requirements referenced in the calc are included in the copy, then relative reference integrity is maintained. That is, the calculation formula will reference the new requirements copied along with it.</li>
+            <li value="2">If requirements referenced in the calc are not part of the copy operation, then references to the original requirements are maintained.</li>
+        </ul>
+        <p class="Tip" madcap:autonum=" &nbsp;"><span class="autonumber"><span class="note_et_al"> &nbsp;</span></span>You can copy an object in the system model tree, along with all its children, to another location on the tree by dragging and dropping the object with the cursor. To move an object (delete it from one location and add it to another), use hold down the Ctrl key as you drag and drop. (These drag and drop actions only work within the System Model pane.)</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To copy a system object:</p>
+        <ol>
+            <li value="1">
+                <p>Right click the object you want to copy and select <b class="bold">Copy</b>.</p>
+                <p class="Body">The hierarchical rules of the tree structure apply in copying:</p>
+                <ul>
+                    <li value="1">A Facility/Program may only be copied to a Division or to the top level (Locations &amp; Programs).</li>
+                    <li value="2">A Unit/Element may be only be copied to a Facility/Program. </li>
+                    <li value="3">POIs may be copied to a Unit/Element or a Facility/Program.</li>
+                    <li value="4">Requirements and Event Logs may be copied to a POI, Unit/Element or Facility/Program.</li>
+                </ul>
+            </li>
+            <li value="2">
+                <p>Select the parent object under which you want to make a copy.</p>
+            </li>
+            <li value="3">
+                <p>Right click and select <b class="bold">Paste</b>.</p>
+                <p class="Body">The Copy Object screen appears. The item to copy is shown, along with the object to which you are copying.</p>
+            </li>
+            <li value="4">Rename the object, if desired. If you are copying to the same parent object, you must provide a different name. You can keep the same name if copying to a different parent.</li>
+            <li value="5">
+                <p class="Body">To include children of the object, leave the <b class="bold">Include Children</b> box selected.</p>
+                <p class="Body">If you only want to copy the parent object, de-select <b class="bold">Include Children</b>.</p>
+            </li>
+            <li value="6">
+                <p>Click <b class="bold">Copy</b>.</p>
+                <p class="Body">The object is copied and appears in the system model tree in the location designated. The object may initially appear in blue, indicating that the transaction is in process. (It may remain in blue until the view is refreshed.)</p>
+            </li>
+        </ol>
+        <p class="Body">After copying an object, you should make sure that any calculations that were copied with it are valid in their new environment. See <a class="MCXref_Heading_0" href="/articles/management-system/copycalculatedrequirement" xrefformat="{paratext}" onclick="return n(&#39;!management-system/copycalculatedrequirement&#39;,this);">Copying Calculated Requirements</a>.</p>
+        <h2 id="h2__19061512" data-has-heading-anchor="true">Moving Objects<a href="/articles/management-system/copymovesystemobjects/a/h2__19061512" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/copymovesystemobjects/a/h2__19061512&#39;,this);"></a></h2>
+        <p class="Body">You can move an object from one location to another using the Cut and Paste function. You can also use Bulk Tools for large operations.</p>
+        <p class="Body">If you move an object that is a part of a calculation setup, all references will point to the object in the new location. Alternately, you can collect all requirements used in the calculation setup under one parent object, then move the parent object with all of its children, in order to maintain the relative referential integrity.</p>
+        <p class="Body">You can research all requirement dependencies before moving an object using <a class="MCXref_Heading_0" href="/articles/management-system/viewdependencies" xrefformat="{paratext}" onclick="return n(&#39;!management-system/viewdependencies&#39;,this);">View Dependencies</a>.</p>
+        <p class="Tip" madcap:autonum=" &nbsp;"><span class="autonumber"><span class="note_et_al"> &nbsp;</span></span>You can move an object in the system model tree, along with its children, by holding down the Ctrl key as you drag and drop it to a new location in the tree. To make a copy of an object, drag and drop it without holding down Ctrl key. (These drag and drop actions only work within the System Model pane.)</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To move an object:</p>
+        <ol>
+            <li value="1">Right click the object in the System Model tree and select <b class="bold">Cut</b>.</li>
+            <li value="2">
+                <p>Select the parent object to which you want to move the object. Right click and choose <b class="bold">Paste</b>.</p>
+                <p class="Body">The Move Object screen appears, showing the current path of the object and the new path. You can rename the object if desired.</p>
+            </li>
+            <li value="3">
+                <p>Select <b class="bold">Move</b>.</p>
+                <p class="Body">If the move was successful, a confirmation message displays. </p>
+            </li>
+        </ol>
+        <p class="Note" madcap:autonum=" &nbsp;"><span class="autonumber"><span class="note_et_al"> &nbsp;</span></span>Moving numeric and calculated requirements to a facility in a different time zone can affect the effective dates for calculations. For more information, see <a class="MCXref_Heading_0" href="/articles/management-system/copymoveobjectsacrosstimezone" xrefformat="{paratext}" onclick="return n(&#39;!management-system/copymoveobjectsacrosstimezone&#39;,this);">Copy/Move Objects Across Time Zones</a>.</p>
+        <script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

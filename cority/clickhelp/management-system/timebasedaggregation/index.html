@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/timebasedaggregation"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Time-Based Aggregation</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Time-Based Aggregation';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1_1939076537" data-has-heading-anchor="true">Time-Based Aggregation<a href="/articles/management-system/timebasedaggregation/a/h1_1939076537" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/timebasedaggregation/a/h1_1939076537&#39;,this);"></a></h1>
+        <p class="Body" style="mc-auto-number-format: &#39;N:{ =0}&#39;;mc-auto-number-position: inside-head;mc-auto-number-offset: 0px;" madcap:autonum=""><span class="autonumber"><span></span></span>A Time-Based Aggregation requirement is used to continuously calculate an aggregation (SUM, AVG, VAR, etc.) of a tracked parameter for a specified time period. Generally, each calculation will be the specified aggregation for the period of time from the Begin Date to the current date. As such, it is ideal for year-to-date calculations. </p>
+        <p class="Body" style="mc-auto-number-format: &#39;N:{ =0}&#39;;mc-auto-number-position: inside-head;mc-auto-number-offset: 0px;" madcap:autonum=""><span class="autonumber"><span></span></span>Each calculation operation will use one more additional data point from the tracked parameter than the previous operation. </p>
+        <p class="Body" style="mc-auto-number-format: &#39;N:{ =0}&#39;;mc-auto-number-position: inside-head;mc-auto-number-offset: 0px;" madcap:autonum=""><span class="autonumber"><span></span></span>For example, the calculation on Day 1 will use one data point. On Day 2 it will use two data points, or if no value was entered for Day 2, it will use only the previous data to perform the operation. Day n will use n data points.</p>
+        <p class="Body">Available aggregate functions include SUM, AVG, VAR, MIN, MAX, STDEV, etc.). For a full list of available aggregate functions, see <a class="MCXref_Heading_0" href="/articles/management-system/aggregation-types" onclick="return n(&#39;!management-system/aggregation-types&#39;,this);">Aggregation Types</a>.</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To create a time-based aggregation requirement:</p>
+        <ol>
+            <li value="1">Right click the parent object and choose <b class="bold">New &gt; Requirement</b>.</li>
+            <li value="2">Select the <b class="bold">Requirement Template</b>.</li>
+            <li value="3">
+                <p>Select <b class="bold">Time-Based Aggregation</b> for the type.</p>
+                <p class="Body">
+                    <img src="images/CreateTBAggregation.png" style="margin: 1.00008px 0.999371px 1.00007px 1.00008px;" alt="" loading="lazy"/>
+                </p>
+                <p class="Body">To apply user-defined custom fields, select a Custom Field Template to apply. See <a class="MCXref_Heading_0" href="/articles/management-system/customfieldtemplates" onclick="return n(&#39;!management-system/customfieldtemplates&#39;,this);">Custom Field Templates</a>.</p>
+            </li>
+            <li value="4">Click <b class="bold">Continue</b>.</li>
+            <li value="5">
+                <p>Enter a <b class="bold">Name</b>.</p>
+                <p>You can add translated values for localization by clicking on the language symbol <img src="images/Loc_icon.png" class="borderless" loading="lazy"/>. </p>
+                <p class="Body">In the Requirement Source section you can further define the requirement driver by selecting the <b class="bold">Specific Citation</b> and specifying a <b class="bold">Periodicity</b>. See <a class="MCXref_Heading_0" href="/articles/management-system/fieldscalculatedreqts" onclick="return n(&#39;!management-system/fieldscalculatedreqts&#39;,this);">Field Definitions for Calculated Requirements</a>.</p>
+                <p class="Body">Other optional fields include:</p>
+                <p class="Body"><b class="bold">Active Date/Inactive Date:&nbsp;</b><span class="_Override">The begin and end dates that a requirement applies (optional)</span>
+                </p>
+                <p class="Body"><b class="bold">Description</b>: General description of requirement</p>
+                <p class="Body"><b class="bold">UOM</b>: Unit of measure</p>
+                <p class="Body"><b class="bold">Precision</b>: Number of places to the right of the decimal point to display</p>
+                <p class="Body"><b class="bold">Calculation purpose</b>: Describe what you want to accomplish in the formula.</p>
+            </li>
+            <li value="6">
+                <p>In the Description section choose the following settings:</p>
+                <p><b>Select the parameter to use in the calculation</b>: Click the "select" button next to the box, then find and select the parameter.</p>
+                <p><b>Generate Results</b>:&nbsp;Select the frequency to generate result: <b class="bold">Hourly</b> or <b class="bold">Daily</b>.</p>
+                <p><b class="bold">Aggregation Type</b>:&nbsp;Select the type of aggregation from the list. (See <a class="MCXref_Heading_0" href="/articles/management-system/aggregation-types" onclick="return n(&#39;!management-system/aggregation-types&#39;,this);">Aggregation Types</a>.)</p>
+                <p class="Body">The resulting calculation will be a simple aggregate, of the form AVG ([Parameter]). </p>
+            </li>
+            <li value="7">Select the frequency to generate result: <b class="bold">Hourly</b> or <b class="bold">Daily</b>.</li>
+            <li value="8">
+                <p>Select the <b class="bold">Aggregation Type</b> from the list. (See <a class="MCXref_Heading_0" href="/articles/management-system/aggregation-types" onclick="return n(&#39;!management-system/aggregation-types&#39;,this);">Aggregation Types</a>.)</p>
+            </li>
+            <li value="9">
+                <p>Click the plus sign (+) in the Active Time bar to define the time period for the aggregation. Click <b class="bold">New</b> to add an active date.</p>
+                <p>Enter the <b class="bold">Begin Date</b>. The Begin Date (required) is the date to begin calculating from. Aggregation is inclusive of the Begin Date and exclusive of the End Date, if specified. </p>
+                <p>Click <u>Update</u> to save the value history.</p>
+                <p>
+                    <img src="images/TBAggSettings.png" alt="" style="" loading="lazy"/>
+                </p>
+                <p>Other options include:</p>
+                <p><b class="bold">Expected Frequency</b>: Can be used to produce a data warning if expected data is missing. The expected frequency is defined as the number of data points expected per day. A Begin Date must be set.</p>
+                <p class="Body"><b class="bold">Limits</b>: Regulatory and internal limits may be set in order to produce data warning when limits are exceeded. See <a class="MCXref_Heading_0" href="/articles/management-system/settingregulatorylimits" onclick="return n(&#39;!management-system/settingregulatorylimits&#39;,this);">Setting Regulatory Limits</a>.</p>
+            </li>
+            <li value="10">Click <b class="bold">Save</b> to save the calculated requirement.</li>
+        </ol>
+        <script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,771 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/samplenotifications"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Sample Email Notifications for Apps and Tasks</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Sample Email Notifications for Apps and Tasks';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1_760110162" data-has-heading-anchor="true">
+  Sample Email Notifications for Apps and Tasks
+<a href="/articles/management-system/samplenotifications/a/h1_760110162" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/samplenotifications/a/h1_760110162&#39;,this);"></a></h1>
+<p>
+  Sample notification template formats are provided for your use in setting up notifications for Apps in your system. The notification templates  are shown in the table below. The text of the message can be edited as you wish.
+</p>
+<p>
+  Right click the links and download the text files to your system, then follow these instructions for setting up the Notification Templates. 
+</p>
+<p class="StepIntro" madcap:autonum="">
+  <span class="autonumber"><span></span></span>To create the Notification Templates:
+</p>
+<ol>
+  <li value="1">
+    From the main menu button, select Setup&nbsp;&gt;&nbsp;Notifications &gt;&nbsp;Templates.
+  </li>
+  <li value="2">
+    Select New Notification Template.
+  </li>
+  <li value="3">
+    <p>
+      For the Type:
+    </p>
+    <p>
+      For App notifications, select Workflow Notification.
+    </p>
+    <p>
+      For the Standard Task Notifications and the Portal Form for Tasks Only (used for tasks not associated with a workflow), select Task Notification. 
+    </p>
+  </li>
+  <li value="4">
+    Enter a name for the template.
+  </li>
+  <li value="5">
+    <p>
+      Enter a Subject line. Suggested Subject lines are given in the table below.
+    </p>
+  </li>
+  <li value="6">
+    For the HTML message body, click Source.
+  </li>
+  <li value="7">
+    Open the notification text file  in a text editor (i.e., Notepad or Notepad++). Select and copy the contents, then paste it into the Source window.
+  </li>
+  <li value="8">
+    <p>
+      Click Save. A preview of the message will be displayed. Click Confirm to save the template.
+    </p>
+    <p>
+      A notification template to be used for an App must then be associated with a <a href="/articles/management-system/copyworkflowpolicy" onclick="return n(&#39;!management-system/copyworkflowpolicy&#39;,this);">Workflow Policy</a>, which is then associated with the workflow type for the App. The default policies for the global apps and their associations are shown in the second table below.
+    </p>
+    <p>
+      A notification template for a task must be associated with a <a href="/articles/management-system/tasktemplates" onclick="return n(&#39;!management-system/tasktemplates&#39;,this);">Task Template</a> used to create the task.
+    </p>
+  </li>
+</ol>
+<table style="border-style: solid; border-width: 1px; border-color: #696969; margin-left: 0px; margin-right: auto; width: 715px; height: 1262px;">
+  <colgroup>
+    <col/>
+    <col/>
+    <col style="width: 149px;"/>
+  </colgroup>
+  <tbody>
+    <tr>
+      <td class="td_HeadGray" style="font-weight: bold;">
+        Notification&nbsp;Template Name
+      </td>
+      <td class="td_HeadGray" style="font-weight: bold;">
+        Subject
+      </td>
+      <td class="td_HeadGray" style="font-weight: bold;">
+        HTML&nbsp;text file
+      </td>
+    </tr>
+    <tr>
+      <td class="td_green" colspan="3">&nbsp;Task App
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        <p>
+          Standard Task Notification
+        </p>
+        <p>
+          (Notification type=Task)
+        </p>
+        <p>
+          Includes options to go to Management System or to Task App. Also includes optional button for users to add task to their local calendar (i.e., Outlook).
+        </p>
+      </td>
+      <td class="border">
+        Task Message Notification: {task::name}
+      </td>
+      <td class="border">
+        <a href="/resources/Storage/management-system/Notifications/Standard%20Task%20Notification.txt" target="_blank">Standard Task Notification.txt</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="td_green" colspan="3">
+        Portal
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Portal Form for Workflows
+      </td>
+      <td class="border">
+        You have been assigned a workflow: {flow::name}
+      </td>
+      <td class="border">
+        <a href="/resources/Storage/management-system/Notifications/Portal%20Form%20for%20Workflows.txt" target="_blank">Portal Form for Workflows.txt</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        <p>
+          Portal Form Task Only
+        </p>
+        <p>
+          (Notification type=Task)
+        </p>
+      </td>
+      <td class="border">
+        You have been assigned a task:&nbsp; {task::name}
+      </td>
+      <td class="border">
+        <a href="/resources/Storage/management-system/Notifications/Portal%20Form%20Task%20Only.txt" target="_blank">Portal Form Task Only.txt</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="td_green" colspan="3">
+        Workflow App Builder
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Process - New
+      </td>
+      <td class="border">
+        Task Message Notification: {task::name}
+      </td>
+      <td class="border">
+        <a href="/resources/Storage/management-system/Notifications/Process%20-%20New.txt" target="_blank">Process - New.txt</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="td_green" colspan="3">
+        Audit App
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Audit - Corrective Action Assignment
+      </td>
+      <td class="border">
+        You have been assigned a Corrective Action
+      </td>
+      <td class="border">
+        <a href="/resources/Storage/management-system/Notifications/Audit%20-%20Corrective%20Action%20Assignment.txt" target="_blank">Audit - Corrective Action Assignment.txt</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="td_green" colspan="3">
+        Management of Change App
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Change Request - New
+      </td>
+      <td class="border">
+        A New Change Request - {flow::name} has been submitted
+      </td>
+      <td class="border">
+        <a href="/resources/Storage/management-system/Notifications/Change%20Request%20-%20New.txt" target="_blank">Change Request - New.txt</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        <p>
+          Change Request - PSSR
+        </p>
+      </td>
+      <td class="border">
+        A Change Request - {flow::name} is ready for pre-startup safety review
+      </td>
+      <td class="border">
+        <p>
+          <a href="/resources/Storage/management-system/Notifications/Change%20Request%20-%20PSSR.txt" target="_blank">Change Request - PSSR.txt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Change Request - Review
+      </td>
+      <td class="border">
+        A Change Request - {flow::name} is ready for review and final stakeholder approval
+      </td>
+      <td class="border">
+        <a href="/resources/Storage/management-system/Notifications/Change%20Request%20-%20Review.txt" target="_blank">Change Request - Review.txt</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        <p>
+          Change Request - Start-Up Approval
+        </p>
+      </td>
+      <td class="border">
+        A Change Request - {flow::name} is ready for review for your startup approval
+      </td>
+      <td class="border">
+        <p>
+          <a href="/resources/Storage/management-system/Notifications/Change%20Request%20-%20Start-Up%20Approval.txt" target="_blank">Change Request - Start-Up Approval.txt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        <p>
+          Change Request - Final Documentation
+        </p>
+      </td>
+      <td class="border">
+        A Change Request - {flow::name} is ready for final documentation
+      </td>
+      <td class="border">
+        <p>
+          <a href="/resources/Storage/management-system/Notifications/Change%20Request%20-%20Final%20Documentation.txt" target="_parent">Change Request - Final Documentation.txt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Change Request - Departmental Evaluation Form</td>
+      <td class="border">
+        A Change Request - {flow::name} is ready for your departmental evaluation
+      </td>
+      <td class="border">
+        <a href="/resources/Storage/management-system/Notifications/Change%20Request%20-%20Departmental%20Evaluation%20Form.txt" target="_blank">Change Request - Departmental Evaluation Form.txt</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Change Request - Action Assignment
+      </td>
+      <td class="border">
+        You have been assigned an Action Item
+      </td>
+      <td class="border">
+        <a href="/resources/Storage/management-system/Notifications/Change%20Request%20-%20Action%20Assignment.txt" target="_blank">Change Request - Action Assignment.txt</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Change Request - Action Assignment Review
+      </td>
+      <td class="border">
+        You have been assigned an Action Item to Review
+      </td>
+      <td class="border">
+        <a href="/resources/Storage/management-system/Notifications/Change%20Request%20-%20Action%20Assignment%20Review.txt" target="_blank">Change Request - Action Assignment Review.txt</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="td_green" colspan="3">
+        Inspection App
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Inspection - Corrective Action Assignments Dashboard
+      </td>
+      <td class="border">
+        You have been assigned a Corrective Action
+      </td>
+      <td class="border">
+        <a href="/resources/Storage/management-system/Notifications/Inspection%20-%20Corrective%20Action%20Assignments%20Dashboard.txt" target="_blank">Inspection - Corrective Action Assignments Dashboard.txt</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Corrective Action Assignment
+      </td>
+      <td class="border">
+        You have been assigned a Corrective Action
+      </td>
+      <td class="border">
+        <a href="/resources/Storage/management-system/Notifications/Inspection%20-%20Corrective%20Action%20Assignment.txt" target="_blank">Inspection - Corrective Action Assignment.txt</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="td_green" colspan="3">
+        Incident App
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Incident - New
+      </td>
+      <td class="border">
+        A New EHS Incident - {flow::name} has been recorded
+      </td>
+      <td class="border">
+        <a href="/resources/Storage/management-system/Notifications/Incident%20-%20New.txt" target="_blank">Incident - New.txt</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Incident - Investigations
+      </td>
+      <td class="border">
+        An EHS Incident - {flow::name} is ready for Investigation
+      </td>
+      <td class="border">
+        <a href="/resources/Storage/management-system/Notifications/Incident%20-%20Investigation.txt" target="_blank">Incident - Investigation.txt</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Incident - Review
+      </td>
+      <td class="border">
+        The Incident - {flow::name}- {flow::unique id} has been submitted for Review
+      </td>
+      <td class="border">
+        <a href="/resources/Storage/management-system/Notifications/Incident%20-%20Review.txt" target="_blank">Incident - Review.txt</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Incident -&nbsp;Action Assignment
+      </td>
+      <td class="border">
+        You have been assigned an Action Item
+      </td>
+      <td class="border">
+        <a href="/resources/Storage/management-system/Notifications/Incident%20-%20Action%20Assignment.txt" target="_blank">Incident - Action Assignment.txt</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Incident -&nbsp;Actions Assignment Review
+      </td>
+      <td class="border">
+        You have been assigned an Action Item to Review
+      </td>
+      <td class="border">
+        <a href="/resources/Storage/management-system/Notifications/Incident%20-%20Action%20Assignment%20Review.txt" target="_blank">Incident - Action Assignment Review.txt</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="Note" madcap:autonum=" &nbsp;">
+  <span class="autonumber"><span class="note_et_al"> &nbsp;</span></span>The Portal Form notifications contain links that will take users to the completion form in the Portal for a specific Pageset, Page and Panel, so associations will depend on the items chosen for display in those panels.
+</p>
+<p class="Note" madcap:autonum=" &nbsp;">
+  <span class="autonumber"><span class="note_et_al"> &nbsp;</span></span> The Standard Notification for Tasks and the Portal Form Task Only (for tasks not associated with workflows) are associated with a Task Template rather than a workflow policy. 
+</p>
+<p class="bold">
+  Default Workflow Policies and Associations
+</p>
+<table style="border-style: solid; border-width: 1px; border-color: #696969; margin-left: 0px; margin-right: auto; width: 832px; height: 1357px;">
+  <colgroup>
+    <col/>
+    <col style="width: 221px;"/>
+    <col/>
+    <col style="width: 119px;"/>
+    <col/>
+  </colgroup>
+  <tbody>
+    <tr>
+      <td class="td_HeadGray" style="font-weight: bold;">
+        Workflow Policy
+      </td>
+      <td class="td_HeadGray" style="font-weight: bold;">
+        Notification Template
+      </td>
+      <td class="td_HeadGray" style="font-weight: bold;">
+        Roles
+      </td>
+      <td class="td_HeadGray" style="font-weight: bold;">
+        Time to Notify
+      </td>
+      <td class="td_HeadGray" style="font-weight: bold;">
+        Workflow Type
+      </td>
+    </tr>
+    <tr>
+      <td class="td_green" colspan="5">
+        Management of Change App
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Change Request
+      </td>
+      <td class="border">
+        Change Request - New
+      </td>
+      <td class="border">
+        EMC-MOCAdministrator
+      </td>
+      <td class="border">
+        On Step Completion:&nbsp;Log Change Request
+      </td>
+      <td class="border" rowspan="5">
+        EMC-Change Request 
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        <p>
+          Change Request
+        </p>
+      </td>
+      <td class="border">
+        <p>
+          Change Request - PSSR
+        </p>
+      </td>
+      <td class="border">
+        EMC-Stakeholder-Operations
+      </td>
+      <td class="border">
+        <p>
+          On Step Assignment:&nbsp;PSSR
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Change Request
+      </td>
+      <td class="border">
+        Change Request - Review
+      </td>
+      <td class="border">
+        EMC-Stakeholder
+      </td>
+      <td class="border">
+        On Step Assignment:&nbsp;Review (All Stakeholders)
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        <p>
+          Change Request
+        </p>
+      </td>
+      <td class="border">
+        <p>
+          Change Request - Start-Up Approval
+        </p>
+      </td>
+      <td class="border">
+        EMC-FacilityManager
+      </td>
+      <td class="border">
+        On Step Assignment:Start-Up Approval
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        <p>
+          Change Request
+        </p>
+      </td>
+      <td class="border">
+        <p>
+          Change Request - Final Documentation
+        </p>
+      </td>
+      <td class="border">
+        EMC-MOCAdministrator
+      </td>
+      <td class="border">
+        On Step Assignment:&nbsp;Final Documentation
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Change Request - Departmental Evaluation Form
+      </td>
+      <td class="border">
+        Change Request - Departmental Evaluation Form
+      </td>
+      <td class="border">
+        Assignee
+      </td>
+      <td class="border">
+        On Step Assignment:&nbsp;Any
+      </td>
+      <td class="border">
+        <p>
+          EMC-Evaluate-Engineering
+        </p>
+        <p>
+          EMC-Evaluate-Safety
+        </p>
+        <p>
+          EMC-Evaluate-Environmental
+        </p>
+        <p>
+          EMC-Evaluate-Operations
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Change Request - Action
+      </td>
+      <td class="border">
+        Change Request - Action Assignment
+      </td>
+      <td class="border">
+        Assignee
+      </td>
+      <td class="border">
+        On Step Assignment: Complete Action
+      </td>
+      <td class="border" rowspan="2">
+        EMC-Action
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Change Request - Action
+      </td>
+      <td class="border">
+        Change Request - Action Assignment Review
+      </td>
+      <td class="border">
+        Assignee
+      </td>
+      <td class="border">
+        <p>
+          On Step Assignment: Review Action
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td class="td_green" colspan="5">
+        Task App
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        None (see Note above)
+      </td>
+      <td class="border">
+        Standard Task Notification
+      </td>
+      <td class="border">
+        Assignee
+      </td>
+      <td class="border">
+        Time to Notify:&nbsp;Immediately
+      </td>
+      <td class="border">
+        None
+      </td>
+    </tr>
+    <tr>
+      <td class="td_green" colspan="5">
+        Workflow App&nbsp;Builder
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        New Process
+        
+      </td>
+      <td class="border">
+        Process - New
+      </td>
+      <td class="border">
+        Assignee 
+      </td>
+      <td class="border">
+        On Step Completion: Log
+      </td>
+      <td class="border">
+        New Primary WF 
+      </td>
+    </tr>
+    <tr>
+      <td class="td_green" colspan="5">
+        Audit App
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Audit - Corrective   
+      </td>
+      <td class="border">
+        Action
+        
+        Audit - Corrective Action Assignment
+      </td>
+      <td class="border">
+        Assignee 
+      </td>
+      <td class="border">
+        On Step Assignment: Any 
+      </td>
+      <td class="border">
+        EAA-Corrective Action 
+      </td>
+    </tr>
+    <tr>
+      <td class="td_green" colspan="5">
+        Inspection App
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Inspection - Corrective Action 
+      </td>
+      <td class="border">
+        Inspection - Corrective Action Assignments Dashboard
+      </td>
+      <td class="border">
+        Assignee 
+      </td>
+      <td class="border">
+        On Step Assignment: Any
+      </td>
+      <td class="border">
+        EIA-Corrective Action
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Inspection - Corrective Action
+      </td>
+      <td class="border">
+        Inspection - Corrective Action Assignment
+      </td>
+      <td class="border">
+        Assignee 
+      </td>
+      <td class="border">
+        On Step Assignment: Any
+      </td>
+      <td class="border">
+        EIA-Corrective Action
+      </td>
+    </tr>
+    <tr>
+      <td class="td_green" colspan="5">
+        Incident App
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Incident   
+      </td>
+      <td class="border">
+        Incident - New 
+      </td>
+      <td class="border">
+        EII-IncidentManager
+      </td>
+      <td class="border">
+        On Step Completion: Log Incident 
+      </td>
+      <td class="border">
+        EII-Incident 
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Incident 
+      </td>
+      <td class="border">
+        Incident - Review 
+      </td>
+      <td class="border">
+        EII-InvestigationTeam 
+      </td>
+      <td class="border">
+        On Step Assignment: Investigation
+      </td>
+      <td class="border">
+        EII-Incident 
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Incident 
+      </td>
+      <td class="border">
+        Incident - Investigation 
+      </td>
+      <td class="border">
+        EII-Approver
+      </td>
+      <td class="border">
+        On Step Assignment: Investigation
+      </td>
+      <td class="border">
+        EII-Incident 
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Incident Action
+      </td>
+      <td class="border">
+        Incident - Action Assignment
+      </td>
+      <td class="border">
+        Assignee 
+      </td>
+      <td class="border">
+        On Step Assignment: Complete Action
+      </td>
+      <td class="border">
+        EII-Action
+      </td>
+    </tr>
+    <tr>
+      <td class="border">
+        Incident Action
+      </td>
+      <td class="border">
+        Incident - Action Assignment Review
+      </td>
+      <td class="border">
+        Assignee 
+      </td>
+      <td class="border">
+        On Step Assignment: Review Action
+      </td>
+      <td class="border">
+        EII-Action
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  &nbsp;
+</p>
+<script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+</script><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

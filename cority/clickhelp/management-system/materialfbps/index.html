@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/materialfbps"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Material Formula Based Properties</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Material Formula Based Properties';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1__1707807471" data-has-heading-anchor="true">Material Formula Based Properties<a href="/articles/management-system/materialfbps/a/h1__1707807471" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/materialfbps/a/h1__1707807471&#39;,this);"></a></h1><p class="Body">Material Formula Based properties (Material FBPs) are calculated properties of materials. There are Primary, Secondary and Tertiary formula-based properties, defined by when they can be calculated and the types of values they can use in their formulas.</p>
+        <ul><li class="BodyIndent"><b>Primary FBPs and CLFBPs</b> can be calculated based solely on the material’s composition and its basic properties, without reference to its usage. The values are calculated in the system when the material is created and the value is stored with the material.</li>
+        <li class="BodyIndent"><b>Secondary FBPs and CLFBPs</b> can be calculated when it is known where the material is used. The calculation may be dependent on such factors as annual temperature data for the location, or equipment specifications that are stored on a calculation template associated with the system object that represents the equipment.</li>
+        <li class="BodyIndent"><b>Tertiary FBPs and CLFBPs</b> can only be calculated when a data point is entered. The calculation may depend on inputs such as how much material was used, how long a piece of equipment was run, or monthly temperature data. They may also need to find a value for a local variable for which a data timestamp is required.</li>
+        </ul><p class="Body">The "simple calc versions" (FBPs) create a single value, which is an aggregate of all the chemicals in the material. The "chemical logical" versions of these property (CLFBPs) can create separate calculated values for each chemical in the material, each of which can be accessed in other calculations.</p>
+        <h2 id="h2_245051334" data-has-heading-anchor="true"><b>Example of Material FBP</b><a href="/articles/management-system/materialfbps/a/h2_245051334" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/materialfbps/a/h2_245051334&#39;,this);"></a></h2><p class="Body">A standard Formula Based Primary property may be expressed as:</p>
+        <p class="Code1Last" style="margin-left: 40px;">[ChemExp_Bz_MW]*[ChemExp_BZ_AvgConc] </p>
+        <p class="BodyIndent">which yields a calculated result for one specific named chemical using the chemical specific property reference. </p>
+        <p class="BodyIndent">Or, it may have an aggregate formula, expressed as:</p>
+        <p class="Code1Last" style="margin-left: 40px;"> SUM([Chem_MW]*[Chem_AvgConc]) </p>
+        <p class="BodyIndent">which  results in a single calculated result that is an aggregate of all the chemicals in the material.</p>
+        <p class="BodyIndent">With either formula, only one value is returned. </p>
+        <p class="Body">A Chemical Logical Formula Based Primary property may be expressed in a third manner, without an aggregation:</p>
+        <p class="Code1Last" style="margin-left: 40px;">[Chem_MW]*[Chem_AvgConc] </p>
+        <p class="BodyIndent">which results in multiple calculated results, one for each chemical in the material. So if the material has 3 chemicals there will be 3 values; if it has 10 chemicals, there will be 10 values. Each of these may be retrieved individually using the syntax:</p>
+        <p class="Code1Last" style="margin-left: 40px;">[PropExp_&lt;PropertyName&gt;:&lt;ChemicalName&gt;]</p>
+        <p class="Body">See <a href="/articles/management-system/chemicalcalculations" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!management-system/chemicalcalculations&#39;,this);">Chemical Calculations</a> for a more complete example.</p>
+        <p class="Body">Material formula based properties are created and managed from Material/Activity Field Library. The calculation for a formula based property is defined when it is created, and the formula is the same for all materials to which the property is applied. New historical values may be created by editing the property.</p>
+        <p class="Body">The six types of formula based properties and the types of data they can use in their formulas are shown in the following table.</p>
+        <table style="border-collapse: collapse; border-style: solid; border-width: 1px; margin-left: auto; margin-right: auto; border-color: #c0c0c0;" cellspacing="0" cellpadding="0">
+            <colgroup><col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            </colgroup><thead>
+                <tr>
+                    <th class="" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">&nbsp;</th>
+                    <th class="" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Primary <br/>FBP</th>
+                    <th class="" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Primary <br/>CL&nbsp;FBP</th>
+                    <th class="" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Secondary <br/>FBP</th>
+                    <th class="" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Secondary <br/>CLFBP</th>
+                    <th class="" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Tertiary <br/>FBP</th>
+                    <th class="" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">Tertiary <br/>CLFBP</th>
+                </tr>
+                </thead><tbody><tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Chemical Properties</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Material VBPs</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Activity VBPs</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Calc UDFs</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">&nbsp;</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">&nbsp;</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Met Data</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">&nbsp;</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">&nbsp;</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Primary FBPs</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Primary CLFBPs</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Secondary FBPs</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">&nbsp;</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">&nbsp;</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Secondary CLFBPs</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">&nbsp;</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">&nbsp;</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">&nbsp;</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Tertiary FBPs</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">&nbsp;</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">&nbsp;</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">&nbsp;</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">&nbsp;</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Tertiary CLFBPs</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">&nbsp;</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">&nbsp;</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">&nbsp;</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">&nbsp;</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                </tr>
+                <tr>
+                    <td class="border " style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">Requirement Data</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">&nbsp;</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">&nbsp;</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">&nbsp;</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">&nbsp;</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                    <td style="text-align: center; border-width: 1px; border-style: solid; border-color: #c0c0c0;" class="border ">x</td>
+                </tr>
+            </tbody>
+        </table>
+        <script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

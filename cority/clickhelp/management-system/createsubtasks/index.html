@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/createsubtasks"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Create Subtasks</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Create Subtasks';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1__906958073" data-has-heading-anchor="true">Creating Subtasks<a href="/articles/management-system/createsubtasks/a/h1__906958073" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/createsubtasks/a/h1__906958073&#39;,this);"></a></h1><p class="Body">Subtasks may be used to link tasks in some simple scenarios. Subtasks may only be created for a task that has only one occurrence and is associated with only one object. This includes event tasks, as there is only one task per instance, as long as the event monitors only one object.</p>
+        <p class="Body">Only one level of subtasks is allowed on a parent task. Subtasks may not have their own subtasks. For a more detailed solution, consider using a workflow.</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To create a subtask:</p>
+        <ol>
+            <li value="1">Create the parent task first. This must be a single-occurrence task associated with just one object.</li>
+            <li value="2">
+                <p>In Task Manager (Setup &gt;&nbsp;Tasks and Workflows &gt;&nbsp;Tasks), find the parent task for which you want to create a subtask.</p>
+                <p class="Body">If the subtask is for an event task, right click the event object in the Requirements view and choose Tasks. In the Search pane, choose Tasks I May View and set the Start Date in the Search to the due date for the parent task. </p>
+            </li>
+            <li value="3">
+                <p>Right click the task and from the popup menu select <b class="bold">Create Subtask</b>.</p>
+                <p class="F1FigAnchor">
+                    <img src="images/CreateSubtask.png" style="margin: 1.00008px 1.00007px 1.00008px 1.00008px; width: 850px; height: 279px;" alt="" loading="lazy"/>
+                </p>
+                <p class="Body">Complete the task information, as for a single-occurrence task. See <a class="MCXref_Heading_0" href="/articles/management-system/createnewtasks" onclick="return n(&#39;!management-system/createnewtasks&#39;,this);">Create  New Tasks</a>.</p>
+                <p class="Note" madcap:autonum=" &nbsp;"><span class="autonumber"><span class="note_et_al"> &nbsp;</span></span>The due date of a subtask cannot be later than the due date of the parent task. The due date is checked for validity when the task is created or edited. </p>
+            </li>
+            <li value="4">Select <b class="bold">Save</b> to save the task.</li>
+        </ol>
+        <p class="Body">After a subtask is created, a link to the parent or child tasks appears on the task properties screen. </p>
+        <p class="F1FigAnchor">
+            <img src="images/LinkstoSubtasks.png" style="margin: 1.00008px 1.00007px 1.00007px 1.00008px; width: 750px; height: 245px;" alt="" loading="lazy"/>
+        </p>
+        <p class="Body">By default, parent tasks are set to complete automatically once all subtasks are complete.</p>
+        <p class="Body">Auto-Complete means that when all subtasks are complete, the parent task is automatically completed. The completion information of the subtask(s) will be rolled into the completion information for the parent task as follows:</p>
+        <ul>
+            <li value="1">Complete Status will be 100%.</li>
+            <li value="2">Completion (Status) Date will be the latest date entered for the subtasks.</li>
+            <li value="3">Completion Time (hours) will be the sum of the hours recorded in the subtask(s).</li>
+            <li value="4"> Cost to Complete will be the sum of the amount(s) in the subtask(s).</li>
+            <li value="5">The Compliance Period Start Date will be the earliest date entered in the subtask(s) and the Compliance Period End Date will be the latest date entered in the subtask(s).</li>
+            <li value="6">Response to the Compliance Question will be the lesser of the subtask responses (Not Determined &lt; Yes with Comments &lt; Yes).</li>
+            <li value="7">Comments will contain all the comments entered under the subtask(s) (subject to space limitations; see Note below). </li>
+        </ul>
+        <p class="Note" madcap:autonum=" &nbsp;"><span class="autonumber"><span class="note_et_al"> &nbsp;</span></span>The roll up of comments is limited to the number of characters available in the Comment field; therefore, subtask comments may be truncated in the parent task Comment field if the total characters in the subtask comments exceed the available space. Also, HTML format does not recognize line spaces or paragraphs. To distinguish comments by the subtask assignees, it is suggested that the assignees use initials and/or symbols, such as a series of dots at the end of their comments.</p>
+        <p class="Body"> You can change parent tasks to manual complete mode if you want the parent task to be completed manually. </p>
+        <p>To change the completion mode for a parent task with subtasks,&nbsp;right click the link to the parent task and select <b>Set Manual-Complete</b>.</p><script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

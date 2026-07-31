@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/createfbps"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Creating Material Formula Based Properties</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Creating Material Formula Based Properties';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1_77387936" data-has-heading-anchor="true">Creating Material Formula Based Properties<a href="/articles/management-system/createfbps/a/h1_77387936" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/createfbps/a/h1_77387936&#39;,this);"></a></h1><p class="Body">Before creating a Material Formula Based Property, you need to decide whether the property should be Primary, Secondary or Tertiary. </p>
+        <ul>
+            <li value="1">Primary FBPs can be calculated purely on the basis of the known composition and properties of the material. </li>
+            <li value="2">Secondary FBPs can be calculated when it is known where the material is used. Thus, they can use certain location or equipment-specific data that is not time-dependent.</li>
+            <li value="3">Tertiary FBPs can be calculated only when data is entered. They require data time-stamped data from SUVs, other calculations, etc.</li>
+        </ul>
+        <p class="Body">Although any calculation that may be done as a Primary FBP may also be done as a Secondary, and likewise Secondaries as Tertiaries, choosing the right property type will help ensure that your calculations will run most efficiently and return results faster. </p>
+        <p class="Body">A second consideration is whether to use a standard Formula Based Property or a Chemical Formula Based Property. </p>
+        <ul>
+            <li value="1"><b>Standard Formula Based Properties</b>:&nbsp;These properties produce a single calculated result, whether a straight calculation or an aggregation across chemicals.</li>
+            <li value="2"><b>Chemical Formula Based Properties</b>:&nbsp;If you are doing calculations based on chemical properties, you can create a single property that will produce multiple values, one for each chemical component of the material (in lieu of creating multiple chemical-specific properties). This type of calculation is useful when doing speciation calculations. </li>
+        </ul>
+        <p class="BodyIndent">See <a href="/articles/management-system/chemicalcalculations" class="MCXref_Heading_0" onclick="return n(&#39;!management-system/chemicalcalculations&#39;,this);">Chemical Calculations</a> for an explanation of how to use chemical properties with the correct syntax for the results desired.</p>
+        <p class="Body">The process of creating a formula-based property is the same for all types.&nbsp;However, the Calculation Editor look slightly different, as it will only offer the components that can be used in each type.</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To create a formula based property for a material:</p>
+        <ol>
+            <li value="1">From the menu, select <b class="bold">Setup &gt; Material/Activity Field Library</b> under Materials/Activities.</li>
+            <li value="2">Select <b>New Material/Activity Field</b>.</li>
+            <li value="3">
+                <p>Select the type of property: Formula Based Primary, Secondary or Tertiary.</p>
+                <p>
+                    <img src="images/NewTertiaryFBP.png" style="margin: 1.00008px 1.00007px 1.00009px 1.00008px; width: 550px; height: 316px;" alt="" loading="lazy"/>
+                </p>
+            </li>
+            <li value="4">
+                <p>Enter a name for the property, and an optional description. </p>
+                <p>The description is only seen in the Material/Activity Field Library list, but may be useful when selecting properties to add to a material.</p>
+            </li>
+            <li value="5">
+                <p>Click the plus sign (+) to expand the Formula History section, then click <b>New</b>.</p>
+            </li>
+            <li value="6">
+                <p>Click the calculator button to define the property formula.</p>
+                <p>
+                    <img src="images/NewMFBP2.png" style="margin: 1.00008px 0.999355px 1.00009px 1.00008px; width: 1000px; height: 453px;" alt="" loading="lazy"/>
+                </p>
+            </li>
+            <li value="7">
+                <p>Use the calculation builder to build the formula. The Calculator has tabs for the various components you can use in a material formula.</p>
+                <p><b>Functions</b>: This tab contains the functions that can be used in a formula and the numeric keypad. The function keys aid in constructing the proper syntax.  You may also type directly in the formula window if you know the correct syntax.</p>
+                <p class="Body">
+                    <img src="images/MatlCalcFunctions.png" alt="" style="width: 550px; height: 499px;" loading="lazy"/>
+                </p>
+                <p class="Body"><b>Formulas</b>: These are global formulas that can be used as a template in defining your calculation. Once added to the calculation window, the formula can be edited for specific components. Select a formula to see the formula. Click <u>Copy formula to calculation definition</u> to add it to the formula window. You can then edit it as needed and replace the components of the calc as needed.</p>
+                <p class="Body">
+                    <img src="images/GlobalFormulas.png" alt="" style="width: 550px; height: 281px;" loading="lazy"/>
+                </p>
+                <p class="Body"><b>Material Properties</b>:&nbsp;These are the VBPs and other formula based properties you want to use in the formula. Click Add to search for and add one or more properties, then select a property and click Select to add it to the formula.</p>
+                <p class="Body">
+                    <img src="images/FBPCalculator.png" alt="" style="width: 550px; height: 248px;" loading="lazy"/>
+                </p>
+                <p class="Body">The properties will be added to the calculator window. Select a property in the window and click <b class="bold">Select</b> to add it to the formula.</p>
+                <p class="Body"><b>Chemicals</b>:&nbsp;These are the properties of chemicals used in the materials. Click Add to search for and add one or more chemicals. </p>
+                <p class="Body">For chemical explicit properties, select the chemical, then the property, and click Select to add it to the formula.</p>
+                <p class="Body">For chemical logical properties, select "Chem", then the property and click Select to add it to the formula.</p>
+                <p class="Body">(See <a class="MCXref_Heading_0" href="/articles/management-system/chemicalcalculations" onclick="return n(&#39;!management-system/chemicalcalculations&#39;,this);">Chemical Calculations</a> for an explanation of chemical logical and chemical explicit properties.)</p>
+                <p class="Body">
+                    <img src="images/AddChemCalc.png" alt="" style="width: 550px; height: 250px;" loading="lazy"/>
+                </p>
+                <p class="Body"><b>Logical Properties</b>: These are the Chemical Formula Based Properties, which are automatically expanded for each chemical in a material. See <a href="/articles/management-system/chemicalcalculations" class="MCXref_Heading_0" onclick="return n(&#39;!management-system/chemicalcalculations&#39;,this);">Chemical Calculations</a>.</p>
+                <p class="Body">
+                    <img src="images/LogicalPropsCalcEditor.png" alt="" style="width: 550px; height: 262px;" loading="lazy"/>
+                </p>
+                <p class="Body"><b>UDFs</b>: These are the numeric fields that are stored on a calculation template, which must be applied to the parent tree object where the material is used in a material data line. These properties are only available in Secondary and Tertiary properties, since they require a location.</p>
+                <p class="Body">
+                    <img src="images/UDFsCalcEditor.png" alt="" style="width: 550px; height: 245px;" loading="lazy"/>
+                </p>
+                <p class="Body"><b>Met Fields</b>:&nbsp;These are the location-based meteorological fields that are defined by the Meteorological Location property on the parent tree object where the material is used in a material data line. These properties are only available in Secondary and Tertiary properties, since they require a location. Select a Met field and click Select to add it to the formula.</p>
+                <p class="Body">
+                    <img src="images/MetFields.png" alt="" style="width: 550px; height: 253px;" loading="lazy"/>
+                </p>
+                <p class="Body"><b>Requirements (via Tags)</b>: These are standard requirements (parameters, system variables and calculated requirements) that you may use in material formulas if you have first set up a tagging scheme so the system can identify them at data entry. Click Add to add one or more tag schemes, then select the tag scheme and tag and click Select to add it to the formula. These values are only available in Tertiary properties, since they require a location and can only be resolved upon data entry. See <a href="/articles/management-system/tagschemesmaterials" class="MCXref_Heading_0" onclick="return n(&#39;!management-system/tagschemesmaterials&#39;,this);">Referencing Requirements in Material Scripts</a>.</p>
+                <p class="Body">
+                    <img src="images/ReqtsViaTags.png" alt="" style="width: 550px; height: 250px;" loading="lazy"/>
+                </p>
+            </li>
+            <li value="8">Click <b class="bold">Save</b> to save the formula.</li>
+            <li value="9">
+                <p>Enter a <b class="bold">Begin Date</b> for the formula (the date from which the calculation is valid), then click <b>Update</b>.</p>
+                <p class="Body">The formula will be validated for syntax and the presence of all referenced properties. Errors must be fixed before you can save the property.</p>
+                <p class="Body">If the validation is not successful, click <b class="bold">Edit</b> to fix the errors.</p>
+            </li>
+            <li value="10">When the validation is successful, click <b class="bold">Save</b> to save the property.</li>
+        </ol>
+        <script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

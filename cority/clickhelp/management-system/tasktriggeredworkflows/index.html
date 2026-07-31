@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/tasktriggeredworkflows"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Task Triggered Workflows</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Task Triggered Workflows';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1_603465972" data-has-heading-anchor="true">Task Triggered Workflows<a href="/articles/management-system/tasktriggeredworkflows/a/h1_603465972" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/tasktriggeredworkflows/a/h1_603465972&#39;,this);"></a></h1>
+        <p class="Body">Workflows can be automatically triggered by a task, an event instance, or a limit exceedance.</p>
+        <p class="Body">A <a href="/articles/management-system/tasktemplates" onclick="return n(&#39;!management-system/tasktemplates&#39;,this);">Task Template</a>  is used to specify the workflow type and to define the conditions for triggering the workflow. A  workflow may also be associated directly to a task from the task properties. </p>
+        <ul class="brackets">
+            <li value="1">For a recurring or one-time task, you can define the workflow association either on the Workflow tab of the task properties, or on a Task Template applied to the task. Workflows are created relative to the due date of the task in the same way that notifications are triggered.</li>
+            <li value="2">To create a workflow for an exceedance on a numeric requirement, associate the Task Template  with the limit defined for the requirement. When the limit exceedance occurs, the task and its associated workflow will be triggered.</li>
+            <li value="3">To create a workflow when an event instance occurs, apply the Task Template to the Event Log. When an event occurs, the task and its associated workflow will be triggered.</li>
+        </ul>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To configure a workflow triggered by a task:</p>
+        <ol>
+            <li value="1">
+                <p>In the Workflows tab of the Task properties  or on the <a href="/articles/management-system/tasktemplates" onclick="return n(&#39;!management-system/tasktemplates&#39;,this);">Task Template</a>, click <b>Add Workflow</b> in the Workflow Triggering section.</p>
+            </li>
+            <li value="2">
+                <p>Check the <b>Task Completion Fields</b>  to be displayed to users when they complete the related Workflow. The default selections are Status, Comments and Completion Date, but are not required. </p>
+                <p>If you want the Task to be closed automatically when the Workflow is closed, check "Close underlying Task when Workflow is closed".</p>
+            </li>
+            <li value="3">
+                <p>In the Workflow Triggering section, select a <b>Workflow Type</b> from the dropdown list.</p>
+                <p>
+                    <img src="images/TaskWorkflowTab.png" alt="" style="width: 1100px; height: 1225px;" loading="lazy"/>
+                </p>
+                <p><b>Workflow Name</b>: Optional. If you enter a name here, all workflows triggered will have the same name. Leave blank to allow the workflow name to be generated as defined in the workflow name scheme. Default is the workflow ID, if no workflow name scheme was specified.</p>
+                <p>Check "Use Task name" to make the workflow name match the task name.</p>
+            </li>
+            <li value="4">Select the calendar display options for the workflow. </li>
+            <li value="5">
+                <p>Choose a <b>Due Date</b> option: This can be an optional Due Date relative to the Workflow creation date, or same as the Task due date, or no due date. </p>
+                <p><b>Time to Create</b>: When to create the workflow.  Workflows are created relative to the due date of a one-time task, or relative to the due date of a recurrent task, in the same manner that notifications are triggered. </p>
+                <ul>
+                    <li value="1">
+                        <p><b>By Due Date</b>:&nbsp;Time relative to the due date of an associated task. Optionally may include completion status of task (such as 1 day after task due date when completion status is &lt;100%). </p>
+                        <p>For recurring tasks/workflows, uset <i>before task due date</i>. Then set a sufficient time period to allow tasks and workflows to be created together in advance. For example, if you use "10 years before", task instances with associated workflows will be created for up to 10 years. See also <a href="/articles/management-system/schedulingworkflows" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!management-system/schedulingworkflows&#39;,this);">Scheduling Workflows</a>.</p>
+                    </li>
+                    <li value="2"><b>On Past Due</b>:&nbsp;When task becomes past due. May also include completion status</li>
+                    <li value="3"><b>When Dismissed</b>:&nbsp;Workflow is created only if task is dismissed.</li>
+                </ul>
+                <p class="Note" madcap:autonum=" &nbsp;"><span class="autonumber"><span class="note_et_al"> &nbsp;</span></span>If the Time to Create field is modified, the associated workflow will be re-triggered. </p>
+            </li>
+            <li value="6">
+                <p><b>Assignee(s)</b>:&nbsp;By default, the workflow assignee(s) will be the same  as the task to which it relates. To choose a different assignee than the task, uncheck the Assignee(s) box that indicates "Use Task Assignee". Then add the desired Assignee(s) (user or group).</p>
+            </li>
+        </ol>
+        <h2 id="h2_1554996300" data-has-heading-anchor="true">Editing Tasks with Associated Workflows<a href="/articles/management-system/tasktriggeredworkflows/a/h2_1554996300" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/tasktriggeredworkflows/a/h2_1554996300&#39;,this);"></a></h2>
+        <p>When editing tasks with associated workflows, the following rules apply.</p>
+        <p><b>Associated Objects</b>:&nbsp;When associated objects for a task are modified, the workflow objects are also modified, for workflows that have not been edited by a user. </p>
+        <p><b>Recurrence Schedule</b>:&nbsp;When the task schedule is modified, any workflows that have not been edited by a user will automatically be rescheduled to the changes to the task recurrence schedule. </p>
+        <ul>
+            <li value="1">If you edit the recurrence schedule for the task, all tasks and workflows that have not yet been edited by a user will be re-generated. Existing tasks and workflows will be deleted and new ones created. </li>
+            <li value="2">If any tasks or workflows have already been edited, only changes to the end date will be allowed. You can end the current schedule and add a new recurrence schedule to make the change to the schedule.</li>
+        </ul>
+        <p><b>Task Assignee</b>:&nbsp;Changes to the task assignee will also be applied to the workflow assignee, in cases where they are set to match, for any workflows not yet edited by a user, </p>
+        <p><b>Task Name</b>: If the workflow is set to have the same name as the task and the task name is modified, the workflow name will be modified accordingly. Task instances that do not currently have completion information will be modified. The new name will be applied to any workflows that already exist that have not been edited by a user.</p>
+        <p><b>Deleting Task-Workflow</b>: When the triggering task is deleted, the associated workflow will be automatically deleted, too.</p>
+        <script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/qdformsconfig"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Data Forms</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Data Forms';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1__646503135" data-has-heading-anchor="true">Data Forms<a href="/articles/management-system/qdformsconfig/a/h1__646503135" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/qdformsconfig/a/h1__646503135&#39;,this);"></a></h1><p class="Body">Data Forms in Quick Data are configured in the main application with a manual Event Log and its monitored requirements. </p>
+        <p class="Body">Event fields may also be used to store non-numeric data related to the data entry. The Event Log fields will be displayed on the page along with the numeric data table. However, it is important to note that, as the Event Log is manual and not automatic, only one event record is created for the whole data set entered at one time on the page. The data points and the event record will have the same date time stamp.</p>
+        <p class="Body">You may also use configure the Data Forms tab to enter only Event data through the event log fields. Only one event record can be created at a time (the same as data entry for a manual Event Log through the main application).</p>
+        <p class="Body">Access to data forms is controlled through the permissions on the Event Log and the monitored requirements.</p>
+        <ul class="brackets">
+            <li value="1">To view data forms, users must have a minimum of Enter Data permission.</li>
+            <li value="2">To configure data forms, user must be a member of the Administrators group.</li>
+        </ul>
+        <p class="BodyIndent"></p>
+        <p class="BodyIndent">
+        </p>
+        <h2 id="h2_1505015778" data-has-heading-anchor="true">Quick Data Main App Setup<a href="/articles/management-system/qdformsconfig/a/h2_1505015778" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/qdformsconfig/a/h2_1505015778&#39;,this);"></a></h2><p class="Body">Data Forms in Quick Data are configured in the main application with a manual Event Log and its monitored requirements.</p>
+        <ul class="brackets">
+            <li value="1">The custom fields on the Event Template are the non-numeric fields that will be presented on the form. </li>
+            <li value="2">Parameters that are associated with the Event Log as monitored requirements define the data that is available for entry in the data grid. </li>
+            <li value="3">Calculated requirements associated with the Event Log are shown as view-only data.</li>
+            <li value="4">One Non-Numeric Requirement should be associated with the Event Log for the purpose of associating event instances. The event instance contains the custom fields completed at data entry. </li>
+        </ul>
+        <p class="Note" madcap:autonum=" &nbsp;"><span class="autonumber"><span class="note_et_al"> &nbsp;</span></span>If there is more than one Non-Numeric Requirement associated with the Event Log, instances will be associated with the last Non-Numeric Requirement alphabetically. If there is no Non-Numeric Requirement associated with the Event Log, instances will be associated with the last Numeric Requirement alphabetically. There is no method for choosing the requirement to associate with an instance through Quick Data.</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To set up the Data Form for Quick Data:</p>
+        <ol>
+            <li value="1">
+                <p>Create an Event Template with the custom fields that are to be available for entry on the form. </p>
+                <p class="Note" madcap:autonum=" &nbsp;"><span class="autonumber"><span class="note_et_al"> &nbsp;</span></span>The following custom field types are not supported and will not be displayed on the form: Calculated Numeric, Hyperlink and Citation Hyperlink fields.</p>
+            </li>
+            <li value="2">Create one Non-Numeric Requirement to associate with the Event Log.</li>
+            <li value="3">
+                <p>Create a manual Event Log and associate the Event Template.</p>
+                <p class="Body">The location and name of the Event Log will be used in Quick Data to select the appropriate form. The Facility drop-down shows the System Model tree path, and the Source drop-down shows the name of the Event Log.</p>
+            </li>
+            <li value="4">
+                <p>The monitored requirements should include the Non-Numeric Requirement, the Parameters to be presented for data entry on the form, and any Calculated Requirements you want to display as view-only data on the form.</p>
+                <p class="Body">Each data entry page will be saved as one event instance with the custom fields on the Event Template. If there is more than one Non-numeric Requirement, the event instance will be associated with the last one listed alphabetically. The Begin and End dates for the event instance are determined by the Navigation date on the form. The Non-Numeric Requirement itself does not display on the Quick Data form.</p>
+                <p class="Body">System Variables and Material Activity Calculated Requirements are not supported and will not be displayed.</p>
+            </li>
+            <li value="5">Grant permissions to the users who will need to access the forms and enter data.</li>
+        </ol>
+        <h2 id="h2__1375710402" data-has-heading-anchor="true">Permissions<a href="/articles/management-system/qdformsconfig/a/h2__1375710402" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/qdformsconfig/a/h2__1375710402&#39;,this);"></a></h2><h1 id="h1__1375710402"> </h1>
+        <p class="Body">Users need  View, Enter and Edit Data permission on the Event Log, its parent POI, and its monitored Requirements to access the form. Typically granting this permission to the POI will do, if all components are under the same POI; if the monitored requirements are in a different location, ensure that users also have this permission on the requirements. Users must be home users of the target system. </p>
+        <p class="Body">Summary of functional permissions required in Quick Data Forms tab:</p>
+        <table style="border-style: solid; border-width: 0px; border-collapse: collapse;" cellspacing="0" cellpadding="0">
+            <colgroup><col style="width: 216px;"/>
+            <col style="width: 224px;"/>
+            </colgroup><thead>
+                <tr>
+                    <th class="td_HeadGray" scope="col">Function</th>
+                    <th class="td_HeadGray" scope="col">Permission</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border">To view, enter or edit data</td>
+                    <td class="border"> View, Enter and Edit Data</td>
+                </tr>
+                <tr>
+                    <td class="border">To mark data Complete</td>
+                    <td class="border"> View, Enter and Edit Data</td>
+                </tr>
+                <tr>
+                    <td class="border">To unlock data marked Complete</td>
+                    <td class="border">Full Control</td>
+                </tr>
+                <tr>
+                    <td class="border">To edit the configuration file</td>
+                    <td class="border">Must be a member of the Administrators group</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 id="h2_553079836" data-has-heading-anchor="true">Form Configuration File<a href="/articles/management-system/qdformsconfig/a/h2_553079836" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/qdformsconfig/a/h2_553079836&#39;,this);"></a></h2><p class="Body">After the Event Log has been set up in the main application, log into Quick Data to view and configure the Quick Data data form.</p>
+        <p class="Note" madcap:autonum=" &nbsp;"><span class="autonumber"><span class="note_et_al"> &nbsp;</span></span>To configure Quick Data data forms a user must be a member of the Administrators group. You must also access Quick Data as a home user of the target system.</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>Steps to configure the Quick Data form:</p>
+        <ol>
+            <li value="1">
+                <p>Log into Quick Data and select the Data Forms tab.</p>
+                <p class="Body">You can also go directly to the Data Forms tab with the following URL:</p>
+                <p class="Body">https://quickdata.enviance.com/mainform.aspx?tab=form</p>
+            </li>
+            <li value="2">
+                <p>Select the Facility and Source from the dropdown lists. </p>
+                <p class="Body">The form will be displayed with the default configuration. The data grid appears first, followed by the custom fields associated with the Event Template.</p>
+            </li>
+            <li value="3">
+                <p>Select the Configuration link. (This link only displays for Administrators).</p>
+                <p class="Body">The configuration file is displayed in an editable text form. If no prior configuration has been done, the default configuration file is presented.</p>
+                <p class="Body">Each requirement and custom field presented on the form has a separate definition section.</p>
+            </li>
+            <li value="4">
+                <p>Edit the file to change the settings for each field as desired. You may edit the file directly or copy the file to a text file for editing, then paste it back when you are done. The file format is in YAML, a human-readable data serialization language. No prior knowledge of the language is required for standard file settings and field options, see <a href="/articles/management-system/qdformsconfig/a/Configur" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!management-system/qdformsconfig/a/Configur&#39;,this);">Configuration File Settings and Options</a>.</p>
+                <p class="Body">The structure, including syntax and indentations, must be strictly maintained. However, you can easily edit values. You can also cut and paste sections to change the order of fields in the form. The order the fields are shown in the configuration file is the order in which they will be displayed. Use spaces, not tabs, for indentation. If you edit the file in another application, be sure that you do not introduce tabs or other characters.</p>
+                <p class="Body">You may also copy the configuration from an existing source, if the requirements and custom fields are identical. See <a href="/articles/management-system/qdformsconfig/a/Copy" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!management-system/qdformsconfig/a/Copy&#39;,this);">Copy Configuration</a>.</p>
+            </li>
+            <li value="5">After editing the configuration file as desired, click <b>Save</b>.</li>
+        </ol>
+        <p class="BodyIndent">Quick Data validates the file in two steps:</p>
+        <ol>
+            <li value="1">Confirms the structure of the YAML file. If the structure is not correct, an error message is returned. </li>
+            <li value="2">Confirms the options are valid and the settings are correct. If the settings or options are not correct, an error message is returned.</li>
+        </ol>
+        <p class="BodyIndent">If the file format and settings are correct, the configuration file will be saved.</p>
+        <h2 id="h2__1397179707" data-has-heading-anchor="true">Copy Configuration<a href="/articles/management-system/qdformsconfig/a/h2__1397179707" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/qdformsconfig/a/h2__1397179707&#39;,this);"></a></h2><p class="Body">You can copy the configuration file from an existing source (event log) to another source which has identical monitored requirements. The monitored requirements are matched by requirement name (since the GUIDs will not match). If  more than one match for a requirement name is found, a warning is displayed, but the copy will continue and match the requirements in the order found.</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To copy a configuration:</p>
+        <ol>
+            <li value="1">Select the Facility and Source to which you want to copy a configuration.</li>
+            <li value="2">Select the Configuration link.</li>
+            <li value="3">Select Copy.</li>
+            <li value="4">Select the Facility and Source from which you want to copy the configuration.</li>
+            <li value="5">
+                <p>Click Copy.</p>
+                <p class="Body">Any errors or warnings will be shown. If a requirement or field is not found, the configuration will not be copied for that field. If more than one match is found, only the first will be used. If there are fields in the "copy to" source for which no match is found, you will need to add these fields manually to the configuration file.</p>
+            </li>
+            <li value="6">Click Save to save the configuration file.</li>
+        </ol>
+        <h2 id="h2_234051564" data-has-heading-anchor="true">Configuration File Settings and Options<a href="/articles/management-system/qdformsconfig/a/h2_234051564" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/qdformsconfig/a/h2_234051564&#39;,this);"></a></h2><p class="Body">A sample configuration file is provided that contains examples of settings and the required syntax for various field types. Download the text file to view and copy the syntax.
+        </p>
+        <p class="BodyIndent"><a href="/resources/Storage/management-system/QuickData/SampleConfigurationFile.txt" xrefformat="{para}" target="sample">Sample Configuration File</a> (.txt file)</p>
+        <h2 id="h2_51195639" data-has-heading-anchor="true">Header<a href="/articles/management-system/qdformsconfig/a/h2_51195639" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/qdformsconfig/a/h2_51195639&#39;,this);"></a></h2><p class="Body">The header shows: name of the Event Template, path and name of the Source, name of the Event Log, as in the following example:</p>
+        <p class="Code1">--- # Quick Data Configuration</p>
+        <p class="Code1">    # The configuration file configures to YAML 2.1 standards</p>
+        <p class="Code1">    # Last Edited by User LName on 2009-12-11</p>
+        <p class="Code1">    # QD-Water [Event Template]</p>
+        <p class="Code1">    # Enviance Home (Demo)\DMR Demo\Outfall 002 [Source]</p>
+        <p class="Code1Last">    # Water Analyses [Event Log]</p>
+        <h2 id="h2_1133540771" data-has-heading-anchor="true">Form Settings<a href="/articles/management-system/qdformsconfig/a/h2_1133540771" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/qdformsconfig/a/h2_1133540771&#39;,this);"></a></h2><p class="Body">The first three lines in the configuration file after the header set the options for the page. This includes the date format, which determines how data may be entered, and the display mode, which specifies how data is displayed for entry.</p>
+        <p class="Code1">NavigationDate&nbsp;&nbsp;&nbsp;&nbsp;: month | year | date | datetime</p>
+        <p class="Code1">DisplayEventAs&nbsp;&nbsp;&nbsp;&nbsp;: form</p>
+        <p class="Code1">DisplayNumericsAs&nbsp;: grid | form</p>
+        <p class="Code1"><span style="font-size: 11pt;">NavigationDate determines the date format on the page and also affects when the data will be stored. Options for the Date display are:</span></p>
+        <p class="BodyIndent"><b class="bold">Year</b>: User selects the year only. Data entry grid corresponds to the months in the year, with 12 data rows. Data is stored on the first day of each month at 12:00 AM.</p>
+        <p class="BodyIndent"><b class="bold">Month</b> (default): User selects month and year. Data entry grid corresponds to the days in the month (28-31 days). Data is saved at 12:00 AM on each day. </p>
+        <p class="BodyIndent"><b class="bold">Date</b>: User selects day, month and year. Data entry grid corresponds to the hours in the day, with 24 data rows from 12:00 AM to 11:00 PM.</p>
+        <p class="BodyIndent"><b class="bold">Datetime</b>: User may select day, month, year and time (to the minute). Optionally, user may also select an event instance end date. Data entry grid shows one row for data entry with Complete Date same as the selected Navigation Date.</p>
+        <p class="Body">The display mode determines the entry format presented to the user, with options for displaying event custom fields and numeric data. </p>
+        <p class="BodyIndent"><b>Form</b>: Each field with value entry box is presented on a separate line.</p>
+        <p class="BodyIndent"><b>Grid</b>: In this mode (available for numerics only), numeric fields are presented in a table grid. Event custom fields will appear in form mode below the grid.</p>
+        <p class="Note" madcap:autonum=" &nbsp;"><span class="autonumber"><span class="note_et_al"> &nbsp;</span></span>If you are using Quick Data for data entry for a manual event log, with no numeric requirements, use DisplayNumericsAs: form to hide the grid.</p>
+        <p class="Body">An example of the page form settings is shown below.</p>
+        <p class="Body"><span class="red">Values in red</span> must not be edited. </p>
+        <p class="Body"><span class="green">Values in green</span> may be edited. </p>
+        <p class="Body">Example of Page Form Settings:</p>
+        <p class="Code1">NavigationDate&nbsp;&nbsp;&nbsp;&nbsp;: <span class="green">month </span></p>
+        <p class="Code1">DisplayEventAs&nbsp;&nbsp;&nbsp;&nbsp;: <span class="red">form</span></p>
+        <p class="Code1Last">DisplayNumericsAs&nbsp;: <span class="green">grid</span></p>
+        <h2 id="h2__1352679225" data-has-heading-anchor="true">Field Settings<a href="/articles/management-system/qdformsconfig/a/h2__1352679225" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/qdformsconfig/a/h2__1352679225&#39;,this);"></a></h2><p class="Body">The basic format to define a numeric requirement, with possible attributes and values, is shown in the example following.</p>
+        <p class="Code1">Fields :</p>
+        <p class="Code1"># Requirement Name</p>
+        <p class="Code1">- Id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span class="red">16c08ffa-5d36-4040-88ed-de8127c2f44d</span></p>
+        <p class="Code1">&nbsp;&nbsp;Type&nbsp;&nbsp;&nbsp;&nbsp;: <span class="red">Requirement</span></p>
+        <p class="Code1">&nbsp;&nbsp;MandatoryValidations:</p>
+        <p class="Code1">&nbsp;&nbsp;&nbsp;&nbsp;Type:</p>
+        <p class="Code1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DataType&nbsp;: <span class="red">Number</span></p>
+        <p class="Code1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message&nbsp;&nbsp;: "<span class="green">* Must be number"</span></p>
+        <p class="Code1">&nbsp;&nbsp;&nbsp;&nbsp;Range:</p>
+        <p class="Code1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Minimum&nbsp;&nbsp;:&nbsp;<span class="red">"10"</span></p>
+        <p class="Code1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maximum&nbsp;&nbsp;:&nbsp;<span class="red">"100"</span></p>
+        <p class="Code1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message&nbsp;&nbsp;:&nbsp;"<span class="green">Valid range 10 to 100 (inclusive)</span></p>
+        <p class="Code1"><span class="blue">&nbsp;&nbsp;OptionalValidations:</span>
+        </p>
+        <p class="Code1"><span class="blue">&nbsp;&nbsp;&nbsp;&nbsp;Required:</span>
+        </p>
+        <p class="Code1"><span class="blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ToSave&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Yes </span>
+        </p>
+        <p class="Code1"><span class="blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ToComplete&nbsp;:&nbsp;Yes </span>
+        </p>
+        <p class="Code1"><span class="blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;"* Required"</span>
+        </p>
+        <p class="Code1"><span class="blue">&nbsp;&nbsp;&nbsp;&nbsp;MaxDecimalPlaces:</span>
+        </p>
+        <p class="Code1"><span class="blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Value&nbsp;&nbsp;&nbsp;:&nbsp;2 # integer</span>
+        </p>
+        <p class="Code1"><span class="blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message&nbsp;:&nbsp;"Maximum decimal places 2"</span>
+        </p>
+        <p class="Code1"><span class="blue">&nbsp;&nbsp;&nbsp;&nbsp;Range:</span>
+        </p>
+        <p class="Code1"><span class="blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Minimum&nbsp;&nbsp;&nbsp;:&nbsp;"10"</span>
+        </p>
+        <p class="Code1"><span class="blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maximum&nbsp;&nbsp;&nbsp;:&nbsp;"100"</span>
+        </p>
+        <p class="Code1"><span class="blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inclusive&nbsp;:&nbsp;Yes </span>
+        </p>
+        <p class="Code1"><span class="blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message&nbsp;&nbsp;&nbsp;:&nbsp;"Valid range 10 to 100 (inclusive);"</span>
+        </p>
+        <p class="Code1Last"><span class="blue">&nbsp;&nbsp;AdminNotes&nbsp;&nbsp;&nbsp;:&nbsp;"Today is [Insert  Date]"</span>
+        </p>
+        <p class="Body"><span class="red">Values in red</span> should not be edited. </p>
+        <p class="Body"><span class="green">Values in green</span> may be edited. </p>
+        <p class="Body"><span class="blue">Attributes and values in blue</span> are optional elements that may be added.</p>
+        <p class="Body"># indicates a comment.</p>
+        <p class="Body">The format to define a custom field, with possible attributes and values, is:</p>
+        <p class="Code1"># [Custom Field Name]</p>
+        <p class="Code1">- Id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span class="red">16c08ffa-5d36-4040-88ed-de8127c2f44d</span></p>
+        <p class="Code1">&nbsp;&nbsp;Caption&nbsp;: <span class="green">CustomField Caption</span></p>
+        <p class="Code1">&nbsp;&nbsp;Type&nbsp;&nbsp;&nbsp;&nbsp;: <span class="red">CustomField</span></p>
+        <p class="Code1"><span class="blue">&nbsp;&nbsp;</span>MandatoryValidations:</p>
+        <p class="Code1">&nbsp;&nbsp;&nbsp;&nbsp;Type:</p>
+        <p class="Code1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DataType&nbsp;: <span class="red">Text # UDF field type</span></p>
+        <p class="Code1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message&nbsp;&nbsp;: "<span class="green">Must be [type]"</span></p>
+        <p class="Code1">&nbsp;&nbsp;&nbsp;&nbsp;MaxCharacterLength:</p>
+        <p class="Code1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<span class="red">20 | 250 | 7900</span></p>
+        <p class="Code1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message&nbsp;&nbsp;:&nbsp;"<span class="green">Limited to [x] characters"</span></p>
+        <p class="Code1"><span class="blue">&nbsp;&nbsp;OptionalValidations:</span>
+        </p>
+        <p class="Code1"><span class="blue">&nbsp;&nbsp;&nbsp;&nbsp;Required:</span>
+        </p>
+        <p class="Code1"><span class="blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ToSave&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Yes </span>
+        </p>
+        <p class="Code1"><span class="blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ToComplete&nbsp;:&nbsp;Yes </span>
+        </p>
+        <p class="Code1"><span class="blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;"* Required"</span>
+        </p>
+        <p class="Code1"><span class="blue">&nbsp;&nbsp;DefaultValue&nbsp;&nbsp;:&nbsp;"text value"</span>
+        </p>
+        <p class="Code1"><span class="blue">&nbsp;&nbsp;Hidden&nbsp;&nbsp;:&nbsp;Yes</span>
+        </p>
+        <p class="Code1Last"><span class="blue">&nbsp;&nbsp;Level&nbsp;&nbsp;:&nbsp;0 # optional; may use 1, 2 or 3 for display emphasis. Default is 0. </span>
+        </p>
+        <p class="Body">Data Quality (DQT) fields are defined along with the requirement to which they apply. The same attributes and values as custom fields may be applied. AdminNotes may include instructions for DQT fields, but they must be part of the requirement definition; they are displayed in the right panel below the DQT section and above validation messages. A sample format for a numeric requirement with DQT fields is:</p>
+        <p class="Code1">Fields :</p>
+        <p class="Code1"># BOD5</p>
+        <p class="Code1">- Id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span class="red">16c08ffa-5d36-4040-88ed-de8127c2f44d</span></p>
+        <p class="Code1">&nbsp;&nbsp;Type&nbsp;&nbsp;&nbsp;&nbsp;: <span class="red">Requirement</span></p>
+        <p class="Code1">&nbsp;&nbsp;MandatoryValidations:</p>
+        <p class="Code1">&nbsp;&nbsp;&nbsp;&nbsp;Type:</p>
+        <p class="Code1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DataType&nbsp;: <span class="red">Number</span></p>
+        <p class="Code1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message&nbsp;&nbsp;: "<span class="green">Must be number"</span></p>
+        <p class="Code1"><span class="blue">&nbsp;&nbsp;AdminNotes&nbsp;&nbsp;&nbsp;:&nbsp;"If below detectable value, substitute .5 detectable value"</span>
+        </p>
+        <p class="Code1">&nbsp;&nbsp;DQTFieldOptions:</p>
+        <p class="Code1">&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Detection Limit</p>
+        <p class="Code1">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ID&nbsp;:&nbsp;<span class="red">d6470196-564d-4efb-aca1-05blad498663</span></p>
+        <p class="Code1"><span class="blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DefaultValue&nbsp;:&nbsp;1.5</span>
+        </p>
+        <p class="Code1Last"><span class="blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hidden&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;False</span>
+        </p>
+        <p class="Body">Keywords and options are described in the following table.</p>
+        <p class="Note" madcap:autonum=" &nbsp;"><span class="autonumber"><span class="note_et_al"> &nbsp;</span></span>
+            <br/>1- Configuration keys are case-sensitive. Values are not. <br/>2- Use spaces, not tabs for indentation.<br/>3- Indentations are required as indicated for sub-keys. <br/><b>True/False values</b> for keys:<br/>&nbsp;&nbsp;True values  are: 1, Y, yes, true<br/>&nbsp;&nbsp;False values are: 0, N, No, false
+</p>
+        <table align="center" style="caption-side: top; width: 85%; border-width: 1px; border-color: #c0c0c0; border-collapse: collapse;" cellspacing="0" cellpadding="0">
+            <colgroup><col width="40%"/>
+            <col width="60%"/>
+            </colgroup><thead>
+                <tr>
+                    <th class="td_HeadGray" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">
+                        <p class="T1TableHead">Key : Values</p>
+                    </th>
+                    <th class="td_HeadGray" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;" scope="col">
+                        <p class="T1TableHead">Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p class="Code1TD"># Requirement or Custom Field name</p>
+                    </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p class="T2TableText">Beginning of field definition</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p class="Code1TD">- ID : [ComplianceObject].[GUID] or [UDF].[GUID]</p>
+                    </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p class="T2TableText">GUID of object in database. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p class="Code1TD">Caption : Custom field Caption property </p>
+                    </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p class="T2TableText">Caption for custom field. Default is as defined in database, but may be edited for QuickData display. Caption is displayed to user on the UI in place of Name for all custom fields.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p class="Code1TD">Hidden : Yes | No</p>
+                    </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p class="T2TableText">Determines if the field will be displayed on the UI.  </p>
+                        <p class="T2TableText">If a required field is hidden it must have a default value. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p class="Code1TD">DefaultValue : "value"</p>
+                    </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p class="T2TableText">The default value to insert in the field when the form loads. </p>
+                        <p class="T2TableText">Default value may be set for either a numeric or text field. When the field is hidden, the default value is inserted and saved along with the rest of the data.</p>
+                        <p class="T2TableText">The default value can use <a class="MCXref_Heading" href="/articles/management-system/qdformsconfig/a/InsertValues" xrefformat="{para}" onclick="return n(&#39;!management-system/qdformsconfig/a/InsertValues&#39;,this);">Insert Values</a> to insert the current user's name, the current Date or DateTime).</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p class="Code1TD">Mandatory Validations:</p>
+                        <p class="Code1TD">&nbsp;&nbsp;Type:</p>
+                        <p class="Code1TD">&nbsp;&nbsp;&nbsp;&nbsp;DataType&nbsp;&nbsp;: Number | Date | DateTime</p>
+                        <p class="Code1TD">&nbsp;&nbsp;&nbsp;&nbsp;Message&nbsp;&nbsp;&nbsp;: "[Number | Date | DateTime] required"</p>
+                        <p class="Code1TD">&nbsp;&nbsp;Range:</p>
+                        <p class="Code1TD">&nbsp;&nbsp;&nbsp;&nbsp;Minimum&nbsp;&nbsp;&nbsp;: [value]</p>
+                        <p class="Code1TD">&nbsp;&nbsp;&nbsp;&nbsp;Maximum&nbsp;&nbsp;&nbsp;: [value]</p>
+                        <p class="Code1TD">&nbsp;&nbsp;&nbsp;&nbsp;Inclusive&nbsp;: Yes | No </p>
+                        <p class="Code1TD">&nbsp;&nbsp;&nbsp;&nbsp;Message&nbsp;&nbsp;&nbsp;: "Valid range x to y (inclusive)"</p>
+                        <p class="Code1TD">&nbsp;&nbsp;MaxCharacterLength: </p>
+                        <p class="Code1TD">&nbsp;&nbsp;&nbsp;&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 20 | 250 | 790Objec0</p>
+                        <p class="Code1TD">&nbsp;&nbsp;&nbsp;&nbsp;Message&nbsp;&nbsp;&nbsp;: "Limited to x characters"</p>
+                        <p>&nbsp;</p>
+                    </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p class="T2TableText">Mandatory validations are the restrictions set on the field in EMS. Only the message may be edited.</p>
+                        <p class="T2TableText">&nbsp;</p>
+                        <p class="T2TableText">Inclusive indicates whether the valid range includes or excludes the minimum and maximum values.</p>
+                        <p class="T2TableText">&nbsp;</p>
+                        <p class="T2TableText">Character limits on text boxes are small=20, medium=250, large=7990.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p class="Code1TD">Optional Validations:</p>
+                        <p class="Code1TD">&nbsp;&nbsp;Type:</p>
+                        <p class="Code1TD">&nbsp;&nbsp;&nbsp;&nbsp;DataType&nbsp;&nbsp;: Number | Date | DateTime</p>
+                        <p class="Code1TD">&nbsp;&nbsp;&nbsp;&nbsp;Message&nbsp;&nbsp;&nbsp;: "Number | Date | DateTime required"</p>
+                        <p class="Code1TD">&nbsp;&nbsp;Range:</p>
+                        <p class="Code1TD">&nbsp;&nbsp;&nbsp;&nbsp;Minimum&nbsp;&nbsp;&nbsp;: [value]</p>
+                        <p class="Code1TD">&nbsp;&nbsp;&nbsp;&nbsp;Maximum&nbsp;&nbsp;&nbsp;: [value]</p>
+                        <p class="Code1TD">&nbsp;&nbsp;&nbsp;&nbsp;Inclusive&nbsp;: Yes | No</p>
+                        <p class="Code1TD">&nbsp;&nbsp;&nbsp;&nbsp;Message&nbsp;&nbsp;&nbsp;: "Valid range x to y (inclusive)"</p>
+                        <p class="Code1TD">&nbsp;&nbsp;MaxDecimalPlaces : </p>
+                        <p class="Code1TD">&nbsp;&nbsp;&nbsp;&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:[value]</p>
+                        <p class="Code1TD">&nbsp;&nbsp;&nbsp;&nbsp;Message&nbsp;&nbsp;&nbsp;: "Restrict to x decimals"</p>
+                        <p class="Code1TD">&nbsp;&nbsp;MaxCharacterLength: </p>
+                        <p class="Code1TD">&nbsp;&nbsp;&nbsp;&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: [value]</p>
+                        <p class="Code1TD">&nbsp;&nbsp;&nbsp;&nbsp;Message&nbsp;&nbsp;&nbsp;: "Limited to x characters"</p>
+                        <p class="Code1TD">&nbsp;&nbsp;Required: </p>
+                        <p class="Code1TD">&nbsp;&nbsp;&nbsp;&nbsp;ToSave&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Yes | No</p>
+                        <p class="Code1TD">&nbsp;&nbsp;&nbsp;&nbsp;ToComplete&nbsp;: Yes | No</p>
+                        <p class="Code1TD">&nbsp;&nbsp;&nbsp;&nbsp;Message&nbsp;&nbsp;&nbsp;&nbsp;: "* Required"</p>
+                    </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p class="T2TableText">One or more optional validations to be performed, with an optional message (up to 50 characters) to be displayed on the form.</p>
+                        <p class="T2TableText">&nbsp;</p>
+                        <p class="T2TableText">DataType validations allow you restrict data entry types on text fields.</p>
+                        <p class="T2TableText">&nbsp;</p>
+                        <p class="T2TableText">Maximum and Minimum values restrict user data entry. Inclusive indicates whether the valid range includes or excludes the minimum and maximum values.</p>
+                        <p class="T2TableText">&nbsp;</p>
+                        <p class="T2TableText">MaxDecimalPlaces requires user to truncate entry to given decimal places.</p>
+                        <p class="T2TableText">&nbsp;</p>
+                        <p class="T2TableText">Required: ToSave prevents user from saving without a value in the field.<br/>Required: ToComplete prevents user from marking data Complete without a value.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p class="Code1TD">Level : 0, 1, 2, 3</p>
+                    </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p class="T2TableText">0 = Default text (normal black text on light background)</p>
+                        <p class="T2TableText">1 = bold white text on bold background color</p>
+                        <p class="T2TableText">2 = bold black text on medium background color</p>
+                        <p class="T2TableText">3 = bold white text on dark background color</p>
+                        <p class="T2TableText">Does not apply to numeric fields displayed in grid form.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p class="Code1TD">AdminNotes : "field notes"</p>
+                    </td>
+                    <td class="border" style="border-width: 1px; border-style: solid; border-color: #c0c0c0;">
+                        <p class="T2TableText">May be used to add notes (such as user instructions).</p>
+                        <p class="T2TableText">AdminNotes can include <a class="MCXref_Heading" href="/articles/management-system/qdformsconfig/a/InsertValues" xrefformat="{para}" onclick="return n(&#39;!management-system/qdformsconfig/a/InsertValues&#39;,this);">Insert Values</a> to insert the current user's name, the current Date or DateTime).</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 id="h2_1241155331" data-has-heading-anchor="true">Insert Values<a href="/articles/management-system/qdformsconfig/a/h2_1241155331" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/qdformsconfig/a/h2_1241155331&#39;,this);"></a></h2><p class="Body">The following Insert Values may be applied to the values for keys Messages, DefaultValue, and AdminNotes:</p>
+        <p class="Body">[Insert DateTime]  </p>
+        <p class="BodyIndent">YYYY-MM-DD HH:MM:SS</p>
+        <p class="BodyIndent">Example: 2012-01-12  18:22:12 </p>
+        <p class="Body">[Insert Date]</p>
+        <p class="BodyIndent">YYYY-MM-DD</p>
+        <p class="BodyIndent">Example: 2012-01-12</p>
+        <p class="Body">[Insert User]</p>
+        <p class="BodyIndent">UserFirstName UserLastName</p>
+        <p class="BodyIndent">Example: </p>
+        <p class="Code2"># Comments</p>
+        <p class="Code2">- Id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span class="red">16c08ffa-5d36-4040-88ed-de8127c2f44d</span></p>
+        <p class="Code2">&nbsp;&nbsp;Caption&nbsp;: <span class="green">Comments</span></p>
+        <p class="Code2">&nbsp;&nbsp;Type&nbsp;&nbsp;&nbsp;&nbsp;: <span class="red">CustomField</span></p>
+        <p class="Code2"><span class="blue">&nbsp;&nbsp;</span>MandatoryValidations:</p>
+        <p class="Code2">&nbsp;&nbsp;&nbsp;&nbsp;MaxCharacterLength:</p>
+        <p class="Code2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<span class="red">7900</span></p>
+        <p class="Code2Last"><span class="blue">&nbsp;&nbsp;DefaultValue&nbsp;&nbsp;:&nbsp;"[Insert User] said on [Insert Date]:"</span>
+        </p>
+        <p class="BodyIndent">When the page loads, the user's first and last name and the date are inserted, for example: "John Smith said on 2012-01-12:"</p>
+        <script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

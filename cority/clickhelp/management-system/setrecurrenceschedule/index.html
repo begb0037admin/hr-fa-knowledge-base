@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/setrecurrenceschedule"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Set Task Recurrence Schedule</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Set Task Recurrence Schedule';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1_1162058556" data-has-heading-anchor="true">Set Task Recurrence Schedule<a href="/articles/management-system/setrecurrenceschedule/a/h1_1162058556" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/setrecurrenceschedule/a/h1_1162058556&#39;,this);"></a></h1><p class="Body">One or more task schedules can be set for a recurrent task. </p>
+        <p class="Body">Task schedules may be edited at any time to add or delete schedules, change an existing schedule, or change assignees. </p>
+        <p class="Note" madcap:autonum=" &nbsp;"><span class="autonumber"><span class="note_et_al"> &nbsp;</span></span>A task schedule that has completed instances may not be deleted. Instead, you can set an end date for the schedule.</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To schedule recurrent tasks:</p>
+        <ol>
+            <li value="1">From the New/Edit Task screen, select the <b class="bold">Recurrence</b> tab.</li>
+            <li value="2">To create a new schedule, select <b>Add New Schedule</b>.</li>
+            <li value="3">
+                <p>Choose the Recurrence Type from the list: Hourly, Daily, Weekly, Monthly, Yearly or Time After Last Completion.</p>
+                <p class="BodyIndent">Time After Last Completion is relative to the last task completion date. See note below for completion restraints on tasks with this recurrence type.</p>
+                <p class="BodyIndent">Depending on the recurrence type, the appropriate fields appear  to set up the schedule. </p>
+            </li>
+            <li value="4">
+                <p>Select the task occurrence criteria. Criteria will vary depending on the recurrence type.</p>
+                <p>
+                    <img src="images/MonthlyTaskSchedule_509x326.png" style="margin: 1.00008px 1.00007px 0.999371px 1.00008px; width: 750px; height: 499px;" alt="" loading="lazy"/>
+                </p>
+                <p class="Body"><b class="bold">Task Time Zone:</b> Select the time zone in which the task is actually performed. When a task is created, the Task Time Zone defaults to the task creator's time zone. If the task assignee's time zone is different, be sure to change the time zone to the assignee's, if appropriate. When viewing a task summary, the task due date/hour is shown in the viewing user's time zone. In Reports, the time zone(s) displayed for data or information is the local time(s) of the parent Facility.</p>
+                <p class="Body">To add another schedule, click <b class="bold">Add New Schedule</b> again and configure the setup information for the next schedule.</p>
+            </li>
+            <li value="5">
+                <p>After configuring any other task information needed, select <b class="bold">Save</b>. </p>
+                <p class="Body">See <a class="MCXref_Heading_0" href="/articles/management-system/addedittasknotifications" onclick="return n(&#39;!management-system/addedittasknotifications&#39;,this);">Add/Edit Task Notifications</a>.</p>
+            </li>
+        </ol>
+        <h2 id="h2__461217711" data-has-heading-anchor="true">Time After Last Completion Tasks<a href="/articles/management-system/setrecurrenceschedule/a/h2__461217711" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/setrecurrenceschedule/a/h2__461217711&#39;,this);"></a></h2><p class="BodyIndent">Tasks with a recurrent schedule of Time After Last Completion may not be completed so far in advance of the due date that the date of completion would cause a new task to be created with a due date earlier than the original task. For example, a task with a time after last completion of 1 month may not be completed earlier than 1 month before the due date, since the next task would be then be due before the original task.</p>
+        <p class="BodyIndent"><b>Due Time</b> <i>(for all new tasks created after 9.4.4 release)</i>: The due time for a Time After Last Completion task will always be the same as the original (first) task, unless a value greater than 0 is selected for hour(s).  The due time of the next task is calculated based on Task Time from schedule settings, regardless of Completion Time of previous status.</p>
+        <h2 id="h2_1296537712" data-has-heading-anchor="true">No Instance Due Tasks<a href="/articles/management-system/setrecurrenceschedule/a/h2_1296537712" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/setrecurrenceschedule/a/h2_1296537712&#39;,this);"></a></h2><p class="BodyIndent">If a task schedule is set up in such a way that no instance will actually occur, the message "No Instance Due" will appear for the due date for the task in the task list. This allows the task to be displayed for editing purposes. </p>
+        <p class="BodyIndent">For example, a task has a recurrence schedule for the 24th of each month. However, the Start date for the task is set to 09/27/2010 and the End date is 10/20/2010. No task due date will occur in this period, so the task will have no instances.</p>
+        <p class="BodyIndent">Validations when saving the task schedule will normally prevent such occurrences, but there may be some conditions under which such tasks are created (for instance, by automated task creation processes).</p>
+        <script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

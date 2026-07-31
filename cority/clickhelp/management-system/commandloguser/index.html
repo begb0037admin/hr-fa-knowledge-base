@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/commandloguser"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Command Log</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Command Log';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1_414467" data-has-heading-anchor="true">Command Log<a href="/articles/management-system/commandloguser/a/h1_414467" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/commandloguser/a/h1_414467&#39;,this);"></a></h1>
+        <p class="Body">The Command Log keeps track of data transactions sent to the system. </p>
+        <p class="Body">In order to ensure maximum performance and prevent browser lag time, the Management System uses "asynchronous transactions" to queue data transactions as they are sent to the system. A slight lag time may occur between the time a transaction is sent to the system and the results can be seen in the system—depending on the size of data transactions, the extent of calculations or modifications involved, or the amount of activity in the system.</p>
+        <p class="Body">You can check the status of a transaction or review recent activity by viewing the Command Log.</p>
+        <p class="Body">The confirmation message you receive when you complete a data transaction has a button to View Commands, so you can go directly to the Command Log to check on the status of that transaction. The command status may initially show "Processing." Use the <b>Refresh </b>button to refresh results until you see that the status is Succeeded. After the transaction is complete, you will be able to view the resultant data.</p>
+        <p class="F1FigAnchor">
+            <img src="images/DataConfirmViewCommands.png" style="margin: 1.00008px 1.00007px 1.00008px 1.00008px; width: 1000px; height: 111px;" alt="" loading="lazy"/>
+        </p>
+        <p class="Body">If you have the Manage Commands right, you can view all commands sent to the system in Command Log. Users without the Manage Commands right see only their own transactions in the Command Log.</p>
+        <h2 id="h2_1213718084" data-has-heading-anchor="true">View the status of transactions<a href="/articles/management-system/commandloguser/a/h2_1213718084" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/commandloguser/a/h2_1213718084&#39;,this);"></a></h2><ol><li>Choose <b>Command Log</b> from the Message page menu. <br/>Recent transactions are displayed.</li><li>Select a column head to sort the transactions by that column.</li><li>Use the Search pane to search for data transactions by status (Waiting, Processing, Succeeded, Failed, Resubmitted). <br/>The Error Message column shows  information for failed commands.</li></ol><p>You can also search for transactions by a date/time range when they were entered in the system and<span style="font-size: 11pt;">&nbsp;view commands for a specific object.</span></p><h2 id="h2_79247234" data-has-heading-anchor="true"><span class="autonumber"><span></span></span>View commands for an object<a href="/articles/management-system/commandloguser/a/h2_79247234" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/commandloguser/a/h2_79247234&#39;,this);"></a></h2><ol>
+            <li value="1">Right click the object in the system model tree and choose <b class="bold">View Commands</b>. <br/>The command log will be filtered to display transactions for the selected object.</li>
+        
+            <li>When an object has failed transactions, the object is displayed in red on the System Model tree as a warning. </li>
+        
+            <li>If a transaction is in still in process, the object is displayed in blue.</li>
+        </ol><h2 id="h2__1913561303" data-has-heading-anchor="true"><b>Asynchronous Commands and Order of Command Priority</b>&nbsp;<a href="/articles/management-system/commandloguser/a/h2__1913561303" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/commandloguser/a/h2__1913561303&#39;,this);"></a></h2><p data-aura-rendered-by="35:325;a">Only asynchronous processes&nbsp;display&nbsp;in the command log.&nbsp; Asynchronous processes include adding data to parameters, bulk tool jobs,&nbsp;integrations,&nbsp;and object copies.&nbsp; While&nbsp;processes&nbsp;like updates to custom field values or&nbsp;EQL queries&nbsp;are not asynchronous processes.&nbsp;</p><p data-aura-rendered-by="35:325;a">Command logs can appear to execute out of order.&nbsp;&nbsp;Some commands have an issued date earlier than other commands but are processed later than these other commands.&nbsp; The most common reason is order priority. Webservice batches are processed at a lower priority than user-initiated&nbsp;batches. A less common reason is that the command log was deleted prior or during execution of the command. In this case, the command log record is reinserted with a new issued date. You will then see the oddity that the start time is before the issued date.&nbsp;&nbsp;</p><h2 id="h2__1817988696" data-has-heading-anchor="true">Deleting Commands<a href="/articles/management-system/commandloguser/a/h2__1817988696" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/commandloguser/a/h2__1817988696&#39;,this);"></a></h2><p data-aura-rendered-by="35:325;a">Deleting commands from the command log removes the historical record&nbsp;from view in the command log. Depending on the command's status, the following occurs:</p><ul><li data-aura-rendered-by="35:325;a"> Deleting a processing log&nbsp;does&nbsp;not&nbsp;cancel the action, the command remains in the queue, and it will be executed. </li><li data-aura-rendered-by="35:325;a">Deleting a waiting log cancels the action and the command is not executed.&nbsp;</li></ul><p data-aura-rendered-by="35:325;a"><br/></p><p class="BodyIndent">
+        </p>
+        <script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/calculationsacrosstimezones"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Calculations Across Time Zones</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Calculations Across Time Zones';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1__1684134147" data-has-heading-anchor="true">Calculations Across Time Zones<a href="/articles/management-system/calculationsacrosstimezones/a/h1__1684134147" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/calculationsacrosstimezones/a/h1__1684134147&#39;,this);"></a></h1><p class="Body">When finding data points that correspond to a distinct point in time, or a range of time, the local time zone of the data points’ Requirement (taken from the Requirement’s facility) is used.</p>
+        <p class="Body">When matching data points across inputs, the data points are matched by their completion date and time in their respective local time zones.</p>
+        <p class="ExampleBox">A data point at 3 AM Eastern will be matched to a data point at 3 AM Pacific.</p>
+        <p class="ExampleBox">A data point at 4/1/yyyy 3 AM Eastern is contained in a calculation period that ranges from 4/1/yyyy 12:00 AM to 4/1/yyyy 11:59 PM Pacific.</p>
+        <p class="ExampleBox">A system variable value defined for the interval 1/1/yyyy 12:00 AM to 12/31/yyyy 12:00 AM (non-inclusive) Eastern will be used for a completion date context of 2/3/yyyy 3:00 PM Pacific.</p>
+        <p class="Body">In order for the calculation to be triggered, all dates and times must be the same within their respective time zones. The final data point entered will trigger the calculation. The data point is stored with the date/time of the calculated requirement’s facility.</p>
+        <p class="ExampleBox">The formula for a calculated requirement in a facility with Pacific time zone (PST) references factors in Eastern (EST) and Hawaiian (HST time zones, as follows:</p>
+        <p class="BodyIndent">F1(EST) + F2(PST) + F3(HST)</p>
+        <p class="BodyIndent">Data is entered at 3/1/yyyy 12:00AM in each time zone. The calculation is triggered anytime a value is found for any of its factors. However, the value is NULL until it finds values for all its factors. Therefore, the last calculation, triggered at 2AM PST (the time zone of the calculation) is the data point that is stored. The complete date/time of the data point will be 3/1/yyyy 2:00AM PST.</p>
+        <script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

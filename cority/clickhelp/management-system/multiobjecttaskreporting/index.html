@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/multiobjecttaskreporting"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Multi-Object Task Reporting</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Multi-Object Task Reporting';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1__1876360448" data-has-heading-anchor="true">Multi-Object Task Reporting<a href="/articles/management-system/multiobjecttaskreporting/a/h1__1876360448" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/multiobjecttaskreporting/a/h1__1876360448&#39;,this);"></a></h1><p class="Body">When reporting on multi-object tasks, you can choose whether to combine multi-object tasks into a single row in the Task Report, or to include one row for each task-object instance. </p>
+        <p class="Body">Step 1 in the Task Report setup page has a checkbox for Aggregate Multi-Object Tasks. If this is checked, then one row will be returned for each multi-object task. If unchecked, one row is returned for each task-object instance. In order to aggregate task, the Task Due Date must be included.</p>
+        <p class="Body">Different properties are available for inclusion in the report, depending on whether you want to aggregate results for multi-object tasks or not.</p>
+        <p class="Body">When aggregating multi-object tasks, the following three properties should be used to aggregate results in a Task Report:</p>
+        <ul class="brackets">
+            <li value="1">Overall Completion Status (%): This is computed as the average of all task status records for a task instance (given due date, object, and task). </li>
+            <li value="2">Overall Status Description: Gives the status of all task status records for a task instance (given due date, object, and task). Possible status descriptions are Completed On-Time, Completed Overdue, Pending, Overdue, and Dismissed.</li>
+            <li value="3">Overall Completion Date: Gives the date/time of the final completion date of all task status records for a task instance (given due date, object, and task). </li>
+        </ul>
+        <p class="Body">The following three properties are used to report on singular task-object instances, without aggregation:</p>
+        <ul class="brackets">
+            <li value="1">Task Complete Status</li>
+            <li value="2">Task Status Description</li>
+            <li value="3">Task Completion Date</li>
+        </ul>
+        <p class="Body">Assuming you have a multi-object task that applies to 4 objects, a task report produces the following results: </p>
+        <ul class="brackets">
+            <li value="1">
+                <p>If you include "Overall.." properties AND check the "Aggregate" checkbox, results show 1 row for the task.</p>
+                <p class="Body">Overall Task Completion (%) reported is an aggregate of the completion % of all 4 task-object instances. If the task is complete for 3 of the objects and not complete for 1 object, the Overall Task Completion (%) is 75%. </p>
+                <p class="Body">Overall Completion Date is the last completion date in the set. If not all instances are not complete, value is null (shown as "-"). </p>
+                <p class="Body">Overall Completion Status is aggregated and reported as Completed on Time (if task was completed on time for all instances, Completed Overdue (if any instance was completed overdue), Pending (if any instance is incomplete and not yet overdue), Overdue (if any instance is incomplete and overdue), or Dismissed (if task was dismissed for all instances).</p>
+            </li>
+            <li value="2">
+                <p>If you include "Overall.." properties and do NOT check the "Aggregate..." checkbox, the report returns 4 rows, one row for each task-object instance. However, the "Overall.." property values are still aggregated as above. You must use the singular Task Complete Status, Task Status Description and Task Completion Date properties if you want to see singular instance (task-object) status.</p>
+            </li>
+        </ul>
+        <p class="Body">For example, if the task is to clean 4 pieces of equipment, and the task was not complete for one equipment, using aggregation you would see Overall Completion Status of 75%. If you want to know which one was not cleaned, you would have to run the report including the Task Complete Status property and unchecking the aggregation checkbox. The Task Completion status for the 1 equipment would be 0%. The Overall Completion Status would still be 75%.</p>
+        <p class="Body">When a report includes multi-object tasks, the Overall task properties are preferred. For single-object tasks, the "Overall..." properties will return the same values as the singular "Task Complete.." properties. So in general the use of the Overall properties in the task report is recommended, since aggregation of multi-object tasks is the most commonly desired result. However, if you want to see other properties of the tasks (such as Time to Complete, Cost to Complete and Comments), you will have to run the report with "Aggregate.." unchecked. When tasks are aggregated, these columns will be null for multi-object tasks. Additionally, any custom properties will also not be reported when aggregation is requested for multi-object tasks.</p>
+        <p class="Body">The aggregation checkbox has no effect on single-object tasks. For example, Cost to Complete will be shown for single-object tasks, but will not be shown for multi-object tasks unless the aggregation box is unchecked.</p>
+        <p class="Body">If parent object name or other parent object properties are included in the report, aggregation for multi-object tasks will show only the properties for the lowest common parent object. For example:</p>
+        <p class="BodyIndent">Task 1 (due 1/1/yyyy) applies to two objects:</p>
+        <p class="BodyIndent">F1\U1 : 100%</p>
+        <p class="BodyIndent">F1\U2 : 100%</p>
+        <p class="BodyIndent">Report columns are:</p>
+        <p class="BodyIndent">Facility Name | Unit Name | Task Name | Due Date | Overall Completion Status</p>
+        <p class="BodyIndent">Results show:</p>
+        <p class="BodyIndent">+F1 | -- | T1 | 1/1/yyyy | 100%</p>
+        <p class="BodyIndent">+results aggregated for multi-object task</p>
+        <script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

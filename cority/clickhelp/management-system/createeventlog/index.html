@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/createeventlog"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Create an Event Log</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Create an Event Log';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1__196671137" data-has-heading-anchor="true">
+  Create an Event Log
+<a href="/articles/management-system/createeventlog/a/h1__196671137" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/createeventlog/a/h1__196671137&#39;,this);"></a></h1>
+<p class="Body" madcap:conditions="Default.Hide">
+  Examples from Solution Templates: 
+</p>
+<ul>
+  <li class="Body" madcap:conditions="Default.Hide">
+    Auto Event Log for Numerics with task triggered by exceedance: CEMS Facility\Unit\PC-Fired Boiler Emission Point\Air Emissions Deviation 
+  </li>
+  <li class="Body" madcap:conditions="Default.Hide">
+    Auto Event Log for NNRs triggered by task "Not Determined": Permit Management Facility 2\Major Emission Sources\Title V Deviations (has task template)]
+  </li>
+  <li class="Body" madcap:conditions="Default.Hide">
+    Manual Event Log with task triggered by creation of log entry: SPCC Facility\Spills and Discharges\Spill Response and Resolution]
+  </li>
+</ul>
+<p class="Body">
+  To create an Event Log you must have an Event Template available to apply to the event. The event template contains the set of fields that store the data for each event. For more information, see <a href="/articles/management-system/eventtemplates" onclick="return n(&#39;!management-system/eventtemplates&#39;,this);">Event Templates</a>.</p>
+<p class="StepIntro" madcap:autonum="">
+  <span class="autonumber"><span></span></span>To create an Event Log:
+</p>
+<ol>
+  <li>
+    Select the parent object in the system model tree or in the Applicable Requirements view, right click and choose <b>New &gt; Event Log</b>.
+  </li>
+  <li>
+    Choose the appropriate <b>Event Template</b> from the selection list.
+    <br/>
+    The Event Template contains the data fields that are available for entry when an event occurs. The Event Template must be previously defined.&nbsp;See <a href="/articles/management-system/eventtemplates" style="font-size: 10pt;" onclick="return n(&#39;!management-system/eventtemplates&#39;,this);">Event Templates</a><span style="font-size: 10pt;">.
+    <br/>
+    <img src="images/New%20Event%20Log.png" alt="" style="width: 600px; height: 174px;" loading="lazy"/>
+    <br/>
+    </span>
+  </li>
+  <li>
+    Select the <b>Data Entry Type</b>. 
+    <ol>
+      <li>
+        Select <b>Automatic </b>for automatically triggered events. 
+      </li>
+      <li>
+        Select <b>Manual </b>for Event Logs in which entries will be created manually as needed.
+      </li>
+      <li>
+        Optionally, you may select a Custom Field Template to apply. See <a href="/articles/management-system/customfieldtemplates" onclick="return n(&#39;!management-system/customfieldtemplates&#39;,this);">Custom Field Templates</a>. <br/>The fields on a Custom Field Template will be seen on the Event Log properties, but will not be seen on the events.</li>
+    </ol>
+  </li>
+  <li>
+    Click <b>Continue</b>.
+  </li>
+  <li>
+    Complete the form for creating a new Event Log, including the following fields:
+    <ol>
+      <li>
+        <b>Name</b>: This is the name for the Event Log that will appear in the system model tree.
+      </li>
+      <li>
+        <b>Active Date:</b> Optional.
+      </li>
+      <li>
+        <b>Inactive Date</b>: Optional.
+      </li>
+      <li>
+        <b>Description</b>: Description of what the Event Log is used for (optional).
+      </li>
+      <li>
+        For an Automatic Event Log: Select the <b>Requirement Type </b>(numeric or non-numeric). See examples below.
+      </li>
+      <li>
+        <b>Numeric</b>: If monitored requirement is Numeric, you must also select the <b>Tracked Limit</b>. This determines which limit exceedance will trigger an event, the Regulatory or Internal limit or both.
+      </li>
+      <li>
+        <b>Non-numeric:</b> If monitored requirement is Non-numeric, no further selection is necessary. Events will be created whenever a task associated with the requirement is completed with the compliance status Not Determined.
+      </li>
+    </ol>
+  </li>
+  <li>
+    Select the <b>Monitored Requirements</b> to associate with the Event. 
+    <br/>
+    By default, all requirements (of the selected type) under the same parent object are listed. Remove the requirements you do not want to associate with the Event Log, so only those you want to monitor are shown.
+  </li>
+  <li>
+    To remove requirements, select the requirements (Ctrl-click for multiple selection) , then select <b>Remove</b>. 
+  </li>
+  <li>
+    To add requirements from other parent objects, click <b>Add</b>. 
+    <br/>
+    In the selection window, find and select the requirement(s).</li>
+  <li>If your system is integrated with Core (GX2), you can choose an event from the&nbsp;<b>GX2 Finding/Event Report Type</b> list to be automatically created. For more information on event reports in Core (GX2), see <a href="/smart/project-cority-web-help/reporting-an-event" target="_top">Reporting an Event</a> in <i>The Cority User Guide</i>.&nbsp;   </li>
+  
+  <li>
+    To trigger a task when an event occurs, choose the <b>Task Template</b> from the selection list.
+    <br/>
+    When a task is associated with an event, the fields on the Event Template are included on the task form so that the event may be documented from the task completion form. In addition, the Task Template may specify notifications and an optional workflow to be triggered. See <a href="/articles/management-system/tasktemplates" onclick="return n(&#39;!management-system/tasktemplates&#39;,this);">Task Templates</a>.
+    <br/>
+    </li>
+  <li>
+    Click <b>Assignor </b>and select a user from the user selection window. For a Manual Event Log, you may designate the creator of the event log record as Assignor of the task by checking the <b>Assignor from Data Entry </b>box.
+  </li>
+  <li>
+    Click <b>Add </b>in the <b>User Assignee(s)</b> or <b>Group Assignee(s)</b> box and select users or groups to assign to the task from the selection window.
+  </li>
+  <li>
+    Optionally, you may associate documents or citations with the Event Log. Click <b>Add </b>and browse to select the documents or citations you want to associate.
+    <br/>
+    <p class="Note">You may also associate documents with the event template. Documents associated with the event template are attached to every event instance for every event log that uses the template. Documents associated with the event log are applicable only to the this event log and are only accessible from the event log properties, not from the event instances.
+    </p>
+   </li>
+  <li>
+    Select <b>Save</b>, then <b>Confirm </b>to save the Event Log.
+  </li>
+</ol>
+<h2 id="h2_1775035843" data-has-heading-anchor="true">
+  Event Log Examples
+<a href="/articles/management-system/createeventlog/a/h2_1775035843" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/createeventlog/a/h2_1775035843&#39;,this);"></a></h2><p>Manual Event Log:</p><p class="Body">
+  <img src="images/new%20manual%20event%20long%20example.png" style="margin: 1.00008px 1.00007px 1.00007px 1.00008px;" alt="" loading="lazy"/>
+</p>
+<p>
+  Automatic Event Log for Non-Numeric Requirement:
+</p>
+<p class="Body">
+  <img src="images/automatic%20event%20non%20numeric%20example.png" style="margin: 1.00008px 0.999371px 0.99934px 1.00008px; width: 575px; height: 630px;" alt="" loading="lazy"/>
+</p>
+<p>
+  Automatic Event Log for Numeric Requirement:
+</p>
+<p class="Body">
+  <img src="images/automatic%20event%20numeric%20example.png" style="margin: 1.00008px 0.999371px 0.999371px 1.00008px;" alt="" loading="lazy"/>
+</p>
+<p class="StepIntro" madcap:autonum="">
+  <span class="autonumber"><span></span></span>
+</p>
+<h2 id="h2__1516113152" data-has-heading-anchor="true">
+  Create Event Logs in Bulk
+<a href="/articles/management-system/createeventlog/a/h2__1516113152" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/createeventlog/a/h2__1516113152&#39;,this);"></a></h2><p class="StepIntro" madcap:autonum="">
+  To create Event Logs in bulk:
+</p>
+<ol>
+  <li value="1">
+    In the Applicable Requirements view, use the search to find the parent objects (Units or POIs) under which you want to create the new Event Logs.
+  </li>
+  <li value="2">
+    Select the checkboxes for the Units or POIs under which the new Event Logs will be created.
+  </li>
+  <li value="3">
+    <p>
+      Right click and choose <b class="bold">New &gt; Event Log</b>.
+    </p>
+    <p class="Body">
+      <img src="images/bulk%20event%20logs.png" style="margin: 1.00008px 0.999371px 1.00008px 1.00008px;" alt="" loading="lazy"/>
+    </p>
+  </li>
+  <li value="4">
+    <p>
+      Select the Event Template and the Data Entry Type (automatic or manual).
+    </p>
+    <p class="Body">
+      Optionally, you may apply a Custom Field Template.
+    </p>
+  </li>
+  <li value="5">
+    Click <b class="bold">Continue</b>. 
+  </li>
+  <li value="6">
+    <p>
+      Complete the Event Log properties as appropriate.
+    </p>
+    <p class="Body">
+      You must choose at least one requirement to monitor. All monitored requirements selected will be associated with all the Event Logs created. If you want to monitor different requirements for each Event Log, edit each Event Log individually after creation to select the appropriate requirement(s). 
+    </p>
+  </li>
+  <li value="7">
+    Click <b class="bold">Save</b>, then <b class="bold">Confirm</b>.
+  </li>
+</ol>
+<script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+</script>
+<div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

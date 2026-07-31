@@ -1,0 +1,644 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/functionalpermissions"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Functional Permissions</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Functional Permissions';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1_266973463" data-has-heading-anchor="true">Functional Permissions<a href="/articles/management-system/functionalpermissions/a/h1_266973463" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/functionalpermissions/a/h1_266973463&#39;,this);"></a></h1><p class="Body">Functional permissions are grouped together in several arbitrary access levels that may be assigned per user/group to each system object. </p>
+        <p class="Body">The following table shows the permissions that can be granted for system model objects with a summary of the allowable actions:</p>
+        <table style="margin-left: 0;margin-right: auto;caption-side: top;">
+            <colgroup><col width="155px"/>
+            <col width="232px"/>
+            </colgroup><thead>
+                <tr>
+                    <th class="colHeadGray" style="width: 354px;">
+                        <p class="T2TableTextSmall">Access Level</p>
+                    </th>
+                    <th class="colHeadGray" style="width: 1106px;">
+                        <p class="T2TableTextSmall">Actions allowed</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="td_1" style="width: 354px;">
+                        <p class="T2TableTextSmall">No Access</p>
+                    </td>
+                    <td class="td_1" style="width: 1106px;">
+                        <p class="T2TableTextSmall">Cannot view or perform any action on this object or section. (See Note below.)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_1" style="width: 354px;">
+                        <p class="T2TableTextSmall">View Data</p>
+                    </td>
+                    <td class="td_1" style="width: 1106px;">
+                        <p class="T2TableTextSmall">Can view data, but not enter or edit data. Also includes ability to view data in reports</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_1" style="width: 354px;">
+                        <p class="T2TableTextSmall">View Properties</p>
+                    </td>
+                    <td class="td_1" style="width: 1106px;">
+                        <p class="T2TableTextSmall">Can view object properties</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_1" style="width: 354px;">
+                        <p class="T2TableTextSmall">Report</p>
+                    </td>
+                    <td class="td_1" style="width: 1106px;">
+                        <p class="T2TableTextSmall">Can run reports for all objects. Selecting this permission automatically includes View Data, View Properties, and View Tasks.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_1" style="width: 354px;">
+                        <p class="T2TableTextSmall">Enter Data</p>
+                    </td>
+                    <td class="td_1" style="width: 1106px;">
+                        <p class="T2TableTextSmall">Can add data (but not edit or view data)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_1" style="width: 354px;">
+                        <p class="T2TableTextSmall">View, Enter, and Edit Data</p>
+                    </td>
+                    <td class="td_1" style="width: 1106px;">
+                        <p class="T2TableTextSmall">Can view data, enter data and edit data</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_1" style="width: 354px;">
+                        <p class="T2TableTextSmall">View Tasks</p>
+                    </td>
+                    <td class="td_1" style="width: 1106px;">
+                        <p class="T2TableTextSmall">Can view tasks (but not edit or complete tasks)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_1" style="width: 354px;">
+                        <p class="T2TableTextSmall">Create and Complete Tasks</p>
+                    </td>
+                    <td class="td_1" style="width: 1106px;">
+                        <p class="T2TableTextSmall">Can create tasks, edit and complete tasks; enter and edit data.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_1" style="width: 354px;">Create and Edit Objects</td>
+                    <td class="td_1" style="width: 1106px;">Can create objects, edit object properties, create or modify associated tasks, add or edit data. <i>Cannot delete objects.</i></td>
+                </tr>
+                <tr>
+                    <td class="td_1" style="width: 354px;">
+                        <p class="T2TableTextSmall">Modify</p>
+                    </td>
+                    <td class="td_1" style="width: 1106px;">
+                        <p class="T2TableTextSmall">Can create objects, edit object properties, create or modify associated tasks, add or edit data, plus delete object.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_1" style="width: 354px;">
+                        <p class="T2TableTextSmall">Full Control</p>
+                    </td>
+                    <td class="td_1" style="width: 1106px;">
+                        <p class="T2TableTextSmall">Can perform all of the actions, including adding and deleting objects and setting object permissions. Also grants Manage Workflows permission for object-related workflows.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Note" madcap:autonum=" &nbsp;"><span class="autonumber"><span class="note_et_al"> &nbsp;</span></span>The No Access permission overrides any other permissions granted. For example, if a user belongs to a group with permissions on an object, the administrator may override the group permissions by specifying No Access on that object for one or more users.</p>
+        <p class="Body">The relations between the access levels and the functional permissions are shown in the following table.</p>
+        <table style="border-style: solid; border-width: 1px; margin-left: 0px; margin-right: auto; caption-side: top; border-collapse: collapse;" cellspacing="0" cellpadding="0" align="center">
+            <colgroup><col width="117px"/>
+            <col width="55px"/>
+            <col width="39px"/>
+            <col width="47px"/>
+            <col width="51px"/>
+            <col width="42px"/>
+            <col width="43px"/>
+            <col width="45px"/>
+            <col width="65px"/>
+            <col width="50px"/>
+            <col width="50px"/>
+            <col width="57px"/>
+            </colgroup><thead>
+                <tr>
+                    <th rowspan="2" class="" style="font-weight: bold; border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;<p class="T2TableTextSmall">Access Level</p></th>
+                    <th colspan="11" class="" style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">Permissions</th>
+                </tr>
+                <tr>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">No Access</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">View Data</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">View Prop-erties</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">Report</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">Enter Data</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">View, Enter, and Edit Data</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">View Tasks</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">Create and Complete Tasks</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">Create and Edit Objects</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">Modify</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">Full Control</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">View Data</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p>&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">View Properties</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">View Permissions</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center; vertical-align: middle;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">Add Data</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">Edit Data</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">Edit Properties</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">Edit Permissions</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">Create Object</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">Delete Object</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">Rename Object</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">View Task</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p>&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">Create Task</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">View Events</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">Report</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;" class="subhead ">X</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">Manage Workflow Instances</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">Set Workflow Role Overrides</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall">Set Workflow Policy Overrides</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">&nbsp;</p>
+                    </td>
+                    <td class="subhead " style="border-width: 1px; border-style: solid; vertical-align: middle; text-align: center;">
+                        <p class="T2TableTextSmall" style="text-align: center;">X</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

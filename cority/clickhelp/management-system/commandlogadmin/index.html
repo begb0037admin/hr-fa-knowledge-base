@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/commandlogadmin"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Command Log</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Command Log';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1_414467" data-has-heading-anchor="true">Command Log<a href="/articles/management-system/commandlogadmin/a/h1_414467" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/commandlogadmin/a/h1_414467&#39;,this);"></a></h1>
+        <p class="Body">The Command Log keeps track of data transactions sent to the system. </p>
+        <p class="Body">In order to ensure maximum performance and prevent browser lag time, the Management System uses "asynchronous transactions" to queue data transactions for commitment to the database.</p>
+        <p class="Body">Large data uploads may take time to process and commit to the database. Other types of data transactions may also affect system performance, such as recalculating data, changing calculation formulas, changing data limits, and adding new events. Most data transactions take only a few seconds to process, but the lag time for the browser to refresh the page with new results may be noticeable to the user.</p>
+        <p class="Body">When a new data transaction is entered by a user (such as adding or editing a data point, uploading data, or editing a calculation) a message informs the user that the data transaction has been successfully queued for entry. You can view the status of the command in the Command Log, and refresh periodically until you see that the command has succeeded.</p>
+        <p class="Body">If you have the Manage Commands right, you can view all commands sent to the system in Command Log. Users without the Manage Commands right see only their own transactions in the Command Log.</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To view the transactions in the system:</p>
+        <ol>
+            <li value="1">
+                <p>Select <b class="bold">Command Log </b>from the <b class="bold">Messages</b> page.&nbsp;<br/><span style="font-size: 11pt;">A list of commands sent to the system is displayed, with the most recent first.&nbsp;</span></p>
+                </li>
+        
+            <li>
+                <p><span style="font-size: 11pt;"></span><span style="font-size: 11pt;">Find specific transactions using the sort and filter options:</span></p>
+                <ul>
+            <li>
+                <p><span style="font-size: 11pt;"></span><span style="font-size: 11pt;">Select a column head to sort the transactions by that column.</span></p>
+                </li>
+        
+            <li>
+                <p><span style="font-size: 11pt;"></span><span style="font-size: 11pt;">Search for data transactions by status (Waiting, Processing, Succeeded, Failed, Resubmitted). If any errors occurred, the Error Message column will contain details.</span></p>
+                </li>
+        
+            <li>
+                <p><span style="font-size: 11pt;"></span><span style="font-size: 11pt;">Search for transactions by selecting a date/time range when they were entered in the system.</span></p>
+                </li>
+        
+            <li>
+                <p><span style="font-size: 11pt;"></span><span style="font-size: 11pt;">Filter commands for a specific object.</span></p>
+                </li>
+        </ul></li>
+        </ol><p>To view commands for an object, right click the object in the system model tree and choose <b>View Commands</b>.</p><p class="Body">The command log is filtered to display transactions for the selected object.&nbsp;<span style="font-size: 11pt;">When an object has failed transactions, the object is displayed in red on the System Model tree as a warning. If a transaction is in still in process, the object is displayed in blue.</span></p>
+                <h2 id="h2__1817988696" data-has-heading-anchor="true">Deleting Commands<a href="/articles/management-system/commandlogadmin/a/h2__1817988696" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/commandlogadmin/a/h2__1817988696&#39;,this);"></a></h2><p data-aura-rendered-by="35:325;a">Deleting commands from the command log removes the historical record&nbsp;from view in the command log. Depending on the command's status, the following occurs:</p><ul><li data-aura-rendered-by="35:325;a"> Deleting a processing log&nbsp;does&nbsp;not&nbsp;cancel the action, the command remains in the queue, and it will be executed. </li><li data-aura-rendered-by="35:325;a">Deleting a waiting log cancels the action and the command is not executed.&nbsp;</li></ul><p data-aura-rendered-by="35:325;a"><br/></p><script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

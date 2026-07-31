@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/workflowaggregations"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Workflow Aggregations</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Workflow Aggregations';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1__1586588018" data-has-heading-anchor="true">Workflow Aggregations<a href="/articles/management-system/workflowaggregations/a/h1__1586588018" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/workflowaggregations/a/h1__1586588018&#39;,this);"></a></h1>
+        <p class="Body">A Time-Based Fixed Period requirement can be used to do aggregations for workflows. Workflow Aggregations can be used to obtain a count of workflows meeting specific criteria, or to perform calculated aggregations of numeric fields found on the workflow forms. Users may also define criteria based on workflow form UDFs or a particular Step that has been reached in the workflow process.</p>
+        <p class="Body">The aggregation types available for workflows are COUNTWF, SUMWF, AVGWF, MINWF, MAXWF.</p>
+        <p class="Body">Aggregations may be performed for workflows associated with a specific requirement or object, or for workflows associated with a parent object of the requirement. You may also choose to include aggregations of a workflow type where there are no associated objects.</p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To create a workflow aggregation calculation:</p>
+        <ol>
+            <li value="1">Right click the parent object and choose <b class="bold">New &gt; Requirement</b>.</li>
+            <li value="2">Select the <b class="bold">Requirement Template</b>.</li>
+            <li value="3">
+                <p>Select <b class="bold">Time-Based Calculated (Fixed period)</b> for the type.</p>
+                <address>
+                    <img src="images/CreateTBFixed.png" style="margin-left: 1.00008px;margin-top: 1.00008px;margin-right: 1.000057px;margin-bottom: 1.000057px;" loading="lazy"/>
+                </address>
+                <p class="Body">To apply user-defined custom fields, select a Custom Field Template to apply. See <a class="MCXref_Heading_0" href="/articles/management-system/customfieldtemplates" onclick="return n(&#39;!management-system/customfieldtemplates&#39;,this);">Custom Field Templates</a>.</p>
+            </li>
+            <li value="4">Click <b class="bold">Continue</b>.</li>
+            <li value="5">
+                <p>Enter a <b class="bold">Name</b>.</p>
+                <p class="Body">In the Requirement Source section (optional) you can further define the requirement driver by selecting the <b class="bold">Specific Citation</b>.</p>
+                <p class="Body">Optional fields include:</p>
+                <p class="Body"><b class="bold">Active Date/Inactive Date:</b>The begin and end dates that a requirement applies (optional)</p>
+                <p class="Body"><b class="bold">Description</b>: General description of requirement</p>
+                <p class="Body"><b class="bold">UOM</b>: Unit of measure. (May apply if aggregation is for a numeric field in a workflow which has a logical unit of measure.)</p>
+                <p class="Body"><b class="bold">Precision</b>: Number of places to the right of the decimal point to display</p>
+                <p class="Body"><b class="bold">Calculation purpose</b>: Describe the purpose of the calculation.</p>
+                <p class="Body"><a class="MCXref_Heading_0" href="/articles/management-system/fieldtbcalcs" onclick="return n(&#39;!management-system/fieldtbcalcs&#39;,this);">Field Definitions for Time-Based Calculations</a> is not generally applicable to workflow aggregations, but may be used in special circumstances.</p>
+                <p class="Body">Standard values that may be used in the calculation (but not usual for workflow aggregations) include Calculation Requirements and Calculation UDF&nbsp;Parameters (from a Calculation Template). You will need to add any requirements to use that are not in the same location.</p>
+            </li>
+            <li value="6">
+                <p>Scroll to the <b>Workflows Aggregations Settings</b> section.</p>
+                <p>All of the settings below can be selected multiple times. For instance, you can pick a Workflow Type called "EII-Incident" and set up all the fields below for it, then add "EII-Incident" to the Workflow Type Aggregations list again and set different criteria. The UI will append "2", "3", etc onto the Workflow Type Name and that will be used in the script to identify which Workflow Type Aggregation is being used for cases where more than one Aggregation for the same Workflow Type will be utilized. You can also add more than one Workflow Type to the list, so you might have Workflow Type Aggregations of "[EII-Incident]", "[EII-Incident2], and "[ESI-Incident]"</p>
+                <p> <b>Workflow Type Aggregations</b>:&nbsp;Click Add, then find and select a workflow type for which you want to perform the aggregation. You may add more than one workflow type. (For example, you may wish to aggregate Corrective Actions from inspections and audits, which are different workflow types.) You may also add the same workflow type more than once in order to define different criteria for it. The Alias will be used in the calculation script to identify which Workflow Type Aggregation is being used.</p>
+                <p><b>Alias</b>:&nbsp;This is the name that will be used in the calculation. The workflow name will be used by default. In the case of a workflow type added more than once, a number will be appended to it (i.e., [EII-Incident]", [EII-Incident2]). If you want a simpler abbreviation or more meaningful name you can enter one. </p>
+                <p>When you will be aggregating more than one field from the same workflow type, it may be helpful to use the field name for the Alias so that the calculation script is clearer, as shown below.</p>
+                <p>
+                    <img src="images/WFAggAliasDef.png" alt="" style="width: 850px; height: 278px;" loading="lazy"/>
+                </p>
+                <p>
+                    <img src="images/WFAggAlias.png" alt="" style="width: 850px; height: 378px;" loading="lazy"/>
+                </p>
+                <p>
+                    <img src="images/WFAliasInCalc.png" alt="" style="width: 850px; height: 137px;" loading="lazy"/>
+                </p>
+                <p><b>Aggregation Field</b>:&nbsp;Select the field to aggregate from the dropdown list. Any global field of a numeric type may be used. This field is not required if the aggregation type is COUNTWF.</p>
+                <p><b>Aggregation Date/Time Fields</b>:&nbsp;You must select the date field which will determine the inclusion of the workflow in the calculation time period. Typically this might be Creation Date (of the workflow instance), Due Date, or Close Date, but it may also be any global date or date/time field on the workflow type (such as "Date of Incident,"&nbsp;where this is entered by the user on the form).</p>
+                <p class="Note" madcap:autonum=" &nbsp;"><span class="autonumber"><span class="note_et_al"> &nbsp;</span></span>If the aggregation is based on a user-entered date field from a workflow form, time zones must be considered. A single Date or Date/Time field is always recorded in Facility local time, using the user's time zone converted to UTC then converted to Facility time zone. If there are separate Date and Time fields (as in some WAB apps), the user-entered values are taken exactly as entered and treated as Facility time zone, disregarding user's time zone. In most cases, user time zone will be the same as facility time zone, so there will be no discrepancy, but you may want to consider the case where user time zone and facility time zone are different, depending on how the App is used.</p>
+                <p>
+                    <img src="images/WFAggSelections.png" alt="" style="width: 850px; height: 404px;" loading="lazy"/>
+                </p>
+                <p><b>Criteria</b>:&nbsp;You can filter workflows by criteria such as workflow status, workflow step, or a custom field included in the workflow. Multiple field values may be combined (evaluated as AND operator). Criteria can include fields of all types (true/false, text, number); options and operators available will depend on the field and entry type.</p>
+            </li>
+            <li value="7">
+                <p><b>Aggregate Workflows for</b>: This choice determines how the workflows are selected for inclusion. Choices are:</p>
+                <p><b>Specific Objects</b>: Will aggregate workflows associated with one or more specific objects. If you select this option, a box appears in which you can then select the objects (requirements or tree objects). (This is the only option for workflows associated with Divisions or Requirements.)</p>
+                <p class="Note" madcap:autonum=" &nbsp;"><span class="autonumber"><span class="note_et_al"> &nbsp;</span></span>Attempting to delete an object targeted by a workflow aggregation calc will not be allowed. The aggregation calculation must be edited to remove the object in order to delete it.</p>
+                <p><b>Specified Parent Object Level</b>: Workflows associated with a tree object in the requirement's direct hierarchy path will be aggregated. You must choose the object type. Options available are limited to the direct ascendants of the requirement. For example, if the requirement is a child of a Facility, then only the parent Facility and grandparent Division are available; if it is the child of a POI, then POI,&nbsp;Unit, Facility and Division are available. The object will remain relative to the requirement if it is copied or moved.</p>
+                <p class="Note" madcap:autonum=" &nbsp;"><span class="autonumber"><span class="note_et_al"> &nbsp;</span></span>Moving an object targeted by the hierarchy will result in re-calculation of the workflow aggregation calculation.</p>
+                <p><b>Include Unassociated Workflows</b>:&nbsp;Aggregates all workflows of the specified type that are NOT associated with any object.</p>
+            </li>
+            <li value="8">Click the plus sign (+) in the Calculation Script bar to define the calculation.</li>
+            <li value="9">
+                <p>Click <b class="bold">New</b> to add a calculation definition.</p>
+                <p class="Body">
+                    <img src="images/NewTBCalcScript.png" style="margin-left: 1.00008px;margin-top: 1.00008px;margin-right: 1.000073px;margin-bottom: 0.9993612px;" loading="lazy"/>
+                </p>
+            </li>
+            <li value="10">
+                <p>Set the <b class="bold"><a class="MCXref_Heading_0" href="/articles/management-system/fieldtbcalcs" onclick="return n(&#39;!management-system/fieldtbcalcs&#39;,this);">Field Definitions for Time-Based Calculations</a></b> for the calculation.</p>
+                <p class="Body">This is the period of time in which the data for the requirement are processed. It may be expressed as a number of hours, days, weeks, months, quarters, or years. (See <a class="MCXref_Heading_0" href="/articles/management-system/fieldtbcalcs" onclick="return n(&#39;!management-system/fieldtbcalcs&#39;,this);">Field Definitions for Time-Based Calculations</a>.)</p>
+                <p class="Body"><b class="bold">Intermediate Period:</b> Optionally, you may select an Intermediate Period to enable intermediate calculations within the fixed period. For example, if the Fixed Period is 1 year, and the Intermediate Period is Quarterly, the calculation will trigger each quarter within the year with a rollup to date.</p>
+                <p class="Body">The calculation Begin Date determines the start of the period (calendar year or otherwise).</p>
+                <p class="Body">
+                    <img src="images/TBFixedCalcDef1.png" style="margin-left: 1.00008px;margin-top: 1.00008px;margin-right: 1.000073px;margin-bottom: 1.000088px;" loading="lazy"/>
+                </p>
+            </li>
+            <li value="11">
+                <p>Click the calculator button to bring up the calculation builder. </p>
+                <p class="Body">Use the calculation builder to define the calculation. You may use the function buttons in the calculator or type directly in the box; you can also paste text. An aggregation type is required. </p>
+                <p class="Body">The workflow aggregation types are shown in the calculator. The "Available workflow type aggregation alias box" show the selected workflows or workflow fields that can be used in the calculation. Select the buttons to select the components for your calc.</p>
+                <p>
+                    <img src="images/WFCalcCountCAs.png" alt="" style="width: 850px; height: 826px;" loading="lazy"/>
+                </p>
+            </li>
+            <li value="12">Click <b class="bold">Save</b> to save the formula.</li>
+            <li value="13">
+                <p>Enter the <b class="bold">Calculation Begin Date</b>, then click <u>Update</u> to save the formula value.</p>
+                <p class="Body">Other options include:</p>
+                <p class="Body"><b class="bold">Calculation Errors Handling</b>: For defining a value to be returned if the calculation produces an error. (Not usual for workflow aggregations.)</p>
+                <p class="Body"><b class="bold">Expected Frequency</b>: Produces a data warning if expected data is missing, defined as the number of data points expected per day.</p>
+                <p class="Body"><b class="bold">Limits</b>: Regulatory and internal limits may be set to produce data warnings when limits are exceeded. See <a class="MCXref_Heading_0" href="/articles/management-system/settingregulatorylimits" onclick="return n(&#39;!management-system/settingregulatorylimits&#39;,this);">Setting Regulatory Limits</a>.</p>
+            </li>
+            <li value="14">Click <b class="bold">Save</b> to save the calculated requirement.</li>
+        </ol>
+        <script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

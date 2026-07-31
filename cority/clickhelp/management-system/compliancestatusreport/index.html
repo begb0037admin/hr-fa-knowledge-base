@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/compliancestatusreport"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Compliance Status Report</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Compliance Status Report';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1__1248020405" data-has-heading-anchor="true">Compliance Status Report<a href="/articles/management-system/compliancestatusreport/a/h1__1248020405" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/compliancestatusreport/a/h1__1248020405&#39;,this);"></a></h1><p class="Body">Compliance Status Reports (or Compliance Certification Reports) are used to report on the compliance status of tracked requirements over a period of time.</p>
+        <p class="Body">A Compliance Status Report looks at the Comply status for all data points for a Requirement and the Accept as Deviation field for all related events within the specified period. It uses these values to determine the compliance status.</p>
+        <ul class="brackets">
+            <li value="1"><b class="bold">Full Compliance</b>: The data for the requirement has not been exceeded for the selected period. A requirement is in Full Compliance if it has no events for the specified time or if all the events have No for the Accept as Deviation field.</li>
+            <li value="2"><b class="bold">Intermittent</b>: The requirement has been both in compliance and out of compliance at some point within the selected period. A requirement is Intermittent if it has at least one event that has Yes for the Accept as Deviation field and has at least one data point in compliance for the specified period.</li>
+            <li value="3"><b class="bold">Non Compliance</b>: The requirement has been out of compliance for the selected period. A requirement is Non Compliance if it has no data points in compliance and all related events have Yes for Accept as Deviation field.</li>
+        </ul>
+        <p class="Body">The Compliance Status Report shows one row for each Requirement. The columns are the properties of the Requirements, and the properties of related objects you choose to include.</p>
+        <p class="BodyIndent">
+            <img src="images/ComplianceStatusReport.png" style="margin: 1.00008px 1.00007px 0.999355px 1.00008px; width: 1100px; height: 265px;" alt="" loading="lazy"/>
+        </p>
+        <p class="Body">Event instance information fields can be included in the Compliance Status Summary report, in order to allow the report to show what happened to cause a requirement to be out of compliance and what action was taken.</p>
+        <p class="Body">To include event instance fields, on the report definition select the Event Template, then choose the properties (event fields) to include on the report.</p>
+        <p class="Body">Additionally, some agencies require that the compliance status be calculated for each unique permit modification. To meet this requirement, an option is available to calculate the Compliance Certification Status per the defined interval in a custom field with a tracked value history, rather than by report begin and end dates. </p>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>To use the option to calculate compliance status per custom field defined interval:</p>
+        <ol>
+            <li value="1">
+                <p>Include at least one custom field with a tracked value on the report, and check "Expand Value History" for that field. </p>
+                <p class="Body">
+                    <img src="images/CSRwithExpandHistory.png" style="margin: 1.00008px 1.00007px 1.00009px 1.00008px; width: 950px; height: 460px;" alt="" loading="lazy"/>
+                </p>
+            </li>
+            <li value="2">
+                <p>Check the "Compliance Certification Status calculated per history interval" checkbox in the General Report Description section.</p>
+                <p>
+                    <img src="images/CSRwithHistoryOption.png" style="margin: 1.00008px 1.00009px 1.00008px 1.00008px; width: 700px; height: 286px;" alt="" loading="lazy"/>
+                </p>
+                <p class="Body">If checked, AND at least one custom field property is selected with "Expand Value History" checked, report will calculate compliance status using Begin and End Dates from the Custom Field Value History Interval.</p>
+                <p class="Body">If unchecked, OR no custom field property is selected with "Expand Value History" option checked, the compliance status is calculated with report Begin and End Dates.</p>
+            </li>
+        </ol>
+        <script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

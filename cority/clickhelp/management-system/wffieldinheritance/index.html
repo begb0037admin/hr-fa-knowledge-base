@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/wffieldinheritance"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Workflow Field&#160;Value Inheritance</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Workflow Field Value Inheritance';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1_481067102" data-has-heading-anchor="true">Workflow Field&nbsp;Value Inheritance<a href="/articles/management-system/wffieldinheritance/a/h1_481067102" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/wffieldinheritance/a/h1_481067102&#39;,this);"></a></h1><p class="Body">A workflow instance can inherit the value of a field from:</p>
+        <ul class="brackets">
+            <li value="1">An object or objects associated with the workflow</li>
+            <li value="2">A parent workflow to child workflow at the time of creation only, if the field is a global field on both workflow types.</li>
+        </ul>
+        <h2 id="h2__1667085235" data-has-heading-anchor="true">Associated Object Inheritance<a href="/articles/management-system/wffieldinheritance/a/h2__1667085235" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/wffieldinheritance/a/h2__1667085235&#39;,this);"></a></h2><p class="Body">In order to inherit the value, the same custom field must be applied to the associated object or parent object, and on the form for the first step in the workflow.&nbsp;If the field is used on a form for a step other than the first step, then it can inherit the value if the field is global in scope.</p>
+        <p class="N5Example">"Facility Name" is a custom field applied to the Facility. "Facility Name"&nbsp;is also on the form template for the first step on the workflow type. A workflow instance is created and associated with the Facility. The value of the field will automatically be transferred to the workflow form. If a workflow is created for a child POI which does not have the field itself, the value will be inherited from the parent Facility.</p>
+        <p class="Body"> In the case of multiple objects associated with the workflow, the value is inherited if the value is the same across all associated objects (disregarding null values). The same rules regarding inheritance from parent objects apply.</p>
+        <h2 id="h2_40144946" data-has-heading-anchor="true">Parent to Child Workflow Inheritance<a href="/articles/management-system/wffieldinheritance/a/h2_40144946" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/wffieldinheritance/a/h2_40144946&#39;,this);"></a></h2><p class="Body">The value of a global field on a parent workflow will be inherited by a child workflow if the same global field exists on the first step in the child workflow. This inheritance is one-time only, at the time of creation. If the value of the field subsequently changes in the parent workflow, it will not be changed in the child workflow.</p>
+        <script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

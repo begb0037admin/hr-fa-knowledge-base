@@ -1,0 +1,275 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/management-system/fieldtbcalcs"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Field Definitions for Time-Based Calculations</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Field Definitions for Time-Based Calculations';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/management-system/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/management-system/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/management-system/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1_97799628" data-has-heading-anchor="true">Field Definitions for Time-Based Calculations<a href="/articles/management-system/fieldtbcalcs/a/h1_97799628" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/fieldtbcalcs/a/h1_97799628&#39;,this);"></a></h1><h4 class="Heading4" id="h4_145635736" data-has-heading-anchor="true"><a name="RollingPeriod"></a>Rolling Period<a href="/articles/management-system/fieldtbcalcs/a/h4_145635736" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/fieldtbcalcs/a/h4_145635736&#39;,this);"></a></h4>
+        <p class="Body">The Rolling Period is the running block of time in which the data for a Time-Based Calculated Requirement (Rolling Period) are processed. The block of time may be in hours, days, weeks, months, quarters, or years. The time period is for a set interval that moves forward in time. </p>
+        <p class="Body">For example, a Rolling 7-Day calculation has a rolling period of 7 days. The first calculated data point appears on Day 7 and calculates the total for days 1 through 7. Day 8 calculates total for days 2-8, Day 9 calculates days 3-9, etc.</p>
+        <p class="Body">If a Required Percentage of Data Points for Calculation is specified, then the calc will be triggered only when the corresponding number of data points is available within the rolling period. For example, for a 12-month rolling calc with a required percentage of 50%, six data points within the 12-month period are required to trigger the calc. The data points do not have to be in different months. If no required percentage is specified, any data point within the period is sufficient to trigger the calc. See <a class="MCXref_Heading_0" href="/articles/management-system/fieldtbcalcs/a/RequiredPercent" xrefformat="{paratext}" onclick="return n(&#39;!management-system/fieldtbcalcs/a/RequiredPercent&#39;,this);">Required Percentage of Data Points for Calculation</a>.</p>
+        <h4 class="Heading4" id="h4__1840037641" data-has-heading-anchor="true"><a name="FixedPeriod"></a>Fixed Period<a href="/articles/management-system/fieldtbcalcs/a/h4__1840037641" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!management-system/fieldtbcalcs/a/h4__1840037641&#39;,this);"></a></h4>
+        <p class="Body">The Fixed Period is the static block of time in which the data for a Time-Based Calculated Requirement (Fixed Period) are processed. The block of time may be in hours, days, weeks, months, quarters, or years. At the end of the time period, the data processing starts over as zero time. In the case of Workflow Aggregations, the minute option is also available (in order to accommodate a field that stores the workflow date/time as a referenceable field).</p>
+        <p class="Body">Data is stored once per period at the beginning of the last day of the period (12:00 AM) for daily or greater periods. For periods of minutes or hours, data is stored at the beginning of the last unit of the period. For example:</p>
+        <ul>
+            <li value="1">A calc with a fixed period of 1 hour will store one data point every 60 minutes, at the beginning of the 60th minute.</li>
+            <li value="2">A calc with a fixed period of 48 hours will store one data point every 48 hours at XX:00:00 where XX is the 48th hour of the period.</li>
+            <li value="3">A calc with a fixed period of 2 weeks will store one data point every 2 weeks at 12:00 AM on the last day of the second week.</li>
+            <li value="4">A calc with a fixed period of 1 month will store one data point every month at 12:00 AM on the last day of the monthly period, as determined by the start date. (See rules for monthly fixed period calcs below.</li>
+            <li value="5">A calc with a fixed period of 1 year will store one data point every year at 12:00 AM on the last day of the year, as determined by the start date.</li>
+        </ul>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>Monthly fixed period and rolling calcs have the following rules:</p>
+        <ol>
+            <li value="1">If the start date is the first day of any month at 12:00:00 AM, the calculation includes data points through 11:59:59 PM on the last day of the calendar month. Calculation is stored at 12:00:00 AM on the last day of the calendar month (Jan. 31, Feb. 28 or 29, Mar. 31, Apr. 30, etc.) </li>
+            <li value="2">
+                <p>If the start date falls on calendar day 2 through 29, the calculation will be stored at 12:00:00 AM on the last day of the monthly period (as calculated from the start date). </p>
+                <p>Example:</p>
+                <table style="margin-left: 0;margin-right: auto;caption-side: top;">
+                    <colgroup><col width="149px"/>
+                    <col width="280px"/>
+                    </colgroup><thead>
+                        <tr>
+                            <td class="td_HeadGray">
+                                <p class="T2TableTextSmall">Data Points</p>
+                            </td>
+                            <td class="td_HeadGray">
+                                <p class="T2TableTextSmall">Data Interval (included data)</p>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="2" class="border">
+                                <p class="T2TableTextSmall">Start date=6/15/2000 12:00:00 AM</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border">
+                                <p class="T2TableTextSmall">7/14/2000 12:00:00 AM</p>
+                            </td>
+                            <td class="border">
+                                <p class="T2TableTextSmall" style="text-align: center;">6/15/2000 12:00:00 AM - 7/14/2000 11:59:59 PM</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border">
+                                <p class="T2TableTextSmall">8/14/2000 12:00:00 AM</p>
+                            </td>
+                            <td class="border">
+                                <p class="T2TableTextSmall" style="text-align: center;">7/15/2000 12:00:00 AM - 8/14/2000 11:59:59 PM</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li value="3">
+                <p>If the start time is greater than 12:00:00 AM, the calculation will be stored at 12:00:00 AM on the same date.</p>
+                <p> Example:</p>
+                <table style="margin-left: 0;margin-right: auto;caption-side: top;">
+                    <colgroup><col width="145px"/>
+                    <col width="277px"/>
+                    </colgroup><thead>
+                        <tr>
+                            <td style="text-align: left;" class="td_HeadGray">
+                                <p class="T2TableTextSmall">Data Points</p>
+                            </td>
+                            <td style="text-align: left;" class="td_HeadGray">
+                                <p class="T2TableTextSmall">Data Interval (included data)</p>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="2" style="text-align: left;" class="border">
+                                <p class="T2TableTextSmall">Start date=6/15/2000 08:00:00 AM</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;" class="border">
+                                <p class="T2TableTextSmall">7/15/2000 12:00:00 AM</p>
+                            </td>
+                            <td style="text-align: left;" class="border">
+                                <p class="T2TableTextSmall" style="text-align: center;">6/15/2000 08:00 AM- 7/15/2000 07:59:59 AM</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;" class="border">
+                                <p class="T2TableTextSmall">8/15/2000 12:00:00 AM</p>
+                            </td>
+                            <td style="text-align: left;" class="border">
+                                <p class="T2TableTextSmall" style="text-align: center;">7/15/2000 08:00 AM- 8/15/2000 07:59:59 AM</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li value="4">
+                <p>If the start date falls on calendar day 29-31(regardless of the time of day), the day is maintained for every month where possible; otherwise the last day of the month is used.</p>
+                <ul>
+                    <li value="1">If the start date falls on day 29, the calculation is stored on day 28, except for February, when data is stored on 2/27, or 2/28 in leap years.</li>
+                    <li value="2">If the start date falls on day 30, the calculation is stored on day 29, except for February, when data is stored on 2/27, or 2/28 in leap years.</li>
+                    <li value="3">If the start date falls on day 31, the calculation is stored on day 30, except for February, when data is stored on 2/27, or 2/28 in leap years. </li>
+                </ul>
+                <p class="Body">Some examples are shown in the table following.</p>
+                <table style="margin-left: 0;margin-right: auto;caption-side: top;">
+                    <colgroup><col width="155px"/>
+                    <col width="278px"/>
+                    </colgroup><thead>
+                        <tr>
+                            <td class="td_HeadGray">
+                                <p class="T2TableTextSmall">Data Points</p>
+                            </td>
+                            <td class="td_HeadGray">
+                                <p class="T2TableTextSmall" style="text-align: center;">Data Interval (included data)</p>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="2" class="border">
+                                <p class="T2TableTextSmall">Start date: 1/29/09 12:00 AM</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border">
+                                <p class="T2TableTextSmall">2/27/09 12:00:00 AM<br/>(if leap year, would be 2/28)</p>
+                            </td>
+                            <td class="border">
+                                <p class="T2TableTextSmall" style="text-align: center;">1/29/09 12:00:00 AM - 2/27/09 11:59:59</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border">
+                                <p class="T2TableTextSmall">3/28/09 12:00:00 AM</p>
+                            </td>
+                            <td class="border">
+                                <p class="T2TableTextSmall" style="text-align: center;">2/27/09 12:00:00 AM - 3/28/09 11:59:59 AM</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border">
+                                <p class="T2TableTextSmall">4/28/09 12:00:00 AM</p>
+                            </td>
+                            <td class="border">
+                                <p class="T2TableTextSmall" style="text-align: center;">3/28/09 12:00:00 AM - 4/28/09 11:59:59AM</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border">
+                                <p class="T2TableTextSmall">5/28/09 12:00:00 AM</p>
+                            </td>
+                            <td class="border">
+                                <p class="T2TableTextSmall" style="text-align: center;">4/28/09 12:00:00 AM - 5/28/09 11:59:59 AM</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="border">
+                                <p class="T2TableTextSmall">Start date: 4/30/09 12:00 AM</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border">
+                                <p class="T2TableTextSmall">4/29/09 12:00:00 AM</p>
+                            </td>
+                            <td class="border">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="border">
+                                <p class="T2TableTextSmall">5/29/09 12:00:00 AM</p>
+                            </td>
+                            <td class="border">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="border">
+                                <p class="T2TableTextSmall">6/29/09 12:00:00 AM</p>
+                            </td>
+                            <td class="border">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="border">
+                                <p class="T2TableTextSmall">Start date: 1/31/09 12:00 AM</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border">
+                                <p class="T2TableTextSmall">2/27/09 12:00:00 AM <br/>(if leap year, would be 2/28)</p>
+                            </td>
+                            <td class="border">
+                                <p class="T2TableTextSmall" style="text-align: center;">1/31/09 12:00:00 AM - 2/27/09 12:00:00 AM</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border">
+                                <p class="T2TableTextSmall">3/30/09 12:00:00 AM</p>
+                            </td>
+                            <td class="border">
+                                <p class="T2TableTextSmall" style="text-align: center;">2/28/09 12:00:00 AM - 3/30/09 12:00:00 AM</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border">
+                                <p class="T2TableTextSmall">4/29/09 12:00:00 AM</p>
+                            </td>
+                            <td class="border">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="border">
+                                <p class="T2TableTextSmall">5/30/09 12:00:00 AM</p>
+                            </td>
+                            <td class="border">
+                                <p class="T2TableTextSmall" style="text-align: center;">4/30/09 12:00:00 AM - 5/30/09 11:59:59 PM</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border">
+                                <p class="T2TableTextSmall">6/29/09 12:00:00 AM</p>
+                            </td>
+                            <td class="border">
+                                <p class="T2TableTextSmall" style="text-align: center;">5/31/09 12:00:00 AM - 6/29/09 11:59:59 PM</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border">
+                                <p class="T2TableTextSmall">7/30/09 12:00:00 AM</p>
+                            </td>
+                            <td class="border">
+                                <p class="T2TableTextSmall" style="text-align: center;">6/30/09 12:00:00 AM - 7/30/09 11:59:59 PM</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+        </ol>
+        <p class="StepIntro" madcap:autonum=""><span class="autonumber"><span></span></span>Quarterly fixed period and rolling calcs follow the same rules as Monthly, with the period being 3 calendar months.</p>
+        <ol>
+            <li value="1">If the start date is the first day of any month at 12:00:00 AM, the calculation will be stored on the last day of the third month. Example: If the start date is 1/1/2000, the first calculation will be stored on 3/31/2000. </li>
+            <li value="2">
+                <p>If the start date is other than the first day of the month, the same rules apply as for monthly calcs.</p>
+                <p><a name="RequiredPercent"></a>Required Percentage of Data Points for Calculation</p>
+                <p class="Body">How many data points (as a percent of the total) are required before the system throws a calculation. </p>
+                <p class="Body">If no value is entered for required percentage, then ANY value within the period is sufficient to produce a result. For example, a 10-month calc with no required percentage specified will trigger if there is only one data point on the third month. If 20% is specified, two data points will satisfy the requirement and trigger the calc. </p>
+                <p class="ExampleBox">The system has an 8 hour rolling average requirement for NOx.  The agency requirement is that 7 out of 8 values must be present in any 8-hour rolling period to calculate a legitimate 8 hour average. If the required percentage is set to 85%, then if 7 out of 8 (87.5%) are present in any 8-hour period, a result is generated at the end of the period.</p>
+                <p class="Body">Note also that the number of qualifying data points could occur in the same hour, day, or month and still qualify as 100%.</p>
+            </li>
+        </ol>
+        <script type="text/javascript" src="/resources/Scripts/project-ms/SkinSupport/MadCapBodyEnd.js">
+        </script>
+    <div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>
