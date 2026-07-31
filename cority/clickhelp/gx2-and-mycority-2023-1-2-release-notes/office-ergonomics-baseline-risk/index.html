@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/gx2-and-mycority-2023-1-2-release-notes/office-ergonomics-baseline-risk"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Office Ergonomics – Baseline Risk</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Office Ergonomics – Baseline Risk';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/gx2-and-mycority-2023-1-2-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h1 id="h1_2017285753" data-has-heading-anchor="true">
+			Office Ergonomics – Baseline Risk<a href="/articles/gx2-and-mycority-2023-1-2-release-notes/office-ergonomics-baseline-risk/a/h1_2017285753" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!gx2-and-mycority-2023-1-2-release-notes/office-ergonomics-baseline-risk/a/h1_2017285753&#39;,this);"></a></h1>
+		<ul>
+			<li>In the Office Ergonomics cloud, the ‘Manage Employee Risk’ screen now calculates and displays baseline risk. This enables an Ergonomics Administrator to capture risk for employees at the beginning of the year and monitor progress over the course of the year.</li><li>The global GX2 ‘Enable Baseline Risk’ system setting must be selected to use this functionality. By default, it is not selected.</li><li>To support this feature set, there is a new Baseline Risk look-up table that functions similarly to the Overall Risk look-up table. The new table has Awaiting Info, Low, Moderate, and High risk levels.</li><li>On the ‘Manage Employee Risk’ screen, Baseline Risk displays to the right of Overall Risk.</li><li>If added to a custom version of the myCority ‘My Team’ (ML-003686) layout, it will also display for each employee within a column on the My Team tab in ‘Personal Risk’. It is located to the right of the ‘Current Overall Risk’ column.</li><li>In myCority, it is also displayed on the ‘Personal Risk’ screen, under Overall Risk.</li><li>The date baseline risk is calculated and established each year is determined using the date specified in the new GX2 global ‘Baseline Risk Date’ system setting. It accommodates a day and a month, so the calculation is repeated each year. The default is January 1st.</li><li>When baseline risk is retrieved, if no record is found for the current year, 'Awaiting Baseline Calculation' will be displayed.</li><li>Baseline risk is calculated using the risk type for the employee that has the highest Overall Risk ranking value.</li><li>If ‘Does Not Contribute to Overall Risk’ is specified, the risk type will not apply to the baseline risk.</li><li><span style="font-weight: bold; font-style: normal;">Example:</span><span style="font-weight: normal; font-style: normal;"> An employee has three risk types: Desktop Risk, Discomfort, and Office Ergonomics.</span><ul>
+				<li>Discomfort - High maps to Overall High. ‘Does not contribute to Overall Risk’ is specified.</li><li>Desktop Risk - Low maps to Overall Low. ‘Does not contribute to Overall Risk’ is not specified.</li><li>Office Ergonomics Risk - Moderate maps to Overall Moderate. ‘Does not contribute to Overall Risk’ is not specified.</li></ul>
+			</li><li>In that scenario, baseline risk would be recorded as Moderate because it is the highest Overall Risk level for the employee that is not flagged as ‘Does not contribute to Overall Risk’.</li><li><span style="font-weight: normal; font-style: normal;">Baseline risk is only calculated and displayed if:</span><ul>
+				<li>The ‘Enable Baseline Risk’ system setting is selected.</li><li>Baseline risk has not yet been established for the current year.</li><li>The user has an RSIGuard installation configured to communicate with 'Personal Risk' in GX2/myCority and 20 days of data have been recorded after the date set in the ‘Baseline Risk Date’ system setting.</li><li>The user has completed a training course flagged as ‘Self-Assessment’ or Re-Assessment’ in the current year, on or after that system setting date.</li></ul>
+			</li><li>Each year, when the new year starts, baseline risk is reset to ‘Awaiting Info’.</li><li>Once baseline risk is established for a year, it cannot be reset until the status changes back to ‘Awaiting Info’ at the beginning of the following year.</li></ul>
+		<p>&nbsp;</p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>
