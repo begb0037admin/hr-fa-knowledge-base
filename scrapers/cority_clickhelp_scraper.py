@@ -13,7 +13,7 @@ Mirrors the existing access_group_scraper.py conventions (output layout,
 verification-before-trust discipline) but uses plain HTTP throughout —
 no browser automation needed since this endpoint requires no session.
 
-Proven live 31 July 2026:
+Proven live 31 July / 1 August 2026:
 - Single-publication test (cority-user-guide): 939/939 articles, 559
   images (14.2MB), 49 transient network timeouts all succeeded on retry.
 - Full 119-publication run: 4092/4092 articles, 6772 images, 0 scraper
@@ -22,6 +22,11 @@ Proven live 31 July 2026:
   when the ephemeral runner was destroyed — this is why the workflow now
   commits after each publication instead of once at the end (see
   --list-publications below, used to drive that loop from bash).
+- meddbase-help-center (374 articles, 2026 images) failed to push even
+  as its own isolated single-publication commit — a genuinely oversized
+  payload, not the cascading-backlog bug the per-publication commit fix
+  above solved. --offset (below) lets one publication be scraped and
+  committed in smaller slices to work around this.
 """
 import argparse
 import json
@@ -151,13 +156,17 @@ def scrape_article(publication_slug: str, article_slug: str, out_root: Path) -> 
     }
 
 
-def scrape_publication(publication_sitemap_url: str, out_root: Path, limit: int = 0) -> dict:
-    """Scrape every article in one publication (or up to `limit` if >0). Returns summary stats."""
+def scrape_publication(publication_sitemap_url: str, out_root: Path, limit: int = 0, offset: int = 0) -> dict:
+    """Scrape articles in one publication, optionally sliced [offset:offset+limit]
+    (limit=0 means to the end). Returns summary stats."""
     pairs = list_article_slugs(publication_sitemap_url)
+    total_in_publication = len(pairs)
+    pairs = pairs[offset:]
     if limit > 0:
         pairs = pairs[:limit]
     stats = {"publication": publication_slug_from_sitemap_url(publication_sitemap_url),
-             "total": len(pairs), "succeeded": 0, "failed": 0, "images": 0, "failures": []}
+             "total": len(pairs), "total_in_publication": total_in_publication,
+             "succeeded": 0, "failed": 0, "images": 0, "failures": []}
     for pub, slug in pairs:
         try:
             before = set((out_root / pub / slug / "images").glob("*")) if (out_root / pub / slug / "images").exists() else set()
@@ -178,7 +187,11 @@ def main() -> int:
     parser.add_argument("--publications", default="all",
                          help="Comma-separated publication slugs to scrape, or 'all' (default: all)")
     parser.add_argument("--limit-per-publication", type=int, default=0,
-                         help="Cap articles per publication, 0 = no limit (useful for a diagnostic run)")
+                         help="Cap articles per publication, 0 = no limit (useful for a diagnostic run "
+                              "or, combined with --offset, for batching one oversized publication)")
+    parser.add_argument("--offset", type=int, default=0,
+                         help="Skip the first N articles of each publication (only sensible with a "
+                              "single publication in --publications, to slice a large one into batches)")
     parser.add_argument("--stats-out", default=None, help="Optional path to write a JSON stats summary")
     parser.add_argument("--list-publications", action="store_true",
                          help="Print every publication slug (one per line) and exit — no scraping. "
@@ -210,7 +223,7 @@ def main() -> int:
     for i, sitemap_url in enumerate(sitemaps, 1):
         pub_slug = publication_slug_from_sitemap_url(sitemap_url)
         print(f"[{i}/{len(sitemaps)}] {pub_slug} ...")
-        stats = scrape_publication(sitemap_url, out_root, limit=args.limit_per_publication)
+        stats = scrape_publication(sitemap_url, out_root, limit=args.limit_per_publication, offset=args.offset)
         overall["publications"].append(stats)
         overall["total_articles"] += stats["total"]
         overall["total_succeeded"] += stats["succeeded"]
