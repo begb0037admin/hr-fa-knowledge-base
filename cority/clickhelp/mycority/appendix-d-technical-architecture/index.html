@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/mycority/appendix-d-technical-architecture"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Technical Architecture</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Technical Architecture';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/mycority/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1__1058658228" data-has-heading-anchor="true">Technical Architecture<a href="/articles/mycority/appendix-d-technical-architecture/a/h1__1058658228" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!mycority/appendix-d-technical-architecture/a/h1__1058658228&#39;,this);"></a></h1><p>myCority is a Web AI project developed using Microsoft’s .Net Core library and the MVC (Model-View-Controller) architecture pattern. The client (or front-end application) that consumes the Web API was developed using the Angular 2+ framework. The client and Web API will exchange data in JSON format using the ‘POST’ and ‘GET’ HTTP requests. The diagram below illustrates this exchange:</p><p><img src="images/appendix-d-technical-architecture-img0001.png" width="395" height="273" alt="" style="border-width: 0px;" loading="lazy"/></p><p>The client application has an internet/intranet web browser interface. It is device-independent and works on up-to-date versions of Mozilla Firefox, Internet Explorer, Google Chrome, and Apple Safari. </p><p>The application runs on standard Windows servers (physical or virtual), using Internet Information Server (IIS). The IIS must have the .NET framework and .NET Core Windows Server Hosting bundles installed.</p><p>&nbsp;<span style="font-size: 10pt;">The middle tier of the application (the business tier), uses objects based on Microsoft .Net Core framework. These objects encapsulate the application logic and provide a simple interface to the upper tier. The Application Server must be a Microsoft Windows Server with Microsoft .Net framework.</span></p><p><span style="font-size: 10pt;">myCority uses the same database as the Cority application, which runs on Microsoft SQL Server.</span></p><p class="Note"><span style="font-size: 10pt;" class="Note">See the </span><span style="font-size: 10pt; font-style: italic;">Cority System Guide</span><span style="font-size: 10pt;"> for more information on database architecture.</span></p><p>myCority uses Entity Framework. This is an Object Relational Mapping (ORM) framework that will communicate to the database. Alternatively, a direct querying mechanism called ‘Dapper’ can be used for some queries to optimize their performance. </p><p> <a id="_Toc54352076"></a></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>
