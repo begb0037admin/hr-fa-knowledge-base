@@ -748,6 +748,12 @@ Q("#src").addEventListener("change",e=>{state.src=e.target.value;state.mod="all"
 Q("#tp").addEventListener("change",e=>{state.tp=e.target.value;render()});
 Q("#sort").addEventListener("change",e=>{state.sort=e.target.value;render()});
 Q("#arc").addEventListener("change",e=>{state.arc=e.target.checked;render()});
+/* Preserve any text selection/cursor the user made inside a card before
+   the click on .card-tts would otherwise clear it (default mousedown
+   behaviour collapses the selection when the target is outside it). */
+Q("#out").addEventListener("mousedown",e=>{
+  if(e.target.closest(".card-tts"))e.preventDefault();
+});
 Q("#out").addEventListener("click",e=>{
   const cp=e.target.getAttribute("data-copy");
   if(cp){navigator.clipboard.writeText(cp).then(()=>{e.target.textContent="Copied ✓";setTimeout(()=>e.target.textContent="Copy link",1200)});return;}
@@ -762,9 +768,13 @@ Q("#out").addEventListener("click",e=>{
     const SVG='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     const resetAll=()=>{document.querySelectorAll(".card-tts.playing").forEach(b=>{b.classList.remove("playing");b.innerHTML=SVG;});};
     if(ttsEl.classList.contains("playing")){speakStop();resetAll();return;}
+    // Captured before resetAll()/speakStop() run, so nothing else can
+    // touch the DOM/selection state first.
+    const cardMd=ttsEl.closest(".card").querySelector(".card-md");
+    const selText=cardMd?selectionSpokenText(cardMd):null;
     resetAll();speakStop();
     ttsEl.classList.add("playing");
-    const text=ttsEl.getAttribute("data-tts");
+    const text=selText||ttsEl.getAttribute("data-tts");
     const onDone=()=>{ttsEl.classList.remove("playing");ttsEl.innerHTML=SVG;};
     const cfg=aiCfg();
     if(!TTS_BROWSER&&cfg.url){
@@ -1152,6 +1162,44 @@ function trimForSpeech(text,max){
   const lastStop=Math.max(cut.lastIndexOf(". "),cut.lastIndexOf("! "),cut.lastIndexOf("? "));
   return (lastStop>max*0.4?cut.slice(0,lastStop+1):cut).trim()+"…";
 }
+/* Flattens a Range's cloned contents into speakable plain text, joining
+   block-level elements (paragraph/list-item/heading boundaries) with a
+   separator so words from adjacent blocks never run together — plain
+   Range.toString() does not insert any whitespace at block boundaries. */
+function rangeToSpokenText(range){
+  const frag=range.cloneContents();
+  const blocks=frag.querySelectorAll("p,li,h4");
+  if(blocks.length)return Array.from(blocks).map(b=>b.textContent.trim()).filter(Boolean).join(". ");
+  return (frag.textContent||"").trim();
+}
+/* Selection/cursor-aware read source, scoped to one rendered container
+   (a card's .card-md or the chat's .answer block). Returns null when
+   there's nothing usable in that container, so callers fall back to
+   their existing full-text behaviour unchanged.
+   - Active (non-collapsed) selection inside the container -> read only
+     the selected text.
+   - Collapsed selection (a placed cursor, nothing highlighted) inside
+     the container -> read from that point to the end of the container.
+   - No selection/cursor inside the container -> null (fall back). */
+function selectionSpokenText(container){
+  if(!container)return null;
+  const sel=window.getSelection();
+  if(!sel||sel.rangeCount===0)return null;
+  if(!sel.anchorNode||!container.contains(sel.anchorNode))return null;
+  if(!sel.isCollapsed){
+    const range=sel.getRangeAt(0);
+    if(!container.contains(range.commonAncestorContainer))return null;
+    const t=rangeToSpokenText(range);
+    return t||null;
+  }
+  try{
+    const r=document.createRange();
+    r.setStart(sel.anchorNode,sel.anchorOffset);
+    r.setEnd(container,container.childNodes.length);
+    const t=rangeToSpokenText(r);
+    return t||null;
+  }catch(e){return null;}
+}
 function speakStop(){
   if(TTS_ABORT){TTS_ABORT.abort();TTS_ABORT=null;}
   if(TTS_AUDIO){TTS_AUDIO.pause();TTS_AUDIO=null;}
@@ -1242,10 +1290,18 @@ const ARROW_SVG='<svg id="action-icon" width="16" height="16" viewBox="0 0 16 16
 Q("#ask-q").addEventListener("input",e=>{Q("#action-btn").innerHTML=e.target.value.trim()?ARROW_SVG:WAVEFORM_SVG;});
 
 /* ── Read back (footer READ BACK button) ── */
+/* Same selection-preservation trick as the card TTS buttons above. */
+Q("#read-back-btn").addEventListener("mousedown",e=>e.preventDefault());
 Q("#read-back-btn").addEventListener("click",async()=>{
   const btn=Q("#read-back-btn");
   if(btn.classList.contains("playing")||(TTS_AUDIO&&!TTS_AUDIO.paused)||(window.speechSynthesis&&speechSynthesis.speaking)){speakStop();return;}
-  if(!LAST_ANSWER_SPOKEN)return;
+  // Only one turn's answer is ever in #thread at a time (ask() clears it
+  // at the start of every new question), so this is always "the" answer
+  // currently on screen, not a stale one from an earlier turn.
+  const answerEl=Q("#thread .answer");
+  const selText=answerEl?selectionSpokenText(answerEl):null;
+  const text=selText||LAST_ANSWER_SPOKEN;
+  if(!text)return;
   btn.classList.add("playing");
   const onDone=()=>btn.classList.remove("playing");
   const cfg=aiCfg();
@@ -1255,11 +1311,11 @@ Q("#read-back-btn").addEventListener("click",async()=>{
     audio.onended=onDone;
     const headers={"Content-Type":"application/json"};
     if(cfg.token)headers["X-KB-Token"]=cfg.token;
-    playStreamedTTS(cfg.url,headers,LAST_ANSWER_SPOKEN,audio,onDone).catch(err=>{
+    playStreamedTTS(cfg.url,headers,text,audio,onDone).catch(err=>{
       if(err&&err.name==="AbortError")return;
-      TTS_BROWSER=true;cardSpeakBrowser(LAST_ANSWER_SPOKEN,onDone);
+      TTS_BROWSER=true;cardSpeakBrowser(text,onDone);
     });
-  }else{cardSpeakBrowser(LAST_ANSWER_SPOKEN,onDone);}
+  }else{cardSpeakBrowser(text,onDone);}
 });
 
 /* ════════ Add Document modal ════════ */
