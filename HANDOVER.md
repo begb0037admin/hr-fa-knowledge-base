@@ -1,7 +1,7 @@
 # Handover — HR FA Knowledge Base
 
 **To:** New session
-**From:** Session of 1 August 2026 (session 3)
+**From:** Session of 1 August 2026 (session 4)
 **Owner:** Kevin (kevin.lelitte@admin.ox.ac.uk · GitHub `begb0037admin`)
 
 Everything you need to drive this project is in this file plus the repo
@@ -9,7 +9,27 @@ itself. Trust the repo over memory; verify data, not just green ticks.
 
 ---
 
-## Current State — 1 August 2026 (session 3)
+## Current State — 1 August 2026 (session 4)
+
+**Naming change, Kevin's explicit instruction: "let's rename that to DSE. That's how we refer to it."** The fourth Health & Safety sub-source — previously labelled "Healthy Working Plus" (Cardinus-powered workstation/DSE assessment system) — is now labelled **DSE** everywhere it appears as a source/display label. Same underlying system and content, label only.
+
+**What actually changed (the `src` field value itself, not just cosmetic text)** — decided this deliberately rather than doing a text-only skin change, because `src` is the value shown directly on every card's primary badge (`esc(x.src)` in the card renderer) and is the value used for filtering/matching throughout `index.html`, so a cosmetic-only label would have left the visible badge and the dropdown/filter value out of sync with each other:
+- `data/hs-library-docs.json` — for the 4 affected documents: `"src": "Healthy Working Plus"` → `"src": "DSE"`; `"sy"` (system tag badge) `"Healthy Working Plus (Cardinus)"` → `"DSE (Cardinus)"`; `"tp"` (topic group, shown in the sidebar sub-list) `"Healthy Working Plus — Data & Admin"` → `"DSE — Data & Admin"` (and similarly for the other two topic groups — `"DSE — Workflow"`, `"DSE — Roles & Permissions"`, dropping the redundant repeated "DSE" that `"Healthy Working Plus — DSE Workflow"` would otherwise have produced); two `"s"` (card summary) fields that named the system parenthetically — `"Cardinus (Healthy Working Plus)"` — updated to `"Cardinus (DSE)"`.
+- `index.html` — 8 occurrences, all traced by full-text search then individually verified: `SRC_META` key, the sidebar `parentLi()` call (`data-hs-src` value and its display label, now `"DSE (Cardinus)"`), the `hwpDocs`/`hwpMods` filter and click-handler comparisons (`x.src==="DSE"` / `state.src="DSE"`), the `isHsLibrary` check that drives the "Open document" card label, the chat empty-state text, and Linda's `SYSTEM_PROMPT`. Zero occurrences of "Healthy Working Plus" remain in either file after the change — verified by grep against both the tested local copy and the live pushed content.
+
+**What was deliberately left unchanged, and why:** the physical library folder (`library/Health and Safety/Healthy Working Plus/`), the source document filenames (`Cardinus Data Import Process.docx` etc.), the internal JS/CSS identifiers (`navOpen.hwp`, `data-hwp-mod`, `.b-hwp`, `.s-hwp`), and the scraper/workflow code comments in `scrapers/extract_hs_library.py`, `scrapers/build_index.py`, and `.github/workflows/index-sharepoint-docs.yml` that reference "Healthy Working Plus" in prose. These are internal plumbing/file paths, not source/display labels a user sees in the KB UI — Kevin's instruction was specifically about what the source is *called*, not the underlying file organisation. Renaming the physical folder would have meant moving 4 binary files with no user-visible benefit (the folder path only surfaces if someone inspects a document's URL). Flagging this explicitly rather than assuming either way, per the task brief.
+
+**Judged as a small, mechanical, explicitly-instructed rename — did not raise Constitution Section 10 effort level**, and said so rather than silently deciding. Also judged the substance of Kevin's direct quoted instruction ("let's rename that to DSE") as sufficient authorisation for a same-session build→test→push→verify cycle on this specific, narrowly-scoped change, rather than pausing for a separate live approval step before pushing — the diff was small enough to review in full in this entry. Noting this judgement explicitly rather than assuming it either way, per the task brief's own instruction to do so.
+
+**Verification chain:** local edit → `node --check` on the extracted inline `<script>` block (syntax OK) → full diff of the edited `index.html` against the original showed exactly the 8 intended lines changed, nothing else → `data/hs-library-docs.json` re-validated as parseable JSON, diffed against the original showing exactly the 4 intended records changed → both files pushed via `gh api ... -X PUT` (base64 content read from disk, not an inline tool parameter — see this repo's own lesson about that in Adam's memory) → live pushed content re-fetched via the git blob API (not the raw CDN) and diffed byte-for-byte against what was tested — identical for both files → index rebuild workflow (`index-sharepoint-docs.yml`, run 30710833854) triggered and polled via `gh run view` to actual `completed`/`success` (~8m39s) → real `data/kb.json` downloaded via the git blob API (the contents API silently omits `content` for files over ~1MB — kb.json is 4.1MB, caught this and switched endpoint) and checked directly: **6,621 documents, unchanged** (no docs lost or duplicated), 4 docs now carry `src: "DSE"`, IRIS (6) and Odyssey (4) counts unchanged, zero remaining "Healthy Working Plus" mentions anywhere in the file → `data/kb-index.json` chunk count re-checked: **23,271, unchanged** (expected — only metadata fields changed, not chunked text) → the real `pages build and deployment` workflow run (30711145940) polled to actual `completed`/`success`, not the classic Pages-builds API → final check against the real public URL (`kb.lelitte.co.uk`): first 4 fetch attempts of `data/kb.json` returned a stale pre-rebuild byte count (the same CDN-propagation-lag trap already documented in Adam's memory), 5th attempt (after ~75s of polling) matched the git-authoritative content exactly; `index.html` matched on the first fetch. Live `index.html` and live `kb.json` both independently confirmed to contain zero "Healthy Working Plus" occurrences and the expected "DSE" content.
+
+**One honest limitation of this session's verification, stated plainly rather than glossed over:** no Playwright/browser automation tool was available in this session (unlike sessions 2 and 3, which used it to visually confirm sidebar rendering, filtering, and badge colours in a real Chromium browser before push). Verification here relied on full logic tracing of every `x.src==="DSE"` / `state.src="DSE"` branch, a syntax check, and direct data/HTML inspection of the live deployed files — not a rendered-DOM screenshot. The logic is unchanged in shape from the already-tested IRIS/Odyssey pattern (only the literal string value changed), so risk is judged low, but this is a real gap versus this session's normal practice and is being named rather than implied away.
+
+**Restore point recorded before this session's changes** (Constitution Section 4): `index.html` @ `4c576d32ee8e51bae20aa1d69154169e921a731a`, `data/hs-library-docs.json` @ `83d8c448be6c2f050adddddfc27eb74dd6eed7a6`, `main` HEAD @ `45ecd2fe727d35c88ad55f8b3a0df6efcbf51dc7` (pre-DSE-rename, 1 August 2026 session 4).
+
+---
+
+## Previous State — 1 August 2026 (session 3)
 
 **A new Health & Safety reference library — IRIS, Odyssey, and Healthy Working Plus (Cardinus) — went from 15 candidate local files to 14 committed, indexed, searchable documents this session, alongside a real information-architecture decision: the sidebar's "HEALTH & SAFETY (CORITY)" section is now "HEALTH & SAFETY" with Cority as one of four sub-sources, not the only one.**
 
@@ -241,13 +261,13 @@ These are final — do not re-litigate without Kevin's explicit instruction.
 | `.b-hs` | Cority (Health & Safety) | `--teal-soft` (`#dff2ec`) | `--teal-text` (`#0a5946`) |
 | `.b-iris` | IRIS | `--rust-soft` (`#fbe6df`) | `--rust-text` (`#7a2a17`) |
 | `.b-ody` | Odyssey | `--sky-soft` (`#dcf0f7`) | `--sky-text` (`#0d4a63`) |
-| `.b-hwp` | Healthy Working Plus (Cardinus) | `--lime-soft` (`#eaf3d9`) | `--lime-text` (`#3f5511`) |
+| `.b-hwp` | DSE (Cardinus) — internal class name `hwp` unchanged, label renamed 1 August 2026 session 4 | `--lime-soft` (`#eaf3d9`) | `--lime-text` (`#3f5511`) |
 | `.b-tp` | Topic/module (grey) | `#e5e7eb` | `#374151` |
-| `.b-sy` | System tag (PeopleXD/Cority/IRIS/Odyssey/Healthy Working Plus) | `#e0d5ff` | `#3b0764` |
+| `.b-sy` | System tag (PeopleXD/Cority/IRIS/Odyssey/DSE) | `#e0d5ff` | `#3b0764` |
 
-**Icon blocks** — match source badge colour (blue for HTG, green for AG, orange for CM, teal for Cority H&S, rust for IRIS, sky for Odyssey, lime for Healthy Working Plus — added 1 August 2026 session 3)
+**Icon blocks** — match source badge colour (blue for HTG, green for AG, orange for CM, teal for Cority H&S, rust for IRIS, sky for Odyssey, lime for DSE — added 1 August 2026 session 3, DSE label renamed session 4)
 
-**Sidebar dot colours (current `index.html`):** grey, blue, orange, green, purple, teal (Cority Health & Safety, added 1 August 2026 session 1), rust/sky/lime (IRIS/Odyssey/Healthy Working Plus, added 1 August 2026 session 3)
+**Sidebar dot colours (current `index.html`):** grey, blue, orange, green, purple, teal (Cority Health & Safety, added 1 August 2026 session 1), rust/sky/lime (IRIS/Odyssey/DSE, added 1 August 2026 session 3, DSE label renamed session 4)
 
 **Linda AI panel — full approved spec (8 Jul session 2)**
 Reference mockup: https://claude.ai/code/artifact/d2a7d157-468d-461e-9ec0-1efabdbfc384
@@ -265,14 +285,14 @@ Panel structure top-to-bottom:
 
 2. **Input row** — directly below header | text input + circular dark navy action button (dual-state: waveform SVG when empty → send arrow SVG when text entered)
 3. **Chips** — directly below input row | suggestion chips (New starter record · Sickness absence · Salary change · Process a leaver)
-4. **Content area** — flex:1 scrollable | empty state text mentions PeopleXD, Health & Safety (Cority, IRIS, Odyssey, Healthy Working Plus), HR processes, step-by-step guides (updated 1 August 2026 session 3) | thread renders here when active
+4. **Content area** — flex:1 scrollable | empty state text mentions PeopleXD, Health & Safety (Cority, IRIS, Odyssey, DSE), HR processes, step-by-step guides (updated 1 August 2026 session 3, DSE label renamed session 4) | thread renders here when active
 5. **Bottom buttons** — two large circular buttons: SPEAK (dark navy fill, mic SVG) + READ BACK (outline, speaker SVG)
 6. **Footer hint** — "Press SPACE to speak · Read back reads AI replies aloud"
 
 **Copy link / Open button — labelling by source**
 - Access Group: "Open PDF" or "Open article" depending on `e` field
 - Cority (Health & Safety): "Open article" (added 1 August 2026 session 1)
-- IRIS / Odyssey / Healthy Working Plus: "Open document" (added 1 August 2026 session 3 — the "Open in SharePoint" default would have been actively wrong, since none of this content came from SharePoint)
+- IRIS / Odyssey / DSE: "Open document" (added 1 August 2026 session 3 — the "Open in SharePoint" default would have been actively wrong, since none of this content came from SharePoint; DSE label renamed session 4)
 - Everything else: "Open in SharePoint"
 - Salesforce-hosted PDFs (`accessgroup.my.salesforce.com/sfc/p/...`) require an authenticated session — use `x.p` (article URL), not `x.pdf` (Salesforce viewer URL), for open/copy actions
 
@@ -287,7 +307,9 @@ the University of Oxford. One page, one question box: Kevin asks in plain
 English (typed or spoken), the AI answers with steps and cites direct links.
 As of 1 August 2026, this spans PeopleXD/HR (Access Group, SharePoint,
 How To Guides) and four Health & Safety systems: Cority, IRIS, Odyssey,
-and Healthy Working Plus (Cardinus).
+and DSE (Cardinus) — labelled "Healthy Working Plus" until session 4 of
+1 August 2026, renamed at Kevin's explicit instruction ("that's how we
+refer to it").
 
 - **Live site:** https://kb.lelitte.co.uk/
 - **AI proxy worker:** `hr-kb-ai` on Kevin's Cloudflare account
@@ -367,6 +389,9 @@ Full principles (rollback-before-change, documentation permanence, source-of-tru
 | `238e553b` | `index.html` — HEALTH & SAFETY sidebar section restructured to cover Cority, IRIS, Odyssey, Healthy Working Plus; Linda's scope updated |
 | `4319c825` | `.github/workflows/index-sharepoint-docs.yml` — run `extract_hs_library.py` as part of the index rebuild |
 | `94ba5e0a` | Automated: real index rebuild committing `data/kb.json`/`data/kb-index.json` at 6,621 docs / 23,271 chunks |
+| `d42a5e2a` | `index.html` — renamed "Healthy Working Plus" source/display label to "DSE" (8 occurrences: `SRC_META`, sidebar nav, click handlers, `isHsLibrary` check, empty-state text, `SYSTEM_PROMPT`) |
+| `af769a97` | `data/hs-library-docs.json` — renamed `src`/`tp`/`sy` metadata for the 4 DSE documents from "Healthy Working Plus" to "DSE" |
+| `b6482b9b` | Automated: real index rebuild picking up the DSE rename — `data/kb.json`/`data/kb-index.json` at 6,621 docs / 23,271 chunks (unchanged counts, metadata-only change) |
 
 ---
 
@@ -374,7 +399,7 @@ Full principles (rollback-before-change, documentation permanence, source-of-tru
 
 | Piece | File | Notes |
 |---|---|---|
-| Site | `index.html` | Static SPA, Oxford-navy theme. BM25 retrieval → Cloudflare worker → Claude. Voice input + Listen. Spans PeopleXD and four Health & Safety sources (Cority, IRIS, Odyssey, Healthy Working Plus) — see Data State below. |
+| Site | `index.html` | Static SPA, Oxford-navy theme. BM25 retrieval → Cloudflare worker → Claude. Voice input + Listen. Spans PeopleXD and four Health & Safety sources (Cority, IRIS, Odyssey, DSE) — see Data State below. |
 | Worker | `worker/worker.js` | Routes: `/` Claude chat, `/tts` Cloudflare Workers AI (Aura-2), `/stt` Cloudflare Workers AI (Whisper, batch mode). No retrieval/search logic lives here — that's entirely client-side in `index.html`'s `retrieve()`. Confirmed deployed and live. Secrets in Cloudflare. |
 | Scraper (Access Group) | `scrapers/access_group_scraper.py` | Playwright. `--no-login` for public help centres. `--deep` harvests full article text. `--guides` / `--guides-only` for PDF guide harvest. Salesforce viewer downloads via `download_salesforce_via_page()`. Known gap: drops screenshots — see `ROADMAP.md`. |
 | Scraper (Cority ClickHelp) | `scrapers/cority_clickhelp_scraper.py` | Plain `urllib.request`, no browser needed — no login required for this source. `--publications`, `--limit-per-publication`, `--offset`, `--list-publications`, `--stats-out` CLI flags. |
@@ -390,9 +415,9 @@ Full principles (rollback-before-change, documentation permanence, source-of-tru
 
 ## Data State
 
-- **Current: 6,621 documents, 23,271 index chunks** — verified directly against live `data/kb.json`/`data/kb-index.json`, 1 August 2026 (session 3) ✅
-- **Breakdown:** 260 SharePoint (250 full-text) + 2,251 Access Group Help Centre (web + PDF) + 209 How To Guides + 51 Change Management + 4 Kevin's Guides + **4,092 Cority (Health & Safety)** — of which 1,569 Core Product Guides, 671 Utilities/Integration/Developer Guides, 571 Occupational Health & Medical, 458 Sustainability & Environmental (SPM), 220 GX2/CoreEHS+ Release Notes, 202 ReadySet, 173 GX2 & myCority Combined Release Notes, 131 myCority, 52 Enterprise Release Notes, 45 Supply Chain Sustainability + **14 Health & Safety reference library (IRIS/Odyssey/Healthy Working Plus)**, of which 6 IRIS (2 Administration, 2 Reporting & Search, 1 Service Documentation, 1 Data & Permissions Reference), 4 Odyssey (1 System Administration, 1 Service Documentation, 2 Worker Registration & Reporting), 4 Healthy Working Plus (2 Data & Admin, 1 DSE Workflow, 1 Roles & Permissions)
-- **Enhanced summaries (`ss` + `sl`):** All 2,515 pre-Cority documents, 100% complete. Cority and the H&S reference library (IRIS/Odyssey/Healthy Working Plus) use the plain `s` field only (not yet run through `summarise_enhanced.py`) — see `ROADMAP.md` if this becomes wanted.
+- **Current: 6,621 documents, 23,271 index chunks** — verified directly against live `data/kb.json`/`data/kb-index.json`, 1 August 2026 (session 4, unchanged by the DSE rename — same counts as session 3) ✅
+- **Breakdown:** 260 SharePoint (250 full-text) + 2,251 Access Group Help Centre (web + PDF) + 209 How To Guides + 51 Change Management + 4 Kevin's Guides + **4,092 Cority (Health & Safety)** — of which 1,569 Core Product Guides, 671 Utilities/Integration/Developer Guides, 571 Occupational Health & Medical, 458 Sustainability & Environmental (SPM), 220 GX2/CoreEHS+ Release Notes, 202 ReadySet, 173 GX2 & myCority Combined Release Notes, 131 myCority, 52 Enterprise Release Notes, 45 Supply Chain Sustainability + **14 Health & Safety reference library (IRIS/Odyssey/DSE)**, of which 6 IRIS (2 Administration, 2 Reporting & Search, 1 Service Documentation, 1 Data & Permissions Reference), 4 Odyssey (1 System Administration, 1 Service Documentation, 2 Worker Registration & Reporting), 4 DSE (2 Data & Admin, 1 Workflow, 1 Roles & Permissions) — labelled "Healthy Working Plus" until session 4 of 1 August 2026, see Current State above
+- **Enhanced summaries (`ss` + `sl`):** All 2,515 pre-Cority documents, 100% complete. Cority and the H&S reference library (IRIS/Odyssey/DSE) use the plain `s` field only (not yet run through `summarise_enhanced.py`) — see `ROADMAP.md` if this becomes wanted.
 
 ## Live Site
 
