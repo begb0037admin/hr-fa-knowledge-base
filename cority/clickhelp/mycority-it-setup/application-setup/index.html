@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/mycority-it-setup/application-setup"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script><title>Application Setup</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Application Setup';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/mycority-it-setup/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1_2014272385" data-has-heading-anchor="true">
+  Application Setup
+<a href="/articles/mycority-it-setup/application-setup/a/h1_2014272385" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!mycority-it-setup/application-setup/a/h1_2014272385&#39;,this);"></a></h1><ol start="1">
+  <li>Install the IIS rewrite module: <a href="https://www.iis.net/downloads/microsoft/url-rewrite" target="_blank">https://www.iis.net/downloads/microsoft/url-rewrite</a></li>
+  <li><p>Install&nbsp;the .NET&nbsp;Core&nbsp;Windows&nbsp;Server&nbsp;Hosting bundle (version 6.0.8). The bundle is available on the Microsoft website:&nbsp;<a href="https://dotnet.microsoft.com/download/" target="_blank"><font color="#0000ff">https://dotnet.microsoft.com/download/</font></a> or via <a href="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-6.0.8-windows-hosting-bundle-installer" target="_blank"><font color="#0000ff">direct link</font></a></p></li>
+</ol>
+<p class="Note">&nbsp;You may need to restart your computer once the installation is complete. If you can’t restart your computer, open a command prompt in administrator mode and type the following commands to stop and start IIS:&nbsp;net stop was /y net start w3svc</p><div style="margin-left: 80px;">
+</div><p style="margin-left: 40px;">
+  To access administrator mode, right-click the <span style="font-weight: bold;">cmd.exe</span> file and select <span style="font-weight: bold;">Run as administrator</span>.<span style="font-weight: bold;"> </span>If you do not run the command in administrator mode, an “Access is denied” message will display:&nbsp;</p>
+<p style="margin-left: 40px;">
+  <img src="images/application-setup-img0001.png" width="585" height="227" alt="" style="border-width: 0px;" loading="lazy"/>
+</p>
+<ol start="3">
+  <li>
+    <span style="font-weight: normal; font-style: normal;">Extract the </span><span style="font-weight: bold; font-style: normal;">myCority.zip </span><span style="font-weight: normal; font-style: normal;">file.</span>
+  </li>
+  <li>
+    Copy the application to the web server. <br/>Only the “package” folder is needed. Ensure it is the root folder of the web server.</li></ol>
+<ol start="5">
+  <li>
+    Under the root folder, there is an appsettings.json.sample file. Copy this file and rename it <b>appsettings.json</b><span style="font-size: 10pt;">.</span></li></ol>
+<p>
+</p>
+<ol start="6">
+  <li>
+    Create an application pool.
+  </li>
+</ol>
+<p style="margin-left: 40px;">
+  <img src="images/application-setup-img0002.png" width="234" height="212" alt="" style="border-width: 0px;" loading="lazy"/>
+</p>
+<p style="margin-left: 40px;">
+  <img src="images/application-setup-img0003.png" width="626" height="372" alt="" style="border-width: 0px;" loading="lazy"/>
+</p>
+<ol start="7">
+  <li>
+    Create the application using the path of the package and application pool created in the previous step.
+  </li>
+  <li>
+    The “Execute” permission is needed in order for the site to load. If the site functionality does not work, or if no logs are generated upon loading the site, you may need to grant permissions to the application pool so it can read and create files in the folder directory.<br/>If you used ‘ApplicationPoolIdentity’ as the identity for the application pool, enter ‘IIS AppPool\’ followed by the application pool name you created (for example, ‘IIS AppPool\myCority-api’).</li></ol>
+<ol start="9">
+  <li>
+    <span style="font-weight: normal; font-style: normal;">Click </span><span style="font-weight: bold; font-style: normal;">Check Names </span><span style="font-weight: normal; font-style: normal;">to ensure the application pool can be found.</span>
+  </li>
+  <li>
+    <span style="font-weight: normal; font-style: normal;">Click </span><span style="font-weight: bold; font-style: normal;">OK</span><span style="font-weight: normal; font-style: normal;">.</span>
+  </li>
+</ol>
+<p class="Note">If site functionality still does not work, there may be a problem with the web.config file. Some servers have a default web.config file, and this conflicts with myCority. The default web.config file is located at \web.config. The following may need to be removed from the file:<br/><br/><span style="color: #006fc0; font-size: 10pt; letter-spacing: 0em; text-indent: -1pt;">&lt;customHeaders&gt;<br/></span><span style="color: #006fc0; font-size: 10pt; letter-spacing: 0em; text-indent: -1pt;">&lt;add name="Strict-Transport-Security" value="max- age=31536000" /&gt;<br/></span><span style="font-size: 10pt; letter-spacing: 0em; text-indent: -1pt; color: #006fc0;">&lt;add name="Content-Security-Policy" value="default-src 'self' 'unsafe-inline' 'unsafe-	eval' data: </span><span style="font-size: 10pt; letter-spacing: 0em; text-indent: -1pt; color: #006fc0;"><a href="https://online.swagger.io/" style="color: #006fc0;" target="_top">https://online.swagger.io</a></span><span style="font-size: 10pt; letter-spacing: 0em; text-indent: -1pt; color: #006fc0;">:* </span><span style="font-size: 10pt; letter-spacing: 0em; text-indent: -1pt; color: #006fc0;"><a href="https://online.swagerapp.pendo.io/" style="color: #006fc0;" target="_top">https://online.swagerapp.pendo.io</a></span><span style="font-size: 10pt; letter-spacing: 0em; text-indent: -1pt; color: #006fc0;">:* cdn.pendo.io:* pendo-io-static.storage.googleapis.com:* kendo.cdn.telerik.com:* fonts.gstatic.com fonts.googleapis.com<br/></span><span style="font-size: 10pt; letter-spacing: 0em; text-indent: -1pt; color: #006fc0;">maxcdn.bootstrapcdn.com cdnjs.cloudflare.com </span><span style="font-size: 10pt; letter-spacing: 0em; text-indent: -1pt; color: #006fc0;"><a href="https://api.mdguidelines.com/" style="color: #006fc0; text-decoration-line: none;" target="_top"><span style="text-decoration-line: underline;">https://api.mdguidelines.com</span> </a></span><span style="font-size: 10pt; letter-spacing: 0em; text-indent: -1pt; color: #006fc0;"><a href="http://tablet.sigwebtablet.com/" style="color: #006fc0;" target="_top">http://tablet.sigwebtablet.com</a></span><span style="font-size: 10pt; letter-spacing: 0em; text-indent: -1pt; color: #006fc0;">:* blob: </span><span style="font-size: 10pt; letter-spacing: 0em; text-indent: -1pt; color: #006fc0;"><a href="http://tablet.sigwebtablet.com/" style="color: #006fc0;" target="_top">http://tablet.sigwebtablet.com</a></span><span style="font-size: 10pt; letter-spacing: 0em; text-indent: -1pt; color: #006fc0;">:*" /&gt;<br/></span><span style="color: #006fc0; font-size: 10pt; letter-spacing: 0em; text-indent: -1pt;">&lt;add name="X-Content-Type-Options" value="nosniff" /&gt;<br/></span><span style="color: #006fc0; font-size: 10pt; letter-spacing: 0em; text-indent: -1pt;">&lt;add name="X-XSS-Protection" value="1" /&gt;<br/></span><span style="color: #006fc0; font-size: 10pt; letter-spacing: 0em; text-indent: -1pt;">&lt;/customHeaders&gt;</span></p>
+
+<ol start="11">
+  <li>
+    <span style="font-weight: normal; font-style: normal;">In the package\config folder, there is a file named ‘utils.config.sample’. The file contains a sample key. You must create a new ‘utils.config’ file with the actual key. <br/></span><span style="font-weight: bold; font-style: normal;">Note: </span><span style="font-weight: normal; font-style: normal;">This key will be provided by Cority Support</span><span style="font-weight: normal; font-style: normal;">.</span>
+  </li>
+  <li>
+    <span style="font-weight: normal; font-style: normal;">To recycle the web publishing service and IIS, open a command prompt as an administrator and enter the following commands:</span>
+    <ul><li>net stop was /y
+      </li></ul><ul start="1">
+      
+      <li>
+        net start w3svc
+      </li>
+      <li>
+        iisreset</li>
+    </ul>
+  </li>
+  <li>
+    Locate the site’s root folder and create a new folder titled ‘Logs’. This is the folder where log will be created.
+  </li>
+  <li>
+    Open the “package\web.config” file change the “stdoutlogenabled” value to true from its default “false”. 
+  </li>
+</ol>
+<p>
+  <a id="_Toc63337766"></a>&nbsp;
+</p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>
