@@ -32,6 +32,11 @@ jobs:
           pip install pypdf
           python scrapers/extract_sharepoint.py
 
+      - name: Extract Health & Safety library full text (IRIS/Odyssey/Healthy Working Plus)
+        run: |
+          pip install openpyxl
+          python scrapers/extract_hs_library.py
+
       - name: Rebuild knowledge-base index
         run: python scrapers/build_index.py
 
