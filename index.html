@@ -15,7 +15,7 @@
   --blue:#2f6fb8;--blue-soft:#e7f0fa;--blue-text:#1d4e85;
   --purple:#6d5bd0;--purple-soft:#edebfb;--purple-text:#41358f;
   --gold:#c79b3b;--gold-soft:#f7ecd2;--gold-text:#6d5215;
-  --teal-soft:#dff2ec;--teal-text:#0a5946;
+  --teal:#12876f;--teal-soft:#dff2ec;--teal-text:#0a5946;
   --red:#d6453d;--cream:#fbf3df;--cream-border:#eedfb8;--cream-text:#5d451a;
   --radius:9px;--radius-lg:13px;
 }
@@ -101,6 +101,7 @@ input[type=text]:focus,select:focus{outline:none;border-color:var(--blue);box-sh
 .b-sy{background:#e0d5ff;color:#3b0764}
 .b-arc{background:#fbeaf0;color:#72243e}
 .b-local{background:#fdf0dc;color:#7a4a08}
+.b-hs{background:var(--teal-soft);color:var(--teal-text)}
 .summary{margin:4px 0;font-size:13.8px;color:#3c4456}
 .path-row{display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--muted);margin-top:7px;flex-wrap:wrap}
 .meta-sm{font-size:11px;color:var(--hint);margin-top:6px}
@@ -275,6 +276,8 @@ body.resizing-ai{cursor:col-resize;user-select:none}
   <ul class="snav" id="nav-htg"></ul>
   <div class="sec">ACCESS GROUP HELP CENTRE</div>
   <ul class="snav" id="nav-ag"></ul>
+  <div class="sec">HEALTH &amp; SAFETY (CORITY)</div>
+  <ul class="snav" id="nav-hs"></ul>
   <div class="foot">
     <div id="foot-counts"></div>
     <div style="margin-top:6px"><a href="https://github.com/begb0037admin/hr-fa-knowledge-base/actions/workflows/scrape-help-centres.yml" target="_blank" rel="noopener">&#8635; Run help-centre refresh</a></div>
@@ -483,7 +486,7 @@ function cardPreview(s){
 /* ════════ Data loading ════════ */
 let BASE=[], LOCAL=[], D=[];
 const state={q:"",src:"all",tp:"all",sort:"m-desc",arc:false,mod:"all",pdfOnly:false,webOnly:false};
-const navOpen={htg:false,cm:false,agPdf:false,agWeb:false};
+const navOpen={htg:false,cm:false,agPdf:false,agWeb:false,hs:false};
 
 function loadLocal(){try{return JSON.parse(localStorage.getItem(LOCAL_KEY)||"[]")}catch{return[]}}
 function saveLocal(a){localStorage.setItem(LOCAL_KEY,JSON.stringify(a))}
@@ -517,7 +520,8 @@ async function boot(){
 const SRC_META = {
   "How To Guides":      {cls:"s-htg",badge:"b-htg",dot:"var(--blue)"},
   "Change Management":  {cls:"s-cm", badge:"b-cm", dot:"var(--purple)"},
-  "Access Group Help Centre":{cls:"s-ag",badge:"b-ag",dot:"var(--gold)"}
+  "Access Group Help Centre":{cls:"s-ag",badge:"b-ag",dot:"var(--gold)"},
+  "Cority (Health & Safety)":{cls:"s-hs",badge:"b-hs",dot:"var(--teal)"}
 };
 const TP_LABEL={
   "Cross-module":                             "General / All modules",
@@ -585,6 +589,16 @@ function buildNav(){
   }
   Q("#nav-ag").innerHTML=ag;
 
+  /* HEALTH & SAFETY (CORITY) */
+  const hsDocs=D.filter(x=>x.src==="Cority (Health & Safety)");
+  const hsMods={};
+  hsDocs.forEach(x=>{hsMods[x.tp]=(hsMods[x.tp]||0)+1;});
+  let hs=parentLi("data-hs-src","Cority (Health & Safety)","var(--teal)","Health & Safety (Cority)",hsDocs.length,state.src==="Cority (Health & Safety)","hs",navOpen.hs);
+  if(navOpen.hs){
+    hs+=Object.keys(hsMods).sort().map(m=>navLi("data-hs-mod",m,"var(--teal)",tpLabel(m),hsMods[m],(state.src==="Cority (Health & Safety)"&&state.mod===m?"on sub":"sub"))).join("");
+  }
+  Q("#nav-hs").innerHTML=hs;
+
   const last=D.map(x=>x.m||"").sort().pop()||"—";
   Q("#foot-counts").textContent=D.length+" documents · latest "+last;
 }
@@ -635,6 +649,20 @@ Q("#nav-ag").addEventListener("click",e=>{
     Q("#src").value=state.src;Q("#tp").value="all";buildNav();render();
   }
 });
+Q("#nav-hs").addEventListener("click",e=>{
+  const chev=e.target.closest(".chev[data-toggle]");
+  if(chev){const k=chev.getAttribute("data-toggle");navOpen[k]=!navOpen[k];buildNav();return;}
+  const hsSrc=e.target.closest("li[data-hs-src]");
+  if(hsSrc){
+    state.src="Cority (Health & Safety)";state.mod="all";state.pdfOnly=false;state.webOnly=false;
+    Q("#src").value=state.src;Q("#tp").value="all";buildNav();render();return;
+  }
+  const hsMod=e.target.closest("li[data-hs-mod]");
+  if(hsMod){
+    state.src="Cority (Health & Safety)";state.mod=hsMod.getAttribute("data-hs-mod");state.pdfOnly=false;state.webOnly=false;
+    Q("#src").value=state.src;Q("#tp").value="all";buildNav();render();
+  }
+});
 
 /* ════════ Filters & cards ════════ */
 function buildFilters(){
@@ -682,9 +710,10 @@ function render(){
     const m=SRC_META[x.src]||{cls:"s-htg",badge:"b-tp"};
     const arc=/\(Archive\)$/i.test(x.tp);
     const isAg=x.src==="Access Group Help Centre";
+    const isHs=x.src==="Cority (Health & Safety)";
     let openHref = x.p || "";
     if(/sharepoint\.com/i.test(openHref) && !openHref.includes("?")) openHref += "?web=1";
-    const openLabel = isAg ? (x.e === "pdf" ? "Open PDF" : "Open article") : "Open in SharePoint";
+    const openLabel = isAg ? (x.e === "pdf" ? "Open PDF" : "Open article") : isHs ? "Open article" : "Open in SharePoint";
     let open = openHref?'<a class="mini" target="_blank" rel="noopener" href="'+esc(openHref)+'">'+openLabel+"</a>":"";
     let copy = openHref?'<button class="mini" data-copy="'+esc(openHref)+'">Copy link</button>':"";
     let del = x._local?'<button class="mini" data-del="'+esc(x.f)+'">Remove</button>':"";
