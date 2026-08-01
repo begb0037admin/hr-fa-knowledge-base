@@ -13,8 +13,15 @@
  *   ALLOWED_ORIGIN     (var, optional — comma-separated list of allowed
  *                       origins; defaults to the GitHub Pages site)
  *   MODEL              (var, optional — defaults to claude-sonnet-4-6)
- *   AURA_SPEAKER       (var, optional — defaults to "angus"; Aura-2 voice
- *                       name, e.g. luna/athena/apollo/angus)
+ *   AURA_SPEAKER       (var, optional — defaults to "luna", the documented
+ *                       aura-2-en default; used when a /tts request doesn't
+ *                       send its own `speaker`)
+ *
+ * /tts request body: { text, speaker? } — `speaker` is optional and, when a
+ * valid Aura-2 English voice name, overrides AURA_SPEAKER for that request
+ * only. Lets other callers (e.g. a terminal TTS tool) pick their own voice
+ * without changing the shared env var that Linda's Read-back on this site
+ * relies on.
  *
  * Requires the Workers AI binding named `AI` on this Worker (wrangler.toml
  * `[ai] binding = "AI"`, or the equivalent dashboard setting) — no separate
@@ -86,6 +93,18 @@ async function chat(request, env, cors) {
   });
 }
 
+// The full aura-2-en speaker enum, per Cloudflare's docs — validated here so
+// a caller-supplied `speaker` can only ever select a real voice, never pass
+// arbitrary input through to Workers AI.
+const AURA2_EN_SPEAKERS = new Set([
+  "amalthea", "andromeda", "apollo", "arcas", "aries", "asteria", "athena",
+  "atlas", "aurora", "callista", "cora", "cordelia", "delia", "draco",
+  "electra", "harmonia", "helena", "hera", "hermes", "hyperion", "iris",
+  "janus", "juno", "jupiter", "luna", "mars", "minerva", "neptune",
+  "odysseus", "ophelia", "orion", "orpheus", "pandora", "phoebe", "pluto",
+  "saturn", "thalia", "theia", "vesta", "zeus",
+]);
+
 async function tts(request, env, cors) {
   if (!env.AI) {
     return json({ error: "TTS not configured" }, 501, cors);
@@ -99,11 +118,16 @@ async function tts(request, env, cors) {
   const text = String(body.text || "").slice(0, 2000);
   if (!text) return json({ error: "text required" }, 400, cors);
 
+  const requestedSpeaker = typeof body.speaker === "string" ? body.speaker.trim().toLowerCase() : "";
+  const speaker = AURA2_EN_SPEAKERS.has(requestedSpeaker)
+    ? requestedSpeaker
+    : (env.AURA_SPEAKER || "luna");
+
   let result;
   try {
     result = await env.AI.run("@cf/deepgram/aura-2-en", {
       text,
-      speaker: env.AURA_SPEAKER || "angus",
+      speaker,
     });
   } catch (err) {
     return json({ error: "TTS failed: " + String(err && err.message || err).slice(0, 200) }, 502, cors);
