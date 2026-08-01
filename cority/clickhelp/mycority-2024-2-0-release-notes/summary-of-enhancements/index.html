@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/mycority-2024-2-0-release-notes/summary-of-enhancements"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Summary of Enhancements</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Summary of Enhancements';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/mycority-2024-2-0-release-notes/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h1 id="h1_1439859526" data-has-heading-anchor="true">
+			Summary of Enhancements<a href="/articles/mycority-2024-2-0-release-notes/summary-of-enhancements/a/h1_1439859526" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!mycority-2024-2-0-release-notes/summary-of-enhancements/a/h1_1439859526&#39;,this);"></a></h1>
+		<p><a id="_Hlk525468822"></a>The table below describes the enhancements we have made in 2024.2.0. </p><table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse;" class="CHTable">
+			<tbody><tr>
+				<td valign="top" style="background-color: #A6A6A6; border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">Item #</td><td valign="top" style="background-color: #A6A6A6; border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">Component(s)</td><td valign="top" style="background-color: #A6A6A6; border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">Description</td></tr>
+			<tr>
+				<td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">CCC-16217 and 17121</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">Occupational Health – Pre-Placement Process</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">The ‘My Applicants Letter’ tab (sublist) now has the ‘Export Letter to PDF’ action.</td></tr>
+			<tr>
+				<td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">N/A</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">Platform Administrator</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;"><p style="background-color: #FFFFFF;">Cority no longer supports iOS 15 or iPadOS 15. Cority does, however, continue to support the latest two major releases of Apple iOS operating systems, including iOS 16 / iPadOS 16 and iOS 17 / iPadOS 17.</p><p>&nbsp;</p></td></tr>
+			<tr>
+				<td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">CCC-16177 and 17083</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">Platform Administrator</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;"><p>myCority users (or users of the older Portal application) can now be created using the GX2 'Import Utility'.</p><p><span style="font-weight: bold;">Note:</span> This can already be accomplished using the Cority HR Integration Utility.</p><p>To support this, a new check box has been added to <span style="font-weight: bold;">Import Utility</span> &gt; <span style="font-weight: bold;">Data Tables</span> &gt; <span style="font-weight: bold;">Employee</span>. The check box is labelled 'Auto-Create Portal-Only User for Login ID'.</p><p>By default, the check box is not selected.</p><p>If selected and a login ID is provided correctly in the import file, a new user will be auto-created with the login ID as the username.</p><p>The user will be assigned the Portal role, and the associated new User record will be populated with any other acceptable details that were provided (for example, a linked Employee record).</p><p>The following requirements must be met for the user to be created successfully: </p><ul>
+					<li>The login ID must not yet exist.</li><li>The termination date on an associated Employee record must either be null or after the current date.</li><li>The Portal license 'User Count Limit' must not currently be reached.</li></ul>
+				<p><span style="font-weight: bold;">Note:</span> To reset the password and log into myCority or Portal, the 'Forgot Password' feature must be used. If the user is configured for SSO/LDAP, this step is not necessary.</p><p>&nbsp;</p></td></tr>
+			<tr>
+				<td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">CCC-15038</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">Platform Administrator</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;"><p>For myCority, Angular has been upgraded to version 17.</p><p>&nbsp;</p></td></tr>
+			<tr>
+				<td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">CCC-15369</td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;">Safety – Permit to Work </td><td valign="top" style="border-top: 1pt windowtext solid; border-right: 1pt windowtext solid; border-bottom: 1pt windowtext solid; border-left: 1pt windowtext solid;"><p>In GX2 and myCority, the Work Permit (Permit to Work Risk) sublist provides two new views:</p><ul>
+					<li><span style="font-weight: normal; font-style: normal;">Isolations Details for this Permit, which by default has the following columns:</span><ul>
+						<li><span style="font-weight: normal; font-style: normal;">Job Step, Equipment Description &amp; Asset Tag, Equipment Lock &amp; Tag No., Applied By, Isolation Integrity Checked By, Integrity Checked Date, Removed By, Removed Date</span><ul>
+							<li>Integrity Checked Date and Removed Date are read-only.</li></ul>
+						</li></ul>
+					</li><li><span style="font-weight: normal; font-style: normal;">Detailed Risk for this Permit, which by default has the following columns:</span><ul>
+						<li><span style="font-weight: normal; font-style: normal;">Step #, Job Step, Area / Job Hazard, Free Text Hazard, Initial Severity, Initial Likelihood, Initial Risk, Control Type, Free Text Control, Residual Severity, Residual Likelihood, Residual Risk</span><ul>
+							<li>Initial Risk and Residual Risk are read-only.</li></ul>
+						</li></ul>
+					</li></ul>
+				<p>Also, for the Work Risk sublist, the following columns have been added to the 'Isolations for this Permit' view: Job Step # and Job Step</p><p>A user can inline-edit on applicable columns.</p><p>&nbsp;</p></td></tr>
+		</tbody></table>
+		<h1 id="h1__1680219621">
+			&nbsp;</h1>
+		<p style="color: #D35F0B;"> </p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>
