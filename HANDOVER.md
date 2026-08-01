@@ -9,7 +9,29 @@ itself. Trust the repo over memory; verify data, not just green ticks.
 
 ---
 
-## Current State — 1 August 2026
+## Current State — 1 August 2026 (session 2)
+
+**Selection/cursor-aware Read Aloud shipped for both the Document Library card speaker button and the Linda AI chat READ BACK button, per Kevin's request: "begin reading where I select, make a selection, or where I place the cursor."**
+
+`index.html` only — no `worker/worker.js` change. Two shared helpers added (`rangeToSpokenText`, `selectionSpokenText`, in the TTS/Listen section) built on the DOM Range API operating directly on the already-rendered content (`.card-md` for cards, `.answer` for the chat panel) — no mapping back to the raw markdown source was needed, which simplified this considerably from how it was first scoped.
+
+**Behaviour, wired into both buttons identically:**
+- Active (non-collapsed) text selection inside the card/answer → reads only that selection.
+- Collapsed selection (cursor placed, nothing highlighted) inside the card/answer → reads from that point to the end of the card/answer.
+- No selection/cursor in that container → unchanged, reads the full card or full `LAST_ANSWER_SPOKEN` exactly as before.
+- A `mousedown` listener with `preventDefault()` on both buttons stops the click itself from clearing the selection first (default browser behaviour otherwise collapses a selection on mousedown outside it).
+
+**Design decision, made with Kevin before building:** selection vs. cursor semantics, scope (both cards AND chat, not cards-only as first recommended), and trigger UI (reuse the existing buttons, no new UI) were all explicit calls Kevin made when asked — recorded here rather than assumed. The chat side needed its own design pass rather than reusing the card logic outright: reading the actual `ask()` code showed `#thread` is cleared at the start of every turn (`thread.innerHTML=""`), so only one `.answer` block is ever on screen at a time — this meant no new per-message DOM/storage structure was actually needed, just scoping the same selection-capture helper to `#thread .answer` with its own stale-selection guard.
+
+**Explicitly out of scope, per Kevin's decision:** the Worker's existing hard `.slice(0, 2000)` cap on `/tts` input (`worker/worker.js` line 118, confirmed still present) is unchanged. A selection/cursor read that runs past 2000 characters will still be cut off server-side — that's the pre-existing, separately-tracked chunked-playback gap (see `ROADMAP.md` → Parked — Technical Debt / TTS read-aloud still cuts off long content), not something this change attempted to fix.
+
+**Verification, before push:** syntax-checked the edited script block (`new Function()`), then a real Chromium browser via Playwright against synthetic fixtures — a long multi-paragraph card (mirroring "especially if there is a lot of text") and a synthetic multi-paragraph chat answer. 13/13 assertions passed, including two specific cross-container guards: a selection left inside a card doesn't leak into the chat READ BACK button, and vice versa. Pushed content diffed byte-for-byte against exactly what was tested. GitHub Pages build polled to completion for the new commit before reporting done.
+
+**Restore point recorded before this change** (Constitution Section 4): `index.html` @ `64f4dab8`, `main` HEAD @ `88592b24` (pre-selection-TTS, 1 August 2026 session 2).
+
+---
+
+## Previous State — 1 August 2026 (session 1)
 
 **Cority (Health & Safety) went from feasibility investigation to a fully scraped, indexed, and searchable KB source this session — real end-to-end verification at every step, not assumed.**
 
@@ -288,6 +310,7 @@ Full principles (rollback-before-change, documentation permanence, source-of-tru
 | `6272f55` | `build_index.py` wired to load Cority ClickHelp docs |
 | `129a666` | `index.html` — Health & Safety (Cority) sidebar section added |
 | `37df1d9` | `index.html` — Linda's system prompt scope updated to include Cority |
+| `bc09b58` | `index.html` — Selection/cursor-aware Read Aloud (card TTS + chat READ BACK) |
 
 ---
 
