@@ -11,6 +11,10 @@ on:
         description: "Max articles per publication (0 = no limit)"
         type: string
         default: "0"
+      offset:
+        description: "Skip the first N articles of each publication (only sensible with one publication selected — batches an oversized one)"
+        type: string
+        default: "0"
       diagnostic:
         description: "Diagnostic run: 2 small publications, 2 articles each — output to cority_diag, skips commit, safe to run any time"
         type: boolean
@@ -68,6 +72,7 @@ jobs:
             python scrapers/cority_clickhelp_scraper.py \
               --publications "$pub" \
               --limit-per-publication "${{ inputs.limit_per_publication }}" \
+              --offset "${{ inputs.offset }}" \
               --output cority/clickhelp \
               --stats-out "/tmp/pub_stats/${pub}.json"
 
