@@ -7,6 +7,8 @@ Inputs:
   downloads/manifest.csv      output of access_group_scraper.py (optional)
   downloads/<module>/*.pdf    scraped help-centre PDFs (optional)
   cority/clickhelp/*/*/index.html  output of cority_clickhelp_scraper.py (optional)
+  data/hs-library-docs.json   14 curated IRIS/Odyssey/Healthy Working Plus docs (optional)
+  data/hs-library-fulltext.json, data/hs-library-files.json  output of extract_hs_library.py (optional)
 
 Outputs:
   data/kb.json        one record per document, drives the cards and filters
@@ -263,12 +265,51 @@ def load_sharepoint_files():
         return json.load(fh)
 
 
+def load_hs_library_docs():
+    """Curated Health & Safety reference library — IRIS, Odyssey, and
+    Healthy Working Plus (Cardinus) — a small, hand-picked set of 14
+    documents Kevin approved individually (1 August 2026), distinct from
+    the Cority ClickHelp corpus. Source files are committed under
+    'library/Health and Safety/<System>/'; metadata (title/topic/system/
+    summary) lives in data/hs-library-docs.json, hand-maintained since
+    this is a curated set, not a scraped harvest; full text comes from
+    scrapers/extract_hs_library.py's two output files. Purely additive —
+    same shape/discipline as load_cority_clickhelp_docs()."""
+    meta_path = os.path.join(DATA, "hs-library-docs.json")
+    if not os.path.exists(meta_path):
+        print("No data/hs-library-docs.json - skipping H&S reference library.")
+        return []
+    with open(meta_path, encoding="utf-8") as fh:
+        meta = json.load(fh)
+    fulltext_path = os.path.join(DATA, "hs-library-fulltext.json")
+    fulltext = {}
+    if os.path.exists(fulltext_path):
+        with open(fulltext_path, encoding="utf-8") as fh:
+            fulltext = json.load(fh)
+    files_path = os.path.join(DATA, "hs-library-files.json")
+    files_map = {}
+    if os.path.exists(files_path):
+        with open(files_path, encoding="utf-8") as fh:
+            files_map = json.load(fh)
+    docs = []
+    for m in meta:
+        d = dict(m)
+        local = files_map.get(d.get("f", ""))
+        if local:
+            d["p"] = SITE_BASE + quote(local)
+        d["_text"] = clean_text(fulltext.get(d.get("f", ""), ""))
+        docs.append(d)
+    return docs
+
+
 def main():
     sp_docs = load_sharepoint_docs()
     sp_fulltext = load_sharepoint_fulltext()
     sp_files = load_sharepoint_files()
     cority_docs = load_cority_clickhelp_docs()
-    ag_docs = load_scraped_docs() + load_deep_articles() + load_kevin_guides() + cority_docs
+    hs_library_docs = load_hs_library_docs()
+    ag_docs = (load_scraped_docs() + load_deep_articles() + load_kevin_guides()
+               + cority_docs + hs_library_docs)
 
     kb, index = [], []
     sp_full = sp_local = 0
@@ -308,8 +349,9 @@ def main():
     print(f"kb.json:       {len(kb)} documents "
           f"({len(sp_docs)} SharePoint of which {sp_full} full-text, "
           f"{sp_local} linked to the local library, "
-          f"{len(ag_docs)} help centre + Kevin's Guides + Cority, "
-          f"of which {len(cority_docs)} Cority Health & Safety)")
+          f"{len(ag_docs)} help centre + Kevin's Guides + Cority + H&S library, "
+          f"of which {len(cority_docs)} Cority Health & Safety, "
+          f"{len(hs_library_docs)} IRIS/Odyssey/Healthy Working Plus)")
     print(f"kb-index.json: {len(index)} searchable chunks")
 
 
