@@ -6,10 +6,10 @@
 - **Project:** HR Functional Analysis Knowledge Base
 - **Purpose:** AI-powered searchable knowledge base for Kevin's HR Functional Analysis work at University of Oxford. Single-page app with voice input — Kevin asks in plain English, AI answers with steps and links. He should never have to navigate the library himself.
 - **Owner:** Kevin Lelitte, Manager/Director HR Systems, University of Oxford
-- **Status:** Active — 2,515 documents, voice search (mic + Listen, push-to-talk, Cloudflare Workers AI)
+- **Status:** Active — 6,621 documents across PeopleXD (Access Group/SharePoint/How To Guides) and Health & Safety (Cority, IRIS, Odyssey, Healthy Working Plus), voice search (mic + Listen, push-to-talk, Cloudflare Workers AI)
 - **Repo:** https://github.com/begb0037admin/hr-fa-knowledge-base
 - **Live site:** https://begb0037admin.github.io/hr-fa-knowledge-base/
-- **Last updated:** 2026-07-31
+- **Last updated:** 2026-08-01
 
 ## Bootstrap Order
 1. This file (orientation)
@@ -25,20 +25,20 @@ Do NOT ask Kevin for a recap. HANDOVER.md is the recap.
 |---|---|
 | `index.html` | Static SPA. Oxford navy theme. Client-side BM25 retrieval → Cloudflare Worker → Claude. Voice is push-to-talk only: mic (`/stt`) transcribes into the same `ask()` pipeline typed questions use, Listen (`/tts`) speaks the answer back. No live/always-listening agent connection. |
 | `worker/worker.js` | Cloudflare Worker `hr-kb-ai.kevinlelitte.workers.dev`. Routes: `/` Claude chat, `/tts` Workers AI (Aura-2), `/stt` Workers AI (Whisper, batch mode). Uses the Worker's own Workers AI binding — no separate vendor API key. Secrets in Cloudflare — never in repo. Confirmed deployed and live (checked directly against Cloudflare 31 July 2026) — end-to-end voice test (mic → transcription → answer → Listen → audio) still not confirmed; see `ROADMAP.md`. |
-| `scrapers/` | `access_group_scraper.py` (Playwright, public help centres, `--deep` for full harvest), `build_index.py` (merges all sources → `data/kb.json` + `data/kb-index.json`), `extract_sharepoint.py` (unpacks SP zips → `library/`). |
-| `data/kb.json` | Knowledge base cards (2,515 documents). |
-| `data/kb-index.json` | 13,472 BM25 index chunks. |
-| `library/` | SharePoint docs mirrored on Pages. |
+| `scrapers/` | `access_group_scraper.py` (Playwright, public help centres, `--deep` for full harvest), `cority_clickhelp_scraper.py` (Cority ClickHelp corpus, no login needed), `build_index.py` (merges all sources → `data/kb.json` + `data/kb-index.json`), `extract_sharepoint.py` (unpacks SP zips → `library/`), `extract_hs_library.py` (extracts text from the curated IRIS/Odyssey/Healthy Working Plus reference library → `library/Health and Safety/`). |
+| `data/kb.json` | Knowledge base cards (6,621 documents). |
+| `data/kb-index.json` | 23,271 BM25 index chunks. |
+| `library/` | SharePoint docs + the H&S reference library (IRIS/Odyssey/Healthy Working Plus) mirrored on Pages. |
 
-## Data State (verified directly against live data, 31 July 2026)
-- **2,515 documents**, counted from `data/kb.json` itself, not copied from another doc: 2,251 Access Group Help Centre (web articles + guide PDFs) + 209 How To Guides + 51 Change Management (SharePoint) + 4 Kevin's Guides
-- **13,472 index chunks** in `data/kb-index.json`, counted the same way
-- **2,515 / 2,515** documents have both enhanced summary fields (`ss` short, `sl` long) — 100% complete, also verified directly
-- This file had drifted before this check — it previously stated 2,226 documents / 7,230 chunks, last touched 18 June, while `HANDOVER.md` already recorded the real 10 July figure of 2,515. If this file and `HANDOVER.md` ever disagree again, trust `HANDOVER.md` and re-verify against the live data files, not either document's prose.
+## Data State
+- **Current total: 6,621 documents, 23,271 index chunks** — verified directly against live `data/kb.json`/`data/kb-index.json`, 1 August 2026. Full per-source breakdown (Access Group, How To Guides, Change Management, Kevin's Guides, Cority, IRIS, Odyssey, Healthy Working Plus) lives in `HANDOVER.md` → Data State; not duplicated here to stay under this file's 200-line budget.
+- **Historical baseline (31 July 2026, pre-Cority/pre-H&S-library scope — Access Group + How To Guides + Change Management + Kevin's Guides only):** 2,515 documents, 13,472 chunks, counted directly from `data/kb.json`/`data/kb-index.json` at the time, not copied from another doc. All 2,515 have both enhanced summary fields (`ss` short, `sl` long) — 100% complete for that scope; Cority and the H&S reference library use the plain `s` field only, not yet enhanced.
+- This file had drifted before the 31 July check (stated 2,226 documents / 7,230 chunks, last touched 18 June, while `HANDOVER.md` already had the real figure) and drifted again after the Cority build (still said "not yet built" after Cority had shipped) — both times caught by verifying live data rather than trusting either document's prose. If this file and `HANDOVER.md` ever disagree, trust `HANDOVER.md` and re-verify against the live data files.
 
 ## Also Tracking
-- `CORITY-FEASIBILITY.md` — feasibility findings for a second KB source (Cority H&S system), confirmed viable 31 July 2026, not yet built
-- `ROADMAP.md` → "Parked — Technical Debt" — open follow-ups including Access Group image preservation and the voice-migration end-to-end verification, both surfaced during the Cority investigation
+- `CORITY-FEASIBILITY.md` — feasibility findings that led to the Cority H&S ClickHelp source; built and indexed 1 August 2026 (4,092 docs)
+- `ROADMAP.md` → "Parked — Technical Debt" — open follow-ups including Access Group image preservation and the voice-migration end-to-end verification
+- H&S sidebar now covers four sub-sources — Cority, IRIS, Odyssey, Healthy Working Plus (Cardinus) — see `HANDOVER.md` session 3 (1 August 2026) for the IRIS/Odyssey/Healthy Working Plus build
 
 ## Refresh Procedures
 - **Help-centre knowledge:** trigger `scrape-help-centres.yml` (deep=true, ~2h)
