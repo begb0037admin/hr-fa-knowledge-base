@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/meddbase-help-center/run-reports-in-async-mode"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Run Reports Asynchronously</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Run Reports Asynchronously';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/meddbase-help-center/Style.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/meddbase-help-center/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/meddbase-help-center/Script.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1_1547723302">
+  </h1>
+<h2 id="h_01JCDHYQG8KF2YRG8KWRRZWFTC" data-has-heading-anchor="true">What's the Context?<a href="/articles/meddbase-help-center/run-reports-in-async-mode/a/h_01JCDHYQG8KF2YRG8KWRRZWFTC" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/run-reports-in-async-mode/a/h_01JCDHYQG8KF2YRG8KWRRZWFTC&#39;,this);"></a></h2><hr/><p>In some instances when using the URL of a report within a GET Data Platform, such as PowerBI, Excel Power Query, or Tableau, executing larger reports can take longer to run than an HTTP connection timeout allows. In&nbsp;environments where the&nbsp;connection&nbsp;timeout&nbsp;cannot&nbsp;be&nbsp;changed,&nbsp;these reports can fail&nbsp;before the report is completed.&nbsp;</p><p>To prevent failed reports in these environments, an asynchronous report execution can be submitted which separates the report execution from the HTTP request connection timeout.&nbsp;</p><h2 id="h_01JCDHYQG86WR84939ENETY0GF" data-has-heading-anchor="true">What is the Purpose of This Article?<a href="/articles/meddbase-help-center/run-reports-in-async-mode/a/h_01JCDHYQG86WR84939ENETY0GF" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/run-reports-in-async-mode/a/h_01JCDHYQG86WR84939ENETY0GF&#39;,this);"></a></h2><hr/><p>This article will describe how to submit an asynchronous report execution to prevent connection timeouts.&nbsp;</p><h2 id="h2__2024593296" data-has-heading-anchor="true">How to submit an asynchronous report<a href="/articles/meddbase-help-center/run-reports-in-async-mode/a/h2__2024593296" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/run-reports-in-async-mode/a/h2__2024593296&#39;,this);"></a></h2><hr/><ol></ol><p>
+  When entering the URL from the report in the Report Server, add&nbsp;<span style="font-size: 10pt;"><b>async=true</b> to the URL parameters. For example:</span></p><p><span style="font-family: Courier; font-size: 12pt;">https://featurec-dataserver.meddbase.com/Default.aspx?u=[user]&amp;p=[pass]&amp;k=5159&amp;<b>async=true</b></span></p><p class="Note"><font>Filters, aliases, sort, and order work the same.&nbsp;</font></p><p>When submitted, a JSON is returned with the <span style="font-family: Courier;">jobID</span> of the report execution. You can check the status of the report using the <span style="font-family: Courier;">jobID </span>URL parameter. For example:</p><p><span style="font-family: Courier;">https://featurec-dataserver.meddbase.com/Default.aspx?&amp;<b>jobId=123456789</b>&amp;u=[user]&amp;p=[pass]</span></p><p>The status of the report will be either <b>Running </b>or <b>Complete</b>. When completed, the Result URL will include the final report. The final report opens the same as a report run without asynchronous and the results can be saved in XML.&nbsp;</p><p><br/><br/></p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

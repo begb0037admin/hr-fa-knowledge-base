@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/meddbase-help-center/2020-release-notes"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>2020 Release Notes</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='2020 Release Notes';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/meddbase-help-center/Style.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/meddbase-help-center/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/meddbase-help-center/Script.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 title="Maintenance Release Ongoing Release Notes" data-has-heading-anchor="true" id="h1__1065980701"><span style="font-size: 18pt;">2020 Maintenance Release Ongoing Release Notes</span></h1><p>Here you'll find an up to date list of all changes made during Maintenance releases in 2020.</p><h2 id="h_01H90964524XJDFQNJRVCVWAW5" data-has-heading-anchor="true">21st December 2020 Maintenance Release<a href="/articles/meddbase-help-center/2020-release-notes/a/h_01H90964524XJDFQNJRVCVWAW5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2020-release-notes/a/h_01H90964524XJDFQNJRVCVWAW5&#39;,this);"></a></h2>
+<ol>
+  <li>     Fixed an issue that caused email bodies to be blank when sent from specific     email providers.   </li>
+  <li>     Fixed an issue where a csv export from the Payments Tab was failing.   </li>
+  <li>     Additional sanitisation to HTML to prevent XSS (Cross-Site-Scripting) attacks     from being executed in the Upload File dialogues.   </li>
+  <li>     Fixed an issue that was not allowing Security Policies for Patient Directory     Search to return results.   </li>
+  <li>     Update for fastbooking portal so that dates/times are sent in ISO format     <span>to force correct deserialization by json.net.</span>
+  </li>
+  <li>
+    <span>As an additional security measure, encryption was added for the state of a page that is built, read or changed on the server.</span>
+  </li>
+</ol>
+<h2 id="h_01H9096452TC26YJY7CGVVTPEB" data-has-heading-anchor="true">14th December 2020 Maintenance Release<a href="/articles/meddbase-help-center/2020-release-notes/a/h_01H9096452TC26YJY7CGVVTPEB" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2020-release-notes/a/h_01H9096452TC26YJY7CGVVTPEB&#39;,this);"></a></h2>
+<ol>
+  <li>     Added some additional sanitisation to CSV and HTML outputs to prevent possible     issues caused by erroneous or malicious content contained in exported or     imported data.   </li>
+  <li>     Added some extra permissions checks on page loads across the system to ensure     that permissions are calculated correctly even when reloading a page with     additional or changed filters.   </li>
+  <li>     Resolved an edge case where the Patient Portal API would allow Patients to     create new Patient records. There are now some additional permission checks     which only resolve as true for Referral Portal Manager accounts with the     Default Rights permission.&nbsp;   </li>
+  <li>     Fixed an issue that could cause Pathways to fail if a task name contained     certain words. Pathway task names containing this subset of words will now     resolve to a blank string, and the pathway will be allowed to continue.   </li>
+  <li>     Changed a label against documents in the Medical History to be correctly     labelled 'Document Created' rather than 'Last edit date'   </li>
+</ol>
+<h2 id="h_01H90964522MJC2P8AFM0QQF8H" data-has-heading-anchor="true">&nbsp;<span>7th December 2020 Maintenance Release</span><a href="/articles/meddbase-help-center/2020-release-notes/a/h_01H90964522MJC2P8AFM0QQF8H" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2020-release-notes/a/h_01H90964522MJC2P8AFM0QQF8H&#39;,this);"></a></h2>
+<ol>
+  <li>     Fixed an edge case where automatic referral from a Post Placement Questionnaire/New     Starter Health Questionnaire could fail if the default PPQ referral appointment     type wasn't included in an employer's default Charge Band. All PPQ/NSHQ automatic     referrals will now use the default SLA configuration in Admin &gt; Work Type     Configuration &gt; Occupational Health, unless there is a portal referral     rule which would take precedence.   </li>
+  <li>     Tidied up the behaviour of unknown template code errors. Previously there     was a split between displaying an error code on the generated document, and     silently failing to create the document. Now all unknown template code errors     will generate an error code, and not silently fail.</li>
+</ol>
+<div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

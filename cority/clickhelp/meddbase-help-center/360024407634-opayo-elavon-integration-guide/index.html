@@ -1,0 +1,364 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/meddbase-help-center/360024407634-opayo-elavon-integration-guide"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Opayo/Elavon Integration Guide</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Opayo/Elavon Integration Guide';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/meddbase-help-center/Style.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/meddbase-help-center/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/meddbase-help-center/Script.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1_1547723302">
+</h1>
+<h2 id="h_01HDH37XZEE99WSDSF60B2VTH8" data-has-heading-anchor="true">
+  <strong>What is the context?</strong>
+<a href="/articles/meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZEE99WSDSF60B2VTH8" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZEE99WSDSF60B2VTH8&#39;,this);"></a></h2>
+<hr/>
+<p>
+  Elavon is a leading payment service provider (PSP) and is one of the most trusted payment brands. Elavon makes the process of accepting payments online, over the phone, or in-person simpler, faster, safer and more profitable for businesses.
+</p>
+<p>
+  Currently, Meddbase integrates with Opayo Server, Meddbase users can allow patients to pay their invoices online, either via the Patient Portal or simply by emailing them a link to an online payment page. Online patient payments are updated in real-time within Meddbase.
+</p>
+<p>
+  Online payments using Opayo are only possible when the debtor is the patient. If the debtor is not the patient online payment is not possible.&nbsp;
+</p>
+<p class="Note">
+  Opayo are changing their trading name to Elavon. This means their website, telephone, email addresses and communications will reference Elavon. Elavon will continue to use the Opayo name to describe their eCommerce and face-to-face products, for example the Opayo gateway or the Opayo POS solutions. Meddbase will still use the term Opayo.
+</p>
+<h2 id="h_01HDH37XZEXG7NJG7ES7GW0WS8" data-has-heading-anchor="true">
+  <strong>What is the purpose of the article?</strong>
+<a href="/articles/meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZEXG7NJG7ES7GW0WS8" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZEXG7NJG7ES7GW0WS8&#39;,this);"></a></h2>
+<hr/>
+<p>
+  This article will walk you through the process of integrating Opayo in your Meddbase application.
+</p>
+<p>
+  This includes steps you need to take on Opayo website as well as within Meddbase.
+</p>
+<div>
+  <p class="NoteClickHere">
+    <font color="#ff0000"><b><font color="#ff0000">WARNING</font></b>
+      <br/>
+    </font>For non-Meddbase related errors and troubleshooting related to Opayo, you can find further resources related to your Opayo account here:&nbsp;<a href="https://www.elavon.co.uk/" target="_top">https://www.elavon.co.uk/</a>&nbsp; Or you can&nbsp;send an email to<strong>&nbsp;opayosupport@elavon.com</strong>&nbsp;using your businesses email address that is associated with your Opayo account.
+  </p>
+</div>
+<h2 id="h_01HDH37XZE2GR54YJRCRFEFHGV" data-has-heading-anchor="true">
+  <strong>Signing up for an Opayo account</strong>
+<a href="/articles/meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZE2GR54YJRCRFEFHGV" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZE2GR54YJRCRFEFHGV&#39;,this);"></a></h2>
+<hr/>
+<p>
+  </p>
+<p>To sign up for an Opayo account, simply contact Elavon at&nbsp;<a href="https://www.elavon.co.uk/contact-us/sales-enquiry.html" target="_top">https://www.elavon.co.uk/contact-us/sales-enquiry.html</a>&nbsp;</p><p>Follow the instructions provided on the form and additional communication from Elavon</p><p>
+</p>
+<h2 id="h_01HDH37XZE0TV0KK7J4E7ZTTCD" data-has-heading-anchor="true">
+  <strong>Demo chambers and Test Opayo</strong>
+<a href="/articles/meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZE0TV0KK7J4E7ZTTCD" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZE0TV0KK7J4E7ZTTCD&#39;,this);"></a></h2>
+<hr/>
+<p>
+  If you want to set up the demo chamber with a test Opayo account you will need to contact Opayo and request a test account. This may be an additional charge for them to set up.
+</p>
+<p>
+  Typically, clients will priortise the live chamber and configure the live chamber and live Opaya account and do not run a test in demo. Please dicsuss with your project manager, client success manager or client account manager if you would like to discuss this.
+</p>
+<p>
+  The IP address for the demo chamber is 062.032.103.224 and the subnet is 255.255.255.240
+</p>
+<h2 id="01J6HMH3H3W7XGYE228RKKMBAG" data-has-heading-anchor="true">
+  <strong>Authenticating Opayo and using the MyOpayo portal</strong>
+<a href="/articles/meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/01J6HMH3H3W7XGYE228RKKMBAG" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/01J6HMH3H3W7XGYE228RKKMBAG&#39;,this);"></a></h2>
+<hr/>
+<p>
+  MyOpayo is a cloud-based reporting &amp; admin portal to manage your account and transactions. Two MyOpayo environments will be created for you, test and live.&nbsp;
+</p>
+<p>
+  Meddbase does not have a test environment to run a test transaction. Please ensure you complete a test transaction outside of Meddbase on the test Opayo portal. Once this is complete you will be provided with live Opayo credentials which can be added to your Live Meddbase chamber.&nbsp;
+</p>
+<p>
+  Detailed instructions on accessing and configuring MyOpayo will be provided in an email sent by Opayo immediately after creating a Opayo account. For the purpose of this guide, simply follow the&nbsp;<a href="https://test.opayo.com/myOpayo/login.msp" target="_top">link to the test MyOpayo portal</a>, select a password and log in.<span style="font-size: 10pt;">&nbsp;</span>
+</p>
+<h2 id="h_01HDH37XZF3X0424ZWJ3EMD7T7" data-has-heading-anchor="true">
+  <strong>Configuring Opayo in Meddbase</strong>
+<a href="/articles/meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZF3X0424ZWJ3EMD7T7" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZF3X0424ZWJ3EMD7T7&#39;,this);"></a></h2>
+<hr/>
+<p>
+  The first thing to do is to enable Online Payments. To do this:-
+</p>
+<ol>
+  <li>
+    From the&nbsp;<strong>Start Page&nbsp;</strong>navigate to&nbsp;<strong>Admin &gt; Configuration &gt; System Feature.</strong>
+  </li>
+  <li>
+    In the&nbsp;<strong>Portals&nbsp;</strong>section, tick&nbsp;<strong>Online Payments</strong>
+  </li>
+  <li>
+    Click&nbsp;<strong>Yes&nbsp;</strong>on the pop-up informing you of automated charges for the feature.
+  </li>
+  <li>
+    Click&nbsp;<strong>Save&nbsp;</strong>once finished.
+  </li>
+</ol>
+<div><img src="images/Enable%20Online%20Payments.png" alt="" loading="lazy"/>
+  
+  <br/>
+</div>
+<p>
+  <br/>
+</p>
+<p>
+  After Online Payments have been enabled, it’s time to set up one or more Online Payment Types. To do this:-
+</p>
+<ol>
+  <li>
+    From the&nbsp;<strong>Start Page&nbsp;</strong>navigate to&nbsp;<strong>Admin &gt; Common Catalogues.</strong>
+  </li>
+  <li>
+    Expand the&nbsp;<strong>Online Payment Types</strong>&nbsp;catalogue.
+  </li>
+  <li>
+    Click&nbsp;<strong>New Payment Type.</strong>
+  </li>
+</ol>
+<div>
+  <img src="images/New%20Payment%20Type.png" alt="" style="" loading="lazy"/>
+  <br/>
+</div>
+<p>
+  Making payments within your Meddbase chamber, from the Patient Portal and via emails containing online payment links will be covered in section 7 of this guide.</p>
+<p><img src="images/Opayo%20NEw%20Payment%20TYpe%20-%20ecommerce.png" alt="" loading="lazy"/><br/></p>
+<p>
+  A group of configuration options needs to be set up for each payment type, for it to function correctly with Meddbase:
+</p>
+<p>
+  The<strong>&nbsp;ID</strong>&nbsp;and&nbsp;<strong>External ID</strong>&nbsp;are read-only fields that are set automatically upon saving the payment type.
+</p>
+<ul>
+  <li>
+    <b>Integration: </b>Choose between Opayo Server and Opayo PI.&nbsp;</li>
+  
+  <li><strong>Name:</strong>&nbsp;The name of the payment method. This will be visible in the list of payment methods while making a payment.
+  </li>
+  <li>
+    <strong>Account Code:</strong>&nbsp;The vendor name used to register the Opayo account.
+    <br/>
+    <p class="Note">Account Code should not contain any capital letters or spaces.</p>
+  </li>
+  <li>
+    <strong>Description:</strong>&nbsp;A brief description of the payment type.
+  </li>
+  <li>
+    <strong>Portal Default:</strong>&nbsp;This option will need to be selected in order for Opayo to be set as the default payment method online.
+  </li>
+  <li>
+    <strong>Account Type:</strong>&nbsp;This is where you can choose E-Commerce or Mail Order payment types. You will likely want to set up one of each, E-Commerce should be used by the patient if paying by the portal, Mail Order should be used if processing the payment within Meddbase. (If portal default is ticked you will not be able to select Mail Order).
+  </li>
+  <li>
+    <strong>Allow Gift Aid:</strong>&nbsp;In the UK, the government runs a scheme called Gift Aid that enables charities to claim the basic rate of tax on every pound. Only registered charities can use Gift Aid through the Opayo platform. If you are not a charity you will not be able to use this through Opayo.
+  </li>
+  <li>
+    <strong>Company:</strong>&nbsp;The Meddbase chamber that this payment type will be added to.&nbsp;
+  </li>
+</ul>
+<h2 id="h_01HDH37XZFFDFKB6HPWNT69KW5" data-has-heading-anchor="true">
+  <strong>Configuring Opayo on the Opayo portal</strong>
+<a href="/articles/meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZFFDFKB6HPWNT69KW5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZFFDFKB6HPWNT69KW5&#39;,this);"></a></h2>
+<hr/>
+<p>
+  There are configuration steps that need to be completed on the Opayo portal:-
+</p>
+<p>
+  <a href="https://www.opayo.co.uk/support/12/38/activating-adding-a-3d-secure-rule" target="_blank" rel="noopener">3D Secure rules</a>&nbsp;and&nbsp;<a href="https://www.opayo.co.uk/support/12/38/activating-adding-avs/cv2-rules" target="_blank" rel="noopener">AVS/CV2</a>&nbsp;rules can be configured on the Opayo portal in additional to the below steps.<span style="font-size: 10pt;">&nbsp;</span>
+</p>
+<h3 id="h_01HDH37XZGJJMMD6H4WB25NHMD" data-has-heading-anchor="true">
+  1. Adding valid IP's&nbsp;
+<a href="/articles/meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZGJJMMD6H4WB25NHMD" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZGJJMMD6H4WB25NHMD&#39;,this);"></a></h3>
+<p>
+  This will allow your Meddbase chamber to communicate with the Opayo API.
+</p>
+<p>
+  Navigate to&nbsp;<strong>Settings &gt; Valid IPs</strong>&nbsp;and add the following set of details:<span style="font-size: 10pt;">&nbsp;</span>
+</p>
+<table style="width: 565px; max-height: 20rem; height: 103px;" class="CHTable" cellspacing="0" cellpadding="0">
+  <tbody>
+    <tr>
+      <td style="width: 263px;">
+        IP Address: 217.150.99.0
+      </td>
+      <td style="width: 268px;">
+        Subnet Mask:255.255.255.248
+      </td>
+    </tr>
+    <tr>
+      <td style="width: 263px;">
+        IP Address: 217.150.100.24
+      </td>
+      <td style="width: 268px;">
+        Subnet Mask:255.255.255.248
+      </td>
+    </tr>
+    <tr>
+      <td style="width: 263px;">
+        IP Address: 83.217.106.128
+      </td>
+      <td style="width: 268px;">
+        Subnet Mask:255.255.255.128
+      </td>
+    </tr>
+    <tr>
+      <td style="width: 263px;">
+        IP Address: 84.45.68.196
+      </td>
+      <td style="width: 268px;">
+        Subnet Mask:255.255.255.240
+      </td>
+    </tr>
+    <tr>
+      <td style="width: 263px;">
+        IP Address: 84.45.87.32
+      </td>
+      <td style="width: 268px;">
+        <p>
+          Subnet Mask:255.255.255.240
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  <br/></p>
+<p><strong>As of April 2024, please also add the following: IP Address: 212.133.113.0 Subnet Mask: 255.255.255.128</strong>
+</p>
+<p>
+  These can be named however you feel fit.
+</p>
+<p>
+  A recommendation would be "Meddbase IP range 1,2,3,4,5" as the naming of these IP Ranges does not affect the functionality, it's simply for your internal referencing.
+</p>
+<p>
+  If these are not configured correctly, the error below may appear:
+  <br/>
+  "4020 : Information received from an Invalid IP address"<span style="font-size: 10pt;">&nbsp;</span>
+</p>
+<h3 id="h_01HDH37XZGXKD1EDNDDABM7W79" data-has-heading-anchor="true">
+  2. Setting up Users in MyOpayo portal
+<a href="/articles/meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZGXKD1EDNDDABM7W79" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZGXKD1EDNDDABM7W79&#39;,this);"></a></h3>
+<p>
+  The next thing to do on the MyOpayo portal is to set up two user accounts, an admin and a non-admin user.
+</p>
+<p>
+  This can be done by navigating to&nbsp;<strong>Settings &gt; Users.</strong>&nbsp;Please keep in mind that the account created via the Opayo registration email should already have admin privileges.
+</p>
+<p>
+  <img src="images/opayo-int-guide4.png" alt="" style="" loading="lazy"/>
+  <br/>
+</p>
+<h3 id="h_01HDH37XZG2NK3MK12JCQ6VNYJ" data-has-heading-anchor="true">
+  3. Making Opayo payments
+<a href="/articles/meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZG2NK3MK12JCQ6VNYJ" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZG2NK3MK12JCQ6VNYJ&#39;,this);"></a></h3>
+<p>
+  After setting up an online payment type as described in section 4 of this guide, there will be three ways of making Opayo payments with Meddbase, in the main application, on the Patient Portal and via emails containing online payment links. Each of these three scenarios is described below.
+  <br/>
+  Please bear in mind that some transaction types, such as pre-authorisations, may need to be enabled by contacting Opayo customer support. This will usually be indicated by an error with a code/status of ‘4006: INVALID’ when attempting to make that transaction. More about this can be found on&nbsp;<a href="https://www.opayo.co.uk/support/error-codes/4006-invalid-txtype-requested-not-supported-account" target="_blank" rel="noopener">the Opayo support site.</a>
+</p>
+<h2 id="h_01HDH37XZGRHBZ3PWYYFE4YE2E" data-has-heading-anchor="true">
+  <strong>Making online payments within your Meddbase chamber</strong>
+<a href="/articles/meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZGRHBZ3PWYYFE4YE2E" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZGRHBZ3PWYYFE4YE2E&#39;,this);"></a></h2>
+<hr/>
+<p>
+  The most straightforward way of making online payments from within Meddbase is from an invoice. Simply navigate to Accounts &gt; Invoices and open the invoice you want to make a payment on, alternatively, the invoice can be found by typing the invoice ID in the Quick Search bar on the top right. Once you are in the invoice as normal you would go to make a payment and mark the invoice as sent if not done so already.&nbsp;
+</p>
+<p>
+  A new payment method will appear which will be labeled however you labeled it in section 4 of this article. In this case, you can see it is called Opayo.
+</p>
+<img src="images/opayo-int-guide5.png" alt="mceclip0.png" style="" loading="lazy"/>
+<p>
+  &nbsp;
+</p>
+<p>
+  You will then need to make sure the address and payer details are correct before clicking&nbsp;<strong>save.</strong>
+</p>
+<p>
+  From the next window that pops up on the screen, you can add the patient's card details After clicking the Save button to confirm the transaction, Opayo will authorise the transaction and return you to the invoice to show you that the payment has been made.&nbsp;
+</p>
+<p>
+  <img src="images/opayo-int-guide6.png" alt="mceclip1.png" style="" loading="lazy"/>
+  <br/>
+</p>
+<p>
+  From the next window that pops up on the screen, you can add the patient's card details.
+</p>
+<p>
+  After clicking the&nbsp;<strong>Save</strong>&nbsp;button to confirm the transaction, Opayo will authorise the transaction and return you to the invoice to show you that the payment has been made.&nbsp;
+</p>
+<p>
+  <img src="images/opayo-int-guide7.png" alt="mceclip2.png" style="" loading="lazy"/>
+  <br/>
+  <br/>
+</p>
+<p>
+  If any error message appears at this stage you can search the code provided on the Opayo website to understand the reasoning for that error.&nbsp;
+  <br/>
+  <a href="https://www.opayo.co.uk/support/error-codes" target="_blank" rel="noopener">https://www.opayo.co.uk/support/error-codes</a>
+</p>
+<p>
+  Another way Opayo can be used within Meddbase is to pre-authorise payments from an appointment home page or from an unsent invoice. This allows a Meddbase user to temporarily store the patient’s card details, so when the appointment is arrived at a later date and the invoice is marked as sent, the user can charge the card without having to contact the patient for payment details.
+</p>
+<img src="images/opayo-int-guide8.png" alt="" style="" loading="lazy"/>
+<p><br/></p>
+
+<p>Opayo can also be used to make payments on membership invoices or set up a&nbsp;<strong>recurring membership payment*.</strong>&nbsp;This can be done from the patient home by clicking on the Membership Scheme field on the Account panel. Doing so causes the following pop-up window to display, and from here a Meddbase user can either open the invoice and make an online payment as described earlier in this section of the guide or set up a recurring membership payment which will use the stored card details to make payments against invoices raised by the membership scheme that the patient is a member of.
+</p>
+<p class="Note">
+  <b>*</b>Before setting up a Membership Scheme on a Charge Band, please&nbsp;contact Opayo&nbsp;and ask for&nbsp;<strong>Repeat Payments to be turned on</strong>&nbsp;for your account.
+</p>
+<p class="NoteClickHere">
+  Click&nbsp;<a href="/articles/meddbase-help-center/360004611393-membership-schemes-configuration-overview" target="_blank" rel="noopener noreferrer" onclick="return n(&#39;!meddbase-help-center/360004611393-membership-schemes-configuration-overview&#39;,this);">here</a>&nbsp;for more details on Membership Scheme Configuration Overview.
+</p>
+<p class="NoteClickHere">
+  <span style="font-size: 10pt;">Click&nbsp;</span><a href="/articles/meddbase-help-center/4406117080337-membership-schemes-an-explanation-of-invoice-schedules-and-calculations" target="_blank" rel="noopener noreferrer" style="font-size: 10pt;" onclick="return n(&#39;!meddbase-help-center/4406117080337-membership-schemes-an-explanation-of-invoice-schedules-and-calculations&#39;,this);">here</a><span style="font-size: 10pt;">&nbsp;for more details on Membership Scheme Invoice Schedules and Calculations.</span>
+</p>
+<img src="images/opayo-int-guide9.png" alt="" style="" loading="lazy"/>
+<h2 id="h_01HDH37XZHZG02G97TRCG1KHGZ" data-has-heading-anchor="true">
+  <strong>Making online payments against emailed invoices</strong>
+<a href="/articles/meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZHZG02G97TRCG1KHGZ" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZHZG02G97TRCG1KHGZ&#39;,this);"></a></h2>
+<hr/>
+<p>
+  After emailing an invoice from Meddbase, the patient can follow the online payment URL in the email which will take them to the Patient Portal linked to the chamber from which the invoice was emailed. Once on the payment page, the patient has two options, they can either make an anonymous online payment…
+</p>
+<p>
+  <img src="images/opayo-int-guide10.png" alt="" style="" loading="lazy"/>
+  <br/>
+</p>
+<p>
+  …or log into the Patient Portal and make a payment against the invoice directly from their Patient Portal account. Payments made from the Patient Portal will be covered in the next sub-section.
+</p>
+<h2 id="h_01HDH37XZHA0KS718JJ2Z6BN7S" data-has-heading-anchor="true">
+  <strong>Making online payments via the Patient Portal</strong>
+<a href="/articles/meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZHA0KS718JJ2Z6BN7S" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/360024407634-opayo-elavon-integration-guide/a/h_01HDH37XZHA0KS718JJ2Z6BN7S&#39;,this);"></a></h2>
+<hr/>
+<p>
+  While logged into the Patient Portal, a patient can make an online payment against any unpaid invoice from the Invoices page. They can also pay membership invoices and/or set up a recurring membership payment from the Memberships page.
+  <br/>
+  <img src="images/opayo-int-guide11.png" alt="" style="" loading="lazy"/>
+  <br/>
+</p>
+<p class="Note">
+  All payments made on the Patient Portal automatically reflect in your Meddbase chamber as well.
+</p>
+<p>
+  <br/>
+</p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>
