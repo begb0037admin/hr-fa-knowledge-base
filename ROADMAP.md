@@ -122,6 +122,7 @@ First flagged in `HANDOVER.md` (10 July 2026) as explicitly outside what an AI s
   - Linda's `SYSTEM_PROMPT` and the chat empty-state text updated to name IRIS, Odyssey, and Healthy Working Plus explicitly, not just "Cority... Occupational Health & Safety."
   - **Verification chain:** extraction script tested against the real 14 files (14/14, 0 failed) → loader tested against a local fixture → sidebar tested in a real Chromium browser via Playwright against synthetic data (30/30 assertions) → all pushed files diffed byte-for-byte against what was tested → real index rebuild triggered via `index-sharepoint-docs.yml` (now also runs `extract_hs_library.py`) → real `data/kb.json` downloaded and counted directly (6,621 docs, exactly +14) → GitHub Pages deployment polled to actual completion (the classic Pages-builds status API showed a stale `"building"` well past the real deploy — caught rather than trusted, same trap as the Cority session) → final Playwright test against the real public URL (`kb.lelitte.co.uk`, 10/10 assertions), including fetching a live linked document and confirming its byte size matches the original file exactly, not just an `HTTP 200`.
   - Also fixed while here: `CLAUDE.md` had drifted a second time (still said Cority was "not yet built" after it had shipped) — corrected alongside this session's own headline-count update.
+- **"Healthy Working Plus" source renamed to "DSE" (1 August 2026, session 4).** Kevin's explicit instruction: "let's rename that to DSE. That's how we refer to it." Renamed the `src`/`tp`/`sy` metadata for the 4 affected documents in `data/hs-library-docs.json` (not just cosmetic display text — `src` is the value shown directly on card badges and used for filtering, so a text-only skin change would have left the badge and the filter dropdown out of sync) and all 8 occurrences in `index.html` (`SRC_META`, sidebar nav label/click-handlers, the `isHsLibrary` "Open document" check, the chat empty-state text, Linda's `SYSTEM_PROMPT`). Deliberately left unchanged: the physical `library/Health and Safety/Healthy Working Plus/` folder, source document filenames, and internal JS/CSS identifiers (`hwp`, `.b-hwp`) — internal plumbing, not a source/display label. Judged as mechanical and explicitly pre-authorised by Kevin's own instruction, so did not raise Constitution Section 10. Verified end to end: index rebuilt (6,621 docs / 23,271 chunks, unchanged counts), live site fetched directly and confirmed zero remaining "Healthy Working Plus" mentions and correct "DSE" content in both `index.html` and `data/kb.json`. Full detail in `HANDOVER.md` → session 4.
 
 ---
 
@@ -130,8 +131,8 @@ First flagged in `HANDOVER.md` (10 July 2026) as explicitly outside what an AI s
 - How To guides for other HR Systems processes as they arise
 - Screenshots added to SQL Training Guide once video is processed
 - KB sidebar — add "Kevin's Guides" as a permanent left-panel category (currently Source dropdown only)
-- Enhanced two-level summaries (`ss`/`sl`) for the H&S reference library (IRIS/Odyssey/Healthy Working Plus) — currently plain `s` field only, same as Cority
+- Enhanced two-level summaries (`ss`/`sl`) for the H&S reference library (IRIS/Odyssey/DSE) — currently plain `s` field only, same as Cority
 
 ---
 
-*Last updated: 1 August 2026 (session 3 — Health & Safety reference library: IRIS, Odyssey, Healthy Working Plus)*
+*Last updated: 1 August 2026 (session 4 — "Healthy Working Plus" source renamed to "DSE")*
