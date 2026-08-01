@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/readyset/configure-token-refresh"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/readyset/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Configure Token Refresh</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Configure Token Refresh';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/readyset/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1_1172990071" data-has-heading-anchor="true">
+  Configuring Access Token Refresh 
+<a href="/articles/readyset/configure-token-refresh/a/h1_1172990071" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!readyset/configure-token-refresh/a/h1_1172990071&#39;,this);"></a></h1><p>
+  Receiving endpoints often require an access token for security. Access tokens typically expire after a short period of time&nbsp;— anywhere from an hour to a week&nbsp;— so an API call that runs on a recurring interval can start failing once its token goes stale.&nbsp;
+</p>
+<p>
+  The <b>Authorization Properties</b> tab lets you configure a token request as part of your API call. Before ReadySet runs your scheduled or on-save API call, it first requests a fresh access token from your endpoint and automatically inserts it into the call, so you don't need to manually generate and update the token each time it expires.&nbsp;
+</p>
+<p class="Note">
+  Authorization Properties are only available when the Initiation is set to <b>On Save</b> or <b>Schedule</b>. They are not available for <b>Run Now</b> calls.&nbsp;
+</p>
+<h2 id="h2_206960196" data-has-heading-anchor="true">
+  Enabling Authorization Properties
+<a href="/articles/readyset/configure-token-refresh/a/h2_206960196" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!readyset/configure-token-refresh/a/h2_206960196&#39;,this);"></a></h2><p>
+  When configuring an API call with an Initiation of <b>On Save</b> or <b>Schedule</b>, a <b>Requires Access Token?</b> check box is available. Check this box if the endpoint you're sending data to requires an access token.&nbsp;
+</p>
+<p>
+  Turning on <b>Requires Access Token?</b> enables a new <b>Authorization Properties</b> tab, where you can configure the request ReadySet will use to fetch the token.&nbsp;
+</p>
+<h2 id="h2__754683563" data-has-heading-anchor="true">
+  Configuring the Authorization Properties Tab
+<a href="/articles/readyset/configure-token-refresh/a/h2__754683563" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!readyset/configure-token-refresh/a/h2__754683563&#39;,this);"></a></h2><p>
+  On the <b>Authorization Properties</b> tab, configure the following:&nbsp;
+</p>
+<ul>
+  <li>
+    <b>API Type</b> &nbsp;— Fixed to REST. This field cannot be changed.&nbsp;
+  </li>
+  <li>
+    <b>Content Type</b> &nbsp;— Choose <b>x-www-form-urlencoded</b> or <b>raw json</b>, depending on the format the token endpoint expects.&nbsp;
+  </li>
+  <li>
+    <b>HTTP Method</b> &nbsp;— Fixed to POST. This field cannot be changed.&nbsp;</li>
+  <li><b>URL</b> — The URL endpoint to request an access token.&nbsp;&nbsp;</li>
+  <li>
+    <b>Body</b> &nbsp;— The data sent to the token endpoint to request the token, for example a client ID, client secret, or grant type.&nbsp;
+  </li>
+  <li>
+    <b>Response Body</b> &nbsp;— The shape of the response ReadySet should expect from the token endpoint.&nbsp;
+  </li>
+</ul>
+<p>
+  If <b>x-www-form-urlencoded</b> is selected as the Content Type, you can configure the Body as key-value pairs, the same way you would configure Headers elsewhere in the API call. The Body is limited to 10 key-value pairs.&nbsp;
+</p>
+<p class="Note">
+  Please reach out to your organization's IT team or the administrator of the receiving system for the token request URL, required Body parameters, and response format. ReadySet does not have visibility into the credentials or configuration of the system you are connecting to.&nbsp;
+</p>
+<h2 id="h2__671787001" data-has-heading-anchor="true">
+  Capturing the Access Token
+<a href="/articles/readyset/configure-token-refresh/a/h2__671787001" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!readyset/configure-token-refresh/a/h2__671787001&#39;,this);"></a></h2><p>
+  The Response Body can only be edited as JSON. To tell ReadySet where to find the token in the response, replace the token value in the JSON with an <b>[[access_token]]</b> placeholder. For example:&nbsp;
+</p>
+<p class="inlineCode">
+  {<br/>
+  &nbsp;&nbsp;"token_type": "Bearer",<br/>
+  &nbsp;&nbsp;"expires_in": 3599,<br/>
+  &nbsp;&nbsp;"ext_expires_in": 3599,<br/>
+  &nbsp;&nbsp;"access_token": [[access_token]]<br/>
+  }
+</p><p>
+  When the sub-API call runs, ReadySet captures whatever value is returned in the <b>access_token</b> field and stores it securely for use in the main API call.&nbsp;
+</p>
+<h2 id="h2_1464242894" data-has-heading-anchor="true">
+  Using the Access Token in Your API Call
+<a href="/articles/readyset/configure-token-refresh/a/h2_1464242894" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!readyset/configure-token-refresh/a/h2_1464242894&#39;,this);"></a></h2><p>
+  Add the <b>[[access_token]]</b> placeholder anywhere the token is needed in the main API call, such as in a header. For example, add a Header named <b>Authorization</b> with a value of <b>Bearer [[access_token]]</b>.&nbsp;
+</p>
+<p>
+  When the API call runs, ReadySet replaces the <b>[[access_token]]</b> placeholder with the token retrieved from the Authorization Properties tab.&nbsp;
+</p>
+<p class="Note">
+  If <b>Requires Access Token?</b> is turned on and the <b>[[access_token]]</b> placeholder is missing from either the main API call or the Authorization Properties Response Body, you will not be able to save the API call. You will see the message: "This API Call requires an access token. Please review and verify that the [[access_token]] placeholder(s) are present in the necessary areas."&nbsp;
+</p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

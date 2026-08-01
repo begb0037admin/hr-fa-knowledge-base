@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/readyset/answer-properties-tests-charting-forms"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/readyset/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Answer Properties - Tests / Charting Forms</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Answer Properties - Tests / Charting Forms';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/readyset/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1__1175379254" data-has-heading-anchor="true">Configuring Tests / Charting Forms to be Ordered Automatically<a href="/articles/readyset/answer-properties-tests-charting-forms/a/h1__1175379254" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!readyset/answer-properties-tests-charting-forms/a/h1__1175379254&#39;,this);"></a></h1><p>Before configuring tests/charting forms to be ordered automatically, the following are best practices to consider:</p><ul><li>Remember to ensure your charting forms or tests are configured in Client Admin under Provider Locations in order for them to be ordered. </li><li>Always ensure that a Test / Charting Form is only associated with one Provider Location for the auto-ordering logic to work. If you have a Test / Charting Form that is associated with more than one Provider Location, when it is auto scheduled it may be auto scheduled for a location you are not intending which means it may not be accessible.</li><li>If you’ve created a custom charting form, ensure it is part of the desired Exposure Protocol within the form properties.</li></ul><p>Just like Actions, planning is important when configuring Tests / Charting Forms to be automatically scheduled and ordered! Using your flow chart survey design that was used to build actions, now, identify answers that if selected, should cause any of the charting forms to not be scheduled.</p><p>Map out your process in a flow chart:</p><ol><li>Some charting forms may exist within the selected protocol that you do not want scheduled when this survey is submitted at all. Identify these Tests/Forms: These charting forms/tests should be unchecked (removed) from <b>all</b> answers associated with the first question that ALL participants will be required to answer.</li><li>Some charting forms should not be scheduled when one answer is selected: This answer should be at the very end of the answer flow (the last question the participant is responding to) which will determine if that test/ form is needed or not. </li><li>Some charting forms should not be scheduled when multiple answers are selected: The final answer that determines that the charting form / test should not be ordered, should be configured uncheck the test/ charting form.</li></ol><p>Just like actions, the order you apply these configurations in matters greatly. As soon as a test / charting form is unchecked and configured to not be auto-scheduled for an answer, that test/form cannot be auto-ordered for any subsequent answers.</p><p>All answers that trigger the auto-ordering should be above any answer for which you cancel the auto-ordering.</p><h2 id="h2_1676201175" data-has-heading-anchor="true"><b>Auto-ordering Tests / Charting Forms</b><a href="/articles/readyset/answer-properties-tests-charting-forms/a/h2_1676201175" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!readyset/answer-properties-tests-charting-forms/a/h2_1676201175&#39;,this);"></a></h2><p>When a Test or Charting Form is configured to be automatically ordered, after the participant submits their survey, it will be ordered at 12:00AM that night, for the Provider Location that is assigned to the Test or Form.</p><ol><li>Within Survey Properties, select the protocol the charting form or test is a part of within the “Auto-Order Charting Forms” dropdown.</li><li>Right-click any answer in your survey and select the “Tests” tab. <br/>All Charting Forms / Tests that belong to that exposure protocol will be visible and checked by default. </li><li>Reference your survey design flow chart and ensure all answers you want the test/ charting form(s) to be automatically ordered and scheduled for are above and will be answered before any answer you want to configure to not auto-schedule the test/form. As soon as a test/form is unchecked for an answer, it will no longer be available to have checked in subsequent answers.</li><li>Open the Answer Properties for an answer that should cause a test / form to NOT be ordered. Navigate to the Tests tab and uncheck the form/test.</li></ol><p>Once an answer has been configured to remove a Test or Charting Form from being auto-scheduled, the answer will have a red “I” icon next to it so you can easily locate answers that are causing forms to not be ordered.</p><p>Hover over the icon to view the charting forms that are not being ordered as a result of that answer being selected.</p><p>Once a form is removed from being auto-scheduled, it will still appear like it is being auto-ordered in subsequent answers, so it is important to reference the red “I” icon to be aware of forms that are no longer available to order.</p><h2 id="h2__1282624691" data-has-heading-anchor="true"><b>Editing Surveys with Auto-scheduling</b><a href="/articles/readyset/answer-properties-tests-charting-forms/a/h2__1282624691" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!readyset/answer-properties-tests-charting-forms/a/h2__1282624691&#39;,this);"></a></h2><p>Anytime an existing survey is edited, it’s very important to check if the changes will impact the tests or forms that are configured to be auto-scheduled. Changes to watch for include:</p><ul>
+			<li>Removing an answer that is configured to de-select forms from being ordered.</li></ul>
+		<ul>
+			<li>Changing the exposure protocol selected in the Auto-Order charting forms drop down OR adding a new one.</li></ul>
+		<ul>
+			<li>Re-arranging the order of groups, questions and answers.</li></ul>
+		<ul>
+			<li>Adding or changing an action.</li></ul>
+		<ul>
+			<li>Adding an answer.</li></ul><p><br/></p><h1 id="h1__2090149806">   </h1>
+<p><br/></p><h1 id="h1_61071960">   </h1>
+<p><br/></p><h1 id="h1_1547723302">
+  </h1>
+<p>
+  <br/>
+</p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

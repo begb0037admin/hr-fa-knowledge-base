@@ -1,0 +1,185 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/readyset/creating-email-distribution-lists"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/readyset/CorityOne-GlobalStyleSheet.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Creating Email Distribution Lists</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Creating Email Distribution Lists';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/readyset/CorityOne-GlobalStyleSheet.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h2 id="h2__1258408202">
+  </h2>
+<h1 id="h1__1450617215" data-has-heading-anchor="true">Creating Email Distribution Lists from ReadySet Reports
+<a href="/articles/readyset/creating-email-distribution-lists/a/h1__1450617215" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!readyset/creating-email-distribution-lists/a/h1__1450617215&#39;,this);"></a></h1><p style="text-align: justify;">
+  ReadySet allows authorized users to create email distribution lists from ReadySet Reports with specified criteria. Distribution lists can be uploaded to a C3 Mass Email or Initialize Program Notification, making it easier to send out notifications to targeted audiences.
+</p>
+<h2 id="h2_513996593" data-has-heading-anchor="true">
+  <a id="Before_you_begin:"></a><a id="_Toc59609378"></a>Before You Begin
+<a href="/articles/readyset/creating-email-distribution-lists/a/h2_513996593" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!readyset/creating-email-distribution-lists/a/h2_513996593&#39;,this);"></a></h2>
+<ul>
+  <li value="0">
+    <span style="font-weight: normal; font-style: normal;">The report </span>must <span style="font-weight: normal; font-style: normal;">be a .csv&nbsp;</span>report <span style="font-weight: normal; font-style: normal;">(usually denoted in the name as “Details” report)</span>
+  </li>
+  <li>
+    <span style="font-weight: normal; font-style: normal;">You </span>must <span style="font-weight: normal; font-style: normal;">output </span>Participant ID <span style="font-weight: normal; font-style: normal;">in the report.</span>
+  </li>
+  <li>
+    <span style="font-weight: normal; font-style: normal;">The column heading name in the .csv file&nbsp;</span>must <span style="font-weight: normal; font-style: normal;">be </span>PARTICIPANT_ID
+  </li>
+  <li>
+    <span style="font-weight: normal; font-style: normal;">Your final .csv file can have only </span>one column named PARTICIPANT_ID <span style="font-weight: normal; font-style: normal;">(data anomalies, such as spaces, dashes or hyphens, may prevent your spreadsheet from uploading).</span>
+  </li>
+  <li>
+    <span style="font-weight: normal; font-style: normal;">You </span>cannot <span style="font-weight: normal; font-style: normal;">use a file in Excel (.xls or .xlsx) or another format (.docx).</span>
+  </li>
+  <li>
+    <span style="font-weight: normal; font-style: normal;">You </span>cannot <span style="font-weight: normal; font-style: normal;">change the file extension from another format (e.g. .xls) to .csv</span>
+  </li>
+  <li>
+    There is no limit on the number of participants in a distribution list.
+  </li>
+</ul>
+<h2 id="h2__717420500" data-has-heading-anchor="true">
+  <a id="What_you_can_do_with_this_feature:"></a><a id="_Toc59609379"></a>What You Can Do With This Feature
+<a href="/articles/readyset/creating-email-distribution-lists/a/h2__717420500" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!readyset/creating-email-distribution-lists/a/h2__717420500&#39;,this);"></a></h2>
+<p style="text-align: left;">
+  There are many cases where EHS may want to create a distribution list to email a large group of participants. For example, if you would like to send a reminder notice to everyone who has a follow up vaccination next month. In ReadySet, you will create a report with this information, including Participant ID, save the information in .csv format to your computer, and then upload it to a C3 email reminder notification that you have created.
+</p>
+<h2 id="h2__2087845902" data-has-heading-anchor="true">
+  <a id="Step_1:_Create_a_distribution_list_from_"></a><a id="_Toc59609380"></a>Creating a Distribution List From a ReadySet Report
+<a href="/articles/readyset/creating-email-distribution-lists/a/h2__2087845902" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!readyset/creating-email-distribution-lists/a/h2__2087845902&#39;,this);"></a></h2>
+<ol start="1">
+  <li>
+    <span style="font-weight: normal; font-style: normal;">On </span>the <font>Reports</font><font>&nbsp;</font>tab, click&nbsp;<font><b>Standard </b><b>Reports</b></font>.
+  </li>
+  <li>
+    Select the report that you wish to generate a distribution list for.
+    <br/>
+    <p class="Note">The report must be in .csv format (usually denoted in the name as “Details” report).
+    </p>
+  </li>
+  <li>
+    <span style="font-weight: normal; font-style: normal;">Select your </span>Filters<span style="font-weight: normal; font-style: normal;">. <br/>You may not want terminated workers in your distribution list. You may want to filter on:
+		<ul>
+			<li>
+        Specific employment statuses (e.g., Active and/or Leave of Absence)
+      </li>
+      <li>
+        Specific population types (e.g., employees only)
+      </li>
+      <li>
+        Compliance status (e.g., due current month).
+      </li>
+    </ul>
+    </span>
+  </li>
+  <li>
+    Select the Columns you wish to output. 
+    <br/>
+    <p class="Note">You must include Participant ID.
+    </p>
+  </li>
+  <li>
+    Run the report, download it and save as CSV file format.
+    <br/>
+    <img src="images/creating-email-distribution-lists-from-readyset-reports-img0001.png" width="559" height="263" alt="Graphical user interface, application
+
+Description automatically generated" style="border-width: 0px;" loading="lazy"/>
+    <br/>
+    <p class="Note">The below example of the output CSV is using Excel 2016. Your version of Excel may look different.&nbsp;
+      <br/>
+    </p>
+    </li>
+  <li><img src="images/creating-email-distribution-lists-from-readyset-reports-img0003.png" width="411" height="273" alt="" style="border-width: 0px;" loading="lazy"/>
+    <br/>
+    <img src="images/creating-email-distribution-lists-from-readyset-reports-img0002.png" width="311" height="48" alt="" loading="lazy"/>
+    <br/>
+  </li>
+  <li>
+    Review the report and when you are happy with the list of participants, delete <span style="font-weight: normal; font-style: normal;">all columns except the </span>PARTICIPANT_ID<span style="font-weight: bold; font-style: normal;"> </span><span style="font-weight: normal; font-style: normal;">column. 
+    <br/>
+    <p class="Note">The distribution list will only load if the column heading is PARTICIPANT_ID.</p>
+      
+    </span><img src="images/creating-email-distribution-lists-from-readyset-reports-img0004.png" width="423" height="185" alt="" style="border-width: 0px;" loading="lazy"/>
+  </li>
+  <li>
+    Save output as .csv file format.
+    <br/>
+    <p class="Note">Do not save or change the file to an Excel (.xls or .xlsx) or another format. The distribution list will only load if it is .csv file format.
+    </p>
+    <p>
+      <span style="color: #00B050; font-weight: bold;"></span></p>
+    <p>
+      <img src="images/creating-email-distribution-lists-from-readyset-reports-img0005.png" width="198" height="48" alt="" style="border-width: 0px;" loading="lazy"/>	<img src="images/creating-email-distribution-lists-from-readyset-reports-img0006.png" width="240" height="47" alt="" style="border-width: 0px;" loading="lazy"/>
+    </p>
+  </li>
+  <a id="Step_2:_Upload_your_distribution_list_to"></a>
+  <li>
+    Upload your distribution list to your C3 notification.
+  </li>
+  <li>
+    <span style="font-weight: normal; font-style: normal;">Create a notification in e</span>ither <font>Mass Email&nbsp;</font>or <font>Initialize Programs&nbsp;</font>and click <b>Save</b>.
+    <br/>
+    <img src="images/creating-email-distribution-lists-from-readyset-reports-img0007.png" width="625" height="340" alt="" style="border-width: 0px;" loading="lazy"/>
+  </li>
+  <li>
+    <span style="font-weight: normal; font-style: normal;">O</span>n the <font>Recipients </font>tab at the top of the notification, click<b>&nbsp;Upload CSV</b>.<span style="font-weight: normal; font-style: normal;">
+    <br/>
+    <img src="images/creating-email-distribution-lists-from-readyset-reports-img0008.png" width="641" height="132" alt="" style="border-width: 0px;" loading="lazy"/></span>
+  </li>
+  <li>
+    <span style="font-weight: normal; font-style: normal;">Clic</span>k <b>Select a File</b>.</li>
+  <li>Navigate to your .csv file and click&nbsp;<b>Upload</b><span style="font-weight: normal; font-style: normal;">.
+    <br/>
+    <img src="images/creating-email-distribution-lists-from-readyset-reports-img0009.png" width="505" height="198" alt="" style="border-width: 0px;" loading="lazy"/>
+    <br/>
+    The distribution list will upload into the notification recipients list.</span>
+  </li>
+  <li><b>Send </b><span style="font-weight: normal; font-style: normal;">or </span><b>Save and Close </b><span style="font-weight: normal; font-style: normal;">the notification.</span>
+  </li>
+</ol>
+<p style="text-align: justify;">
+  If you have more than one distribution list that you wish to upload into the same notification, you can repeat the above process to add participants to the list. If the participant already exists in the list, a duplicate will not be created.
+</p>
+<p style="text-align: justify;">
+  <img src="images/creating-email-distribution-lists-from-readyset-reports-img0010.png" width="641" height="254" alt="" style="border-width: 0px;" loading="lazy"/>
+</p>
+<h2 id="h2_1873572413" data-has-heading-anchor="true">
+  <a id="Troubleshooting_(error_messages)"></a><a id="_Toc59609381"></a>Troubleshooting Error Messages
+<a href="/articles/readyset/creating-email-distribution-lists/a/h2_1873572413" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!readyset/creating-email-distribution-lists/a/h2_1873572413&#39;,this);"></a></h2>
+<p>
+  If any of the following conditions exist, you may receive an error message and your file may not upload:
+</p>
+<ul>
+	<li>
+    file is not a .csv
+  </li>
+  <li>
+    you changed a .xls or .xlsx file extension to .csv
+  </li>
+  <li>
+    PARTICIPANT_ID is not in the file or is incorrectly named
+  </li>
+  <li>
+    you have columns other than PARTICIPANT_ID in your .csv file.
+  </li>
+  <li>
+    a Participant ID is not in your ReadySet system.
+  </li>
+</ul>
+<div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>
