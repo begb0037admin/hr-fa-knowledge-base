@@ -6,6 +6,7 @@ Inputs:
   data/kevin-guides.json      Internally authored guides (Kevin's Guides)
   downloads/manifest.csv      output of access_group_scraper.py (optional)
   downloads/<module>/*.pdf    scraped help-centre PDFs (optional)
+  cority/clickhelp/*/*/index.html  output of cority_clickhelp_scraper.py (optional)
 
 Outputs:
   data/kb.json        one record per document, drives the cards and filters
@@ -16,11 +17,13 @@ import json
 import os
 import re
 import sys
+from html import unescape
 from urllib.parse import quote
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
 DOWNLOADS = os.path.join(ROOT, "downloads")
+CORITY_CLICKHELP_DIR = os.path.join(ROOT, "cority", "clickhelp")
 
 # Documents mirrored under library/ are served from GitHub Pages, so
 # cards and citations never have to send Kevin through SharePoint SSO.
@@ -154,6 +157,94 @@ def load_kevin_guides():
     return docs
 
 
+def cority_topic_group(pub_slug):
+    """Bucket one of Cority's ~119 ClickHelp publications into a manageable
+    sidebar grouping, by product family rather than alphabetically. Verified
+    1 August 2026 to cover all 119 known publication slugs with no fallback
+    hits — see HANDOVER.md for the full per-bucket breakdown."""
+    core = {"cority-user-guide", "cority-system-guide",
+            "cority-beta-documentation-publication", "management-system"}
+    if pub_slug in core:
+        return "Core Product Guides"
+    if (pub_slug.startswith("gx2-and-mycority-") or
+            pub_slug.startswith("cority-and-mycority-") or
+            pub_slug in ("core-and-mycority-ui-ux-enhancements-release-notes",
+                          "edx-2024-3-0-new-features-release-notes")):
+        return "GX2 & myCority Combined Release Notes"
+    if pub_slug.startswith("gx2-") or re.match(r"^cority-20\d\d-", pub_slug):
+        return "GX2 / CoreEHS+ Release Notes"
+    if pub_slug.startswith("enterprise-"):
+        return "Enterprise Release Notes"
+    if pub_slug == "mycority" or pub_slug.startswith("mycority-"):
+        return "myCority"
+    if pub_slug in ("meddbase-help-center", "medical-considerations-march-2023-updates",
+                     "drug-database-and-eprescription-guide",
+                     "erx-epcs-implementation-and-support-guide",
+                     "ergonomics", "rsiguard6"):
+        return "Occupational Health & Medical"
+    if (pub_slug in ("chemical-management", "emission-factor-library-update-publication",
+                      "trireporter", "wesustain") or
+            pub_slug.startswith("methodology-") or pub_slug.startswith("spm-") or
+            pub_slug.startswith("sustainability-")):
+        return "Sustainability & Environmental (SPM)"
+    if pub_slug.startswith("scs-") or pub_slug == "supply-chain-sustainability-user-guides-publication":
+        return "Supply Chain Sustainability"
+    if pub_slug.startswith("readyset"):
+        return "ReadySet"
+    if pub_slug in ("appsolutions", "cortex-ai", "data-integration-utility-guide",
+                     "device-import-utilities-guide", "email-notification-utility-guide",
+                     "employee-merge-utility-guide", "fordevelopers",
+                     "hr-integration-utility-guide", "report-writer-utility-guide"):
+        return "Utilities, Integration & Developer Guides"
+    return "Other Cority Publications"  # safety net; should never trigger
+
+
+def strip_html(html_text):
+    """Small tag-stripper for the scraper's saved article HTML — good enough
+    for chunking/search text, not meant to preserve structure."""
+    html_text = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", html_text, flags=re.S | re.I)
+    text = re.sub(r"<[^>]+>", " ", html_text)
+    return unescape(text)
+
+
+def load_cority_clickhelp_docs():
+    """Cority (Health & Safety) ClickHelp corpus — see CORITY-FEASIBILITY.md
+    and scrapers/cority_clickhelp_scraper.py. No login required for this
+    source; content is committed directly under cority/clickhelp/."""
+    if not os.path.isdir(CORITY_CLICKHELP_DIR):
+        print("No cority/clickhelp/ directory - skipping Cority Health & Safety docs.")
+        return []
+    import time
+    today = time.strftime("%Y-%m-%d")
+    docs = []
+    for pub_slug in sorted(os.listdir(CORITY_CLICKHELP_DIR)):
+        pub_dir = os.path.join(CORITY_CLICKHELP_DIR, pub_slug)
+        if not os.path.isdir(pub_dir):
+            continue
+        for article_slug in sorted(os.listdir(pub_dir)):
+            article_path = os.path.join(pub_dir, article_slug, "index.html")
+            if not os.path.exists(article_path):
+                continue
+            with open(article_path, encoding="utf-8") as fh:
+                html_content = fh.read()
+            title_match = re.search(r"<title>(.*?)</title>", html_content, re.S | re.I)
+            title = (unescape(title_match.group(1).strip()) if title_match
+                      else article_slug.replace("-", " ").title())
+            text = clean_text(strip_html(html_content))
+            docs.append({
+                "t": title,
+                "p": SITE_BASE + quote(f"cority/clickhelp/{pub_slug}/{article_slug}/index.html"),
+                "s": (text[:300] + "...") if len(text) > 300 else text,
+                "src": "Cority (Health & Safety)",
+                "tp": cority_topic_group(pub_slug),
+                "sy": "Cority",
+                "e": "web",
+                "m": today,
+                "_text": text,
+            })
+    return docs
+
+
 def load_sharepoint_fulltext():
     """Full document text extracted by extract_sharepoint.py, if present."""
     path = os.path.join(DATA, "sharepoint-fulltext.json")
@@ -176,7 +267,8 @@ def main():
     sp_docs = load_sharepoint_docs()
     sp_fulltext = load_sharepoint_fulltext()
     sp_files = load_sharepoint_files()
-    ag_docs = load_scraped_docs() + load_deep_articles() + load_kevin_guides()
+    cority_docs = load_cority_clickhelp_docs()
+    ag_docs = load_scraped_docs() + load_deep_articles() + load_kevin_guides() + cority_docs
 
     kb, index = [], []
     sp_full = sp_local = 0
@@ -216,7 +308,8 @@ def main():
     print(f"kb.json:       {len(kb)} documents "
           f"({len(sp_docs)} SharePoint of which {sp_full} full-text, "
           f"{sp_local} linked to the local library, "
-          f"{len(ag_docs)} help centre + Kevin's Guides)")
+          f"{len(ag_docs)} help centre + Kevin's Guides + Cority, "
+          f"of which {len(cority_docs)} Cority Health & Safety)")
     print(f"kb-index.json: {len(index)} searchable chunks")
 
 
