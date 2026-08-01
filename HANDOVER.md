@@ -1,7 +1,7 @@
 # Handover — HR FA Knowledge Base
 
 **To:** New session
-**From:** Session of 1 August 2026
+**From:** Session of 1 August 2026 (session 3)
 **Owner:** Kevin (kevin.lelitte@admin.ox.ac.uk · GitHub `begb0037admin`)
 
 Everything you need to drive this project is in this file plus the repo
@@ -9,7 +9,49 @@ itself. Trust the repo over memory; verify data, not just green ticks.
 
 ---
 
-## Current State — 1 August 2026 (session 2)
+## Current State — 1 August 2026 (session 3)
+
+**A new Health & Safety reference library — IRIS, Odyssey, and Healthy Working Plus (Cardinus) — went from 15 candidate local files to 14 committed, indexed, searchable documents this session, alongside a real information-architecture decision: the sidebar's "HEALTH & SAFETY (CORITY)" section is now "HEALTH & SAFETY" with Cority as one of four sub-sources, not the only one.**
+
+### Source review — 15 candidate files, 14 kept, 1 skipped with reason
+Kevin flagged 15 local files (under his OneDrive `People Department - HR Systems - Health and Safety\`) as plausible candidates, explicitly asking for judgement rather than blanket ingestion. Each was actually opened and read (not assumed from filename) before a decision:
+- **Kept 14** — all had genuine extractable text (docx/pdf) or genuine reference data (one xlsx). See `data/hs-library-docs.json` for the full per-doc breakdown.
+- **Skipped 1** — `IRIS Reporting QR Code.docx`: extracted to 142 characters total ("Had an accident in the workplace? Click me to report it on IRIS"), 3 images (a QR code + logos), no real guidance text. Genuinely content-free for search purposes, not indexed.
+- **`IRIS SLD.docx` — kept, not skipped.** Flagged as a possible near-content-free diagram file by name alone ("SLD" read as "System Landscape Diagram"). Opened and confirmed it's actually a **Service Level Description** document (29,802 characters of real text: service scope, business/service owner sign-off, governance history) — a real, substantive document. Filename was misleading; content was checked directly rather than trusted.
+- **Two Odyssey guidance docs — checked for duplication, kept both, not duplicates.** `Odyssey\Odyssey System Guidance .docx` (88,663 chars) and `H&S Project\Odyssey\Odyssey Guidance 1.1.pdf` (100,566 chars) share an identical opening paragraph and versioning language, which is why they were flagged as possible duplicates. Reading both full tables of contents showed they cover **different, complementary topic areas** of the same system: the `.docx` is a system administration / inventory / waste-management guide (departments, unsealed/sealed sources, RPI, machines, permissions); the `.pdf` is a worker-registration / reporting / support guide (registering workers, keeping records updated, running reports, troubleshooting). Kept both, filed under separate topic groups (`Odyssey System Administration` vs. `Odyssey Worker Registration & Reporting`).
+- **"Two copies of `Registering New Radiation Worker.docx`" — this turned out not to be accurate.** The task brief described one copy under `Odyssey\` and one under `H&S Project\Odyssey\`. A direct filesystem search (`Get-ChildItem -Recurse -Filter '*Registering*'`) found only **one** copy on disk, under `H&S Project\Odyssey\`. Stating this plainly rather than silently building around it — no duplicate-handling decision was actually needed.
+- **`H&S Project\IRIS\IRIS Baseline Data.xlsx` — kept as genuine reference data, not a one-off dump.** Four sheets: IRIS User Groups & Permissions matrix, Data Flows, User Onboarding process, and a full Data Model Overview (every field, by system area/table, with GDPR special-category flags). This is schema/reference documentation someone would plausibly search for ("what access does a Departmental Safety Officer have on IRIS?"), the same bar Kevin's Guides are held to — not raw personal data (no real incident records are in the sheet, only structural/permissions reference data).
+
+### Built: extraction pipeline, metadata, index wiring
+Followed the existing `extract_sharepoint.py` pattern rather than inventing a new one, extended with an xlsx path (openpyxl, sheets flattened to readable rows) since none of the existing scrapers had one:
+- `scrapers/extract_hs_library.py` (new) — walks `library/Health and Safety/`, extracts full text from every `.docx`/`.pdf`/`.xlsx`, writes `data/hs-library-fulltext.json` + `data/hs-library-files.json`, mirroring `extract_sharepoint.py`'s two-output shape exactly.
+- `data/hs-library-docs.json` (new) — hand-maintained metadata (title/topic/system/summary) for the 14 documents, same rationale as `sharepoint-docs.json`: this is a small curated set, not a scraped harvest, so metadata isn't auto-derived.
+- `scrapers/build_index.py`: new `load_hs_library_docs()`, purely additive (confirmed by diff), same discipline as `load_cority_clickhelp_docs()`.
+- `.github/workflows/index-sharepoint-docs.yml`: added an `Extract Health & Safety library full text` step (installs `openpyxl`, runs the new script) so future edits to `library/Health and Safety/` regenerate the index automatically on the next dispatch, without a manual local step. Pushed via `gh api` (the MCP file-write tools are blocked from `.github/workflows/*` — confirmed again this session, same as noted for the Cority work).
+
+### Sidebar restructured — a real IA decision, judged not to need Section 10
+The old single-source "HEALTH & SAFETY (CORITY)" section became "HEALTH & SAFETY" with **four** sub-sources — Cority, IRIS, Odyssey, Healthy Working Plus (Cardinus) — each with its own colour (new `--rust`/`--sky`/`--lime` CSS vars, `.b-iris`/`.b-ody`/`.b-hwp` badges), own expandable topic-group breakdown, own nav click handling.
+
+**Judged this did not need a Constitution Section 10 effort-level raise**, and said so rather than silently deciding: the pattern being replicated — one `<div class="sec">` section header grouping multiple independent `src` blocks, each with its own parent row and topic subgroups — already exists and was already Kevin-approved, for "HOW TO GUIDES" (which groups "How To Guides" + "Change Management" the same way). This is mechanical extension of a precedented pattern to three more sources, not a fresh design decision, so it was built directly rather than paused on. Flagging this judgement explicitly per the task brief's instruction, rather than assuming it needed no comment either way.
+
+One real bug caught and fixed while doing this: the existing Cority-only nav click handler **hardcoded** `state.src="Cority (Health & Safety)"` rather than reading the clicked element's own `data-hs-src` attribute — harmless when only one source ever used that attribute, but would have silently misrouted clicks once `data-hs-src` became shared across four sources. Fixed to read `hsSrc.getAttribute("data-hs-src")`.
+
+Card "Open" label: IRIS/Odyssey/Healthy Working Plus cards get a new **"Open document"** label (the existing default, "Open in SharePoint", would have been actively wrong — none of this content came from SharePoint).
+
+Linda's `SYSTEM_PROMPT` and the chat empty-state text were both updated to name IRIS, Odyssey, and Healthy Working Plus (Cardinus) explicitly, not just "Cority... Occupational Health & Safety" — the same class of gap caught and fixed for Cority in session 1 (retrieval works regardless of what the persona says, but an unlisted system reads to Kevin as "not in scope" even when it mechanically is).
+
+### Verification chain
+Extraction script tested against the real 14 staged files before committing (14/14 extracted, 0 failed) → `build_index.py`'s new loader tested end-to-end against a local fixture (14/14 docs, correct `src`/`tp`/`sy`/link fields) → sidebar changes syntax-checked (`node --check`) then tested in a real Chromium browser via Playwright against synthetic data mixing all 7 sources (30/30 assertions passed: section header, 4 parent rows with correct counts, topic-subgroup expansion and filtering, card open-labels per source, badge colours, no regression to How To Guides/Change Management/Access Group/Cority, no JS console errors, Linda's empty-state text) → all 14 binary files and 7 text/code files diffed byte-for-byte against the live repo immediately after push → index rebuild triggered via the existing `index-sharepoint-docs.yml` workflow (run 30709384357, completed successfully, ~9 min) → real `data/kb.json` downloaded and counted directly: **6,621 documents** (6,607 + 14, exact match, nothing else changed), **23,271 index chunks** (23,077 + 194, matching the local test run precisely) → the separate `pages build and deployment` workflow (run 30709699947) polled to actual completion, not just the classic Pages-builds API (which stayed on a stale `"building"` status well past the real deploy — same stale-cache trap noted in the Cority session, caught again rather than trusted) → final Playwright run against the **real public URL** (`kb.lelitte.co.uk`): 10/10 assertions passed, including fetching the actual linked IRIS document through its live GitHub Pages URL and confirming it resolves `HTTP 200` with a byte size (4,900,999) matching the original file exactly — not just a 200 status, the Cority-session lesson about placeholder images applied here too.
+
+**One process gap caught before finishing, not silently skipped over:** `CLAUDE.md`'s own Bootstrap Order requires reading `BRANDING.md` (from `command-centre`) before any visual change — this session made one (new sidebar badge/dot colours) without checking it first. Caught before pushing the documentation update, fetched `BRANDING.md` retroactively: no conflict — it governs the Oxford crest, the brand-block markup, font, and sidebar width, none of which this session touched; the per-source badge/dot palette is this site's own pre-existing local extension (already used for 4 sources before this session), not something `BRANDING.md` specifies. Noting the process gap plainly rather than treating "no actual conflict found" as the same thing as "checked it at the right time."
+
+**Also fixed while here:** `CLAUDE.md` had drifted a second time — after the Cority build (session 1), its "Also Tracking" section still read "confirmed viable 31 July 2026, not yet built" despite Cority having shipped that same day. Caught while updating this file's headline count for the H&S library work; corrected alongside it.
+
+**Restore point recorded before this session's changes** (Constitution Section 4): `index.html` @ `8a98a971`, `scrapers/build_index.py` @ `939217bb`, `main` HEAD @ `571de0d9` (pre-H&S-library, 1 August 2026 session 3).
+
+---
+
+## Previous State — 1 August 2026 (session 2)
 
 **Selection/cursor-aware Read Aloud shipped for both the Document Library card speaker button and the Linda AI chat READ BACK button, per Kevin's request: "begin reading where I select, make a selection, or where I place the cursor."**
 
@@ -136,6 +178,7 @@ Kevin has flagged this KB as heavily used and not to be lost under any circumsta
   git show 00c0e3c:data/kb.json > data/kb.json
   ```
 - **Restore point for the pre-Cority-index-wiring state** (2,515 docs, no Cority yet): `index.html` @ `b4d1b4c8`, `scrapers/build_index.py` @ `1d943329`, `main` HEAD @ `c9447f9` (1 August 2026, recorded before this session's changes per Constitution Section 4).
+- **Restore point for the pre-H&S-reference-library state** (6,607 docs, Cority but no IRIS/Odyssey/Healthy Working Plus yet): `index.html` @ `8a98a971`, `scrapers/build_index.py` @ `939217bb`, `main` HEAD @ `571de0d9` (1 August 2026 session 3, recorded before this session's changes per Constitution Section 4).
 
 **Real gaps — not yet closed, need Kevin's action (outside what an AI session can do). Still open as of 1 August 2026 — also tracked in `ROADMAP.md` → "Parked — Needs Kevin's Action":**
 1. **No branch protection on `main`.** Fix (2 minutes, GitHub web UI): repo **Settings → Branches → Add branch protection rule** for `main` → enable "Restrict deletions" and "Block force pushes."
@@ -196,12 +239,15 @@ These are final — do not re-litigate without Kevin's explicit instruction.
 | `.b-ag` | Access Group Help Centre | `#d5f8e2` | `#15803d` |
 | `.b-cm` | Change Management | `#fed7aa` | `#c2410c` |
 | `.b-hs` | Cority (Health & Safety) | `--teal-soft` (`#dff2ec`) | `--teal-text` (`#0a5946`) |
+| `.b-iris` | IRIS | `--rust-soft` (`#fbe6df`) | `--rust-text` (`#7a2a17`) |
+| `.b-ody` | Odyssey | `--sky-soft` (`#dcf0f7`) | `--sky-text` (`#0d4a63`) |
+| `.b-hwp` | Healthy Working Plus (Cardinus) | `--lime-soft` (`#eaf3d9`) | `--lime-text` (`#3f5511`) |
 | `.b-tp` | Topic/module (grey) | `#e5e7eb` | `#374151` |
-| `.b-sy` | System tag (PeopleXD/Cority) | `#e0d5ff` | `#3b0764` |
+| `.b-sy` | System tag (PeopleXD/Cority/IRIS/Odyssey/Healthy Working Plus) | `#e0d5ff` | `#3b0764` |
 
-**Icon blocks** — match source badge colour (blue for HTG, green for AG, orange for CM, teal for Cority H&S)
+**Icon blocks** — match source badge colour (blue for HTG, green for AG, orange for CM, teal for Cority H&S, rust for IRIS, sky for Odyssey, lime for Healthy Working Plus — added 1 August 2026 session 3)
 
-**Sidebar dot colours (current `index.html`):** grey, blue, orange, green, purple, teal (Health & Safety, added 1 August 2026)
+**Sidebar dot colours (current `index.html`):** grey, blue, orange, green, purple, teal (Cority Health & Safety, added 1 August 2026 session 1), rust/sky/lime (IRIS/Odyssey/Healthy Working Plus, added 1 August 2026 session 3)
 
 **Linda AI panel — full approved spec (8 Jul session 2)**
 Reference mockup: https://claude.ai/code/artifact/d2a7d157-468d-461e-9ec0-1efabdbfc384
@@ -219,13 +265,14 @@ Panel structure top-to-bottom:
 
 2. **Input row** — directly below header | text input + circular dark navy action button (dual-state: waveform SVG when empty → send arrow SVG when text entered)
 3. **Chips** — directly below input row | suggestion chips (New starter record · Sickness absence · Salary change · Process a leaver)
-4. **Content area** — flex:1 scrollable | empty state text mentions PeopleXD, Cority Health & Safety, HR processes, step-by-step guides (updated 1 August 2026) | thread renders here when active
+4. **Content area** — flex:1 scrollable | empty state text mentions PeopleXD, Health & Safety (Cority, IRIS, Odyssey, Healthy Working Plus), HR processes, step-by-step guides (updated 1 August 2026 session 3) | thread renders here when active
 5. **Bottom buttons** — two large circular buttons: SPEAK (dark navy fill, mic SVG) + READ BACK (outline, speaker SVG)
 6. **Footer hint** — "Press SPACE to speak · Read back reads AI replies aloud"
 
 **Copy link / Open button — labelling by source**
 - Access Group: "Open PDF" or "Open article" depending on `e` field
-- Cority (Health & Safety): "Open article" (added 1 August 2026)
+- Cority (Health & Safety): "Open article" (added 1 August 2026 session 1)
+- IRIS / Odyssey / Healthy Working Plus: "Open document" (added 1 August 2026 session 3 — the "Open in SharePoint" default would have been actively wrong, since none of this content came from SharePoint)
 - Everything else: "Open in SharePoint"
 - Salesforce-hosted PDFs (`accessgroup.my.salesforce.com/sfc/p/...`) require an authenticated session — use `x.p` (article URL), not `x.pdf` (Salesforce viewer URL), for open/copy actions
 
@@ -238,8 +285,9 @@ Panel structure top-to-bottom:
 An AI-assisted knowledge base for Kevin's HR Functional Analysis work at
 the University of Oxford. One page, one question box: Kevin asks in plain
 English (typed or spoken), the AI answers with steps and cites direct links.
-As of 1 August 2026, this spans both PeopleXD/HR (Access Group, SharePoint,
-How To Guides) and Cority Health & Safety.
+As of 1 August 2026, this spans PeopleXD/HR (Access Group, SharePoint,
+How To Guides) and four Health & Safety systems: Cority, IRIS, Odyssey,
+and Healthy Working Plus (Cardinus).
 
 - **Live site:** https://kb.lelitte.co.uk/
 - **AI proxy worker:** `hr-kb-ai` on Kevin's Cloudflare account
@@ -311,6 +359,14 @@ Full principles (rollback-before-change, documentation permanence, source-of-tru
 | `129a666` | `index.html` — Health & Safety (Cority) sidebar section added |
 | `37df1d9` | `index.html` — Linda's system prompt scope updated to include Cority |
 | `bc09b58` | `index.html` — Selection/cursor-aware Read Aloud (card TTS + chat READ BACK) |
+| `b18761e4`..`2713be06` | 14 individual commits adding the Health & Safety reference library files under `library/Health and Safety/` (IRIS/Odyssey/Healthy Working Plus) |
+| `211fb478` | Add `data/hs-library-docs.json` metadata |
+| `221599d0` / `65ad6f4f` | Add `data/hs-library-fulltext.json` / `data/hs-library-files.json` |
+| `e04c65ee` | Add `scrapers/extract_hs_library.py` |
+| `c585fa70` | `scrapers/build_index.py` wired to load the H&S reference library |
+| `238e553b` | `index.html` — HEALTH & SAFETY sidebar section restructured to cover Cority, IRIS, Odyssey, Healthy Working Plus; Linda's scope updated |
+| `4319c825` | `.github/workflows/index-sharepoint-docs.yml` — run `extract_hs_library.py` as part of the index rebuild |
+| `94ba5e0a` | Automated: real index rebuild committing `data/kb.json`/`data/kb-index.json` at 6,621 docs / 23,271 chunks |
 
 ---
 
@@ -318,24 +374,25 @@ Full principles (rollback-before-change, documentation permanence, source-of-tru
 
 | Piece | File | Notes |
 |---|---|---|
-| Site | `index.html` | Static SPA, Oxford-navy theme. BM25 retrieval → Cloudflare worker → Claude. Voice input + Listen. Now spans PeopleXD and Cority sources — see Data State below. |
+| Site | `index.html` | Static SPA, Oxford-navy theme. BM25 retrieval → Cloudflare worker → Claude. Voice input + Listen. Spans PeopleXD and four Health & Safety sources (Cority, IRIS, Odyssey, Healthy Working Plus) — see Data State below. |
 | Worker | `worker/worker.js` | Routes: `/` Claude chat, `/tts` Cloudflare Workers AI (Aura-2), `/stt` Cloudflare Workers AI (Whisper, batch mode). No retrieval/search logic lives here — that's entirely client-side in `index.html`'s `retrieve()`. Confirmed deployed and live. Secrets in Cloudflare. |
 | Scraper (Access Group) | `scrapers/access_group_scraper.py` | Playwright. `--no-login` for public help centres. `--deep` harvests full article text. `--guides` / `--guides-only` for PDF guide harvest. Salesforce viewer downloads via `download_salesforce_via_page()`. Known gap: drops screenshots — see `ROADMAP.md`. |
 | Scraper (Cority ClickHelp) | `scrapers/cority_clickhelp_scraper.py` | Plain `urllib.request`, no browser needed — no login required for this source. `--publications`, `--limit-per-publication`, `--offset`, `--list-publications`, `--stats-out` CLI flags. |
+| Extractor (H&S reference library) | `scrapers/extract_hs_library.py` | Walks `library/Health and Safety/`, extracts text from `.docx`/`.pdf`/`.xlsx` (new xlsx path via `openpyxl`, sheets flattened to readable rows) → `data/hs-library-fulltext.json` + `data/hs-library-files.json`, mirroring `extract_sharepoint.py`'s output shape. Small curated set (14 docs), not a scraped harvest — per-doc metadata lives in the hand-maintained `data/hs-library-docs.json`. |
 | Summariser (legacy) | `scrapers/summarise_docs.py` | Calls claude-haiku-4-5 to generate plain-English summaries (the `s` field) for Access Group PDF guides only. Superseded by the enhanced summariser below for card display, but `s` remains in the data. |
-| Summariser (enhanced, two-level) | `scrapers/summarise_enhanced.py` | Generates `ss` (short) and `sl` (long) summaries. Never touches `s`. Not yet run against Cority docs. |
-| Index builder | `scrapers/build_index.py` | Merges SharePoint + collection PDFs + deep articles + guide PDFs + Cority ClickHelp docs → `data/kb.json` + `data/kb-index.json`. |
+| Summariser (enhanced, two-level) | `scrapers/summarise_enhanced.py` | Generates `ss` (short) and `sl` (long) summaries. Never touches `s`. Not yet run against Cority or the H&S reference library. |
+| Index builder | `scrapers/build_index.py` | Merges SharePoint + collection PDFs + deep articles + guide PDFs + Cority ClickHelp docs + H&S reference library (`load_hs_library_docs()`) → `data/kb.json` + `data/kb-index.json`. |
 | Workflow: crawl (Access Group) | `.github/workflows/scrape-help-centres.yml` | workflow_dispatch. Scrapes → builds → commits → Pages redeploys. `diagnostic` mode safe to run any time. |
 | Workflow: crawl (Cority) | `.github/workflows/scrape-cority-clickhelp.yml` | workflow_dispatch. Commits per-publication (not once at the end — see Current State above for why). Inputs: `publications`, `limit_per_publication`, `offset`, `diagnostic`. |
-| Workflow: index rebuild | `.github/workflows/index-sharepoint-docs.yml` | workflow_dispatch. Runs `build_index.py` against whatever's committed (SharePoint, Access Group, Cority) and commits the result. This is the one to run after any manual edit to `cority/clickhelp/` or the other source folders. |
+| Workflow: index rebuild | `.github/workflows/index-sharepoint-docs.yml` | workflow_dispatch. Runs `extract_sharepoint.py`, then `extract_hs_library.py` (added 1 August 2026 session 3), then `build_index.py` against whatever's committed and commits the result. This is the one to run after any manual edit to `cority/clickhelp/`, `library/Health and Safety/`, or the other source folders. |
 | Workflow: summarise (legacy) | `.github/workflows/summarise-pdf-guides.yml` | workflow_dispatch. Runs summarise_docs.py with ANTHROPIC_API_KEY secret. |
 | Workflow: summarise (enhanced) | `.github/workflows/summarise-enhanced.yml` | workflow_dispatch. Inputs: `source`, `type`, `limit`, `dry_run`, `force`. Always dry-run a small sample before a live run. |
 
 ## Data State
 
-- **Current:** 6,607 documents, 23,077 index chunks — verified directly against live `data/kb.json` 1 August 2026 ✅
-- **Breakdown:** 260 SharePoint (250 full-text) + 2,251 Access Group Help Centre (web + PDF) + 209 How To Guides + 51 Change Management + 4 Kevin's Guides + **4,092 Cority (Health & Safety)** — of which 1,569 Core Product Guides, 671 Utilities/Integration/Developer Guides, 571 Occupational Health & Medical, 458 Sustainability & Environmental (SPM), 220 GX2/CoreEHS+ Release Notes, 202 ReadySet, 173 GX2 & myCority Combined Release Notes, 131 myCority, 52 Enterprise Release Notes, 45 Supply Chain Sustainability
-- **Enhanced summaries (`ss` + `sl`):** All 2,515 pre-Cority documents, 100% complete. Cority docs use the plain `s` field only (not yet run through `summarise_enhanced.py`) — see `ROADMAP.md` if this becomes wanted.
+- **Current: 6,621 documents, 23,271 index chunks** — verified directly against live `data/kb.json`/`data/kb-index.json`, 1 August 2026 (session 3) ✅
+- **Breakdown:** 260 SharePoint (250 full-text) + 2,251 Access Group Help Centre (web + PDF) + 209 How To Guides + 51 Change Management + 4 Kevin's Guides + **4,092 Cority (Health & Safety)** — of which 1,569 Core Product Guides, 671 Utilities/Integration/Developer Guides, 571 Occupational Health & Medical, 458 Sustainability & Environmental (SPM), 220 GX2/CoreEHS+ Release Notes, 202 ReadySet, 173 GX2 & myCority Combined Release Notes, 131 myCority, 52 Enterprise Release Notes, 45 Supply Chain Sustainability + **14 Health & Safety reference library (IRIS/Odyssey/Healthy Working Plus)**, of which 6 IRIS (2 Administration, 2 Reporting & Search, 1 Service Documentation, 1 Data & Permissions Reference), 4 Odyssey (1 System Administration, 1 Service Documentation, 2 Worker Registration & Reporting), 4 Healthy Working Plus (2 Data & Admin, 1 DSE Workflow, 1 Roles & Permissions)
+- **Enhanced summaries (`ss` + `sl`):** All 2,515 pre-Cority documents, 100% complete. Cority and the H&S reference library (IRIS/Odyssey/Healthy Working Plus) use the plain `s` field only (not yet run through `summarise_enhanced.py`) — see `ROADMAP.md` if this becomes wanted.
 
 ## Live Site
 
