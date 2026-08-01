@@ -1,0 +1,183 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/meddbase-help-center/2022-release-notes"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>2022 Release Notes</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='2022 Release Notes';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/meddbase-help-center/Style.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/meddbase-help-center/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/meddbase-help-center/Script.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 title="Maintenance Release Ongoing Release Notes" id="h1__1225377881" data-has-heading-anchor="true"><span style="font-size: 18pt;">2022 Maintenance Release Ongoing Release Notes</span><a href="/articles/meddbase-help-center/2022-release-notes/a/h1__1225377881" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2022-release-notes/a/h1__1225377881&#39;,this);"></a></h1><p>Here you'll find an up to date list of all changes made during Maintenance releases in 2022.</p><h2 id="h_01H9096451BMKEVEB3Z3QFFX54" data-has-heading-anchor="true">5th December Maintenance Release<a href="/articles/meddbase-help-center/2022-release-notes/a/h_01H9096451BMKEVEB3Z3QFFX54" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2022-release-notes/a/h_01H9096451BMKEVEB3Z3QFFX54&#39;,this);"></a></h2>
+<ol>
+  <li>     Improved logging of Pathways Tasks which sent data to an HTTPS endpoint.   </li>
+  <li>     Improved logging &amp; monitoring of Document uploads, particularly when     documents are uploaded via the API, or the Pathways system.   </li>
+</ol>
+<h2 id="h_01H909645138JARMMG8JBTS024" data-has-heading-anchor="true">9th November Maintenance Release<a href="/articles/meddbase-help-center/2022-release-notes/a/h_01H909645138JARMMG8JBTS024" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2022-release-notes/a/h_01H909645138JARMMG8JBTS024&#39;,this);"></a></h2>
+<ol>
+  <li>     Fixed an issue which would cause only a single questionnaire to be sent if     an OH Portal user attempted to send multiple questionnaires, and the {QuestionnaireName}     Template Code was <strong>not </strong>in the invitation email template.     Multiple questionnaires will now be sent regardless of the content of the     invitation email.   </li>
+  <li>     Resolved an edge case that could cause a timeout on the medical history when     hundreds of patient records were linked to the same email. The Medical History     will no longer attempt to load all linked patient records into memory before     displaying.   </li>
+  <li>     Added additional logging to the Pathology system when exceptions are thrown     to improve the error reporting available to engineers.   </li>
+</ol>
+<h2 id="h_01H9096451NTD30GTKW0PVVYBZ" data-has-heading-anchor="true">31st October Release<a href="/articles/meddbase-help-center/2022-release-notes/a/h_01H9096451NTD30GTKW0PVVYBZ" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2022-release-notes/a/h_01H9096451NTD30GTKW0PVVYBZ&#39;,this);"></a></h2>
+<ol>
+  <li>     Improved the performance of the Pathways system so that having large number     of active pathways no longer affects start page performance.   </li>
+  <li>     Resolved an issue which could cause patients to get stuck when abandoning     the registration process part way through. Patients can now receive a password     reset when restarting the registration journey.   </li>
+  <li>     Fixed an issue which caused the UI not to update correctly when changing     a Patient's Charge Band via an import. The UI now updates correctly to show     the newly set Charge Band.   </li>
+  <li>     Improved the validation of imports which set a patient's Employer Department.     Imports which try to set a department not owned by the Patient's Employer     company will now fail validation.   </li>
+  <li>     Fixed an issue which was causing Meeting Types to appear in the Appointment     Admin menu.   </li>
+  <li>     Resolved an edge case which would cause an error to be thrown when trying     to show all unsent aged debt letters.   </li>
+</ol>
+<h2 id="h_01H909645156YKX1G4QV1K3ZYV" data-has-heading-anchor="true">3rd October Maintenance Release<a href="/articles/meddbase-help-center/2022-release-notes/a/h_01H909645156YKX1G4QV1K3ZYV" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2022-release-notes/a/h_01H909645156YKX1G4QV1K3ZYV&#39;,this);"></a></h2>
+<ol>
+  <li>     Improved the startup process for complex pathways to increase the speed and     responsiveness of the application for users who start particularly long pathways   </li>
+  <li>     Resolved some edge cases around the routing of PACS integration messages     based on events in Meddbase, e.g. arriving appointments.   </li>
+  <li>     Fixed various bottle necks in the Billing Data Service to improve the speed     of rebuilds. Includes splitting out queues into smaller sub queues based     on their type, and an improvement to the way billing rules updates are broadcast     to data sharing networks.   </li>
+  <li>     Fixed an issue which was incorrectly starting services which weren't required     on ClientImport sites.   </li>
+</ol>
+<h2 id="h_01H9096451S346MV173PDYVZA4" data-has-heading-anchor="true">26th September Release<a href="/articles/meddbase-help-center/2022-release-notes/a/h_01H9096451S346MV173PDYVZA4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2022-release-notes/a/h_01H9096451S346MV173PDYVZA4&#39;,this);"></a></h2>
+<ol>
+  <li>     Increased the maximum permitted size for a questionnaire submission to allow     more text entry, particularly for users of the OH Portal.   </li>
+  <li>     Fixed an issue with the Reporting System which was causing Gross and Net     columns on the Credit Notes table to report the incorrectly swapped values.     Reports which were using these columns should not need updating as a data     fix was also applied.   </li>
+  <li>     Fixed an issue which could cause the ‘Go to result..’ button on a Pathology     Result work item not to work as expected. All Pathology Results should now     correctly navigate the user to the appropriate place in the Patient’s Medical     History.   </li>
+  <li>     Fixed an issue which could cause data not to save when switching a V5 billing     rule from Dynamic to Static date range filters. Switching from Dynamic to     Static or vice versa will now clear any entered dates/values and automatically     save changes as the user continues to edit the rule.   </li>
+  <li>     Resolved an edge case which could allow incorrect bookings when a module’s     sex or age filters were updated. Filters are now applied correctly after     updates.   </li>
+  <li>     Fixed an issue which stopped networked TDL tests from being used by chambers     on V5 of the Billing Rules system. This now works as expected, and networked     TDL services can be used during bookings or pathology requests.   </li>
+  <li>     Added additional validation to the Imports System to correctly throw an error     if importing Patient Meta Fields without a matching Patient ID in the same     import instance.   </li>
+</ol>
+<h2 id="h_01H90964510RJXE9CBGGDFYSVF" data-has-heading-anchor="true">5th September Maintenance Release<a href="/articles/meddbase-help-center/2022-release-notes/a/h_01H90964510RJXE9CBGGDFYSVF" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2022-release-notes/a/h_01H90964510RJXE9CBGGDFYSVF&#39;,this);"></a></h2>
+<ol>
+  <li>     Fixed an issue that would cause the 'Print to PDF' printing option not to     function correctly.   </li>
+  <li>     Improved the logging of exceptions for the Pharmacy Portal and Apple Wallet     Pass Generator service.   </li>
+</ol>
+<h2 id="h_01H9096451HTAV549HKPPH0ZQR" data-has-heading-anchor="true">27th June Release<a href="/articles/meddbase-help-center/2022-release-notes/a/h_01H9096451HTAV549HKPPH0ZQR" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2022-release-notes/a/h_01H9096451HTAV549HKPPH0ZQR&#39;,this);"></a></h2>
+<ol>
+  <li>     Fixed an issue which could cause Patient merges to get stuck in process when     some patient data existed in a microservice (e.g. Pathways). The merge process     now correctly completes in all scenarios   </li>
+  <li>     Closed some edge cases which caused a vulnerability to cross site scripting.   </li>
+  <li>     Resolved an issue which could cause an input validation error to be incorrectly     when entering a non Uk mobile number against a patient record, when the chamber     default contry calling code was set to something other than +44.   </li>
+  <li>     Fixed an issue with the Patient Portal API that caused an error message when     attempting to upload a document.   </li>
+  <li>Improved the validation of Pathway trigger expressions.</li>
+</ol>
+<h2 id="h_01H90964514N22JC8X3S4XPTR8" data-has-heading-anchor="true">6th June Maintenance Release<a href="/articles/meddbase-help-center/2022-release-notes/a/h_01H90964514N22JC8X3S4XPTR8" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2022-release-notes/a/h_01H90964514N22JC8X3S4XPTR8&#39;,this);"></a></h2>
+<ol>
+  <li>     Fixed an issue which was causing reports containing the Profile Name column     from the Payments table to return an error. The underlying reporting schema     not correctly matches the produced report XML.   </li>
+  <li>     Resolved a configuration limitation with the OH Portal Document Sharing notification.     Split Medical Record no longer needs to be enabled for the feature to work     correctly.   </li>
+</ol>
+<h2 id="h_01H9096451BMTN6Z9YGXR19J3Y" data-has-heading-anchor="true">30th May Release<a href="/articles/meddbase-help-center/2022-release-notes/a/h_01H9096451BMTN6Z9YGXR19J3Y" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2022-release-notes/a/h_01H9096451BMTN6Z9YGXR19J3Y&#39;,this);"></a></h2>
+<ol>
+  <li>     Added the ability to report on Patient Recalls from the Patient Demographics     root table. Recalls are available as a 1:many relationship and can use all     the same aggregation factors as other 1:many relationships.   </li>
+  <li>     Added the ability to report on an Appointment's Case Name before the appointment     is arrived. the link now no longer requires an episode to exist, so if an     Appointments is assigned to a Case during booking it will become reportable     immediately.   </li>
+  <li>     Added the ability to report on Appointment Documents from the Appointments     root table   </li>
+  <li>     Added the ability to report on Appointment from the Documents root table.   </li>
+  <li>     Added the ability to report on Advance Payments from the Appointments root     table.   </li>
+  <li>     Fixed an issue that was causing Date of Birth to display 1 day earlier than     expected on the Medical History summary page. Dates of Birth now don't incorrectly     try to account for local timezone.   </li>
+  <li>     Improved the process for sharing fitness certificates created from questionnaires     with the OH Portal. A refresh will no longer be required for completed fitness     certificates to appear.   </li>
+  <li>     Removed the label for Employee Number from the Portal registration pages     when the field wasn't present.   </li>
+  <li>     Fixed a race condition when paraller anonymous API calls were made. Doing     so will no longer be presented with a 'not logged in' error message.   </li>
+  <li>     Fixed an issue that could cause a 'This page has expired' message to appear     when creating a Pathology Lab Request.   </li>
+  <li>     Fixed a visual issue on thje 'Code Type' dropdown menu in Service Management     - prevented the Code Type being indented incorrectly.   </li>
+  <li>     Improved the messaging on the Employee view of the OH Report when the report     has already been released to the manager to make that clear.   </li>
+  <li>     Fixed a type in the default Cookie notice text on the Patient Portal.   </li>
+  <li>     Improved the UI of the Address Lookup dropdown menu on the Patient portal,     both on the registration and demographic updates pages, so that a blank address     no longer populates the dropdown.   </li>
+  <li>     Normalised how addresses are presented in Address Lookup dropdown menus across     the portal.   </li>
+</ol>
+<h2 id="h_01H909645167QVS77V0FBVBV6K" data-has-heading-anchor="true">9th May Maintenance Release<a href="/articles/meddbase-help-center/2022-release-notes/a/h_01H909645167QVS77V0FBVBV6K" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2022-release-notes/a/h_01H909645167QVS77V0FBVBV6K&#39;,this);"></a></h2>
+<ol>
+  <li>     Improved the error logging of the Lab Server to allow for particularly long     error messages.   </li>
+  <li>     Improved the handling of importing patient with and without accompanying     titles - where title is mandatory the correct error will now be presented     to the user.   </li>
+  <li>     Fixed an issue which caused the 'Create New' Pathway action to show on the     patient portal in situations where it shouldn't - it will now only appear     if a Patient Portal Pathways billing rule exists for the Charge Band the     patient is on.   </li>
+  <li>     Resolved an edge case which could cause referrals creating in the Occupational     Health portal to reset some of their questionnaire values if a user chose     to save the referral form and complete it later. The values are now correctly     saved and still present when users return to complete the questionnaire later.   </li>
+  <li>     Fixed an issue which could cause some Questionnaire answer to incorrectly     clear themselves when Portal users moved between patients. Values now correctly     persist.   </li>
+  <li>     Improved the functionality of the Update Appointment Table-Flow worker to     allow the Appointment Type to be changed.   </li>
+  <li>     Improved the messaging of warning messages associated with Patient Portal     Pathways to make it more clear to patients why they cannot start new Pathways     when they already have some running.   </li>
+  <li>     Removed an unwanted behaviour in the Questionnaire system; hitting the Enter     button on the keyboard will no longer attempt to submit the questionnaire,     or incorrectly remove table row data.   </li>
+  <li>     Fixed an issue with the 'Book a Follow up appointment for this patient (via     the clinician slot finder) action button on the appointment home page. This     will now correctly launch the slot finder and not the side by side schedule.   </li>
+</ol>
+<h2 id="h_01H9096451SRQADSP5G7S9EJ9W" data-has-heading-anchor="true">25th April Release<a href="/articles/meddbase-help-center/2022-release-notes/a/h_01H9096451SRQADSP5G7S9EJ9W" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2022-release-notes/a/h_01H9096451SRQADSP5G7S9EJ9W&#39;,this);"></a></h2>
+<ol>
+  <li>     Resolved an issue which could cause apostrophes to be stripped from Patient     email addresses during the sign up process. Emails are now stored correctly     including apostrophes.   </li>
+  <li>     Improved consistency of Occupational Health Portal 'select an address' fields     - in all places where this field is presented it now displays the same information.   </li>
+  <li>     Questionnaire page validation improved to correctly check required checkboxes     and table rows. Trying to move from 1 page to another will now alert the     user that there are required fields to complete instead of only doing so     at the end of the questionnaire.   </li>
+  <li>     The 'Address Lookup' function on the Occupational Health and Patient Portals     now respects the Chargeable Feature flag in meddbase and will only be present     if the feature is enabled.   </li>
+  <li>     Fixed an issue which caused the 'Employee Number' field name to be present     on all registration workflows. It will now correctly only appear when registering     for an Employer's charge band.   </li>
+  <li>     Improved the consistency of required fields on the Occupational Health Portal     - creating, updating and referring Employees now ask for the same mandatory     fields to be completed.   </li>
+  <li>     Fixed an issue that was affecting the ability for Patients to update their     Insurance details via the Patient Portal. Changing an insurer now no longer     incorrectly clears the membership number.   </li>
+  <li>     Fixed an issue which could cause the wrong map to be displayed when a patient     selected a site to view it's details.   </li>
+  <li>     Improved scaling of Twilio Telemedicine when using an iPad - the toolbar     now scales correctly when used in 'portrait' mode.   </li>
+  <li>     Added Portal Sign Up code to the import schema to allow new and existing     companies to have a Sign Up code assigned by data imports.   </li>
+  <li>     Fixed an issue which stopped the 'Case Required' flag being applied when     making bookings via the slot finder. A case will now correctly need to be     selected/created before an appointment can be booked.   </li>
+  <li>     Resolved an issue that stopped date of birth being removed from a patient     record, when dob was not a mandatory field/required for patient save. Date     of Birth can now correctly be removed when updating a patient's details.   </li>
+  <li>     Added the ability to preview more file types from the patient's documents     list;     <ul>
+      <li>.TIF and .TIFF image formats now supported</li>
+      <li>.MSG message formats now supported.</li>
+    </ul>
+  </li>
+  <li>     Fixed an issue which was causing some icons not to display correct on the     Secure Document Share Portal - icons are now rendered correctly.   </li>
+</ol>
+<h2 id="h_01H9096451BQMKW4D25Q4R0A98" data-has-heading-anchor="true">28th March Release<a href="/articles/meddbase-help-center/2022-release-notes/a/h_01H9096451BQMKW4D25Q4R0A98" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2022-release-notes/a/h_01H9096451BQMKW4D25Q4R0A98&#39;,this);"></a></h2>
+<ol>
+  <li>     Added Document Status to the import layer, allowing imports to change the     status of existing documents. Either Active or Deleted status' can be assigned.   </li>
+  <li>     Ensured that the 'case required' flag on the Appointment Admin menu correctly     forces the selection or creation of a case when booking an appointment of     that type via the slot finder. Making bookings for appointment types which     require a case will not correctly prompt the user to select or create a case.   </li>
+  <li>     Improved the page validation on Patient Questionnaires, to allow Table rows     to be made mandatory when patients are completing questionnaires.   </li>
+  <li>     Improved the validation of questionnaire mandatory fields; if Date or Checkbox     fields are mandatory, the patient will now receive a warning when moving     from the page the question is on, rather than at the end of the questionnaire.   </li>
+  <li>     Improved the performance of adding users to roles, and adding role to other     roles. Communication of Security Permission updates to Networks now happens     asynchronously.   </li>
+</ol>
+<h2 id="h_01H90964517YQMY7W12TX17AHZ" data-has-heading-anchor="true">2nd March Maintenance Release<a href="/articles/meddbase-help-center/2022-release-notes/a/h_01H90964517YQMY7W12TX17AHZ" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2022-release-notes/a/h_01H90964517YQMY7W12TX17AHZ&#39;,this);"></a></h2>
+<ol>
+  <li>     Fixed an incorrectly applied colour palette on the Clinic Schedule view.     Non-scheduled hours now render correctly.   </li>
+  <li>     Improved the visibility of appointment context information on the schedule     view by reducing the font size and padding.   </li>
+  <li>     Fixed an edge case which could case 'Deny all except ticked' Deny Service     Rules to be incorrectly applied when using Version 5 of the Billing Rules     system.   </li>
+</ol>
+<h2 id="h_01H9096451F2F4AJ3SW0PXCHQM" data-has-heading-anchor="true">28th February Release<a href="/articles/meddbase-help-center/2022-release-notes/a/h_01H9096451F2F4AJ3SW0PXCHQM" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2022-release-notes/a/h_01H9096451F2F4AJ3SW0PXCHQM&#39;,this);"></a></h2>
+<ol>
+  <li>     Fixed an issue which could stop patient titles being set correctly via the     Occupational Health portal, if that title had been previously deleted and     recreated.   </li>
+  <li>     Resolved some edge cases around linking emails to patient records automatically.     Emails will now link correctly, and display a document preview as expected.   </li>
+  <li>     Improved the Pathology Lab Request process to prevent time-outs from occurring     under specific circumstances.   </li>
+  <li>     Improved the way referrals are created to prevent duplicates from being created     during heavy system load.   </li>
+</ol>
+<h2 id="h_01H909645108VP66X65372VEYW" data-has-heading-anchor="true">31st January Release<a href="/articles/meddbase-help-center/2022-release-notes/a/h_01H909645108VP66X65372VEYW" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2022-release-notes/a/h_01H909645108VP66X65372VEYW&#39;,this);"></a></h2>
+<ol>
+  <li>     Added support for importing Blank Meta Fields to a patient record.   </li>
+  <li>     Added auto ordering for appointment lengths on the Service Picker page. Appointment     times will now always be ordered by length of time.   </li>
+  <li>     Resolved an issue that caused the incorrect list of Charge Bands to be displayed     under certain conditions when using the '1 page booking' slot finder.   </li>
+  <li>     Fixed an issue which could cause Recall Reminders not to recognise appointments     booked using the Side by Side Schedule. Doing so now correctly moves a recall     reminder from Due/Overdue to Booked.   </li>
+  <li>     Changed ordering of Employee Departments and Divisions in the Common Catalogues     menu to be alphabetical.   </li>
+  <li>     Fixed an edge case which could cause an unfriendly error message to be displayed     when interacting with a drug which has been discontinued from the FirstDataBank     Multilex database.   </li>
+  <li>     Fixed the datatype used for sending Request Date to TDL via messaging interface;     will now correctly use DateTime in all circumstances.   </li>
+  <li>     Improved the error message Portal and Main Application users receive when     trying to set Employee Numbers which exceed 50 characters.   </li>
+  <li>     Fixed a problem which resulted in NHS Details not being visible on the Patient     Home Page. Setting an NHS GP, Practice or Commissioner now correctly pushed     supporting information to the Patient Home Page.   </li>
+  <li>     Resolved a problem which created duplicate services when Saving multiple     times during initial Service creation.   </li>
+  <li>     Improved the process of deleting a Clinician, such that sessions for deleted     Clinicians are no longer visible on the Side by Side schedule.   </li>
+</ol>
+<h2 id="h_01H9096451NEWYSQJVVJBH4DMS" data-has-heading-anchor="true">25th January Maintenance Release<a href="/articles/meddbase-help-center/2022-release-notes/a/h_01H9096451NEWYSQJVVJBH4DMS" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2022-release-notes/a/h_01H9096451NEWYSQJVVJBH4DMS&#39;,this);"></a></h2>
+<ol>
+  <li>     Fixed an issue resulting from merging patients with active Pathways. Cache     is now correctly cleared on merge.   </li>
+  <li>     Resolved a possible race condition in the referrals service which could cause     notifications not to be sent. Steps are checked correctly, and notifications     will not be skipped when the referral service changes states too quickly.   </li>
+  <li>     Improved performance of the Billing Rules Administration menu by improving     the efficiency of the query used - sped up the process for opening a company,     particularly when that company has a large number of billing rules.   </li>
+  <li>     Fixed a problem that could cause assigned managers not to receive message     feed notifications if the manager is changed after the referral was accepted.     Managers assigned at any point in a referrals cycle will now correctly recieve     notifications.   </li>
+</ol>
+<h2 id="h_01H9096451NQK790SG2K2A19KM" data-has-heading-anchor="true">17th January Maintenance Release<a href="/articles/meddbase-help-center/2022-release-notes/a/h_01H9096451NQK790SG2K2A19KM" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2022-release-notes/a/h_01H9096451NQK790SG2K2A19KM&#39;,this);"></a></h2>
+<ol>
+  <li>     Added further improvements to the Contact Account Pathway task.   </li>
+</ol>
+<h2 id="h_01H9096451TEF8QGD0V3CVMN0S" data-has-heading-anchor="true">6th January Maintenance Release<a href="/articles/meddbase-help-center/2022-release-notes/a/h_01H9096451TEF8QGD0V3CVMN0S" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2022-release-notes/a/h_01H9096451TEF8QGD0V3CVMN0S&#39;,this);"></a></h2>
+<ol>
+  <li>     Resolved an issue which could cause some 'Contact Account' Pathway tasks     to fail. The Pathways System now correctly accounts for the speed of the     main application.</li>
+</ol>
+<p>
+  <br/>
+</p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

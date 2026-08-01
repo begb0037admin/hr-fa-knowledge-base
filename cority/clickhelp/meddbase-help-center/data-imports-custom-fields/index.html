@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/meddbase-help-center/data-imports-custom-fields"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Data Imports - Custom Fields</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Data Imports - Custom Fields';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/meddbase-help-center/Style.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/meddbase-help-center/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/meddbase-help-center/Script.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h2 id="h_01HPPNR09CXTJ37SAHZ550S2B5" data-has-heading-anchor="true">
+  <strong>What is the context?</strong>
+<a href="/articles/meddbase-help-center/data-imports-custom-fields/a/h_01HPPNR09CXTJ37SAHZ550S2B5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/data-imports-custom-fields/a/h_01HPPNR09CXTJ37SAHZ550S2B5&#39;,this);"></a></h2>
+<hr/>
+<p>
+  Data Imports is a built-in feature of Meddbase, allowing importing new entities or updating existing entities to/in your system in bulk. An entity in Meddbase, generally speaking, is:
+</p>
+<ul>
+  <li>
+    A&nbsp;<strong>record</strong>&nbsp;or<strong>&nbsp;document</strong>&nbsp;-&nbsp;<em>e.g. Patient, Company or Invoice</em>
+  </li>
+  <li>
+    An&nbsp;<strong>event</strong>&nbsp;-<em>&nbsp;e.g. Appointment or Episode</em>
+  </li>
+  <li>
+    An&nbsp;<strong>entry</strong>&nbsp;-&nbsp;<em>e.g. Event log</em>
+  </li>
+</ul>
+<p>
+  <span style="font-size: 10pt;">As mentioned, the Data Imports tool allows creating new entities or updating existing entities in bulk, saving you the trouble of having to create or update these entities one-by-one manually.</span>
+</p>
+<p>
+  There are strict rules and solid logic behind running a successful import.
+</p>
+<p class="Note">
+  Large data imports, given their nature and complexity, may require assistance and oversight of the MMS Imports Team. Please contact the Support Team to discuss your import requirement.
+</p>
+<h2 id="h_01HPPNR09C1MKCKVJGVF6X9GZ7" data-has-heading-anchor="true">
+  <strong>What is the purpose of the article?</strong>
+<a href="/articles/meddbase-help-center/data-imports-custom-fields/a/h_01HPPNR09C1MKCKVJGVF6X9GZ7" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/data-imports-custom-fields/a/h_01HPPNR09C1MKCKVJGVF6X9GZ7&#39;,this);"></a></h2>
+<hr/>
+<p>
+  This article will guide you through the steps you will need to take to import custom fields, and it is broken down into the following steps:
+</p>
+<p>
+  </p>
+<ul><li><a href="/articles/meddbase-help-center/data-imports-custom-fields/a/h_01GG52M6W5WF8G0XM90R5CAGMY" target="_blank" onclick="return n(&#39;!meddbase-help-center/data-imports-custom-fields/a/h_01GG52M6W5WF8G0XM90R5CAGMY&#39;,this);">Creating the import template</a></li><li><a href="/articles/meddbase-help-center/data-imports-custom-fields/a/h_01GG52MEKVCSQQXARNT6WBR9E4" target="_blank" onclick="return n(&#39;!meddbase-help-center/data-imports-custom-fields/a/h_01GG52MEKVCSQQXARNT6WBR9E4&#39;,this);">New Import Instance and Import Schema</a></li><li><a href="/articles/meddbase-help-center/data-imports-custom-fields/a/h_01GG52N1E7B59VYVF63RJ3T8CR" target="_blank" onclick="return n(&#39;!meddbase-help-center/data-imports-custom-fields/a/h_01GG52N1E7B59VYVF63RJ3T8CR&#39;,this);">Import Template(s)</a></li><li><a href="/articles/meddbase-help-center/data-imports-custom-fields/a/h_01GG52NBEH9ETJPHFR58TAD363" target="_blank" onclick="return n(&#39;!meddbase-help-center/data-imports-custom-fields/a/h_01GG52NBEH9ETJPHFR58TAD363&#39;,this);">Upload spreadsheets and 'Submit Tables' stage of the import</a></li><li><a href="/articles/meddbase-help-center/data-imports-custom-fields/a/h_01GG52NXDZSX5S684MS7108FZ5" target="_blank" onclick="return n(&#39;!meddbase-help-center/data-imports-custom-fields/a/h_01GG52NXDZSX5S684MS7108FZ5&#39;,this);">'Validate' stage of the import</a></li><li><a href="/articles/meddbase-help-center/data-imports-custom-fields/a/h_01GG52P60FMHS97Q2P0CFF0NPX" target="_blank" onclick="return n(&#39;!meddbase-help-center/data-imports-custom-fields/a/h_01GG52P60FMHS97Q2P0CFF0NPX&#39;,this);">'Commit' stage of the import</a></li></ul><p>
+  It is possible to import the custom field itself at the same time as the data that will be held in that custom field, by importing multiple entities during the same import.
+</p>
+<p>
+  Custom fields can be added to any demographic page within your chamber (Patient, Company or Medical Person). This article covers importing a custom field for the patient demographic page, but the steps will be the same for any custom field import.
+</p>
+<p class="Note">
+  Any changes made to a demographic page will be chamber-wide.
+</p>
+<h2 id="h_01GG52M6W5WF8G0XM90R5CAGMY" data-has-heading-anchor="true">
+  <strong>Creating the import template</strong>
+<a href="/articles/meddbase-help-center/data-imports-custom-fields/a/h_01GG52M6W5WF8G0XM90R5CAGMY" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/data-imports-custom-fields/a/h_01GG52M6W5WF8G0XM90R5CAGMY&#39;,this);"></a></h2>
+<hr/>
+<p>
+  Creating a template for an import is useful as a starting point<strong>,</strong>&nbsp;where the same import will be repeated.</p>
+<p class="Note">When running an Import from a Template, you can change/add/remove entities and the descriptions, thus completely overriding the template </p>
+<p>To create a new template:</p>
+<p>
+  1. From the&nbsp;<strong>Start Page,&nbsp;</strong>click the&nbsp;<strong>Admin&nbsp;</strong>tile
+</p>
+<p>
+  2. Click the&nbsp;<strong>Data imports&nbsp;</strong>tile
+</p>
+<p>
+  3. Click&nbsp;<strong>New Template</strong>
+</p>
+<p>
+  4.&nbsp;<strong>Name&nbsp;</strong>the template accordingly<em>, e.g. Patient Demographic Custom Fields</em>
+</p>
+<p>
+  5. Click&nbsp;<strong>Add</strong>
+</p>
+<p>
+  6. From the dropdown menu, select:</p>
+<ul>
+          <li>
+            <strong>Entity Name</strong>- the 1st dropdown lists all entities currently supported for importing. In this exampl,e we will select&nbsp;<strong>Patient. (Company or Medical Person can also be selected here)</strong>
+          </li>
+          <li>
+            <strong>Entity Type&nbsp;</strong>- the 2nd dropdown allows selecting:<ul><li><strong style="font-size: 10pt;">New</strong><span style="font-size: 10pt;">&nbsp;- the import will create new entities in your system</span></li>
+        <li><span style="font-size: 10pt;"></span><strong style="font-size: 10pt;">Existing&nbsp;</strong><span style="font-size: 10pt;">- the import will update existing entities</span></li>
+        </ul>
+</li>
+        </ul>
+<p>
+  7. For this example, we will select&nbsp;<strong>Existing&nbsp;</strong>as we intend to add the custom field for patients that already exist within your chamber.
+</p>
+<p>
+  8. Add a&nbsp;<strong>Description</strong>,<em>&nbsp;e.g. Existing Patients</em>
+</p>
+<p>
+  9. Click&nbsp;<strong>Add&nbsp;</strong>again and select:</p>
+<ul>
+          <li>
+            <strong>Entity Name</strong>- in the 1st dropdown select&nbsp;<strong>Layout Section</strong>
+          </li>
+          <li>
+            <strong>Entity Type&nbsp;</strong>- in the 2nd dropdown,&nbsp;<strong>Existing&nbsp;</strong>is the only option available
+          </li>
+        </ul>
+<p>
+  10. Add a&nbsp;<strong>Description</strong>,<em>&nbsp;e.g. Layout Section&nbsp;</em>
+</p>
+<p>
+  11. Click&nbsp;<strong>Add&nbsp;</strong>again and select:</p>
+<ul>
+          <li>
+            <strong>Entity Name</strong>- in the 1st dropdown select&nbsp;<strong>Layout Section Field Definition</strong>
+          </li>
+          <li>
+            <strong>Entity Type&nbsp;</strong>- in the 2nd dropdown,&nbsp;<strong>Existing&nbsp;</strong>is the only option available
+          </li>
+        </ul>
+<p>
+  12. Add a&nbsp;<strong>Description</strong>,<em>&nbsp;e.g. Layout Section Field</em>
+</p>
+<p>
+  13. Click&nbsp;<strong>Add&nbsp;</strong>again and select:</p>
+<ul>
+          <li>
+            <strong>Entity Name</strong>- in the 1st dropdown select&nbsp;<strong>Patient meta (custom) field</strong>
+          </li>
+          <li>
+            <strong>Entity Type&nbsp;</strong>- in the 2nd dropdown,&nbsp;<strong>Existing&nbsp;</strong>is the only option available
+          </li>
+        </ul>
+<p>
+  14. Add a&nbsp;<strong>Description</strong>,<em>&nbsp;e.g. Custom Field</em>
+</p>
+<p>
+  15. Click&nbsp;<strong>Save Template</strong>
+</p>
+<h2 id="h_01GG52MEKVCSQQXARNT6WBR9E4" data-has-heading-anchor="true">
+  <strong>New Import Instance and Import Schema</strong>
+<a href="/articles/meddbase-help-center/data-imports-custom-fields/a/h_01GG52MEKVCSQQXARNT6WBR9E4" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/data-imports-custom-fields/a/h_01GG52MEKVCSQQXARNT6WBR9E4&#39;,this);"></a></h2>
+<hr/>
+<p>
+  Once you have created an import template, you can use it to run a new instance of an import in the&nbsp;<strong>Data imports&nbsp;</strong>section:-
+</p>
+<p>
+  1. Click the&nbsp;<strong>Template&nbsp;</strong>you wish to use
+</p>
+<p>
+  2. Click&nbsp;<strong>+New Instance</strong>
+</p>
+<p>
+  3. Type in the&nbsp;<strong>Instance Description</strong>
+</p>
+<p>
+  4. Click&nbsp;<strong>Schema&nbsp;</strong>in the respective entity's row to download a .csv spreadsheet. The&nbsp;<strong>Schema&nbsp;</strong>outlines:</p>
+<ul>
+          <li>
+            What information is&nbsp;<strong>R</strong><strong>equired</strong>&nbsp;(mandatory) for importing this entity type.
+          </li>
+          <li>
+            What information is&nbsp;<strong>O</strong><strong>ptional&nbsp;</strong>for importing this entity type.
+          </li>
+          <li>
+            What is the expected&nbsp;<strong>Description</strong>, so how is the information allowed to be expressed,<em>&nbsp;e.g. Unique Identifier.</em>
+          </li>
+          <li>
+            What are the&nbsp;<strong>Allowed values,&nbsp;</strong><em>e.g. Male, Female, Machine, Unknown</em>
+          </li>
+          <li>
+            What&nbsp;<strong>References&nbsp;</strong>is a given column making<strong>*.</strong>
+          </li>
+        </ul>
+<p class="Note">
+  *Importing a piece of information in a column for an entity type may&nbsp;Reference&nbsp;another entity. This means that you will need to import another spreadsheet for that entity type following its respective&nbsp;Schema.
+</p>
+<p><strong>Patient schema</strong></p><p>
+  As per the&nbsp;<strong>Patient schema</strong><strong>&nbsp;</strong>you must provide the following information:
+</p>
+<p>
+  <img src="images/patient%20schema%20table.png" style="width: 661px;" alt="" loading="lazy"/>
+</p>
+<p><strong>Layout Section schema</strong></p><p>
+  As per the&nbsp;<strong>Layout Section schema</strong>&nbsp;you must provide the following information:
+</p>
+<p>
+  <img src="images/layout%20schema.png" style="width: 657px;" alt="" loading="lazy"/>
+</p>
+<p><strong>Layout Field Definition schema</strong></p><p>
+  As per the&nbsp;<strong>Layout Field Definition schema</strong>&nbsp;you must provide the following information:
+</p>
+<p>
+  <img src="images/layout%20def%20schema.png" style="width: 651px;" alt="" loading="lazy"/>
+</p>
+<p><strong>Patient meta (custom) field schema</strong></p><p>
+  As per the&nbsp;<strong>Patient meta (custom) field schema&nbsp;</strong>you must provide the following information:
+</p>
+<p>
+  <img src="images/patient%20meta%20schema.png" style="width: 655px;" alt="" loading="lazy"/>
+</p>
+<h2 id="h_01GG52N1E7B59VYVF63RJ3T8CR" data-has-heading-anchor="true">
+  <strong>Import Template(s)</strong>
+<a href="/articles/meddbase-help-center/data-imports-custom-fields/a/h_01GG52N1E7B59VYVF63RJ3T8CR" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/data-imports-custom-fields/a/h_01GG52N1E7B59VYVF63RJ3T8CR&#39;,this);"></a></h2>
+<hr/>
+<p>
+  Once you have familiarised yourself with the schema(s), you can download a&nbsp;<strong>Template&nbsp;</strong>for each entity type required for the import. Templates will include all column headers<strong>*,</strong>&nbsp;labelled correctly<strong>**</strong>&nbsp;(required and optional) that were listed in the respective schema.
+</p>
+<p class="Note">
+  *It is recommended that you delete those columns from the Template where no information will be provided, so that you do not import [empty] columns.
+</p><p class="Note">
+  **When uploading a spreadsheet containing information you wish to import, column headers must be labelled as per the schema, incl. upper case letters and ' _ '(underscores).&nbsp;
+</p><p>
+  &nbsp;
+</p>
+<h2 id="h_01GG52NBEH9ETJPHFR58TAD363" data-has-heading-anchor="true">
+  <strong>Upload spreadsheets and 'Submit Tables' stage of the import</strong>
+<a href="/articles/meddbase-help-center/data-imports-custom-fields/a/h_01GG52NBEH9ETJPHFR58TAD363" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/data-imports-custom-fields/a/h_01GG52NBEH9ETJPHFR58TAD363&#39;,this);"></a></h2>
+<hr/>
+<p>
+  Once you have populated the templates for the entity types in your import with required and optional information as needed, you can complete the 1st stage of the import:
+</p>
+<ol>
+  <li>
+    Click&nbsp;<strong>Upload&nbsp;</strong>in each entity's row and upload the respective spreadsheet (Drag &amp; drop or Choose files from your computer)
+  </li>
+  <li>
+    Click&nbsp;<strong>Submit Tables,&nbsp;</strong>and the system will check whether the spreadsheets you uploaded are in line with the schema(s).
+  </li>
+  <li>
+    Once the&nbsp;<strong>Table submission is successful&nbsp;</strong>click&nbsp;<strong>Next&nbsp;</strong>to move to the next stage of the import.
+  </li>
+</ol>
+<p class="Note">If the system identifies any errors in the spreadsheets you had uploaded, clicking the&nbsp;<b>View Report</b>&nbsp;button allows you to view the error details and take corrective action.
+</p>
+<p>
+  &nbsp;
+</p>
+<h2 id="h_01GG52NXDZSX5S684MS7108FZ5" data-has-heading-anchor="true">
+  <strong>'Validate' stage of the import</strong>
+<a href="/articles/meddbase-help-center/data-imports-custom-fields/a/h_01GG52NXDZSX5S684MS7108FZ5" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/data-imports-custom-fields/a/h_01GG52NXDZSX5S684MS7108FZ5&#39;,this);"></a></h2>
+<hr/>
+<p>
+  You can now move to the 2nd stage of the import:
+</p>
+<p>
+  1. Click&nbsp;<strong>Validate,&nbsp;</strong>and the system will check the values uploaded in the spreadsheet columns against the data type they correspond to.
+</p>
+<p>
+  2. Once&nbsp;<strong>Validation&nbsp;is successful&nbsp;</strong>click&nbsp;<strong>Next&nbsp;</strong>to move to the final stage of the import.
+</p>
+<p>
+  <strong></strong></p>
+<p class="Note">If the system identifies any errors in the spreadsheets you had uploaded, clicking the&nbsp;<b>View Report</b>&nbsp;button allows you to view the error details and take corrective action.</p>
+<h2 id="h_01GG52P60FMHS97Q2P0CFF0NPX" data-has-heading-anchor="true">
+  <strong>'Commit' stage of the import</strong>
+<a href="/articles/meddbase-help-center/data-imports-custom-fields/a/h_01GG52P60FMHS97Q2P0CFF0NPX" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/data-imports-custom-fields/a/h_01GG52P60FMHS97Q2P0CFF0NPX&#39;,this);"></a></h2>
+<hr/>
+<p>
+  Once the validation is complete, you can move to the final stage of the import:
+</p>
+<p>
+  1. Click&nbsp;<strong>Commit&nbsp;</strong>and the system will create the new entities/update the existing entities in your system
+</p>
+<p>
+  2. Click&nbsp;<strong>Finished&nbsp;</strong>to end the import, and you will be taken back to the main&nbsp;<strong>Data Imports&nbsp;</strong>page where you can view reports from all stages of the import, download an Entity Overview spreadsheet and more.
+</p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

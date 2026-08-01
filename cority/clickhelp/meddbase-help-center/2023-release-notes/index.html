@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/meddbase-help-center/2023-release-notes"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>2023 Release Notes</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='2023 Release Notes';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/meddbase-help-center/Style.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/meddbase-help-center/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/meddbase-help-center/Script.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 title="Maintenance Release Ongoing Release Notes" id="h1__1225377881" data-has-heading-anchor="true"><span style="font-size: 18pt;">2023 Maintenance Release Ongoing Release Notes</span><a href="/articles/meddbase-help-center/2023-release-notes/a/h1__1225377881" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2023-release-notes/a/h1__1225377881&#39;,this);"></a></h1><p>Here you'll find an up to date list of all changes made during Maintenance releases in 2023.</p><h2 id="h_01HN3ANQG72NF99PZQBAH9G48T" data-has-heading-anchor="true">18th December Release <a href="/articles/meddbase-help-center/2023-release-notes/a/h_01HN3ANQG72NF99PZQBAH9G48T" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2023-release-notes/a/h_01HN3ANQG72NF99PZQBAH9G48T&#39;,this);"></a></h2>
+<ol>
+  <li>Optimised various SQL indexes to improve performance.</li>
+  <li>     Resolved an issue which could prevent charge bands from being deleted when     patients had been assigned to them historically. These charge bands will     now be able to be deleted appropriately.   </li>
+  <li>     Added support for displaying 'public notes for patient' configured against     Modules when patients are making bookings via the Portal. Patients will now     be able to see configured notes during the booking process.   </li>
+  <li>     Updated import schemas so that;     <ul>
+      <li>Gender Identities and Pronouns can be imported for Patients</li>
+      <li>Company aliases can be imported for Companies</li>
+      <li>         Company Parent/Child relationships can be imported for Companies       </li>
+      <li>         Patient imports correctly identify the relation between setting a         charge band and needing to include charge bands during the import         process.       </li>
+      <li>Validation descriptions are improved in various places</li>
+      <li>         Partial rollbacks are only possible when multiple entities have been         imported       </li>
+      <li>         Appointment type imports now correctly mandate a duration value       </li>
+      <li>         Attempting to upload a non-CSV file during an import correctly produces         an error message during upload       </li>
+      <li>         The deprecated 'notes' import column for Medical Persons is not present         in the import schema       </li>
+    </ul>
+  </li>
+  <li>     Resolved an issue which would prevent 'embedded' iCals not to be displayed     on some email clients e.g. Outlook.   </li>
+</ol>
+<h2 id="h_01HN3ANQG7HHH429EX6SJDPF20" data-has-heading-anchor="true">27th November Release<a href="/articles/meddbase-help-center/2023-release-notes/a/h_01HN3ANQG7HHH429EX6SJDPF20" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2023-release-notes/a/h_01HN3ANQG7HHH429EX6SJDPF20&#39;,this);"></a></h2>
+<ol>
+  <li>     Resolved an issue which was stopping recurring payments from being setup     when the Opayo integration was enabled. Recurring payments can now be created     as expected.   </li>
+  <li>     Fixed an issue which could stop medical history for loading after a certain     point for patients with very large amounts of medical history data. Medical     History data will now scroll as required.   </li>
+  <li>     Improved indexing of various SQL tables to improve performance.   </li>
+  <li>Fixed minor typos in configuration screens.</li>
+  <li>     Resolved an issue which caused dates to be duplicated in side by side schedules     when daylight savings time rolls over.   </li>
+</ol>
+<h2 id="h_01HJ3A0Z4MTN95APEE90VRBJFP" data-has-heading-anchor="true">30th October Release<a href="/articles/meddbase-help-center/2023-release-notes/a/h_01HJ3A0Z4MTN95APEE90VRBJFP" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2023-release-notes/a/h_01HJ3A0Z4MTN95APEE90VRBJFP&#39;,this);"></a></h2>
+<ol>
+  <li>     Fixed an issue which produced an incorrect error message when users did not     have access to view a company record linked to a patient, when trying to     access the patient record.   </li>
+  <li>     Resolved an issue with cancelling appointments if the appointment type had     a Tracking Category associated with it. Appointments can now be cancelled     succesfully.   </li>
+  <li>     Improved performance of the Slot Finder booking workflow - finding slots     is now much, much faster!   </li>
+  <li>     Improved the visibility of patient appointment status' - when viewing a patients     Appointment History, the Appointment Status column will now correctly reflect     if the patient is Being Seen, Arrived, DNA'd, Cancelled etc.   </li>
+  <li>     Improved usability of the Patient and OH Portals password reset page - pressing     the Enter Key will after submitting a new password will now correctly submit     the form.   </li>
+  <li>     Fixed an issue that caused the 'Facilities Billing Rule' configuration setting     not to save correctly.   </li>
+  <li>     Improved the speed of security rights changes, particularly when removing     or adding roles from/to other role groups.   </li>
+</ol>
+<h2 id="h_01H90964512P14FHBKF8CR45BG" data-has-heading-anchor="true">25th September Release<a href="/articles/meddbase-help-center/2023-release-notes/a/h_01H90964512P14FHBKF8CR45BG" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2023-release-notes/a/h_01H90964512P14FHBKF8CR45BG&#39;,this);"></a></h2>
+<ol>
+  <li>     Fixed an issue that could cause page layouts to reset, or for unsaved data     to be lost when making changes to record page layouts. Data and page layout     are now correctly saved while making changes.   </li>
+  <li>Added 2FA support for the OH portal</li>
+  <li>     Fixed an issue which would cause Medical Person email address not to be saved     when they are created from the 'create user' dialogue. Email address now     saves as expected.   </li>
+  <li>     Removed an edge case that could cause an ungraceful error message to appear     when expanding certain Medical History events. Medical History will now expand     correctly.   </li>
+  <li>     Improved the Mail merge feature, allowing it to use NHS GP and commissioner     details.   </li>
+  <li>     Upgraded MS Office servers. Legacy office documents will be updated to a     modern file format. Users will see a change in file extension only, e.g.     files previously ending .doc will now end .docx. No other user facing changes     will be observable.   </li>
+</ol>
+<h2 id="01HA7GN8KK93N2M7MH0AHAAH87" data-has-heading-anchor="true">29th August Release<a href="/articles/meddbase-help-center/2023-release-notes/a/01HA7GN8KK93N2M7MH0AHAAH87" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2023-release-notes/a/01HA7GN8KK93N2M7MH0AHAAH87&#39;,this);"></a></h2>
+<ol>
+  <li>     Resolved an issue that could allow duplicate appointments to be booked through     the Fast Booking Portal where the submit action was allowed to take place     multiple times.   </li>
+  <li>     Removed an edge case where a merged patient could be merged again to another     target patient, causing an error. That behaviour is no longer possible   </li>
+  <li>     Fixed an issue where refunding an invoice was causing a payment to appear     in the unmatched payments section of an appointment view. Erroneous payments     are no longer visible after a refund is performed.   </li>
+  <li>     Improved the UI of the appointment home page on Mac to ensure that the 'Start     Telemedicine' action item always appears when it should.   </li>
+  <li>     Fixed an issue which caused Services added to an appointment when a Patient     booked an appointment including a Module via the Patient Portal to be duplicated.     Only a single instance of each service will now be added to the appointment.   </li>
+  <li>     Improved the interaction between Opayo and Xero. When attempting to overpay     an invoice via Opayo, with the Xero integration enabled, users will now recieve     a warning letting them know that this would cause an error in Xero, and stopping     the transaction from going ahead.   </li>
+  <li>     Improved error reporting when patients make a payment via the Patient Portal     when an invoice has already been paid.   </li>
+  <li>     Improved the Document Manager to ensure;     <ol>
+      <li>         Documents can be saved even when a local instance of a document of         the same type is open       </li>
+      <li>         Ensuring the 'retry download' option works as expected when opening         a document from Meddbase.       </li>
+      <li>         Improve the accuracy of the audit log; opening and then closing a         document using the Document Manager without making changes will no         longer report a Document Modified event in the audit log.       </li>
+    </ol>
+  </li>
+  <li>     Improved the UX of the Work Items screens to ensure that selected filters     persist correctly, are independently persisted between different work item     screens, and selected filters are displayed correctly each time a user visits     the Work Item screen.   </li>
+</ol>
+<p>&nbsp;</p>
+<h2 id="01H9096GV5JQYAH2X64WD187T0" data-has-heading-anchor="true">31st May Maintenance Release<a href="/articles/meddbase-help-center/2023-release-notes/a/01H9096GV5JQYAH2X64WD187T0" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2023-release-notes/a/01H9096GV5JQYAH2X64WD187T0&#39;,this);"></a></h2>
+<ol>
+  <li>     Resolved a formatting issue with Referral Letters which was causing unwanted     characters to be rendered.   </li>
+  <li>     Resolved an issue which stopped users from being able to utilise the 'Copy     from Word' feature in the inbuilt document editor   </li>
+  <li>     Fixed rendering issues in a number of locations, including postcode lookup     and Session Template editor, that were erroneously displaying raw HTML characters.   </li>
+</ol>
+<h2 id="h_01H9096451TF3SKRFJE0X507H9" data-has-heading-anchor="true">5th May Maintenance Release<a href="/articles/meddbase-help-center/2023-release-notes/a/h_01H9096451TF3SKRFJE0X507H9" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2023-release-notes/a/h_01H9096451TF3SKRFJE0X507H9&#39;,this);"></a></h2>
+<ol>
+  <li>     Resolved an issue that stopped emails being sent to patients when joining     an online charge band   </li>
+</ol>
+<h2 id="h_01H90964515KJFXFK8P830JVSF" data-has-heading-anchor="true">24th April Release<a href="/articles/meddbase-help-center/2023-release-notes/a/h_01H90964515KJFXFK8P830JVSF" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2023-release-notes/a/h_01H90964515KJFXFK8P830JVSF&#39;,this);"></a></h2>
+<ol>
+  <li>     Improved caching of slots for anonymous API search to improve the performance     of this API call.   </li>
+  <li>     Fixed an issue on the Referral History audit log that was causing a title     to overlap with the log field.   </li>
+  <li>     Fixed some broken icons on the Invoicing Diagnosis tree view. Invoicing diagnoses     can now be expanded as expected.   </li>
+  <li>     Improved the Service Credits billing rule. If a First Included Day is added     to a rule that has already given credits to patients, those patients will     now have that First Included Day set correctly.   </li>
+  <li>     Improved the Service Credits billing rule. Allowed Unique Start Dates to     be enabled after patients were added to a charge band containing a service     credits rule, and ensured that renewal period is set correctly for each patient     on that charge band.   </li>
+  <li>     Improved the wording of the OH Portal breadcrumb trail - PPQ sent has been     changed to Questionnaire sent.   </li>
+  <li>     Improved consistency of the UI - Changed button order for 'Invalid payers     dialogue' to be Yes/No - consistent with other similar dialogues elsewhere     in the application.   </li>
+  <li>Fixed the image preview icon when uploading .tiff images.</li>
+  <li>     Added dynamic text to the patient portal password reset screen to correctly     reflect the chamber settings for password complexity.   </li>
+  <li>     Made the schedule and diary UI reactive, to allow for a better and more consistent     experience when zoomed in. Users will no longer see an incorrect offset on     the schedule and diary pages.   </li>
+  <li>     Fixed an issue with the V5 billing rules service which was causing service     credits to not be deducted correctly when making bookings using the side     by side schedule. Credits will now be correctly deducted for all booking     methods.   </li>
+  <li>     Removed unnecessary botton margin on the Meddbase home page to improve the     UI.   </li>
+  <li>     Fixed an issue with sending certain billing items to Xero - double spaces     and other special characters will now be encoded correctly and will no longer     produce an error when sending invoices containing them to Xero.   </li>
+  <li>     Improved the UX of the OH Portal - when viewing a list of employees, the     table rows now correctly indicate that they are clickable.   </li>
+</ol>
+<h2 id="h_01H90964517HYJRWXS8APYZWEC" data-has-heading-anchor="true">6th March Maintenance Release<a href="/articles/meddbase-help-center/2023-release-notes/a/h_01H90964517HYJRWXS8APYZWEC" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2023-release-notes/a/h_01H90964517HYJRWXS8APYZWEC&#39;,this);"></a></h2>
+<ol>
+  <li>     Resolved an issue that would present an error when arriving an appointment     containing only services with 0 cost, if the creditor and debtor company     were the same. The check will no longer be performed if an appointment only     contains 0 cost services.   </li>
+</ol>
+<h2 id="h_01H9096451CM7VSJAZH34QSDD6" data-has-heading-anchor="true">27th February Release<a href="/articles/meddbase-help-center/2023-release-notes/a/h_01H9096451CM7VSJAZH34QSDD6" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2023-release-notes/a/h_01H9096451CM7VSJAZH34QSDD6&#39;,this);"></a></h2>
+<ol>
+  <li>     Fixed an issue that cause duplicate aged debt tasks to be created when importing     invoices with partial payments   </li>
+  <li>     Resolved a problem with rolling back imports containing stock records. The     changes to the stock levels will now also be correctly removed from the stock     overview section.   </li>
+  <li>     Removed an erroneous input validation which was stopping new credit notes     from being imported to existing invoices. This operation is now correctly     supported.   </li>
+  <li>     Improved the process for importing OH Portal account permissions; when importing     an account as having the 'manage' permission for a parent department, that     account is now assigned manage permission for all children of that department     as well, mirroring the same activity performed manually.   </li>
+  <li>     Improved the user experience of viewing and investigating validation errors     during an import. Errors can now be exported as a CSV making the process     of investigating and rectifying them easier.   </li>
+  <li>     Improved the user experience when returning to an import after validation     but before committing the data. Imports will now be able to proceed directly     to the commit stage if the tables contained within them have been validated     in the last 24 hours and have not been changed since.   </li>
+</ol>
+<h2 id="h_01H909645152FTV7DQ01Z1QVHM" data-has-heading-anchor="true">30th January Release<a href="/articles/meddbase-help-center/2023-release-notes/a/h_01H909645152FTV7DQ01Z1QVHM" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/2023-release-notes/a/h_01H909645152FTV7DQ01Z1QVHM&#39;,this);"></a></h2>
+<ol>
+  <li>     Added Support for Structured Templates to be used in the following circumstances:     <ul>
+      <li>Appointment confirmation email</li>
+      <li>Portal account validation email</li>
+      <li>Portal account password reset email</li>
+      <li>Portal account password changed email</li>
+      <li>Print portal account password changed</li>
+    </ul>
+  </li>
+  <li>     Improved UX of the login page when SSO is enabled to correctly inform users     how to login.   </li>
+  <li>     Fixed an issue with the 'book an appointment' Pathway task. When shared via     the patient portal, patients will no longer be able to book the wrong appointment     type when completing the task.   </li>
+  <li>     Made several improvements to the import layer:     <ul>
+      <li>Added support for importing Service Credits for patients</li>
+      <li>Added support for Service Admin Notes</li>
+      <li>         Fixed an issue where removing an employer or insurer would not change         the person's default charge band       </li>
+      <li>         Fixed an issue that caused appointment types deleted via an import         to continue to show in the Billing Rules section       </li>
+      <li>         Closed an edge case where imports of metafields would succeed with         an invalid key       </li>
+      <li>Improved the explanation of the New Episode import schema</li>
+      <li>         Added support for importing Credit Notes to existing Invoices       </li>
+      <li>         Improved the import process for granting access to Employer Departments         to correctly grant the 'Manage' permission on child departments when         granting that permission to the Parent.       </li>
+      <li>         Added support for setting the date of a Match when importing Payment         Matches       </li>
+      <li>         Added support for changing the policy on an existing document       </li>
+      <li>         Added support for importing Insurer and Employer Contacts to Patient         Records       </li>
+      <li>Added support for importing 'slots per hour' for clinicians</li>
+    </ul>
+  </li>
+  <li>     Improved the explanatory text for telemedicine appointments on the Patient     Portal   </li>
+  <li>     Added support for resending an email opened from the Patient Contact Log   </li>
+  <li>     Fixed an issue that would cause the name of a new patient to not appear for     several seconds on the Patient Home Page.   </li>
+  <li>     Improved the consistency of the naming of Clinicians on the Patient Portal   </li>
+  <li>Created new icons for Pathways that scale correctly</li>
+  <li>     Changed the format for dates recorded from Questionnaires with the 'date'     data type to correctly format them as DD/MM/YYYY   </li>
+  <li>     Fixed an issue that would cause every document downloaded from the Portal     to be named 'd'   </li>
+  <li>     Resolved an edge case that could cause an issue navigating to appointment     if custom fields on the Appointment Home Page had special characters added     to them.</li>
+</ol>
+<p class="Body">
+</p>
+<p>
+  <br/>
+</p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>
