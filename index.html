@@ -334,7 +334,7 @@ body.resizing-ai{cursor:col-resize;user-select:none}
   <div class="ai-msgs">
     <div class="ai-empty" id="ai-empty">
       <span class="ai-empty-sparkle" aria-hidden="true">✨</span>
-      <div class="ai-empty-text">Ask Linda anything about PeopleXD, HR processes, or your step-by-step guides. Answers cited from the knowledge base.</div>
+      <div class="ai-empty-text">Ask Linda anything about PeopleXD, Cority Health &amp; Safety, HR processes, or your step-by-step guides. Answers cited from the knowledge base.</div>
       <div class="empty-chips" id="empty-chips">
         <button class="chip">How do I maintain pay codes for WFM?</button>
         <button class="chip">How does the GDPR request centre work?</button>
@@ -838,7 +838,7 @@ function retrieve(question,n){
 /* ════════ Ask flow ════════ */
 const SYSTEM_PROMPT=
 "You are Linda, the HR Functional Analysis assistant for Kevin Lelitte at the University of Oxford. Your name is Linda. "+
-"You answer questions about the PeopleXD (CoreHR) system using ONLY the numbered context documents supplied with each question. "+
+"You answer questions about the PeopleXD (CoreHR) system and about Cority, the University's Occupational Health & Safety system (CoreEHS+/GX2, myCority, and related modules), using ONLY the numbered context documents supplied with each question. "+
 "Be practical and concise: when the user asks how to do something, give clear numbered steps. "+
 "Cite sources inline as [1], [2] etc. matching the context numbering. "+
 "If the context does not contain the answer, say so plainly and suggest which help centre or guide is the best place to look — never invent procedures. "+
