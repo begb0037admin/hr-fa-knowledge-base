@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/spm-rest-api-guide-publication/filters-and-pagination"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Filters and Pagination</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Filters and Pagination';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/spm-rest-api-guide-publication/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1_919426256" data-has-heading-anchor="true">
+  Filters and Pagination
+<a href="/articles/spm-rest-api-guide-publication/filters-and-pagination/a/h1_919426256" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/filters-and-pagination/a/h1_919426256&#39;,this);"></a></h1>
+<hr/>
+<p>
+  When you are retrieving data, filtering and pagination can be applied.
+</p>
+
+<h2 id="h2_2082830494" data-has-heading-anchor="true">
+  Pagination
+<a href="/articles/spm-rest-api-guide-publication/filters-and-pagination/a/h2_2082830494" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/filters-and-pagination/a/h2_2082830494&#39;,this);"></a></h2>
+<p>
+  Example: Get the first page, and limit it to 10 results per page, sorted by DateFrom descending.
+</p>
+
+<pre class="inlineCode"><code>{
+  "pagination": {
+    "page": 1,
+    "pageSize": 10,
+    "sortBy": "DateFrom",
+    "sortOrder": "Desc"
+  }
+}</code></pre>
+
+<h2 id="h2__418455752" data-has-heading-anchor="true">
+  Filtering
+<a href="/articles/spm-rest-api-guide-publication/filters-and-pagination/a/h2__418455752" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/filters-and-pagination/a/h2__418455752&#39;,this);"></a></h2>
+<p>
+  You can also specify filters in the body. You can specify the name of the field to filter on, how to filter (the operator), and the value to filter on.
+</p>
+
+<p>
+  Below is an example request (for data sources), with the structure of the filters shown.
+  <br/>
+</p>
+
+<p>
+  This example is filtering for where the nodeName contains the word green, and has a start date between 2009-01-01 and 2011-01-01
+</p>
+
+<pre class="inlineCode"><code>{
+  "responseType": "Lightweight",  // Request type
+  "pagination": {
+    "page": 1,                     // Current page
+    "pageSize": 20,                // Number of results per page
+    "sortBy": "nodeName",          // Field to sort by
+    "sortOrder": "desc",           // Sort order: "asc" or "desc"
+    "filters": [
+      {
+        "name": "nodeName",        // Filter by node name
+        "filterType": "contains",  // Partial match
+        "value": "green"           // Example text
+      },
+      {
+        "name": "startDate",       // Filter by start date range
+        "filterType": "range",     // Range filter
+        "value": "2009-01-01",     // Start of range
+        "value1": "2011-01-01"     // End of range
+      }
+    ]
+  }
+}</code></pre>
+
+<p>
+  The following filter types are compatible:
+</p>
+
+<ul>
+  <li>Equals</li>
+  <li>NotEquals</li>
+  <li>StartsWith</li>
+  <li>LessThan</li>
+  <li>LessThanOrEqual</li>
+  <li>GreaterThan</li>
+  <li>Range</li>
+  <li>Contains</li>
+</ul>
+<div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

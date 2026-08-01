@@ -1,0 +1,127 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/spm-rest-api-guide-publication/notes-and-attachments"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Notes and Attachments</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Notes and Attachments';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/spm-rest-api-guide-publication/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1__759948368" data-has-heading-anchor="true">
+  Notes and Attachments
+<a href="/articles/spm-rest-api-guide-publication/notes-and-attachments/a/h1__759948368" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/notes-and-attachments/a/h1__759948368&#39;,this);"></a></h1>
+<hr/>
+
+<h2 id="h2_617123174" data-has-heading-anchor="true">
+  Getting the notes for a file
+<a href="/articles/spm-rest-api-guide-publication/notes-and-attachments/a/h2_617123174" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/notes-and-attachments/a/h2_617123174&#39;,this);"></a></h2>
+<p>
+  Request: POST {baseURL}/EnvironmentInput/Note/GetNotesByFileId
+</p>
+
+<pre class="inlineCode">{
+  "fileId": 79735,
+  "pagination": {
+    "page": 1,
+    "pageSize": 10,
+    "sortBy": "id",
+    "sortOrder": "Desc",
+    "filters": []
+  }
+}</pre>
+
+<h2 id="h2_1437701208" data-has-heading-anchor="true">
+  Creating a new note
+<a href="/articles/spm-rest-api-guide-publication/notes-and-attachments/a/h2_1437701208" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/notes-and-attachments/a/h2_1437701208&#39;,this);"></a></h2>
+<p>
+  Request: POST {baseURL}/EnvironmentInput/Note/save
+</p>
+
+<pre class="inlineCode">{
+  "fileId": 79735,
+  "id": 0,
+  "title": "My new note",
+  "note": "Observed minor variance in the March period.",
+  "category": 8,
+  "incReport": true
+}</pre>
+
+<h2 id="h2_1068670848" data-has-heading-anchor="true">
+  Delete a note
+<a href="/articles/spm-rest-api-guide-publication/notes-and-attachments/a/h2_1068670848" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/notes-and-attachments/a/h2_1068670848&#39;,this);"></a></h2>
+<p>
+  Request: POST {baseURL}/EnvironmentInput/Note/save
+</p>
+<p>
+  HTTP method: DELETE
+</p>
+
+<pre class="inlineCode">{
+  "fileId": 79735,
+  "id": 3466
+}</pre>
+
+<h2 id="h2_1989545514" data-has-heading-anchor="true">
+  Getting attachments for a file
+<a href="/articles/spm-rest-api-guide-publication/notes-and-attachments/a/h2_1989545514" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/notes-and-attachments/a/h2_1989545514&#39;,this);"></a></h2>
+<p>
+  Request: POST {baseURL}/EnvironmentInput/Attachment/GetAttachmentsByFileId
+</p>
+
+<pre class="inlineCode">{
+  "fileId": 1234,
+  "pagination": {
+    "page": 1,
+    "pageSize": 10,
+    "sortBy": "recordId",
+    "sortOrder": "Desc",
+    "filters": []
+  }
+}</pre>
+
+<h2 id="h2__1446838733" data-has-heading-anchor="true">
+  Creating an attachment for a file
+<a href="/articles/spm-rest-api-guide-publication/notes-and-attachments/a/h2__1446838733" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/notes-and-attachments/a/h2__1446838733&#39;,this);"></a></h2>
+<p>
+  Request: POST {baseURL}/EnvironmentInput/Attachment/GetAttachmentsByFileId
+</p>
+<p>
+  Use the form-data within Postman and upload your attachment as shown below.
+</p>
+<p>
+  <img src="images/SPM%20API%20Creating%20attachment%20for%20file.png" alt="" style="width: 900px; height: 309px; border-width: 1px; border-style: solid;" loading="lazy"/>
+</p>
+
+<h2 id="h2__534860230" data-has-heading-anchor="true">
+  Downloading an attachment
+<a href="/articles/spm-rest-api-guide-publication/notes-and-attachments/a/h2__534860230" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/notes-and-attachments/a/h2__534860230&#39;,this);"></a></h2>
+<p>
+  Request: GET {baseURL}/EnvironmentInput/Attachment/download/{fileId}/{recordId}
+</p>
+
+<h2 id="h2__1693352918" data-has-heading-anchor="true">
+  Deleting an attachment
+<a href="/articles/spm-rest-api-guide-publication/notes-and-attachments/a/h2__1693352918" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/notes-and-attachments/a/h2__1693352918&#39;,this);"></a></h2>
+<p>
+  Request: DELETE {baseURL}/Attachment/save
+</p>
+
+<pre class="inlineCode">{
+  "fileId": 1234,
+  "recordId": 9878
+}</pre><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

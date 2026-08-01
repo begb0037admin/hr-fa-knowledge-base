@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/spm-rest-api-guide-publication/using-the-api"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Using the API</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Using the API';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/spm-rest-api-guide-publication/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1__1468891609" data-has-heading-anchor="true">
+			Using the API<a href="/articles/spm-rest-api-guide-publication/using-the-api/a/h1__1468891609" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/using-the-api/a/h1__1468891609&#39;,this);"></a></h1><hr/><h2 id="h2_1083924646" data-has-heading-anchor="true">What are the URLs? (BaseUrl)<a href="/articles/spm-rest-api-guide-publication/using-the-api/a/h2_1083924646" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/using-the-api/a/h2_1083924646&#39;,this);"></a></h2><p>The following are the API URLs you can use, dependent on whether it’s a production system or test system.</p><ul>
+			<li>Test systems: https://secure1.greenstoneplus.com/APIGateway-Test/</li><li>Production systems: https://secure1.greenstoneplus.com/APIGateway/</li></ul>
+		<p>Throughout this guide, these URLs are referred to as the {baseUrl}.</p><h2 id="h2__55841322" data-has-heading-anchor="true">Authentication<a href="/articles/spm-rest-api-guide-publication/using-the-api/a/h2__55841322" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/using-the-api/a/h2__55841322&#39;,this);"></a></h2><p>Every user of the API needs to authenticate to use the API to obtain a token. This token can then be used in subsequent API calls.</p><p>The images in the following steps are from the Postman application. This one of the best and easiest tools for working with APIs.</p><h3 id="h3__584312130" data-has-heading-anchor="true">How to authenticate<a href="/articles/spm-rest-api-guide-publication/using-the-api/a/h3__584312130" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/using-the-api/a/h3__584312130&#39;,this);"></a></h3>
+		<p>To authenticate with the SPM API, do the following:</p><ol>
+			<li>Open a external API client (like Postman).&nbsp;&nbsp;</li><li>Create a new collection, and add a new request.</li><li><span style="font-weight: normal; font-style: normal;">Choose POST, and enter the request URL {baseUrl}/Auth/Login?tenantName=</span><span style="font-weight: bold; font-style: normal;">YourTenant</span></li><li>Go to the Body, select <b>raw</b>, and enter the request body as json:<br/><p class="inlineCode">{<br/>"username": "Your SPM username",<br/> "password": "Your SPM password"<br/>}</p><img src="images/SPM%20API%20Postman%20Authenticate.png" alt="" style="width: 900px; height: 254px; border-width: 1px; border-style: solid;" loading="lazy"/><br/></li>
+			<li><span style="font-weight: normal; font-style: normal;">Click&nbsp;</span><span style="font-weight: bold; font-style: normal;">Send</span><span style="font-weight: normal; font-style: normal;">.<br/></span>If successful, you will see a new response Body, with a jwtToken value.</li></ol><p style="margin-left: 40px;"><img src="images/SPM%20Authentication%20Token.png" alt="" style="width: 900px; height: 449px; border-width: 1px; border-style: solid;" loading="lazy"/></p><p>Copy this jwtToken value.</p><p>This token is what you will need to perform any subsequent calls to the API, to get, update, create, and delete records.</p><h2 id="h2__1577867076" data-has-heading-anchor="true">
+			Using the token value in subsequent calls<a href="/articles/spm-rest-api-guide-publication/using-the-api/a/h2__1577867076" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/using-the-api/a/h2__1577867076&#39;,this);"></a></h2><p>You will need to apply this token in subsequent calls, using the <b>Authorization </b>tab.</p><img src="images/SPM%20Authentication%20token%20calls.png" alt="" style="width: 900px; height: 255px; border-width: 1px; border-style: solid;" loading="lazy"/><p class="noteBox"><b>Tip</b>: You can add this token to a variable and/or add it to the parent collection within Postman, so you only ever have to update it in one place.​​</p><ul></ul>
+	<div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/spm-rest-api-guide-publication/environment-nodes-and-data-sources"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Environment Nodes and Data Sources</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Environment Nodes and Data Sources';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/spm-rest-api-guide-publication/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1_51211963" data-has-heading-anchor="true">
+  Environment Nodes and Data Sources
+<a href="/articles/spm-rest-api-guide-publication/environment-nodes-and-data-sources/a/h1_51211963" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/environment-nodes-and-data-sources/a/h1_51211963&#39;,this);"></a></h1>
+<hr/>
+
+<h2 id="h2_2051037809" data-has-heading-anchor="true">
+  Getting Nodes
+<a href="/articles/spm-rest-api-guide-publication/environment-nodes-and-data-sources/a/h2_2051037809" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/environment-nodes-and-data-sources/a/h2_2051037809&#39;,this);"></a></h2>
+<ul>
+  <li>Request: POST {BaseUrl}/nodes</li>
+  <li>Example Body (with optional filters)</li>
+</ul>
+
+<pre class="inlineCode">{
+  "responseType": "Lightweight",  // Request type
+  "pagination": {
+    "page": 1,                     // Current page
+    "pageSize": 20,                // Number of results per page
+    "sortBy": "nodeName",          // Field to sort by
+    "sortOrder": "desc",           // Sort order: "asc" or "desc"
+    "filters": [
+      {
+        "name": "nodeId",          // Filter by node ID
+        "filterType": "equals",    // Exact match
+        "value": 4                 // Example node ID
+      },
+      {
+        "name": "nodeName",        // Filter by node name
+        "filterType": "contains",  // Partial match
+        "value": "green"           // Example text
+      },
+      {
+        "name": "startDate",       // Filter by start date
+        "filterType": "equals",    // Exact date match
+        "value": "2020-01-01"      // Example date (YYYY-MM-DD)
+      },
+      {
+        "name": "startDate",       // Filter by start date range
+        "filterType": "range",     // Range filter
+        "value": "2009-01-01",     // Start of range
+        "value1": "2011-01-01"     // End of range
+      }
+    ]
+  }
+}</pre>
+
+<ul>
+  <li>Example Response: {BaseUrl}/nodes</li>
+</ul>
+
+<pre class="inlineCode">{
+  "isSuccess": true,
+  "message": "GetNodes Data retrieved successfully",
+  "data": {
+    "data": [
+      {
+        "nodeId": 3421,
+        "nodeName": "0124 - Words",
+        "startDate": "2021-01-01",
+        "endDate": null,
+        "nodeLabels": ["Emissions Factors Testing"],
+        "city": "London",
+        "postcode": "WB1 4NR",
+        "location": "United Kingdom"
+      }
+    ],
+    "pagination": {
+      "page": 1,
+      "pageSize": 20,
+      "filters": [
+        {
+          "name": "nodeId",
+          "filterType": "Equals",
+          "value": 4
+        },
+        {
+          "name": "nodeName",
+          "filterType": "Contains",
+          "value": "green"
+        },
+        {
+          "name": "startDate",
+          "filterType": "Equals",
+          "value": "2020-01-01"
+        },
+        {
+          "name": "startDate",
+          "filterType": "Range",
+          "value": "2009-01-01",
+          "value1": "2011-01-01"
+        }
+      ],
+      "sortBy": "nodeName",
+      "sortOrder": "Desc",
+      "total": 0,
+      "totalPages": 0
+    }
+  }
+}</pre>
+
+<p>
+  The responseType can be used in this nodes endpoint, to get a lightweight or full node object back.
+</p>
+<ul>
+  <li>Request: POST {BaseUrl}/nodes</li>
+</ul>
+
+<pre class="inlineCode">{
+  "responseType": "Full",  // Request type
+  "pagination": {
+    "page": 1,                     // Current page
+    "pageSize": 20,                // Number of results per page
+    "sortBy": "nodeName",          // Field to sort by
+    "sortOrder": "desc",           // Sort order: "asc" or "desc"
+    "filters": []
+  }
+}</pre>
+
+<ul>
+  <li>Example Response: {BaseUrl}/nodes</li>
+</ul>
+
+<pre class="inlineCode">{
+  "isSuccess": true,
+  "message": "GetNodes Data retrieved successfully",
+  "data": {
+    "data": [
+      {
+        "nodeId": 3421,
+        "nodeName": "0124 - Words",
+        "startDate": "2021-01-01",
+        "endDate": null,
+        "nodeLabels": [
+          "Emissions Factors Testing"
+        ],
+        "city": "London",
+        "postcode": "WB1 4NR",
+        "location": "United Kingdom",
+        "additionalInfo": {
+          "entity": "Retail Property",
+          "referenceNumber": "0124",
+          "currencyCode": "GBP",
+          "currencyName": "British Pound",
+          "longitude": null,
+          "latitude": null,
+          "weatherStationId": "",
+          "baseHeatingTemperature": 0.00,
+          "baseHeatingTemperatureUnit": "",
+          "baseCoolingTemperature": 0.00,
+          "baseCoolingTemperatureUnit": "",
+          "modellingDisabled": false
+        }
+      }
+    ],
+    "pagination": {
+      "page": 1,
+      "pageSize": 20,
+      "filters": [
+        {
+          "name": "nodeId",
+          "filterType": "Equals",
+          "value": 4
+        },
+        {
+          "name": "nodeName",
+          "filterType": "Contains",
+          "value": "green"
+        },
+        {
+          "name": "startDate",
+          "filterType": "Equals",
+          "value": "2020-01-01"
+        },
+        {
+          "name": "startDate",
+          "filterType": "Range",
+          "value": "2009-01-01",
+          "value1": "2011-01-01"
+        }
+      ],
+      "sortBy": "nodeName",
+      "sortOrder": "Desc",
+      "total": 0,
+      "totalPages": 0
+    }
+  }
+}</pre>
+
+<h2 id="h2__1349316600" data-has-heading-anchor="true">
+  Getting Datasources
+<a href="/articles/spm-rest-api-guide-publication/environment-nodes-and-data-sources/a/h2__1349316600" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/environment-nodes-and-data-sources/a/h2__1349316600&#39;,this);"></a></h2>
+<ul>
+  <li>Request: POST {BaseUrl}/datasources</li>
+</ul>
+
+<pre class="inlineCode">{
+  "responseType": "Lightweight",          // Type of response
+  "pagination": {
+    "page": 1,                             // Current page
+    "pageSize": 5,                         // Number of results per page
+    "sortBy": "DatasourceId",              // Field to sort by (can also use DatasourceName)
+    "sortOrder": "desc",                   // Sort order: "asc" or "desc"
+    "filters": [
+      {
+        "name": "country",                // Filter by country
+        "filterType": "equals",           // Exact match
+        "value": "spain"                  // Example country value
+      }
+    ]
+  }
+}</pre>
+
+<ul>
+  <li>Example Response: {BaseUrl}/datasources</li>
+</ul>
+
+<pre class="inlineCode">{
+  "isSuccess": true,
+  "message": "GetDatasources Data retrieved successfully",
+  "data": {
+    "data": [
+      {
+        "datasourceId": 3682,
+        "datasourceName": "Road Business - Spain",
+        "nodeName": "Road Business - Spain",
+        "country": "Spain",
+        "emissionType": "RoadBusiness",
+        "emissionFactorSource": "Spain"
+      }
+    ],
+    "pagination": {
+      "page": 1,
+      "pageSize": 5,
+      "filters": [
+        {
+          "name": "country",
+          "filterType": "Equals",
+          "value": "spain"
+        }
+      ],
+      "sortBy": "DatasourceId",
+      "sortOrder": "Desc",
+      "total": 151,
+      "totalPages": 31
+    }
+  }
+}</pre>
+
+<ul>
+  <li>Request: POST {BaseUrl}/datasources</li>
+</ul>
+
+<pre class="inlineCode">{
+  "responseType": "Full",          // Type of response
+  "pagination": {
+    "page": 1,                             // Current page
+    "pageSize": 5,                         // Number of results per page
+    "sortBy": "DatasourceId",              // Field to sort by (can also use DatasourceName)
+    "sortOrder": "desc",                   // Sort order: "asc" or "desc"
+    "filters": [
+      {
+        "name": "country",                // Filter by country
+        "filterType": "equals",           // Exact match
+        "value": "spain"                  // Example country value
+      }
+    ]
+  }
+}</pre>
+
+<ul>
+  <li>Example Response: {BaseUrl}/datasources</li>
+</ul>
+
+<pre class="inlineCode">{
+  "isSuccess": true,
+  "message": "GetDatasources Data retrieved successfully",
+  "data": {
+    "data": [
+      {
+        "datasourceId": 3682,
+        "datasourceName": "Road Business - Spain",
+        "nodeName": "Road Business - Spain",
+        "country": "Spain",
+        "emissionType": "RoadBusiness",
+        "emissionFactorSource": "Spain",
+        "additionalInfo": {
+          "parentNodeId": 1970,
+          "parentReferenceNumber": "VMY Business Travel",
+          "scope": 3,
+          "ghgScope3Category": 6,
+          "metadata": {
+            "createdDate": "2022-10-07T14:01:08.73",
+            "lastModifiedDate": "2022-11-08T12:28:45.013"
+          }
+        }
+      }
+    ],
+    "pagination": {
+      "page": 1,
+      "pageSize": 5,
+      "filters": [
+        {
+          "name": "country",
+          "filterType": "Equals",
+          "value": "spain"
+        }
+      ],
+      "sortBy": "DatasourceId",
+      "sortOrder": "Desc",
+      "total": 151,
+      "totalPages": 31
+    }
+  }
+}</pre><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

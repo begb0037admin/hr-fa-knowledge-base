@@ -1,0 +1,267 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/spm-rest-api-guide-publication/creating-updating-deleting-environment-files"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Creating/Updating/Deleting Environment Files</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Creating/Updating/Deleting Environment Files';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/spm-rest-api-guide-publication/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1__1002502318" data-has-heading-anchor="true">
+  Creating/Updating Environment files
+<a href="/articles/spm-rest-api-guide-publication/creating-updating-deleting-environment-files/a/h1__1002502318" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/creating-updating-deleting-environment-files/a/h1__1002502318&#39;,this);"></a></h1>
+<hr/>
+<p>
+  Request: POST {baseUrl}/EnvironmentInput/
+</p>
+<p class="noteBox"><b>Note:</b> Setting the fileID differs when creating versus updating. When creating a new file, set the fileID as 0 in your request. When updating an existing file, set the correct fileID. This allows the API to know which file you want to update.</p>
+
+<h2 id="h2_1496677395" data-has-heading-anchor="true">
+  Electricity
+<a href="/articles/spm-rest-api-guide-publication/creating-updating-deleting-environment-files/a/h2_1496677395" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/creating-updating-deleting-environment-files/a/h2_1496677395&#39;,this);"></a></h2>
+
+<pre class="inlineCode">{
+  "fileId": 0,
+  "ViewId": 0,
+  "nodeId": 10708,
+  "dataSourceId": 10710,
+  "activityType": "ElectricityGrid",
+  "estimationCategory": "Actual",
+  "RowData": [
+    {
+      "RowNumber": 0,
+      "dateFrom": "2026-02-01",
+      "dateTo": "2026-02-28",
+      "EnergyType": "Green Tariff (Peak)",
+      "consumption": 355,
+      "consumptionUnits": "MJ",
+      "cost": 1212.12,
+      "costUnits": "USD",
+      "marketBasedEmission": 300.45,
+      "marketBasedUnit": "gram",
+      "efMarketBasedCO2": 1.78,
+      "instrumentType": "J-Credit",
+      "tagIdentifier": "Example API Tag",
+      "mpan": "",
+      "evidenceSource": "",
+      "ElectricitySold": 1234.123456,
+      "ElectricitySoldUnits": "kWh",
+      "ClimateChangeLevy": 1.6,
+      "CRCCost": 12323.12,
+      "DataQuality": "Estimated",
+      "CustomFields": {
+        "Name of your cusom field": "Value of the custom field",
+        "Example Custom Field 2": "Value for custom field 2"
+      },
+      "Operation": "Create"
+    }
+  ]
+}</pre>
+
+<h2 id="h2_1743625042" data-has-heading-anchor="true">
+  Fuel
+<a href="/articles/spm-rest-api-guide-publication/creating-updating-deleting-environment-files/a/h2_1743625042" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/creating-updating-deleting-environment-files/a/h2_1743625042&#39;,this);"></a></h2>
+
+<pre class="inlineCode">{
+  "fileId": 0,
+  "viewId": 0,
+  "nodeId": 2724,
+  "dataSourceId": 3860,
+  "activityType": "Fuel",
+  "estimationCategory": "Actual",
+  "RowData": [
+    {
+      "rowNumber": 0,
+      "Operation": "Create",
+      "dateFrom": "1980-01-01",
+      "dateTo": "1980-01-31",
+      "TypeOfFuel": "Biodiesel",
+      "prcBioFuel": 99.123456,
+      "SystemID": "wewrer",
+      "mprn": "wrweatz",
+      "CRCCost": 123456789012.12,
+      "ClimateChangeLevy": 123456789012.12,
+      "consumption": 123456789012.12346,
+      "consumptionUnits": "litre",
+      "cost": 123456789012.12,
+      "costUnits": "PLN",
+      "marketBasedEmission": 123456789012.12346,
+      "marketBasedUnit": "gram",
+      "efMarketBasedCO2": 0,
+      "instrumentType": "J-Credit",
+      "evidenceSource": "Evidence document",
+      "tagIdentifier": "05122025",
+      "customfields": {
+        "Another example custome field": "Value Example"
+      }
+    }
+  ]
+}</pre>
+
+<h2 id="h2_1037415564" data-has-heading-anchor="true">
+  HeatGrid
+<a href="/articles/spm-rest-api-guide-publication/creating-updating-deleting-environment-files/a/h2_1037415564" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/creating-updating-deleting-environment-files/a/h2_1037415564&#39;,this);"></a></h2>
+
+<pre class="inlineCode">{
+  "fileId": 0,
+  "ViewId": 0,
+  "nodeId": 2724,
+  "dataSourceId": 4357,
+  "activityType": "HeatGrid",
+  "estimationCategory": "actual",
+  "RowData": [
+    {
+      "RowNumber": 0,
+      "operation": "Create",
+      "dateFrom": "2015-01-01",
+      "dateTo": "2015-01-31",
+      "typeofheat": "Heat and steam",
+      "typeoffuel": null,
+      "consumption": 1200,
+      "consumptionUnits": "litre",
+      "cost": 34.78,
+      "costUnits": "USD",
+      "marketBasedEmission": 34.8,
+      "marketBasedUnit": "kg",
+      "efMarketBasedCO2": 6.7,
+      "instrumentType": "T-REC",
+      "meterSerialNumber": "EXG1234",
+      "evidenceSource": "https://www.wikipedia.org/",
+      "tagIdentifier": "1st time for API Heat creation with POST/PUT call",
+      "PrcBioFuel": 99.1234,
+      "climateChangeLevy": 123456789012.12,
+      "crcCost": 12.12,
+      "dataQuality": "Customer Reading",
+      "CustomFields": {
+        "DDl for heat grid": "11"
+      }
+    }
+  ]
+}</pre>
+
+<h2 id="h2__1779147911" data-has-heading-anchor="true">
+  Water
+<a href="/articles/spm-rest-api-guide-publication/creating-updating-deleting-environment-files/a/h2__1779147911" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/creating-updating-deleting-environment-files/a/h2__1779147911&#39;,this);"></a></h2>
+
+<pre class="inlineCode">{
+  "fileId": 0,
+  "ViewId": 0,
+  "nodeId": 2724,
+  "dataSourceId": 3858,
+  "activityType": "Water",
+  "estimationCategory": "Actual",
+  "RowData": [
+    {
+      "RowNumber": 0,
+      "dateFrom": "2026-05-01",
+      "dateTo": "2026-06-30",
+      "WaterType": "Recycled",
+      "WaterSubType": "Recycled",
+      "consumption": 23,
+      "consumptionUnits": "kilolitre",
+      "cost": 123.23,
+      "CostUnits": "GBP",
+      "marketBasedEmission": 67.25,
+      "marketBasedUnit": "kg",
+      "efMarketBasedCO2": 0.44,
+      "instrumentType": "T-REC",
+      "TagIdentifier": "tag iden",
+      "evidenceSource": "evidence",
+      "MeterSerialNumber": "123",
+      "CustomFields": {
+        "Hard Water": "Water 2"
+      },
+      "Operation": "Create"
+    }
+  ]
+}</pre>
+
+<h2 id="h2__1418037067" data-has-heading-anchor="true">
+  How to edit/create/delete the individual rows of the file
+<a href="/articles/spm-rest-api-guide-publication/creating-updating-deleting-environment-files/a/h2__1418037067" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/creating-updating-deleting-environment-files/a/h2__1418037067&#39;,this);"></a></h2>
+<p>
+  The individual rows within the files are created, updated, or deleted using the RowNumber (1,2,3,4,etc) and Operation ("Create", "Update", "Delete") properties.
+</p>
+<ul>
+  <li>Creating a new row - The RowNumber should be set to 0 and the Operation set as "Create"</li>
+  <li>Updating a row - The RowNumber should be set to the RowNumber you wish to update and the Operation set as "Update"</li>
+  <li>Deleting a row - The RowNumber should be set to the RowNumber you wish to delete and the Operation set as "Delete"</li>
+</ul>
+<p>Example of Delete row number 2:</p>
+
+<pre class="inlineCode">"RowData": [
+  {
+    "Operation": "DELETE",
+    "RowNumber": 2
+  }
+]</pre>
+
+<p>Example of Update row 1:</p>
+
+<pre class="inlineCode">{
+  "fileId": 8194,
+  "viewId": 2,
+  "nodeId": 10,
+  "dataSourceId": 68,
+  "activityType": "ElectricityGrid",
+  "estimationCategory": "Actual",
+  "RowData": [
+    {
+      "EnergyType": "Standard Grid (General)",
+      "DateFrom": "2026-03-01",
+      "DateTo": "2026-03-31",
+      "Consumption": 5000,
+      "ConsumptionUnits": "kWh",
+      "Cost": 2325.11,
+      "CostUnits": "GBP",
+      "MarketBasedEmission": 200.67,
+      "MarketBasedUnit": "kg",
+      "InstrumentType": "",
+      "EvidenceSource": "Updated Invoice",
+      "EstimationCategory": "Actual",
+      "ActivityType": "ElectricityGrid",
+      "TagIdentifier": "SITE-A-MAIN-METER",
+      "MPAN": "1234567890123",
+      "KeepFileStatus": true,
+      "Operation": "UPDATE",
+      "RowNumber": 1
+    }
+  ]
+}</pre>
+
+<h3 id="h3_361635500" data-has-heading-anchor="true">
+  Deleting individual rows within a file
+<a href="/articles/spm-rest-api-guide-publication/creating-updating-deleting-environment-files/a/h3_361635500" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/creating-updating-deleting-environment-files/a/h3_361635500&#39;,this);"></a></h3>
+<p>Request Example:</p>
+
+<pre class="inlineCode">{
+  "fileId": 8194,
+  "viewId": 39,
+  "nodeId": 10,
+  "dataSourceId": 68,
+  "activityType": "ElectricityGrid",
+  "estimationCategory": "Actual",
+  "RowData": [
+    {
+      "Operation": "DELETE",
+      "RowNumber": 2
+    }
+  ]
+}</pre>
+
+<div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

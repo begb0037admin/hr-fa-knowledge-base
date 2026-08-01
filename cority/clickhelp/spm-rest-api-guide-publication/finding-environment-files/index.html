@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/spm-rest-api-guide-publication/finding-environment-files"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Finding Environment Files</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Finding Environment Files';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/spm-rest-api-guide-publication/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h1 id="h1__1151233143" data-has-heading-anchor="true">
+  Finding Environment Files
+<a href="/articles/spm-rest-api-guide-publication/finding-environment-files/a/h1__1151233143" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/finding-environment-files/a/h1__1151233143&#39;,this);"></a></h1>
+<hr/>
+
+<h2 id="h2_408433196" data-has-heading-anchor="true">
+  Find existing environment files
+<a href="/articles/spm-rest-api-guide-publication/finding-environment-files/a/h2_408433196" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/finding-environment-files/a/h2_408433196&#39;,this);"></a></h2>
+<ul>
+  <li>Request: POST {baseUrl}/EnvironmentInput/files</li>
+  <li>Body example:</li>
+</ul>
+
+<pre class="inlineCode">{
+  "viewId": 2,
+  "nodeId": 12,
+  "includeHierarchy": true,
+  "pagination": {
+    "page": 1,
+    "pageSize": 10,
+    "sortBy": "DateFrom",
+    "sortOrder": "Desc"
+  }
+}</pre>
+
+<ul>
+  <li>Response example:</li>
+</ul>
+
+<pre class="inlineCode">{
+  "isSuccess": true,
+  "message": "File records successfully returned.",
+  "validationErrors": [],
+  "data": {
+    "data": [
+      {
+        "fileId": 5722,
+        "nodeId": 10,
+        "datasourceId": 68,
+        "fileName": "Edinburgh-Electricity-20241111141436",
+        "activityType": "ElectricityGrid",
+        "fromDate": "2024-01-01",
+        "toDate": "2024-12-31",
+        "dateUpdated": "2025-08-07T09:16:28.22",
+        "fileStatus": "Locked"
+      },
+      {
+        "fileId": 4693,
+        "nodeId": 12,
+        "datasourceId": 683,
+        "fileName": "India 2025 Fuel.xlsx",
+        "activityType": "Fuel",
+        "fromDate": "2025-01-01",
+        "toDate": "2025-12-31",
+        "dateUpdated": "2021-02-06T13:32:11.407",
+        "fileStatus": "CalculationSuccessful"
+      }
+    ],
+    "totalRows": 2
+  }
+}</pre>
+
+<h2 id="h2_1621955657" data-has-heading-anchor="true">
+  Getting the file data
+<a href="/articles/spm-rest-api-guide-publication/finding-environment-files/a/h2_1621955657" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!spm-rest-api-guide-publication/finding-environment-files/a/h2_1621955657&#39;,this);"></a></h2>
+<p>You will need to know the fileId and the activityType.</p>
+<ul>
+  <li>Request: POST {baseUrl}/EnvironmentInput/get</li>
+  <li>Body example:</li>
+</ul>
+
+<pre class="inlineCode">{
+  "fileid": 5722,
+  "activitytype": "ElectricityGrid",
+  "Pagination": {
+    "page": 1,
+    "pageSize": 10,
+    "sortBy": "rowNumber",
+    "sortOrder": "Asc"
+  }
+}</pre>
+
+<ul>
+  <li>Response example (Structured to include all of the individual fields per row of data requested)</li>
+</ul>
+
+<pre class="inlineCode">{
+  "isSuccess": true,
+  "message": "Electricity Grid data returned successfully.",
+  "validationErrors": [],
+  "data": {
+    "estimationCategory": "Actual",
+    "fileName": "Edinburgh-Electricity-20241111141436",
+    "fileStatus": "Locked",
+    "userPermission": "Write",
+    "pagedInputFiles": {
+      "data": [
+        {
+          "fileId": 5722,
+          "rowNumber": 1,
+          "colNumber": 6,
+          "fieldId": 2261,
+          "clientId": 2,
+          "nodeId": 10,
+          "dataSourceId": 68,
+          "viewId": 0,
+          "integerValue": null,
+          "decimalValue": 1000,
+          "stringValue": null,
+          "dateValue": null,
+          "fieldName": "Consumption",
+          "fieldDescription": "Consumption",
+          "valueType": 2,
+          "inventoryTableName": "",
+          "sqlDataType": null,
+          "category": 15,
+          "selector": "",
+          "breakDownEmission": false,
+          "startDate": "2024-01-01T00:00:00",
+          "endDate": "2024-12-31T00:00:00",
+          "calculationErrors": ""
+        },
+        {
+          "fileId": 5722,
+          "rowNumber": 1,
+          "colNumber": 7,
+          "fieldId": 2262,
+          "clientId": 2,
+          "nodeId": 10,
+          "dataSourceId": 68,
+          "viewId": 0,
+          "integerValue": null,
+          "decimalValue": null,
+          "stringValue": "kWh",
+          "dateValue": null,
+          "fieldName": "Consumption_Units",
+          "fieldDescription": "Consumption Units",
+          "valueType": 3,
+          "inventoryTableName": "",
+          "sqlDataType": null,
+          "category": 16,
+          "selector": "",
+          "breakDownEmission": false,
+          "startDate": "2024-01-01T00:00:00",
+          "endDate": "2024-12-31T00:00:00",
+          "calculationErrors": ""
+        },
+        {
+          "fileId": 5722,
+          "rowNumber": 1,
+          "colNumber": 5,
+          "fieldId": 2267,
+          "clientId": 2,
+          "nodeId": 10,
+          "dataSourceId": 68,
+          "viewId": 0,
+          "integerValue": null,
+          "decimalValue": null,
+          "stringValue": "Standard Grid (General)",
+          "dateValue": null,
+          "fieldName": "Energy_Type",
+          "fieldDescription": "Grid Electricity Type",
+          "valueType": 3,
+          "inventoryTableName": "",
+          "sqlDataType": null,
+          "category": 14,
+          "selector": "",
+          "breakDownEmission": false,
+          "startDate": "2024-01-01T00:00:00",
+          "endDate": "2024-12-31T00:00:00",
+          "calculationErrors": ""
+        }
+      ],
+      "totalRows": 1
+    }
+  }
+}</pre><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>
