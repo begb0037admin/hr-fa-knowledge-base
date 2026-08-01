@@ -1,0 +1,142 @@
+[
+  {
+    "t": "IE2 Administration Guide",
+    "f": "IE2 Administration Guide V.2.1.docx",
+    "s": "Administrator guide for the IE2 platform underlying IRIS: creating user accounts, user groups and unrestricted access, Single Sign-On authentication ID, password resets, archiving and locked accounts, registering sites, assigning user access/permissions, permissions reports, managing lookup lists, audit logs, data archiving, and uploading help/guidance documents.",
+    "src": "IRIS",
+    "tp": "IRIS Administration",
+    "sy": "IRIS",
+    "e": "docx",
+    "m": "2026-08-01"
+  },
+  {
+    "t": "IE2 Report Builder Guide",
+    "f": "IE2 Report Builder Guide.docx",
+    "s": "Guide to creating standard reports in IE2/IRIS: report settings and criteria, adding/removing/reordering data table columns, aggregation, column visibility and editing, calculations, building Bar/Column/Line/Pie graphs, results page layout, deleting a report, and managing the reports list.",
+    "src": "IRIS",
+    "tp": "IRIS Reporting & Search",
+    "sy": "IRIS",
+    "e": "docx",
+    "m": "2026-08-01"
+  },
+  {
+    "t": "IE2 Search Guide",
+    "f": "IE2 Search Guide.docx",
+    "s": "Guide to the IE2/IRIS Search Engine: the Spotlight and All Tables search tabs, building search criteria, reading search results, download options, and creating and publishing saved searches.",
+    "src": "IRIS",
+    "tp": "IRIS Reporting & Search",
+    "sy": "IRIS",
+    "e": "docx",
+    "m": "2026-08-01"
+  },
+  {
+    "t": "IRIS Support Team User Guide",
+    "f": "IRIS Support Team User Guide.docx",
+    "s": "Guide for the IRIS Support Team covering the main areas of admin support: adding/amending/removing user accounts and permissions, adding/amending/removing departments and buildings, reassigning incidents between departments, amending details on incident forms, and functionality changes such as amending dropdown list options.",
+    "src": "IRIS",
+    "tp": "IRIS Administration",
+    "sy": "IRIS",
+    "e": "docx",
+    "m": "2026-08-01"
+  },
+  {
+    "t": "IRIS Service Level Description (SLD)",
+    "f": "IRIS SLD.docx",
+    "s": "Service Level Description for the Incident Reporting and Investigation System (IRIS): document ownership and sign-off, service scope and description, support contacts, and service governance history.",
+    "src": "IRIS",
+    "tp": "IRIS Service Documentation",
+    "sy": "IRIS",
+    "e": "docx",
+    "m": "2026-08-01"
+  },
+  {
+    "t": "IRIS Baseline Data — User Groups, Data Flows & Data Model",
+    "f": "IRIS Baseline Data.xlsx",
+    "s": "Reference spreadsheet covering IRIS user groups and their permissions/access levels by data table (Incident Reporting Form, Person Involved, DSO Review, Investigations, Actions), the system's data flows (inputs/outputs), the user onboarding process step by step, and a full data model overview listing every field by system area/data table with special-category (GDPR) flags.",
+    "src": "IRIS",
+    "tp": "IRIS Data & Permissions Reference",
+    "sy": "IRIS",
+    "e": "xlsx",
+    "m": "2026-08-01"
+  },
+  {
+    "t": "Odyssey System Guidance — Configuration, Inventory & Waste Management",
+    "f": "Odyssey System Guidance.docx",
+    "s": "System administration guide for Odyssey (Radiation Management System): department/EA permit configuration, unsealed and sealed source inventory management (add/edit, aliquots, change of state), waste management and bin inventory, radiation protection instruments (RPI) and machine management, reporting, inventory templates, and permissions structure.",
+    "src": "Odyssey",
+    "tp": "Odyssey System Administration",
+    "sy": "Odyssey",
+    "e": "docx",
+    "m": "2026-08-01"
+  },
+  {
+    "t": "Radiation Management System (Odyssey) — Service Level Agreement",
+    "f": "Radiation Management System (Odyssey) - SLA.pdf",
+    "s": "Service Level Agreement for Odyssey, the University's Radiation Management System: purpose and parties to the agreement, service description, hours of service and support, approvals and document history.",
+    "src": "Odyssey",
+    "tp": "Odyssey Service Documentation",
+    "sy": "Odyssey",
+    "e": "pdf",
+    "m": "2026-08-01"
+  },
+  {
+    "t": "Odyssey Guidance — Worker Registration, Reports & Support",
+    "f": "Odyssey Guidance 1.1.pdf",
+    "s": "User guidance for Odyssey worker registration and day-to-day use: registering a new radiation worker (including external institutes and visitors), keeping worker records updated, running/downloading/automating reports, system admin and set-up (login, department details, signature, accessibility), and system support troubleshooting including common queries about registration and work-type forms.",
+    "src": "Odyssey",
+    "tp": "Odyssey Worker Registration & Reporting",
+    "sy": "Odyssey",
+    "e": "pdf",
+    "m": "2026-08-01"
+  },
+  {
+    "t": "Registering a New Radiation Worker — Workflow Summary",
+    "f": "Registering New Radiation Worker.docx",
+    "s": "Short workflow summary of the multi-stage Odyssey worker registration process: SRPS/RPS initiation, worker completion via SSO, RPS review, SRPS review, Academic Line Manager review, and final Safety Office compliance review.",
+    "src": "Odyssey",
+    "tp": "Odyssey Worker Registration & Reporting",
+    "sy": "Odyssey",
+    "e": "docx",
+    "m": "2026-08-01"
+  },
+  {
+    "t": "Cardinus Data Import Process (Automated)",
+    "f": "Cardinus Data Import Process.docx",
+    "s": "Describes the current, fully automated data import process into Cardinus (Healthy Working Plus): user data extracted from PeopleXD, transformed by the University's Azure team, and transferred to Cardinus via SFTP every Wednesday — replacing the previous manual Excel/CSV/FileZilla process. Covers the SSO unique identifier and how leavers are archived.",
+    "src": "Healthy Working Plus",
+    "tp": "Healthy Working Plus — Data & Admin",
+    "sy": "Healthy Working Plus (Cardinus)",
+    "e": "docx",
+    "m": "2026-08-01"
+  },
+  {
+    "t": "Cardinus Manual Import Process",
+    "f": "Cardinus Manual Import Process.pdf",
+    "s": "Historical record of the manual, pre-automation Cardinus import process: extracting people data from Work Tribe, processing with Alteryx, preparing and filtering the CSV file, and the step-by-step tasks required before each import. Kept for reference alongside the current automated process.",
+    "src": "Healthy Working Plus",
+    "tp": "Healthy Working Plus — Data & Admin",
+    "sy": "Healthy Working Plus (Cardinus)",
+    "e": "pdf",
+    "m": "2026-08-01"
+  },
+  {
+    "t": "ITS960 DSE Workflow — Distributed Approach",
+    "f": "ITS960 DSE - Workflow for distributed approach.pdf",
+    "s": "Workflow diagram for the distributed Display Screen Equipment (DSE) assessment approach: the roles involved (user, DSE admin system/PACE, DSE Coordinator, DSE Assessor/Equipment provider, Occupational Health specialist input, Central admin) and the sequence from invitation through course/assessment completion, risk resolution, and reporting.",
+    "src": "Healthy Working Plus",
+    "tp": "Healthy Working Plus — DSE Workflow",
+    "sy": "Healthy Working Plus (Cardinus)",
+    "e": "pdf",
+    "m": "2026-08-01"
+  },
+  {
+    "t": "Roles in Cardinus",
+    "f": "Roles in Cardinus.docx",
+    "s": "Summary of the authorisation levels/roles available in Cardinus (Healthy Working Plus) — DSE Coordinator, DSE Assessor, and Departmental Safety Officer — describing each role's responsibilities, the PACE functionality needed, and the recommended authorisation level for each.",
+    "src": "Healthy Working Plus",
+    "tp": "Healthy Working Plus — Roles & Permissions",
+    "sy": "Healthy Working Plus (Cardinus)",
+    "e": "docx",
+    "m": "2026-08-01"
+  }
+]
