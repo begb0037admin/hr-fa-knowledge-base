@@ -89,7 +89,20 @@ jobs:
               sleep 5
             done
             if [ "$pushed" != "true" ]; then
-              echo "  ! FAILED to push $pub after 3 attempts — leaving committed locally, will surface as a diff on next checkout"
+              echo "  ! FAILED to push $pub after 3 attempts — discarding local commit and resyncing to origin"
+              echo "$pub" >> /tmp/failed_publications.txt
+              # Without this reset, the failed commit stays local and every
+              # subsequent publication's commit piles on top of it, so the
+              # NEXT push carries two publications' worth of new objects, and
+              # the one after that three, snowballing until every remaining
+              # publication in the run fails too (this is exactly what
+              # happened 31 July 2026: one failure at meddbase-help-center
+              # cascaded into 34 consecutive failures). Resetting isolates
+              # each publication's failure so the rest of the run is
+              # unaffected — the failed one can simply be retried later via
+              # the `publications` input.
+              git fetch origin main
+              git reset --hard origin/main
             fi
           done < /tmp/publications.txt
 
@@ -108,13 +121,23 @@ jobs:
               overall["total_failed"] += s["total_failed"]
               overall["total_images"] += s["total_images"]
               overall["failures"].extend(s["failures"])
+          import os
+          failed_pubs = []
+          if os.path.exists("/tmp/failed_publications.txt"):
+              with open("/tmp/failed_publications.txt") as fh:
+                  failed_pubs = [l.strip() for l in fh if l.strip()]
+          overall["publications_failed_to_push"] = failed_pubs
           with open("cority_scrape_stats.json", "w") as fh:
               json.dump(overall, fh, indent=2)
+
           print("\n=== DONE ===")
-          print(f"Publications: {len(overall['publications'])}")
+          print(f"Publications scraped+pushed: {len(overall['publications'])}")
           print(f"Articles: {overall['total_succeeded']}/{overall['total_articles']} succeeded")
           print(f"Images downloaded: {overall['total_images']}")
-          print(f"Failures: {overall['total_failed']}")
+          print(f"Scraper failures: {overall['total_failed']}")
+          print(f"Publications that FAILED TO PUSH (retry these via the publications input): {len(failed_pubs)}")
+          if failed_pubs:
+              print(",".join(failed_pubs))
           PYEOF
 
       - name: Upload results
