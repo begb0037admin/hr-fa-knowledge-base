@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/report-writer-utility-guide/configuring-http-and-https-ssl"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Configuring http and https (SSL)</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Configuring http and https (SSL)';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/report-writer-utility-guide/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+		<h1 style="text-align:left;text-indent:0pt;margin:12pt 0pt 3pt 0pt;line-height:1.15;page-break-after:avoid;" id="h1_1979856394" data-has-heading-anchor="true">
+			<a id="_Toc294174321"></a><a id="_Toc494982143"></a><a id="_Toc466625239"></a><span style="color:#F78F1E;background-color:transparent;font-family:Cambria;font-size:21px;font-weight:bold;font-style:normal;">Configuring http and https (SSL)</span><a href="/articles/report-writer-utility-guide/configuring-http-and-https-ssl/a/h1_1979856394" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!report-writer-utility-guide/configuring-http-and-https-ssl/a/h1_1979856394&#39;,this);"></a></h1>
+		<p style="text-align:left;text-indent:0pt;margin:0pt 0pt 10pt 0pt;line-height:1.15;"><span style="color:#000000;background-color:transparent;font-family:Calibri;font-size:15px;font-weight:normal;font-style:normal;">To use https with the Report Writer Utility web service, web.config must be configured as follows:</span></p><ul style="margin-top:0;margin-bottom:0;">
+			<li style="text-align:left;margin:5pt 0pt 5pt 0pt;list-style-type:disc;color:#000000;background-color:transparent;font-family:Arial;font-size:11pt;font-weight:normal;font-style:normal;"><span style="color:#000000;background-color:transparent;font-family:Calibri;font-size:15px;font-weight:normal;font-style:normal;">The end point binding must contain a base address beginning with https.</span></li><li style="text-align:left;margin:5pt 0pt 5pt 0pt;list-style-type:disc;color:#000000;background-color:transparent;font-family:Arial;font-size:11pt;font-weight:normal;font-style:normal;"><span style="color:#000000;background-color:transparent;font-family:Calibri;font-size:15px;font-weight:normal;font-style:normal;">The mex end point must use mexHttpsBinding.</span></li><li style="text-align:left;margin:5pt 0pt 5pt 0pt;list-style-type:disc;color:#000000;background-color:transparent;font-family:Arial;font-size:11pt;font-weight:normal;font-style:normal;"><span style="color:#000000;background-color:transparent;font-family:Calibri;font-size:15px;font-weight:normal;font-style:normal;">The wsHttpsBinding security mode must be set to Transport. </span></li></ul>
+		<p style="text-align:left;text-indent:0pt;margin:0pt 0pt 10pt 0pt;line-height:1.15;"><span style="color:#000000;background-color:transparent;font-family:Calibri;font-size:15px;font-weight:normal;font-style:normal;">Examples: &nbsp;</span></p><ul style="margin-top:0;margin-bottom:0;">
+			<li style="text-align:left;margin:5pt 0pt 5pt 0pt;list-style-type:disc;color:#000000;background-color:transparent;font-family:Arial;font-size:11pt;font-weight:normal;font-style:normal;"><span style="color:#000000;background-color:transparent;font-family:Calibri;font-size:15px;font-weight:normal;font-style:normal;">&lt;security mode="Transport"&gt;&lt;!--change to "None" for http--&gt;</span></li><li style="text-align:left;margin:5pt 0pt 5pt 0pt;list-style-type:disc;color:#000000;background-color:transparent;font-family:Arial;font-size:11pt;font-weight:normal;font-style:normal;"><span style="color:#000000;background-color:transparent;font-family:Calibri;font-size:15px;font-weight:normal;font-style:normal;">&lt;endpoint address="https://myserver/gx_pr/webservice/Report Writer Utilityservice.svc" binding="wsHttpBinding"…</span></li><li style="text-align:left;margin:5pt 0pt 5pt 0pt;list-style-type:disc;color:#000000;background-color:transparent;font-family:Arial;font-size:11pt;font-weight:normal;font-style:normal;"><span style="color:#000000;background-color:transparent;font-family:Calibri;font-size:15px;font-weight:normal;font-style:normal;">&lt;endpoint address="mex" binding="mexHttpsBinding" contract="IMetadataExchange"/&gt;</span></li></ul>
+		<p style="text-align:left;text-indent:0pt;margin:0pt 0pt 10pt 0pt;line-height:1.15;"><span style="color:#000000;background-color:transparent;font-family:Calibri;font-size:15px;font-weight:normal;font-style:normal;">If you are not using https (SSL), the base address should begin with http, the mex binding should be mexHttpBinding, and the security mode should be set to None.</span><a id="_Toc466625240"></a><a id="_Toc494982144"></a><a id="_Toc294174319"></a></p><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>
