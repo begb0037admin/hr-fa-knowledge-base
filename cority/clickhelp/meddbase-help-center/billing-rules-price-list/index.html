@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/meddbase-help-center/billing-rules-price-list"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Billing Rules - Adjustment Price List</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Billing Rules - Adjustment Price List';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/meddbase-help-center/Style.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/meddbase-help-center/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/meddbase-help-center/Script.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h2 id="h_01JBA1AK1J6YFSFRRGCS4J5D3F" data-has-heading-anchor="true">
+  What is the context of this article?
+<a href="/articles/meddbase-help-center/billing-rules-price-list/a/h_01JBA1AK1J6YFSFRRGCS4J5D3F" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/billing-rules-price-list/a/h_01JBA1AK1J6YFSFRRGCS4J5D3F&#39;,this);"></a></h2>
+<hr/>
+<p>
+  A Charge Band<span> always has a Total Charge Price List (the full cost of the service).&nbsp;</span><span style="font-size: 10pt;">Optionally, you can add an Adjustment Price List if you want to control how costs are split between the third-party payer and the patient.</span>
+</p>
+<p>
+  <span>Adjustment Price List options include:</span>
+</p>
+<ul>
+  <li>
+    <span>Benefit Maxima – maximum amount the third-party payer will pay.
+    </span>
+  </li>
+  <li>
+    <span>Patient Contribution – maximum amount the patient will pay.</span>
+  </li>
+</ul>
+<p>
+  <span>Both options can be a fixed value or a percentage.&nbsp;</span>
+</p>
+<h2 id="h_01JBA19Q7ZXEM6MZ5DNARBWP8E" data-has-heading-anchor="true">
+  <span>What is the purpose of this article?</span>
+<a href="/articles/meddbase-help-center/billing-rules-price-list/a/h_01JBA19Q7ZXEM6MZ5DNARBWP8E" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/billing-rules-price-list/a/h_01JBA19Q7ZXEM6MZ5DNARBWP8E&#39;,this);"></a></h2>
+<hr/>
+<p>
+  <span>This article will explain how to configure a price adjustment list, including:&nbsp;&nbsp;</span>
+</p>
+<ul>
+  <li>
+    <span>How to configure a Benefit Maxima Price List type</span>
+  </li>
+  <li>
+    <span>How to configure a Patient Contribution Price List type</span>
+  </li>
+</ul>
+<h3 id="h_01HNG26E5XWDY2VZZGY85VZJMK" data-has-heading-anchor="true">
+  <span>How to configure a Benefit Maxima</span>
+<a href="/articles/meddbase-help-center/billing-rules-price-list/a/h_01HNG26E5XWDY2VZZGY85VZJMK" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/billing-rules-price-list/a/h_01HNG26E5XWDY2VZZGY85VZJMK&#39;,this);"></a></h3>
+<hr/>
+<p>
+  <span>When Benefit Maxima is used, a t</span><span style="font-size: 10pt;">hird-party payer pays up to the Benefit Maxima amount (or %) and the p</span><span style="font-size: 10pt;">atient pays the remainder of the Total Charge Price.</span>
+</p>
+<p>
+  For example, when an Employer with Benefit Maxima (Fixed Amount) is configured with a&nbsp;<span style="font-size: 10pt;">Total Charge Price of £300 and the&nbsp;</span><span style="font-size: 10pt;">Benefit Maxima of £150, the Employer is invoiced&nbsp;</span><span style="font-size: 10pt;">£150 and the Patient is invoiced&nbsp;</span><span style="font-size: 10pt;">£150 (the remainder).&nbsp;</span>
+</p>
+<p>
+  To configure the Benefit Maxima, go to&nbsp;<b>Admin &gt; Billing rules</b><b>:</b>
+</p>
+<ol>
+  <li>
+    Click a Price List<b> </b>from the list of<b> Billing Rules.&nbsp;</b>
+  </li>
+  <li>
+    From the <b>Price type </b>drop-down, choose <b>Benefit Maxima</b> (or <b>Benefit Maxima % of total</b>).&nbsp;
+    <br/>
+    <img src="images/Benefit%20Maxima.png" alt="" style="width: 750px; height: 492px;" loading="lazy"/>
+    <br/>
+  </li>
+  <li>
+    In the <b>Service Prices</b> list, enter a Benefit Maxima amount or percentage.&nbsp;
+    <br/>
+    <img src="images/Benefit%20Maxima%20service%20price.png" alt="" style="width: 800px; height: 134px;" loading="lazy"/>
+  </li>
+  <li>
+    After creating an adjustment Price List, add the new Price List to the Charge Band. For more information, see&nbsp;<a href="/articles/meddbase-help-center/360008681593-adding-a-price-list-to-a-charge-band" onclick="return n(&#39;!meddbase-help-center/360008681593-adding-a-price-list-to-a-charge-band&#39;,this);">Adding a Price List to a Charge Band</a>.
+  </li>
+</ol>
+<h3 id="h3__695356257" data-has-heading-anchor="true">
+  How to configure a Patient Contribution amount
+<a href="/articles/meddbase-help-center/billing-rules-price-list/a/h3__695356257" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/billing-rules-price-list/a/h3__695356257&#39;,this);"></a></h3>
+<hr/>
+<p>
+  When Patient Contribution is used, the p<span style="font-size: 10pt;">atient pays up to the Patient Contribution amount (or %) and the t</span><span style="font-size: 10pt;">hird-party payer pays the remainder of the Total Charge Price.</span>
+</p>
+<p>
+  For example, when an Employer with Patient Contribution (Fixed Amount) is configured with a&nbsp;Total Charge Price of £400 and a Patient Contribution of £50, the Patient is invoiced&nbsp;£50 and the Employer is invoiced&nbsp;£350 (the remainder).&nbsp;
+</p>
+<p>
+  To configure the Patient Contribution, go to&nbsp;<b>Admin &gt; Billing rules</b><b>:</b>
+</p>
+<ol>
+  <li>
+    Click a Price List<b> </b>from the list of<b> Billing Rules.&nbsp;</b>
+  </li>
+  <li>
+    From the <b>Price type </b>drop-down, choose <b>Patient Contributions</b>&nbsp;(or <b>Patient Contribution % of total</b>).&nbsp;
+    <br/>
+    <img src="images/Patient%20Contribution.png" alt="" style="width: 750px; height: 491px;" loading="lazy"/>
+    <br/>
+  </li>
+  <li>
+    In the <b>Service Prices</b> list, enter a Patient Contribution amount or percentage.&nbsp;
+    <br/>
+    <img src="images/Patient%20Contribution%20service%20price.png" alt="" style="width: 850px; height: 135px;" loading="lazy"/>
+  </li>
+  <li>
+    After creating an adjustment Price List, add the new Price List to the Charge Band. For more information, see&nbsp;<a href="/articles/meddbase-help-center/360008681593-adding-a-price-list-to-a-charge-band" onclick="return n(&#39;!meddbase-help-center/360008681593-adding-a-price-list-to-a-charge-band&#39;,this);">Adding a Price List to a Charge Band</a>.
+  </li>
+</ol>
+<ol>
+</ol>
+<h2 id="h2_400678220" data-has-heading-anchor="true">
+  Scenario: Billing Rules for Employer-Paid Consultations
+<a href="/articles/meddbase-help-center/billing-rules-price-list/a/h2_400678220" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/billing-rules-price-list/a/h2_400678220&#39;,this);"></a></h2>
+<p>Test Company is an employer that the Chamber provides services to. For consultations, the total charged price is £750. The employer requires the patient to contribute&nbsp;£50&nbsp;toward the cost of the appointment.
+</p>
+<ol>
+  <li>
+    Define Price Lists.
+    <ul>
+      <li>
+        Total Charged Price&nbsp;
+        <ol>
+          <li>
+            Create a Price List of type&nbsp;Total Charged Price.
+          </li>
+          <li>
+            Add an item for&nbsp;Consultation&nbsp;priced at&nbsp;£750.
+          </li>
+        </ol>
+      </li>
+      <li>
+        Patient Contribution
+        <ol>
+          <li>
+            Create a Price List of type&nbsp;Patient Contribution.
+          </li>
+          <li>
+            Add an item for&nbsp;Consultation&nbsp;priced at&nbsp;£50.
+          </li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>
+      <span style="font-size: 10pt;">Configure Billing Rules -&nbsp;</span><span style="font-size: 10pt;">Add both Price Lists to the&nbsp;Test Company Charge Band:</span>
+    </p>
+    <ul>
+      <li>
+        <p>
+          <span style="font-size: 10pt;"></span><span style="font-size: 10pt;">Patient Contribution Price List rule</span>
+        </p>
+      </li>
+      <li>
+        <p>
+          <span style="font-size: 10pt;"></span><span style="font-size: 10pt;">Total Charged Price list rule</span>
+        </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>
+      <span style="font-size: 10pt;"></span><span style="font-size: 10pt;">Book an Appointment.
+      <br/>
+      </span><span style="font-size: 10pt;">When an appointment is booked, t</span><span style="font-size: 10pt;">wo invoices are generated:</span>
+    </p>
+    <ul>
+      <li>
+        <p>
+          <span style="font-size: 10pt;"></span><span style="font-size: 10pt;">Invoice 1:&nbsp;£700 charged to&nbsp;Test Company&nbsp;(Total Charged Price £750 minus Patient Contribution £50).</span>
+        </p>
+      </li>
+      <li>
+        <p>
+          <span style="font-size: 10pt;"></span><span style="font-size: 10pt;">Invoice 2:&nbsp;£50 charged to&nbsp;Patient.</span>
+        </p>
+      </li>
+    </ul>
+  </li>
+</ol>
+<p>
+  <img src="images/Billing%20rules%20adjustment%20price%20example.png" alt="" style="width: 1300px; height: 491px;" loading="lazy"/>
+</p>
+<p>
+</p>
+<p>
+  <br/>
+</p><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>

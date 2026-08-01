@@ -1,0 +1,124 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/meddbase-help-center/billing-rules-debtor-override"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Billing Rules - Debtor Override</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Billing Rules - Debtor Override';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/meddbase-help-center/Style.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/meddbase-help-center/Style1.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/meddbase-help-center/Script.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span><h2 id="h2_1798256882" data-has-heading-anchor="true">
+  What is the context of this article?
+<a href="/articles/meddbase-help-center/billing-rules-debtor-override/a/h2_1798256882" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/billing-rules-debtor-override/a/h2_1798256882&#39;,this);"></a></h2>
+<hr/>
+<p>
+  A Debtor Override is a rule used in billing systems when the organisation receiving the invoice is different from the organisation that owns the charge band or originally requested the service.
+</p>
+<p>
+  <span style="font-size: 10pt;">The Debtor Override rule in Meddbase allows you to&nbsp;invoice selected services to a third party, which is different from the company responsible for the charge band. This allows</span><span style="font-size: 10pt;">&nbsp;the service activity to still be recorded against the charge band, but the invoice is redirected to another named company (the override debtor). This ensures that specific services are billed correctly when a third party, partner organisation, sponsor, or funder is responsible for payment rather than the charge band owner.</span>
+</p>
+<p>
+  For example, the service belongs to Company A, but the invoice needs to go to Company B (a third party). The Debtor Override tells the system to bill Company B instead.&nbsp;
+</p>
+<h2 id="h2_808770255" data-has-heading-anchor="true">
+  <span>What is the purpose of this article?</span>
+<a href="/articles/meddbase-help-center/billing-rules-debtor-override/a/h2_808770255" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/billing-rules-debtor-override/a/h2_808770255&#39;,this);"></a></h2>
+<hr/>
+<p>
+  <span>This article describes the following:&nbsp;</span>
+</p>
+<ul>
+  <li id="h_01HNG26E5XWDY2VZZGY85VZJMK">
+    <span>Why is a Debtor Override needed?</span>
+  </li>
+  <li id="h_01HNG26E5XWDY2VZZGY85VZJMK">
+    <span>What are the pre-requisites for the the debtor override rule?</span>
+  </li>
+  <li id="h_01HNG26E5XWDY2VZZGY85VZJMK">
+    <span>How to configure the Debtor Override</span>
+  </li>
+  <li id="h_01HNG26E5XWDY2VZZGY85VZJMK">
+    <span>Scenario: Redirect Invoices</span>
+  </li>
+</ul>
+<h2 id="h2_1660054819" data-has-heading-anchor="true">Why is a Debtor Override Needed?
+<a href="/articles/meddbase-help-center/billing-rules-debtor-override/a/h2_1660054819" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/billing-rules-debtor-override/a/h2_1660054819&#39;,this);"></a></h2>
+<hr/>
+<pre></pre><p>Debtor Overrides are used to ensure the correct customer is billed, especially when:
+</p>
+<ul>
+<li>A service is provided to one company but paid for by another.
+</li>
+<li>A third-party sponsor or partner is responsible for the charges.
+</li>
+<li>A customer requests centralised billing or wants invoices directed to a parent or affiliated organisation.
+</li>
+<li>Costs must go to an external funding organisation rather than the operational unit.</li>
+</ul>
+<h3 id="h_01HNG26E5XWDY2VZZGY85VZJMK" data-has-heading-anchor="true">
+  <span>
+    <span>What are the pre-requisites for the the debtor override rule?</span>
+  </span>
+<a href="/articles/meddbase-help-center/billing-rules-debtor-override/a/h_01HNG26E5XWDY2VZZGY85VZJMK" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/billing-rules-debtor-override/a/h_01HNG26E5XWDY2VZZGY85VZJMK&#39;,this);"></a></h3>
+<hr/>
+<p id="h_01HNG26E5XWDY2VZZGY85VZJMK"><span style="font-size: 10pt;">Before applying a Debtor Override, the following must be configured:</span></p>
+<ul><li>The Charge Band must still have a valid Provide Services rule assigned.</li><li>A Price List must be linked to the Charge Band so that invoices can be generated.</li><li>The system still needs a price on the originating Charge Band, even when the invoice is redirected.</li><li>The Debtor Override payer company must be a valid debtor in the system.</li></ul><p>Once these conditions are met, the Debtor Override rule can successfully transfer charges to the designated company.</p><p id="h_01HNG26E5XWDY2VZZGY85VZJMK">The Debtor Override rule cannot be applied to the following:&nbsp;</p>
+<ul><li>A Self‑Pay or Company Only Charge Band</li><li>The internal company</li><li>The same company as the debtor company (i.e., you cannot override a debtor to itself)</li></ul><h3 id="h_01HNG26E5XWDY2VZZGY85VZJMK" data-has-heading-anchor="true">
+  <span>How to configure the Debtor Override</span>
+<a href="/articles/meddbase-help-center/billing-rules-debtor-override/a/h_01HNG26E5XWDY2VZZGY85VZJMK" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/billing-rules-debtor-override/a/h_01HNG26E5XWDY2VZZGY85VZJMK&#39;,this);"></a></h3>
+<hr/>
+<p>
+  <span></span>
+</p>
+<p>
+</p>
+<p>
+  <span></span>
+</p>
+<p>
+  To configure the Debtor Override, go to&nbsp;<b>Admin &gt; Billing rules</b><b>:</b></p>
+<ol>
+  <li>
+    Select the required company under which the Debtor Override Rule should be created.&nbsp;
+  </li>
+  <li>
+    <span style="font-size: 10pt;">Click on the&nbsp;</span><strong style="font-size: 10pt;">+ Add rule</strong><span style="font-size: 10pt;">&nbsp;under the company to which the rule belongs.</span>
+  </li>
+  <li>
+    <span style="font-size: 10pt;"></span>From the menu that appears, select <b>Debtor Override Rule</b>.
+    <br/><img src="images/Add%20Debtor%20OVerride%20Rule.png" alt="" loading="lazy"/><br/></li>
+  <li>
+    Enter a name for the rule.&nbsp;
+  </li>
+  <li>
+    <span>Choose a Company to as the Debtor Company.&nbsp;
+      <br/>
+      The Debtor Company will be used as the debtor for the selected services. The company can be any type of company from the Company Picker.</span>
+  </li>
+  <li>
+    <span>In the <b>Service affected&nbsp;</b>list, select the services that the debtor will be invoiced for.&nbsp;<br/><img src="images/Debtor%20OVerride%20Rule.png" alt="" style="" loading="lazy"/><span><br/></span>
+  <br/></span>
+  </li>
+  </ol>
+<p>Once a Debtor Override rule is active on a Charge Band, the system will automatically display the overridden payer whenever a service linked to that rule is selected in the booking or billing process.</p>
+<img src="images/Debtor%20override%20services.png" alt="" style="width: 1280px; height: 565px;" loading="lazy"/>
+<h2 id="h2_400678220" style="width: 1469px;" data-has-heading-anchor="true">
+  Scenario: Redirect invoices&nbsp;<a href="/articles/meddbase-help-center/billing-rules-debtor-override/a/h2_400678220" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!meddbase-help-center/billing-rules-debtor-override/a/h2_400678220&#39;,this);"></a></h2>
+<p>
+</p>
+<p>A patient is admitted under a Charge Band owned by <b>Company A</b> (responsible for the admission and general care).&nbsp;Per a commercial agreement, specific services (e.g., MRI Scan, Consultant Review, Diagnostic Tests) must be invoiced to<b> Company B</b> instead of <b>Company A.&nbsp;</b></p><p><b>Why use the Debtor Override Rule?</b><br aria-hidden="true"/>To redirect invoices for selected services to <b>Company B</b> while keeping the <b>service activity</b> recorded against <b>Company A’s Charge Band</b>. This prevents manual rework, misdirected invoices, and contract non‑compliance.</p><p><b>What Changes for Users (Booking &amp; Visibility)</b><br/></p><div><ul><li><b>Service Picker</b></li></ul></div><ul data-list-tree="true" data-indent="0" data-border="0" style="margin-left: 40px;"><li>For services covered by the <b>Debtor Override Rule</b>, the <b>Payer</b> column shows <b>Company B</b> (the override debtor).</li><li>All other services show <b>Company A</b> (the Charge Band owner).</li></ul><div><ul><li><b>Payer Type (during booking)</b></li></ul></div><ul data-list-tree="true" data-indent="0" data-border="0" style="margin-left: 40px;"><li>When an overridden service is selected, the <b>Payer Type</b> displays <b>Company B</b>, not the Charge Band’s payer.</li></ul><div><ul><li><b>No manual payer changes are required</b></li></ul></div><ul data-list-tree="true" data-indent="0" data-border="0" style="margin-left: 40px;"><li>The <b>Debtor Override Rule</b> applies automatically to the services it controls.</li></ul><div class="footer">
+<hr color="#D1CFA9"/>
+<p>© Cority, Inc. 2026 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;" loading="lazy"/>
+      </noscript>
+</body></html>
