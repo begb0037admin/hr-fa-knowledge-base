@@ -340,7 +340,7 @@ body.resizing-ai{cursor:col-resize;user-select:none}
   <div class="ai-msgs">
     <div class="ai-empty" id="ai-empty">
       <span class="ai-empty-sparkle" aria-hidden="true">✨</span>
-      <div class="ai-empty-text">Ask Linda anything about PeopleXD, Health &amp; Safety (Cority, IRIS, Odyssey, Healthy Working Plus), HR processes, or your step-by-step guides. Answers cited from the knowledge base.</div>
+      <div class="ai-empty-text">Ask Linda anything about PeopleXD, Health &amp; Safety (Cority, IRIS, Odyssey, DSE), HR processes, or your step-by-step guides. Answers cited from the knowledge base.</div>
       <div class="empty-chips" id="empty-chips">
         <button class="chip">How do I maintain pay codes for WFM?</button>
         <button class="chip">How does the GDPR request centre work?</button>
@@ -530,7 +530,7 @@ const SRC_META = {
   "Cority (Health & Safety)":{cls:"s-hs",badge:"b-hs",dot:"var(--teal)"},
   "IRIS":{cls:"s-iris",badge:"b-iris",dot:"var(--rust)"},
   "Odyssey":{cls:"s-ody",badge:"b-ody",dot:"var(--sky)"},
-  "Healthy Working Plus":{cls:"s-hwp",badge:"b-hwp",dot:"var(--lime)"}
+  "DSE":{cls:"s-hwp",badge:"b-hwp",dot:"var(--lime)"}
 };
 const TP_LABEL={
   "Cross-module":                             "General / All modules",
@@ -598,7 +598,7 @@ function buildNav(){
   }
   Q("#nav-ag").innerHTML=ag;
 
-  /* HEALTH & SAFETY — Cority, IRIS, Odyssey, Healthy Working Plus (Cardinus) */
+  /* HEALTH & SAFETY — Cority, IRIS, Odyssey, DSE (Cardinus) */
   const hsDocs=D.filter(x=>x.src==="Cority (Health & Safety)");
   const hsMods={};
   hsDocs.forEach(x=>{hsMods[x.tp]=(hsMods[x.tp]||0)+1;});
@@ -623,12 +623,12 @@ function buildNav(){
     hs+=Object.keys(odyMods).sort().map(m=>navLi("data-ody-mod",m,"var(--sky)",tpLabel(m),odyMods[m],(state.src==="Odyssey"&&state.mod===m?"on sub":"sub"))).join("");
   }
 
-  const hwpDocs=D.filter(x=>x.src==="Healthy Working Plus");
+  const hwpDocs=D.filter(x=>x.src==="DSE");
   const hwpMods={};
   hwpDocs.forEach(x=>{hwpMods[x.tp]=(hwpMods[x.tp]||0)+1;});
-  hs+=parentLi("data-hs-src","Healthy Working Plus","var(--lime)","Healthy Working Plus (Cardinus)",hwpDocs.length,state.src==="Healthy Working Plus","hwp",navOpen.hwp);
+  hs+=parentLi("data-hs-src","DSE","var(--lime)","DSE (Cardinus)",hwpDocs.length,state.src==="DSE","hwp",navOpen.hwp);
   if(navOpen.hwp){
-    hs+=Object.keys(hwpMods).sort().map(m=>navLi("data-hwp-mod",m,"var(--lime)",tpLabel(m),hwpMods[m],(state.src==="Healthy Working Plus"&&state.mod===m?"on sub":"sub"))).join("");
+    hs+=Object.keys(hwpMods).sort().map(m=>navLi("data-hwp-mod",m,"var(--lime)",tpLabel(m),hwpMods[m],(state.src==="DSE"&&state.mod===m?"on sub":"sub"))).join("");
   }
   Q("#nav-hs").innerHTML=hs;
 
@@ -707,7 +707,7 @@ Q("#nav-hs").addEventListener("click",e=>{
   }
   const hwpMod=e.target.closest("li[data-hwp-mod]");
   if(hwpMod){
-    state.src="Healthy Working Plus";state.mod=hwpMod.getAttribute("data-hwp-mod");state.pdfOnly=false;state.webOnly=false;
+    state.src="DSE";state.mod=hwpMod.getAttribute("data-hwp-mod");state.pdfOnly=false;state.webOnly=false;
     Q("#src").value=state.src;Q("#tp").value="all";buildNav();render();
   }
 });
@@ -759,7 +759,7 @@ function render(){
     const arc=/\(Archive\)$/i.test(x.tp);
     const isAg=x.src==="Access Group Help Centre";
     const isHs=x.src==="Cority (Health & Safety)";
-    const isHsLibrary=x.src==="IRIS"||x.src==="Odyssey"||x.src==="Healthy Working Plus";
+    const isHsLibrary=x.src==="IRIS"||x.src==="Odyssey"||x.src==="DSE";
     let openHref = x.p || "";
     if(/sharepoint\.com/i.test(openHref) && !openHref.includes("?")) openHref += "?web=1";
     const openLabel = isAg ? (x.e === "pdf" ? "Open PDF" : "Open article") : isHs ? "Open article" : isHsLibrary ? "Open document" : "Open in SharePoint";
@@ -897,7 +897,7 @@ function retrieve(question,n){
 /* ════════ Ask flow ════════ */
 const SYSTEM_PROMPT=
 "You are Linda, the HR Functional Analysis assistant for Kevin Lelitte at the University of Oxford. Your name is Linda. "+
-"You answer questions about the PeopleXD (CoreHR) system and about the University's Health & Safety systems — Cority (CoreEHS+/GX2, myCority, and related modules), IRIS (the Incident Reporting & Investigation System), Odyssey (the Radiation Management System), and Healthy Working Plus (Cardinus, for DSE/workstation assessments) — using ONLY the numbered context documents supplied with each question. "+
+"You answer questions about the PeopleXD (CoreHR) system and about the University's Health & Safety systems — Cority (CoreEHS+/GX2, myCority, and related modules), IRIS (the Incident Reporting & Investigation System), Odyssey (the Radiation Management System), and DSE (Cardinus, for Display Screen Equipment/workstation assessments) — using ONLY the numbered context documents supplied with each question. "+
 "Be practical and concise: when the user asks how to do something, give clear numbered steps. "+
 "Cite sources inline as [1], [2] etc. matching the context numbering. "+
 "If the context does not contain the answer, say so plainly and suggest which help centre or guide is the best place to look — never invent procedures. "+
