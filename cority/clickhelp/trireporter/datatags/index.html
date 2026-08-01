@@ -1,0 +1,559 @@
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><style type="text/css">.ArticleViewer_searchKeywords{background-color: yellow !important;}body{overflow:hidden;}</style>
+<link rel="canonical" href="/articles/trireporter/datatags"/>
+<link rel="stylesheet" type="text/css" href="/resources/Styles/global/GlobalStyles.css">
+      
+      <script>
+        (function () {
+          var zi = document.createElement('script');
+          zi.type = 'text/javascript';
+          zi.async = true;
+          zi.src = 'https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(zi, s);
+        })();
+      </script>
+
+<script src="https://kit.fontawesome.com/0c6550d2cb.js" crossorigin="anonymous"></script><title>Data Tags</title><script type="text/javascript">//<!--
+var imgPopupTexts={openInNewWindowText: 'Open in new window', closeText: 'Close'};var isArticlesNavViaMessage=true;var articleTitleText='Data Tags';
+//--></script><link rel="stylesheet" type="text/css" href="/resources/Styles/trireporter/Apps.css"/><link rel="stylesheet" type="text/css" href="/resources/Styles/trireporter/Style.css"/><link rel="stylesheet" type="text/css" href="/style-bundles/article-published.css?v=1.0.9699.18157"/><script src="/resources/Scripts/trireporter/jquery-1.12.4.js" type="text/javascript"></script><script src="/resources/Scripts/trireporter/MadCapGlobal.js" type="text/javascript"></script><script src="/resources/Scripts/trireporter/MadCapSlideshow.js" type="text/javascript"></script><script src="/resources/Scripts/trireporter/MadCapMerging.js" type="text/javascript"></script><script src="/resources/Scripts/trireporter/MadCapAliasFile.js" type="text/javascript"></script><script src="/resources/Scripts/trireporter/MadCapUtilities.js" type="text/javascript"></script><script src="/resources/Scripts/trireporter/MadCapBody.js" type="text/javascript"></script><script src="/resources/Scripts/trireporter/MadCapHighlighter.js" type="text/javascript"></script><script src="/script-bundles/article-published.js?v=1.0.9699.18157" type="text/javascript"></script><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><span id="__clhTop"></span>
+        <h1 id="h1_40007861" data-has-heading-anchor="true">Data Tags<a href="/articles/trireporter/datatags/a/h1_40007861" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!trireporter/datatags/a/h1_40007861&#39;,this);"></a></h1>
+        <p>The data that is transferred from the Management System to TRI Reporter is stored in parameters on the EMS tree. The tags for these requirements follow the pattern of the location tags.</p>
+        <h2 id="h2__849725306" data-has-heading-anchor="true">Facility Data Tags<a href="/articles/trireporter/datatags/a/h2__849725306" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!trireporter/datatags/a/h2__849725306&#39;,this);"></a></h2>
+        <p>The facility data tags are built by concatenating the following:</p>
+        <p class="BodyIndent">'E:TRI_' Facility Code '_' TRI Section '_' CasNo</p>
+        <p>An example stream tag is </p>
+        <p class="BodyIndent">E:TRI_GV_5.2_N020</p>
+        <table class="table_1">
+            <colgroup><col style="width: 76pt;"/>
+            <col style="width: 200pt;"/>
+            <col style="width: 107pt;"/>
+            </colgroup><tbody><tr>
+                <td class="subhead">
+                    <p>Tag Part</p>
+                </td>
+                <td class="subhead">
+                    <p>Description</p>
+                </td>
+                <td class="subhead">
+                    <p>Example Text</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>E:TRI_</p>
+                </td>
+                <td class="border">
+                    <p>All TRI tags begin with the text 'E:TRI_'&nbsp; </p>
+                </td>
+                <td class="border">
+                    <p>E:TRI_</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>Facility Code</p>
+                </td>
+                <td class="border">
+                    <p>The facility code is used to group all of the tags of a single facility together. It is typically a two-letter code that is used by the client to identify the facility in their own databases and is defined in the facility tag.</p>
+                </td>
+                <td class="border">
+                    <p>GV</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>TRI Section</p>
+                </td>
+                <td class="border">
+                    <p>This is the section of the FormR where the data is sent. <br/></p>
+                </td>
+                <td class="border">
+                    <p>5.2</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>CAS No</p>
+                </td>
+                <td class="border">
+                    <p>The CAS Nos. used in the TRI system are listed in <a href="/articles/trireporter/casnos" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!trireporter/casnos&#39;,this);">TRI&nbsp;Chemicals and CAS Nos</a>.&nbsp; </p>
+                </td>
+                <td class="border">
+                    <p>N020</p>
+                </td>
+            </tr>
+        </tbody></table>
+        <h2 id="h2_1133788537" data-has-heading-anchor="true">Data Tags for Streams<a href="/articles/trireporter/datatags/a/h2_1133788537" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!trireporter/datatags/a/h2_1133788537&#39;,this);"></a></h2>
+        <p>Data tags for stream data are similar to facility data, except that the LocationID needs to be added to the tag.</p>
+        <p class="BodyIndent">'E:TRI_' Facility Code '_' TRI Section '_' LocationID '_' CasNo</p>
+        <p>An example stream tag is </p>
+        <p class="BodyIndent">E:TRI_GV_5.3_BOGGYBRANCH_N020</p>
+        <table class="table_1">
+            <colgroup><col style="width: 76pt;"/>
+            <col style="width: 200pt;"/>
+            <col style="width: 107pt;"/>
+            </colgroup><tbody><tr>
+                <td class="subhead">
+                    <p>Tag Part</p>
+                </td>
+                <td class="subhead">
+                    <p>Description</p>
+                </td>
+                <td class="subhead">
+                    <p>Example Text</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>E:TRI_</p>
+                </td>
+                <td class="border">
+                    <p>All TRI tags begin with the text 'E:TRI_'&nbsp; </p>
+                </td>
+                <td class="border">
+                    <p>E:TRI_</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>Facility Code</p>
+                </td>
+                <td class="border">
+                    <p>The facility code is used to group all of the tags of a single facility together. It is typically a two-letter code that is used by the client to identify the facility in their own databases and is defined in the facility tag.</p>
+                </td>
+                <td class="border">
+                    <p>GV</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>TRI Section</p>
+                </td>
+                <td class="border">
+                    <p>The stream sections will always be 5.3</p>
+                </td>
+                <td class="border">
+                    <p>5.3</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>Location</p>
+                </td>
+                <td class="border">
+                    <p>This is the name of the stream as it is listed in the stream's location tag.</p>
+                </td>
+                <td class="border">
+                    <p>BOGGYBRANCH
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>CAS No</p>
+                </td>
+                <td class="border">
+                    <p>The CAS Nos. used in TRI Reporter are listed in <a href="/articles/trireporter/casnos" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!trireporter/casnos&#39;,this);">TRI&nbsp;Chemicals and CAS Nos</a>.</p>
+                </td>
+                <td class="border">
+                    <p>N020</p>
+                </td>
+            </tr>
+        </tbody></table>
+        <h2 id="h2_60433196" data-has-heading-anchor="true">Data Tags for Stormwater<a href="/articles/trireporter/datatags/a/h2_60433196" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!trireporter/datatags/a/h2_60433196&#39;,this);"></a></h2>
+        <p>Data tags for storm water data are similar to stream data, except that the stormwater indication (_SW) needs to be added to the tag.</p>
+        <p class="BodyIndent">'E:TRI_' Facility Code '_' TRI Section '_'Stormwater'_' LocationID '_' CasNo</p>
+        <p>An example stormwater tag is </p>
+        <p class="BodyIndent">E:TRI_GV_5.3_SW_BOGGYBRANCH_N020</p>
+        <table class="table_1">
+            <colgroup><col style="width: 76pt;"/>
+            <col style="width: 200pt;"/>
+            <col style="width: 107pt;"/>
+            </colgroup><tbody><tr>
+                <td class="subhead">
+                    <p>Tag Part</p>
+                </td>
+                <td class="subhead">
+                    <p>Description</p>
+                </td>
+                <td class="subhead">
+                    <p>Example Text</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>E:TRI_</p>
+                </td>
+                <td class="border">
+                    <p>All TRI tags begin with the text 'E:TRI_'&nbsp; </p>
+                </td>
+                <td class="border">
+                    <p>E:TRI_</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>Facility Code</p>
+                </td>
+                <td class="border">
+                    <p>The facility code is used to group all of the tags of a single facility together. It is typically a two-letter code that is used by the client to identify the facility in their own databases and is defined in the facility tag.</p>
+                </td>
+                <td class="border">
+                    <p>GV</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>TRI Section</p>
+                </td>
+                <td class="border">
+                    <p>The stream sections will always be 5.3 with the _SW appendix*<br/></p>
+                </td>
+                <td class="border">
+                    <p>5.3_SW</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>Location</p>
+                </td>
+                <td class="border">
+                    <p>This is the name of the stream as it is listed in the stream's location tag.</p>
+                </td>
+                <td class="border">
+                    <p>BOGGYBRANCH</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>CAS No</p>
+                </td>
+                <td class="border">
+                    <p>The CAS Nos. used in TRI Reporter are listed in <a href="/articles/trireporter/casnos" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!trireporter/casnos&#39;,this);">TRI&nbsp;Chemicals and CAS Nos</a>.</p>
+                </td>
+                <td class="border">
+                    <p>N020</p>
+                </td>
+            </tr>
+        </tbody></table>
+        <p>*Note: the previous tagging structure remains valid.  An example stormwater tag is: </p>
+        <p class="BodyIndent">E:TRI_GV_5.3SW_BOGGYBRANCH_N020</p>
+        <h2 id="h2_4957188" data-has-heading-anchor="true">Data Tags for Off-Sites<a href="/articles/trireporter/datatags/a/h2_4957188" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!trireporter/datatags/a/h2_4957188&#39;,this);"></a></h2>
+        <p>Data tags for Off-Sites include a section of MCODES along with the Off-Site ID and the CAS Number of the chemical.</p>
+        <p class="BodyIndent">'E:TRI_' Facility Code '_' TRI Section '_' LocationID '_' MCODE '_' CasNo</p>
+        <p>An example offsite tag is </p>
+        <p class="BodyIndent">E:TRI_GV_6.2_ 654654654684_M24_N020</p>
+        <table class="table_1">
+            <colgroup><col style="width: 76pt;"/>
+            <col style="width: 200pt;"/>
+            <col style="width: 107pt;"/>
+            </colgroup><tbody><tr>
+                <td class="subhead">
+                    <p>Tag Part</p>
+                </td>
+                <td class="subhead">
+                    <p>Description</p>
+                </td>
+                <td class="subhead">
+                    <p>Example Text</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>E:TRI_</p>
+                </td>
+                <td class="border">
+                    <p>All TRI tags begin with the text 'E:TRI_'&nbsp; </p>
+                </td>
+                <td class="border">
+                    <p>E:TRI_</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>Facility Code</p>
+                </td>
+                <td class="border">
+                    <p>The facility code is used to group all of the tags of a single facility together. It is typically a two letter code that is used by the client to identify the facility in their own databases and is defined in the facility tag.</p>
+                </td>
+                <td class="border">
+                    <p>GV</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>TRI Section</p>
+                </td>
+                <td class="border">
+                    <p>For Offsite tags the TRI Section will always be 6.2<br/></p>
+                </td>
+                <td class="border">
+                    <p>6.2</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>LocationID</p>
+                </td>
+                <td class="border">
+                    <p>This is the EPA ID for the offsite facility.</p>
+                </td>
+                <td class="border">
+                    <p>654654654684</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>MCODE</p>
+                </td>
+                <td class="border">
+                    <p>The M-Codes listed in the TRI Section 6.2. See the appendix 6.2 M-Codes.</p>
+                </td>
+                <td class="border">
+                    <p>M24</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>CAS No</p>
+                </td>
+                <td class="border">
+                    <p>The CAS Nos. used in the TRI system are listed in <a href="/articles/trireporter/casnos" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!trireporter/casnos&#39;,this);">TRI&nbsp;Chemicals and CAS Nos</a>.</p>
+                </td>
+                <td class="border">
+                    <p>N020</p>
+                </td>
+            </tr>
+        </tbody></table>
+        <h2 id="h2_1108053410" data-has-heading-anchor="true">Dioxin Tags<a href="/articles/trireporter/datatags/a/h2_1108053410" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!trireporter/datatags/a/h2_1108053410&#39;,this);"></a></h2>
+        <p>Dioxins were previously stored as percentages and then allocated in Schedule 1 according to the percentage values. They can now be calculated by more accurate means in the Management System and the values transferred into TRI Reporter. The speciation values are pulled directly into Schedule 1 without further manipulation.</p>
+        <p>Calculation Method: There is one requirement for Dioxin with the standard requirement TRI tag and one requirement for each speciated dioxin chemical with the following tag scheme:</p>
+        <p class="BodyIndent">'E:TRI'_'Facility Code'_'TRI Section'_'CasNo'_'[01-17]'</p>
+        <p>An example dioxin tag is:</p>
+        <p class="BodyIndent">'E:TRI'_'DM'_'5.2'_'N150'_'01'</p>
+        <p>If these tag values are present and tagged, they will be used to populate Schedule 1. If they are not present, the previous methodology leveraging the percentages will be used.</p>
+        <p>For percentage calculations: There is one requirement for Dioxin with the standard requirement TRI tag. Custom fields on the requirement are used for speciation percentages, and the values are used to allocate the dioxin percentage per release for Schedule 1. The custom fields TRI DIOXIN Pct [01-17] are associated with the TRI Dioxin custom field template on each chemical.</p>
+        <h2 id="h2_852626899" data-has-heading-anchor="true">Data Tags for Multiple Waste Stream Efficiencies<a href="/articles/trireporter/datatags/a/h2_852626899" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!trireporter/datatags/a/h2_852626899&#39;,this);"></a></h2>
+        <p>Data tags for multiple waste streams efficiencies include a section for Stream ID.</p>
+        <p class="BodyIndent">'E:TRI_' Facility Code '_' TRI Section '_ 'StreamID'_CasNo</p>
+        <p>An example stream tag is </p>
+        <p class="BodyIndent">E:TRI_GV_7A_A2_N020</p>
+        <table class="table_1">
+            <colgroup><col style="width: 76pt;"/>
+            <col style="width: 200pt;"/>
+            <col style="width: 107pt;"/>
+            </colgroup><tbody><tr>
+                <td class="subhead">
+                    <p>Tag Part</p>
+                </td>
+                <td class="subhead">
+                    <p>Description</p>
+                </td>
+                <td class="subhead">
+                    <p>Example Text</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>E:TRI_</p>
+                </td>
+                <td class="border">
+                    <p>All TRI tags begin with the text 'E:TRI_'&nbsp; </p>
+                </td>
+                <td class="border">
+                    <p>E:TRI_</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>Facility Code</p>
+                </td>
+                <td class="border">
+                    <p>The facility code is used to group all of the tags of a single facility together. It is typically a two-letter code that is used by the client to identify the facility in their own databases and is defined in the facility tag.</p>
+                </td>
+                <td class="border">
+                    <p>GV</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>TRI Section</p>
+                </td>
+                <td class="border">
+                    <p>For multiple waste stream efficiencies the TRI section will always be 7A<br/></p>
+                </td>
+                <td class="border">
+                    <p>7A</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>StreamID</p>
+                </td>
+                <td class="border">
+                    <p>The StreamID differentiates between multiple streams of the same type. </p>
+                </td>
+                <td class="border">
+                    <p>A1, A2 or W1, W2</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>CAS No</p>
+                </td>
+                <td class="border">The CAS Nos. used in the TRI system are listed in <a href="/articles/trireporter/casnos" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!trireporter/casnos&#39;,this);">TRI&nbsp;Chemicals and CAS Nos</a>. <p>&nbsp;</p></td>
+                <td class="border">
+                    <p>N020</p>
+                </td>
+            </tr>
+        </tbody></table>
+        <h2 id="h2__170789710" data-has-heading-anchor="true">Data Tags for Production or Activity Ratio Type<a href="/articles/trireporter/datatags/a/h2__170789710" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!trireporter/datatags/a/h2__170789710&#39;,this);"></a></h2>
+        <p>Data tags for Production or Activity Ratio include a section for Ratio type.</p>
+        <p class="BodyIndent">'E:TRI_' Facility Code '_' TRI Section '_' Ratio '_' CasNo '</p>
+        <p>An example stream tag is </p>
+        <p class="BodyIndent">E:TRI_GV_8.9_PR_N020</p>
+        <table class="table_1">
+            <colgroup><col style="width: 76pt;"/>
+            <col style="width: 200pt;"/>
+            <col style="width: 107pt;"/>
+            </colgroup><tbody><tr>
+                <td class="subhead">
+                    <p>Tag Part</p>
+                </td>
+                <td class="subhead">
+                    <p>Description</p>
+                </td>
+                <td class="subhead">
+                    <p>Example Text</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>E:TRI_</p>
+                </td>
+                <td class="border">
+                    <p>All TRI tags begin with the text 'E:TRI_'&nbsp; </p>
+                </td>
+                <td class="border">
+                    <p>E:TRI_</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>Facility Code</p>
+                </td>
+                <td class="border">
+                    <p>The facility code is used to group all of the tags of a single facility together. It is typically a two-letter code that is used by the client to identify the facility in their own databases and is defined in the facility tag.</p>
+                </td>
+                <td class="border">GV</td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>TRI Section</p>
+                </td>
+                <td class="border">
+                    <p>For Production or Activity Ratios the TRI section will always be 8.9<br/></p>
+                </td>
+                <td class="border">
+                    <p>8.9</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>Ratio</p>
+                </td>
+                <td class="border">
+                    <p>The Ratio differentiates between Production and Activity ratios. </p>
+                </td>
+                <td class="border">
+                    <p>PR or AR</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>CAS No</p>
+                </td>
+                <td class="border">
+                    <p>The CAS Nos. used in the TRI system are listed in <a href="/articles/trireporter/casnos" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!trireporter/casnos&#39;,this);">TRI&nbsp;Chemicals and CAS Nos</a>. </p>
+                    <p>&nbsp;</p>
+                </td>
+                <td class="border">
+                    <p>N020</p>
+                </td>
+            </tr>
+        </tbody></table>
+        <h2 id="h2_1176670334" data-has-heading-anchor="true">Threshold Tags<a href="/articles/trireporter/datatags/a/h2_1176670334" class="CHHeadingLink" title="Link to this heading" aria-hidden="true" onclick="return n(&#39;!trireporter/datatags/a/h2_1176670334&#39;,this);"></a></h2>
+        <p>Threshold Tags are used to tag the TRI threshold calculations in the TRI Tree.</p>
+        <p class="BodyIndent">'E:TRI_' Facility Code '_' THR '_' CasNo</p>
+        <p>An example offsite tag is </p>
+        <p class="BodyIndent">E:TRI_GV_THR_N020</p>
+        <table class="table_1">
+            <colgroup><col style="width: 76pt;"/>
+            <col style="width: 200pt;"/>
+            <col style="width: 107pt;"/>
+            </colgroup><tbody><tr>
+                <td class="subhead">
+                    <p>Tag Part</p>
+                </td>
+                <td class="subhead">
+                    <p>Description</p>
+                </td>
+                <td class="subhead">
+                    <p>Example Text</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>E:TRI_</p>
+                </td>
+                <td class="border">
+                    <p>All TRI tags begin with the text 'E:TRI_'&nbsp; </p>
+                </td>
+                <td class="border">
+                    <p>E:TRI_</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>Facility Code</p>
+                </td>
+                <td class="border">
+                    <p>The facility code is used to group all of the tags of a single facility together. It is typically a two-letter code that is used by the client to identify the facility in their own databases and is defined in the facility tag.</p>
+                </td>
+                <td class="border">
+                    <p>GV</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>TRI Section</p>
+                </td>
+                <td class="border">
+                    <p>Threshold tags are always identified with 'THR'</p>
+                </td>
+                <td class="border">
+                    <p>THR</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="border">
+                    <p>CAS No</p>
+                </td>
+                <td class="border">
+                    <p>The CAS Nos. used in the TRI system are listed in <a href="/articles/trireporter/casnos" class="MCXref_Heading_0" xrefformat="{paratext}" onclick="return n(&#39;!trireporter/casnos&#39;,this);">TRI&nbsp;Chemicals and CAS Nos</a>. </p>
+                    <p>&nbsp;</p>
+                </td>
+                <td class="border">
+                    <p>N020</p>
+                </td>
+            </tr>
+        </tbody></table>
+        <script type="text/javascript" src="/resources/Scripts/project-tri-reporter/SkinSupport/MadCapBodyEnd.js" data-aspx-savednextwhitespace="%0A%20%20%20%20">
+        </script><div class="footer">
+<hr color="#D1CFA9">
+<p>© Cority, Inc. 2024 <a href="https://uc.cority.com/s" target="_blank">Need more help? Please contact our support team using the Cority Community.</a></p>
+</div>
+      <noscript>
+        <img src="https://ws.zoominfo.com/pixel/ig19QEnIIomeBkBPNuz2" width="1" height="1" style="display: none;"/>
+      </noscript>
+</body></html>
