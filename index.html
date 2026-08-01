@@ -16,6 +16,9 @@
   --purple:#6d5bd0;--purple-soft:#edebfb;--purple-text:#41358f;
   --gold:#c79b3b;--gold-soft:#f7ecd2;--gold-text:#6d5215;
   --teal:#12876f;--teal-soft:#dff2ec;--teal-text:#0a5946;
+  --rust:#b8462f;--rust-soft:#fbe6df;--rust-text:#7a2a17;
+  --sky:#1f7fa8;--sky-soft:#dcf0f7;--sky-text:#0d4a63;
+  --lime:#6a8f1f;--lime-soft:#eaf3d9;--lime-text:#3f5511;
   --red:#d6453d;--cream:#fbf3df;--cream-border:#eedfb8;--cream-text:#5d451a;
   --radius:9px;--radius-lg:13px;
 }
@@ -102,6 +105,9 @@ input[type=text]:focus,select:focus{outline:none;border-color:var(--blue);box-sh
 .b-arc{background:#fbeaf0;color:#72243e}
 .b-local{background:#fdf0dc;color:#7a4a08}
 .b-hs{background:var(--teal-soft);color:var(--teal-text)}
+.b-iris{background:var(--rust-soft);color:var(--rust-text)}
+.b-ody{background:var(--sky-soft);color:var(--sky-text)}
+.b-hwp{background:var(--lime-soft);color:var(--lime-text)}
 .summary{margin:4px 0;font-size:13.8px;color:#3c4456}
 .path-row{display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--muted);margin-top:7px;flex-wrap:wrap}
 .meta-sm{font-size:11px;color:var(--hint);margin-top:6px}
@@ -276,7 +282,7 @@ body.resizing-ai{cursor:col-resize;user-select:none}
   <ul class="snav" id="nav-htg"></ul>
   <div class="sec">ACCESS GROUP HELP CENTRE</div>
   <ul class="snav" id="nav-ag"></ul>
-  <div class="sec">HEALTH &amp; SAFETY (CORITY)</div>
+  <div class="sec">HEALTH &amp; SAFETY</div>
   <ul class="snav" id="nav-hs"></ul>
   <div class="foot">
     <div id="foot-counts"></div>
@@ -334,7 +340,7 @@ body.resizing-ai{cursor:col-resize;user-select:none}
   <div class="ai-msgs">
     <div class="ai-empty" id="ai-empty">
       <span class="ai-empty-sparkle" aria-hidden="true">✨</span>
-      <div class="ai-empty-text">Ask Linda anything about PeopleXD, Cority Health &amp; Safety, HR processes, or your step-by-step guides. Answers cited from the knowledge base.</div>
+      <div class="ai-empty-text">Ask Linda anything about PeopleXD, Health &amp; Safety (Cority, IRIS, Odyssey, Healthy Working Plus), HR processes, or your step-by-step guides. Answers cited from the knowledge base.</div>
       <div class="empty-chips" id="empty-chips">
         <button class="chip">How do I maintain pay codes for WFM?</button>
         <button class="chip">How does the GDPR request centre work?</button>
@@ -486,7 +492,7 @@ function cardPreview(s){
 /* ════════ Data loading ════════ */
 let BASE=[], LOCAL=[], D=[];
 const state={q:"",src:"all",tp:"all",sort:"m-desc",arc:false,mod:"all",pdfOnly:false,webOnly:false};
-const navOpen={htg:false,cm:false,agPdf:false,agWeb:false,hs:false};
+const navOpen={htg:false,cm:false,agPdf:false,agWeb:false,hs:false,iris:false,ody:false,hwp:false};
 
 function loadLocal(){try{return JSON.parse(localStorage.getItem(LOCAL_KEY)||"[]")}catch{return[]}}
 function saveLocal(a){localStorage.setItem(LOCAL_KEY,JSON.stringify(a))}
@@ -521,7 +527,10 @@ const SRC_META = {
   "How To Guides":      {cls:"s-htg",badge:"b-htg",dot:"var(--blue)"},
   "Change Management":  {cls:"s-cm", badge:"b-cm", dot:"var(--purple)"},
   "Access Group Help Centre":{cls:"s-ag",badge:"b-ag",dot:"var(--gold)"},
-  "Cority (Health & Safety)":{cls:"s-hs",badge:"b-hs",dot:"var(--teal)"}
+  "Cority (Health & Safety)":{cls:"s-hs",badge:"b-hs",dot:"var(--teal)"},
+  "IRIS":{cls:"s-iris",badge:"b-iris",dot:"var(--rust)"},
+  "Odyssey":{cls:"s-ody",badge:"b-ody",dot:"var(--sky)"},
+  "Healthy Working Plus":{cls:"s-hwp",badge:"b-hwp",dot:"var(--lime)"}
 };
 const TP_LABEL={
   "Cross-module":                             "General / All modules",
@@ -589,13 +598,37 @@ function buildNav(){
   }
   Q("#nav-ag").innerHTML=ag;
 
-  /* HEALTH & SAFETY (CORITY) */
+  /* HEALTH & SAFETY — Cority, IRIS, Odyssey, Healthy Working Plus (Cardinus) */
   const hsDocs=D.filter(x=>x.src==="Cority (Health & Safety)");
   const hsMods={};
   hsDocs.forEach(x=>{hsMods[x.tp]=(hsMods[x.tp]||0)+1;});
-  let hs=parentLi("data-hs-src","Cority (Health & Safety)","var(--teal)","Health & Safety (Cority)",hsDocs.length,state.src==="Cority (Health & Safety)","hs",navOpen.hs);
+  let hs=parentLi("data-hs-src","Cority (Health & Safety)","var(--teal)","Cority",hsDocs.length,state.src==="Cority (Health & Safety)","hs",navOpen.hs);
   if(navOpen.hs){
     hs+=Object.keys(hsMods).sort().map(m=>navLi("data-hs-mod",m,"var(--teal)",tpLabel(m),hsMods[m],(state.src==="Cority (Health & Safety)"&&state.mod===m?"on sub":"sub"))).join("");
+  }
+
+  const irisDocs=D.filter(x=>x.src==="IRIS");
+  const irisMods={};
+  irisDocs.forEach(x=>{irisMods[x.tp]=(irisMods[x.tp]||0)+1;});
+  hs+=parentLi("data-hs-src","IRIS","var(--rust)","IRIS",irisDocs.length,state.src==="IRIS","iris",navOpen.iris);
+  if(navOpen.iris){
+    hs+=Object.keys(irisMods).sort().map(m=>navLi("data-iris-mod",m,"var(--rust)",tpLabel(m),irisMods[m],(state.src==="IRIS"&&state.mod===m?"on sub":"sub"))).join("");
+  }
+
+  const odyDocs=D.filter(x=>x.src==="Odyssey");
+  const odyMods={};
+  odyDocs.forEach(x=>{odyMods[x.tp]=(odyMods[x.tp]||0)+1;});
+  hs+=parentLi("data-hs-src","Odyssey","var(--sky)","Odyssey",odyDocs.length,state.src==="Odyssey","ody",navOpen.ody);
+  if(navOpen.ody){
+    hs+=Object.keys(odyMods).sort().map(m=>navLi("data-ody-mod",m,"var(--sky)",tpLabel(m),odyMods[m],(state.src==="Odyssey"&&state.mod===m?"on sub":"sub"))).join("");
+  }
+
+  const hwpDocs=D.filter(x=>x.src==="Healthy Working Plus");
+  const hwpMods={};
+  hwpDocs.forEach(x=>{hwpMods[x.tp]=(hwpMods[x.tp]||0)+1;});
+  hs+=parentLi("data-hs-src","Healthy Working Plus","var(--lime)","Healthy Working Plus (Cardinus)",hwpDocs.length,state.src==="Healthy Working Plus","hwp",navOpen.hwp);
+  if(navOpen.hwp){
+    hs+=Object.keys(hwpMods).sort().map(m=>navLi("data-hwp-mod",m,"var(--lime)",tpLabel(m),hwpMods[m],(state.src==="Healthy Working Plus"&&state.mod===m?"on sub":"sub"))).join("");
   }
   Q("#nav-hs").innerHTML=hs;
 
@@ -654,12 +687,27 @@ Q("#nav-hs").addEventListener("click",e=>{
   if(chev){const k=chev.getAttribute("data-toggle");navOpen[k]=!navOpen[k];buildNav();return;}
   const hsSrc=e.target.closest("li[data-hs-src]");
   if(hsSrc){
-    state.src="Cority (Health & Safety)";state.mod="all";state.pdfOnly=false;state.webOnly=false;
+    state.src=hsSrc.getAttribute("data-hs-src");state.mod="all";state.pdfOnly=false;state.webOnly=false;
     Q("#src").value=state.src;Q("#tp").value="all";buildNav();render();return;
   }
   const hsMod=e.target.closest("li[data-hs-mod]");
   if(hsMod){
     state.src="Cority (Health & Safety)";state.mod=hsMod.getAttribute("data-hs-mod");state.pdfOnly=false;state.webOnly=false;
+    Q("#src").value=state.src;Q("#tp").value="all";buildNav();render();return;
+  }
+  const irisMod=e.target.closest("li[data-iris-mod]");
+  if(irisMod){
+    state.src="IRIS";state.mod=irisMod.getAttribute("data-iris-mod");state.pdfOnly=false;state.webOnly=false;
+    Q("#src").value=state.src;Q("#tp").value="all";buildNav();render();return;
+  }
+  const odyMod=e.target.closest("li[data-ody-mod]");
+  if(odyMod){
+    state.src="Odyssey";state.mod=odyMod.getAttribute("data-ody-mod");state.pdfOnly=false;state.webOnly=false;
+    Q("#src").value=state.src;Q("#tp").value="all";buildNav();render();return;
+  }
+  const hwpMod=e.target.closest("li[data-hwp-mod]");
+  if(hwpMod){
+    state.src="Healthy Working Plus";state.mod=hwpMod.getAttribute("data-hwp-mod");state.pdfOnly=false;state.webOnly=false;
     Q("#src").value=state.src;Q("#tp").value="all";buildNav();render();
   }
 });
@@ -711,9 +759,10 @@ function render(){
     const arc=/\(Archive\)$/i.test(x.tp);
     const isAg=x.src==="Access Group Help Centre";
     const isHs=x.src==="Cority (Health & Safety)";
+    const isHsLibrary=x.src==="IRIS"||x.src==="Odyssey"||x.src==="Healthy Working Plus";
     let openHref = x.p || "";
     if(/sharepoint\.com/i.test(openHref) && !openHref.includes("?")) openHref += "?web=1";
-    const openLabel = isAg ? (x.e === "pdf" ? "Open PDF" : "Open article") : isHs ? "Open article" : "Open in SharePoint";
+    const openLabel = isAg ? (x.e === "pdf" ? "Open PDF" : "Open article") : isHs ? "Open article" : isHsLibrary ? "Open document" : "Open in SharePoint";
     let open = openHref?'<a class="mini" target="_blank" rel="noopener" href="'+esc(openHref)+'">'+openLabel+"</a>":"";
     let copy = openHref?'<button class="mini" data-copy="'+esc(openHref)+'">Copy link</button>':"";
     let del = x._local?'<button class="mini" data-del="'+esc(x.f)+'">Remove</button>':"";
@@ -848,7 +897,7 @@ function retrieve(question,n){
 /* ════════ Ask flow ════════ */
 const SYSTEM_PROMPT=
 "You are Linda, the HR Functional Analysis assistant for Kevin Lelitte at the University of Oxford. Your name is Linda. "+
-"You answer questions about the PeopleXD (CoreHR) system and about Cority, the University's Occupational Health & Safety system (CoreEHS+/GX2, myCority, and related modules), using ONLY the numbered context documents supplied with each question. "+
+"You answer questions about the PeopleXD (CoreHR) system and about the University's Health & Safety systems — Cority (CoreEHS+/GX2, myCority, and related modules), IRIS (the Incident Reporting & Investigation System), Odyssey (the Radiation Management System), and Healthy Working Plus (Cardinus, for DSE/workstation assessments) — using ONLY the numbered context documents supplied with each question. "+
 "Be practical and concise: when the user asks how to do something, give clear numbered steps. "+
 "Cite sources inline as [1], [2] etc. matching the context numbering. "+
 "If the context does not contain the answer, say so plainly and suggest which help centre or guide is the best place to look — never invent procedures. "+
