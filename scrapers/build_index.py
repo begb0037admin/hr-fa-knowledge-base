@@ -9,6 +9,7 @@ Inputs:
   cority/clickhelp/*/*/index.html  output of cority_clickhelp_scraper.py (optional)
   data/hs-library-docs.json   14 curated IRIS/Odyssey/Healthy Working Plus docs (optional)
   data/hs-library-fulltext.json, data/hs-library-files.json  output of extract_hs_library.py (optional)
+  data/oxford-signin-directory.json  53 curated Oxford IT sign-in service records (optional)
 
 Outputs:
   data/kb.json        one record per document, drives the cards and filters
@@ -156,6 +157,26 @@ def load_kevin_guides():
     for g in guides:
         text = clean_text(g.pop("_text", ""))
         docs.append({**g, "_text": text})
+    return docs
+
+
+def load_oxford_signin_docs():
+    """Curated Oxford IT sign-in service directory — 53 hand-authored records
+    (service name, sign-in link, guide link, account type), no source
+    document to extract from, same self-authored shape as load_kevin_guides().
+    Purely additive; deliberately not wired into any sidebar nav section —
+    it's surfaced via a single footer link to its own standalone page, not
+    as a browsable category (Kevin's explicit design decision, 18 Aug 2026)."""
+    path = os.path.join(DATA, "oxford-signin-directory.json")
+    if not os.path.exists(path):
+        print("No data/oxford-signin-directory.json - skipping Oxford IT sign-in directory.")
+        return []
+    with open(path, encoding="utf-8") as fh:
+        entries = json.load(fh)
+    docs = []
+    for e in entries:
+        text = clean_text(e.pop("_text", ""))
+        docs.append({**e, "_text": text})
     return docs
 
 
@@ -308,8 +329,9 @@ def main():
     sp_files = load_sharepoint_files()
     cority_docs = load_cority_clickhelp_docs()
     hs_library_docs = load_hs_library_docs()
+    signin_docs = load_oxford_signin_docs()
     ag_docs = (load_scraped_docs() + load_deep_articles() + load_kevin_guides()
-               + cority_docs + hs_library_docs)
+               + cority_docs + hs_library_docs + signin_docs)
 
     kb, index = [], []
     sp_full = sp_local = 0
@@ -351,7 +373,8 @@ def main():
           f"{sp_local} linked to the local library, "
           f"{len(ag_docs)} help centre + Kevin's Guides + Cority + H&S library, "
           f"of which {len(cority_docs)} Cority Health & Safety, "
-          f"{len(hs_library_docs)} IRIS/Odyssey/Healthy Working Plus)")
+          f"{len(hs_library_docs)} IRIS/Odyssey/Healthy Working Plus, "
+          f"{len(signin_docs)} Oxford IT sign-in directory)")
     print(f"kb-index.json: {len(index)} searchable chunks")
 
 
