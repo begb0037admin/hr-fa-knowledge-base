@@ -19,6 +19,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install dependencies
+        run: pip install pypdf
+
       - name: Rebuild knowledge-base index
         run: python scrapers/build_index.py
 
