@@ -6,10 +6,10 @@
 - **Project:** HR Functional Analysis Knowledge Base
 - **Purpose:** AI-powered searchable knowledge base for Kevin's HR Functional Analysis work at University of Oxford. Single-page app with voice input — Kevin asks in plain English, AI answers with steps and links. He should never have to navigate the library himself.
 - **Owner:** Kevin Lelitte, Manager/Director HR Systems, University of Oxford
-- **Status:** Active — 6,621 documents across PeopleXD (Access Group/SharePoint/How To Guides) and Health & Safety (Cority, IRIS, Odyssey, DSE), voice search (mic + Listen, push-to-talk, Cloudflare Workers AI)
+- **Status:** Active — 6,688 documents across PeopleXD (Access Group/SharePoint/How To Guides), Health & Safety (Cority, IRIS, Odyssey, DSE), a SERVICES section (Oxford IT Sign-In Directory, HRIS Launcher/PeopleXD Service Catalogue+Other Teams+Data Protection), voice search (mic + Listen, push-to-talk, Cloudflare Workers AI)
 - **Repo:** https://github.com/begb0037admin/hr-fa-knowledge-base
-- **Live site:** https://begb0037admin.github.io/hr-fa-knowledge-base/
-- **Last updated:** 2026-08-01
+- **Live site:** https://begb0037admin.github.io/hr-fa-knowledge-base/ (custom domain: https://kb.lelitte.co.uk/)
+- **Last updated:** 2026-08-19
 
 ## Bootstrap Order
 1. This file (orientation)
@@ -31,14 +31,15 @@ Do NOT ask Kevin for a recap. HANDOVER.md is the recap.
 | `library/` | SharePoint docs + the H&S reference library (IRIS/Odyssey/DSE) mirrored on Pages. |
 
 ## Data State
-- **Current total: 6,621 documents, 23,271 index chunks** — verified directly against live `data/kb.json`/`data/kb-index.json`, 1 August 2026 (session 4). Full per-source breakdown (Access Group, How To Guides, Change Management, Kevin's Guides, Cority, IRIS, Odyssey, DSE) lives in `HANDOVER.md` → Data State; not duplicated here to stay under this file's 200-line budget.
+- **Current total: 6,688 documents, 23,338 index chunks** — verified directly against live `data/kb.json`/`data/kb-index.json`, 19 August 2026 (session 6). Full per-source breakdown (Access Group, How To Guides, Change Management, Kevin's Guides, Cority, IRIS, Odyssey, DSE, Oxford IT Sign-In Directory, HRIS Launcher/PeopleXD) lives in `HANDOVER.md` → Data State; not duplicated here to stay under this file's 200-line budget.
 - **Historical baseline (31 July 2026, pre-Cority/pre-H&S-library scope — Access Group + How To Guides + Change Management + Kevin's Guides only):** 2,515 documents, 13,472 chunks, counted directly from `data/kb.json`/`data/kb-index.json` at the time, not copied from another doc. All 2,515 have both enhanced summary fields (`ss` short, `sl` long) — 100% complete for that scope; Cority and the H&S reference library use the plain `s` field only, not yet enhanced.
 - This file had drifted before the 31 July check (stated 2,226 documents / 7,230 chunks, last touched 18 June, while `HANDOVER.md` already had the real figure) and drifted again after the Cority build (still said "not yet built" after Cority had shipped) — both times caught by verifying live data rather than trusting either document's prose. If this file and `HANDOVER.md` ever disagree, trust `HANDOVER.md` and re-verify against the live data files.
 
 ## Also Tracking
 - `CORITY-FEASIBILITY.md` — feasibility findings that led to the Cority H&S ClickHelp source; built and indexed 1 August 2026 (4,092 docs)
-- `ROADMAP.md` → "Parked — Technical Debt" — open follow-ups including Access Group image preservation and the voice-migration end-to-end verification
+- `ROADMAP.md` → "Parked — Technical Debt" and "Parked — Needs Kevin's Action" — open follow-ups including Access Group image preservation, the voice-migration end-to-end verification, 9 broken HRIS Launcher source URLs, and outstanding visual approval for the new SERVICES section
 - H&S sidebar now covers four sub-sources — Cority, IRIS, Odyssey, DSE (Cardinus) — see `HANDOVER.md` session 3 (1 August 2026) for the IRIS/Odyssey/DSE build, and session 4 for the "Healthy Working Plus" → "DSE" label rename
+- New SERVICES sidebar section (Oxford IT Sign-In Directory + HRIS Launcher/PeopleXD) — see `HANDOVER.md` session 6 (19 August 2026)
 
 ## Refresh Procedures
 - **Help-centre knowledge:** trigger `scrape-help-centres.yml` (deep=true, ~2h)
