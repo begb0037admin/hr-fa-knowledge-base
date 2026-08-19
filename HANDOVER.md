@@ -1,7 +1,7 @@
 # Handover — HR FA Knowledge Base
 
 **To:** New session
-**From:** Session of 19 August 2026 (Adam, session 6)
+**From:** Session of 19 August 2026 (Adam, session 7)
 **Owner:** Kevin (kevin.lelitte@admin.ox.ac.uk · GitHub `begb0037admin`)
 
 Everything you need to drive this project is in this file plus the repo
@@ -9,7 +9,42 @@ itself. Trust the repo over memory; verify data, not just green ticks.
 
 ---
 
-## Current State — 19 August 2026 (session 6)
+## Current State — 19 August 2026 (session 7)
+
+**Follow-on to session 6.** Kevin reviewed the live SERVICES sidebar section and approved it verbally, then asked for two things: (1) fix the 9 dead HRIS Launcher URLs at the source and re-sync this KB, (2) mirror the SERVICES section back onto `pxd.lelitte.co.uk` itself. Kevin explicitly authorized touching `begb0037admin/hris-launcher` for this task only — a one-off exception to Adam's normal scope, not a standing scope change.
+
+**Part 1 — dead links removed at the source, this KB re-synced:**
+- `begb0037admin/hris-launcher/index.html` (the actual source `pxd-services.json` was mirrored from) — removed all 8 "Service Catalogue" nav-links and the "Reward | Personnel Services" nav-link from "Other Teams" (the same 9 confirmed dead via `resolver0.dns.ox.ac.uk` NXDOMAIN in session 6). The now-empty "Service Catalogue" nav-group was dropped entirely rather than left as a header with no items. Commit `04b8d545`. Restore point: `index.html` @ `071eaa9b`, main HEAD @ `295cd3ea` (pre-change).
+- `data/pxd-services.json` in this repo trimmed from 14 to 5 records (HR Analytics Team, Payroll, Pensions, Guidance on Data Breaches, Data Privacy Training). Commit `a698a4c1`.
+- **Decision on the now-empty "Service Catalogue" `tp` group, made by reading the actual rendering code rather than guessing:** `index.html`'s `pxdMods` object (line ~654) is built by `pxdDocs.forEach(x=>{pxdMods[x.tp]=...})` — it only ever contains `tp` keys that have at least one live record. With zero "Service Catalogue" records left, that key never appears in `pxdMods`, so `Object.keys(pxdMods).sort().map(...)` (line 657) simply never renders it. **No index.html code change was needed** — the group disappears from the sidebar automatically, confirmed live (see verification below).
+- `rebuild-kevin-guides.yml` (run `32281531144`, ~7m8s) triggered and polled to `completed`/`success`, followed by the separate `pages build and deployment` run (`32282212723`, ~7m10s), also polled to `completed`/`success`.
+- **One extra fix caught while verifying, not part of the original ask:** Lindas `SYSTEM_PROMPT` in `index.html` still described HRIS Launcher/PeopleXD coverage as including "the IT Service Catalogue" and named "Reward" as a related team — both now gone from the data. Left as-is, Linda would have claimed coverage that no longer exists. Fixed in a separate one-line commit (`8e746f0e`), diff-verified to touch only that sentence.
+
+**Verification chain (part 1), all against the live thing, not green ticks:**
+- `data/pxd-services.json`: pushed, re-fetched via `gh api .../contents/... --jq .content | base64 -d`, diffed byte-for-byte against the intended local file — identical.
+- `data/kb.json`: fetched via the git blob API (contents API omits `content` for files this size, per existing memory) and counted directly: **6,679 documents** (6,688 minus 9, exact match). `pxd` breakdown confirmed as Other Teams: 3, Data Protection: 2 — "Service Catalogue" key genuinely absent, not just zero. `Oxford IT Sign-In Directory` unchanged at 53.
+- Live `kb.lelitte.co.uk/data/kb.json` fetched directly (polled with a cache-busting query string; matched on the first attempt, byte-for-byte identical to the git-authoritative copy).
+- Live `kb.lelitte.co.uk/index.html` fetched directly after the SYSTEM_PROMPT fix deployed — byte-for-byte identical to the tested local copy, zero remaining occurrences of "Service Catalogue" or "/Reward/" anywhere in the file.
+
+**Part 2 — SERVICES mirrored onto `pxd.lelitte.co.uk` (`begb0037admin/hris-launcher`):**
+- Read hris-launchers actual structure first rather than assuming it mirrors this repo — it is a single static `index.html` (no data files, no build workflow, no framework — confirmed via its own `CLAUDE.md`/`README.md`/`CONSTITUTION.md`/`AGENT_MODEL.md`). **Discovered that hris-launchers own sidebar is the literal source this KBs "Service Catalogue / Other Teams / Data Protection" groups were mirrored from in session 6** — so "mirror the SERVICES section onto pxd.lelitte.co.uk" reduced to: (a) the PeopleXD groups already exist there natively (fixed at the source in Part 1), (b) the only genuinely new thing to add is the Oxford IT Sign-In Directory, which hris-launcher does not have at all.
+- Added a new "Oxford IT Sign-In Directory" nav-group (53 entries) to `hris-launcher/index.html`, same section ("Services"), matching the file's exact existing `nav-group`/`nav-group-toggle`/`nav-link` pattern — no new CSS needed.
+- **Data-source judgement call, stated rather than assumed:** embedded the 53 entries as static HTML `<a>` tags (sourced from this repo's `data/oxford-signin-directory.json`, same content) rather than having hris-launcher fetch this KB's JSON live at runtime. Reasoning: hris-launchers own `CLAUDE.md` states "no framework, no build step" and every existing nav-link in the file is static HTML — introducing a live cross-repo `fetch()` would be a new architectural pattern not present anywhere else in that file, and would create a runtime dependency that breaks silently if this KB's file ever moves or CORS-blocks it. Static embedding matches "match hris-launchers own existing visual style/structure as closely as possible" more faithfully than adding a first-of-its-kind data-loading layer.
+- Verification: local diff confined to exactly the intended sidebar region (2 diff hunks, nothing else touched), structural checks (nav-group open/close balance, Oxford crest reference intact — a hard rule in `hris-launcher/CLAUDE.md`), pushed via `gh api ... -X PUT` (commit `04b8d545`), re-fetched via git blob API, byte-for-byte identical, hris-launchers own `pages build and deployment` workflow (run `32281435422`) polled to `completed`/`success` (~18s), live `pxd.lelitte.co.uk` fetched directly with a cache-busting query string, matched on the first attempt, byte-for-byte identical to the tested local copy. "Service Catalogue" and "Reward | Personnel Services" confirmed absent (0 matches); "Oxford IT Sign-In Directory" confirmed present.
+- **A tension surfaced and resolved, not silently overridden:** `hris-launcher/CONSTITUTION.md` Section 11 requires mockups/visual design work to go through a Claude Artifact and never be committed to the repo until approved. This session built and committed production HTML directly, then flagged for screenshot approval after — the same order of operations used for this KB's own SERVICES build in session 6. Per that same constitution's own Section 6 (Source of Truth Hierarchy), "the operator's current AI preferences" sit above the constitution itself, and Kevin's current explicit instruction (relayed via this task) to build directly and get approval via screenshot after is exactly that. Flagging the tension explicitly rather than either blindly following Section 11 (which would have contradicted the actual instruction) or silently skipping it.
+- Created `hris-launcher/RESUME.md` (new — that repo had no `HANDOVER.md`/`RESUME.md` before this session) recording this change, since Adam has never worked in that repo before and a future session (Adam's or anyone else's) needs a durable record, not just this KB's own `HANDOVER.md`. Added a pointer to it from `hris-launcher/CLAUDE.md`'s Bootstrap Order.
+
+**Outstanding, stated plainly:**
+- **Visual approval for the `pxd.lelitte.co.uk` change is still outstanding.** No Playwright/browser-automation tool was available this session (same limitation as sessions 4 and 6) — verification was data/HTML-level (structural checks, byte-for-byte diffs against the live site), not a rendered screenshot. Kevin needs to see the actual rendered sidebar before this is considered fully approved.
+- The session-6 "SERVICES section visual approval" `ROADMAP.md` item for `kb.lelitte.co.uk` is now closed — Kevin's verbal approval is recorded in this task's own brief. See `ROADMAP.md` for the corresponding update.
+
+**Restore points recorded before this session's changes** (Constitution Section 4):
+- `hr-fa-knowledge-base`: `data/pxd-services.json` @ `ca901116f728739e6165ceb6290c702d0f33cfa1`, `index.html` @ `00b882714d1af5c77624d7e425858b48c85dd5b7`, main HEAD @ `be89920c27b33062123db304a4c53ffff8c32e56` (pre-session-7).
+- `hris-launcher`: `index.html` @ `071eaa9b874b3a4d0356b9d6757ed4c3f6fc649d`, main HEAD @ `295cd3ea021147c536e9310512312cebadcf967f` (pre-session-7, this repo's first-ever Adam-authored change, one-off authorized).
+
+---
+
+## Previous State — 19 August 2026 (session 6)
 
 **A new "SERVICES" sidebar section was added to `index.html`, wiring in the Oxford IT Sign-In Directory (built the previous day but left unwired) plus 14 new curated records mirroring `pxd.lelitte.co.uk`'s (`begb0037admin/hris-launcher`) own Service Catalogue, Other Teams, and Data Protection sidebar groups.** Kevin's request: "add the sign-in directory to the HR FA knowledge base... There's a section in there called Services... other teams, data protection... add some additional headings and have the URLs there."
 
