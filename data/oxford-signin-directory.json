@@ -1,9 +1,9 @@
 [
   {
-    "t": "Advanced Research Computing (ARC) - sign in",
+    "t": "Advanced Research Computing (ARC)",
     "s": "How to sign in to Advanced Research Computing (ARC). Account required: Separate account.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Research & Scholarly Systems",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -11,10 +11,10 @@
     "p": "https://arc-user-guide.readthedocs.io/en/latest/"
   },
   {
-    "t": "BeyondTrust Remote Support (formerly Bomgar) - sign in",
+    "t": "BeyondTrust Remote Support (formerly Bomgar)",
     "s": "How to sign in to BeyondTrust Remote Support (formerly Bomgar). Account required: SSO.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "IT Support & Admin Tools",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -22,10 +22,10 @@
     "p": "https://unioxfordnexus.sharepoint.com/sites/OXINTRANET-it-digital/SitePages/How-to-use-BeyondTrust-Remote-Support.aspx"
   },
   {
-    "t": "Canvas - sign in",
+    "t": "Canvas",
     "s": "How to sign in to Canvas. Account required: SSO. Sign-in link: https://login.canvas.ox.ac.uk.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Learning & Teaching",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -33,10 +33,10 @@
     "p": "https://login.canvas.ox.ac.uk"
   },
   {
-    "t": "CareerConnect - sign in",
+    "t": "CareerConnect",
     "s": "How to sign in to CareerConnect. Account required: SSO. Sign-in link: https://oxford.targetconnect.net.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Student, Careers & Academic Records",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -44,10 +44,10 @@
     "p": "https://oxford.targetconnect.net"
   },
   {
-    "t": "Case Management - sign in",
+    "t": "Case Management",
     "s": "How to sign in to Case Management. Account required: SSO. Sign-in link: https://unioxford.crm11.dynamics.com.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "HR & Case Management",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -55,10 +55,10 @@
     "p": "https://unioxford.crm11.dynamics.com"
   },
   {
-    "t": "ChatGPT Edu - sign in",
+    "t": "ChatGPT Edu",
     "s": "How to sign in to ChatGPT Edu. Account required: SSO. Sign-in link: https://chatgpt.com/.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "AI Tools",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -66,10 +66,10 @@
     "p": "https://chatgpt.com/"
   },
   {
-    "t": "Chorus phone management - sign in",
+    "t": "Chorus Phone Management",
     "s": "How to sign in to Chorus phone management. Account required: SSO. Sign-in link: https://phoneman.it.ox.ac.uk.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "IT Support & Admin Tools",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -77,10 +77,10 @@
     "p": "https://phoneman.it.ox.ac.uk"
   },
   {
-    "t": "Clarity - sign in",
+    "t": "Clarity",
     "s": "How to sign in to Clarity. Account required: SSO. Sign-in link: https://cppm3157.ondemand.ca.com/pm.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "IT Support & Admin Tools",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -88,10 +88,10 @@
     "p": "https://cppm3157.ondemand.ca.com/pm"
   },
   {
-    "t": "CoSy (Accessplanit) - sign in",
+    "t": "CoSy (Accessplanit)",
     "s": "How to sign in to CoSy (Accessplanit). Account required: SSO. Sign-in link: https://cosy.ox.ac.uk.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Learning & Teaching",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -99,10 +99,10 @@
     "p": "https://cosy.ox.ac.uk"
   },
   {
-    "t": "DARS - sign in",
+    "t": "DARS",
     "s": "How to sign in to DARS. Account required: CONNECT (requires University network or VPN). Sign-in link: http://www.dars.ox.ac.uk/bbappfx/webui/webshellpage.aspx?databasename=BBInfinity.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Student, Careers & Academic Records",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -110,10 +110,10 @@
     "p": "http://www.dars.ox.ac.uk/bbappfx/webui/webshellpage.aspx?databasename=BBInfinity"
   },
   {
-    "t": "eduroam (Wi-Fi) - sign in",
+    "t": "eduroam (Wi-Fi)",
     "s": "How to sign in to eduroam (Wi-Fi). Account required: Remote access - University Wi-Fi access points.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Network, Devices & Remote Access",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -121,10 +121,10 @@
     "p": "https://www.ox.ac.uk/staff/it/services/wifi/eduroam"
   },
   {
-    "t": "Email (Nexus365) - sign in",
+    "t": "Email (Nexus365)",
     "s": "How to sign in to Email (Nexus365). Account required: SSO. Sign-in link: https://outlook.office.com.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Microsoft 365 & Communication",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -132,10 +132,10 @@
     "p": "https://outlook.office.com"
   },
   {
-    "t": "eVision - sign in",
+    "t": "eVision",
     "s": "How to sign in to eVision. Account required: SSO. Sign-in link: https://evision.ox.ac.uk.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Student, Careers & Academic Records",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -143,10 +143,10 @@
     "p": "https://evision.ox.ac.uk"
   },
   {
-    "t": "Gartner research - sign in",
+    "t": "Gartner Research",
     "s": "How to sign in to Gartner research. Account required: SSO. Sign-in link: https://ssofed.gartner.com/sp/startSSO.ping?PartnerIdpId=https://sts.windows.net/cc95de1b-97f5-4f93-b4ba-fe68b852cf91/.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Research & Scholarly Systems",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -154,10 +154,10 @@
     "p": "https://ssofed.gartner.com/sp/startSSO.ping?PartnerIdpId=https://sts.windows.net/cc95de1b-97f5-4f93-b4ba-fe68b852cf91/"
   },
   {
-    "t": "Google Gemini - sign in",
+    "t": "Google Gemini",
     "s": "How to sign in to Google Gemini. Account required: SSO. Sign-in link: https://gemini.google.com/app.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "AI Tools",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -165,10 +165,10 @@
     "p": "https://gemini.google.com/app"
   },
   {
-    "t": "HFS - sign in",
+    "t": "HFS",
     "s": "How to sign in to HFS. Account required: SSO. Sign-in link: https://portal.hfs.ox.ac.uk.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Facilities & Procurement",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -176,10 +176,10 @@
     "p": "https://portal.hfs.ox.ac.uk"
   },
   {
-    "t": "HR Reporting - sign in",
+    "t": "HR Reporting",
     "s": "How to sign in to HR Reporting. Account required: CONNECT (requires University network or VPN). Sign-in link: https://unioxfordnexus.sharepoint.com/sites/OXINTRANET-working-here/SitePages/system-availability-and-login.aspx.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "HR & Case Management",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -187,10 +187,10 @@
     "p": "https://unioxfordnexus.sharepoint.com/sites/OXINTRANET-working-here/SitePages/system-availability-and-login.aspx"
   },
   {
-    "t": "HR Self-Service (PeopleXD) - sign in",
+    "t": "HR Self-Service (PeopleXD)",
     "s": "How to sign in to HR Self-Service (PeopleXD). Account required: SSO. Sign-in link: https://my.corehr.com.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "HR & Case Management",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -198,10 +198,10 @@
     "p": "https://my.corehr.com"
   },
   {
-    "t": "Hydra - sign in",
+    "t": "Hydra (IP Address Management)",
     "s": "How to sign in to Hydra. Account required: SSO. Sign-in link: https://networks.it.ox.ac.uk/university/ipam.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Network, Devices & Remote Access",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -209,10 +209,10 @@
     "p": "https://networks.it.ox.ac.uk/university/ipam"
   },
   {
-    "t": "Inspera - sign in",
+    "t": "Inspera",
     "s": "How to sign in to Inspera. Account required: SSO. Sign-in link: https://oxford.inspera.com.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Learning & Teaching",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -220,10 +220,10 @@
     "p": "https://oxford.inspera.com"
   },
   {
-    "t": "IT Self Service (OSM) - sign in",
+    "t": "IT Self Service (OSM)",
     "s": "How to sign in to IT Self Service (OSM). Account required: SSO. Sign-in link: https://oxford.saasiteu.com.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Network, Devices & Remote Access",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -231,10 +231,10 @@
     "p": "https://oxford.saasiteu.com"
   },
   {
-    "t": "JISC online surveys - sign in",
+    "t": "JISC Online Surveys",
     "s": "How to sign in to JISC online surveys. Account required: Separate account. Sign-in link: https://app.onlinesurveys.jisc.ac.uk/login.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Research & Scholarly Systems",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -242,10 +242,10 @@
     "p": "https://app.onlinesurveys.jisc.ac.uk/login"
   },
   {
-    "t": "LabArchives (electronic lab notebooks) - sign in",
+    "t": "LabArchives (Electronic Lab Notebooks)",
     "s": "How to sign in to LabArchives (electronic lab notebooks). Account required: SSO. Sign-in link: https://uk-mynotebook.labarchives.com.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Research & Scholarly Systems",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -253,10 +253,10 @@
     "p": "https://uk-mynotebook.labarchives.com"
   },
   {
-    "t": "Linux service - sign in",
+    "t": "Linux Service",
     "s": "How to sign in to Linux service. Account required: SSO (without @ox.ac.uk).",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Network, Devices & Remote Access",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -264,10 +264,10 @@
     "p": "https://unioxfordnexus.sharepoint.com/sites/OXINTRANET-it-digital/SitePages/How-to-connect-using-SSH-SFTP.aspx"
   },
   {
-    "t": "Managed Mac (Orchard) - sign in",
+    "t": "Managed Mac (Orchard)",
     "s": "How to sign in to Managed Mac (Orchard). Account required: CONNECT.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Network, Devices & Remote Access",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -275,10 +275,10 @@
     "p": "https://docs.orchard.ox.ac.uk/SetUpYourMac"
   },
   {
-    "t": "Managed Staff PC (CONNECT) - sign in",
+    "t": "Managed Staff PC (CONNECT)",
     "s": "How to sign in to Managed Staff PC (CONNECT). Account required: CONNECT.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Network, Devices & Remote Access",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -286,10 +286,10 @@
     "p": "https://unioxfordnexus.sharepoint.com/sites/oxintranet-it-digital/sitepages/how-to-log-in-to-a-managed-staff-pc.aspx"
   },
   {
-    "t": "Mentimeter - sign in",
+    "t": "Mentimeter",
     "s": "How to sign in to Mentimeter. Account required: SSO. Sign-in link: https://mentimeter.com/join/universityofoxford.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Learning & Teaching",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -297,10 +297,10 @@
     "p": "https://mentimeter.com/join/universityofoxford"
   },
   {
-    "t": "Microsoft Office (Nexus365) - sign in",
+    "t": "Microsoft Office (Nexus365)",
     "s": "How to sign in to Microsoft Office (Nexus365). Account required: SSO. Sign-in link: https://portal.office.com.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Microsoft 365 & Communication",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -308,10 +308,10 @@
     "p": "https://portal.office.com"
   },
   {
-    "t": "Mosaic website management - sign in",
+    "t": "Mosaic Website Management",
     "s": "How to sign in to Mosaic website management. Account required: SSO. Sign-in link: https://oxfordmosaic.web.ox.ac.uk/.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "IT Support & Admin Tools",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -319,10 +319,10 @@
     "p": "https://oxfordmosaic.web.ox.ac.uk/"
   },
   {
-    "t": "My Sign-ins (MFA management) - sign in",
+    "t": "My Sign-ins (MFA Management)",
     "s": "How to sign in to My Sign-ins (MFA management). Account required: SSO. Sign-in link: https://mysignins.microsoft.com/security-info.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "IT Support & Admin Tools",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -330,10 +330,10 @@
     "p": "https://mysignins.microsoft.com/security-info"
   },
   {
-    "t": "Nexus365 - sign in",
+    "t": "Nexus365 Portal",
     "s": "How to sign in to Nexus365. Account required: SSO. Sign-in link: https://m365.cloud.microsoft/apps.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Microsoft 365 & Communication",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -341,10 +341,10 @@
     "p": "https://m365.cloud.microsoft/apps"
   },
   {
-    "t": "NotebookLM - sign in",
+    "t": "NotebookLM",
     "s": "How to sign in to NotebookLM. Account required: SSO. Sign-in link: https://notebooklm.google.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "AI Tools",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -352,10 +352,10 @@
     "p": "https://notebooklm.google"
   },
   {
-    "t": "OneDrive (Nexus365) - sign in",
+    "t": "OneDrive (Nexus365)",
     "s": "How to sign in to OneDrive (Nexus365). Account required: SSO. Sign-in link: https://unioxfordnexus-my.sharepoint.com.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Microsoft 365 & Communication",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -363,10 +363,10 @@
     "p": "https://unioxfordnexus-my.sharepoint.com"
   },
   {
-    "t": "Oracle Financials (R12) - sign in",
+    "t": "Oracle Financials (R12)",
     "s": "How to sign in to Oracle Financials (R12). Account required: Separate account (requires University network or VPN). Sign-in link: https://r12live.financials.ox.ac.uk.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Finance & Research Costing",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -374,10 +374,10 @@
     "p": "https://r12live.financials.ox.ac.uk"
   },
   {
-    "t": "OWL (Oxford Wireless Lan) - sign in",
+    "t": "OWL (Oxford Wireless LAN)",
     "s": "How to sign in to OWL (Oxford Wireless Lan). Account required: Separate account.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Network, Devices & Remote Access",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -385,10 +385,10 @@
     "p": "https://www.ox.ac.uk/staff/it/services/wifi/owl"
   },
   {
-    "t": "Oxford University Stores - sign in",
+    "t": "Oxford University Stores",
     "s": "How to sign in to Oxford University Stores. Account required: Separate account. Sign-in link: https://www.oxforduniversitystores.co.uk/myaccount.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Facilities & Procurement",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -396,10 +396,10 @@
     "p": "https://www.oxforduniversitystores.co.uk/myaccount"
   },
   {
-    "t": "Panopto - sign in",
+    "t": "Panopto",
     "s": "How to sign in to Panopto. Account required: SSO.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Learning & Teaching",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -407,10 +407,10 @@
     "p": "https://unioxfordnexus.sharepoint.com/sites/OXINTRANET-it-digital/SitePages/Canvas-and-Replay.aspx"
   },
   {
-    "t": "Planon - sign in",
+    "t": "Planon",
     "s": "How to sign in to Planon. Account required: Separate account. Sign-in link: https://universityofoxford-prod.planoncloud.com.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Facilities & Procurement",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -418,10 +418,10 @@
     "p": "https://universityofoxford-prod.planoncloud.com"
   },
   {
-    "t": "Qube - sign in",
+    "t": "Qube",
     "s": "How to sign in to Qube. Account required: Separate account.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Network, Devices & Remote Access",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -429,10 +429,10 @@
     "p": "https://unioxfordnexus.sharepoint.com/sites/OXINTRANET-it-digital/SitePages/overview--remote-desktop-service.aspx"
   },
   {
-    "t": "Remote desktop service (CONNECT users) - sign in",
+    "t": "Remote Desktop Service (CONNECT users)",
     "s": "How to sign in to Remote desktop service (CONNECT users). Account required: CONNECT (requires University network or VPN).",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Network, Devices & Remote Access",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -440,10 +440,10 @@
     "p": "https://unioxfordnexus.sharepoint.com/sites/oxintranet-it-digital/sitepages/how-to-connect-to-the-remote-desktop-service-(connect).aspx"
   },
   {
-    "t": "Research File Service (RFS) - sign in",
+    "t": "Research File Service (RFS)",
     "s": "How to sign in to Research File Service (RFS). Account required: SSO. Sign-in link: https://self-service.rfs.ox.ac.uk.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Research & Scholarly Systems",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -451,10 +451,10 @@
     "p": "https://self-service.rfs.ox.ac.uk"
   },
   {
-    "t": "SAP Concur - sign in",
+    "t": "SAP Concur",
     "s": "How to sign in to SAP Concur. Account required: SSO. Sign-in link: https://sts.fed.ox.ac.uk/adfs/ls/idpinitiatedsignon.aspx?loginToRp=https://www.concur.com.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Finance & Research Costing",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -462,10 +462,10 @@
     "p": "https://sts.fed.ox.ac.uk/adfs/ls/idpinitiatedsignon.aspx?loginToRp=https://www.concur.com"
   },
   {
-    "t": "Self-registration (IT Services) - sign in",
+    "t": "Self-Registration (IT Services)",
     "s": "How to sign in to Self-registration (IT Services). Account required: SSO. Sign-in link: https://register.it.ox.ac.uk.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Network, Devices & Remote Access",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -473,10 +473,10 @@
     "p": "https://register.it.ox.ac.uk"
   },
   {
-    "t": "SharePoint (Nexus365) - sign in",
+    "t": "SharePoint (Nexus365)",
     "s": "How to sign in to SharePoint (Nexus365). Account required: SSO. Sign-in link: https://unioxfordnexus.sharepoint.com.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Microsoft 365 & Communication",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -484,10 +484,10 @@
     "p": "https://unioxfordnexus.sharepoint.com"
   },
   {
-    "t": "SOLO - sign in",
+    "t": "SOLO (Library Catalogue)",
     "s": "How to sign in to SOLO. Account required: SSO. Sign-in link: https://solo.bodleian.ox.ac.uk.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Library & Digital Scholarship",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -495,10 +495,10 @@
     "p": "https://solo.bodleian.ox.ac.uk"
   },
   {
-    "t": "Sustainable Digital Scholarship (SDS) - sign in",
+    "t": "Sustainable Digital Scholarship (SDS)",
     "s": "How to sign in to Sustainable Digital Scholarship (SDS). Account required: SSO. Sign-in link: https://portal.sds.ox.ac.uk/account/home.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Library & Digital Scholarship",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -506,10 +506,10 @@
     "p": "https://portal.sds.ox.ac.uk/account/home"
   },
   {
-    "t": "Sympa (mailing list manager) - sign in",
+    "t": "Sympa (Mailing List Manager)",
     "s": "How to sign in to Sympa (mailing list manager). Account required: SSO. Sign-in link: https://web.maillist.ox.ac.uk.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Microsoft 365 & Communication",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -517,10 +517,10 @@
     "p": "https://web.maillist.ox.ac.uk"
   },
   {
-    "t": "Symplectic Elements - sign in",
+    "t": "Symplectic Elements",
     "s": "How to sign in to Symplectic Elements. Account required: SSO. Sign-in link: https://oxris.ox.ac.uk.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Research & Scholarly Systems",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -528,10 +528,10 @@
     "p": "https://oxris.ox.ac.uk"
   },
   {
-    "t": "Teaching Management System (TMS) - sign in",
+    "t": "Teaching Management System (TMS)",
     "s": "How to sign in to Teaching Management System (TMS). Account required: SSO. Sign-in link: https://tms.ox.ac.uk.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Learning & Teaching",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -539,10 +539,10 @@
     "p": "https://tms.ox.ac.uk"
   },
   {
-    "t": "Teams (Nexus365) - sign in",
+    "t": "Teams (Nexus365)",
     "s": "How to sign in to Teams (Nexus365). Account required: SSO. Sign-in link: https://teams.microsoft.com.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Microsoft 365 & Communication",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -550,10 +550,10 @@
     "p": "https://teams.microsoft.com"
   },
   {
-    "t": "TeamSeer - sign in",
+    "t": "TeamSeer",
     "s": "How to sign in to TeamSeer. Account required: SSO. Sign-in link: https://www.teamseer.com/oxford-university/secure.php?lev=1&page=login&companyId=2216&mode=shibboleth.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "HR & Case Management",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -561,10 +561,10 @@
     "p": "https://www.teamseer.com/oxford-university/secure.php?lev=1&page=login&companyId=2216&mode=shibboleth"
   },
   {
-    "t": "VPN (Virtual Private Network) - sign in",
+    "t": "VPN (Virtual Private Network)",
     "s": "How to sign in to VPN (Virtual Private Network). Account required: SSO. Sign-in link: https://register.it.ox.ac.uk/self/software?swp=vpn.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Network, Devices & Remote Access",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
@@ -572,10 +572,10 @@
     "p": "https://register.it.ox.ac.uk/self/software?swp=vpn"
   },
   {
-    "t": "X5 research costing and pricing - sign in",
+    "t": "X5 Research Costing and Pricing",
     "s": "How to sign in to X5 research costing and pricing. Account required: CONNECT (requires University network or VPN). Sign-in link: https://x5.ox.ac.uk/Agresso/.",
     "src": "Oxford IT Sign-In Directory",
-    "tp": "Sign-In Services",
+    "tp": "Finance & Research Costing",
     "sy": "Oxford IT",
     "e": "web",
     "m": "2026-08-18",
