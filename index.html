@@ -19,6 +19,8 @@
   --rust:#b8462f;--rust-soft:#fbe6df;--rust-text:#7a2a17;
   --sky:#1f7fa8;--sky-soft:#dcf0f7;--sky-text:#0d4a63;
   --lime:#6a8f1f;--lime-soft:#eaf3d9;--lime-text:#3f5511;
+  --indigo:#4b3f96;--indigo-soft:#ece9f7;--indigo-text:#332a66;
+  --coral:#c2410c;--coral-soft:#fdece0;--coral-text:#7a2607;
   --red:#d6453d;--cream:#fbf3df;--cream-border:#eedfb8;--cream-text:#5d451a;
   --radius:9px;--radius-lg:13px;
 }
@@ -108,6 +110,8 @@ input[type=text]:focus,select:focus{outline:none;border-color:var(--blue);box-sh
 .b-iris{background:var(--rust-soft);color:var(--rust-text)}
 .b-ody{background:var(--sky-soft);color:var(--sky-text)}
 .b-hwp{background:var(--lime-soft);color:var(--lime-text)}
+.b-svc{background:var(--indigo-soft);color:var(--indigo-text)}
+.b-pxd{background:var(--coral-soft);color:var(--coral-text)}
 .summary{margin:4px 0;font-size:13.8px;color:#3c4456}
 .path-row{display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--muted);margin-top:7px;flex-wrap:wrap}
 .meta-sm{font-size:11px;color:var(--hint);margin-top:6px}
@@ -284,6 +288,8 @@ body.resizing-ai{cursor:col-resize;user-select:none}
   <ul class="snav" id="nav-ag"></ul>
   <div class="sec">HEALTH &amp; SAFETY</div>
   <ul class="snav" id="nav-hs"></ul>
+  <div class="sec">SERVICES</div>
+  <ul class="snav" id="nav-svc"></ul>
   <div class="foot">
     <div id="foot-counts"></div>
     <div style="margin-top:6px"><a href="https://github.com/begb0037admin/hr-fa-knowledge-base/actions/workflows/scrape-help-centres.yml" target="_blank" rel="noopener">&#8635; Run help-centre refresh</a></div>
@@ -341,7 +347,7 @@ body.resizing-ai{cursor:col-resize;user-select:none}
   <div class="ai-msgs">
     <div class="ai-empty" id="ai-empty">
       <span class="ai-empty-sparkle" aria-hidden="true">✨</span>
-      <div class="ai-empty-text">Ask Linda anything about PeopleXD, Health &amp; Safety (Cority, IRIS, Odyssey, DSE), HR processes, or your step-by-step guides. Answers cited from the knowledge base.</div>
+      <div class="ai-empty-text">Ask Linda anything about PeopleXD, Health &amp; Safety (Cority, IRIS, Odyssey, DSE), the Oxford IT Sign-In Directory, HRIS Launcher services/teams/data protection, HR processes, or your step-by-step guides. Answers cited from the knowledge base.</div>
       <div class="empty-chips" id="empty-chips">
         <button class="chip">How do I maintain pay codes for WFM?</button>
         <button class="chip">How does the GDPR request centre work?</button>
@@ -493,7 +499,7 @@ function cardPreview(s){
 /* ════════ Data loading ════════ */
 let BASE=[], LOCAL=[], D=[];
 const state={q:"",src:"all",tp:"all",sort:"m-desc",arc:false,mod:"all",pdfOnly:false,webOnly:false};
-const navOpen={htg:false,cm:false,agPdf:false,agWeb:false,hs:false,iris:false,ody:false,hwp:false};
+const navOpen={htg:false,cm:false,agPdf:false,agWeb:false,hs:false,iris:false,ody:false,hwp:false,svc:false,pxd:false};
 
 function loadLocal(){try{return JSON.parse(localStorage.getItem(LOCAL_KEY)||"[]")}catch{return[]}}
 function saveLocal(a){localStorage.setItem(LOCAL_KEY,JSON.stringify(a))}
@@ -531,7 +537,9 @@ const SRC_META = {
   "Cority (Health & Safety)":{cls:"s-hs",badge:"b-hs",dot:"var(--teal)"},
   "IRIS":{cls:"s-iris",badge:"b-iris",dot:"var(--rust)"},
   "Odyssey":{cls:"s-ody",badge:"b-ody",dot:"var(--sky)"},
-  "DSE":{cls:"s-hwp",badge:"b-hwp",dot:"var(--lime)"}
+  "DSE":{cls:"s-hwp",badge:"b-hwp",dot:"var(--lime)"},
+  "Oxford IT Sign-In Directory":{cls:"s-svc",badge:"b-svc",dot:"var(--indigo)"},
+  "HRIS Launcher (PeopleXD)":{cls:"s-pxd",badge:"b-pxd",dot:"var(--coral)"}
 };
 const TP_LABEL={
   "Cross-module":                             "General / All modules",
@@ -633,6 +641,24 @@ function buildNav(){
   }
   Q("#nav-hs").innerHTML=hs;
 
+  /* SERVICES — Oxford IT Sign-In Directory, HRIS Launcher (PeopleXD) */
+  const svcDocs=D.filter(x=>x.src==="Oxford IT Sign-In Directory");
+  const svcMods={};
+  svcDocs.forEach(x=>{svcMods[x.tp]=(svcMods[x.tp]||0)+1;});
+  let svc=parentLi("data-svc-src","Oxford IT Sign-In Directory","var(--indigo)","Oxford IT Sign-In Directory",svcDocs.length,state.src==="Oxford IT Sign-In Directory","svc",navOpen.svc);
+  if(navOpen.svc){
+    svc+=Object.keys(svcMods).sort().map(m=>navLi("data-svc-mod",m,"var(--indigo)",tpLabel(m),svcMods[m],(state.src==="Oxford IT Sign-In Directory"&&state.mod===m?"on sub":"sub"))).join("");
+  }
+
+  const pxdDocs=D.filter(x=>x.src==="HRIS Launcher (PeopleXD)");
+  const pxdMods={};
+  pxdDocs.forEach(x=>{pxdMods[x.tp]=(pxdMods[x.tp]||0)+1;});
+  svc+=parentLi("data-svc-src","HRIS Launcher (PeopleXD)","var(--coral)","HRIS Launcher (PeopleXD)",pxdDocs.length,state.src==="HRIS Launcher (PeopleXD)","pxd",navOpen.pxd);
+  if(navOpen.pxd){
+    svc+=Object.keys(pxdMods).sort().map(m=>navLi("data-pxd-mod",m,"var(--coral)",tpLabel(m),pxdMods[m],(state.src==="HRIS Launcher (PeopleXD)"&&state.mod===m?"on sub":"sub"))).join("");
+  }
+  Q("#nav-svc").innerHTML=svc;
+
   const last=D.map(x=>x.m||"").sort().pop()||"—";
   Q("#foot-counts").textContent=D.length+" documents · latest "+last;
 }
@@ -712,6 +738,25 @@ Q("#nav-hs").addEventListener("click",e=>{
     Q("#src").value=state.src;Q("#tp").value="all";buildNav();render();
   }
 });
+Q("#nav-svc").addEventListener("click",e=>{
+  const chev=e.target.closest(".chev[data-toggle]");
+  if(chev){const k=chev.getAttribute("data-toggle");navOpen[k]=!navOpen[k];buildNav();return;}
+  const svcSrc=e.target.closest("li[data-svc-src]");
+  if(svcSrc){
+    state.src=svcSrc.getAttribute("data-svc-src");state.mod="all";state.pdfOnly=false;state.webOnly=false;
+    Q("#src").value=state.src;Q("#tp").value="all";buildNav();render();return;
+  }
+  const svcMod=e.target.closest("li[data-svc-mod]");
+  if(svcMod){
+    state.src="Oxford IT Sign-In Directory";state.mod=svcMod.getAttribute("data-svc-mod");state.pdfOnly=false;state.webOnly=false;
+    Q("#src").value=state.src;Q("#tp").value="all";buildNav();render();return;
+  }
+  const pxdMod=e.target.closest("li[data-pxd-mod]");
+  if(pxdMod){
+    state.src="HRIS Launcher (PeopleXD)";state.mod=pxdMod.getAttribute("data-pxd-mod");state.pdfOnly=false;state.webOnly=false;
+    Q("#src").value=state.src;Q("#tp").value="all";buildNav();render();
+  }
+});
 
 /* ════════ Filters & cards ════════ */
 function buildFilters(){
@@ -761,9 +806,11 @@ function render(){
     const isAg=x.src==="Access Group Help Centre";
     const isHs=x.src==="Cority (Health & Safety)";
     const isHsLibrary=x.src==="IRIS"||x.src==="Odyssey"||x.src==="DSE";
+    const isSignin=x.src==="Oxford IT Sign-In Directory";
+    const isPxd=x.src==="HRIS Launcher (PeopleXD)";
     let openHref = x.p || "";
     if(/sharepoint\.com/i.test(openHref) && !openHref.includes("?")) openHref += "?web=1";
-    const openLabel = isAg ? (x.e === "pdf" ? "Open PDF" : "Open article") : isHs ? "Open article" : isHsLibrary ? "Open document" : "Open in SharePoint";
+    const openLabel = isAg ? (x.e === "pdf" ? "Open PDF" : "Open article") : isHs ? "Open article" : isHsLibrary ? "Open document" : (isSignin||isPxd) ? "Open link" : "Open in SharePoint";
     let open = openHref?'<a class="mini" target="_blank" rel="noopener" href="'+esc(openHref)+'">'+openLabel+"</a>":"";
     let copy = openHref?'<button class="mini" data-copy="'+esc(openHref)+'">Copy link</button>':"";
     let del = x._local?'<button class="mini" data-del="'+esc(x.f)+'">Remove</button>':"";
@@ -898,7 +945,7 @@ function retrieve(question,n){
 /* ════════ Ask flow ════════ */
 const SYSTEM_PROMPT=
 "You are Linda, the HR Functional Analysis assistant for Kevin Lelitte at the University of Oxford. Your name is Linda. "+
-"You answer questions about the PeopleXD (CoreHR) system and about the University's Health & Safety systems — Cority (CoreEHS+/GX2, myCority, and related modules), IRIS (the Incident Reporting & Investigation System), Odyssey (the Radiation Management System), and DSE (Cardinus, for Display Screen Equipment/workstation assessments) — using ONLY the numbered context documents supplied with each question. "+
+"You answer questions about the PeopleXD (CoreHR) system, the University's Health & Safety systems — Cority (CoreEHS+/GX2, myCority, and related modules), IRIS (the Incident Reporting & Investigation System), Odyssey (the Radiation Management System), and DSE (Cardinus, for Display Screen Equipment/workstation assessments) — the Oxford IT Sign-In Directory (how to sign in to any University digital service, and its account type), and HRIS Launcher / PeopleXD services (the IT Service Catalogue, related teams such as HR Analytics/Reward/Payroll/Pensions, and data protection guidance) — using ONLY the numbered context documents supplied with each question. "+
 "Be practical and concise: when the user asks how to do something, give clear numbered steps. "+
 "Cite sources inline as [1], [2] etc. matching the context numbering. "+
 "If the context does not contain the answer, say so plainly and suggest which help centre or guide is the best place to look — never invent procedures. "+
