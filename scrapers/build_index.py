@@ -10,6 +10,7 @@ Inputs:
   data/hs-library-docs.json   14 curated IRIS/Odyssey/Healthy Working Plus docs (optional)
   data/hs-library-fulltext.json, data/hs-library-files.json  output of extract_hs_library.py (optional)
   data/oxford-signin-directory.json  53 curated Oxford IT sign-in service records (optional)
+  data/pxd-services.json      14 curated HRIS Launcher (PeopleXD) service/team/data-protection records (optional)
 
 Outputs:
   data/kb.json        one record per document, drives the cards and filters
@@ -164,12 +165,34 @@ def load_oxford_signin_docs():
     """Curated Oxford IT sign-in service directory — 53 hand-authored records
     (service name, sign-in link, guide link, account type), no source
     document to extract from, same self-authored shape as load_kevin_guides().
-    Purely additive; deliberately not wired into any sidebar nav section —
-    it's surfaced via a single footer link to its own standalone page, not
-    as a browsable category (Kevin's explicit design decision, 18 Aug 2026)."""
+    Purely additive. As of 19 Aug 2026 this is wired into its own SERVICES
+    sidebar section in index.html (Kevin's explicit request), in addition
+    to the standalone signin-directory.html reference page added 18 Aug 2026
+    (that page and its footer link remain, unchanged)."""
     path = os.path.join(DATA, "oxford-signin-directory.json")
     if not os.path.exists(path):
         print("No data/oxford-signin-directory.json - skipping Oxford IT sign-in directory.")
+        return []
+    with open(path, encoding="utf-8") as fh:
+        entries = json.load(fh)
+    docs = []
+    for e in entries:
+        text = clean_text(e.pop("_text", ""))
+        docs.append({**e, "_text": text})
+    return docs
+
+
+def load_pxd_services_docs():
+    """Curated HRIS Launcher (pxd.lelitte.co.uk / begb0037admin/hris-launcher)
+    reference records — 14 hand-authored entries mirroring that site's own
+    sidebar groupings (Service Catalogue, Other Teams, Data Protection),
+    added 19 Aug 2026 per Kevin's request to surface the same reference
+    data inside this knowledge base. Same self-authored shape as
+    load_oxford_signin_docs() / load_kevin_guides(); no source document to
+    extract from. Purely additive."""
+    path = os.path.join(DATA, "pxd-services.json")
+    if not os.path.exists(path):
+        print("No data/pxd-services.json - skipping HRIS Launcher (PeopleXD) services.")
         return []
     with open(path, encoding="utf-8") as fh:
         entries = json.load(fh)
@@ -330,8 +353,9 @@ def main():
     cority_docs = load_cority_clickhelp_docs()
     hs_library_docs = load_hs_library_docs()
     signin_docs = load_oxford_signin_docs()
+    pxd_docs = load_pxd_services_docs()
     ag_docs = (load_scraped_docs() + load_deep_articles() + load_kevin_guides()
-               + cority_docs + hs_library_docs + signin_docs)
+               + cority_docs + hs_library_docs + signin_docs + pxd_docs)
 
     kb, index = [], []
     sp_full = sp_local = 0
@@ -374,7 +398,8 @@ def main():
           f"{len(ag_docs)} help centre + Kevin's Guides + Cority + H&S library, "
           f"of which {len(cority_docs)} Cority Health & Safety, "
           f"{len(hs_library_docs)} IRIS/Odyssey/Healthy Working Plus, "
-          f"{len(signin_docs)} Oxford IT sign-in directory)")
+          f"{len(signin_docs)} Oxford IT sign-in directory, "
+          f"{len(pxd_docs)} HRIS Launcher / PeopleXD services)")
     print(f"kb-index.json: {len(index)} searchable chunks")
 
 
