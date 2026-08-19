@@ -1,0 +1,156 @@
+[
+  {
+    "t": "PeopleXD Service",
+    "s": "IT Service Catalogue entry for PeopleXD (the University's HR information system). Owning team, service description, and support contacts.",
+    "src": "HRIS Launcher (PeopleXD)",
+    "tp": "Service Catalogue",
+    "sy": "PeopleXD",
+    "e": "web",
+    "m": "2026-08-19",
+    "_text": "PeopleXD Service: IT Service Catalogue entry. https://services.it.ox.ac.uk/Service/professional-services-and-university-administration/hr-information-systems",
+    "p": "https://services.it.ox.ac.uk/Service/professional-services-and-university-administration/hr-information-systems"
+  },
+  {
+    "t": "HR Reporting Service",
+    "s": "IT Service Catalogue entry for the HR Reporting service (business intelligence/reporting layer over PeopleXD data).",
+    "src": "HRIS Launcher (PeopleXD)",
+    "tp": "Service Catalogue",
+    "sy": "PeopleXD",
+    "e": "web",
+    "m": "2026-08-19",
+    "_text": "HR Reporting Service: IT Service Catalogue entry. https://services.it.ox.ac.uk/Service/professional-services-and-university-administration/HR%20Reporting",
+    "p": "https://services.it.ox.ac.uk/Service/professional-services-and-university-administration/HR%20Reporting"
+  },
+  {
+    "t": "Internal Jobs List",
+    "s": "IT Service Catalogue entry for the University's internal jobs listing service.",
+    "src": "HRIS Launcher (PeopleXD)",
+    "tp": "Service Catalogue",
+    "sy": "PeopleXD",
+    "e": "web",
+    "m": "2026-08-19",
+    "_text": "Internal Jobs List: IT Service Catalogue entry. https://services.it.ox.ac.uk/Service/connect-and-communicate/internal-jobs-list",
+    "p": "https://services.it.ox.ac.uk/Service/connect-and-communicate/internal-jobs-list"
+  },
+  {
+    "t": "Childcare Database",
+    "s": "IT Service Catalogue entry for the University's childcare database service.",
+    "src": "HRIS Launcher (PeopleXD)",
+    "tp": "Service Catalogue",
+    "sy": "PeopleXD",
+    "e": "web",
+    "m": "2026-08-19",
+    "_text": "Childcare Database: IT Service Catalogue entry. https://services.it.ox.ac.uk/Service/professional-services-and-university-administration/childcare-database",
+    "p": "https://services.it.ox.ac.uk/Service/professional-services-and-university-administration/childcare-database"
+  },
+  {
+    "t": "Staff Immigration Case Management",
+    "s": "IT Service Catalogue entry for the staff immigration case management service.",
+    "src": "HRIS Launcher (PeopleXD)",
+    "tp": "Service Catalogue",
+    "sy": "PeopleXD",
+    "e": "web",
+    "m": "2026-08-19",
+    "_text": "Staff Immigration Case Management: IT Service Catalogue entry. https://services.it.ox.ac.uk/Service/professional-services-and-university-administration/case-management-staff-immigration",
+    "p": "https://services.it.ox.ac.uk/Service/professional-services-and-university-administration/case-management-staff-immigration"
+  },
+  {
+    "t": "Health & Safety (IRIS) — IT Service Catalogue entry",
+    "s": "IT Service Catalogue entry for the Health and Safety Incident Reporting and Investigation System (IRIS). This is the Service Catalogue record, distinct from this KB's own IRIS document library under Health & Safety.",
+    "src": "HRIS Launcher (PeopleXD)",
+    "tp": "Service Catalogue",
+    "sy": "PeopleXD",
+    "e": "web",
+    "m": "2026-08-19",
+    "_text": "Health & Safety (IRIS) IT Service Catalogue entry. https://services.it.ox.ac.uk/Service/professional-services-and-university-administration/Health%20and%20Safety%20Incident%20Reporting%20and%20Investigation%20System",
+    "p": "https://services.it.ox.ac.uk/Service/professional-services-and-university-administration/Health%20and%20Safety%20Incident%20Reporting%20and%20Investigation%20System"
+  },
+  {
+    "t": "BizTalk Integration",
+    "s": "IT Service Catalogue entry for the BizTalk integration and process automation platform used by HR systems.",
+    "src": "HRIS Launcher (PeopleXD)",
+    "tp": "Service Catalogue",
+    "sy": "PeopleXD",
+    "e": "web",
+    "m": "2026-08-19",
+    "_text": "BizTalk Integration: IT Service Catalogue entry. https://services.it.ox.ac.uk/Service/data-services/integration-and-process-automation-platforms",
+    "p": "https://services.it.ox.ac.uk/Service/data-services/integration-and-process-automation-platforms"
+  },
+  {
+    "t": "Survey Advice",
+    "s": "IT Service Catalogue entry for survey design tools and advice.",
+    "src": "HRIS Launcher (PeopleXD)",
+    "tp": "Service Catalogue",
+    "sy": "PeopleXD",
+    "e": "web",
+    "m": "2026-08-19",
+    "_text": "Survey Advice: IT Service Catalogue entry. https://services.it.ox.ac.uk/Service/research-support/survey-design-tools",
+    "p": "https://services.it.ox.ac.uk/Service/research-support/survey-design-tools"
+  },
+  {
+    "t": "HR Analytics Team",
+    "s": "Contact/reference for the HR Analytics team, a related team to HR Systems.",
+    "src": "HRIS Launcher (PeopleXD)",
+    "tp": "Other Teams",
+    "sy": "PeopleXD",
+    "e": "web",
+    "m": "2026-08-19",
+    "_text": "HR Analytics Team: related team. https://hrsystems.admin.ox.ac.uk/hr-analytics",
+    "p": "https://hrsystems.admin.ox.ac.uk/hr-analytics"
+  },
+  {
+    "t": "Reward | Personnel Services",
+    "s": "Contact/reference for the Reward team within Personnel Services.",
+    "src": "HRIS Launcher (PeopleXD)",
+    "tp": "Other Teams",
+    "sy": "PeopleXD",
+    "e": "web",
+    "m": "2026-08-19",
+    "_text": "Reward | Personnel Services: related team. http://www.admin.ox.ac.uk/personnel/reward/",
+    "p": "http://www.admin.ox.ac.uk/personnel/reward/"
+  },
+  {
+    "t": "Payroll | Finance Division",
+    "s": "Contact/reference for the Payroll team within the Finance Division.",
+    "src": "HRIS Launcher (PeopleXD)",
+    "tp": "Other Teams",
+    "sy": "PeopleXD",
+    "e": "web",
+    "m": "2026-08-19",
+    "_text": "Payroll | Finance Division: related team. https://finance.admin.ox.ac.uk/payroll",
+    "p": "https://finance.admin.ox.ac.uk/payroll"
+  },
+  {
+    "t": "Pensions | Finance Division",
+    "s": "Contact/reference for the Pensions team within the Finance Division.",
+    "src": "HRIS Launcher (PeopleXD)",
+    "tp": "Other Teams",
+    "sy": "PeopleXD",
+    "e": "web",
+    "m": "2026-08-19",
+    "_text": "Pensions | Finance Division: related team. https://finance.admin.ox.ac.uk/pensions",
+    "p": "https://finance.admin.ox.ac.uk/pensions"
+  },
+  {
+    "t": "Guidance on Data Breaches",
+    "s": "University guidance for staff on data breaches — what counts as a breach and how to report one.",
+    "src": "HRIS Launcher (PeopleXD)",
+    "tp": "Data Protection",
+    "sy": "PeopleXD",
+    "e": "web",
+    "m": "2026-08-19",
+    "_text": "Guidance on Data Breaches. https://compliance.admin.ox.ac.uk/staff-guidance-on-data-breaches",
+    "p": "https://compliance.admin.ox.ac.uk/staff-guidance-on-data-breaches"
+  },
+  {
+    "t": "Data Privacy Training",
+    "s": "University's mandatory data privacy training module for staff.",
+    "src": "HRIS Launcher (PeopleXD)",
+    "tp": "Data Protection",
+    "sy": "PeopleXD",
+    "e": "web",
+    "m": "2026-08-19",
+    "_text": "Data Privacy Training module. https://compliance.admin.ox.ac.uk/data-privacy-training-module",
+    "p": "https://compliance.admin.ox.ac.uk/data-privacy-training-module"
+  }
+]
