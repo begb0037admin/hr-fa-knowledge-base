@@ -90,6 +90,11 @@ input[type=text]:focus,select:focus{outline:none;border-color:var(--blue);box-sh
 .controls{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:10px;margin-bottom:9px}
 .field{display:flex;flex-direction:column;gap:3px}
 .field label{font-size:11.5px;color:var(--muted);letter-spacing:.02em}
+.search-wrap{position:relative;display:flex}
+.search-wrap input{flex:1;min-width:0;padding-right:28px}
+.search-clear{display:none;align-items:center;justify-content:center;position:absolute;right:4px;top:50%;transform:translateY(-50%);width:22px;height:22px;padding:0;border:none;border-radius:50%;background:none;color:var(--hint);font-size:16px;line-height:1;cursor:pointer;font-family:inherit}
+.search-clear.show{display:flex}
+.search-clear:hover{background:var(--border-soft);color:var(--navy-text)}
 .toggles{display:flex;gap:14px;align-items:center;margin-bottom:13px;font-size:13px;color:var(--muted)}
 .toggles label{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
 
@@ -308,7 +313,7 @@ body.resizing-ai{cursor:col-resize;user-select:none}
   </div>
   <div class="centre-filters">
     <div class="controls">
-      <div class="field"><label for="q">Search</label><input id="q" type="text" placeholder="Filter by title, summary, system, filename..."></div>
+      <div class="field"><label for="q">Search</label><div class="search-wrap"><input id="q" type="text" placeholder="Filter by title, summary, system, filename..."><button type="button" class="search-clear" id="q-clear" title="Clear search" aria-label="Clear search">&times;</button></div></div>
       <div class="field"><label for="src">Source</label><select id="src"><option value="all">All sources</option></select></div>
       <div class="field"><label for="tp">Topic</label><select id="tp"><option value="all">All topics</option></select></div>
       <div class="field"><label for="sort">Sort</label><select id="sort">
@@ -523,7 +528,7 @@ async function boot(){
   }
   LOCAL = loadLocal();
   D = BASE.concat(LOCAL.map(x=>Object.assign({},x,{_local:true})));
-  buildNav(); buildFilters(); render();
+  buildNav(); buildFilters(); render(); updateSearchClear();
   if(lastErr){
     Q("#out").innerHTML = '<div class="loaderr">Could not load data/kb.json ('+esc(lastErr.message)+'). The site may be mid-deployment &mdash; <a href="javascript:location.reload()">reload the page</a> in a few seconds.</div>';
   }
@@ -797,7 +802,7 @@ function render(){
   const all=filt();
   const r=all.slice(0,RENDER_CAP);
   Q("#meta").textContent=all.length+" of "+D.length+" documents"+(LOCAL.length?" (+"+LOCAL.length+" local)":"");
-  if(!all.length){Q("#out").innerHTML='<div class="empty">No documents match. Try clearing filters.</div>';return;}
+  if(!all.length){Q("#out").innerHTML='<div class="empty">No documents match. <button type="button" class="mini" id="clear-all-filters">Clear filters</button></div>';return;}
   const q=state.q;
   const capNote=all.length>RENDER_CAP?'<div class="empty">Showing the first '+RENDER_CAP+' of '+all.length+' documents &mdash; use search or the filters to narrow down, or just ask Linda above.</div>':"";
   Q("#out").innerHTML=r.map(x=>{
@@ -840,7 +845,29 @@ function render(){
       +"</div>";
   }).join("")+capNote;
 }
-Q("#q").addEventListener("input",e=>{state.q=e.target.value;render()});
+function updateSearchClear(){
+  const btn=Q("#q-clear");
+  if(btn)btn.classList.toggle("show",!!state.q);
+}
+function clearAllFilters(){
+  state.q="";state.src="all";state.mod="all";state.tp="all";state.pdfOnly=false;state.webOnly=false;
+  Q("#q").value="";
+  updateSearchClear();
+  buildNav();buildFilters();render();
+}
+Q("#q").addEventListener("input",e=>{state.q=e.target.value;updateSearchClear();render()});
+Q("#q").addEventListener("keydown",e=>{
+  if(e.key==="Escape"&&state.q){
+    state.q="";e.target.value="";updateSearchClear();render();
+  }
+});
+Q("#q-clear").addEventListener("click",()=>{
+  state.q="";
+  Q("#q").value="";
+  updateSearchClear();
+  Q("#q").focus();
+  render();
+});
 Q("#src").addEventListener("change",e=>{state.src=e.target.value;state.mod="all";state.tp="all";state.pdfOnly=false;state.webOnly=false;buildNav();buildFilters();render()});
 Q("#tp").addEventListener("change",e=>{state.tp=e.target.value;render()});
 Q("#sort").addEventListener("change",e=>{state.sort=e.target.value;render()});
@@ -852,6 +879,7 @@ Q("#out").addEventListener("mousedown",e=>{
   if(e.target.closest(".card-tts"))e.preventDefault();
 });
 Q("#out").addEventListener("click",e=>{
+  if(e.target.id==="clear-all-filters"){clearAllFilters();return;}
   const cp=e.target.getAttribute("data-copy");
   if(cp){navigator.clipboard.writeText(cp).then(()=>{e.target.textContent="Copied ✓";setTimeout(()=>e.target.textContent="Copy link",1200)});return;}
   const dl=e.target.getAttribute("data-del");
