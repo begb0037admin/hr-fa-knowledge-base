@@ -1,7 +1,7 @@
 # Handover — HR FA Knowledge Base
 
 **To:** New session
-**From:** Session of 19 August 2026 (Adam, session 7)
+**From:** Session of 20 August 2026 (Adam, session 8)
 **Owner:** Kevin (kevin.lelitte@admin.ox.ac.uk · GitHub `begb0037admin`)
 
 Everything you need to drive this project is in this file plus the repo
@@ -9,7 +9,28 @@ itself. Trust the repo over memory; verify data, not just green ticks.
 
 ---
 
-## Current State — 19 August 2026 (session 7)
+## Current State — 20 August 2026 (session 8)
+
+**Document library search clear-button bug fixed and pushed to main.** Kevin reported the search box in the document library (`.centre-filters` search field) had no visible way to clear a query — no x/clear control anywhere in the UI — and the search state "persists no matter what he clicks."
+
+**What was actually broken, confirmed by reading the code directly:** `state.q` was written in exactly one place (`Q("#q")`'s `input` listener) and read nowhere else wrote to it. Every other filter control (source/topic dropdowns, the "Show archived" toggle, every sidebar nav click across How To Guides/Access Group/Health & Safety/Services) explicitly reset its own `state.*` fields but none ever touched `state.q` — so once a search was typed, nothing else in the UI could clear it, exactly matching Kevin's report. A second, related bug in the same area: the empty-state message when a filter combination matched nothing read "No documents match. Try clearing filters." — referencing an action that didn't exist anywhere in the UI.
+
+**What changed in `index.html`:**
+- Wrapped `#q` in a new `.search-wrap` div with a `#q-clear` "×" button, shown only when `state.q` is non-empty (same `.mini`/`--hint`/`--border-soft`/`--navy-text` visual conventions already used elsewhere in the file — no new design language introduced).
+- `#q-clear` click handler and an Escape-key handler on `#q` both reset `state.q`, clear the input, hide the button, and re-render.
+- The dead "Try clearing filters" text became a real `#clear-all-filters` button (matching the existing `.mini` button convention), wired through the already-existing delegated `#out` click handler, resetting all filters (`state.q`, `state.src`, `state.mod`, `state.tp`, `state.pdfOnly`, `state.webOnly`) together.
+
+**Verification, before push:** built a synthetic `data/kb.json` fixture and served both the original and fixed `index.html` locally via Playwright (installed cleanly in-session — no browser-automation-tool limitation this time, unlike several prior sessions). Reproduced the bug live against the original file (search stuck regardless of other filter changes, no clear control present), then confirmed the fix live against the patched file for all three paths: click the × button, press Escape, and use the new empty-state "Clear filters" button — all three correctly cleared the query and re-rendered the full unfiltered library. Screenshots of both the buggy and fixed states were shown to Kevin directly and approved before this push. Full investigation/fix/verification detail is in Adam's own memory (`begb0037admin/adam` → `memory/kb-search-clear-fix-2026-08-20.md`), including an independent re-verification pass later the same day that confirmed the fix's local baseline was still byte-identical to live `main` before pushing.
+
+**Push:** per this repo's own Branch and Merge Protocol ("Always push directly to main"), pushed directly to main — Kevin's explicit instruction, and a final sanity diff was run against the live `main` copy of `index.html` immediately before pushing (confirmed no drift since the earlier verification: the only difference was exactly the intended fix, nothing else). Commit `4b534ebb477581067dc0bb1495fbf5df2f53773c`. Re-fetched the pushed content via the git blob API and diffed it byte-for-byte against the tested local file — identical (sha256 `47c8e8b2ebc12f61b7ac34f0d1ade6b5fc15d542438e03f2ae05b17464096fd7`).
+
+**Live-site confirmation:** see this session's own note below on GitHub Pages deployment status at the time this entry was written — check the live `kb.lelitte.co.uk` directly rather than trusting this paragraph, since Pages deploys can lag a few minutes behind a push.
+
+**Restore point recorded before this session's change** (Constitution Section 4): `index.html` @ `aa487ba3a639cba9bdff93e6a88001e419015eb9`, main HEAD immediately pre-push (pre-search-clear-fix, 20 August 2026, before session 8).
+
+---
+
+## Previous State — 19 August 2026 (session 7)
 
 **Follow-on to session 6.** Kevin reviewed the live SERVICES sidebar section and approved it verbally, then asked for two things: (1) fix the 9 dead HRIS Launcher URLs at the source and re-sync this KB, (2) mirror the SERVICES section back onto `pxd.lelitte.co.uk` itself. Kevin explicitly authorized touching `begb0037admin/hris-launcher` for this task only — a one-off exception to Adam's normal scope, not a standing scope change.
 
