@@ -12,6 +12,7 @@
 - **Last updated:** 2026-08-19
 
 ## Bootstrap Order
+0. **Accountable lead: Adam** (`agent-commons/AGENT_DIRECTORY.md`). Any local session working in this repo should dispatch to Adam immediately rather than operating as a generic session — Adam reads its own `AGENT.md`, `MEMORY.md`, and this file before doing anything — except the embedded voice/chat feature ("Linda"), which is Markey's.
 1. This file (orientation)
 2. `HANDOVER.md` (full current state — read this for any task)
 3. `ROADMAP.md` (parked/in-progress/follow-up items — check before assuming something isn't tracked)
