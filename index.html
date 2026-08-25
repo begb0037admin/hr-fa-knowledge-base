@@ -1160,7 +1160,8 @@ async function ask(question){
   }catch(err){
     if(err&&err.name==="AbortError"){dbg(myGen,"aborted");return;}
     if(stale())return;
-    Q("#"+tid).outerHTML='<div class="ask-err">Could not get an answer: '+esc(err.message)+". Check the &#9881; AI connection settings.</div>";
+    dbg(myGen,"generation: failed, raw="+(err&&err.message));
+    Q("#"+tid).outerHTML='<div class="ask-err">Linda&rsquo;s answer service is temporarily unavailable right now &mdash; please try again shortly, or contact Kevin if it keeps happening.</div>';
     if(msgs) msgs.scrollTop=msgs.scrollHeight;
   }finally{
     if(ACTIVE_CTRL===ctrl)ACTIVE_CTRL=null;
