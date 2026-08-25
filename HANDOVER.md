@@ -1,7 +1,7 @@
 # Handover — HR FA Knowledge Base
 
 **To:** New session
-**From:** Session of 20 August 2026 (Adam, session 8)
+**From:** Session of 25 August 2026 (Markey, session 9)
 **Owner:** Kevin (kevin.lelitte@admin.ox.ac.uk · GitHub `begb0037admin`)
 
 Everything you need to drive this project is in this file plus the repo
@@ -9,7 +9,56 @@ itself. Trust the repo over memory; verify data, not just green ticks.
 
 ---
 
-## Current State — 20 August 2026 (session 8)
+## Current State — 25 August 2026 (Markey, session 9)
+
+**Context:** earlier the same day, Kevin reported "error with linda" / "no
+data" on the Ask-the-KB chat. Root cause (investigated and confirmed by
+Markey, see `begb0037admin/markey` → `memory/linda-anthropic-credit-exhaustion-2026-08-25.md`):
+Anthropic API credit exhaustion on the `hr-kb-ai` Worker's `ANTHROPIC_API_KEY`
+— not a code bug. That surfaced a real UX gap: the Worker's chat route
+(`worker/worker.js` `chat()`) passes Anthropic's raw upstream error body
+straight back to the browser, and `index.html`'s `ask()` function rendered
+it verbatim, so the end user saw raw billing/API text
+("Your credit balance is too low to access the Anthropic API...").
+
+**Fix shipped this session — error-message presentation only, scoped
+narrowly:** `index.html`'s `ask()` catch block (~line 1160-1166) no longer
+renders `err.message` into the visible page. Any chat-generation failure —
+credit exhaustion, other Worker/API errors, network failures — now shows a
+single calm, fixed message instead:
+
+> Linda's answer service is temporarily unavailable right now — please try
+> again shortly, or contact Kevin if it keeps happening.
+
+The real error is still captured via the existing `dbg(myGen, ...)` →
+`console.debug` turn-tracing pattern already used throughout `ask()`, so
+nothing is silently lost for debugging — it's just no longer shown to the
+user. The upstream extraction of `data.error.message` at line ~1123 (used
+to decide *whether* to throw on a non-ok Worker response) was deliberately
+left untouched; only the catch block's *rendering* of that message changed.
+No other `ask()` behaviour touched, and TTS (`/tts`)/STT (`/stt`) paths are
+entirely unaffected (they don't go through this code path at all).
+
+**Push and deploy:** per this repo's own Branch and Merge Protocol, pushed
+directly to main. Commit `f6043c2a64cfac1faa6af71f855c60f87505fe15`
+(parent `bcce4e4537be273eb5acaa303dc7ab30d22e4bff`). GitHub's "pages build
+and deployment" Actions run for this commit polled to
+`status=completed`/`conclusion=success`. Live confirmation: re-fetched
+`https://kb.lelitte.co.uk/index.html` with a cache-busting query string
+after the deploy completed — `Last-Modified`/`ETag`/`X-Cache: MISS`
+confirmed a fresh serve, the new friendly string is present, and the old
+raw `Could not get an answer: <raw message>` string returns zero matches.
+
+**Still outstanding (unchanged, not this session's scope):** the original
+credit-exhaustion root cause itself still needs Kevin's own action — top up
+Anthropic API credit at console.anthropic.com, then re-test Linda's Ask box
+end-to-end to confirm answers actually generate again (this session's fix
+only changes what the user sees *if* a failure happens again; it does not
+and cannot restore API credit).
+
+---
+
+## Previous State — 20 August 2026 (session 8)
 
 **Document library search clear-button bug fixed and pushed to main.** Kevin reported the search box in the document library (`.centre-filters` search field) had no visible way to clear a query — no x/clear control anywhere in the UI — and the search state "persists no matter what he clicks."
 
