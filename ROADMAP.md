@@ -138,7 +138,8 @@ First flagged in `HANDOVER.md` (10 July 2026) as explicitly outside what an AI s
 - Screenshots added to SQL Training Guide once video is processed
 - KB sidebar — add "Kevin's Guides" as a permanent left-panel category (currently Source dropdown only)
 - Enhanced two-level summaries (`ss`/`sl`) for the H&S reference library (IRIS/Odyssey/DSE) — currently plain `s` field only, same as Cority
+- **KB content gap — UDF / CorePortal self-service scoping + test→UOXP config promotion.** Recurring retrieval ask (REF29/REF2029; 19 Aug, 27 Aug ×2). Two related gaps: (a) no single "Promote PeopleXD configuration from test to UOXP (LIVE)" runbook — the raise→test→approve→re-key→verify→close pattern is scattered across ~15 Change Management articles + How To guides; (b) no doc stating plainly that a person-level UDF's CorePortal visibility is a binary "Display on CorePortal" on/off with **no populated-only / conditional-display option**, and that the only scoping levers are the `CorePortal – Employee/Manager User Defined View` menu options (via Security Menu Profile — coarse, all-or-nothing across every ESS-shared person UDF) or re-delivering as an Employee/Manager Request with criteria-group assignment (population-scoped, not populated-scoped; and a submit/workflow surface, not read-only display). "Security Required" does **not** gate the employee's own ESS view (doc 192 §6). Detail + doc map in Adam's memory `kb-udf-promotion-to-uoxp-gap.md`.
 
 ---
 
-*Last updated: 19 August 2026 (session 7 — dead HRIS Launcher URLs fixed at source, KB re-synced, SERVICES mirrored onto pxd.lelitte.co.uk)*
+*Last updated: 27 August 2026 (Adam — REF29 CorePortal populated-only-visibility retrieval ask; added UDF/CorePortal scoping + test→UOXP promotion content gap to Future Ideas)*
