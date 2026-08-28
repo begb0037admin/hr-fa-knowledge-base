@@ -1,0 +1,14 @@
+name = "hr-kb-ai"
+main = "worker.js"
+compatibility_date = "2026-06-10"
+
+[ai]
+binding = "AI"
+
+[vars]
+ALLOWED_ORIGIN = "https://kb.lelitte.co.uk,https://begb0037admin.github.io"
+AURA_SPEAKER = "delia"
+
+[[kv_namespaces]]
+binding = "MEM"
+id = "b607528773464774962053117069abd1"

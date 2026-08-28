@@ -26,13 +26,43 @@ this repository or in the browser. It works from any machine.
 6. Paste that URL into the site's AI setup panel (gear icon next to the
    Ask box) — or tell Claude the URL and it will be baked into the site.
 
+## Deploy via wrangler (used from 28 Aug 2026)
+
+`wrangler.toml` in this folder captures the full live binding set, so a
+deploy is one command and can't silently drop a binding:
+
+```
+cd worker
+npx wrangler deploy --dry-run   # inspect bindings first
+npx wrangler deploy
+```
+
+Secrets (`ANTHROPIC_API_KEY` etc.) are managed separately and are never
+touched by `wrangler deploy` — they persist across deploys. The `[vars]`
+and bindings in `wrangler.toml` must stay in sync with what's actually
+live (check with `npx wrangler versions view <id> --name hr-kb-ai`); a
+deploy reconciles the Worker to match the file.
+
+Rollback: `npx wrangler rollback <previous-version-id> --name hr-kb-ai`
+(or the dashboard Deployments tab, one click).
+
+## Cross-session conversation memory (`/memory` route)
+
+The `MEM` KV binding in `wrangler.toml` powers Linda's cross-session
+memory (`POST /memory`, `op: load|append|clear`). One shared history for
+the whole site under the fixed key `mem:v1:primary`. Set the optional var
+`MEM_IDENTITY` to change the key suffix (rotate / reset all history)
+without a code deploy. If the `MEM` binding is absent the route returns
+501 and the client falls back to session-only memory.
+
 ## Optional variables
 
 | Name             | Type   | Purpose                                                    |
 |------------------|--------|-------------------------------------------------------------|
 | `ALLOWED_ORIGIN` | Var    | CORS origin; defaults to the GitHub Pages site              |
 | `MODEL`          | Var    | Claude model id; defaults to `claude-sonnet-4-6`            |
-| `AURA_SPEAKER`   | Var    | Aura-2 voice name (`luna`/`athena`/`apollo`/`angus`/etc.); defaults to `angus` |
+| `AURA_SPEAKER`   | Var    | Aura-2 voice name (`luna`/`athena`/`apollo`/`delia`/etc.); code default `luna`, current live value `delia` |
+| `MEM_IDENTITY`   | Var    | `/memory` KV key suffix; defaults to `primary`              |
 
 ## Costs
 
