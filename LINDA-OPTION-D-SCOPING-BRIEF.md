@@ -108,3 +108,82 @@ that guarantee*. Which of these is it?
 
 Once Q1, Q2, Q4 and Q6 have answers, Option D can be turned into a real build plan the
 same shape as `LINDA-OPTION-C-BUILD-PLAN.md`.
+
+---
+
+## Candidate architecture — the "AI librarian" second-brain pattern (added 28 Aug 2026)
+
+**MUST be picked up at the next KB discussion — Kevin's explicit instruction, 28 Aug 2026.**
+Kevin surfaced a walkthrough of Andrej Karpathy's personal-knowledge-base setup (a
+"second brain" run entirely by an LLM librarian, no vector DB, no Obsidian) as a concrete
+reference design for Option D. Recorded here so a scoping session starts from a shape, not
+a blank page.
+
+### The pattern, as described
+
+Four things on disk that the LLM owns:
+
+| Folder / file | Role |
+|---|---|
+| `raw/` | Junk drawer. Dump anything — articles, notes, transcripts, screenshots, corrections. Never organised by hand. |
+| `wiki/` | The LLM writes and cross-links organised topic pages here. `index.md` first, then one file per topic, related topics linked. **Humans never hand-edit `wiki/`.** |
+| `outputs/` | LLM-generated answers / briefings / reports. **These get fed back into `raw/`** so each answer improves the next — the compounding loop. |
+| `CLAUDE.md` + a `changelog.md` | Schema (how to read/use the KB) + a running log that doubles as system memory: what's been processed, what's new in `raw/` since last run. |
+
+Five-step loop: **set up → dump into `raw/` → LLM builds `wiki/` → ask questions (answers
+saved to `outputs/`, fed back) → monthly health check**. The health check is a skill + a
+scheduled task that runs a multi-stage audit: contradictions between articles, broken
+back-links / orphaned references, source provenance (claims not backed by a `raw/`
+source), coverage gaps vs `raw/`, stale articles (>90 days), and **suggested new article
+candidates + connections not yet drawn**. Two-phase: produce a report, then (interactively)
+ask which findings to action. An anti-AI-writing style guide is read before the LLM writes
+anything into `wiki/`.
+
+### How it answers the open questions above
+
+| Question | What this pattern proposes |
+|---|---|
+| Q1 "worth learning" | Anything Kevin drops into `raw/` — corrections, notes, saved good answers from `outputs/`. Explicit, human-initiated capture; nothing implicit. |
+| Q2 curation/review | The LLM librarian curates `raw/` → `wiki/`; the **monthly health check's phase 2** is the review gate (Kevin picks which findings to action). |
+| Q3 correcting wrong learnings | `changelog.md` as an append-only log; health check flags contradictions and stale items; a bad batch is a revert of the wiki-writing commit. |
+| Q4 not polluting the curated KB | The `wiki/` layer sits **alongside** the scraped `data/kb.json` BM25 index, not inside it. Retrieval blends both: scraped vendor docs authoritative for "what the system does", `wiki/` authoritative for "how we do it at Oxford / what we've learned". `RETRIEVAL_GOVERNANCE` needs a rule for how a `wiki/` article ranks against a real scraped doc. |
+| Q5 versioning/shape | `wiki/` + `raw/` as committed files in the repo (reviewable via PR / diff), `changelog.md` as the memory. Not KV — unlike Option C. |
+| Q6 relationship to C | **Global**, not per-identity — "Linda's learning", one shared curated layer. Can ship independent of Option C. |
+| Q7 scope of "self" | Conversation-derived + explicitly-captured only in the base pattern. Usage analytics (zero-result queries, citation clicks) is an optional add-on, still its own sub-decision. |
+| Q8 success/drift | The health check *is* the drift detector; add a held-out reference-question set re-run after each wiki rebuild. Kill switch = stop blending `wiki/` into retrieval. |
+| Q9 privacy/PII | `raw/` will contain verbatim user questions and Kevin's notes — same retention/redaction questions as Option C, plus the existing `data/kb.json` data-protection gap. |
+
+### What transfers cleanly
+
+- The `raw/ → wiki/ → outputs/` loop with the LLM as librarian — this is the missing
+  curation layer; the scrape has no equivalent.
+- A **gated "promote this answer"** action in Linda: stages a candidate `wiki/` article (or
+  a `raw/` entry) for Kevin's approval rather than auto-writing. The video does this
+  unsupervised; Linda needs the approval gate — the video itself warns *"the AI writes
+  something slightly wrong, you save it back, the next answer quietly builds on a mistake."*
+- The **monthly health-check skill + scheduled task**, two-phase (report → approved
+  actions). Fits this repo's CONSTITUTION / approval-gate discipline; the repo already
+  runs scheduled workflows.
+- Reuse the existing enhanced-summary anti-AI-writing discipline for `wiki/` prose.
+
+### What does NOT transfer
+
+- "The LLM just reads the whole index" works at Karpathy's ~100 articles / ~400k words. It
+  does **not** work at Linda's ~6,700 scraped docs — BM25 retrieval stays for the scraped
+  bulk. This pattern applies to a **new, small (~20–100 article) curated layer on top**,
+  not a replacement for the scrape index.
+- It's a single-user setup with no governance. Linda has a constitution, approval gates,
+  and higher stakes (people act on HR-system guidance) — contradiction / provenance
+  guarding has to be designed in from the start, not left to a monthly pass.
+
+### Ownership
+
+**Adam-led** (he owns KB content, search, roadmap, source evaluation — a curated
+self-improving layer is squarely his scope), **with Markey consulting** on the Linda
+panel / retrieval / chat integration. Output of the scoping pass: a design + effort
+estimate + the governance decisions Kevin must make (who approves promotions, how `wiki/`
+is weighted against the scrape in retrieval, health-check cadence, global vs per-identity).
+Nothing built until Kevin has seen it.
+
+**Source:** YouTube walkthrough "Build Karpathy's AI Knowledge Base in Claude" (Systems
+Made Better), transcript reviewed by the coordinator 28 Aug 2026.
