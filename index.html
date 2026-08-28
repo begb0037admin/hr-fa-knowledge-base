@@ -1007,23 +1007,12 @@ const REWRITE_TIMEOUT_MS=8000;
    via the Worker's POST /memory route). Every call here is non-fatal: on any
    error Linda silently falls back to today's session-scoped behaviour, exactly
    like rewriteQuery degrades. */
-const MEM_ID_KEY="linda_mem_id_v1";   // localStorage device-id, used only when no gate token is set
 const MEM_TIMEOUT_MS=4000;
 
 let CONV_TURNS=[];             // clean history: [{userQuestion, assistantAnswer}, ...]
 let MEM_HISTORY=[];            // full server-side turn list [{q,a,t}] as last loaded (display / age-out)
 let REQ_GEN=0;                 // bumped on every ask() and on New Conversation — invalidates stale responses
 let ACTIVE_CTRL=null;          // AbortController covering the active turn's rewrite + generation requests
-
-function memDeviceId(){
-  let id="";
-  try{id=localStorage.getItem(MEM_ID_KEY)||"";}catch(e){}
-  if(!id){
-    id=(window.crypto&&crypto.randomUUID&&crypto.randomUUID())||(Date.now()+"-"+Math.random().toString(16).slice(2));
-    try{localStorage.setItem(MEM_ID_KEY,id);}catch(e){}
-  }
-  return id;
-}
 
 /* Single entry point for all three memory ops. Mirrors the existing headers
    pattern (Content-Type + X-KB-Token when set), short AbortController timeout,
@@ -1034,7 +1023,6 @@ async function memCall(op,extra,extSignal){
   const headers={"Content-Type":"application/json"};
   if(cfg.token)headers["X-KB-Token"]=cfg.token;
   const bodyObj=Object.assign({op:op},extra||{});
-  if(!cfg.token)bodyObj.deviceId=memDeviceId();
   const ctrl=new AbortController();
   const timer=setTimeout(()=>ctrl.abort(),MEM_TIMEOUT_MS);
   if(extSignal){
@@ -1117,8 +1105,9 @@ function appendMemory(turn){
   }catch(e){}
 }
 
-/* Fire-and-forget server-side wipe for this identity (all devices sharing the
-   token). Called from the New Conversation handler after local state is reset. */
+/* Fire-and-forget server-side wipe of the single shared history (fixed KV key,
+   so this clears it everywhere). Called from the New Conversation handler after
+   local state is reset. */
 function clearMemory(){
   try{
     if(!aiCfg().url)return;
@@ -1295,9 +1284,9 @@ Q("#ask-btn").addEventListener("click",()=>ask(Q("#ask-q").value));
 Q("#action-btn").addEventListener("click",()=>Q("#ask-btn").click());
 
 Q("#ask-clear").addEventListener("click",()=>{
-  // Now also wipes the server-side history for every device sharing the token,
-  // so gate it behind an explicit confirm.
-  if(!confirm("Start a new conversation? This also clears the saved history on the server, on all your devices."))return;
+  // Now also wipes the single shared server-side history (fixed KV key, so it
+  // clears everywhere), so gate it behind an explicit confirm.
+  if(!confirm("Start a new conversation? This also clears the saved history on the server."))return;
   REQ_GEN++;                                  // invalidate any in-flight rewrite/generation immediately
   if(ACTIVE_CTRL){ACTIVE_CTRL.abort();ACTIVE_CTRL=null;}
   CONV_TURNS=[];

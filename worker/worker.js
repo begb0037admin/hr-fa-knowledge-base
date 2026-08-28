@@ -13,6 +13,8 @@
  *   ALLOWED_ORIGIN     (var, optional — comma-separated list of allowed
  *                       origins; defaults to the GitHub Pages site)
  *   MODEL              (var, optional — defaults to claude-sonnet-4-6)
+ *   MEM_IDENTITY       (var, optional — suffix of the fixed /memory KV key;
+ *                       defaults to "primary")
  *   AURA_SPEAKER       (var, optional — defaults to "luna", the documented
  *                       aura-2-en default; used when a /tts request doesn't
  *                       send its own `speaker`)
@@ -33,13 +35,17 @@
  * Neuron cost for no benefit here.
  *
  * /memory route (added for Linda cross-session conversation memory — Option C):
- *   POST /memory { op: "load" | "append" | "clear", turn?, deviceId? }
+ *   POST /memory { op: "load" | "append" | "clear", turn? }
  *   Requires a KV binding named `MEM` on this Worker (dashboard → Settings →
  *   Bindings → KV namespace → variable name `MEM`). Returns 501 if absent, so
- *   the client degrades cleanly to today's session-scoped behaviour. Identity =
- *   sha256(KB_ACCESS_TOKEN) when the gate token is set, else sha256(deviceId)
- *   supplied by the client, else "anon". Stores one small JSON doc per identity
- *   under key `mem:v1:<first 32 hex of that hash>`.
+ *   the client degrades cleanly to today's session-scoped behaviour.
+ *   Identity: a single fixed server-side key — no token, no device-id. One
+ *   shared Linda history for the whole site, by design (zero-config: the same
+ *   history on any machine / browser / incognito, nothing to set up). The
+ *   optional var MEM_IDENTITY overrides the key suffix (default "primary") so
+ *   it can be rotated / obscured from the Cloudflare dashboard without a code
+ *   deploy. Stores one small JSON doc under key
+ *   `mem:v1:<MEM_IDENTITY || "primary">`.
  */
 const MEM_MAX_TURNS = 40;
 const MEM_TTL_DAYS = 30;
@@ -196,18 +202,10 @@ function bufToBase64(buf) {
 }
 
 // ── Linda cross-session conversation memory (Option C) ──────────────────
-// One JSON document per identity in KV: { v:1, updated, turns:[{q,a,t}] }.
+// One JSON document under a single fixed KV key: { v:1, updated, turns:[{q,a,t}] }.
 // POST-only and behind the same X-KB-Token gate as every other route (both
 // enforced in fetch() above). Every failure path here is non-fatal on the
 // client — it silently falls back to session-scoped memory.
-
-async function sha256hex(str) {
-  const data = new TextEncoder().encode(String(str));
-  const digest = await crypto.subtle.digest("SHA-256", data);
-  return Array.from(new Uint8Array(digest))
-    .map(b => b.toString(16).padStart(2, "0"))
-    .join("");
-}
 
 async function memory(request, env, cors) {
   if (!env.MEM) {
@@ -224,13 +222,12 @@ async function memory(request, env, cors) {
     return json({ error: "op must be load, append or clear" }, 400, cors);
   }
 
-  // Identity: hash of the shared gate token (same on every device Kevin sets
-  // up — that is the intended "resume my thread anywhere" behaviour), else a
-  // client-supplied device id, else a shared "anon" bucket. The raw token /id
-  // never becomes a KV key — it is hashed here in the Worker first.
-  const seed = env.KB_ACCESS_TOKEN ||
-    (typeof body.deviceId === "string" && body.deviceId) || "anon";
-  const KEY = "mem:v1:" + (await sha256hex(seed)).slice(0, 32);
+  // Identity: a single fixed server-side key. No token, no device-id — one
+  // shared Linda history for the whole site, by design (zero-config: same
+  // history on any machine / browser / incognito). env.MEM_IDENTITY optionally
+  // overrides the suffix so it can be rotated / obscured from the Cloudflare
+  // dashboard without a code deploy.
+  const KEY = "mem:v1:" + (env.MEM_IDENTITY || "primary");
 
   if (op === "clear") {
     try {
