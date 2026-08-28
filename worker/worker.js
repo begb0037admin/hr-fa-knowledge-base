@@ -31,7 +31,20 @@
  * records a whole clip then transcribes it once, which is a single discrete
  * request, not continuous streaming, and the WebSocket mode is ~18x the
  * Neuron cost for no benefit here.
+ *
+ * /memory route (added for Linda cross-session conversation memory — Option C):
+ *   POST /memory { op: "load" | "append" | "clear", turn?, deviceId? }
+ *   Requires a KV binding named `MEM` on this Worker (dashboard → Settings →
+ *   Bindings → KV namespace → variable name `MEM`). Returns 501 if absent, so
+ *   the client degrades cleanly to today's session-scoped behaviour. Identity =
+ *   sha256(KB_ACCESS_TOKEN) when the gate token is set, else sha256(deviceId)
+ *   supplied by the client, else "anon". Stores one small JSON doc per identity
+ *   under key `mem:v1:<first 32 hex of that hash>`.
  */
+const MEM_MAX_TURNS = 40;
+const MEM_TTL_DAYS = 30;
+const MEM_EXPIRE_SECONDS = 60 * 60 * 24 * 60;
+
 export default {
   async fetch(request, env) {
     const allowed = (env.ALLOWED_ORIGIN || "https://begb0037admin.github.io")
@@ -59,6 +72,7 @@ export default {
     const path = new URL(request.url).pathname;
     if (path === "/tts") return tts(request, env, cors);
     if (path === "/stt") return stt(request, env, cors);
+    if (path === "/memory") return memory(request, env, cors);
     return chat(request, env, cors);
   },
 };
@@ -179,6 +193,110 @@ function bufToBase64(buf) {
     binary += String.fromCharCode.apply(null, bytes.subarray(i, i + chunkSize));
   }
   return btoa(binary);
+}
+
+// ── Linda cross-session conversation memory (Option C) ──────────────────
+// One JSON document per identity in KV: { v:1, updated, turns:[{q,a,t}] }.
+// POST-only and behind the same X-KB-Token gate as every other route (both
+// enforced in fetch() above). Every failure path here is non-fatal on the
+// client — it silently falls back to session-scoped memory.
+
+async function sha256hex(str) {
+  const data = new TextEncoder().encode(String(str));
+  const digest = await crypto.subtle.digest("SHA-256", data);
+  return Array.from(new Uint8Array(digest))
+    .map(b => b.toString(16).padStart(2, "0"))
+    .join("");
+}
+
+async function memory(request, env, cors) {
+  if (!env.MEM) {
+    return json({ error: "Memory not configured" }, 501, cors);
+  }
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ error: "Invalid JSON body" }, 400, cors);
+  }
+  const op = body && body.op;
+  if (op !== "load" && op !== "append" && op !== "clear") {
+    return json({ error: "op must be load, append or clear" }, 400, cors);
+  }
+
+  // Identity: hash of the shared gate token (same on every device Kevin sets
+  // up — that is the intended "resume my thread anywhere" behaviour), else a
+  // client-supplied device id, else a shared "anon" bucket. The raw token /id
+  // never becomes a KV key — it is hashed here in the Worker first.
+  const seed = env.KB_ACCESS_TOKEN ||
+    (typeof body.deviceId === "string" && body.deviceId) || "anon";
+  const KEY = "mem:v1:" + (await sha256hex(seed)).slice(0, 32);
+
+  if (op === "clear") {
+    try {
+      await env.MEM.delete(KEY);
+    } catch (err) {
+      return json({ error: "memory clear failed: " + String(err && err.message || err).slice(0, 200) }, 502, cors);
+    }
+    return json({ ok: true }, 200, cors);
+  }
+
+  const now = Date.now();
+  const maxAgeMs = MEM_TTL_DAYS * 24 * 60 * 60 * 1000;
+  // Drop anything that isn't a well-formed {q,a} turn, so a corrupt or
+  // hand-edited KV doc can never reach the client as an item it will choke on.
+  const validTurns = turns => (Array.isArray(turns) ? turns : []).filter(
+    t => t && typeof t.q === "string" && typeof t.a === "string"
+  );
+  const freshOnly = turns => validTurns(turns).filter(t => {
+    const ts = Date.parse(t && t.t);
+    return Number.isFinite(ts) ? (now - ts) <= maxAgeMs : true;
+  });
+
+  let doc;
+  try {
+    const raw = await env.MEM.get(KEY);
+    doc = raw ? JSON.parse(raw) : { v: 1, turns: [] };
+  } catch (err) {
+    if (op === "load") {
+      return json({ error: "memory load failed: " + String(err && err.message || err).slice(0, 200) }, 502, cors);
+    }
+    doc = { v: 1, turns: [] };
+  }
+  if (!doc || typeof doc !== "object" || !Array.isArray(doc.turns)) {
+    doc = { v: 1, turns: [] };
+  }
+
+  if (op === "load") {
+    return json({ turns: freshOnly(doc.turns) }, 200, cors);
+  }
+
+  // op === "append" — read-modify-write. KV has no atomic RMW; for one user
+  // asking one question at a time this is a non-issue (documented in the plan).
+  const t = body.turn;
+  if (!t || typeof t.q !== "string" || typeof t.a !== "string") {
+    return json({ error: "turn.q and turn.a must be strings" }, 400, cors);
+  }
+  const clamp = (s, max) => {
+    s = String(s);
+    return s.length > max ? s.slice(0, max) : s;
+  };
+  const when = (typeof t.t === "string" && Number.isFinite(Date.parse(t.t)))
+    ? t.t
+    : new Date().toISOString();
+
+  doc.v = 1;
+  doc.turns = freshOnly(doc.turns);
+  doc.turns.push({ q: clamp(t.q, 2048), a: clamp(t.a, 8192), t: when });
+  doc.turns = doc.turns.slice(-MEM_MAX_TURNS);
+  doc.updated = new Date().toISOString();
+
+  try {
+    await env.MEM.put(KEY, JSON.stringify(doc), { expirationTtl: MEM_EXPIRE_SECONDS });
+  } catch (err) {
+    return json({ error: "memory append failed: " + String(err && err.message || err).slice(0, 200) }, 502, cors);
+  }
+  return json({ ok: true, count: doc.turns.length }, 200, cors);
 }
 
 function json(obj, status, cors) {

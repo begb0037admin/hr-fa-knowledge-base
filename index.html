@@ -192,6 +192,7 @@ body.resizing-ai{cursor:col-resize;user-select:none}
 #ask-mic.rec .icon-circle{background:var(--red)!important;animation:pulse 1.1s ease-in-out infinite}
 
 /* Thread content inside .ai-msgs */
+.mem-resumed{margin:14px 0 2px;font-size:11.5px;color:var(--hint);font-style:italic}
 .qline{margin:16px 0 8px;font-weight:600;color:var(--navy-text);font-size:14.5px}
 .qline::before{content:"You — ";color:var(--hint);font-weight:600;font-size:12px;letter-spacing:.04em}
 .answer{background:#fff;border:1.5px solid var(--border-soft);border-radius:var(--radius);padding:13px 16px;color:var(--text);font-size:14.2px}
@@ -1002,9 +1003,128 @@ const REWRITE_SYSTEM=
 const HISTORY_LIMIT=5;         // rolling window of completed user/assistant pairs
 const REWRITE_TIMEOUT_MS=8000;
 
+/* Cross-session conversation memory (Option C — server-side per-identity store
+   via the Worker's POST /memory route). Every call here is non-fatal: on any
+   error Linda silently falls back to today's session-scoped behaviour, exactly
+   like rewriteQuery degrades. */
+const MEM_ID_KEY="linda_mem_id_v1";   // localStorage device-id, used only when no gate token is set
+const MEM_TIMEOUT_MS=4000;
+
 let CONV_TURNS=[];             // clean history: [{userQuestion, assistantAnswer}, ...]
+let MEM_HISTORY=[];            // full server-side turn list [{q,a,t}] as last loaded (display / age-out)
 let REQ_GEN=0;                 // bumped on every ask() and on New Conversation — invalidates stale responses
 let ACTIVE_CTRL=null;          // AbortController covering the active turn's rewrite + generation requests
+
+function memDeviceId(){
+  let id="";
+  try{id=localStorage.getItem(MEM_ID_KEY)||"";}catch(e){}
+  if(!id){
+    id=(window.crypto&&crypto.randomUUID&&crypto.randomUUID())||(Date.now()+"-"+Math.random().toString(16).slice(2));
+    try{localStorage.setItem(MEM_ID_KEY,id);}catch(e){}
+  }
+  return id;
+}
+
+/* Single entry point for all three memory ops. Mirrors the existing headers
+   pattern (Content-Type + X-KB-Token when set), short AbortController timeout,
+   throws on any non-2xx so callers can treat every failure identically. */
+async function memCall(op,extra,extSignal){
+  const cfg=aiCfg();
+  if(!cfg.url)throw new Error("memory: no worker url");
+  const headers={"Content-Type":"application/json"};
+  if(cfg.token)headers["X-KB-Token"]=cfg.token;
+  const bodyObj=Object.assign({op:op},extra||{});
+  if(!cfg.token)bodyObj.deviceId=memDeviceId();
+  const ctrl=new AbortController();
+  const timer=setTimeout(()=>ctrl.abort(),MEM_TIMEOUT_MS);
+  if(extSignal){
+    if(extSignal.aborted)ctrl.abort();
+    else extSignal.addEventListener("abort",()=>ctrl.abort(),{once:true});
+  }
+  try{
+    const res=await fetch(cfg.url+"/memory",{method:"POST",headers,body:JSON.stringify(bodyObj),signal:ctrl.signal});
+    if(!res.ok)throw new Error("memory: HTTP "+res.status);
+    return await res.json();
+  }finally{
+    clearTimeout(timer);
+  }
+}
+
+/* Boot-time hydrate. Fire-and-forget, fully guarded: if the user has already
+   started interacting this page load, or anything fails, it does nothing and
+   Linda stays session-scoped. */
+async function loadMemory(){
+  if(!aiCfg().url)return;
+  let data;
+  try{data=await memCall("load");}
+  catch(err){return;}
+  let turns=(data&&Array.isArray(data.turns))?data.turns:[];
+  turns=turns.filter(t=>t&&typeof t.q==="string"&&typeof t.a==="string");   // belt-and-braces: never choke on a malformed stored turn
+  if(!turns.length)return;
+  MEM_HISTORY=turns.slice();
+  const thread=Q("#thread");
+  const started=(REQ_GEN!==0)||(thread&&thread.innerHTML.trim());
+  if(started)return;                       // user already interacting — leave the UI alone
+  CONV_TURNS=turns.map(t=>({userQuestion:t.q,assistantAnswer:t.a})).slice(-HISTORY_LIMIT);
+  renderResumedThread(turns);
+  showAiEmpty(false);
+}
+
+function memRelTime(iso){
+  const t=Date.parse(iso);
+  if(!Number.isFinite(t))return"earlier";
+  const s=(Date.now()-t)/1000;
+  if(s<90)return"just now";
+  if(s<3600)return Math.round(s/60)+" minutes ago";
+  if(s<7200)return"an hour ago";
+  if(s<86400)return Math.round(s/3600)+" hours ago";
+  const d=Math.round(s/86400);
+  if(d<=1)return"yesterday";
+  if(d<7)return d+" days ago";
+  if(d<14)return"last week";
+  return Math.round(d/7)+" weeks ago";
+}
+
+/* Renders only the most recent stored exchange, matching today's
+   single-visible-exchange behaviour. No citation links (we don't reload hits);
+   bare [n] markers are stripped to plain text. */
+function renderResumedThread(turns){
+  const last=turns[turns.length-1];
+  const thread=Q("#thread");
+  if(!last||!thread)return;
+  const ans=mdLite(String(last.a||"").replace(/\[(\d+)\]/g,""));
+  thread.innerHTML=
+    '<div class="mem-resumed">Resumed your previous conversation &middot; '+esc(memRelTime(last.t))+'</div>'
+    +'<div class="qline">'+esc(String(last.q||""))+'</div>'
+    +'<div class="answer">'+ans+'</div>';
+}
+
+/* Fire-and-forget persist of one completed turn. Never awaited on the render
+   path; never throws synchronously. Each call gets its own AbortController,
+   stored in MEM_APPEND_CTRL, so the New Conversation handler can cancel the
+   most-recent still-in-flight append before it issues the server-side clear
+   (closes the common "clear, then a late append resurrects history" case).
+   We deliberately do NOT abort a previous append when a new one starts —
+   doing so could drop q1's write if q2 finished first. A pure KV cross-edge
+   propagation ordering race remains possible and is accepted per the build
+   plan's concurrency note. */
+let MEM_APPEND_CTRL=null;
+function appendMemory(turn){
+  try{
+    if(!aiCfg().url)return;
+    MEM_APPEND_CTRL=new AbortController();
+    memCall("append",{turn:turn},MEM_APPEND_CTRL.signal).catch(function(){});
+  }catch(e){}
+}
+
+/* Fire-and-forget server-side wipe for this identity (all devices sharing the
+   token). Called from the New Conversation handler after local state is reset. */
+function clearMemory(){
+  try{
+    if(!aiCfg().url)return;
+    memCall("clear").catch(function(){});
+  }catch(e){}
+}
 
 function turnsToMessages(turns){
   const out=[];
@@ -1156,6 +1276,7 @@ async function ask(question){
 
     // Only a successful, still-current turn is recorded — never a failed or stale one.
     CONV_TURNS=CONV_TURNS.concat([{userQuestion:question,assistantAnswer:text}]).slice(-HISTORY_LIMIT);
+    appendMemory({q:question,a:text,t:new Date().toISOString()});   // cross-session persist (fire-and-forget, non-fatal)
     dbg(myGen,"generation: ok, historyPairsNow="+CONV_TURNS.length);
   }catch(err){
     if(err&&err.name==="AbortError"){dbg(myGen,"aborted");return;}
@@ -1174,17 +1295,23 @@ Q("#ask-btn").addEventListener("click",()=>ask(Q("#ask-q").value));
 Q("#action-btn").addEventListener("click",()=>Q("#ask-btn").click());
 
 Q("#ask-clear").addEventListener("click",()=>{
+  // Now also wipes the server-side history for every device sharing the token,
+  // so gate it behind an explicit confirm.
+  if(!confirm("Start a new conversation? This also clears the saved history on the server, on all your devices."))return;
   REQ_GEN++;                                  // invalidate any in-flight rewrite/generation immediately
   if(ACTIVE_CTRL){ACTIVE_CTRL.abort();ACTIVE_CTRL=null;}
   CONV_TURNS=[];
+  MEM_HISTORY=[];
   LAST_HITS=[];
   LAST_ANSWER_SPOKEN=""; LAST_ANSWER_COPY="";
   Q("#thread").innerHTML=""; Q("#ask-q").value="";
   Q("#ask-note").classList.add("hidden");
   showAiEmpty(true);
   speakStop();                                // existing stop abstraction — halts streamed/browser TTS alike
+  if(MEM_APPEND_CTRL){MEM_APPEND_CTRL.abort();MEM_APPEND_CTRL=null;}   // cancel any in-flight append before wiping the server copy
+  clearMemory();                              // fire-and-forget server-side wipe; non-fatal
   Q("#ask-q").focus();
-  dbg(REQ_GEN,"new conversation: reset");
+  dbg(REQ_GEN,"new conversation: reset (local + server)");
 });
 
 /* ── Article / document pane ─────────────────────────────────────────── */
@@ -1560,6 +1687,7 @@ function setupAiPanelResize(){
 
 setupAiPanelResize();
 boot();
+loadMemory();   // cross-session memory hydrate — async, fire-and-forget, fully guarded (no-op on any failure)
 </script>
 </body>
 </html>
