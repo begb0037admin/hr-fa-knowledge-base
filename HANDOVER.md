@@ -9,7 +9,153 @@ itself. Trust the repo over memory; verify data, not just green ticks.
 
 ---
 
-## Current State — 25 August 2026 (Markey, session 9)
+## Current State — 28 August 2026 (Markey — Linda Option C cross-session memory, BUILT ON BRANCH, NOT DEPLOYED)
+
+**Kevin's go-ahead was to BUILD Option C per `LINDA-OPTION-C-BUILD-PLAN.md` (on main, commit
+`134e024c`), not to deploy.** All work is on branch **`markey/linda-option-c-build`**
+(build commit **`6fd2f8b9ce6c4bee1571adbf5af5840778f5ea1a`**) off `main` @
+`4f8fca32b436f265d1afbda6924b3d8c86ae363b`. Deliberately left unmerged — this repo's
+"always push to main" rule is overridden for this build-not-deploy step, exactly like the
+session-7 constitution-tension note. Nothing is live; `kb.lelitte.co.uk` is unchanged.
+
+**Pre-build drift check (plan "Before any change"):**
+- Live `https://kb.lelitte.co.uk/index.html` byte-identical to `main:index.html` — verified
+  by sha256 (`39aecae1279d154002a105e4fac00a6cfca74e2632ded8e41121ba165cc06d78`, 90503 bytes)
+  and full `diff`. No client drift.
+- `main:worker/worker.js` matches the plan's description: 189-line stateless proxy, routes
+  `/` `/tts` `/stt`, only binding referenced is Workers AI `AI`, secrets `ANTHROPIC_API_KEY` /
+  `KB_ACCESS_TOKEN`. The **deployed** Worker source cannot be read from here — treated as
+  matching `main` (no CI/CD; dashboard copy-paste is the only deploy path).
+- Code restore point: `main` @ `4f8fca32b436f265d1afbda6924b3d8c86ae363b`
+  (`index.html` and `worker/worker.js` at that SHA).
+- **NOT recordable from here — Kevin must do at the deploy gate:** the live Cloudflare
+  `hr-kb-ai` Worker version id + timestamp (Deployments tab). That is the Worker rollback target.
+
+**What was built (branch `markey/linda-option-c-build`):**
+
+*`worker/worker.js` (+118 lines):*
+- 3 constants: `MEM_MAX_TURNS=40`, `MEM_TTL_DAYS=30`, `MEM_EXPIRE_SECONDS=60*60*24*60`.
+- New route `if (path === "/memory") return memory(request, env, cors);` added to the switch
+  before the `chat()` fallthrough. POST-only and behind the existing `X-KB-Token` gate
+  automatically (both enforced in `fetch()` before dispatch — unchanged).
+- `sha256hex()` helper (Web Crypto `crypto.subtle.digest`).
+- `memory(request, env, cors)`: `501` if `!env.MEM` (mirrors `/tts` `!env.AI`); JSON body;
+  `op ∈ {load,append,clear}`. Identity seed = `env.KB_ACCESS_TOKEN || body.deviceId || "anon"`,
+  `KEY = "mem:v1:" + sha256hex(seed).slice(0,32)`. `load`: age-out (>30d) + `validTurns` shape
+  filter, return `{turns}`. `append`: validate string `q`/`a`, clamp `q`≤2048 / `a`≤8192 chars,
+  age-out, push `{q,a,t}`, `slice(-40)`, `MEM.put(KEY, doc, {expirationTtl: 5184000})`, return
+  `{ok,count}`. `clear`: `MEM.delete(KEY)`, return `{ok}`. KV errors → 502 (client-non-fatal).
+- No change to `/`, `/tts`, `/stt`, CORS, or secret checks.
+
+*`index.html` (+129 / -1):*
+- `.mem-resumed` CSS (one muted italic line — the only new style).
+- `MEM_ID_KEY="linda_mem_id_v1"`, `MEM_TIMEOUT_MS=4000`, `let MEM_HISTORY=[]`.
+- `memDeviceId()` — `crypto.randomUUID()` stored once in `linda_mem_id_v1`; sent as
+  `{deviceId}` only when no gate token is configured.
+- `memCall(op,extra,extSignal)` — POSTs `cfg.url+"/memory"`, existing headers pattern
+  (`Content-Type` + `X-KB-Token` when set), 4s AbortController, optional external abort signal,
+  throws on any non-2xx.
+- `loadMemory()` — called once after `boot()`. POST `{op:"load"}`; filters malformed turns;
+  on non-empty: sets `MEM_HISTORY`, and (only if the user hasn't already started interacting
+  this load) hydrates `CONV_TURNS` (last `HISTORY_LIMIT`), renders **only the most recent
+  exchange** into `#thread` with a "Resumed your previous conversation · {relative time}"
+  line, `showAiEmpty(false)`. Any empty/error → silent no-op (session-scoped as today).
+- `renderResumedThread()` / `memRelTime()` — last exchange only, existing `.qline`/`.answer`
+  markup, question via `esc()`, answer via `mdLite()` (which escapes first), bare `[n]`
+  citation markers stripped (no links — hits aren't reloaded).
+- `appendMemory(turn)` — fire-and-forget, called immediately after the existing
+  `CONV_TURNS = CONV_TURNS.concat(...)` line in `ask()`; `turn = {q:question, a:text,
+  t:new Date().toISOString()}` (`text` = same raw pre-citation-strip answer pushed to
+  `CONV_TURNS`). Own AbortController stored in `MEM_APPEND_CTRL`. Never awaited, `try`-wrapped,
+  `.catch(()=>{})`.
+- `clearMemory()` — fire-and-forget `{op:"clear"}`.
+- `#ask-clear` handler — now gated behind `confirm("Start a new conversation? This also
+  clears the saved history on the server, on all your devices.")` (Cancel = nothing changes);
+  on confirm runs all existing resets + `MEM_HISTORY=[]`, aborts any in-flight append, then
+  `clearMemory()`. Button styling/title untouched.
+
+**Codex review (agent-commons `COORDINATOR_AND_CODEX_POLICY.md` §§3–5): 3 passes completed, 4th cut off by Codex usage limit.**
+- Pass 1: found (a) clear-vs-late-append KV race, (b) malformed stored turn → unhandled
+  client error. Both addressed: (b) `validTurns()` in Worker + client-side turn filter;
+  (a) mitigated with an abortable append controller.
+- Pass 2: confirmed (b) resolved; held (a) residual "needs server-side ordering/versioning".
+  Decision: NOT building a KV tombstone — `LINDA-OPTION-C-BUILD-PLAN.md` §1 concurrency note
+  and §2 explicitly decline to engineer around KV's lack of atomic RMW for this
+  single-operator use; the correct fix is Durable Objects (plan §2), out of scope. Documented
+  in code + here.
+- Pass 3: full end-to-end pass — everything else internally consistent with plan §§1/4/5;
+  found a NEW bug I introduced in pass 1's mitigation: `appendMemory()` aborting the previous
+  append could drop q1's write if q2 finished first. Fixed — `appendMemory()` no longer
+  chain-aborts; only `#ask-clear` aborts the most-recent pending append.
+- Pass 4 (would-be final confirmation of the pass-3 fix): **cut off — Codex hit its ChatGPT
+  usage limit mid-run** ("try again at 7:26 PM"). Per `COORDINATOR_AND_CODEX_POLICY.md` §5
+  the lane was switched: Markey manually reviewed the pass-3 delta (removal of one
+  chain-abort line) — it is a strict subset of already-reviewed code, introduces no new
+  shared state, both files re-pass syntax checks. **If Kevin wants the independent 4th pass
+  before any deploy, re-run it once Codex capacity returns** (`codex exec -s read-only` over
+  the branch diff) — this is a named, acknowledged review gap, not a silent one.
+- CRLF: `git diff --cached --check` flags CR as trailing whitespace on every added
+  `index.html` line — this is a pre-existing whole-file convention (`HEAD:index.html` is
+  1564 CRLF pairs / 0 bare LF; the live site is identical). Not introduced here, not "fixed"
+  (LF-converting would be a spurious 1564-line diff and would change served bytes).
+  `worker/worker.js` is LF; additions there are LF.
+
+**Tested here (no live KV binding available):**
+- `node --check worker/worker.js` passes; `index.html` single script block parses (`new Function`).
+- Logic walkthrough of every `memory()` op against plan §6 step-3 scenarios (empty load,
+  append, reload, 45→40 cap, 31-day age-out drop, clear).
+- `!env.MEM → 501` path confirmed: an un-bound production Worker returns 501 on every
+  `/memory` call → client `memCall` throws → `loadMemory` catch → no-op; `appendMemory`/
+  `clearMemory` `.catch()` → no-op. Linda degrades to exactly today's behaviour.
+- No-regression read-through of `/`, `/tts`, `/stt`, CORS, `X-KB-Token` gate, `ask()` render
+  path, `rewriteQuery`, `turnsToMessages`, `#ask-clear` existing resets, `REQ_GEN`/
+  `AbortController` staleness guard — none altered.
+
+**CAN ONLY be verified with a live `MEM` KV binding (plan §6 step 3 + §7):** real
+load/append/clear round-trips; the 40-turn cap and 30-day age-out against real stored data;
+`expirationTtl` behaviour; cross-device / cross-edge eventual-consistency lag; real CORS
+preflight for `/memory`; post-deploy re-confirmation that `ANTHROPIC_API_KEY`, `KB_ACCESS_TOKEN`
+and the `AI` binding all survive the code paste; the full §7 acceptance table on
+`kb.lelitte.co.uk`.
+
+**Five open design points — built to the plan's RECOMMENDED default; confirm or adjust at the deploy gate:**
+1. Identity = SHA-256 of `KB_ACCESS_TOKEN` (device-id fallback when no token). One shared
+   history for every device/person holding the token. Built this way. Per-person identity =
+   a later change.
+2. "New Conversation" now clears server-side for ALL devices sharing the token, behind the
+   confirm dialog. Built this way.
+3. Retention: 40 turns / 30-day age-out / 60-day KV `expirationTtl`. Built with these numbers.
+4. Restore rendering: only the most recent exchange shown on reload (full list kept in
+   `MEM_HISTORY` for the model-replay window + future "show earlier"). Built this way.
+5. Storage: Cloudflare KV, eventual consistency accepted (last turn may lag ~60s cross-device).
+   Built on KV. Strict immediacy = Durable Objects (plan §2), not built.
+
+**EXACT NEXT ACTION — Deploy Sequence step 1 of `LINDA-OPTION-C-BUILD-PLAN.md`, only on Kevin's
+fresh explicit deploy go-ahead:**
+1. Record restore points — including opening the Cloudflare dashboard → `hr-kb-ai` →
+   Deployments and noting the current live **version id + timestamp** (cannot be done from a
+   coding session).
+2. Dashboard → Workers & Pages → KV → Create namespace (e.g. `linda-conversation-memory`);
+   then `hr-kb-ai` → Settings → Bindings → Add → KV namespace → variable name **`MEM`**.
+3. Dry-run the branch `worker/worker.js` against that namespace (Quick Edit preview or
+   `wrangler dev --remote`) — run every plan §6 step-3 check; do not paste to production until
+   all pass.
+4. Deploy the Worker (dashboard → Edit code → paste branch `worker/worker.js` → Deploy);
+   re-verify `/`, `/tts`, `/stt` unchanged and `ANTHROPIC_API_KEY` / `KB_ACCESS_TOKEN` / `AI`
+   still bound.
+5. Deploy the client — merge `markey/linda-option-c-build` to `main` (or push `index.html`);
+   poll `pages build and deployment` to success; byte-diff live `index.html` vs the branch file.
+6. Run the plan §7 acceptance table against `kb.lelitte.co.uk`.
+Rollback: Worker → dashboard Deployments → roll back to the recorded version id. Client →
+revert the merge/commit, re-poll Pages. KV namespace can be left (inert) or removed.
+
+**Restore point recorded before this build (Constitution §4):** `index.html` and
+`worker/worker.js` @ `main` `4f8fca32b436f265d1afbda6924b3d8c86ae363b`; branch base is the
+same SHA.
+
+---
+
+## Previous State — 25 August 2026 (Markey, session 9)
 
 **Context:** earlier the same day, Kevin reported "error with linda" / "no
 data" on the Ask-the-KB chat. Root cause (investigated and confirmed by
