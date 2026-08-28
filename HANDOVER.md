@@ -9,7 +9,94 @@ itself. Trust the repo over memory; verify data, not just green ticks.
 
 ---
 
-## Current State — 28 August 2026 (Markey — Linda Option C cross-session memory, BUILT ON BRANCH, NOT DEPLOYED)
+## Current State — 28 August 2026 (Markey — Linda Option C identity simplified to a single fixed server-side key, STILL ON BRANCH, NOT DEPLOYED)
+
+**Kevin's 28 Aug decision (mid-deploy-gate):** he wants **zero-config cross-device memory** —
+the same Linda history on ANY machine / browser / incognito with nothing to configure. He
+**explicitly rejected** per-browser tokens / device-ids. So the memory identity model built
+earlier the same day (SHA-256 of `KB_ACCESS_TOKEN`, device-id fallback — see the "Previous
+State (same day, earlier)" section below) has been replaced with **one fixed key**.
+
+Commit **`081efbd76d0e9413593410bb30394050caa6cc4e`** on branch **`markey/linda-option-c-build`**
+(off `dc0f7a28`, itself off `main` @ `4f8fca32`), pushed to
+`origin/markey/linda-option-c-build`. `main` untouched; `kb.lelitte.co.uk` unchanged.
+
+**What changed vs the earlier build (2 files, +24 / -38):**
+- `worker/worker.js` — `memory()` KEY is now
+  `` `mem:v1:` + (env.MEM_IDENTITY || "primary") `` — a single fixed key,
+  overridable from the Cloudflare dashboard (`MEM_IDENTITY` var) so Kevin can rotate /
+  obscure it with **no code deploy**. Was
+  `` "mem:v1:" + sha256hex(env.KB_ACCESS_TOKEN || body.deviceId || "anon").slice(0,32) ``.
+  The `sha256hex()` helper is **removed** (added only for this; `crypto.subtle` is no longer
+  referenced anywhere in the file — grep-confirmed). `/memory` doc-comment block + the
+  `Secrets / vars` list updated (no token, no device-id; one shared site-wide history by
+  design; `MEM_IDENTITY` optional, default `"primary"`).
+- `index.html` — removed the now-dead device-id path: `MEM_ID_KEY` const, `memDeviceId()`,
+  and the `if(!cfg.token)bodyObj.deviceId=memDeviceId();` line in `memCall()`.
+  `memCall()` still sends `X-KB-Token` when a token is configured. `#ask-clear` confirm
+  wording simplified to *"Start a new conversation? This also clears the saved history on
+  the server."* (a fixed key makes "on all your devices" implicit); two nearby comments
+  updated for accuracy. Everything else — `loadMemory` / `appendMemory` / `clearMemory` /
+  `renderResumedThread` / `memRelTime` / `MEM_HISTORY` / boot hydrate / `MEM_APPEND_CTRL`
+  abort / `MEM_TIMEOUT_MS` / all-calls-non-fatal — **unchanged**.
+
+**Everything else in `memory()` is byte-for-byte as the earlier build:** `!env.MEM → 501`
+guard, `op` validation, `load` / `append` / `clear` semantics, `validTurns` / `freshOnly`
+age-out, the 2048 / 8192 clamps, `slice(-MEM_MAX_TURNS)`, `expirationTtl`, the 502 error
+paths. No change to `/`, `/tts`, `/stt`, `chat()`, CORS, or the `X-KB-Token` gate block in
+`fetch()`.
+
+**This supersedes open design points #1 (identity) and #2 (New Conversation scope)** in
+`LINDA-OPTION-C-BUILD-PLAN.md` and in the "Previous State (same day, earlier)" section
+below: identity is no longer token-hash/device-id — it is a single fixed
+`env.MEM_IDENTITY || "primary"` key, one shared history for the whole site by design.
+"New Conversation" still clears that one shared history (now unambiguously site-wide),
+behind the same confirm dialog. Points #3 (retention numbers), #4 (restore rendering),
+#5 (KV / eventual consistency) are unchanged and still built to the plan's defaults.
+
+**Verified here (no live `MEM` KV binding available):**
+- `node --check worker/worker.js` passes; `index.html` single script block parses (`new Function`).
+- Walked every `memory()` op with the fixed key — control flow intact, `body` still parsed
+  and used (`body.op`, `body.turn`), `memory()` still `async` (KV awaits), no now-unused var.
+- Grep-confirmed **no** remaining reference to `sha256hex`, `deviceId`, `memDeviceId` or
+  `MEM_ID_KEY` in either file; `sha256hex` had exactly one call site (now gone).
+- `!env.MEM → 501` still degrades silently client-side (unchanged path).
+- No-regression read-through of `/`, `/tts`, `/stt`, `chat()`, CORS, `X-KB-Token` gate,
+  `ask()` render, `rewriteQuery`, `turnsToMessages`, `#ask-clear` existing resets,
+  `REQ_GEN` / `AbortController` staleness guard — none altered.
+
+**CAN ONLY be verified with a live `MEM` KV binding:** real load/append/clear round-trips
+against `mem:v1:primary`; that a dashboard-set `MEM_IDENTITY` var actually resolves and
+overrides the suffix; cross-device propagation; `expirationTtl`; age-out against real
+stored timestamps; `/memory` CORS preflight — same open items as the earlier build.
+
+**Codex review of this delta:** attempted `codex exec -s read-only` over the identity
+delta — **could not run, Codex CLI returned its ChatGPT usage limit** ("try again at
+7:26 PM"), the same cap that cut the earlier build's 4th pass. Per
+`agent-commons/operating-model/COORDINATOR_AND_CODEX_POLICY.md` §5 (Codex-scarcity
+fallback) this was hand-reviewed (verdict: no changes needed — small delta, dead-code
+removal + one identity line, on top of an already-3-pass-reviewed build, both files pass
+syntax checks). **Named review gap:** re-run the Codex pass once capacity returns if the
+independent check is wanted on record before deploy.
+
+**EXACT NEXT ACTION — unchanged:** Deploy Sequence step 1 of `LINDA-OPTION-C-BUILD-PLAN.md`
+(see the "Previous State (same day, earlier)" section below for the full step list), only on
+Kevin's fresh explicit deploy go-ahead. The only difference now: no `KB_ACCESS_TOKEN`
+dependency for memory identity, and an optional `MEM_IDENTITY` Worker var can be set in the
+dashboard if Kevin wants the key suffix to be something other than `"primary"`.
+
+**Restore point (Constitution §4):** `index.html` and `worker/worker.js` @ `main`
+`4f8fca32b436f265d1afbda6924b3d8c86ae363b` (branch base). Prior-build restore point on the
+branch: `dc0f7a28`.
+
+---
+
+## Previous State (same day, earlier) — 28 August 2026 (Markey — Linda Option C cross-session memory, BUILT ON BRANCH, NOT DEPLOYED)
+
+> The identity model described in this section (points #1 and #2 especially) was
+> **superseded the same day** — see the Current State section above. Kept for the full
+> build record of the `/memory` route, data model, retention, UI, Codex passes 1–3, and
+> the deploy sequence, all of which still stand.
 
 **Kevin's go-ahead was to BUILD Option C per `LINDA-OPTION-C-BUILD-PLAN.md` (on main, commit
 `134e024c`), not to deploy.** All work is on branch **`markey/linda-option-c-build`**
