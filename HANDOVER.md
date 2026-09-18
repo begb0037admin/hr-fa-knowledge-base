@@ -1,7 +1,7 @@
 # Handover — HR FA Knowledge Base
 
 **To:** New session
-**From:** Session of 25 August 2026 (Markey, session 9)
+**From:** Session of 18 September 2026 (Adam — documentation reconciliation after a 3-week gap; no HANDOVER.md entry had been written since 28 Aug despite real work landing on main)
 **Owner:** Kevin (kevin.lelitte@admin.ox.ac.uk · GitHub `begb0037admin`)
 
 Everything you need to drive this project is in this file plus the repo
@@ -9,7 +9,30 @@ itself. Trust the repo over memory; verify data, not just green ticks.
 
 ---
 
-## Current State — 28 August 2026 (Markey — Linda Option C identity simplified to a single fixed server-side key, STILL ON BRANCH, NOT DEPLOYED)
+## Current State — 18 September 2026 (Adam — documentation reconciliation; live-verified drift between HANDOVER.md/ROADMAP.md and actual repo/live state)
+
+**Why this entry exists:** Kevin said "continue" with no further detail. Bootstrap turned up a real gap — this file's last "Current State" entry was 28 August 2026, but `main` has 13 further commits since then, through today, that were never reflected here. That's a process lapse from the sessions that made those commits (each should have updated this file before finishing, per this project's own Hard Rules) — stated plainly, not silently patched over. This entry reconciles the record against what's actually live, then identifies the one concrete, still-open item found along the way.
+
+**1. Linda Option C (cross-session memory) — CONFIRMED LIVE, not "on branch."** The 28 Aug entry below says "STILL ON BRANCH, NOT DEPLOYED." That's now stale in two ways: the build commits (`6fd2f8b9`, `081efbd7`, plus `80dd0e4c` adding `worker/wrangler.toml`) are on `main` — the `markey/linda-option-c-build` branch no longer exists, only an earlier, different `markey/linda-option-c-plan` branch remains. And the live Worker is actually running this code: `curl -X POST https://hr-kb-ai.kevinlelitte.workers.dev/memory -d '{"op":"load"}'` returned real HTTP 200 with a genuine stored conversation turn timestamped `2026-09-17T12:22:27.618Z` (a real UDF question Linda was asked and answered) — not a 404/deploy-gate 501. `ROADMAP.md`'s "Option C BUILT & DEPLOYED — LIVE" line (also dated 28 Aug) was the accurate one; this file's "Current State" heading was simply never updated after the deploy happened. ROADMAP's rollback command (`wrangler rollback 36e78505-f567-4986-9299-23e86e18f12f --name hr-kb-ai`) is unverified from here (no way to list Cloudflare deployment history without dashboard/API access) but is the recorded rollback target if needed.
+
+**2. Untracked work since 28 Aug, backfilled from `git log` (no HANDOVER entries existed for any of these):**
+- `9742bcda` (28 Aug) — Option D scoping brief: "AI librarian" candidate architecture added to `LINDA-OPTION-D-SCOPING-BRIEF.md`. Still not designed/built — see `ROADMAP.md`.
+- `2dabdedc` (10 Sep) — local `CONSTITUTION.md` replaced with a stub pointer to `begb0037admin/constitution`, per the estate-wide Priority 3.5 rollout.
+- `026ebf59` / `37fbf6e7` / `3d283439` / `b0b40aaa` (17–18 Sep, Adam) — new Kevin's Guides entry "HOW TO: Troubleshoot — UDF Data Uploaded Successfully but Not Visible on Employee Records" (Person Filter + Data Labels Active), added then strengthened for BM25 retrievability, index rebuilt twice. Full research trail in Adam's memory: `kb-udf-data-labels-active-indicator.md`, `kb-udf-bulk-upload-datamigration-tool.md`, `kb-index-40-chunk-cap.md` (the last one a real, still-open indexing bug: `build_index.py`'s `MAX_CHUNKS_PER_DOC=40` silently truncates long PDFs to their first ~35–40%, confirmed against 94/6,680 live documents sitting exactly at the cap — not yet raised with Kevin as a fix candidate).
+
+**3. Live `data/kb.json` re-counted directly (git blob API, not Contents API — file is 4.1MB, over the ~1MB Contents-API ceiling): 6,680 documents.** `CLAUDE.md` still said 6,688 (dated "Last updated: 2026-08-19") — corrected in this session. Per-source breakdown: Cority 4,092, Access Group Help Centre 2,251, How To Guides 209, Oxford IT Sign-In Directory 53, Change Management 51, IRIS 6, Kevin's Guides 5, HRIS Launcher (PeopleXD) 5, Odyssey 4, DSE 4.
+
+**4. Real, still-open finding — `ROADMAP.md`'s "In Progress → Colleges & Halls Guide" is only half true.** The Word doc (`HOW-TO-Create-Non-Payroll-Company-Hierarchy.docx`) was in fact committed to `library/HR Knowledge Base/How To Guides/SYSTEM ADMIN/` back on **15 June 2026** (commit `29d0d12c`, "Add org hierarchy how-to docx + screenshots; switch KB entry from .md to .docx") — but `data/kevin-guides.json`'s entry for this guide still has `"p"` pointing at the old placeholder `library/.../org-hierarchy-setup.md` and `"e":"md"`, confirmed by reading the live file directly. The docx has sat committed and unused for three months; the KB card still serves the broken placeholder. This is a small, mechanical fix (repoint one `kevin-guides.json` record's `p`/`e` fields at the real `.docx`, then rebuild the index) — **not done in this session**, because it touches `data/kb.json` via the rebuild pipeline, which this project's approval gate requires showing to Kevin before pushing/running. Flagged for his go-ahead; see `ROADMAP.md` for the exact fields to change.
+
+**5. Not independently re-verified this session (inherited as still-accurate from the entries below unless stated otherwise):** the H&S reference library, SERVICES sidebar, dead-URL cleanup, and search-clear-button fix — no evidence surfaced that any of these regressed; not re-tested live beyond the `data/kb.json` count above.
+
+**EXACT NEXT ACTION:** Kevin's go-ahead to fix the Colleges & Halls `kevin-guides.json` entry (point `p` at the committed `.docx`, `e` to `"docx"`) and rebuild the index — trivial once approved. Separately, unrelated and lower priority: Kevin's go-ahead is also still outstanding on the `MAX_CHUNKS_PER_DOC=40` truncation bug (item 2 above) and on the "Kevin's Guides cleanup" ROADMAP item, which has not been started and was in fact just added to again (the UDF guide, item 2 above) — worth Kevin deciding whether that plan (move to real files) is still wanted, since JSON entries keep accumulating in practice.
+
+**Restore point (Constitution §4):** no code was changed this session — only `HANDOVER.md`, `ROADMAP.md`, `CLAUDE.md` (documentation) were written. `data/kb.json` / `data/kb-index.json` / `data/kevin-guides.json` untouched.
+
+---
+
+## Previous State — 28 August 2026 (Markey — Linda Option C identity simplified to a single fixed server-side key, STILL ON BRANCH, NOT DEPLOYED)
 
 **Kevin's 28 Aug decision (mid-deploy-gate):** he wants **zero-config cross-device memory** —
 the same Linda history on ANY machine / browser / incognito with nothing to configure. He
