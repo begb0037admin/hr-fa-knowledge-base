@@ -1,7 +1,7 @@
 # Handover — HR FA Knowledge Base
 
 **To:** New session
-**From:** Session of 18 September 2026 (Adam — documentation reconciliation after a 3-week gap; no HANDOVER.md entry had been written since 28 Aug despite real work landing on main)
+**From:** Session of 19 September 2026 (Adam — REF29 UDF-upload-not-visible troubleshooting doc, closed the Data Migration Tool ↔ UDF Configuration guide cross-reference gap)
 **Owner:** Kevin (kevin.lelitte@admin.ox.ac.uk · GitHub `begb0037admin`)
 
 Everything you need to drive this project is in this file plus the repo
@@ -9,7 +9,31 @@ itself. Trust the repo over memory; verify data, not just green ticks.
 
 ---
 
-## Current State — 18 September 2026 (Adam — documentation reconciliation; live-verified drift between HANDOVER.md/ROADMAP.md and actual repo/live state)
+## Current State — 19 September 2026 (Adam — REF29 UDF false-alarm KB entry: indexing confirmed, cross-links added)
+
+**Why this entry exists:** 18-19 Sep 2026, Kevin lost half a day on a real false alarm — a REF29 UDF bulk upload to live PeopleXD via the Data Migration Tool showed Complete, 0 Failed, but a colleague reported the values weren't visible on live employee records. Task: make sure this is permanently documented and actually retrievable by Linda, and close the specific documentation gap that caused the half-day loss.
+
+**1. The Kevin's Guides doc already existed, written 17-18 Sep 2026** (commits `026ebf59`/`37fbf6e7`/`3d283439`/`b0b40aaa`, per the 18 Sep entry below) — `data/kevin-guides.json` entry "HOW TO: Troubleshoot — UDF Data Uploaded Successfully but Not Visible on Employee Records" (**`data/kb.json` doc index 2515**). Verified live, byte-for-byte, against the git blob API: it already covers the full troubleshooting order required (Employee Search Person Filter first, then the UDF's Data Labels "Active" checkbox), the three things ruled out (Security Required, CorePortal Display/Hide Dates, the Data Migration Tool's own Public/Private job-record flag), and names the documentation gap between the two source guides. Its two citations were independently re-verified against live `data/kb.json`/`data/kb-index.json` rather than trusted at face value: "People Management Dashboard" = doc idx **301** §2.4 ("Person Filter... screen defaults to display all of the 'active' employees"), "Leavers" = doc idx **285** — both exist exactly as cited. "PeopleXD People Management- User Defined Field Configuration V1.0.pdf" §3.2/§4.1.2 = doc idx **192** (How To Guides copy) — also confirmed, matching prior 18 Sep research (`kb-udf-data-labels-active-indicator.md`).
+
+**2. Indexing/searchability confirmed live, not assumed.** `data/kb-index.json` has 8 chunks for doc 2515 (well under the 40-chunk truncation cap — not affected by the known `MAX_CHUNKS_PER_DOC` bug). Replicated the site's exact client-side BM25 algorithm (`index.html` lines 942-972: tokenizer, stopword list, TF/sqrt(len)×log(1+N/DF) scoring, per-doc cap 3, top-8) in Python against the live downloaded index and ran three realistic queries: "uploaded UDF data but can't see it" → doc 2515 ranks **#1**; "UDF upload successful not visible on live records" → **#1**; "Data Migration Tool shows Complete 0 Failed but colleague cannot see UDF values on employee record" → **#3** (the two Data Migration Tool guides rank above it for this phrasing, which is correct/expected — Linda receives all of them as context).
+
+**3. New work this session — closed the cross-reference gap named in the doc itself.** The doc's own text says the half-day loss happened because the Data Migration Tool guide and the UDF Configuration guide "don't cross-reference each other" — that gap was real and still open as of the 18 Sep entry below (only the new doc existed; the two source guides had no pointer back). Fixed by editing all four copies in the KB directly (`data/kb.json` `s`-field + a new `data/kb-index.json` chunk each, so the cross-link is both visible on the card and independently retrievable by search):
+- Data Migration Tool User Guide 3.0 (How To Guides, doc idx **63**)
+- Data Migration Tool (Access Group Help Centre, doc idx **422**)
+- PeopleXD People Management- User Defined Field Configuration V1.0 (How To Guides, doc idx **192**)
+- User Defined Field Configuration (Access Group Help Centre, doc idx **319**)
+
+Each now carries a "See also" note pointing at doc 2515. Pushed via the git data API (blob→tree→commit→ref, not the Contents API — both files exceed its practical size for this kind of edit) as commit **`f2c836b8bfc805dbec136922190507dfc4c81cbc`**, parent `02357e07f19b17cf4724fb11f8d71aa558b8937f`. Verified post-push by re-downloading both blobs via the git blob API (bypasses CDN/cache) and diffing byte counts + content against the local edited copies — exact match. `data/kb.json`: 6,680 documents unchanged (4 field edits, no new doc). `data/kb-index.json`: 23,337 → **23,341** chunks (+4).
+
+**4. Known, accepted limitation — not durable against a full scrape rebuild.** Docs 63/422/192/319 are re-extracted from their source PDFs on every `build_index.py` run inside `scrape-help-centres.yml` (`load_scraped_docs()` re-reads the PDF text fresh each time — see that script's own docstring). This workflow is `workflow_dispatch`-only (no schedule), so the cross-link notes added here will persist until someone next runs a full deep re-scrape, at which point they'll be silently dropped unless re-applied. This is a real, structural gap in the pipeline (no durable "override/annotation" layer exists for non-Kevin's-Guides documents) — flagged here rather than fixed, since building one is a pipeline change, not a documentation task. Whoever next runs `scrape-help-centres.yml` should re-apply this same cross-link edit afterward, or build the override layer first.
+
+**EXACT NEXT ACTION:** None required — this task is complete and verified live. If `scrape-help-centres.yml` is ever run as a full deep re-scrape, re-apply the four "See also" edits in item 3 above afterward (or treat that as the trigger to finally build a persistent annotation layer for scraped docs).
+
+**Restore point (Constitution §4):** `data/kb.json` / `data/kb-index.json` @ `02357e07f19b17cf4724fb11f8d71aa558b8937f` (pre-this-session). No code changed this session.
+
+---
+
+## Previous State — 18 September 2026 (Adam — documentation reconciliation; live-verified drift between HANDOVER.md/ROADMAP.md and actual repo/live state)
 
 **Why this entry exists:** Kevin said "continue" with no further detail. Bootstrap turned up a real gap — this file's last "Current State" entry was 28 August 2026, but `main` has 13 further commits since then, through today, that were never reflected here. That's a process lapse from the sessions that made those commits (each should have updated this file before finishing, per this project's own Hard Rules) — stated plainly, not silently patched over. This entry reconciles the record against what's actually live, then identifies the one concrete, still-open item found along the way.
 
