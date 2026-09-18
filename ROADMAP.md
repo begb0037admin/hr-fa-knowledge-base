@@ -86,15 +86,15 @@ First flagged in `HANDOVER.md` (10 July 2026) as explicitly outside what an AI s
 
 ## In Progress
 
-### Colleges & Halls Guide — commit Word doc to library
-- **What:** Replace the broken placeholder `.md` version with Kevin's actual Word document (`HOWTOCreateNonPayrollCompanyHierarchy_professional.docx`)
-- **What's needed:** Commit the Word doc to `library/HR Knowledge Base/How To Guides/SYSTEM ADMIN/` → update KB card to link to it → rebuild index
-- **Word doc:** Uploaded June 2026, 27 screenshots, 7 steps, full college code table
+### Colleges & Halls Guide — Word doc committed but KB card still not wired to it
+- **Re-verified live 18 Sep 2026 (Adam):** the Word doc (`HOW-TO-Create-Non-Payroll-Company-Hierarchy.docx`) was actually committed to `library/HR Knowledge Base/How To Guides/SYSTEM ADMIN/` back on **15 June 2026** (commit `29d0d12c`) — the "commit the Word doc" half of this task is done and has been for three months. What's still genuinely open: `data/kevin-guides.json`'s entry for this guide (title "HOW TO: Create a Non-Payroll Company & Link the Org Hierarchy — Colleges & Halls UOXU") still has `"p"` pointing at the old placeholder `library/.../org-hierarchy-setup.md` and `"e":"md"` — confirmed by reading the live file. The KB card has been silently serving the broken placeholder this whole time despite the real doc sitting committed and unused.
+- **What's needed now (small, mechanical):** in `data/kevin-guides.json`, change that entry's `"p"` to the real docx path (`library/HR%20Knowledge%20Base/How%20To%20Guides/SYSTEM%20ADMIN/HOW-TO-Create-Non-Payroll-Company-Hierarchy.docx`, GitHub Pages URL-encoded like the other entries) and `"e"` to `"docx"`, then rebuild the index (`index-sharepoint-docs.yml` or equivalent). **Not done in this session** — touches `data/kb.json` via the rebuild pipeline, which needs a show-first step before pushing/running per Adam's approval gate. Awaiting Kevin's go-ahead.
 
 ### Kevin's Guides cleanup
 - **What:** Remove the broken JSON text-blob approach (`data/kevin-guides.json` + `scrapers/` changes + `.github/workflows/rebuild-kevin-guides.yml`)
 - **Why:** Guides need to be real files in the library, not text in JSON. The existing SharePoint pipeline already does this correctly.
 - **What's needed:** Delete the three text-only entries from `kevin-guides.json`, remove the workflow, rebuild index
+- **Status update, 18 Sep 2026 (Adam):** this has not been started, and in the meantime a fourth JSON-text entry was added (17–18 Sep, the UDF Data-Labels-Active troubleshooting guide) rather than as a real file — the JSON approach is still actively growing, not shrinking. Worth Kevin explicitly deciding whether the "move to real files" plan is still wanted, since in practice every new Kevin's Guides addition keeps using the JSON path.
 
 ---
 
@@ -142,4 +142,4 @@ First flagged in `HANDOVER.md` (10 July 2026) as explicitly outside what an AI s
 
 ---
 
-*Last updated: 27 August 2026 (Adam — REF29 CorePortal populated-only-visibility retrieval ask; added UDF/CorePortal scoping + test→UOXP promotion content gap to Future Ideas)*
+*Last updated: 18 September 2026 (Adam — documentation reconciliation after a 3-week HANDOVER.md gap; live-verified Linda Option C is deployed and live; corrected the Colleges & Halls "In Progress" item — the docx was committed 15 June 2026 but the KB card was never repointed to it, still serving the broken placeholder; flagged for Kevin's go-ahead since fixing it touches `data/kb.json`. See `HANDOVER.md`'s 18 Sep entry for full detail.)*
