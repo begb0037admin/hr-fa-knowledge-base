@@ -67,13 +67,9 @@ These guides have drafted content but need to be created as proper Word document
 - **The actual fix (not yet built):** chunk the text client-side into ~1,900-character sentence-bounded segments (comfortably under the Worker's existing cap) and play them back-to-back — looping additional chunks into the same `MediaSource`/`SourceBuffer` for the streamed Aura-2 path, or queuing multiple `speechSynthesis.speak()` calls for the browser fallback (the Web Speech API auto-queues them). No `worker.js` change needed, since chunks under the cap never hit it.
 - **Status:** Not started, not yet scoped as a task on this board before now. Kept deliberately separate from the 1 August 2026 selection/cursor feature at Kevin's explicit instruction — ship selection/cursor on its own, chunked playback stays its own tracked item.
 
-### Every rebuild re-stamps the "Modified" date (`m`) on ~6,000 docs, so `kb.json` can never rebuild cleanly
-- **What's wrong:** `build_index.py` sets `m` from today's date (`time.strftime`) for every Cority doc (4,092) and the deep-crawled Access Group Help Centre articles (1,944) also change. A rebuild on a new day therefore changes `m` on 6,036 of 6,680 docs even when no content changed. Found 19 Sep 2026 by diffing a dry-run rebuild against live `kb.json`: the *only* differences were `m` (6,036 docs) plus the intended fix.
-- **Why it matters:** (1) any commit by `rebuild-kevin-guides.yml`, `index-sharepoint-docs.yml` or `scrape-help-centres.yml` is a ~4 MB noisy diff, so it is hard to see what really changed; (2) the "Modified" date shown on cards is the *rebuild* date, not when the source changed, i.e. misleading; (3) it defeats byte-for-byte verification of a rebuild — 19 Sep's Colleges & Halls fix had to patch the live JSON for one doc instead of rebuilding for this reason.
-- **What doing this actually involves:** carry the previous `m` forward when a doc's content is unchanged (or stop stamping today's date for Cority and use the file's real mtime / a stored scrape date). Small change in `load_cority_clickhelp_docs()` and the deep-article loader; needs a decision from Kevin on what "Modified" should mean on a card before changing it.
-- **Status:** Not started. Cosmetic, not urgent. Do not "fix" by hand-editing `m` in `kb.json`.
-
 (Resolved 19 Sep 2026, commit `32a465c8`: the former item "No durable annotation/override layer for scraped documents" — `data/kb-overrides.json` + `apply_overrides()` in `build_index.py` now keep the Data Migration Tool ↔ UDF Configuration cross-links across rebuilds. See Done.)
+
+(Resolved 19 Sep 2026, commit `0d806564`: the former item "Every rebuild re-stamps the Modified date (`m`) on ~6,000 docs" — `preserve_modified_dates()` in `build_index.py` now carries the previous `m` forward for any doc whose content is unchanged. A rebuild of `c395b61a` is byte-identical to live `kb.json`/`kb-index.json`. See Done and `HANDOVER.md`.)
 
 ---
 
@@ -85,6 +81,12 @@ First flagged in `HANDOVER.md` (10 July 2026) as explicitly outside what an AI s
 - **No branch protection on `main`.** Nothing currently stops a force-push that rewrites history, or a branch deletion. Fix (~2 minutes, GitHub web UI): repo **Settings → Branches → Add branch protection rule** for `main` → enable "Restrict deletions" and "Block force pushes." Does not require pull requests or reviews — only blocks the two operations that could destroy history.
 - **Single point of custodianship.** The repo lives under one GitHub account (`begb0037admin`). Consider adding a second owner/admin (e.g. an Oxford IT service account) as a collaborator, purely as a break-glass measure.
 - **No off-GitHub copy exists.** Everything currently lives only on GitHub. A periodic export of `data/kb.json` + `data/kb-index.json` to a private location Kevin controls (OneDrive, SharePoint, a second private repo) would protect against GitHub itself being unavailable or the repo being lost outright.
+
+### Colleges & Halls .docx still marked DRAFT with six "Screenshot pending" placeholders (document content, not a KB fault)
+- **What's outstanding:** `library/HR Knowledge Base/How To Guides/SYSTEM ADMIN/HOW-TO-Create-Non-Payroll-Company-Hierarchy.docx` has 20 embedded live UOXU screenshots but six red "Screenshot pending: ... capture during live UOXU configuration" placeholders remain: 5.2 (Subdivision ZSD901), 5.3 (Level 4 Z90101), 5.4 (Management Units Z901/Z902), Step 7 (completed hierarchy), Step 7B (Pay Administered By being linked) and Step 7B (completed hierarchy with all departments linked). Its Status line reads "DRAFT — live UOXU screenshots embedded; pending screenshots noted" (metadata table, first page; no header/footer/watermark). The DRAFT line is accurate today.
+- **Blocked on:** Kevin capturing those six screenshots in live UOXU (Step 7B also isn't confirmed run end to end — Conor completed only some entries on 12 June). Not a knowledge-base or indexing fault; the card, link and Linda's text are all correct (commit `32a465c8`).
+- **What doing this involves:** once the screenshots exist, Kevin (or an agent he directs) inserts them and updates/removes the Status line. Until then, an honest reword such as "DRAFT — 20 live UOXU screenshots embedded; 6 still to capture" is safe, but the docx itself is Kevin's decision. Adam has not edited the docx. Linda's indexed text contains "Screenshot pending" six times until it is updated (re-run `rebuild-kevin-guides.yml`/update the `_text` in `kevin-guides.json` afterwards).
+- **Status:** Blocked on Kevin.
 
 ### pxd.lelitte.co.uk visual approval for the mirrored SERVICES section is outstanding
 - **What's needed:** Kevin reviews the live `pxd.lelitte.co.uk` (`begb0037admin/hris-launcher`) sidebar - specifically the new "Oxford IT Sign-In Directory" nav-group added under Services (19 Aug 2026, session 7) - and confirms it renders correctly. No Playwright/browser-automation tool was available this session; verification was structural (div-balance checks, byte-for-byte diff of the live HTML against the tested local copy), not a rendered screenshot.
@@ -110,6 +112,7 @@ First flagged in `HANDOVER.md` (10 July 2026) as explicitly outside what an AI s
 - Pay code 121 CR drafted → `hris-change-requests/CRs/CR-2026-06-18-pay-code-121-hr-report-suite.md`
 - Pay code 121 handover written → `hris-change-requests/HANDOVER.md`
 - HOW TO: Create a Non-Payroll Company & Hierarchy (Colleges & Halls) — Word doc committed 15 Jun 2026; KB card repointed to it 19 Sep 2026 (commit `32a465c8`)
+- Date-stamp churn fixed (19 Sep 2026, commit `0d806564`, restore point `c395b61a`): `build_index.py` keeps the previous `m` for unchanged docs; rebuild byte-identical to live.
 - `CLAUDE.md` reconciled against live data (31 July 2026) — headline document/chunk counts had drifted to an 18 June snapshot; re-counted `data/kb.json` and `data/kb-index.json` directly and corrected to the real current figures (2,515 docs, 13,472 chunks)
 - **Voice migration (ElevenLabs → Cloudflare Workers AI)** — code confirmed deployed 31 July 2026; **Kevin tested it live the same day and confirmed it works.** Fully closed out — no longer tracked as open work.
 - **Cority ClickHelp scraper (Source 1) — full corpus scraped and committed (31 July – 1 August 2026).** `scrapers/cority_clickhelp_scraper.py` + `.github/workflows/scrape-cority-clickhelp.yml` committed to `main`. Ran against all 119 publications; independently verified directly from the repo's git tree: **119/119 publications, 4,092/4,092 articles, 6,772 images** present under `cority/clickhelp/`. Two real bugs found and fixed along the way:
@@ -148,4 +151,4 @@ First flagged in `HANDOVER.md` (10 July 2026) as explicitly outside what an AI s
 
 ---
 
-*Last updated: 19 September 2026, later (Adam — Colleges & Halls card repointed + Linda's text refreshed + UDF cross-links made durable, commit `32a465c8`; cleared the override-layer technical-debt item and the Colleges & Halls In Progress item; added the `m` date-stamp churn item. See `HANDOVER.md`'s 19 Sep (later) entry.)*
+*Last updated: 19 September 2026, latest (Adam — date-stamp churn item cleared by commit `0d806564`; new open item for the Colleges & Halls .docx DRAFT/screenshots, blocked on Kevin. See `HANDOVER.md`'s 19 Sep (latest) entry.)*

@@ -1,7 +1,7 @@
 # Handover — HR FA Knowledge Base
 
 **To:** New session
-**From:** Session of 19 September 2026 (Adam — Colleges & Halls card repointed to the real .docx; Data Migration Tool ↔ UDF cross-links made durable via `data/kb-overrides.json`)
+**From:** Session of 19 September 2026 (Adam — `m` date-stamp churn fixed via `preserve_modified_dates()`; earlier same day: Colleges & Halls card repointed, UDF cross-links made durable)
 **Owner:** Kevin (kevin.lelitte@admin.ox.ac.uk · GitHub `begb0037admin`)
 
 Everything you need to drive this project is in this file plus the repo
@@ -9,7 +9,25 @@ itself. Trust the repo over memory; verify data, not just green ticks.
 
 ---
 
-## Current State — 19 September 2026, later (Adam — Colleges & Halls card repointed; cross-links made durable) — commit `32a465c8`
+## Current State — 19 September 2026, latest (Adam — `m` date-stamp churn fixed) — commit `0d806564`
+
+**What shipped (one commit, `0d80656448a7158da7eb42250b8efdba5f5aaa0e` on `main`, parent `c395b61a6656e15780ef0ac5db561ac94d293cc4` = the restore point):** `scrapers/build_index.py` only (+68 lines, no data files). New `preserve_modified_dates()`, run after `apply_overrides()`: it reads the previous `data/kb.json` + `data/kb-index.json` before they are overwritten, hashes each rebuilt doc (every field except `m`, plus its ordered chunks), and if the hash matches a previous doc that doc keeps its previous `m`. New or changed docs keep the freshly stamped `m`. Matching is by content hash, not position. No schema change, no workflow change needed.
+
+**Proof (scratch clone of `c395b61a`, before push):** unpatched rebuild differed from live `kb.json` in 6,036 docs, in `m` only (`kb-index.json` identical). Patched rebuild: `kb.json` sha256 `ecb46659611ca37aeef9d47baf0fd4fd69147a57971b9e90329ae3ce64f4d5a6` and `kb-index.json` sha256 `92b1d74299e83f374b59f28941b6bdf21e901075e2bb0865c875083b369691df` both equal the live blobs (zero diff). Log: `kb-overrides: 4/4 applied`; `m dates: 6680 kept, 0 stamped fresh`. A synthetic test (reordered, edited and new docs) kept old dates for unchanged docs and stamped the edited/new ones fresh. The coordinating session pushed the file and confirmed the live blob matches.
+
+**Limits (known, accepted):**
+- Only the first `MAX_CHUNKS_PER_DOC` (40) chunks of a doc are indexed, so a content change beyond that cap is not detected. The search index has the same blind spot.
+- A PDF re-scraped with identical text keeps its old `m`; the manifest "scraped" date therefore no longer shows up as Modified (Modified now means content last changed).
+- On a Windows checkout, the case-colliding PDFs (`Release Notes` / `Release notes`, `Objective Management` / `Objective management`) show as modified; this did not affect the rebuild output.
+- If a rebuild ever restamps `m` on thousands of docs again, the previous live `kb.json`/`kb-index.json` were not present at build time (or were unreadable); the `m dates:` log line reports kept vs freshly-stamped counts, so check it after every run.
+
+**Open, not a KB fault:** the Colleges & Halls .docx still has the DRAFT status line and six "Screenshot pending" placeholders (5.2, 5.3, 5.4, Step 7, Step 7B x2). Tracked in ROADMAP "Parked — Needs Kevin's Action"; blocked on Kevin capturing the screenshots. The docx was inspected, not edited.
+
+**Exact next action:** none required. When `rebuild-kevin-guides.yml`, `index-sharepoint-docs.yml` or `scrape-help-centres.yml` next runs, confirm the log prints `kb-overrides: 4/4 applied` and an `m dates:` line with a large "kept" count.
+
+---
+
+## Previous State — 19 September 2026, later (Adam — Colleges & Halls card repointed; cross-links made durable) — commit `32a465c8`
 
 **What shipped (one commit, `32a465c80b9200951c2b80cd69dffc65fc48c8a9` on `main`, parent `d2937663` = the restore point):**
 1. **Colleges & Halls card now opens the real .docx.** `data/kevin-guides.json`, entry "HOW TO: Create a Non-Payroll Company & Link the Org Hierarchy — Colleges & Halls UOXU": added `f`, `p` now points at `library/.../SYSTEM ADMIN/HOW-TO-Create-Non-Payroll-Company-Hierarchy.docx`, `e` `md`→`docx`. Root cause of the 3-month gap: commit `29d0d12c` (15 Jun) fixed the card by editing `data/kb.json` directly, and the next rebuild silently overwrote it because the source of truth (`kevin-guides.json`) still said `.md`. Same class of bug as item 3.
