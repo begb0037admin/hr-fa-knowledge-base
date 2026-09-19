@@ -1,7 +1,7 @@
 # Handover — HR FA Knowledge Base
 
 **To:** New session
-**From:** Session of 19 September 2026 (Adam — REF29 UDF-upload-not-visible troubleshooting doc, closed the Data Migration Tool ↔ UDF Configuration guide cross-reference gap)
+**From:** Session of 19 September 2026 (Adam — Colleges & Halls card repointed to the real .docx; Data Migration Tool ↔ UDF cross-links made durable via `data/kb-overrides.json`)
 **Owner:** Kevin (kevin.lelitte@admin.ox.ac.uk · GitHub `begb0037admin`)
 
 Everything you need to drive this project is in this file plus the repo
@@ -9,7 +9,33 @@ itself. Trust the repo over memory; verify data, not just green ticks.
 
 ---
 
-## Current State — 19 September 2026 (Adam — REF29 UDF false-alarm KB entry: indexing confirmed, cross-links added)
+## Current State — 19 September 2026, later (Adam — Colleges & Halls card repointed; cross-links made durable) — commit `32a465c8`
+
+**What shipped (one commit, `32a465c80b9200951c2b80cd69dffc65fc48c8a9` on `main`, parent `d2937663` = the restore point):**
+1. **Colleges & Halls card now opens the real .docx.** `data/kevin-guides.json`, entry "HOW TO: Create a Non-Payroll Company & Link the Org Hierarchy — Colleges & Halls UOXU": added `f`, `p` now points at `library/.../SYSTEM ADMIN/HOW-TO-Create-Non-Payroll-Company-Hierarchy.docx`, `e` `md`→`docx`. Root cause of the 3-month gap: commit `29d0d12c` (15 Jun) fixed the card by editing `data/kb.json` directly, and the next rebuild silently overwrote it because the source of truth (`kevin-guides.json`) still said `.md`. Same class of bug as item 3.
+2. **Linda's searchable text for that guide refreshed from the real .docx** (was the older `.md` text: 39 codes, "pending screenshots"; the .docx has 40 codes, Step 7B, embedded screenshots). `_text`/`s` in `kevin-guides.json` replaced; doc 2514 chunks 7→11. **Only doc 2514's chunks changed** — the other 23,334 chunks are identical and in the same order.
+3. **Cross-links made durable.** New `data/kb-overrides.json` (4 entries, each matched on exactly one doc by `src`+`f`: docs 63, 422, 192, 319) plus a new `apply_overrides()` in `scrapers/build_index.py`, run last in `main()`. A rebuild or full re-scrape now re-applies the "See also" summary text and the extra search chunk for each. A match that hits 0 or >1 docs is skipped with a stderr warning, never guessed; re-applying is a no-op; no overrides file = old behaviour. This clears the 19 Sep technical-debt item.
+
+**How it was pushed (and why not by rebuilding):** the coordinating Claude Code session pushed my prepared files via the git blob/tree/commit/ref API after Kevin's approval. I did **not** use `build_index.py` output directly, because a rebuild run on 19 Sep re-stamps `m` on 6,036 docs (see ROADMAP "Every rebuild re-stamps the Modified date"). Instead `kb.json`/`kb-index.json` were the previous live files patched for doc 2514 only.
+
+**Verified directly, after the push (not from the push report):**
+- Live `main` = `32a465c8`, parent `d2937663`; the commit touches exactly the 5 expected files. All 5 blobs fetched via the git blob API are byte-identical to the prepared files (`kb.json` `284b2825`, `kb-index.json` `d4be6971`, `kevin-guides.json` `5f2c9786`, `kb-overrides.json` `cbf772ff`, `build_index.py` `504233af`).
+- `kb.json` differs from the pre-push live file in doc 2514 only (`p`, `e`, `f`, `s`); 6,680 docs, 23,345 chunks (was 23,341: +4 from the doc 2514 refresh).
+- All 4 cross-links present in live data: docs 63, 422, 192, 319 each have the "See also" text in `s` and 1 `Troubleshooting cross-reference` chunk.
+- Ranking, replicating `index.html`'s BM25 (`retrieve()`, per-doc cap 3, top 8) on the live index: "uploaded UDF data but can't see it" → doc 2515 **#1**. Doc 2514 ranks #1 for "...40 college codes USER5..." and "Step 7B..." (both are content only the .docx has).
+- Card link returns HTTP 200, 7,322,011 bytes, `application/vnd.openxmlformats-officedocument.wordprocessingml.document`, byte-identical to the committed .docx (the `github.io` address 301-redirects to `kb.lelitte.co.uk`; followed correctly).
+- Pages run for `32a465c8`: `completed`/`success`. After it finished, `https://kb.lelitte.co.uk/data/kb.json` and `kb-index.json` are byte-identical to the pushed blobs (4,145,318 and 29,090,316 bytes). Immediately after the push the site still served the old files (4,145,031 bytes) — normal deploy lag, not a failure.
+- Not verified: a human clicking the card in a browser. Verified by URL and bytes, not by a rendered click.
+
+**Mistake caught and stated:** my first report said a plain `build_index.py` rebuild is "byte-identical to live". That was only true on 18 Sep (same day as the last live build). Re-run on 19 Sep it changes `m` on 6,036 docs. Corrected before the push; that is why the push used patched files, not rebuild output.
+
+**Left open (not fixed here):** (a) the date-stamp churn (ROADMAP, new Technical Debt item); (b) "Kevin's Guides cleanup" (JSON-text approach) is unchanged — this task edited the JSON entry rather than migrating it to a real library file; (c) the .docx itself is still marked DRAFT with screenshots pending in its own header.
+
+**Exact next action:** none required for this fix. If `scrape-help-centres.yml` or `rebuild-kevin-guides.yml` is ever run, expect its commit to overwrite `m` dates widely; the four cross-links and the Colleges & Halls card should survive — confirm the run log prints `kb-overrides:  4/4 applied`.
+
+---
+
+## Previous State — 19 September 2026 (Adam — REF29 UDF false-alarm KB entry: indexing confirmed, cross-links added)
 
 **Why this entry exists:** 18-19 Sep 2026, Kevin lost half a day on a real false alarm — a REF29 UDF bulk upload to live PeopleXD via the Data Migration Tool showed Complete, 0 Failed, but a colleague reported the values weren't visible on live employee records. Task: make sure this is permanently documented and actually retrievable by Linda, and close the specific documentation gap that caused the half-day loss.
 
