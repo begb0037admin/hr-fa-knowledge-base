@@ -12,12 +12,14 @@ Inputs:
   data/oxford-signin-directory.json  53 curated Oxford IT sign-in service records (optional)
   data/pxd-services.json      14 curated HRIS Launcher (PeopleXD) service/team/data-protection records (optional)
   data/kb-overrides.json      durable annotations for scraped/mirrored docs, merged in last (optional)
+  data/kb.json + kb-index.json  previous build, read (before being overwritten) so unchanged docs keep their "m" date
 
 Outputs:
   data/kb.json        one record per document, drives the cards and filters
   data/kb-index.json  text chunks with doc references, drives AI retrieval
 """
 import csv
+import hashlib
 import json
 import os
 import re
@@ -384,6 +386,70 @@ def apply_overrides(kb, index):
     print(f"kb-overrides:  {applied}/{len(overrides)} applied")
 
 
+def _doc_signature(doc, chunks):
+    """Hash of everything about a document EXCEPT its "m" date: every other
+    card field plus its ordered search-index chunks."""
+    body = {k: v for k, v in doc.items() if k != "m"}
+    blob = json.dumps([body, chunks], ensure_ascii=False, sort_keys=True)
+    return hashlib.sha1(blob.encode("utf-8")).hexdigest()
+
+
+def _chunks_by_doc(kb, index):
+    by_doc = [[] for _ in kb]
+    for ch in index:
+        by_doc[ch["d"]].append(ch["x"])
+    return by_doc
+
+
+def preserve_modified_dates(kb, index):
+    """Keep "m" (Modified) stable across rebuilds.
+
+    Several loaders stamp "m" with the build date (deep articles, Cority),
+    so a plain rebuild used to rewrite "m" on ~6,000 documents even though
+    nothing about them had changed. Here every rebuilt document is compared
+    with the previous data/kb.json + data/kb-index.json (read before they are
+    overwritten): if its card fields (everything except "m") and its search
+    chunks are identical to a previous document, that document keeps its
+    previous "m". A document whose text, title, link or any other field
+    changed, or that is new, keeps the freshly stamped "m". Matching is by
+    content signature, not position, so re-ordering or inserting documents
+    cannot misattribute a date. Limit: only the first MAX_CHUNKS_PER_DOC
+    chunks of a document are indexed, so a change beyond that cap is not
+    seen (same blind spot the search index itself has)."""
+    kb_path = os.path.join(DATA, "kb.json")
+    idx_path = os.path.join(DATA, "kb-index.json")
+    if not (os.path.exists(kb_path) and os.path.exists(idx_path)):
+        print("m dates:       no previous kb.json/kb-index.json - all stamped fresh")
+        return
+    try:
+        with open(kb_path, encoding="utf-8") as fh:
+            old_kb = json.load(fh)
+        with open(idx_path, encoding="utf-8") as fh:
+            old_index = json.load(fh)
+        old_chunks = _chunks_by_doc(old_kb, old_index)
+    except (ValueError, KeyError, IndexError) as exc:
+        print(f"  ! m dates: previous data unreadable ({exc}) - all stamped fresh",
+              file=sys.stderr)
+        return
+    previous = {}
+    for doc, chunks in zip(old_kb, old_chunks):
+        if "m" in doc:
+            previous.setdefault(_doc_signature(doc, chunks), []).append(doc["m"])
+    new_chunks = _chunks_by_doc(kb, index)
+    kept = changed = 0
+    for doc, chunks in zip(kb, new_chunks):
+        if "m" not in doc:
+            continue
+        dates = previous.get(_doc_signature(doc, chunks))
+        if dates:
+            doc["m"] = dates.pop(0)
+            kept += 1
+        else:
+            changed += 1
+    print(f"m dates:       {kept} unchanged documents kept their previous date, "
+          f"{changed} new/changed documents stamped fresh")
+
+
 def main():
     sp_docs = load_sharepoint_docs()
     sp_fulltext = load_sharepoint_fulltext()
@@ -425,6 +491,7 @@ def main():
             index.append({"d": doc_id, "x": ch})
 
     apply_overrides(kb, index)
+    preserve_modified_dates(kb, index)
 
     os.makedirs(DATA, exist_ok=True)
     with open(os.path.join(DATA, "kb.json"), "w", encoding="utf-8") as fh:
