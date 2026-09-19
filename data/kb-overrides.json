@@ -1,0 +1,45 @@
+{
+  "_readme": "Durable annotation layer for scraped/mirrored documents. scrapers/build_index.py merges these in AFTER every loader, so they survive any re-scrape or rebuild. Each override targets exactly one doc via match (src + f); s_append is added to the card summary, extra_chunks are added to the search index. Nothing else is touched. Added 19 Sep 2026 for the Data Migration Tool <-> UDF Configuration cross-links (see ROADMAP.md Technical Debt).",
+  "overrides": [
+    {
+      "match": {
+        "src": "How To Guides",
+        "f": "Data Migration Tool User Guide 3.0.pdf"
+      },
+      "s_append": "See also: if the Data Migration Tool reports this UDF upload as Complete / 0 Failed but a colleague can't see the uploaded values on the employee record, that is not a Data Migration Tool problem — check the UDF Configuration guide's Employee Search Person Filter (Active/Dormant) and the Data Labels \"Active\" checkbox on the UDF field itself. See Kevin's Guides: \"HOW TO: Troubleshoot — UDF Data Uploaded Successfully but Not Visible on Employee Records\".",
+      "extra_chunks": [
+        "Troubleshooting cross-reference (added by Kevin's HR Systems team, 19 Sep 2026): if this Data Migration Tool upload for User Defined Fields shows Complete / 0 Failed but a colleague reports they can't see the uploaded values on the employee's live record, do not assume the upload failed silently or the data is wrong. Check, in order: (1) the Employee Search \"Person Filter\" on the People Management Dashboard — defaults to Active only, so a dormant/leaver record won't appear regardless of the data; (2) the UDF's own Data Labels \"Active\" checkbox in HR Admin Setup Settings > User Defined Objects > [Reference Code] > Data Labels — if unchecked, the field won't display for anyone even though the value uploaded successfully. See Kevin's Guides: \"HOW TO: Troubleshoot — UDF Data Uploaded Successfully but Not Visible on Employee Records\" for the full order and what to rule out (Security Required, CorePortal Display, and the migration job's own Public/Private flag are not the cause)."
+      ]
+    },
+    {
+      "match": {
+        "src": "Access Group Help Centre",
+        "f": "GUIDE_Data Migration Tool.pdf"
+      },
+      "s_append": "See also: if the Data Migration Tool reports this UDF upload as Complete / 0 Failed but a colleague can't see the uploaded values on the employee record, that is not a Data Migration Tool problem — check the UDF Configuration guide's Employee Search Person Filter (Active/Dormant) and the Data Labels \"Active\" checkbox on the UDF field itself. See Kevin's Guides: \"HOW TO: Troubleshoot — UDF Data Uploaded Successfully but Not Visible on Employee Records\".",
+      "extra_chunks": [
+        "Troubleshooting cross-reference (added by Kevin's HR Systems team, 19 Sep 2026): if this Data Migration Tool upload for User Defined Fields shows Complete / 0 Failed but a colleague reports they can't see the uploaded values on the employee's live record, do not assume the upload failed silently or the data is wrong. Check, in order: (1) the Employee Search \"Person Filter\" on the People Management Dashboard — defaults to Active only, so a dormant/leaver record won't appear regardless of the data; (2) the UDF's own Data Labels \"Active\" checkbox in HR Admin Setup Settings > User Defined Objects > [Reference Code] > Data Labels — if unchecked, the field won't display for anyone even though the value uploaded successfully. See Kevin's Guides: \"HOW TO: Troubleshoot — UDF Data Uploaded Successfully but Not Visible on Employee Records\" for the full order and what to rule out (Security Required, CorePortal Display, and the migration job's own Public/Private flag are not the cause)."
+      ]
+    },
+    {
+      "match": {
+        "src": "How To Guides",
+        "f": "PeopleXD People Management- User Defined Field Configuration V1.0.pdf"
+      },
+      "s_append": "See also: for UDF values bulk-loaded via the Data Migration Tool that show Complete / 0 Failed but aren't visible on the employee record, the fix is usually here — check the Employee Search Person Filter first, then this guide's Data Labels \"Active\" checkbox (section 3.2 / 4.1.2). See Kevin's Guides: \"HOW TO: Troubleshoot — UDF Data Uploaded Successfully but Not Visible on Employee Records\" for the full troubleshooting order.",
+      "extra_chunks": [
+        "Troubleshooting cross-reference (added by Kevin's HR Systems team, 19 Sep 2026): if UDF field values were bulk-loaded via the Data Migration Tool and it reports Complete / 0 Failed, but a colleague can't see the values on the employee's live record, the Data Migration Tool guide's own \"Complete / 0 Failed\" status only confirms the values were written to the database — it says nothing about whether the field is switched on to display. Check this guide's Employee Search Person Filter (section 2.4, People Management Dashboard) and the Data Labels \"Active\" checkbox (section 3.2 / 4.1.2) before assuming the upload or the data is wrong. See Kevin's Guides: \"HOW TO: Troubleshoot — UDF Data Uploaded Successfully but Not Visible on Employee Records\" for the full troubleshooting order and what to rule out."
+      ]
+    },
+    {
+      "match": {
+        "src": "Access Group Help Centre",
+        "f": "GUIDE_User Defined Field Configuration.pdf"
+      },
+      "s_append": "See also: for UDF values bulk-loaded via the Data Migration Tool that show Complete / 0 Failed but aren't visible on the employee record, the fix is usually here — check the Employee Search Person Filter first, then this guide's Data Labels \"Active\" checkbox (section 3.2 / 4.1.2). See Kevin's Guides: \"HOW TO: Troubleshoot — UDF Data Uploaded Successfully but Not Visible on Employee Records\" for the full troubleshooting order.",
+      "extra_chunks": [
+        "Troubleshooting cross-reference (added by Kevin's HR Systems team, 19 Sep 2026): if UDF field values were bulk-loaded via the Data Migration Tool and it reports Complete / 0 Failed, but a colleague can't see the values on the employee's live record, the Data Migration Tool guide's own \"Complete / 0 Failed\" status only confirms the values were written to the database — it says nothing about whether the field is switched on to display. Check this guide's Employee Search Person Filter (section 2.4, People Management Dashboard) and the Data Labels \"Active\" checkbox (section 3.2 / 4.1.2) before assuming the upload or the data is wrong. See Kevin's Guides: \"HOW TO: Troubleshoot — UDF Data Uploaded Successfully but Not Visible on Employee Records\" for the full troubleshooting order and what to rule out."
+      ]
+    }
+  ]
+}

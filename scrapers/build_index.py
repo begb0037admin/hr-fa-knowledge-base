@@ -11,6 +11,7 @@ Inputs:
   data/hs-library-fulltext.json, data/hs-library-files.json  output of extract_hs_library.py (optional)
   data/oxford-signin-directory.json  53 curated Oxford IT sign-in service records (optional)
   data/pxd-services.json      14 curated HRIS Launcher (PeopleXD) service/team/data-protection records (optional)
+  data/kb-overrides.json      durable annotations for scraped/mirrored docs, merged in last (optional)
 
 Outputs:
   data/kb.json        one record per document, drives the cards and filters
@@ -346,6 +347,43 @@ def load_hs_library_docs():
     return docs
 
 
+def apply_overrides(kb, index):
+    """Merge data/kb-overrides.json into the finished kb/index lists.
+
+    Scraped and mirrored documents are regenerated from their source PDFs on
+    every run, so a hand edit made directly in kb.json / kb-index.json is
+    silently lost on the next rebuild. This is the durable place for such
+    edits. Each override names exactly ONE document via "match" (all listed
+    fields must equal the doc's; use src + f) and may add:
+      s_append      text appended to the card summary "s"
+      extra_chunks  extra text chunks added to the search index for that doc
+    A match that hits zero or several docs is skipped with a warning, never
+    guessed at. Re-applying is a no-op (nothing is added twice)."""
+    path = os.path.join(DATA, "kb-overrides.json")
+    if not os.path.exists(path):
+        return
+    with open(path, encoding="utf-8") as fh:
+        overrides = json.load(fh).get("overrides", [])
+    applied = 0
+    for ov in overrides:
+        match = ov.get("match") or {}
+        hits = [i for i, d in enumerate(kb)
+                if match and all(d.get(k) == v for k, v in match.items())]
+        if len(hits) != 1:
+            print(f"  ! kb-overrides: {match} matched {len(hits)} docs "
+                  f"(expected exactly 1) - skipped", file=sys.stderr)
+            continue
+        i = hits[0]
+        add = ov.get("s_append")
+        if add and add not in kb[i].get("s", ""):
+            kb[i]["s"] = (kb[i].get("s", "") + " " + add).strip()
+        for ch in ov.get("extra_chunks", []):
+            if not any(c["d"] == i and c["x"] == ch for c in index):
+                index.append({"d": i, "x": ch})
+        applied += 1
+    print(f"kb-overrides:  {applied}/{len(overrides)} applied")
+
+
 def main():
     sp_docs = load_sharepoint_docs()
     sp_fulltext = load_sharepoint_fulltext()
@@ -385,6 +423,8 @@ def main():
             chunks = [doc["t"]]
         for ch in chunks:
             index.append({"d": doc_id, "x": ch})
+
+    apply_overrides(kb, index)
 
     os.makedirs(DATA, exist_ok=True)
     with open(os.path.join(DATA, "kb.json"), "w", encoding="utf-8") as fh:
