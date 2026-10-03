@@ -12,3 +12,7 @@ AURA_SPEAKER = "delia"
 [[kv_namespaces]]
 binding = "MEM"
 id = "b607528773464774962053117069abd1"
+
+[[vectorize]]
+binding = "VECTORIZE"
+index_name = "hr-fa-kb"

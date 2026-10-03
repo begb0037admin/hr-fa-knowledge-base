@@ -450,6 +450,109 @@ def preserve_modified_dates(kb, index):
           f"{changed} new/changed documents stamped fresh")
 
 
+def sync_embeddings_if_configured(kb, index):
+    """Incrementally sync contextual embeddings when all new secrets exist.
+
+    The ordinary index build is also used locally and by workflows that do not
+    have access to the embedding account.  In that case this is deliberately a
+    warning-only no-op.  Once configured, API failures are allowed to fail the
+    build so an incomplete Vectorize update cannot be mistaken for success.
+    """
+    required = ("VOYAGE_API_KEY", "CLOUDFLARE_API_TOKEN", "CLOUDFLARE_ACCOUNT_ID")
+    missing = [name for name in required if not os.environ.get(name)]
+    if missing:
+        print(
+            "Embeddings: skipped (missing " + ", ".join(missing) + "). "
+            "Set all three to enable incremental Vectorize sync.",
+            file=sys.stderr,
+        )
+        return
+
+    try:
+        import embedding_sync
+    except ImportError as exc:
+        try:
+            from scrapers import embedding_sync
+        except ImportError:
+            print(f"Embeddings: skipped (embedding module unavailable: {exc})",
+                  file=sys.stderr)
+            return
+
+    state_path = os.path.join(DATA, "kb-embedding-state.json")
+    old_state = {"documents": {}}
+    if os.path.exists(state_path):
+        try:
+            with open(state_path, encoding="utf-8") as fh:
+                loaded = json.load(fh)
+            if isinstance(loaded, dict) and isinstance(loaded.get("documents"), dict):
+                old_state = loaded
+            else:
+                print("Embeddings: existing state has no documents map; rebuilding all.",
+                      file=sys.stderr)
+        except (OSError, ValueError) as exc:
+            print(f"Embeddings: existing state unreadable ({exc}); rebuilding all.",
+                  file=sys.stderr)
+
+    groups = embedding_sync.group_index_chunks(kb, index)
+    old_documents = old_state.get("documents", {})
+    current_documents = {}
+    changed_groups = []
+    for group in groups:
+        digest = embedding_sync.content_hash(group["chunks"])
+        previous = old_documents.get(group["doc_key"])
+        previous_ids = previous.get("vector_ids") if isinstance(previous, dict) else None
+        if (isinstance(previous, dict) and previous.get("content_hash") == digest and
+                isinstance(previous_ids, list) and len(previous_ids) == len(group["chunks"])):
+            current_documents[group["doc_key"]] = {
+                "content_hash": digest,
+                "vector_ids": previous_ids,
+            }
+        else:
+            changed_groups.append(group)
+            current_documents[group["doc_key"]] = {
+                "content_hash": digest,
+                "vector_ids": [
+                    embedding_sync.vector_id(group["doc_key"], chunk_index)
+                    for chunk_index in range(len(group["chunks"]))
+                ],
+            }
+
+    stale_ids = embedding_sync.stale_vector_ids(old_documents, current_documents)
+    removed_documents = set(old_documents) - set(current_documents)
+    print(
+        f"Embeddings: {len(groups)} documents, {len(changed_groups)} changed/new, "
+        f"{len(removed_documents)} removed, {len(stale_ids)} stale vectors.",
+        flush=True,
+    )
+
+    embeddings = embedding_sync.embed_documents(changed_groups, verbose=True)
+    records = embedding_sync.vector_records(changed_groups, embeddings)
+    embedding_sync.upsert_vectors(records, verbose=True)
+    embedding_sync.delete_vectors(stale_ids, verbose=True)
+
+    new_state = {
+        "version": 1,
+        "model": embedding_sync.VOYAGE_MODEL,
+        "output_dimension": embedding_sync.OUTPUT_DIMENSION,
+        "documents": current_documents,
+    }
+    # Vectorize mutations are asynchronous: mutation IDs confirm acceptance,
+    # not that the vectors are already queryable. We intentionally write the
+    # state after accepted calls without polling; a later server-side failure
+    # requires rerunning the sync rather than being silently retried by the
+    # unchanged content hash.
+    temporary = state_path + ".tmp"
+    with open(temporary, "w", encoding="utf-8") as fh:
+        json.dump(new_state, fh, ensure_ascii=False, indent=2)
+        fh.write("\n")
+    os.replace(temporary, state_path)
+    print(
+        f"Embeddings: synced {len(records)} vectors and removed {len(stale_ids)} stale; "
+        f"wrote {state_path}.",
+        flush=True,
+    )
+
+
 def main():
     sp_docs = load_sharepoint_docs()
     sp_fulltext = load_sharepoint_fulltext()
@@ -498,6 +601,8 @@ def main():
         json.dump(kb, fh, ensure_ascii=False)
     with open(os.path.join(DATA, "kb-index.json"), "w", encoding="utf-8") as fh:
         json.dump(index, fh, ensure_ascii=False)
+
+    sync_embeddings_if_configured(kb, index)
 
     print(f"kb.json:       {len(kb)} documents "
           f"({len(sp_docs)} SharePoint of which {sp_full} full-text, "

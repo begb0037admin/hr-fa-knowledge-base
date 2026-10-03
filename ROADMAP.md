@@ -92,6 +92,11 @@ First flagged in `HANDOVER.md` (10 July 2026) as explicitly outside what an AI s
 - **What's needed:** Kevin reviews the live `pxd.lelitte.co.uk` (`begb0037admin/hris-launcher`) sidebar - specifically the new "Oxford IT Sign-In Directory" nav-group added under Services (19 Aug 2026, session 7) - and confirms it renders correctly. No Playwright/browser-automation tool was available this session; verification was structural (div-balance checks, byte-for-byte diff of the live HTML against the tested local copy), not a rendered screenshot.
 - **Status:** Not started.
 
+### Linda semantic-search upgrade — code complete, deploy/backfill needs Kevin's own terminal commands
+- **What's outstanding (3 Oct 2026):** the hybrid BM25+Vectorize+RRF+Cohere-rerank retrieval upgrade (see `HANDOVER.md`'s 3 Oct 2026 entry for full detail) is code-complete and Codex three-touchpoint reviewed, but not live. Needs: a Voyage AI account+key, a Cohere account+key, a one-time `wrangler vectorize create` call, two new `wrangler secret put` calls on the `hr-kb-ai` Worker, three new `gh secret set` calls on this repo (for the backfill GitHub Action), a `wrangler deploy`, and then running the new `backfill-embeddings.yml` workflow once.
+- **Why Kevin, not an agent:** account creation (Voyage, Cohere) and the Cloudflare `wrangler` login needed for `vectorize create`/`secret put`/`deploy` all require Kevin's own credentials — no MCP/API connector exists for Voyage AI or Cohere as of this session (checked per the estate's zero-manual-steps rule), and the Cloudflare operations need an authenticated `wrangler` session or dashboard access Adam does not have. All six steps are plain terminal commands Kevin runs himself — no GUI navigation, no pasting a key into chat with Adam.
+- **Status:** Blocked on Kevin. Exact commands are in `HANDOVER.md`'s 3 Oct 2026 entry. **Additionally:** `.github/workflows/backfill-embeddings.yml` itself isn't pushed yet — Adam's `gh` token lacks the `workflow` OAuth scope GitHub requires to write new files under `.github/workflows/`; needs a one-time `gh auth refresh -h github.com -s workflow` (one command + one browser click) before that one file can be committed.
+
 ---
 
 ## In Progress

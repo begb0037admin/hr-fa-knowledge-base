@@ -14,14 +14,24 @@ this repository or in the browser. It works from any machine.
 4. Go to the worker's **Settings → Variables and Secrets**:
    - Add **Secret** `ANTHROPIC_API_KEY` = your Anthropic API key
      (create one at https://console.anthropic.com → API keys).
+   - Add **Secret** `VOYAGE_API_KEY` for semantic search and **Secret**
+     `COHERE_API_KEY` for candidate reranking.
    - Optional but recommended: add **Secret** `KB_ACCESS_TOKEN` = any
      passphrase you like. The site will ask for it once per browser; it
      stops strangers using your worker if they discover its URL.
+     **Warning:** Once `VOYAGE_API_KEY` and/or `COHERE_API_KEY` is configured,
+     every request to `/semantic-search` and `/rerank` costs real money per
+     call. Setting `KB_ACCESS_TOKEN` is now strongly recommended, not merely
+     nice-to-have: this repo has hit unexpected API-credit exhaustion on this
+     Worker before.
    - For voice (mic input + Listen playback): go to the worker's
      **Settings → Bindings** and add a **Workers AI** binding named `AI`.
      No account signup, no API key — Workers AI bills to this same
      Cloudflare account. Without this binding, `/tts` and `/stt` return
      501 and the site falls back to the browser's built-in voice.
+   - For semantic search, add a **Vectorize** binding named `VECTORIZE`
+     pointing at the `hr-fa-kb` index. Without this binding,
+     `/semantic-search` returns 501 and the site falls back to BM25.
 5. Copy the worker URL (looks like `https://hr-kb-ai.<account>.workers.dev`).
 6. Paste that URL into the site's AI setup panel (gear icon next to the
    Ask box) — or tell Claude the URL and it will be baked into the site.
@@ -54,6 +64,26 @@ the whole site under the fixed key `mem:v1:primary`. Set the optional var
 `MEM_IDENTITY` to change the key suffix (rotate / reset all history)
 without a code deploy. If the `MEM` binding is absent the route returns
 501 and the client falls back to session-only memory.
+
+## Semantic search and reranking
+
+The site uses two additional POST routes for hybrid retrieval:
+
+- `/semantic-search` accepts `{query, top_k}`. It embeds the query with
+  Voyage `voyage-context-3` and queries the `hr-fa-kb` Vectorize index, then
+  returns chunk IDs, document keys, chunk positions, and cosine scores.
+- `/rerank` accepts `{query, candidates: [{id, text}], top_n}`. It sends the
+  candidate text to Cohere `rerank-v3.5` and maps Cohere's positional results
+  back to the candidate IDs supplied by the site.
+
+The Vectorize index is populated by the manual GitHub Actions workflow
+`.github/workflows/backfill-embeddings.yml`, or incrementally at the end of
+`scrapers/build_index.py` when `VOYAGE_API_KEY`, `CLOUDFLARE_API_TOKEN`, and
+`CLOUDFLARE_ACCOUNT_ID` are present. The workflow writes
+`data/kb-embedding-state.json` so unchanged documents are skipped on later
+index builds. Create `hr-fa-kb` with the cosine metric (Vectorize fixes the
+metric when the index is created). The Cloudflare API token needs Vectorize
+read/write access.
 
 ## Optional variables
 

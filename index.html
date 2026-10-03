@@ -971,6 +971,112 @@ function retrieve(question,n){
   return out;
 }
 
+const HYBRID_TIMEOUT_MS=5000;
+function semanticDocKey(doc){
+  for(const field of ["id","p","f"]){
+    const value=doc&&doc[field];
+    if(value!==null&&value!==undefined){
+      const text=String(value).trim();
+      if(text)return text;
+    }
+  }
+  return String(doc&&doc.src||"").trim()+"\x1f"+String(doc&&doc.t||"").trim();
+}
+
+/* The Worker stores the same document key and the zero-based position of a
+   chunk within that document. CHUNKS itself stays in its existing {d,x}
+   shape, so build the lookup from the order emitted by build_index.py. */
+function semanticChunkLookup(){
+  const counts=new Map(),lookup=new Map(),ids=new Map();
+  CHUNKS.forEach(c=>{
+    const doc=BASE[c.d]; if(!doc)return;
+    const docKey=semanticDocKey(doc);
+    const chunkIndex=counts.get(c.d)||0;
+    counts.set(c.d,chunkIndex+1);
+    const id=docKey+"\x00"+chunkIndex;
+    lookup.set(id,c); ids.set(c,id);
+  });
+  return{lookup,ids};
+}
+
+async function retrieveHybrid(question,n,cfg,headers,parentSignal){
+  const semanticCtrl=new AbortController();
+  const onParentAbort=()=>semanticCtrl.abort();
+  if(parentSignal){
+    if(parentSignal.aborted)semanticCtrl.abort();
+    else parentSignal.addEventListener("abort",onParentAbort,{once:true});
+  }
+  const semanticTimer=setTimeout(()=>semanticCtrl.abort(),HYBRID_TIMEOUT_MS);
+  const semanticPromise=fetch(cfg.url+"/semantic-search",{
+    method:"POST",headers,body:JSON.stringify({query:question,top_k:20}),signal:semanticCtrl.signal
+  });
+  const bm25=retrieve(question,20);
+  let semanticData;
+  try{
+    const res=await semanticPromise;
+    if(!res.ok)throw new Error("HTTP "+res.status);
+    semanticData=await res.json();
+    if(!semanticData||!Array.isArray(semanticData.hits))throw new Error("invalid semantic response");
+  }catch(err){
+    return bm25.slice(0,n);
+  }finally{
+    clearTimeout(semanticTimer);
+    if(parentSignal)parentSignal.removeEventListener("abort",onParentAbort);
+  }
+
+  const chunkKeys=semanticChunkLookup();
+  const fused=new Map(); let order=0;
+  const add=(chunk,rank)=>{
+    const id=chunkKeys.ids.get(chunk); if(!id)return;
+    let item=fused.get(id);
+    if(!item){item={id:id,c:chunk,score:0,order:order++};fused.set(id,item);}
+    item.score+=1/(60+rank);
+  };
+  bm25.forEach((chunk,i)=>add(chunk,i+1));
+  const semanticSeen=new Set();
+  semanticData.hits.forEach((hit,i)=>{
+    if(!hit||hit.doc_key===undefined||hit.chunk_index===undefined)return;
+    const id=String(hit.doc_key)+"\x00"+Number(hit.chunk_index);
+    if(semanticSeen.has(id))return;
+    semanticSeen.add(id);
+    const chunk=chunkKeys.lookup.get(id);
+    if(chunk)add(chunk,i+1);
+  });
+  const fusedTop=[...fused.values()].sort((a,b)=>b.score-a.score||a.order-b.order).slice(0,20);
+  if(!fusedTop.length)return[];
+
+  const rerankCtrl=new AbortController();
+  const onRerankParentAbort=()=>rerankCtrl.abort();
+  if(parentSignal){
+    if(parentSignal.aborted)rerankCtrl.abort();
+    else parentSignal.addEventListener("abort",onRerankParentAbort,{once:true});
+  }
+  const rerankTimer=setTimeout(()=>rerankCtrl.abort(),HYBRID_TIMEOUT_MS);
+  try{
+    const res=await fetch(cfg.url+"/rerank",{
+      method:"POST",headers,
+      body:JSON.stringify({query:question,candidates:fusedTop.map(item=>({id:item.id,text:item.c.x})),top_n:fusedTop.length}),
+      signal:rerankCtrl.signal
+    });
+    if(!res.ok)throw new Error("HTTP "+res.status);
+    const data=await res.json();
+    if(!data||!Array.isArray(data.hits))throw new Error("invalid rerank response");
+    const byId=new Map(fusedTop.map(item=>[item.id,item]));
+    const reranked=[]; const seen=new Set();
+    data.hits.forEach(hit=>{
+      const item=byId.get(String(hit&&hit.id));
+      if(item&&!seen.has(item.id)){seen.add(item.id);reranked.push(item.c);}
+    });
+    fusedTop.forEach(item=>{if(!seen.has(item.id))reranked.push(item.c);});
+    return reranked.slice(0,n);
+  }catch(err){
+    return fusedTop.slice(0,n).map(item=>item.c);
+  }finally{
+    clearTimeout(rerankTimer);
+    if(parentSignal)parentSignal.removeEventListener("abort",onRerankParentAbort);
+  }
+}
+
 /* ════════ Ask flow ════════ */
 const SYSTEM_PROMPT=
 "You are Linda, the HR Functional Analysis assistant for Kevin Lelitte at the University of Oxford. Your name is Linda. "+
@@ -1216,7 +1322,7 @@ async function ask(question){
     if(stale()){dbg(myGen,"invalidated after rewrite");return;}
     dbg(myGen,rw.ok?("rewrite: ok, rewrittenLen="+rw.query.length):("rewrite: fell back ("+(rw.aborted?"aborted":"failed")+"), rewrittenLen="+rw.query.length));
 
-    const hits=retrieve(rw.query,8);
+    const hits=await retrieveHybrid(rw.query,8,cfg,headers,ctrl.signal);
     dbg(myGen,"retrieval: chunks="+hits.length);
     const ctx=hits.map((c,i)=>{
       const doc=BASE[c.d]||{};

@@ -1,7 +1,7 @@
 # Handover — HR FA Knowledge Base
 
 **To:** New session
-**From:** Session of 19 September 2026 (Adam — `m` date-stamp churn fixed via `preserve_modified_dates()`; earlier same day: Colleges & Halls card repointed, UDF cross-links made durable)
+**From:** Session of 3 October 2026 (Adam — hybrid semantic search built: BM25+Vectorize+RRF+Cohere rerank, code complete, NOT yet deployed/backfilled — needs Kevin's action)
 **Owner:** Kevin (kevin.lelitte@admin.ox.ac.uk · GitHub `begb0037admin`)
 
 Everything you need to drive this project is in this file plus the repo
@@ -9,7 +9,50 @@ itself. Trust the repo over memory; verify data, not just green ticks.
 
 ---
 
-## Current State — 19 September 2026, latest (Adam — `m` date-stamp churn fixed) — commit `0d806564`
+## Current State — 3 October 2026 (Adam — Linda semantic-search upgrade, Kevin-approved architecture, implementation dispatched by Jacob) — commit TBD (not yet pushed at time of writing this entry — see "Exact next action")
+
+**Why this exists:** investigated 3 Oct 2026 and proved Linda's retrieval (`retrieve()` in `index.html`) is pure client-side BM25/TF-IDF keyword matching against `data/kb-index.json`, with the exact same vocabulary-gap blind spot already found in AIMM/Hope's YouTube KB search — a natural-language paraphrase of a document's content can score zero even when the document is exactly on-topic, because BM25 only matches literal shared tokens. Full investigation: `begb0037admin/adam/memory/linda-search-mechanism-same-blind-spot.md`. Kevin's directive, verbatim: "I need the absolute best fix, I don't care if it's going to cost me... I need robust options, no quick fix or cheaper bandaids." Architecture researched and decided the same day, shared with AIMM/Hope's parallel build (Markey): `begb0037admin/aimm/docs/KB-SEMANTIC-SEARCH-UPGRADE-BRIEF.md`.
+
+**What was built (code complete, Codex three-touchpoint reviewed — plan, implementation, full end-to-end pass, plus one fix round after the review pass found real blockers):**
+1. **`worker/worker.js`** — two new routes: `POST /semantic-search` (embeds the query via Voyage `voyage-context-3` contextualized embeddings, queries a new `VECTORIZE` binding, returns `{hits:[{id,doc_key,chunk_index,score}]}`) and `POST /rerank` (proxies Cohere `rerank-v3.5`, maps its positional results back to caller-supplied candidate IDs). Same conventions as every existing route (CORS, `X-KB-Token` gate, `501` if unconfigured, `502` on upstream failure).
+2. **`worker/wrangler.toml`** — new `[[vectorize]]` binding, `index_name = "hr-fa-kb"`.
+3. **`scrapers/embedding_sync.py`** (new, shared module) — `document_key()` (stable id: `id`→`p`→`f`→`src`+`t` fallback, mirrored exactly in `index.html`'s `semanticDocKey()` so client and ingest pipeline agree on identity), Voyage batching (respects the 1000-input/120K-token/16K-chunk limits), Vectorize HTTP-API upsert/`delete_by_ids` (NDJSON, ≤5000/batch, mutation IDs logged).
+4. **`scrapers/backfill_embeddings.py`** (new) — one-time full backfill of every existing chunk, writes `data/kb-embedding-state.json`, reconciles stale vectors against any prior state, non-zero exit on failure (fails the Action run, doesn't silently succeed).
+5. **`scrapers/build_index.py`** — incremental embedding sync appended to `main()`: hashes each document's ordered chunk text, skips unchanged documents, re-embeds+upserts changed/new ones (full-document re-embed, since voyage-context-3 contextualizes chunks against their siblings), deletes stale vectors, writes the state file last. If `VOYAGE_API_KEY`/`CLOUDFLARE_API_TOKEN`/`CLOUDFLARE_ACCOUNT_ID` are unset, this step is a clearly-logged no-op — does not break the ordinary rebuild for anyone without those secrets.
+6. **`.github/workflows/backfill-embeddings.yml`** (new) — `workflow_dispatch` only, `ubuntu-latest`, runs the backfill once, commits `data/kb-embedding-state.json` back to `main`.
+7. **`index.html`** — new `async function retrieveHybrid(question,n,cfg,headers,parentSignal)`: runs BM25 (`retrieve()`, unchanged, top 20) and `/semantic-search` (top 20) in parallel, fuses via Reciprocal Rank Fusion (`1/(60+rank)`, standard k=60), sends the fused top ~20 to `/rerank`, returns the reranked top `n`. Clean degrade at every step: semantic-search failure/timeout (~5s) → plain BM25 top `n`; rerank failure/timeout → RRF-fused order (no full fallback to BM25-only, since fusion still adds value without rerank). The one call site in `ask()` changed from `retrieve(rw.query,8)` to `await retrieveHybrid(rw.query,8,cfg,headers,ctrl.signal)` — everything downstream (`BASE[c.d]`, citations, `LAST_HITS`) is unchanged, same object shape returned.
+8. **`worker/README.md`** — documents the two new routes, the two new secrets, the new binding, and a prominent warning that `/semantic-search`/`/rerank` cost real money per call once configured, so `KB_ACCESS_TOKEN` (already supported, previously only "recommended") is now strongly recommended — this Worker has a real prior incident of unexpected API-credit exhaustion (`memory/linda-anthropic-credit-exhaustion-2026-08-25.md` in Adam's own memory, see also `ROADMAP.md`/earlier `HANDOVER.md` entries).
+
+**Codex review findings (TP3), fixed before this was considered done:** Vectorize's delete endpoint is `delete_by_ids` (underscore) not `delete-by-ids` (hyphen) — wrong in the first implementation pass, fixed and confirmed against Cloudflare's live docs; the one-time backfill script never reconciled/deleted stale vectors from a prior run — fixed, now shares the same reconciliation helper as the incremental path; Vectorize upsert/delete responses' `mutationId` is now captured and logged (Vectorize writes are asynchronous — an accepted HTTP response is not proof the vectors are already queryable; this residual risk is accepted and commented in the code rather than built out as a full polling wait, to keep a one-time backfill simple); a bug where the semantic-search-failure fallback path returned all 20 BM25 hits instead of the requested `n` was fixed to `bm25.slice(0,n)`; three stray `.pyc` files that had been accidentally committed during development were removed.
+
+**Verified directly by Adam, not just taken from Codex's own claims:** the exact Voyage (`POST https://api.voyageai.com/v1/contextualizedembeddings`), Cohere (`POST https://api.cohere.com/v2/rerank`, model `rerank-v3.5`), and Cloudflare Vectorize (max dimension 1536, `delete_by_ids` path, HTTP-API upsert batch ≤5000) request/response shapes were independently fetched from each vendor's live current documentation (not from Codex's or Adam's training-data memory) before and during the build, and the code was checked against those fetched shapes line-by-line, not assumed correct because it looked plausible. `python3 -m py_compile` passed on every new/changed `.py` file; `node --check` passed on `index.html`'s extracted inline script.
+
+**NOT done / NOT verified this session (being explicit, not implying it works):**
+- **Not deployed.** The Worker changes are code in this commit, not yet live on `hr-kb-ai.kevinlelitte.workers.dev` — needs `wrangler deploy` (or the dashboard-paste method `worker/README.md` already documents) after the new secrets below are set.
+- **Not backfilled.** `data/kb-index.json`'s 23,345 existing chunks have no vectors in Vectorize yet — the Vectorize index itself doesn't exist yet either (needs creating once, see below). Nothing in production search behaviour changes until both the deploy and the backfill have happened.
+- **No live end-to-end test yet.** The specific proof case from the investigation (a natural-phrasing question about "Registering a New Radiation Worker" that previously returned zero relevant BM25 hits) has not been re-run against live semantic search, because there is no live semantic search yet. This is the first thing to do once deploy+backfill are both done — see "Exact next action".
+- **Vectorize's exact async-mutation-confirmation behaviour** (how long between an accepted upsert and the vector being queryable) was not live-tested — only documented behaviour was used. Worth a small smoke test (upsert one vector, query for it immediately and after a short wait) before trusting the full 23,345-chunk backfill blindly.
+
+**Needs Kevin's own action (zero-manual-steps applied — no GUI navigation, no pasting a key into chat, just terminal commands Kevin runs himself in his own terminal):**
+0. **`.github/workflows/backfill-embeddings.yml` is NOT pushed yet** — GitHub's API returned 404 trying to create a brand-new file under `.github/workflows/` with Adam's `gh` token (reproduced in isolation: the same new content at any non-workflow-folder path succeeded; a throwaway test filename at the exact same `.github/workflows/` path also 404'd; an unchanged existing file at that path succeeded as a no-op). Root cause: the token has `repo`/`read:org`/`gist` scopes only — GitHub requires the additional `workflow` OAuth scope to write files under `.github/workflows/`, and granting a new scope is a one-time OAuth consent only the account owner can make. Fix: Kevin runs `gh auth refresh -h github.com -s workflow` once in his own terminal (one command, one browser "Authorize" click), then the finished workflow file (already written and reviewed, just not pushed) can be committed in under a minute.
+1. Create a Voyage AI account + API key (https://dash.voyageai.com), and a Cohere account + API key (https://dashboard.cohere.com) — no MCP/API connector exists for either as of this session (checked).
+2. Create the Vectorize index once (needs `wrangler`/Cloudflare CLI login, which only Kevin can authorize):
+   `npx wrangler vectorize create hr-fa-kb --dimensions=1024 --metric=cosine`
+3. Set the two new Worker secrets:
+   `cd worker && npx wrangler secret put VOYAGE_API_KEY` (paste the Voyage key when prompted)
+   `npx wrangler secret put COHERE_API_KEY` (paste the Cohere key when prompted)
+4. Deploy the Worker: `npx wrangler deploy` (from `worker/`) — or hand Claude the task once secrets/index exist, deploying itself needs no credential.
+5. Set three GitHub Actions repo secrets (each prompts for the value interactively in Kevin's own terminal, never typed into chat with Adam):
+   `gh secret set VOYAGE_API_KEY --repo begb0037admin/hr-fa-knowledge-base`
+   `gh secret set CLOUDFLARE_API_TOKEN --repo begb0037admin/hr-fa-knowledge-base` (scope: Vectorize Write, for the target account)
+   `gh secret set CLOUDFLARE_ACCOUNT_ID --repo begb0037admin/hr-fa-knowledge-base`
+6. Run the backfill once Kevin's ready: GitHub → Actions → "Backfill semantic-search embeddings" → Run workflow (or `gh workflow run backfill-embeddings.yml`).
+
+**Exact next action:** once Kevin has done the six steps above, re-run the "Registering a New Radiation Worker" natural-phrasing proof case live against Linda and confirm it now surfaces correctly (it previously returned zero relevant BM25 hits) — this closes the loop on the original investigation. Also do the small Vectorize async-mutation smoke test noted above before fully trusting the real backfill run's output.
+
+---
+
+## Previous State — 19 September 2026, latest (Adam — `m` date-stamp churn fixed) — commit `0d806564`
 
 **What shipped (one commit, `0d80656448a7158da7eb42250b8efdba5f5aaa0e` on `main`, parent `c395b61a6656e15780ef0ac5db561ac94d293cc4` = the restore point):** `scrapers/build_index.py` only (+68 lines, no data files). New `preserve_modified_dates()`, run after `apply_overrides()`: it reads the previous `data/kb.json` + `data/kb-index.json` before they are overwritten, hashes each rebuilt doc (every field except `m`, plus its ordered chunks), and if the hash matches a previous doc that doc keeps its previous `m`. New or changed docs keep the freshly stamped `m`. Matching is by content hash, not position. No schema change, no workflow change needed.
 

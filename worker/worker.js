@@ -5,6 +5,8 @@
  *   /      — Claude chat proxy (the Ask the Knowledge Base brain)
  *   /tts   — Cloudflare Workers AI text-to-speech (Aura-2): {text} in, MP3 audio out
  *   /stt   — Cloudflare Workers AI speech-to-text (Whisper, batch mode): audio blob in, {text} out
+ *   /semantic-search — Voyage contextualized query embedding + Vectorize search
+ *   /rerank — Cohere candidate reranking
  *
  * Secrets / vars:
  *   ANTHROPIC_API_KEY  (secret, required for /)
@@ -18,6 +20,10 @@
  *   AURA_SPEAKER       (var, optional — defaults to "luna", the documented
  *                       aura-2-en default; used when a /tts request doesn't
  *                       send its own `speaker`)
+ *   VOYAGE_API_KEY     (secret, required for /semantic-search)
+ *   COHERE_API_KEY     (secret, required for /rerank)
+ *   VECTORIZE          (binding, required for /semantic-search; index is
+ *                       configured in wrangler.toml as `hr-fa-kb`)
  *
  * /tts request body: { text, speaker? } — `speaker` is optional and, when a
  * valid Aura-2 English voice name, overrides AURA_SPEAKER for that request
@@ -78,6 +84,8 @@ export default {
     const path = new URL(request.url).pathname;
     if (path === "/tts") return tts(request, env, cors);
     if (path === "/stt") return stt(request, env, cors);
+    if (path === "/semantic-search") return semanticSearch(request, env, cors);
+    if (path === "/rerank") return rerank(request, env, cors);
     if (path === "/memory") return memory(request, env, cors);
     return chat(request, env, cors);
   },
@@ -186,6 +194,128 @@ async function stt(request, env, cors) {
     return json({ error: "STT failed: " + String(err && err.message || err).slice(0, 200) }, 502, cors);
   }
   return json({ text: (result && result.text) || "" }, 200, cors);
+}
+
+async function semanticSearch(request, env, cors) {
+  if (!env.VOYAGE_API_KEY || !env.VECTORIZE) {
+    return json({ error: "Semantic search not configured" }, 501, cors);
+  }
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ error: "Invalid JSON body" }, 400, cors);
+  }
+  const query = typeof body.query === "string" ? body.query.trim() : "";
+  if (!query) return json({ error: "query required" }, 400, cors);
+  const requestedTopK = Number(body.top_k);
+  const topK = Number.isFinite(requestedTopK)
+    ? Math.max(1, Math.min(50, Math.floor(requestedTopK)))
+    : 20;
+
+  let voyage;
+  try {
+    const upstream = await fetch("https://api.voyageai.com/v1/contextualizedembeddings", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "authorization": "Bearer " + env.VOYAGE_API_KEY,
+      },
+      body: JSON.stringify({
+        inputs: [[query]],
+        model: "voyage-context-3",
+        input_type: "query",
+        output_dimension: 1024,
+        output_dtype: "float",
+      }),
+    });
+    if (!upstream.ok) {
+      throw new Error("Voyage HTTP " + upstream.status + ": " + (await upstream.text()).slice(0, 200));
+    }
+    voyage = await upstream.json();
+  } catch (err) {
+    return json({ error: "Semantic embedding failed: " + String(err && err.message || err).slice(0, 200) }, 502, cors);
+  }
+
+  const vector = voyage && voyage.data && voyage.data[0] &&
+    voyage.data[0].data && voyage.data[0].data[0] && voyage.data[0].data[0].embedding;
+  if (!Array.isArray(vector)) {
+    return json({ error: "Semantic embedding failed: unrecognised response shape" }, 502, cors);
+  }
+
+  let result;
+  try {
+    result = await env.VECTORIZE.query(vector, {
+      topK,
+      returnMetadata: "all",
+    });
+  } catch (err) {
+    return json({ error: "Vector search failed: " + String(err && err.message || err).slice(0, 200) }, 502, cors);
+  }
+  const hits = Array.isArray(result && result.matches) ? result.matches.map(match => {
+    const metadata = match && match.metadata || {};
+    return {
+      id: match && match.id,
+      doc_key: metadata.doc_key,
+      chunk_index: metadata.chunk_index,
+      score: match && match.score,
+    };
+  }) : [];
+  return json({ hits }, 200, cors);
+}
+
+async function rerank(request, env, cors) {
+  if (!env.COHERE_API_KEY) {
+    return json({ error: "Reranking not configured" }, 501, cors);
+  }
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ error: "Invalid JSON body" }, 400, cors);
+  }
+  const query = typeof body.query === "string" ? body.query.trim() : "";
+  const candidates = Array.isArray(body.candidates) ? body.candidates : null;
+  if (!query || !candidates || candidates.some(c => !c || c.id == null || typeof c.text !== "string")) {
+    return json({ error: "query and candidates[] required" }, 400, cors);
+  }
+  if (!candidates.length) return json({ hits: [] }, 200, cors);
+  const requestedTopN = Number(body.top_n);
+  const topN = Number.isFinite(requestedTopN)
+    ? Math.max(1, Math.min(candidates.length, Math.floor(requestedTopN)))
+    : candidates.length;
+
+  let result;
+  try {
+    const upstream = await fetch("https://api.cohere.com/v2/rerank", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "authorization": "Bearer " + env.COHERE_API_KEY,
+      },
+      body: JSON.stringify({
+        model: "rerank-v3.5",
+        query,
+        documents: candidates.map(c => c.text),
+        top_n: topN,
+      }),
+    });
+    if (!upstream.ok) {
+      throw new Error("Cohere HTTP " + upstream.status + ": " + (await upstream.text()).slice(0, 200));
+    }
+    result = await upstream.json();
+  } catch (err) {
+    return json({ error: "Reranking failed: " + String(err && err.message || err).slice(0, 200) }, 502, cors);
+  }
+
+  const hits = (Array.isArray(result && result.results) ? result.results : [])
+    .filter(item => Number.isInteger(item && item.index) && item.index >= 0 && item.index < candidates.length)
+    .map(item => ({
+      id: candidates[item.index].id,
+      relevance_score: item.relevance_score,
+    }))
+    .sort((a, b) => b.relevance_score - a.relevance_score);
+  return json({ hits }, 200, cors);
 }
 
 // btoa() only accepts strings, so build one in fixed-size chunks rather
