@@ -9,7 +9,7 @@ itself. Trust the repo over memory; verify data, not just green ticks.
 
 ---
 
-## Current State — 3 October 2026 (Adam — Linda semantic-search upgrade, Kevin-approved architecture, implementation dispatched by Jacob) — commit TBD (not yet pushed at time of writing this entry — see "Exact next action")
+## Current State — 3 October 2026 (Adam — Linda semantic-search upgrade, Kevin-approved architecture, implementation dispatched by Jacob) — commit `6cd588f4` (10 of 11 files; the new backfill-embeddings.yml workflow file is still unpushed, see step 0 below)
 
 **Why this exists:** investigated 3 Oct 2026 and proved Linda's retrieval (`retrieve()` in `index.html`) is pure client-side BM25/TF-IDF keyword matching against `data/kb-index.json`, with the exact same vocabulary-gap blind spot already found in AIMM/Hope's YouTube KB search — a natural-language paraphrase of a document's content can score zero even when the document is exactly on-topic, because BM25 only matches literal shared tokens. Full investigation: `begb0037admin/adam/memory/linda-search-mechanism-same-blind-spot.md`. Kevin's directive, verbatim: "I need the absolute best fix, I don't care if it's going to cost me... I need robust options, no quick fix or cheaper bandaids." Architecture researched and decided the same day, shared with AIMM/Hope's parallel build (Markey): `begb0037admin/aimm/docs/KB-SEMANTIC-SEARCH-UPGRADE-BRIEF.md`.
 
