@@ -942,23 +942,37 @@ Q("#ai-save").addEventListener("click",()=>{
 /* ════════ Retrieval (BM25-style) ════════ */
 const STOP=new Set("a an and are as at be but by do does for from has have how i in is it its of on or that the this to was what when where which who will with you your".split(" "));
 const tok=s=>String(s||"").toLowerCase().split(/[^a-z0-9]+/).filter(w=>w.length>1&&!STOP.has(w));
-let CHUNKS=null, DF=null;
+let CHUNKS=null, DF=null, AVGDL=1;
 async function loadChunks(){
   if(CHUNKS)return;
   const r=await fetch("data/kb-index.json",{cache:"no-cache"});
   if(!r.ok)throw new Error("Could not load the search index ("+r.status+")");
   CHUNKS=await r.json();
   DF={};
-  CHUNKS.forEach(c=>{c._tk=tok(c.x);new Set(c._tk).forEach(w=>DF[w]=(DF[w]||0)+1)});
+  let totalTokens=0;
+  CHUNKS.forEach(c=>{c._tk=tok(c.x);totalTokens+=c._tk.length;new Set(c._tk).forEach(w=>DF[w]=(DF[w]||0)+1)});
+  AVGDL=CHUNKS.length?(totalTokens/CHUNKS.length):1;
 }
+/* Raw tf with no saturation let one repeated common word (e.g. "bus" x17 in
+   an unrelated chunk) outrank several rare, meaningful terms that each
+   appear once — confirmed as a live incident in the sibling aimm/Hope KB
+   search, which carried the exact same formula. Ported here as proper
+   Okapi BM25 (k1=1.2, b=0.75 — standard defaults): tf runs through a
+   saturating curve, and length-normalization uses the real corpus average
+   (AVGDL) instead of a bare sqrt(doclen). */
+const BM25_K1=1.2, BM25_B=0.75;
 function retrieve(question,n){
   const qt=[...new Set(tok(question))]; if(!qt.length)return[];
   const N=CHUNKS.length;
+  const avgdl=AVGDL||1;
   const scored=CHUNKS.map(c=>{
     let s=0;
+    const dl=c._tk.length||1;
     for(const w of qt){
       const tf=c._tk.reduce((a,t)=>a+(t===w?1:0),0);
-      if(tf)s+=(tf/Math.sqrt(c._tk.length||1))*Math.log(1+N/(DF[w]||1));
+      if(!tf)continue;
+      const satTf=(tf*(BM25_K1+1))/(tf+BM25_K1*(1-BM25_B+BM25_B*dl/avgdl));
+      s+=Math.log(1+N/(DF[w]||1))*satTf;
     }
     return [s,c];
   }).filter(p=>p[0]>0).sort((a,b)=>b[0]-a[0]);
