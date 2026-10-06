@@ -1,7 +1,7 @@
 # Handover — HR FA Knowledge Base
 
 **To:** New session
-**From:** Session of 3 October 2026 (Adam — hybrid semantic search built: BM25+Vectorize+RRF+Cohere rerank, code complete, NOT yet deployed/backfilled — needs Kevin's action)
+**From:** Session of 6 October 2026 (Adam — BM25 term-frequency saturation bug fixed in `retrieve()`, live-verified; semantic search confirmed deployed+backfilled+live, superseding the 3 Oct "not deployed" note)
 **Owner:** Kevin (kevin.lelitte@admin.ox.ac.uk · GitHub `begb0037admin`)
 
 Everything you need to drive this project is in this file plus the repo
@@ -9,7 +9,27 @@ itself. Trust the repo over memory; verify data, not just green ticks.
 
 ---
 
-## Current State — 3 October 2026 (Adam — Linda semantic-search upgrade, Kevin-approved architecture, implementation dispatched by Jacob) — commit `6cd588f4` (10 of 11 files; the new backfill-embeddings.yml workflow file is still unpushed, see step 0 below)
+## Current State — 6 October 2026 (Adam — BM25 term-frequency saturation bug fixed) — commit `54cc3605`
+
+**Why this exists:** the same night Hope's (aimm) KB search had a real, found-and-fixed bug in its BM25-style scoring — raw term frequency with no saturation (`(tf/Math.sqrt(doclen)) * log(1+N/df)`) let one common word repeated many times swamp several rare, genuinely meaningful terms. Linda's `retrieve()` in `index.html` was confirmed to carry the identical formula (the aimm code comments say it was "ported verbatim from Linda's retrieve(question, n)" originally), so the same bug existed here too.
+
+**Fix (commit `54cc3605`, `index.html` only):** replaced the raw-tf formula with proper Okapi BM25 (k1=1.2, b=0.75 — standard defaults). `tf` now runs through a saturating curve `(tf*(k1+1))/(tf+k1*(1-b+b*dl/avgdl))` so repetition's marginal value flattens quickly; length-normalization uses the real corpus average document length (`AVGDL`, computed once in `loadChunks()`) instead of a bare `sqrt(doclen)`. `retrieve()`'s signature, the existing per-doc cap of 3, and the `n` cutoff are all unchanged — `retrieveHybrid()` and every other caller work unmodified.
+
+**Verified directly by this session, not just taken from the commit message:**
+- Live `main` HEAD is `54cc3605`; the "pages build and deployment" run for it is `completed`/`success`.
+- Fetched `https://kb.lelitte.co.uk/index.html` live and compared sha256 against the git blob for `index.html` at `54cc3605` — byte-identical (`24fbbef4...`). The deployed site is genuinely running this code, not a stale cache.
+- Independently re-implemented both the old and new scoring formulas in Python and ran them against the real live `https://kb.lelitte.co.uk/data/kb-index.json` (23,345 chunks, `AVGDL`=125.94) for the query `[email, depository, reassessed]`: old formula ranks a Meddbase "Templates" glossary chunk first (score 7.434, driven by "email" occurring inside a long chunk) ahead of the genuinely relevant pensions re-enrolment chunk (old score 1.469, well outside the top 5); new formula reverses this — the pensions chunk scores 16.655 and ranks #1, the glossary chunk drops to 5.034. Confirms the fix changes real production ranking in the intended direction, not just in theory.
+- Checked `ROADMAP.md` for any existing tracked item on this bug — none existed, so nothing to clear; the only related entry (line ~96, hybrid semantic-search upgrade) is a separate piece of work, addressed below.
+
+**Also confirmed this session (separate finding, not part of today's BM25 fix, but corrects a stale note left by the 3 Oct entry below):** the hybrid semantic-search upgrade (BM25+Vectorize+RRF+Cohere rerank) that the 3 Oct entry below describes as "NOT deployed/backfilled" **is now live.** Verified directly: `POST https://hr-kb-ai.kevinlelitte.workers.dev/semantic-search` returns `200` with real Vectorize hits (not the documented `501`-unconfigured response); the original proof case from the 3 Oct investigation — a natural-phrasing query, "registering a new radiation worker" — now correctly returns the real `Registering New Radiation Worker.docx` as the top hit (score 0.557), closing the loop the 3 Oct entry left open. **Not yet reconciled:** `.github/workflows/backfill-embeddings.yml` still returns `404` on `main` (still not pushed — the `workflow` OAuth scope gap from 3 Oct is apparently still present), and `data/kb-embedding-state.json` does not exist in the repo either, so the backfill was evidently run and the Worker/Vectorize index configured through some path other than this repo's own tracked Action — exactly how is not confirmed this session. This is a loose end worth closing (tracked below) but did not block or get touched by today's BM25 fix.
+
+**Codex involvement (per the commit message, carried forward here):** Codex (read-only, three-touchpoint) reviewed the plan and the full diff and passed both with no blockers; write-mode `codex exec` was blocked by this session's own sandbox classifier regardless of flags tried, so the implementation itself was done directly, disclosed per the Codex-unavailable fallback (`agent-commons/operating-model/COORDINATOR_AND_CODEX_POLICY.md` §5) rather than silently assumed. This session's own verification (above) was done independently of Codex's review, not as a substitute for it.
+
+**Exact next action:** none required for the BM25 fix itself — it is deployed, live, and verified. Separately, reconcile how the semantic-search deploy/backfill actually happened outside this repo's own Action (find or recreate `data/kb-embedding-state.json`, and either push `backfill-embeddings.yml` once the `workflow` OAuth scope is granted, or document the alternate path that was actually used) so the next rebuild's incremental embedding sync in `build_index.py` has an accurate prior-state baseline to diff against.
+
+---
+
+## Previous State — 3 October 2026 (Adam — Linda semantic-search upgrade, Kevin-approved architecture, implementation dispatched by Jacob) — commit `6cd588f4` (10 of 11 files; the new backfill-embeddings.yml workflow file is still unpushed, see step 0 below)
 
 **Why this exists:** investigated 3 Oct 2026 and proved Linda's retrieval (`retrieve()` in `index.html`) is pure client-side BM25/TF-IDF keyword matching against `data/kb-index.json`, with the exact same vocabulary-gap blind spot already found in AIMM/Hope's YouTube KB search — a natural-language paraphrase of a document's content can score zero even when the document is exactly on-topic, because BM25 only matches literal shared tokens. Full investigation: `begb0037admin/adam/memory/linda-search-mechanism-same-blind-spot.md`. Kevin's directive, verbatim: "I need the absolute best fix, I don't care if it's going to cost me... I need robust options, no quick fix or cheaper bandaids." Architecture researched and decided the same day, shared with AIMM/Hope's parallel build (Markey): `begb0037admin/aimm/docs/KB-SEMANTIC-SEARCH-UPGRADE-BRIEF.md`.
 
