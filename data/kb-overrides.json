@@ -55,6 +55,13 @@
         "Viewing and managing PeopleXD support tickets raised via the Access Digital Assistant or support: open the Tickets section to check progress on an open case, reply to it, or download a transcript of the conversation.",
         "What PeopleXD/Access support you can access depends on your organisation's Customer Success Plan (CSP) — the level of support your organisation has contracted with Access Group, which determines what support is available and how many people can raise cases. Named support contacts on any CSP tier can use the Access Digital Assistant; if you are not a named contact, ask your organisation's named contact to raise the query for you. Not all Access products currently support CSPs, but it is being rolled out to all."
       ]
+    },
+    {
+      "match": {
+        "src": "Access Group Help Centre",
+        "p": "https://help-peoplexd.theaccessgroup.com/en/articles/13916885-support-made-simple-in-peoplexd"
+      },
+      "s_append": "See also: Kevin's Guides — \"HOW TO: Use the Access Digital Assistant in the MyAccess Portal\" for a detailed step-by-step walkthrough of this same Digital Assistant feature inside the MyAccess Portal, based on a direct frame-by-frame review of the article's own video attachment."
     }
   ]
 }
