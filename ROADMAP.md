@@ -102,6 +102,12 @@ First flagged in `HANDOVER.md` (10 July 2026) as explicitly outside what an AI s
 - **Fix:** proper Okapi BM25 (k1=1.2, b=0.75), `tf` through a saturating curve, length-normalization against the real corpus `AVGDL` computed once at load time. `retrieve()`'s signature, per-doc cap of 3, and `n` cutoff unchanged. Commit `54cc3605`, live-verified (deployed site byte-identical to the commit; real before/after scoring re-derived independently against the live 23,345-chunk index, confirms the ranking fix is real in production).
 - **Status:** Done. No follow-up needed.
 
+### MyAccess Portal video / "Support made simple in PeopleXD" — RESOLVED 7 Oct 2026
+- **What it was:** Kevin asked to resume an in-progress "turn this video into a proper KB article" task. No standalone draft existed anywhere (checked this repo, Adam's memory, command-centre, kevin-work-hub, kevin-task-tracker) — the only existing record was a bare ~300-char auto-scraped stub for the same article already in `data/kb.json` (doc 2209, "Support made simple in PeopleXD", Access Group Help Centre, article id 13916885).
+- **Fix:** fetched the real Intercom source directly (`intercom.help/peoplexd-f95567/.../13916885-...`), confirmed the "MyAccess Portal" video is a real embedded attachment (`MyAccess Portal ADA.mp4`) under the article's "Via MyAccess Portal" section, and folded a full prose write-up into doc 2209 via a new `data/kb-overrides.json` entry (`s_append` + 6 `extra_chunks`). Commit `a2baa429`.
+- **Capability extended, not just content:** this is the first override matched on `src`+`p` (URL) rather than `src`+`f` (filename) — confirmed `apply_overrides()` is generic over any match keys, so no code change was needed. Worth knowing for any future scraped-web-doc (Access Group Help Centre, Cority ClickHelp) override, since those docs have no `f` field.
+- **Status:** Done. See `HANDOVER.md`'s 7 Oct 2026 entry for full detail and the honest gaps section (pipeline re-run not yet exercised; live CDN not re-checked, only the git commit).
+
 ---
 
 ## In Progress

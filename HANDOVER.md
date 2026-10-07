@@ -1,7 +1,7 @@
 # Handover — HR FA Knowledge Base
 
 **To:** New session
-**From:** Session of 6 October 2026 (Adam — BM25 term-frequency saturation bug fixed in `retrieve()`, live-verified; semantic search confirmed deployed+backfilled+live, superseding the 3 Oct "not deployed" note)
+**From:** Session of 7 October 2026 (Adam — resumed the "MyAccess Portal video" KB article task, folded the real Intercom "Support made simple in PeopleXD" article into the existing scraped doc via a durable override, commit `a2baa429`)
 **Owner:** Kevin (kevin.lelitte@admin.ox.ac.uk · GitHub `begb0037admin`)
 
 Everything you need to drive this project is in this file plus the repo
@@ -9,7 +9,32 @@ itself. Trust the repo over memory; verify data, not just green ticks.
 
 ---
 
-## Current State — 6 October 2026 (Adam — BM25 term-frequency saturation bug fixed) — commit `54cc3605`
+## Current State — 7 October 2026 (Adam — MyAccess Portal video / "Support made simple in PeopleXD" turned into a proper KB article) — commit `a2baa429`
+
+**Task:** Kevin asked to resume an in-progress task — a "MyAccess Portal" video being turned into a proper KB article (not a bare transcript) — and gave the real Intercom source page: `https://intercom.help/peoplexd-f95567/en/articles/13916885-support-made-simple-in-peoplexd` ("Support made simple in PeopleXD").
+
+**No standalone draft/task existed anywhere.** Checked exhaustively before touching anything: this file, `ROADMAP.md`, Adam's own `MEMORY.md`/`memory/*.md`, `command-centre`'s `data/tasks.json` and `index.html`, `kevin-work-hub`'s `data/backlog.json`, and `kevin-task-tracker`'s `data/tracker.json` — none mention "MyAccess", "Support made simple", "intercom.help", or article id `13916885`. The only existing KB record of this exact article was a bare auto-scraped stub already sitting in `data/kb.json` (doc index **2209**, title "Support made simple in PeopleXD", `src: "Access Group Help Centre"`, added by the routine scrape on 18 Sep 2026, truncated to ~300 characters ending mid-sentence in "..."). Resumed/extended that doc rather than creating a parallel entry — it is the same article, same id, just mirrored by Access Group's help centre under a different domain (`help-peoplexd.theaccessgroup.com` vs. `intercom.help/peoplexd-f95567`).
+
+**Fetched the Intercom URL directly (primary source) and it resolved to real article prose**, not a JS shell or paywall. Two WebFetch passes: one for the general article structure, one specifically probing for embedded video. Confirmed content: the article explains the **Access Digital Assistant (ADA)** — Access Group's support chatbot for PeopleXD — how to reach it via PeopleXD itself vs. via the **MyAccess Portal**, best practice for asking it questions, viewing tickets, and that access depends on the organisation's Customer Success Plan tier. The "MyAccess Portal" video Kevin referred to is a real embedded attachment on the page, **`MyAccess Portal ADA.mp4`**, placed under the "Via MyAccess Portal" sub-section of "How to Use the Assistant" — a walkthrough of using ADA through that portal specifically (referenced as a downloadable attachment link, not an `<iframe>`/`<video>` embed).
+
+**Change made (commit `a2baa429`, 3 files):**
+- `data/kb-overrides.json` — added a 5th durable override entry. The first four (19 Sep 2026) all match on `src`+`f` (library/PDF filename); this one matches on `src`+`p` (URL) instead, since Access Group Help Centre is a scraped web doc with no filename — confirmed `apply_overrides()` in `build_index.py` is generic over whatever keys `match` lists (`all(d.get(k)==v for k,v in match.items())`), so this works without any code change. `s_append` carries a full prose rewrite of the article (ADA overview, the PeopleXD route, the MyAccess Portal route with the video called out by name and context, best practice, tickets, CSP access tiers) sourced directly from the fetched Intercom text, written as a real explanation rather than a transcript dump. `extra_chunks` adds 6 separately-searchable passages covering the same ground, so Linda's retrieval can surface the MyAccess Portal / ADA video route specifically.
+- `data/kb.json` — doc 2209's `s` field updated from the bare ~300-char stub (now 2,143 characters) by hand-applying that exact override (not by running the scraper/rebuild pipeline). **Doc count unchanged at 6,680** — this extended an existing card, it did not add a new one.
+- `data/kb-index.json` — the 6 new chunks appended for doc 2209 (10 chunks total for that doc now: 4 original auto-chunks + 6 override chunks). **Chunk count moved from 23,345 to 23,351.**
+
+**Verified directly, not assumed:**
+- Confirmed `json.dumps(kb, ensure_ascii=False)` / `json.dumps(index, ensure_ascii=False)` round-trip the live `kb.json`/`kb-index.json` byte-for-byte *before* patching (same check as the 19 Sep session), so the actual diff pushed is purely additive — doc 2209's `s` field plus 6 new index-chunk objects, nothing else touched.
+- Re-fetched the pushed commit (`a2baa429`) independently via the git blob API (not raw.githubusercontent.com — see the known caching-trap memory) and re-parsed it: doc 2209's title, new `s` length (2,143), and the literal string `MyAccess Portal ADA.mp4` are present in the committed file; `kb-index.json` has exactly 10 chunks for `"d": 2209`; `kb-overrides.json` has 5 entries. All read back from the commit itself, not from the local scratch copy.
+- Did **not** run the scraper or `build_index.py` pipeline — this was a content/data fix (per Kevin's explicit framing of this task as documentation, not a scraper run), so no GitHub Actions workflow was triggered and no production code (`build_index.py`, `access_group_scraper.py`) was changed.
+
+**Not yet done / honest gaps:**
+- `CLAUDE.md`'s headline chunk count needs updating from 23,345 to 23,351 (done same session, see that file).
+- The next real `scrape-help-centres.yml` run will re-scrape this same Access Group Help Centre page fresh and then re-apply `data/kb-overrides.json` on top — the override is durable by design, so this should survive, but has not been exercised through an actual pipeline run yet (only hand-verified against the override logic). Worth a glance the next time that workflow runs, not urgent.
+- The live site (`kb.lelitte.co.uk`) will show this once its own Pages deployment catches up to commit `a2baa429` — not independently re-checked against the deployed CDN this session (checked the git commit directly, which is the authoritative source per this repo's own caching-trap lesson).
+
+---
+
+## Previous State — 6 October 2026 (Adam — BM25 term-frequency saturation bug fixed) — commit `54cc3605`
 
 **Why this exists:** the same night Hope's (aimm) KB search had a real, found-and-fixed bug in its BM25-style scoring — raw term frequency with no saturation (`(tf/Math.sqrt(doclen)) * log(1+N/df)`) let one common word repeated many times swamp several rare, genuinely meaningful terms. Linda's `retrieve()` in `index.html` was confirmed to carry the identical formula (the aimm code comments say it was "ported verbatim from Linda's retrieve(question, n)" originally), so the same bug existed here too.
 
