@@ -1,7 +1,7 @@
 # Handover — HR FA Knowledge Base
 
 **To:** New session
-**From:** Session of 7 October 2026 (Adam — resumed the "MyAccess Portal video" KB article task, folded the real Intercom "Support made simple in PeopleXD" article into the existing scraped doc via a durable override (`a2baa429`), then found + cross-linked a better, video-sourced parallel write to Kevin's Guides that landed mid-session (`a13f84c` / `7b9f6b68`) rather than letting the two diverge)
+**From:** Session of 7 October 2026, later (Adam — this is the `a13f84c6` session named in the entry below: rebuilt the KB index to make the new Kevin's Guides "Access Digital Assistant" walkthrough live and searchable, after a GitHub-side outage blocked two earlier attempts)
 **Owner:** Kevin (kevin.lelitte@admin.ox.ac.uk · GitHub `begb0037admin`)
 
 Everything you need to drive this project is in this file plus the repo
@@ -9,7 +9,35 @@ itself. Trust the repo over memory; verify data, not just green ticks.
 
 ---
 
-## Current State — 7 October 2026 (Adam — MyAccess Portal video / "Support made simple in PeopleXD" turned into a proper KB article) — commit `a2baa429`
+## Current State — 7 October 2026, later (Adam — rebuilt the index so the new "Access Digital Assistant" Kevin's Guides entry is live; reconciled the parallel-write collision) — commit `5f3e1803`
+
+**This session is the one the entry below calls "`a13f84c6`"** — the one that downloaded `MyAccess Portal ADA.mp4` directly (signed Intercom URL, given fresh this session, expiring 13 Oct 2026), extracted frames with `ffmpeg` and read them with the Read tool, and transcribed the audio locally with `faster-whisper` (the `small` model, already present on this machine at `C:\Users\admin\whisper-runtime\.venv`, int8 CPU) rather than writing from the filename/metadata alone.
+
+**What the video actually shows/says (verified, not inferred):** a 10:08 walkthrough of the Access Digital Assistant (AI chatbot) inside the MyAccess Portal, recorded on Access Group's own demo tenant ("XO's Coffee Shop", `tag-elevate-myaccess.preview.pixel.builders`) — not an Oxford-specific recording, but the UI/flow is identical for any Access product. Confirmed by reading 7 extracted frames directly: the product tile grid, the floating chat button, the product-selection pop-up, the chat window asking "How can I change pay group for someone recently added but not yet paid?" and receiving numbered Portal/Back Office steps with citation markers, the Support cases list (with its ~4-hour refresh interval, per narration), and the "..." menu's "Download transcript" option — all match the transcript verbatim. Full narration transcribed start to finish by this session's own `faster-whisper` run.
+
+**Wrote the article as a new `data/kevin-guides.json` entry** (`_text` field, matching the project's existing "Kevin's Guides" convention — see the four existing entries, e.g. the SQL Training Guide): "HOW TO: Use the Access Digital Assistant in the MyAccess Portal", `tp: "Cross-module"`, `sy: "PeopleXD"`, `e: "md"`. Pushed via the Contents API (file is 56KB, well under the 1MB ceiling) as commit `a13f84c6`.
+
+**Mid-session collision, already reconciled by the other session (not re-litigated here):** the entry below describes finding this write and cross-linking it from doc 2209. Confirmed from this side: the other session's commits (`a2baa429`, `220c0e6c`, `7b9f6b68`, `14c51460`) landed on `main` between this session's push (`a13f84c6`) and its own next step (triggering the rebuild). No action needed from this session on that front — both pieces of work are independently correct and now cross-linked.
+
+**Rebuild attempts — two failed, one succeeded, root causes confirmed not assumed:**
+1. `gh workflow run rebuild-kevin-guides.yml` (run `37640404348`) — **failed**, genuine merge conflict: the workflow checked out `main` at `a13f84c6` but by the time its `git pull --rebase` ran, `main` had already moved to `14c51460` (the other session's own commits, including a `data/kb.json` edit) — `CONFLICT (content): Merge conflict in data/kb.json`. Nothing corrupted: a failed push leaves `origin/main` untouched.
+2. Re-ran once `main` was quiescent at `14c51460` (run `37641801240`) — **failed differently**: `remote: Internal Server Error` / `! [remote rejected] main -> main (Internal Server Error)` on the push step. Confirmed this was a genuine transient GitHub-side fault, not a local/logic problem: `gh workflow run` itself started returning `HTTP 500` on the *dispatch* call too (`could not create workflow dispatch event: HTTP 500`), for about 3 minutes, while plain `gh api` reads against the same repo kept working throughout. Checked `main` HEAD after each failure — unchanged both times, so no partial/corrupt state was ever live.
+3. Waited for the 500s to clear (confirmed via a plain `gh api repos/.../ --jq .id` read returning 200 again), re-ran the workflow (run `37676267424`) — **succeeded**. Commit `5f3e1803` ("Rebuild KB index — include Kevin's Guides [skip ci]"), parent `14c51460`.
+
+**Verified directly against the post-rebuild live files (git blob API, not Contents API — both exceed ~1MB), not just the green run status:**
+- `data/kb.json`: **6,681 documents** (was 6,680 — the new guide is doc index **2516**). Doc 2209 ("Support made simple in PeopleXD") still carries the other session's override-enriched `s` field — confirms `apply_overrides()` ran correctly on top of the fresh scrape/merge, nothing from that work was lost in the rebuild.
+- `data/kb-index.json`: **23,359 chunks** (was 23,351). Doc 2516 (the new guide) has **8 chunks**, confirmed by filtering the live index on `"d": 2516` and reading the actual chunk text back — it is the real walkthrough content, not a stub.
+- This makes the new guide genuinely searchable by Linda, not just present as an unindexed card.
+
+**Documentation updated this session:** `CLAUDE.md` (doc/chunk counts 6,680/23,351 -> 6,681/23,359; Kevin's Guides count 5 -> 6; commit `abc78c13`), this file, and `ROADMAP.md` (flagging that other Intercom articles may have un-reviewed video attachments as a genuine sweep worth doing, since this is now a confirmed recurring pattern).
+
+**Not done / left open:** did not re-touch `data/kb-overrides.json` or doc 2209 — that remains the other session's work, already correct and cross-linked. Did not attempt a second cross-link in the other direction (from the new guide's card back to doc 2209) beyond the "Related KB entry" paragraph already written into the guide's own `_text`.
+
+**Exact next action:** none required — both the override (doc 2209) and the new guide (doc 2516) are live, indexed, and cross-linked. If `scrape-help-centres.yml` is ever run as a full deep re-scrape, re-confirm the `kb-overrides.json` 6-entry cross-link to doc 2209 survives (same caveat as every previous override entry).
+
+---
+
+## Previous State — 7 October 2026 (Adam — MyAccess Portal video / "Support made simple in PeopleXD" turned into a proper KB article) — commit `a2baa429`
 
 **Task:** Kevin asked to resume an in-progress task — a "MyAccess Portal" video being turned into a proper KB article (not a bare transcript) — and gave the real Intercom source page: `https://intercom.help/peoplexd-f95567/en/articles/13916885-support-made-simple-in-peoplexd` ("Support made simple in PeopleXD").
 
