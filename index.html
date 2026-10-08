@@ -497,9 +497,22 @@ function mdToHtml(txt){
 function cardPreview(s){
   if(!s)return"";
   const clean=s.replace(/^#[^\n]*\n+/,"").replace(/\*\*/g,"").replace(/[_`#]/g,"").trim();
-  // Return up to the first complete sentence — never cut mid-word
-  const dot=clean.search(/[.!?](\s|$)/);
-  return dot>0?clean.slice(0,dot+1):clean;
+  // Return up to the first complete sentence — never cut mid-word, and
+  // never mistake an abbreviation's period (e.g. "approx.", "e.g.", "etc.")
+  // or a decimal/number for a real sentence boundary: a genuine sentence
+  // end is followed by end-of-string or an uppercase/quote character,
+  // never by a lowercase letter or digit.
+  const ABBR=/\b(approx|e\.g|i\.e|etc|vs|no|fig|dept|inc|ltd|mr|mrs|dr|jr|sr|vol|pp|pg|cf|al|ca|misc)\.$/i;
+  const re=/[.!?](\s|$)/g;
+  let m,cut=-1;
+  while((m=re.exec(clean))){
+    const idx=m.index;
+    if(ABBR.test(clean.slice(0,idx+1))){continue;}
+    const after=clean.slice(idx+1).replace(/^\s+/,"");
+    if(after&&/^[a-z0-9]/.test(after)){continue;}
+    cut=idx;break;
+  }
+  return cut>0?clean.slice(0,cut+1):clean;
 }
 
 /* ════════ Data loading ════════ */
