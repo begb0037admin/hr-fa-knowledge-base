@@ -75,6 +75,13 @@ These guides have drafted content but need to be created as proper Word document
 
 ## Parked — Needs Kevin's Action (not something an AI session can do)
 
+### Oxford intranet "User guidance / training" section scrape — BLOCKED on a real Codex SharePoint connector capability gap
+- **What was asked (9 Oct 2026):** scrape the whole "User guidance / training" section of the Oxford intranet (`unioxfordnexus.sharepoint.com/sites/OXINTRANET-working-here/SitePages/user-guidance-training.aspx` + every linked page, "the whole section, I want everything") into this KB as published reference content for Linda.
+- **What was tested, live, twice, via the Codex CLI SharePoint connector (the only permitted path for Oxford M365):** the connector is genuinely attached and working (confirmed real `microsoft_sharepoint.*` tool calls, read-only, against the real site). But (1) the landing page itself can't be fetched — modern SharePoint Site Pages aren't Graph drive items, and the connector's tool surface has no page-read/page-listing tool at all (`HTTP 400: Site Pages cannot be accessed as a drive item`, confirmed twice, no working alternative found); (2) recursive folder listing (`list_folder_items`) 404s on every path format against the actual backing document library ("User guidance and training" folder inside the "HR Systems - Website Documents" library) — it appears to only work against a site's default document library. Keyword search does surface some real individual documents from that folder (confirmed: PDFs/XLSX/DOCX/PPTX under subfolders like "New appointments", "Training", "During employment"), but search is not exhaustive and can't be relied on for "everything."
+- **Why this is parked here and not just retried:** this is a genuine capability gap in the Codex SharePoint connector's own tool surface, not a permissions issue — there is no one-time "Allow" click or Kevin-side fix available. Per standing instruction, no fallback to direct Microsoft Graph/first-party auth was attempted, and this is not an Oxford IT matter.
+- **What's needed:** either a future Codex CLI version with a working Site-Pages-read tool and working non-default-library folder browsing, or narrow the ask to specific known documents (individual-file search/retrieval does work), or Kevin shares/exports the content another way.
+- **Status:** Blocked, nothing ingested. Full detail and the real tool-call evidence: `HANDOVER.md`'s 9 Oct 2026 entry.
+
 ### Data protection gaps for `data/kb.json` / `data/kb-index.json`
 First flagged in `HANDOVER.md` (10 July 2026) as explicitly outside what an AI session can action on its own. Still open as of 31 July 2026 — re-surfaced here, in the roadmap, so it isn't only findable buried in a long handover file.
 
@@ -181,4 +188,4 @@ First flagged in `HANDOVER.md` (10 July 2026) as explicitly outside what an AI s
 
 ---
 
-*Last updated: 19 September 2026, latest (Adam — date-stamp churn item cleared by commit `0d806564`; new open item for the Colleges & Halls .docx DRAFT/screenshots, blocked on Kevin. See `HANDOVER.md`'s 19 Sep (latest) entry.)*
+*Last updated: 9 October 2026 (Adam — new blocked item: Oxford intranet "User guidance / training" section scrape, blocked on a real Codex SharePoint connector capability gap, nothing ingested. See `HANDOVER.md`'s 9 Oct 2026 entry.)*
