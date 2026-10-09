@@ -1,7 +1,7 @@
 # Handover — HR FA Knowledge Base
 
 **To:** New session
-**From:** Session of 8 October 2026 (Adam — dispatched by Jacob/Kevin: fixed the card display-layer truncation bug and stripped baked-in extraction-methodology sentences from display summary fields)
+**From:** Session of 9 October 2026 (Adam — dispatched by Jacob/Kevin: attempted to scrape the Oxford intranet "User guidance / training" section via the Codex SharePoint connector; blocked by a genuine connector capability gap, nothing ingested)
 **Owner:** Kevin (kevin.lelitte@admin.ox.ac.uk · GitHub `begb0037admin`)
 
 Everything you need to drive this project is in this file plus the repo
@@ -9,7 +9,25 @@ itself. Trust the repo over memory; verify data, not just green ticks.
 
 ---
 
-## Current State — 8 October 2026 (Adam — fixed card-preview truncation bug; stripped extraction-methodology/provenance sentences from two display summary fields) — commit `10f16fd4`
+## Current State — 9 October 2026 (Adam — Oxford intranet "User guidance / training" scrape attempted via Codex SharePoint connector; BLOCKED, nothing ingested)
+
+**Task:** Kevin asked for the entire "User guidance / training" section of the Oxford intranet (`https://unioxfordnexus.sharepoint.com/sites/OXINTRANET-working-here/SitePages/user-guidance-training.aspx` and every page linked from within it — "the whole section, I want everything") scraped into this KB as published reference content for Linda. Per the standing Oxford M365 routing rule, this had to go through the Codex CLI's SharePoint connector, never Claude MCP tools or direct Microsoft auth.
+
+**What was actually tested, live, twice (not assumed):** ran `codex exec --json --skip-git-repo-check -s read-only <prompt>` against the default (Edu) `CODEX_HOME`, with the SharePoint connector named explicitly in the prompt and read-only/no-write/no-send language, parsing the real `mcp_tool_call` events out of the JSONL stream.
+
+1. **The connector is genuinely attached and working** — confirmed real `microsoft_sharepoint.search`, `list_site_drives`, `get_drive_item`, and `fetch` tool calls fired successfully against `unioxfordnexus.sharepoint.com` / `/sites/OXINTRANET-working-here`, all read-only, no write-verb tool ever called in either run.
+2. **The landing page itself cannot be fetched.** A direct `microsoft_sharepoint.fetch` of the `.aspx` URL returns `HTTP 400 "Site Pages cannot be accessed as a drive item"` — modern SharePoint Site Pages are not Graph drive items, and this connector's tool surface (`fetch`, `search`, `list_folder_items`, `list_site_drives`, `get_drive_item`) has no page-listing/get-page tool to fall back to. Tried twice independently (fresh process each time); same result both times. Confirmed genuinely absent, not a transient failure — search for the exact page title returned real documents, never the page itself.
+3. **Recursive folder enumeration of the backing document library also fails.** Search did surface real files living under a folder called "User guidance and training" inside the "HR Systems - Website Documents" library (drive id `b!1cExMARFPkCvxhycRSjVfGKGQq77Qo9Fo_bZUSaNuYTxVLuTr22RQ74JmdHZyGSR`) on the same site — e.g. `Run reports in HR guidance.pdf`, `staff-request-and-contract-decision-tool.xlsx`, `leavers-checklist.docx`, PDFs/PPTX/XLSX under subfolders "New appointments", "Training", "During employment", "Create and approve staff requests", "Ending appointments", "User support and guides". `get_drive_item` on one of those files confirmed the parent folder's real metadata (name "User guidance and training", 8 immediate children, 25,212,678 bytes). But `list_folder_items` — the only recursive-browse tool available — 404'd on every single path format tried against this named library: `/User guidance and training`, `/HR Systems  Documents/User guidance and training`, URL-encoded forms, the library's display name, the folder's own `item_id` as a path, and passing `drive_id` explicitly (rejected outright as `InvalidActionArgumentsError`, not accepted by the tool's schema at all). The tool appears to only work against the site's *default* document library, not a named one like "HR Systems - Website Documents" — every attempt against the named library failed the same way regardless of path format.
+
+**Conclusion: the Codex SharePoint connector cannot reach this specific section completely or reliably.** It can find *some* individual documents via keyword search (not exhaustive — a different query might surface different files, with no way to know when the list is complete), but it can neither read the landing page's own text nor recursively enumerate "everything" in the folder tree the way "the whole section, I want everything" requires. This is a genuine gap in the connector's own tool surface (no Site-Pages-reading tool; `list_folder_items` doesn't work on non-default libraries) — not a permissions problem Kevin can fix with a one-time "Allow" click, and not something fixable from Kevin's side at all. Per the standing instruction, no fallback to direct Microsoft Graph/first-party auth was attempted.
+
+**Nothing was ingested into the KB this session** — there is no complete, verified content to structure, cross-link, or index. The two test runs and their full JSONL transcripts are local scratch files only (not committed; this repo has no durable "failed scrape attempt" artifact convention and none was invented for a null result).
+
+**Exact next action:** this is parked, not actively blocked-and-waiting. If Kevin still wants this content, the realistic options are: (a) wait for/ask about a future Codex CLI version with a working Site-Pages-read tool and working non-default-library folder browsing, (b) narrow the ask to specific known documents (the search tool does work for individual file lookup/retrieval once you know roughly what you're looking for), or (c) Kevin exports/shares the specific documents another way. None of these is "an AI session can just go and get it" — flag back to Kevin rather than silently retrying variations on the same blocked path. See `ROADMAP.md`'s new entry for the tracked, parked version of this.
+
+---
+
+## Previous State — 8 October 2026 (Adam — fixed card-preview truncation bug; stripped extraction-methodology/provenance sentences from two display summary fields) — commit `10f16fd4`
 
 **Task:** Kevin reported a KB card visually cut off mid-sentence at "...via the Support cases menu (approx." on the "HOW TO: Use the Access Digital Assistant in the MyAccess Portal" card, and separately asked for the "Extracted from the Intercom... faster-whisper" provenance sentence (baked into that same card's `s` field by the 7 Oct 2026 session) to be removed from user-facing text. Both verified independently from the live site/repo before any fix, not assumed from the report.
 
